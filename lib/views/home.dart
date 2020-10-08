@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:prapare/views/survey.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -12,7 +14,8 @@ class Home extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               _appLogo(),
-              _buttonLarge(title: 'New Survey', onPressed: () {}),
+              _buttonLarge(
+                  title: 'New Survey', onPressed: () => Get.to(Survey())),
               _buttonLarge(title: 'Edit Survey'),
               _buttonLarge(title: 'Submit/Share'),
             ],
