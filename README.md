@@ -20,8 +20,6 @@ Our take on MVC+S is as follows:
 - `service`: Communicates with the outside world (e.g. internet or local file system).
 - `command`: high level 'god' functions that perform a specific task, often by fetching from a service and injecting into a controller.
 
-A good bit of the architecture is influenced by this post: https://www.filledstacks.com/post/flutter-provider-v3-architecture/
-
 ## Folder Structure
 
 The following is the folder structure under the `/lib` folder:
