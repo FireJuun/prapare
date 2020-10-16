@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:prapare/themes.dart';
 import 'package:prapare/views/survey.dart';
 
 class Home extends StatelessWidget {
@@ -8,9 +7,9 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: Color(0xFFE4E4E3),
-      appBar: AppBar(
-        title: Text('PRAPARE'),
-      ),
+      // appBar: AppBar(
+      //   title: Text('PRAPARE'),
+      // ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 48.0),
@@ -18,10 +17,10 @@ class Home extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               _appLogo(),
-              _buttonLarge(
+              _ButtonLarge(
                   title: 'New Survey', onPressed: () => Get.to(Survey())),
-              _buttonLarge(title: 'Edit Survey'),
-              _buttonLarge(title: 'Submit/Share'),
+              _ButtonLarge(title: 'Edit Survey'),
+              _ButtonLarge(title: 'Submit/Share'),
             ],
           ),
         ),
@@ -37,8 +36,16 @@ class Home extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget _buttonLarge({@required String title, Function onPressed}) {
+class _ButtonLarge extends StatelessWidget {
+  final String title;
+  final Function onPressed;
+
+  _ButtonLarge({@required this.title, this.onPressed});
+
+  @override
+  Widget build(BuildContext context) {
     return FlatButton(
       child: SizedBox(
         width: 300,
@@ -53,7 +60,7 @@ class Home extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(22),
                   color: (onPressed != null)
-                      ? Get.theme.colorScheme.primary
+                      ? context.theme.colorScheme.primary
                       : Color(0xFFB5B5B5),
                 ),
               ),
@@ -66,8 +73,8 @@ class Home extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(22),
                   color: (onPressed != null)
-                      ? Get.theme.colorScheme.secondary
-                      : Get.theme.backgroundColor,
+                      ? context.theme.colorScheme.secondary
+                      : context.theme.backgroundColor,
                 ),
                 child: Center(
                     child: Text(
