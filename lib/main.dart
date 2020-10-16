@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:prapare/themes.dart';
 import 'package:prapare/views/home.dart';
 
 void main() {
@@ -11,6 +12,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       home: Home(),
+      theme: AppTheme.fromType(ThemeType.Prapare).themeData,
+      darkTheme: AppTheme.fromType(ThemeType.Prapare_Dark).themeData,
     );
   }
 }

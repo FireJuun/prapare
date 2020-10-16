@@ -24,6 +24,7 @@ Our take on MVC+S is as follows:
 
 The following is the folder structure under the `/lib` folder:
 
+- `/_internal` - _custom components/variations of existing Flutter widgets, utils, and the like_
 - `/controllers` - _the controllers typically used to manage state and/or perform a function_
   - `/commands` - _performs a specific task (login, submit, edit) by the user_
   - `/services` - _connects the app to outside world (e.g. REST, http, file storage)_

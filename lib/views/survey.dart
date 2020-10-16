@@ -8,9 +8,9 @@ class Survey extends StatelessWidget {
       length: 5,
       child: Scaffold(
         appBar: AppBar(
-          brightness: Brightness.light,
-          backgroundColor: Color(0xFFE4E4E3),
-          iconTheme: Get.theme.iconTheme.copyWith(color: Colors.black),
+          // brightness: Brightness.light,
+          // backgroundColor: ,
+          // iconTheme: Get.theme.iconTheme.copyWith(color: Colors.black),
           elevation: 0,
           title: SizedBox(
             height: 56,
@@ -23,7 +23,7 @@ class Survey extends StatelessWidget {
           // remove this line to include back navigation button
           // automaticallyImplyLeading: false,
           bottom: TabBar(
-            labelColor: Colors.black,
+            // labelColor: Colors.black,
             tabs: [
               Tab(
                 icon: Image.asset(
@@ -58,7 +58,7 @@ class Survey extends StatelessWidget {
             ],
           ),
         ),
-        backgroundColor: Color(0xFFDAE7DB),
+        // backgroundColor: Color(0xFFDAE7DB),
         body: TabBarView(children: [
           Center(
               child: Text(

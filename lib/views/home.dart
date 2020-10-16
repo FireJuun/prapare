@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:prapare/themes.dart';
 import 'package:prapare/views/survey.dart';
 
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFE4E4E3),
+      // backgroundColor: Color(0xFFE4E4E3),
+      appBar: AppBar(
+        title: Text('PRAPARE'),
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 48.0),
@@ -49,7 +53,7 @@ class Home extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(22),
                   color: (onPressed != null)
-                      ? Color(0xFF689E80)
+                      ? Get.theme.colorScheme.primary
                       : Color(0xFFB5B5B5),
                 ),
               ),
@@ -62,8 +66,8 @@ class Home extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(22),
                   color: (onPressed != null)
-                      ? Color(0xFFE1994C)
-                      : Color(0xFFE4E4E3),
+                      ? Get.theme.colorScheme.secondary
+                      : Get.theme.backgroundColor,
                 ),
                 child: Center(
                     child: Text(
