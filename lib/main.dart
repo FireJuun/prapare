@@ -15,8 +15,8 @@ class MyApp extends StatelessWidget {
     ThemeController.to.getThemeModeFromPreferences();
     return GetMaterialApp(
       home: Home(),
-      theme: AppTheme.fromType(ThemeType.Prapare).themeData,
-      darkTheme: AppTheme.fromType(ThemeType.Prapare_Dark).themeData,
+      theme: ThemeController.to.lightTheme.themeData,
+      darkTheme: ThemeController.to.darkTheme.themeData,
       themeMode: ThemeController.to.themeMode,
     );
   }

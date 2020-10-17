@@ -9,7 +9,7 @@ class PersonalTab extends StatelessWidget {
       // init: ThemeController(),
       builder: (controller) => Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Center(
             child: Text(

@@ -11,6 +11,12 @@ class ThemeController extends GetxController {
 
   SharedPreferences prefs;
 
+  // App Themes (Light vs Dark)
+  AppTheme _lightTheme = AppTheme.fromType(ThemeType.Prapare);
+  AppTheme get lightTheme => this._lightTheme;
+  AppTheme _darkTheme = AppTheme.fromType(ThemeType.Prapare_Dark);
+  AppTheme get darkTheme => this._darkTheme;
+
   // _themeMode necessary for main.dart calls
   ThemeMode _themeMode;
   ThemeMode get themeMode => this._themeMode;
@@ -23,10 +29,13 @@ class ThemeController extends GetxController {
   set rxThemeMode(value) => this._rxThemeMode.value = value;
 
   Future<void> setThemeMode(ThemeMode themeMode) async {
+    // Change theme, then update ThemeMode notifiers
     Get.changeThemeMode(themeMode);
     _themeMode = themeMode;
     _rxThemeMode.value = themeMode;
     update();
+
+    // Save data for later retrieval
     prefs = await SharedPreferences.getInstance();
     await prefs.setString('theme', themeMode.toString().split('.')[1]);
   }
@@ -43,6 +52,4 @@ class ThemeController extends GetxController {
     }
     setThemeMode(themeMode);
   }
-
-  AppTheme theme = AppTheme.fromType(ThemeType.Prapare);
 }
