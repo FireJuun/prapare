@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:prapare/views/personal_tab.dart';
 
 class Survey extends StatelessWidget {
   @override
@@ -60,11 +60,7 @@ class Survey extends StatelessWidget {
         ),
         // backgroundColor: Color(0xFFDAE7DB),
         body: TabBarView(children: [
-          Center(
-              child: Text(
-            'Personal',
-            style: TextStyle(fontSize: 32),
-          )),
+          PersonalTab(),
           Center(
               child: Text(
             'Home',
