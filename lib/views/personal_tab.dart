@@ -13,14 +13,14 @@ class PersonalTab extends StatelessWidget {
         children: <Widget>[
           Center(
             child: Text(
-              'System Brightness: ${Get.mediaQuery.platformBrightness.toString()}',
+              'System Brightness: ${context.mediaQuery.platformBrightness.toString()}',
               style: TextStyle(fontSize: 20),
             ),
           ),
           SizedBox(height: 24),
           Center(
             child: Text(
-              'Theme Brightness: ${Get.theme.brightness.toString()}',
+              'Theme Brightness: ${context.theme.brightness.toString()}',
               style: TextStyle(fontSize: 20),
             ),
           ),
