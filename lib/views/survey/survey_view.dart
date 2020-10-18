@@ -5,6 +5,7 @@ import 'package:prapare/controllers/theme_controller.dart';
 import 'package:prapare/icons.dart';
 import 'package:prapare/styled_components/app_logo.dart';
 import 'package:prapare/themes.dart';
+import 'package:prapare/views/settings_dialog.dart';
 import 'package:prapare/views/survey/tabs/home_tab.dart';
 import 'package:prapare/views/survey/tabs/money_tab.dart';
 import 'package:prapare/views/survey/tabs/other_tab.dart';
@@ -27,6 +28,10 @@ class SurveyView extends GetWidget<ThemeController> {
           elevation: 0,
           title: AppLogoNoTagline(),
           titleSpacing: 0,
+          actions: [
+            IconButton(
+                icon: Icon(Icons.settings), onPressed: () => settingsDialog())
+          ],
           // remove this line to include back navigation button
           // automaticallyImplyLeading: false,
           bottom: TabBar(

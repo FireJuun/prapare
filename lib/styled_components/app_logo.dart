@@ -16,10 +16,9 @@ class AppLogoNoTagline extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 56,
+      height: 48,
       child: Image.asset(
         'assets/images/PRAPARE-Logo-no-tagline.png',
-        fit: BoxFit.fitHeight,
       ),
     );
   }

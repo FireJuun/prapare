@@ -8,9 +8,12 @@ class S {
   static const String BTN_NEW_SURVEY = "New Survey";
   static const String BTN_EDIT_SURVEY = "Edit Survey";
   static const String BTN_SUBMIT_SHARE = "Submit/Share";
+  static const String BTN_OK = "OK";
 
-  static const String STG_THEME_MODE = "Theme Mode";
+  static const String STG_TITLE = "App Settings";
+  static const String STG_THEME_MODE = "Choose Theme";
   static const String STG_THEME_SYSTEM = "System";
   static const String STG_THEME_DARK = "Dark";
   static const String STG_THEME_LIGHT = "Light";
+  static const String STG_LANGUAGE = "Choose Language";
 }
