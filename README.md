@@ -68,8 +68,6 @@ For VS Code, install the Dart and Flutter plugin. Set your editor to [format on 
 
 We have a Slack channel and welcome new members/contributors.
 
-For any questions, feel free to email me at john.d.manning@gmail.com.
-
 [production-level]: https://github.com/gskinnerTeam/flokk
 [Dart style guide]: https://dart.dev/guides/language/effective-dart/style
 [format on save]: https://flutter.dev/docs/development/tools/formatting#automatically-formatting-code-in-vs-code
