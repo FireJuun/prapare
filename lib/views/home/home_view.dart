@@ -4,6 +4,7 @@ import 'package:prapare/routes/app_pages.dart';
 import 'package:prapare/strings.dart';
 import 'package:prapare/styled_components/app_logo.dart';
 import 'package:prapare/styled_components/styled_button_large.dart';
+import 'package:prapare/views/settings_dialog.dart';
 import 'package:prapare/views/survey/survey_view.dart';
 
 class HomeView extends StatelessWidget {
@@ -26,6 +27,11 @@ class HomeView extends StatelessWidget {
                   onPressed: () => Get.toNamed(Routes.SURVEY)),
               StyledButtonLarge(title: S.BTN_EDIT_SURVEY),
               StyledButtonLarge(title: S.BTN_SUBMIT_SHARE),
+              Align(
+                  alignment: FractionalOffset(0.8, 0),
+                  child: IconButton(
+                      icon: Icon(Icons.settings, size: 36),
+                      onPressed: () => settingsDialog()))
             ],
           ),
         ),
