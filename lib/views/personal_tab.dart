@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/controllers/theme_controller.dart';
+import 'package:prapare/strings.dart';
 
 class PersonalTab extends StatelessWidget {
   @override
@@ -11,27 +12,9 @@ class PersonalTab extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Center(
-            child: Text(
-              'System Brightness: ${context.mediaQuery.platformBrightness.toString()}',
-              style: textTheme.bodyText1,
-            ),
-          ),
-          SizedBox(height: 24),
-          Center(
-            child: Text(
-              'Theme Brightness: ${context.theme.brightness.toString()}',
-              style: textTheme.bodyText1,
-            ),
-          ),
-          SizedBox(height: 24),
-          Text(
-            'ThemeMode',
-            style: textTheme.bodyText1,
-            textAlign: TextAlign.left,
-          ),
+          Text(S.STG_THEME_MODE, style: textTheme.bodyText1),
           RadioListTile(
-            title: Text('system', style: textTheme.bodyText1),
+            title: Text(S.STG_THEME_SYSTEM, style: textTheme.bodyText1),
             value: ThemeMode.system,
             groupValue: controller.rxThemeMode,
             onChanged: (value) {
@@ -40,7 +23,7 @@ class PersonalTab extends StatelessWidget {
             },
           ),
           RadioListTile(
-            title: Text('dark', style: textTheme.bodyText1),
+            title: Text(S.STG_THEME_DARK, style: textTheme.bodyText1),
             value: ThemeMode.dark,
             groupValue: controller.rxThemeMode,
             onChanged: (value) {
@@ -49,7 +32,7 @@ class PersonalTab extends StatelessWidget {
             },
           ),
           RadioListTile(
-            title: Text('light', style: textTheme.bodyText1),
+            title: Text(S.STG_THEME_LIGHT, style: textTheme.bodyText1),
             value: ThemeMode.light,
             groupValue: controller.rxThemeMode,
             onChanged: (value) {

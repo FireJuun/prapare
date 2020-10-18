@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:prapare/controllers/theme_controller.dart';
 import 'package:prapare/icons.dart';
+import 'package:prapare/styled_components/app_logo.dart';
 import 'package:prapare/themes.dart';
 import 'package:prapare/views/personal_tab.dart';
 
@@ -20,13 +21,7 @@ class Survey extends GetWidget<ThemeController> {
           // backgroundColor: Colors.transparent,
           // iconTheme: Get.theme.iconTheme.copyWith(color: Colors.black),
           elevation: 0,
-          title: SizedBox(
-            height: 56,
-            child: Image.asset(
-              'assets/images/PRAPARE-Logo-no-tagline.png',
-              fit: BoxFit.fitHeight,
-            ),
-          ),
+          title: AppLogoNoTagline(),
           titleSpacing: 0,
           // remove this line to include back navigation button
           // automaticallyImplyLeading: false,
