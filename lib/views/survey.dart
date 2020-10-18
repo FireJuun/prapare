@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:prapare/controllers/theme_controller.dart';
+import 'package:prapare/icons.dart';
 import 'package:prapare/themes.dart';
 import 'package:prapare/views/personal_tab.dart';
 
@@ -32,32 +34,32 @@ class Survey extends GetWidget<ThemeController> {
             // labelColor: Colors.black,
             tabs: [
               Tab(
-                icon: Image.asset(
-                  'assets/icons/personal_characteristics.png',
+                icon: SvgPicture.asset(
+                  AppIcons.PERSONAL_ICON,
+                  // height: 48,
+                ),
+              ),
+              Tab(
+                icon: SvgPicture.asset(
+                  AppIcons.HOME_ICON,
                   height: 48,
                 ),
               ),
               Tab(
-                icon: Image.asset(
-                  'assets/icons/family_and_home.png',
+                icon: SvgPicture.asset(
+                  AppIcons.MONEY_ICON,
                   height: 48,
                 ),
               ),
               Tab(
-                icon: Image.asset(
-                  'assets/icons/money_and_resources.png',
+                icon: SvgPicture.asset(
+                  AppIcons.SOCIAL_ICON,
                   height: 48,
                 ),
               ),
               Tab(
-                icon: Image.asset(
-                  'assets/icons/social_and_emotional_health.png',
-                  height: 48,
-                ),
-              ),
-              Tab(
-                icon: Image.asset(
-                  'assets/icons/other_measures.png',
+                icon: SvgPicture.asset(
+                  AppIcons.OTHER_ICON,
                   height: 48,
                 ),
               ),
