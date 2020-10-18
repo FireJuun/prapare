@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:prapare/strings.dart';
 import 'package:prapare/styled_components/app_logo.dart';
 import 'package:prapare/styled_components/styled_button_large.dart';
-import 'package:prapare/views/survey.dart';
+import 'package:prapare/views/survey/survey_view.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -20,9 +21,10 @@ class Home extends StatelessWidget {
             children: [
               AppLogo(),
               StyledButtonLarge(
-                  title: 'New Survey', onPressed: () => Get.to(Survey())),
-              StyledButtonLarge(title: 'Edit Survey'),
-              StyledButtonLarge(title: 'Submit/Share'),
+                  title: S.BTN_NEW_SURVEY,
+                  onPressed: () => Get.to(SurveyView())),
+              StyledButtonLarge(title: S.BTN_EDIT_SURVEY),
+              StyledButtonLarge(title: S.BTN_SUBMIT_SHARE),
             ],
           ),
         ),
