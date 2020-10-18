@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 
 // All colors used in this app can be accessed from this list
 // Colors are combined in varying ways to set the themes below
-class AppColors {
+class _AppColors {
   static const Color greenSurface = Color(0xFFDAE7DB);
   static const Color green = Color(0xFF689E80);
   static const Color greenDark = Color(0xFF338256);
@@ -23,9 +23,32 @@ class AppColors {
   static const Color textLight = Colors.white;
 }
 
+TextTheme _buildTextTheme() {
+  return TextTheme(
+    headline1: _style(96.0, FontWeight.normal),
+    headline2: _style(60.0, FontWeight.bold),
+    headline3: _style(48.0, FontWeight.normal),
+    headline4: _style(36.0, FontWeight.w400),
+    headline5: _style(24.0, FontWeight.normal),
+    headline6: _style(20.0, FontWeight.w500),
+    bodyText1: _style(18.0, FontWeight.normal),
+    bodyText2: _style(14.0, FontWeight.normal),
+    subtitle1: _style(16.0, FontWeight.normal),
+    subtitle2: _style(14.0, FontWeight.normal),
+    button: _style(18.0, FontWeight.normal),
+    caption: _style(12.0, FontWeight.normal),
+    overline: _style(16.0, FontWeight.normal),
+    // );
+  ).apply(fontFamily: 'Lato');
+}
+
+TextStyle _style(double s, FontWeight w) =>
+    TextStyle(fontSize: s, fontWeight: w);
+
 // AppTheme inspired by: https://github.com/gskinnerTeam/flokk
-// The main exception is that we don't use Provider for AppTheme
-// Thus, we can't directly call the AppTheme class inside the app
+// The main exception is that we're using Get instead of Provider for AppTheme
+// Thus, we use the ThemeController to directly call AppTheme
+// and context.textTheme (instead of Get.textTheme) to ensure the theme is mutable
 enum ThemeType { Prapare, Prapare_Dark }
 
 class AppTheme {
@@ -48,8 +71,9 @@ class AppTheme {
 
   /// Default constructor
   AppTheme({@required this.isDark}) {
-    txt = isDark ? AppColors.textLight : AppColors.textDark;
-    accentTxt = accentTxt ?? isDark ? AppColors.textDark : AppColors.textLight;
+    txt = isDark ? _AppColors.textLight : _AppColors.textDark;
+    accentTxt =
+        accentTxt ?? isDark ? _AppColors.textDark : _AppColors.textLight;
   }
 
   /// fromType factory constructor
@@ -57,36 +81,36 @@ class AppTheme {
     switch (t) {
       case ThemeType.Prapare:
         return AppTheme(isDark: false)
-          ..bg1 = AppColors.greySurface
-          ..bg2 = AppColors.greenSurface
+          ..bg1 = _AppColors.greySurface
+          ..bg2 = _AppColors.greenSurface
           ..surface = Colors.white
-          ..primary = AppColors.green
-          ..primaryVariant = AppColors.greenDark
-          ..secondary = AppColors.orange
-          ..secondaryVariant = AppColors.orangeDark
-          ..grey = AppColors.grey
+          ..primary = _AppColors.green
+          ..primaryVariant = _AppColors.greenDark
+          ..secondary = _AppColors.orange
+          ..secondaryVariant = _AppColors.orangeDark
+          ..grey = _AppColors.grey
           ..error = Colors.red.shade900
-          ..focus = AppColors.grey;
+          ..focus = _AppColors.grey;
 
       case ThemeType.Prapare_Dark:
         return AppTheme(isDark: true)
-          ..bg1 = AppColors.black
-          ..bg2 = AppColors.blueGreen
-          ..surface = AppColors.blackSurface
-          ..primary = AppColors.greenDark
-          ..primaryVariant = AppColors.green
-          ..secondary = AppColors.orangeDark
-          ..secondaryVariant = AppColors.orange
-          ..grey = AppColors.grey
-          ..error = AppColors.red
-          ..focus = AppColors.grey;
+          ..bg1 = _AppColors.black
+          ..bg2 = _AppColors.blueGreen
+          ..surface = _AppColors.blackSurface
+          ..primary = _AppColors.greenDark
+          ..primaryVariant = _AppColors.green
+          ..secondary = _AppColors.orangeDark
+          ..secondaryVariant = _AppColors.orange
+          ..grey = _AppColors.grey
+          ..error = _AppColors.red
+          ..focus = _AppColors.grey;
     }
     return AppTheme.fromType(defaultTheme);
   }
 
   ThemeData get themeData {
     var t = ThemeData.from(
-      textTheme: (isDark ? ThemeData.dark() : ThemeData.light()).textTheme,
+      textTheme: _buildTextTheme(),
       colorScheme: ColorScheme(
           brightness: isDark ? Brightness.dark : Brightness.light,
           primary: primary,
@@ -103,6 +127,7 @@ class AppTheme {
           error: error ?? Colors.red.shade400),
     );
     return t.copyWith(
+        typography: Typography.material2018(),
         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
         textSelectionColor: grey,
         textSelectionHandleColor: Colors.transparent,

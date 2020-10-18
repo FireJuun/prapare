@@ -9,6 +9,8 @@ class StyledButtonLarge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextTheme textTheme = context.textTheme;
+
     return FlatButton(
       child: SizedBox(
         width: 300,
@@ -42,7 +44,7 @@ class StyledButtonLarge extends StatelessWidget {
                 child: Center(
                     child: Text(
                   title,
-                  style: TextStyle(fontSize: 36),
+                  style: textTheme.headline4,
                 )),
               ),
             ),
