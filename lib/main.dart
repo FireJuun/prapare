@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/controllers/theme_controller.dart';
-import 'package:prapare/themes.dart';
-import 'package:prapare/views/home.dart';
+import 'package:prapare/routes/app_pages.dart';
+import 'package:prapare/views/home/home_view.dart';
 
 void main() {
   Get.lazyPut<ThemeController>(() => ThemeController());
@@ -14,7 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     ThemeController.to.getThemeModeFromPreferences();
     return GetMaterialApp(
-      home: Home(),
+      home: HomeView(),
+      getPages: AppPages.pages,
       theme: ThemeController.to.lightTheme.themeData,
       darkTheme: ThemeController.to.darkTheme.themeData,
       themeMode: ThemeController.to.themeMode,
