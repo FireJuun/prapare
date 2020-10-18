@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:prapare/controllers/theme_controller.dart';
+import 'package:prapare/themes.dart';
 import 'package:prapare/views/personal_tab.dart';
 
-class Survey extends StatelessWidget {
+class Survey extends GetWidget<ThemeController> {
   @override
   Widget build(BuildContext context) {
+    final AppTheme appTheme =
+        controller.getAppThemeFromBrightness(context.theme.brightness);
+
     return DefaultTabController(
       length: 5,
       child: Scaffold(
         appBar: AppBar(
-          // brightness: Brightness.light,
-          // backgroundColor: ,
+          // brightness: Brightness.dark,
+          // backgroundColor: Colors.transparent,
           // iconTheme: Get.theme.iconTheme.copyWith(color: Colors.black),
           elevation: 0,
           title: SizedBox(
@@ -58,7 +64,7 @@ class Survey extends StatelessWidget {
             ],
           ),
         ),
-        // backgroundColor: Color(0xFFDAE7DB),
+        backgroundColor: appTheme.bg2,
         body: TabBarView(children: [
           PersonalTab(),
           Center(

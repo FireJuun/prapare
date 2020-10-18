@@ -52,4 +52,8 @@ class ThemeController extends GetxController {
     }
     setThemeMode(themeMode);
   }
+
+  AppTheme getAppThemeFromBrightness(Brightness b) {
+    return (b == Brightness.dark) ? _darkTheme : _lightTheme;
+  }
 }
