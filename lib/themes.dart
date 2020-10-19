@@ -28,7 +28,7 @@ TextTheme _buildTextTheme() {
     headline1: _style(96.0, FontWeight.normal),
     headline2: _style(60.0, FontWeight.bold),
     headline3: _style(48.0, FontWeight.normal),
-    headline4: _style(40.0, FontWeight.bold),
+    headline4: _style(36.0, FontWeight.bold),
     headline5: _style(32.0, FontWeight.normal),
     headline6: _style(20.0, FontWeight.w500),
     bodyText1: _style(18.0, FontWeight.normal),
@@ -143,6 +143,7 @@ class AppTheme {
     );
     return t.copyWith(
         typography: Typography.material2018(),
+        accentTextTheme: _buildTextTheme().apply(bodyColor: accentTxt),
         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
         textSelectionColor: grey,
         textSelectionHandleColor: Colors.transparent,

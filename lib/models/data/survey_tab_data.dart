@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 class SurveyTab {
   SurveyTabId id;
+  String title;
   String active;
   String activeChecked;
   String inactive;
@@ -11,6 +12,7 @@ class SurveyTab {
 
   SurveyTab(
       {@required this.id,
+      @required this.title,
       @required this.active,
       @required this.activeChecked,
       @required this.inactive,

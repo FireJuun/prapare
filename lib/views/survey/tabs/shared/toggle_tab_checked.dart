@@ -8,8 +8,16 @@ class ToggleTabChecked extends StatelessWidget {
   Widget build(BuildContext context) {
     final SurveyController controller = Get.find();
     final SurveyTab obj = controller.tabModel.tabList[controller.rxTabIndex];
-    return Obx(() => Checkbox(
+    return Obx(
+      () => Checkbox(
         value: obj.isChecked.value,
-        onChanged: (value) => controller.toggleChecked(obj)));
+        onChanged: (value) {
+          //todo: this sometimes checks the wrong tab
+          print('tabController: ${controller.tabController.index}');
+          print('rxTabIndex: ${controller.rxTabIndex}');
+          controller.toggleChecked(obj);
+        },
+      ),
+    );
   }
 }

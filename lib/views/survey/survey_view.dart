@@ -17,52 +17,112 @@ class SurveyView extends StatelessWidget {
   Widget build(BuildContext context) {
     final AppTheme appTheme = Get.find<ThemeService>()
         .getAppThemeFromBrightness(context.theme.brightness);
+    final TextTheme textTheme = context.textTheme;
     final SurveyController surveyController = Get.find();
     final tabList = surveyController.tabModel.tabList;
 
     return Scaffold(
-      appBar: AppBar(
-        // brightness: Brightness.dark,
-        // backgroundColor: Colors.transparent,
-        // iconTheme: Get.theme.iconTheme.copyWith(color: Colors.black),
-        elevation: 0,
-        title: AppLogoNoTagline(),
-        titleSpacing: 0,
-        actions: [
-          IconButton(
-              icon: Icon(Icons.settings), onPressed: () => settingsDialog())
-        ],
-        // remove this line to include back navigation button
-        // automaticallyImplyLeading: false,
-        bottom: TabBar(
-          controller: surveyController.tabController,
-          unselectedLabelColor: appTheme.grey,
-          labelColor: Colors.black,
-          tabs: [
-            /// spread operator used for more concise code
-            /// obx and rxTabIndex used to trigger redraw on data change
-            /// function passes index of tabList, which is used by
-            /// the controller to get the same tabList item
-            ...List.generate(
-              tabList.length,
-              (index) => Obx(
-                () => Tab(
-                  icon: SvgPicture.asset(surveyController.getTabIconFromIndex(
-                      index, surveyController.rxTabIndex)),
+      backgroundColor: appTheme.bg2,
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            title: AppLogoNoTagline(),
+            snap: true,
+            floating: true,
+            pinned: true,
+            actions: [
+              IconButton(
+                  icon: Icon(Icons.settings), onPressed: () => settingsDialog())
+            ],
+            bottom: TabBar(
+              controller: surveyController.tabController,
+              unselectedLabelColor: appTheme.grey,
+              labelColor: Colors.black,
+              tabs: [
+                /// spread operator used for more concise code
+                /// obx and rxTabIndex used to trigger redraw on data change
+                /// function passes index of tabList, which is used by
+                /// the controller to get the same tabList item
+                ...List.generate(
+                  tabList.length,
+                  (index) => Obx(
+                    () => Tab(
+                      icon: SvgPicture.asset(
+                          surveyController.getTabIconFromIndex(
+                              index, surveyController.rxTabIndex)),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+          SliverPersistentHeader(
+            pinned: true,
+            delegate: _SliverAppBarDelegate(
+                child: PreferredSize(
+              preferredSize: Size.fromHeight(80.0),
+              child: SizedBox(
+                /// This box also persists under the SliverAppBar widget
+                /// Using Align and Padding to get around that,
+                /// though there's probably a more elegant way
+                height: 100.0,
+                width: double.infinity,
+                child: Obx(
+                  () => Container(
+                    color: surveyController.getTabBackgroundColorFromIndex(
+                        surveyController.rxTabIndex, appTheme),
+                    child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom: 16.0),
+                          child: Text(
+                            tabList[surveyController.rxTabIndex].title,
+                            style: context.theme.accentTextTheme.headline5,
+                            textAlign: TextAlign.center,
+                          ),
+                        )),
+                  ),
                 ),
               ),
-            )
-          ],
-        ),
+            )),
+          ),
+          SliverFillRemaining(
+            child: TabBarView(
+              controller: surveyController.tabController,
+              children: [
+                PersonalTab(),
+                HomeTab(),
+                MoneyTab(),
+                SocialTab(),
+                OtherTab(),
+              ],
+            ),
+          )
+        ],
       ),
-      backgroundColor: appTheme.bg2,
-      body: TabBarView(controller: surveyController.tabController, children: [
-        PersonalTab(),
-        HomeTab(),
-        MoneyTab(),
-        SocialTab(),
-        OtherTab(),
-      ]),
     );
+  }
+}
+
+class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
+  final PreferredSize child;
+
+  _SliverAppBarDelegate({this.child});
+
+  @override
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
+    return child;
+  }
+
+  @override
+  double get maxExtent => child.preferredSize.height;
+
+  @override
+  double get minExtent => child.preferredSize.height;
+
+  @override
+  bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {
+    return true;
   }
 }

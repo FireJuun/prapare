@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
+import 'package:prapare/controllers/services/theme_service.dart';
 import 'package:prapare/models/data/survey_tab_data.dart';
 import 'package:prapare/models/survey_tab_model.dart';
+import 'package:prapare/themes.dart';
 
 class SurveyController extends GetxController
     with SingleGetTickerProviderMixin {
@@ -25,7 +27,22 @@ class SurveyController extends GetxController
       return (obj.isChecked.value) ? obj.inactiveChecked : obj.inactive;
   }
 
-  // bool tabIsActive(SurveyTab obj) {}
+  Color getTabBackgroundColorFromIndex(int index, AppTheme appTheme) {
+    switch (index) {
+      case 0:
+        return appTheme.heading1;
+      case 1:
+        return appTheme.heading2;
+      case 2:
+        return appTheme.heading3;
+      case 3:
+        return appTheme.heading4;
+      case 4:
+        return appTheme.heading5;
+      default:
+        return appTheme.heading1;
+    }
+  }
 
   @override
   void onInit() {

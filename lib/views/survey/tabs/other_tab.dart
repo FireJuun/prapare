@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/strings.dart';
-import 'package:prapare/views/survey/tabs/toggle_tab_checked.dart';
+import 'package:prapare/views/survey/tabs/shared/lorem_ipsum.dart';
+import 'package:prapare/views/survey/tabs/shared/toggle_tab_checked.dart';
 
 class OtherTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextTheme textTheme = context.textTheme;
-    return Column(
+    return ListView(
       children: [
         Center(
           child: Text(
@@ -16,7 +17,8 @@ class OtherTab extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
         ),
-        ToggleTabChecked()
+        ToggleTabChecked(),
+        LoremIpsum(),
       ],
     );
   }
