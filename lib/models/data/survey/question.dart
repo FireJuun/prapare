@@ -1,4 +1,4 @@
-import 'package:prapare/models/survey/answer.dart';
+import 'answer.dart';
 
 /// this class will represent a single question for a survey
 class Question {

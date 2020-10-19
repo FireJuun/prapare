@@ -47,6 +47,13 @@ The following is the folder structure under the `/lib` folder:
 - `main.dart`
 - `theme.dart` - _theme and builders_  
 
+## Questionnaire vs Survey
+
+To differentiate between FHIR and our local data model, we have employed the term ```Survey```
+
+- When an item is specifically related to FHIR and it's formatting, the term Questionnaire is used, along with the formatting for that FHIR resource
+- When it is part of the local model (including locally stored surveys/questionnaires) the term survey is used 
+
 ## Style Guide
 
 Follow the [Dart style guide].

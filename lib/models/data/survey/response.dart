@@ -3,11 +3,19 @@ class Response {
   /// specifies the survey
   final String surveyCode;
 
+  /// specifices the group
+  final String groupCode;
+
   /// specifies the question
   final String questionCode;
 
   /// specifies the answer
   final String answerCode;
 
-  Response({this.surveyCode, this.questionCode, this.answerCode});
+  Response({
+    this.surveyCode,
+    this.groupCode,
+    this.questionCode,
+    this.answerCode,
+  });
 }
