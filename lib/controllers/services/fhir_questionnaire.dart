@@ -10,6 +10,7 @@ class FhirQuestionnaire {
     this.response,
     this.surveys,
     this.title,
+    this.groups,
   });
 
   /// fhir resource questionnaire
@@ -22,6 +23,8 @@ class FhirQuestionnaire {
   List<Survey> surveys;
 
   String title;
+
+  List<String> groups;
 
   /// loads the survey (currently saved locally, but could be queried from
   /// elswhere), then creates a list of Surveys from the questionnaire
@@ -61,5 +64,15 @@ class FhirQuestionnaire {
     }
   }
 
-  void createResponse(List<Answer> answers) {}
+  void createResponse(List<Answer> answers) {
+    response = QuestionnaireResponse(
+      resourceType: 'QuestionnaireResponse',
+      meta: questionnaire.meta,
+      status: QuestionnaireResponseStatus.completed,
+      authored: FhirDateTime(DateTime.now()),
+      item: _getAnswers(),
+    );
+  }
+
+  List<QuestionnaireResponseItem> _getAnswers() {}
 }

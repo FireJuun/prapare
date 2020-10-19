@@ -3,9 +3,6 @@ class Response {
   /// specifies the survey
   String surveyCode;
 
-  /// specifices the group
-  String groupCode;
-
   /// specifies the question
   String questionCode;
 
@@ -14,7 +11,6 @@ class Response {
 
   Response({
     this.surveyCode,
-    this.groupCode,
     this.questionCode,
     this.answerCode,
   });
