@@ -8,7 +8,7 @@ class FhirQuestionnaire {
   FhirQuestionnaire({
     this.questionnaire,
     this.response,
-    this.survey,
+    this.surveys,
     this.title,
   });
 
@@ -19,7 +19,7 @@ class FhirQuestionnaire {
   QuestionnaireResponse response;
 
   /// local formatted survey from questionnaire
-  List<Survey> survey;
+  List<Survey> surveys;
 
   String title;
 
@@ -29,7 +29,7 @@ class FhirQuestionnaire {
     questionnaire = Questionnaire.fromJson(prapareSurvey);
     title = questionnaire?.title ?? questionnaire?.name ?? 'New Survey';
     if (questionnaire != null) {
-      survey = <Survey>[];
+      surveys = <Survey>[];
       for (var item in questionnaire.item) {
         if (item.type == QuestionnaireItemType.group) {
           _surveyFromGroup(item);
@@ -53,7 +53,7 @@ class FhirQuestionnaire {
           newSurvey.questions.add(Question.fromChoiceItem(q));
         }
       }
-      survey.add(newSurvey);
+      surveys.add(newSurvey);
     } else {
       for (var g in item.item) {
         _surveyFromGroup(g);
