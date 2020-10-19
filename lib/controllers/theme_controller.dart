@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 // spec: https://gist.github.com/RodBr/37310335c6639f486bb3c8a628052405
 
-class ThemeController extends GetxController {
+class ThemeController extends GetxService {
   static ThemeController get to => Get.find();
 
   SharedPreferences prefs;
@@ -22,18 +22,10 @@ class ThemeController extends GetxController {
   ThemeMode get themeMode => this._themeMode;
   set themeMode(value) => this._themeMode = value;
 
-  // _rxThemeMode necessary for dynamic loading of various themes
-  // defaults to system on first load, then changes theme based on preferences
-  Rx<ThemeMode> _rxThemeMode = ThemeMode.system.obs;
-  get rxThemeMode => this._rxThemeMode.value;
-  set rxThemeMode(value) => this._rxThemeMode.value = value;
-
-  Future<void> setThemeMode(ThemeMode themeMode) async {
+  Future<void> setThemeMode(ThemeMode obj) async {
     // Change theme, then update ThemeMode notifiers
-    Get.changeThemeMode(themeMode);
-    _themeMode = themeMode;
-    _rxThemeMode.value = themeMode;
-    update();
+    Get.changeThemeMode(obj);
+    _themeMode = obj;
 
     // Save data for later retrieval
     prefs = await SharedPreferences.getInstance();
@@ -41,19 +33,22 @@ class ThemeController extends GetxController {
   }
 
   Future<void> getThemeModeFromPreferences() async {
-    ThemeMode themeMode;
     prefs = await SharedPreferences.getInstance();
     String themeText = prefs.getString(('theme')) ?? 'system';
     try {
-      themeMode =
+      _themeMode =
           ThemeMode.values.firstWhere((e) => describeEnum(e) == themeText);
     } catch (e) {
-      themeMode = ThemeMode.system;
+      _themeMode = ThemeMode.system;
     }
-    setThemeMode(themeMode);
   }
 
   AppTheme getAppThemeFromBrightness(Brightness b) {
     return (b == Brightness.dark) ? _darkTheme : _lightTheme;
+  }
+
+  Future<ThemeController> init() async {
+    await getThemeModeFromPreferences();
+    return this;
   }
 }

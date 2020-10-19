@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:prapare/controllers/theme_controller.dart';
 import 'package:prapare/strings.dart';
+import 'package:prapare/views/settings_controller.dart';
 
 Future<void> settingsDialog() async =>
     await Get.dialog(_SettingsDialogContent());
@@ -17,7 +17,8 @@ class _SettingsDialogContent extends StatelessWidget {
           children: [
             Center(child: Text(S.STG_TITLE, style: textTheme.headline5)),
             Expanded(
-              child: GetX<ThemeController>(
+              child: GetX<SettingsController>(
+                init: SettingsController(),
                 builder: (controller) => ListView(
                   children: <Widget>[
                     SizedBox(height: 24),
