@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:get/get.dart';
 
 class SurveyTab {
   SurveyTabId id;
@@ -6,7 +7,7 @@ class SurveyTab {
   String activeChecked;
   String inactive;
   String inactiveChecked;
-  bool isChecked;
+  RxBool isChecked = false.obs;
 
   SurveyTab(
       {@required this.id,
@@ -14,7 +15,7 @@ class SurveyTab {
       @required this.activeChecked,
       @required this.inactive,
       @required this.inactiveChecked,
-      this.isChecked = false});
+      isChecked});
 }
 
 enum SurveyTabId { PERSONAL, HOME, MONEY, SOCIAL, OTHER }

@@ -14,14 +14,15 @@ class SurveyController extends GetxController
 
   final SurveyTabModel tabModel = SurveyTabModel();
 
-  void toggleChecked(SurveyTab obj) => obj.isChecked = !obj.isChecked;
+  void toggleChecked(SurveyTab obj) =>
+      obj.isChecked.value = !obj.isChecked.value;
 
   String getTabIconFromIndex(int index, int ctrlIndex) {
     SurveyTab obj = tabModel.tabList[index];
     if (index == ctrlIndex) {
-      return (obj.isChecked) ? obj.activeChecked : obj.active;
+      return (obj.isChecked.value) ? obj.activeChecked : obj.active;
     } else
-      return (obj.isChecked) ? obj.inactiveChecked : obj.inactive;
+      return (obj.isChecked.value) ? obj.inactiveChecked : obj.inactive;
   }
 
   // bool tabIsActive(SurveyTab obj) {}
