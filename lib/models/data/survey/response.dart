@@ -1,16 +1,16 @@
 /// represents the class that is passed back from the user
 class Response {
   /// specifies the survey
-  final String surveyCode;
+  String surveyCode;
 
   /// specifices the group
-  final String groupCode;
+  String groupCode;
 
   /// specifies the question
-  final String questionCode;
+  String questionCode;
 
   /// specifies the answer
-  final String answerCode;
+  String answerCode;
 
   Response({
     this.surveyCode,
