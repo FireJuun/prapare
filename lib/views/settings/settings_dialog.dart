@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/strings.dart';
-import 'package:prapare/views/settings_controller.dart';
+import 'package:prapare/views/settings/settings_controller.dart';
 
 Future<void> settingsDialog() async =>
     await Get.dialog(_SettingsDialogContent());

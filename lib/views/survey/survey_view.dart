@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:prapare/controllers/theme_controller.dart';
+import 'package:prapare/controllers/services/theme_service.dart';
 import 'package:prapare/styled_components/app_logo.dart';
 import 'package:prapare/themes.dart';
-import 'package:prapare/views/settings_dialog.dart';
+import 'package:prapare/views/settings/settings_dialog.dart';
 import 'package:prapare/views/survey/survey_controller.dart';
 import 'package:prapare/views/survey/tabs/home_tab.dart';
 import 'package:prapare/views/survey/tabs/money_tab.dart';
@@ -15,7 +15,7 @@ import 'package:prapare/views/survey/tabs/social_tab.dart';
 class SurveyView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final AppTheme appTheme = Get.find<ThemeController>()
+    final AppTheme appTheme = Get.find<ThemeService>()
         .getAppThemeFromBrightness(context.theme.brightness);
     final SurveyController surveyController = Get.find();
     final tabList = surveyController.tabModel.tabList;

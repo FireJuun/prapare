@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:prapare/controllers/theme_controller.dart';
+import 'package:prapare/controllers/services/theme_service.dart';
 import 'package:prapare/routes/app_pages.dart';
 import 'package:prapare/views/home/home_view.dart';
 
@@ -12,7 +12,7 @@ void main() async {
 
 // Theme uses GetxService so that it isn't closed during app lifecycle
 Future<void> _initServices() async {
-  await Get.putAsync<ThemeController>(() => ThemeController().init());
+  await Get.putAsync<ThemeService>(() => ThemeService().init());
 }
 
 class MyApp extends StatelessWidget {
@@ -21,9 +21,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       home: HomeView(),
       getPages: AppPages.pages,
-      theme: ThemeController.to.lightTheme.themeData,
-      darkTheme: ThemeController.to.darkTheme.themeData,
-      themeMode: ThemeController.to.themeMode,
+      theme: ThemeService.to.lightTheme.themeData,
+      darkTheme: ThemeService.to.darkTheme.themeData,
+      themeMode: ThemeService.to.themeMode,
     );
   }
 }

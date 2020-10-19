@@ -6,8 +6,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 // spec: https://gist.github.com/RodBr/37310335c6639f486bb3c8a628052405
 
-class ThemeController extends GetxService {
-  static ThemeController get to => Get.find();
+class ThemeService extends GetxService {
+  static ThemeService get to => Get.find();
 
   SharedPreferences prefs;
 
@@ -47,7 +47,7 @@ class ThemeController extends GetxService {
     return (b == Brightness.dark) ? _darkTheme : _lightTheme;
   }
 
-  Future<ThemeController> init() async {
+  Future<ThemeService> init() async {
     await getThemeModeFromPreferences();
     return this;
   }
