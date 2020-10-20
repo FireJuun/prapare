@@ -5,7 +5,6 @@ import 'package:prapare/strings.dart';
 import 'package:prapare/styled_components/app_logo.dart';
 import 'package:prapare/styled_components/styled_button_large.dart';
 import 'package:prapare/views/settings/settings_dialog.dart';
-import 'package:prapare/views/survey/survey_view.dart';
 
 class HomeView extends StatelessWidget {
   @override
