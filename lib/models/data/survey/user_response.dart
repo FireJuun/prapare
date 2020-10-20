@@ -1,5 +1,5 @@
 /// represents the class that is passed back from the user
-class Response {
+class UserResponse {
   /// specifies the survey
   String surveyCode;
 
@@ -9,7 +9,7 @@ class Response {
   /// specifies the answer
   String answerCode;
 
-  Response({
+  UserResponse({
     this.surveyCode,
     this.questionCode,
     this.answerCode,

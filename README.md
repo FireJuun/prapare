@@ -54,6 +54,41 @@ To differentiate between FHIR and our local data model, we have employed the ter
 - When an item is specifically related to FHIR and it's formatting, the term Questionnaire is used, along with the formatting for that FHIR resource
 - When it is part of the local model (including locally stored surveys/questionnaires) the term survey is used 
 
+## To Use the Questionnaire Package
+You would create a new object:
+```
+var questionnaire = FhirQuestionnaire();
+```
+Load the survey (currently hardcoded into the app, but will soon have ability to download from url)
+```
+questionnaire.loadAndCreateSurvey();
+```
+Anytime that a user has answered questions that you would like to keep track of, you can pass them back like this:
+```
+final responses = [
+  UserResponse(
+      surveyCode: '/93043-8',
+      questionCode: '/93043-8/56051-6',
+      answerCode: 'LA33-6'),
+  UserResponse(
+      surveyCode: '/93043-8',
+      questionCode: '/93043-8/32624-9',
+      answerCode: 'LA14042-8'),
+];
+
+questionnaire.getUserResponses(responses);
+```
+This can be done multiple times or once, the object will simply keep it as a list until you are finished. Then, when you're ready to create the final response, call the method:
+```
+questionnaire.createResponse();
+```
+Now you have a QuestionnaireResponse item that you can do with as you will. To print for instance:
+```
+print(questionnaire.response.toJson());
+```
+
+
+
 ## Style Guide
 
 Follow the [Dart style guide].

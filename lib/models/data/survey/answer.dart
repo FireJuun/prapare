@@ -4,6 +4,7 @@ import 'package:fhir/r4.dart';
 class Answer {
   Answer({this.code, this.text});
 
+  /// creates an answer object from the FHIR QuestionnaireAnswerOption
   Answer.fromAnswerOption(QuestionnaireAnswerOption answer) {
     code = answer?.valueCoding?.code?.toString();
     text = answer?.valueCoding?.display?.toString();
