@@ -1,8 +1,8 @@
 import 'package:fhir/r4.dart';
+import 'package:prapare/_internal/constants/prapare_survey.dart';
 import 'package:prapare/models/data/survey/question.dart';
 import 'package:prapare/models/data/survey/user_response.dart';
 import 'package:prapare/models/data/survey/survey.dart';
-import 'package:prapare/surveys/prapare_survey.dart';
 
 class FhirQuestionnaire {
   FhirQuestionnaire({
