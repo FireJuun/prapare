@@ -5,22 +5,53 @@ import 'package:flutter/cupertino.dart';
 // Colors are combined in varying ways to set the themes below
 class _AppColors {
   static const Color greenSurface = Color(0xFFDAE7DB);
+  //this is the pale faded green color of the background of the survey in light theme
+  static const Color greenSurfaceDark = Color(0xFF202021);
   static const Color green = Color(0xFF689E80);
-  static const Color greenDark = Color(0xFF338256);
+  //this is the medium green color used for the PRAPARE banner and the button on the home screen
+  static const Color greenDark = Color(0xFF32494e);
+  //in contrast, this is the color used just for the button shadow on the home screen, NOT for the PRAPARE banner
+//todo figure out why "green" is the color for both the button shadow
+//on the home view as well as the banner color behind the PRAPARE logo
+//on the survey views, but greenDark is ONLY used for the button, not the banner
   static const Color orange = Color(0xFFE1994C);
-  static const Color orangeDark = Color(0xFFC76D0D);
+  //this is the orange color only used for the surface of the "New Survey" button on the home screen
+  static const Color orangeDark = Color(0xFFd1893C);
+  //this is the orange color only used for the surface of the "New Survey" button on the home screen in dark mode
   static const Color orangeRed = Color(0xFFCA542B);
-  static const Color red = Color(0xFFFF0C3E);
-  static const Color redDark = Color(0xFF5A1A12);
-  static const Color blueDark = Color(0xFF002F4E);
+  //this is the orange (slightly red) color in the light mode "Personal Characteristics" banner
+  static const Color orangeRedDark = Color(0xFF250505);
+  //this is the dark mode "personal characteristics" banner - 773422
+  static const Color red = Color(0xff621c1c);
+  //this is the light mode "money and resources" banner
+  static const Color redDark = Color(0x44731c1c);
+  //this is the dark mode "money and resources" banner
+  static const Color blue = Color(0xFF567599);
+  //this is the light mode "family and home" banner color
+  static const Color blueDark = Color(0xFF050525);
+  //this is the dark mode "family and home" banner - FF002F4E
   static const Color blueGreen = Color(0xFF005A6C);
+  //this is the light mode "social and emotional health" banner
+  static const Color blueGreenDark = Color(0x33006274);
+  //this is the dark mode "social and emotional health" banner
   static const Color greySurface = Color(0xFFE4E4E3);
-  static const Color grey = Color(0xFFB5B5B5);
-  static const Color greyDark = Color(0xFF636463);
-  static const Color blackSurface = Color(0xFF252525);
-  static const Color blackBackground = Color(0xFF181818);
-  static const Color textDark = Colors.black;
-  static const Color textLight = Colors.white;
+  //this is the light mode color used for the home view background and the settings menu background
+  static const Color greySurfaceDark = Color(0xff484847);
+  //not currently being used
+  static const Color grey = Color(0xFF636463);
+  //this is the light mode "optional measures" banner
+  static const Color greyDark = Color(0x55636463);
+  //this is the dark AND light mode "optional measures" banner
+  static const Color blackSurface = Color(0xff050505);
+  //this is the dark mode "PRAPARE" banner color - 052505
+  static const Color blackSurfaceDark = Color(0xFFE4E4E3);
+  //not currently being used
+  static const Color blackBackground = Color(0xff181818);
+  //this is the dark mode color used for the home view background and the settings menu
+  static const Color textDark = Colors.white;
+  //this is the text color for the dark mode banners (personal characteristics, family and home, etc)
+  static const Color textLight = Color(0xFFf7f7f7);
+  //this is the text color for the light mode banners (personal characteristics, family and home, etc)
 }
 
 TextTheme _buildTextTheme() {
@@ -94,10 +125,10 @@ class AppTheme {
           ..secondary = _AppColors.orange
           ..secondaryVariant = _AppColors.orangeDark
           ..heading1 = _AppColors.orangeRed
-          ..heading2 = _AppColors.blueDark
-          ..heading3 = _AppColors.redDark
+          ..heading2 = _AppColors.blue
+          ..heading3 = _AppColors.red
           ..heading4 = _AppColors.blueGreen
-          ..heading5 = _AppColors.greyDark
+          ..heading5 = _AppColors.grey
           ..grey = _AppColors.grey
           ..error = Colors.red.shade900
           ..focus = _AppColors.grey;
@@ -105,26 +136,26 @@ class AppTheme {
       case ThemeType.Prapare_Dark:
         return AppTheme(isDark: true)
           ..bg1 = _AppColors.blackBackground
-          ..bg2 = _AppColors.blueGreen
+          ..bg2 = _AppColors.greenSurfaceDark
           ..surface = _AppColors.blackSurface
           ..primary = _AppColors.greenDark
           ..primaryVariant = _AppColors.green
           ..secondary = _AppColors.orangeDark
           ..secondaryVariant = _AppColors.orange
-          ..heading1 = _AppColors.orangeRed
+          ..heading1 = _AppColors.orangeRedDark
           ..heading2 = _AppColors.blueDark
           ..heading3 = _AppColors.redDark
-          ..heading4 = _AppColors.blueGreen
+          ..heading4 = _AppColors.blueGreenDark
           ..heading5 = _AppColors.greyDark
-          ..grey = _AppColors.grey
-          ..error = _AppColors.red
-          ..focus = _AppColors.grey;
+          ..grey = _AppColors.greyDark
+          ..error = _AppColors.redDark
+          ..focus = _AppColors.greyDark;
     }
     return AppTheme.fromType(defaultTheme);
   }
 
   ThemeData get themeData {
-    var t = ThemeData.from(
+    var themeData = ThemeData.from(
       textTheme: _buildTextTheme(),
       colorScheme: ColorScheme(
           brightness: isDark ? Brightness.dark : Brightness.light,
@@ -141,6 +172,7 @@ class AppTheme {
           onSecondary: accentTxt,
           error: error ?? Colors.red.shade400),
     );
+    var t = themeData;
     return t.copyWith(
         typography: Typography.material2018(),
         accentTextTheme: _buildTextTheme().apply(bodyColor: accentTxt),

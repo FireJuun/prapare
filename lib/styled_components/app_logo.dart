@@ -18,7 +18,12 @@ class AppLogoNoTagline extends StatelessWidget {
     return SizedBox(
       height: 48,
       child: Image.asset(
-        'assets/images/PRAPARE-Logo-no-tagline.png',
+        Theme.of(context).brightness == Brightness.light
+            ? 'assets/images/PRAPARE-Logo-no-tagline.png'
+            : 'assets/images/PRAPARE-Logo-no-tagline-dark.png',
+        // this changes the PRAPARE logo on the survey view depending
+        // on the theme (the original logo gets washed out in dark theme)
+        // the colors in the new dark theme logo could use improvement
       ),
     );
   }
