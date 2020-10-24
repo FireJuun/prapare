@@ -34,7 +34,8 @@ class PersonalCharacteristicsController extends GetxController {
       {@required Survey survey, @required int qIndex, @required int ansIndex}) {
     UserResponse userResponse =
         findUserResponseBySurvey(survey: survey, qIndex: qIndex).value;
-    userResponse.answerCode = survey.questions[qIndex].answers[ansIndex].code;
+    userResponse.answerCode =
+        survey.questions[qIndex].answers.elementAt(ansIndex).code;
     update();
   }
 
@@ -54,15 +55,13 @@ class PersonalCharacteristicsController extends GetxController {
   Survey get personalSurvey => this._personalSurvey;
   set personalSurvey(Survey value) => this._personalSurvey;
 
-  RxSet<UserResponse> _personalResponses = {
-    UserResponse(surveyCode: 'personal', questionCode: 'q1', answerCode: '')
-  }.obs;
+  RxSet<UserResponse> _personalResponses = <UserResponse>{}.obs;
   RxSet<UserResponse> get personalResponses => this._personalResponses;
   set personalResponses(Set<UserResponse> value) => this._personalResponses;
 }
 
-List<Answer> _createBasicYesNoList() => [
+Set<Answer> _createBasicYesNoList() => {
       Answer(code: 'Y', text: 'Yes'),
       Answer(code: 'N', text: 'No'),
       Answer(code: 'X', text: 'I choose not to answer this question'),
-    ];
+    };

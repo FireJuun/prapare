@@ -18,8 +18,8 @@ class PersonalCharacteristicsSurveyQuestions extends StatelessWidget {
             children: <Widget>[
               Text(survey.questions[0].text),
               RadioListTile<String>(
-                  title: Text(survey.questions[0].answers[0].text),
-                  value: survey.questions[0].answers[0].code,
+                  title: Text(survey.questions[0].answers.elementAt(0).text),
+                  value: survey.questions[0].answers.elementAt(0).code,
                   groupValue: controller
                       .findUserResponseBySurvey(survey: survey, qIndex: 0)
                       .value
@@ -27,8 +27,8 @@ class PersonalCharacteristicsSurveyQuestions extends StatelessWidget {
                   onChanged: (String value) => controller.setUserAnswerBySurvey(
                       survey: survey, qIndex: 0, ansIndex: 0)),
               RadioListTile<String>(
-                title: Text(survey.questions[0].answers[1].text),
-                value: survey.questions[0].answers[1].code,
+                title: Text(survey.questions[0].answers.elementAt(1).text),
+                value: survey.questions[0].answers.elementAt(1).code,
                 groupValue: controller
                     .findUserResponseBySurvey(survey: survey, qIndex: 0)
                     .value
@@ -37,8 +37,8 @@ class PersonalCharacteristicsSurveyQuestions extends StatelessWidget {
                     survey: survey, qIndex: 0, ansIndex: 1),
               ),
               RadioListTile<String>(
-                title: Text(survey.questions[0].answers[2].text),
-                value: survey.questions[0].answers[2].code,
+                title: Text(survey.questions[0].answers.elementAt(2).text),
+                value: survey.questions[0].answers.elementAt(2).code,
                 groupValue: controller
                     .findUserResponseBySurvey(survey: survey, qIndex: 0)
                     .value
