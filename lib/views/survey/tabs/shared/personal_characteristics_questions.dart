@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:prapare/strings.dart';
-import 'package:prapare/themes.dart';
-&import 'package:prapare/views/survey/tabs/shared/personal_characteristics_controller.dart';
+import 'package:prapare/views/survey/tabs/shared/personal_characteristics_controller.dart';
 import 'package:prapare/views/survey/tabs/shared/personal_characteristics_data.dart';
 
 //todos: 1) make the selections persistent (currently changes revert back to defaults when you switch between tabs - whyyyy??) and 2) make it write to a spreadsheet (for now), and ultimately write to a FHIR database
 
 class PersonalCharacteristicsSurveyQuestions extends StatelessWidget {
   Widget build(BuildContext context) {
-    TextTheme textTheme = context.textTheme;
     return GetX<PersonalCharacteristicsController>(
         init: Get.put(PersonalCharacteristicsController()),
         builder: (controller) {

@@ -19,7 +19,6 @@ class SurveyView extends StatelessWidget {
   Widget build(BuildContext context) {
     final AppTheme appTheme = Get.find<ThemeService>()
         .getAppThemeFromBrightness(context.theme.brightness);
-    final TextTheme textTheme = context.textTheme;
 
     return GetX<SurveyController>(
       builder: (surveyController) {
