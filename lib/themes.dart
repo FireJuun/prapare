@@ -155,7 +155,7 @@ class AppTheme {
   }
 
   ThemeData get themeData {
-    var themeData = ThemeData.from(
+    var t = ThemeData.from(
       textTheme: _buildTextTheme(),
       colorScheme: ColorScheme(
           brightness: isDark ? Brightness.dark : Brightness.light,
@@ -172,7 +172,6 @@ class AppTheme {
           onSecondary: accentTxt,
           error: error ?? Colors.red.shade400),
     );
-    var t = themeData;
     return t.copyWith(
         typography: Typography.material2018(),
         accentTextTheme: _buildTextTheme().apply(bodyColor: accentTxt),
