@@ -10,10 +10,6 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Color(0xFFE4E4E3),
-      // appBar: AppBar(
-      //   title: Text('PRAPARE'),
-      // ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 48.0),
