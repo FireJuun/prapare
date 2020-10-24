@@ -24,6 +24,7 @@ class PersonalCharacteristicsSurveyQuestions extends StatelessWidget {
                       .findUserResponseBySurvey(survey: survey, qIndex: 0)
                       .value
                       .answerCode,
+                  toggleable: true,
                   onChanged: (String value) => controller.setUserAnswerBySurvey(
                       survey: survey, qIndex: 0, ansIndex: 0)),
               RadioListTile<String>(
@@ -33,12 +34,14 @@ class PersonalCharacteristicsSurveyQuestions extends StatelessWidget {
                     .findUserResponseBySurvey(survey: survey, qIndex: 0)
                     .value
                     .answerCode,
+                toggleable: true,
                 onChanged: (String value) => controller.setUserAnswerBySurvey(
                     survey: survey, qIndex: 0, ansIndex: 1),
               ),
               RadioListTile<String>(
                 title: Text(survey.questions[0].answers.elementAt(2).text),
                 value: survey.questions[0].answers.elementAt(2).code,
+                toggleable: true,
                 groupValue: controller
                     .findUserResponseBySurvey(survey: survey, qIndex: 0)
                     .value

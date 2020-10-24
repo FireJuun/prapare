@@ -34,8 +34,12 @@ class PersonalCharacteristicsController extends GetxController {
       {@required Survey survey, @required int qIndex, @required int ansIndex}) {
     UserResponse userResponse =
         findUserResponseBySurvey(survey: survey, qIndex: qIndex).value;
-    userResponse.answerCode =
+    String surveyAnswerCode =
         survey.questions[qIndex].answers.elementAt(ansIndex).code;
+    // if they're already equal, toggle answer off to ''
+    userResponse.answerCode =
+        (userResponse.answerCode == surveyAnswerCode) ? '' : surveyAnswerCode;
+
     update();
   }
 
