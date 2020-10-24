@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class PersonalCharacteristicsData {
-  Rx<Hispanic> hispanic;
-  Rx<Race> race;
-  Rx<FarmWork> farmWork;
-  Rx<ArmedForces> armedForces;
-  Rx<Language> language;
+  Rx<Hispanic> hispanic = Hispanic.yes.obs;
+  Rx<Race> race = Race.americanindian.obs;
+  Rx<FarmWork> farmwork = FarmWork.yes.obs;
+  Rx<ArmedForces> armedForces = ArmedForces.yes.obs;
+  Rx<Language> language = Language.english.obs;
 
   PersonalCharacteristicsData({
-    this.hispanic,
-    this.race,
-    this.farmWork,
-    this.armedForces,
-    this.language,
+    hispanic,
+    race,
+    farmwork,
+    armedForces,
+    language,
   });
 }
 
@@ -23,11 +23,11 @@ enum Race {
   asian,
   black,
   nativehawaiian,
-  pacificislander,
+  pacificIslander,
   white,
   other,
-  choosenottoanswer
+  chooseNotToAnswer
 }
-enum FarmWork { yes, no, choosenottoanswer }
-enum ArmedForces { yes, no, choosenottoanswer }
-enum Language { english, other, choosenottoanswer }
+enum FarmWork { yes, no, chooseNotToAnswer }
+enum ArmedForces { yes, no, chooseNotToAnswer }
+enum Language { english, other, chooseNotToAnswer }

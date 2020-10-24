@@ -76,7 +76,7 @@ class PersonalCharacteristicsSurveyQuestions extends StatelessWidget {
                   }),
               RadioListTile<Race>(
                   title: const Text('Pacific Islander'),
-                  value: Race.pacificislander,
+                  value: Race.pacificIslander,
                   groupValue: data.race.value,
                   onChanged: (Race value) {
                     data.race.value = value;
@@ -107,7 +107,7 @@ class PersonalCharacteristicsSurveyQuestions extends StatelessWidget {
 
               RadioListTile<Race>(
                   title: const Text('I choose not to answer this question'),
-                  value: Race.choosenottoanswer,
+                  value: Race.chooseNotToAnswer,
                   groupValue: data.race.value,
                   onChanged: (Race value) {
                     data.race.value = value;
@@ -118,25 +118,25 @@ class PersonalCharacteristicsSurveyQuestions extends StatelessWidget {
               RadioListTile<FarmWork>(
                 title: const Text('Yes'),
                 value: FarmWork.yes,
-                groupValue: data.farmWork.value,
+                groupValue: data.farmwork.value,
                 onChanged: (FarmWork value) {
-                  data.farmWork.value = value;
+                  data.farmwork.value = value;
                 },
               ),
               RadioListTile<FarmWork>(
                 title: const Text('No'),
                 value: FarmWork.no,
-                groupValue: data.farmWork.value,
+                groupValue: data.farmwork.value,
                 onChanged: (FarmWork value) {
-                  data.farmWork.value = value;
+                  data.farmwork.value = value;
                 },
               ),
               RadioListTile<FarmWork>(
                 title: const Text('I choose not to answer this question'),
-                value: FarmWork.choosenottoanswer,
-                groupValue: data.farmWork.value,
+                value: FarmWork.chooseNotToAnswer,
+                groupValue: data.farmwork.value,
                 onChanged: (FarmWork value) {
-                  data.farmWork.value = value;
+                  data.farmwork.value = value;
                 },
               ),
               new Text(
@@ -159,7 +159,7 @@ class PersonalCharacteristicsSurveyQuestions extends StatelessWidget {
               ),
               RadioListTile<ArmedForces>(
                 title: const Text('I choose not to answer this question'),
-                value: ArmedForces.choosenottoanswer,
+                value: ArmedForces.chooseNotToAnswer,
                 groupValue: data.armedForces.value,
                 onChanged: (ArmedForces value) {
                   data.armedForces.value = value;
@@ -190,7 +190,7 @@ class PersonalCharacteristicsSurveyQuestions extends StatelessWidget {
               ),
               RadioListTile<Language>(
                 title: const Text('I choose not to answer this question'),
-                value: Language.choosenottoanswer,
+                value: Language.chooseNotToAnswer,
                 groupValue: data.language.value,
                 onChanged: (Language value) {
                   data.language.value = value;
