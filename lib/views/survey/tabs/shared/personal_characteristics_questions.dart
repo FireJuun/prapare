@@ -7,42 +7,44 @@ import 'package:prapare/views/survey/tabs/shared/personal_characteristics_data.d
 
 class PersonalCharacteristicsSurveyQuestions extends StatelessWidget {
   Widget build(BuildContext context) {
-    return GetX<PersonalCharacteristicsController>(
+    // for now, using GetBuilder instead of GetX so that update() calls in the controller will trigger a redraw of the UI
+    return GetBuilder<PersonalCharacteristicsController>(
         init: Get.put(PersonalCharacteristicsController()),
         builder: (controller) {
           var data = controller.data;
+          var survey = controller.personalSurvey;
+
           return Column(
             children: <Widget>[
-              new Text('1. Are you Hispanic or Latino?\n'),
-              RadioListTile<Hispanic>(
-                title: const Text('Yes'),
-                value: Hispanic.yes,
-                groupValue: data.hispanic.value,
-                onChanged: (Hispanic value) {
-                  data.hispanic.value = value;
-                  print("${data.hispanic.value} value:$value");
-                  controller.update();
-                },
+              Text(survey.questions[0].text),
+              RadioListTile<String>(
+                  title: Text(survey.questions[0].answers[0].text),
+                  value: survey.questions[0].answers[0].code,
+                  groupValue: controller
+                      .findUserResponseBySurvey(survey: survey, qIndex: 0)
+                      .value
+                      .answerCode,
+                  onChanged: (String value) => controller.setUserAnswerBySurvey(
+                      survey: survey, qIndex: 0, ansIndex: 0)),
+              RadioListTile<String>(
+                title: Text(survey.questions[0].answers[1].text),
+                value: survey.questions[0].answers[1].code,
+                groupValue: controller
+                    .findUserResponseBySurvey(survey: survey, qIndex: 0)
+                    .value
+                    .answerCode,
+                onChanged: (String value) => controller.setUserAnswerBySurvey(
+                    survey: survey, qIndex: 0, ansIndex: 1),
               ),
-              RadioListTile<Hispanic>(
-                title: const Text('No'),
-                value: Hispanic.no,
-                groupValue: data.hispanic.value,
-                onChanged: (Hispanic value) {
-                  data.hispanic.value = value;
-                  print("${data.hispanic.value} value:$value");
-                  controller.update();
-                },
-              ),
-              RadioListTile<Hispanic>(
-                title: const Text('I choose not to answer this question'),
-                value: Hispanic.choosenottoanswer,
-                groupValue: data.hispanic.value,
-                onChanged: (Hispanic value) {
-                  data.hispanic.value = value;
-                  print("${data.hispanic.value} value:$value");
-                  controller.update();
-                },
+              RadioListTile<String>(
+                title: Text(survey.questions[0].answers[2].text),
+                value: survey.questions[0].answers[2].code,
+                groupValue: controller
+                    .findUserResponseBySurvey(survey: survey, qIndex: 0)
+                    .value
+                    .answerCode,
+                onChanged: (String value) => controller.setUserAnswerBySurvey(
+                    survey: survey, qIndex: 0, ansIndex: 2),
               ),
               new Text(
                   '\n\n\n2. Which race(s) are you? Check all that apply.\n'),
