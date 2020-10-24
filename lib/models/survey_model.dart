@@ -1,8 +1,12 @@
+import 'package:prapare/_internal/constants/prapare_survey.dart';
 import 'package:prapare/models/data/survey/answer.dart';
 import 'package:prapare/models/data/survey/question.dart';
 import 'package:prapare/models/data/survey/survey.dart';
 
 class SurveyModel {
+  /// A semi-temporary data model, which will be transitioned to harness [prapareSurvey]
+  /// For now, the data points have been created manually, and the codes don't quite correlate yet
+
   Survey get personalSurvey => this._personalSurvey;
   set personalSurvey(Survey value) => this._personalSurvey;
 

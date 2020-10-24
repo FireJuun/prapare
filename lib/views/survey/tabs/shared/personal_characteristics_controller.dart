@@ -4,11 +4,8 @@ import 'package:prapare/models/data/survey/question.dart';
 import 'package:prapare/models/data/survey/survey.dart';
 import 'package:prapare/models/data/survey/user_response.dart';
 import 'package:prapare/models/survey_model.dart';
-import 'package:prapare/views/survey/tabs/shared/personal_characteristics_data.dart';
 
 class PersonalCharacteristicsController extends GetxController {
-  final PersonalCharacteristicsData data = PersonalCharacteristicsData();
-
   final SurveyModel model = SurveyModel();
 
   int findIndexByQuestion(Survey survey, Question question) =>
