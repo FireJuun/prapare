@@ -3,10 +3,10 @@ import 'package:get/get.dart';
 import 'package:prapare/models/data/survey/question.dart';
 import 'package:prapare/models/data/survey/survey.dart';
 import 'package:prapare/models/data/survey/user_response.dart';
-import 'package:prapare/models/survey_model.dart';
+import 'package:prapare/controllers/questionnaire_controller.dart';
 
 class SurveyDetailController extends GetxController {
-  final SurveyModel model = Get.find();
+  final QuestionnaireController data = Get.find();
 
   int findIndexByQuestion(Survey survey, Question question) =>
       survey.questions.indexOf(question);

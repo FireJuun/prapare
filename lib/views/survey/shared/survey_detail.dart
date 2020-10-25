@@ -18,7 +18,7 @@ class SurveyDetail extends StatelessWidget {
       init: Get.put(SurveyDetailController()),
       builder: (controller) {
         final textTheme = context.textTheme;
-        var survey = controller.model.getSurveyFromCode(surveyCode);
+        var survey = controller.data.getSurveyFromCode(surveyCode);
 
         Widget mapQuestion(Question question) {
           // find first value that has this question

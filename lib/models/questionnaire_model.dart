@@ -1,22 +1,13 @@
 import 'package:fhir/r4.dart';
-import 'package:get/state_manager.dart';
 import 'package:prapare/_internal/constants/prapare_survey.dart';
-import 'package:prapare/controllers/services/fhir_questionnaire.dart';
+import 'package:prapare/models/data/fhir_questionnaire.dart';
 import 'package:prapare/models/data/survey/question.dart';
 import 'package:prapare/models/data/survey/survey.dart';
 import 'package:prapare/models/data/survey/user_response.dart';
 
-class SurveyModel extends GetxController {
-  static SurveyModel get to => Get.find();
-
-  /// A semi-temporary data model, which will be transitioned to harness [prapareSurvey]
-  /// For now, the data points have been created manually, and the codes don't quite correlate yet
-
+class QuestionnaireModel {
   FhirQuestionnaire _data = FhirQuestionnaire();
-
-  //todo: implement error handling / orElse
-  Survey getSurveyFromCode(String code) =>
-      _data.surveys.firstWhere((e) => e.code == code, orElse: () => Survey());
+  FhirQuestionnaire get data => this._data;
 
   /// loads the survey (currently saved locally, but could be queried from
   /// elswhere), then creates a list of Surveys from the questionnaire
@@ -133,11 +124,5 @@ class SurveyModel extends GetxController {
           QuestionnaireResponseAnswer(valueCoding: thisAnswer?.valueCoding));
     }
     return responseAnswer;
-  }
-
-  @override
-  void onInit() {
-    loadAndCreateSurvey();
-    super.onInit();
   }
 }
