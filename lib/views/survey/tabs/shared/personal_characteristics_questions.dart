@@ -6,13 +6,19 @@ import 'package:prapare/views/survey/tabs/shared/personal_characteristics_contro
 //todos: 1) make the selections persistent (currently changes revert back to defaults when you switch between tabs - whyyyy??) and 2) make it write to a spreadsheet (for now), and ultimately write to a FHIR database
 
 class PersonalCharacteristicsSurveyQuestions extends StatelessWidget {
+  final String surveyCode;
+
+  const PersonalCharacteristicsSurveyQuestions(
+      {Key key, @required this.surveyCode})
+      : assert(surveyCode != null), super(key: key);
+
   Widget build(BuildContext context) {
     // for now, using GetBuilder instead of GetX so that update() calls in the controller will trigger a redraw of the UI
     return GetBuilder<PersonalCharacteristicsController>(
       init: Get.put(PersonalCharacteristicsController()),
       builder: (controller) {
         final textTheme = context.textTheme;
-        var survey = controller.model.personalSurvey;
+        var survey = controller.model.getSurveyFromCode(surveyCode);
 
         Widget mapQuestion(Question question) {
           // find first value that has this question

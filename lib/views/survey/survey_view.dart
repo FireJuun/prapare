@@ -8,6 +8,7 @@ import 'package:prapare/themes.dart';
 import 'package:prapare/_internal/components/custom.dart' as custom;
 import 'package:prapare/views/survey/survey_controller.dart';
 import 'package:prapare/views/survey/tabs/shared/personal_characteristics_questions.dart';
+import 'package:prapare/views/survey/tabs/shared/toggle_tab_checked.dart';
 
 class SurveyView extends StatelessWidget {
   // final double _maxExpandedTabHeight = 120.0;
@@ -19,8 +20,6 @@ class SurveyView extends StatelessWidget {
         .getAppThemeFromBrightness(context.theme.brightness);
 
     // spec: https://api.flutter.dev/flutter/widgets/NestedScrollView-class.html
-
-    // todo: swap back to getx
     return GetX<SurveyController>(
       builder: (surveyController) {
         final tabList = surveyController.tabModel.tabList;
@@ -103,8 +102,12 @@ class SurveyView extends StatelessWidget {
                                 padding: const EdgeInsets.all(8.0),
                                 sliver: SliverList(
                                   delegate: SliverChildListDelegate(
-                                    // todo: change list based on active tab
-                                    [PersonalCharacteristicsSurveyQuestions()],
+                                    [
+                                      PersonalCharacteristicsSurveyQuestions(
+                                          surveyCode: e.code),
+                                      // todo: implement check for when all data fields have data, then remove [ToggleTabChecked]
+                                      ToggleTabChecked(),
+                                    ],
                                   ),
                                 ),
                               ),

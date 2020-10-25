@@ -10,6 +10,13 @@ class _Strings {
   String TITLE_SOCIAL = "Social and Emotional Health".tr;
   String TITLE_OTHER = "Optional Measures".tr;
 
+  //todo: automate connection of string to PRAPARE survey data
+  String CODE_PERSONAL = 'personal';
+  String CODE_HOME = 'home';
+  String CODE_MONEY = 'money';
+  String CODE_SOCIAL = 'social';
+  String CODE_OTHER = 'other';
+
   String BTN_NEW_SURVEY = "New Survey".tr;
   String BTN_EDIT_SURVEY = "Edit Survey".tr;
   String BTN_SUBMIT_SHARE = "Submit/Share".tr;
