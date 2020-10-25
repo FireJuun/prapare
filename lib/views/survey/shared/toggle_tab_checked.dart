@@ -12,7 +12,6 @@ class ToggleTabChecked extends StatelessWidget {
       () => Checkbox(
         value: obj.isChecked.value,
         onChanged: (value) {
-          //todo: this sometimes checks the wrong tab
           print('tabController: ${controller.tabController.index}');
           print('rxTabIndex: ${controller.rxTabIndex}');
           controller.toggleChecked(obj);

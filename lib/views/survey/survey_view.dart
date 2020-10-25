@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-// hide TextTheme;
-// above "hide" command is necessary to resolve the error "Error: 'TextTheme' is imported from both 'package:flutter/src/material/text_theme.dart' and 'package:prapare/themes.dart'."
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:prapare/controllers/services/theme_service.dart';
