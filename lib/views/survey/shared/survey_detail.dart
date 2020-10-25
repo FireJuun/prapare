@@ -21,14 +21,19 @@ class SurveyDetail extends StatelessWidget {
         var survey = controller.data.getSurveyFromCode(surveyCode);
 
         Widget mapQuestion(Question question) {
-          // find first value that has this question
+          // Unused: find index of question w/in survey
           final int qIndex = controller.findIndexByQuestion(survey, question);
+
+          /// Combine all questions, then get index number
+          /// Note that this assumems each question / survey is unique
+          final int qTotalIndex =
+              controller.data.getTotalIndexFromQuestion(question);
 
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Question title
-              Text('${qIndex + 1}: ${question.text}',
+              Text('${qTotalIndex + 1}: ${question.text}',
                   style: textTheme.headline6, textAlign: TextAlign.start),
 
               // All answers are mapped out using spread operator
