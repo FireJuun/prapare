@@ -1,144 +1,143 @@
+import 'package:fhir/r4.dart';
+import 'package:get/state_manager.dart';
 import 'package:prapare/_internal/constants/prapare_survey.dart';
-import 'package:prapare/models/data/survey/answer.dart';
+import 'package:prapare/controllers/services/fhir_questionnaire.dart';
 import 'package:prapare/models/data/survey/question.dart';
 import 'package:prapare/models/data/survey/survey.dart';
-import 'package:prapare/strings.dart';
+import 'package:prapare/models/data/survey/user_response.dart';
 
-class SurveyModel {
+class SurveyModel extends GetxController {
+  static SurveyModel get to => Get.find();
+
   /// A semi-temporary data model, which will be transitioned to harness [prapareSurvey]
   /// For now, the data points have been created manually, and the codes don't quite correlate yet
 
+  FhirQuestionnaire _data = FhirQuestionnaire();
+
   //todo: implement error handling / orElse
-  Survey getSurveyFromCode(String code) => this
-      ._surveyList
-      .firstWhere((e) => e.code == code, orElse: () => Survey());
+  Survey getSurveyFromCode(String code) =>
+      _data.surveys.firstWhere((e) => e.code == code, orElse: () => Survey());
 
-  List<Survey> _surveyList = [
-    // * PERSONAL SURVEY
-    Survey(
-      title: 'PRAPARE',
-      code: S.CODE_PERSONAL,
-      text: S.TITLE_PERSONAL,
-      questions: [
-        Question(
-          code: 'q1',
-          text: 'Are you Hispanic or Latino?',
-          answers: _createBasicYesNoList(),
-          format: QFormat.radio,
-        ),
-        // todo: implement check_boxes handling
-        Question(
-          code: 'q2',
-          text: 'Which race(s) are you? Check all that apply.',
-          answers: <Answer>{
-            Answer(code: 'AmIndian', text: 'American Indian/Alaskan Native'),
-            Answer(code: 'Asian', text: 'Asian'),
-            Answer(code: 'Black-AA', text: 'Black/African American'),
-            Answer(code: 'Hawaiian', text: 'Native Hawaiian'),
-            Answer(code: 'PacIslander', text: 'Pacific Islander'),
-            Answer(code: 'White', text: 'White'),
-            //todo: include ability for custom data entry
-            Answer(code: 'Other', text: 'Other'),
-            //todo: include radio button that turns off all other answer choices
-            Answer(code: 'NA', text: 'I choose not to answer this question'),
-          },
-          format: QFormat.check_boxes,
-        ),
-        Question(
-          code: 'q3',
-          text:
-              "At any point in the past 2 years, has season or migrant farm work been your or your family's main source of income?",
-          answers: _createBasicYesNoList(),
-          format: QFormat.radio,
-        ),
-        Question(
-          code: 'q4',
-          text:
-              "Have you been discharged from the armed forces of the United States?",
-          answers: _createBasicYesNoList(),
-          format: QFormat.radio,
-        ),
-        Question(
-          code: 'q5',
-          text: "What language are you most comfortable speaking?",
-          answers: <Answer>{
-            Answer(code: 'English', text: 'English'),
-            //todo: include ability for custom data entry
-            Answer(
-                code: 'Other',
-                text: 'Language other than English (please write)'),
-            //todo: include radio button that turns off all other answer choices
-            Answer(code: 'NA', text: 'I choose not to answer this question'),
-          },
-          format: QFormat.radio,
-        ),
-      ],
-    ),
+  /// loads the survey (currently saved locally, but could be queried from
+  /// elswhere), then creates a list of Surveys from the questionnaire
+  void loadAndCreateSurvey() {
+    _data.questionnaire = Questionnaire.fromJson(prapareSurvey);
+    _data.title =
+        _data.questionnaire?.title ?? _data.questionnaire?.name ?? 'New Survey';
+    if (_data.questionnaire != null) {
+      _data.surveys = <Survey>[];
+      for (var item in _data.questionnaire.item) {
+        if (item.type == QuestionnaireItemType.group) {
+          /// creates a "Survey" from each group of questions that should be
+          /// displayed together
+          _surveyFromGroup(item);
+        }
+      }
+    }
+    // return questionnaire;
+  }
 
-    // * HOME SURVEY
-    Survey(
-      title: 'PRAPARE',
-      code: S.CODE_HOME,
-      text: S.TITLE_HOME,
-      questions: [
-        Question(
-          code: 'q6',
-          text: 'Home Questions',
-          answers: _createBasicYesNoList(),
-          format: QFormat.radio,
-        ),
-      ],
-    ),
+  /// creates the survey from the group of questions that should be displayed
+  /// together
+  void _surveyFromGroup(QuestionnaireItem item) {
+    final stillGroup = item.item
+        .indexWhere((subItem) => subItem.type == QuestionnaireItemType.group);
+    if (stillGroup == -1) {
+      Survey newSurvey = Survey(
+        code: item.linkId,
+        title: _data.title,
+        text: item.text,
+        questions: <Question>[],
+      );
+      for (var q in item.item) {
+        /// if the questions are single questions, it creates new question objects
+        if (q.type == QuestionnaireItemType.choice) {
+          newSurvey.questions.add(Question.fromChoiceItem(q));
+        }
+      }
+      _data.surveys.add(newSurvey);
+    } else {
+      /// if the subItem is also a group, then it will recursively call this fxn
+      for (var g in item.item) {
+        _surveyFromGroup(g);
+      }
+    }
+  }
 
-    // * MONEY SURVEY
-    Survey(
-      title: 'PRAPARE',
-      code: S.CODE_MONEY,
-      text: S.TITLE_MONEY,
-      questions: [
-        Question(
-          code: 'q10',
-          text: 'Money Questions',
-          answers: _createBasicYesNoList(),
-          format: QFormat.radio,
-        ),
-      ],
-    ),
+  /// adds userResponses, can do it iterativelly or all at once
+  void getUserResponses(List<UserResponse> newResponses) =>
+      _data.userResponses.addAll(newResponses);
 
-    // * SOCIAL SURVEY
-    Survey(
-      title: 'PRAPARE',
-      code: S.CODE_SOCIAL,
-      text: S.TITLE_SOCIAL,
-      questions: [
-        Question(
-          code: 'q16',
-          text: 'Social Questions',
-          answers: _createBasicYesNoList(),
-          format: QFormat.radio,
-        ),
-      ],
-    ),
+  /// to be run to create the QuestionnaireResponse resource after all questions
+  /// have been answered
+  void createResponse() {
+    _data.response = QuestionnaireResponse(
+      resourceType: 'QuestionnaireResponse',
+      meta: _data.questionnaire.meta,
+      status: QuestionnaireResponseStatus.completed,
+      authored: FhirDateTime(DateTime.now()),
 
-    // * OTHER SURVEY
-    Survey(
-      title: 'PRAPARE',
-      code: S.CODE_OTHER,
-      text: S.TITLE_OTHER,
-      questions: [
-        Question(
-          code: 'q18',
-          text: 'Other Questions',
-          answers: _createBasicYesNoList(),
-          format: QFormat.radio,
-        ),
-      ],
-    ),
-  ];
+      /// uses original questionnaire for formatting purposes
+      item: _getResponse(_data.questionnaire.item),
+    );
+  }
+
+  List<QuestionnaireResponseItem> _getResponse(List<QuestionnaireItem> item) {
+    var response = <QuestionnaireResponseItem>[];
+    for (var subItem in item) {
+      /// iteratively loops through each item in the item list, if it's a choice
+      /// meaning that it's a question, will go ahead and craet the item in the
+      /// list to return
+      if (subItem.type == QuestionnaireItemType.choice) {
+        var responsesForThisItem = _data.userResponses.toList();
+        responsesForThisItem
+            .retainWhere((response) => response.questionCode == subItem.linkId);
+        if (responsesForThisItem.isNotEmpty) {
+          response.add(
+            QuestionnaireResponseItem(
+              linkId: subItem.linkId,
+              text: subItem.text,
+              answer: _getAnswers(
+                subItem,
+                responsesForThisItem,
+              ),
+            ),
+          );
+        }
+
+        /// if it's not a question and is just a group of questions, it passes
+        /// each group to itself
+      } else if (subItem.type == QuestionnaireItemType.group) {
+        response.add(
+          QuestionnaireResponseItem(
+            linkId: subItem.linkId,
+            text: subItem.text,
+            item: _getResponse(subItem.item),
+          ),
+        );
+      }
+    }
+    return response;
+  }
+
+  /// copies over the answers to that specific question using the formatting
+  /// from the original questionnaire
+  List<QuestionnaireResponseAnswer> _getAnswers(
+      QuestionnaireItem item, List<UserResponse> responsesForThisItem) {
+    var responseAnswer = <QuestionnaireResponseAnswer>[];
+    for (var answer in responsesForThisItem) {
+      var thisAnswer = item.answerOption.firstWhere(
+          (option) => option.valueCoding.code == Code(answer.answerCode),
+          orElse: () => null);
+      responseAnswer.add(
+          QuestionnaireResponseAnswer(valueCoding: thisAnswer?.valueCoding));
+    }
+    return responseAnswer;
+  }
+
+  @override
+  void onInit() {
+    loadAndCreateSurvey();
+    super.onInit();
+  }
 }
-
-Set<Answer> _createBasicYesNoList() => {
-      Answer(code: 'Y', text: 'Yes'),
-      Answer(code: 'N', text: 'No'),
-      Answer(code: 'X', text: 'I choose not to answer this question'),
-    };

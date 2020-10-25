@@ -11,11 +11,11 @@ class _Strings {
   String TITLE_OTHER = "Optional Measures".tr;
 
   //todo: automate connection of string to PRAPARE survey data
-  String CODE_PERSONAL = 'personal';
-  String CODE_HOME = 'home';
-  String CODE_MONEY = 'money';
-  String CODE_SOCIAL = 'social';
-  String CODE_OTHER = 'other';
+  String CODE_PERSONAL = "/93043-8";
+  String CODE_HOME = "/93042-0";
+  String CODE_MONEY = "/93041-2";
+  String CODE_SOCIAL = "/93040-4";
+  String CODE_OTHER = "/93039-6";
 
   String BTN_NEW_SURVEY = "New Survey".tr;
   String BTN_EDIT_SURVEY = "Edit Survey".tr;
