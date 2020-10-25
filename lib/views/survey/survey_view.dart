@@ -6,9 +6,9 @@ import 'package:get/get.dart';
 import 'package:prapare/controllers/services/theme_service.dart';
 import 'package:prapare/themes.dart';
 import 'package:prapare/_internal/components/custom.dart' as custom;
+import 'package:prapare/views/survey/shared/survey_detail.dart';
+import 'package:prapare/views/survey/shared/toggle_tab_checked.dart';
 import 'package:prapare/views/survey/survey_controller.dart';
-import 'package:prapare/views/survey/tabs/shared/personal_characteristics_questions.dart';
-import 'package:prapare/views/survey/tabs/shared/toggle_tab_checked.dart';
 
 class SurveyView extends StatelessWidget {
   // final double _maxExpandedTabHeight = 120.0;
@@ -103,8 +103,7 @@ class SurveyView extends StatelessWidget {
                                 sliver: SliverList(
                                   delegate: SliverChildListDelegate(
                                     [
-                                      PersonalCharacteristicsSurveyQuestions(
-                                          surveyCode: e.code),
+                                      SurveyDetail(surveyCode: e.code),
                                       // todo: implement check for when all data fields have data, then remove [ToggleTabChecked]
                                       ToggleTabChecked(),
                                     ],

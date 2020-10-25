@@ -5,7 +5,7 @@ import 'package:prapare/models/data/survey/survey.dart';
 import 'package:prapare/models/data/survey/user_response.dart';
 import 'package:prapare/models/survey_model.dart';
 
-class PersonalCharacteristicsController extends GetxController {
+class SurveyDetailController extends GetxController {
   final SurveyModel model = SurveyModel();
 
   int findIndexByQuestion(Survey survey, Question question) =>

@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/models/data/survey/question.dart';
-import 'package:prapare/views/survey/tabs/shared/personal_characteristics_controller.dart';
+import 'package:prapare/views/survey/shared/survey_detail_controller.dart';
 
 //todos: 1) make the selections persistent (currently changes revert back to defaults when you switch between tabs - whyyyy??) and 2) make it write to a spreadsheet (for now), and ultimately write to a FHIR database
 
-class PersonalCharacteristicsSurveyQuestions extends StatelessWidget {
+class SurveyDetail extends StatelessWidget {
   final String surveyCode;
 
-  const PersonalCharacteristicsSurveyQuestions(
-      {Key key, @required this.surveyCode})
-      : assert(surveyCode != null), super(key: key);
+  const SurveyDetail({Key key, @required this.surveyCode})
+      : assert(surveyCode != null),
+        super(key: key);
 
   Widget build(BuildContext context) {
     // for now, using GetBuilder instead of GetX so that update() calls in the controller will trigger a redraw of the UI
-    return GetBuilder<PersonalCharacteristicsController>(
-      init: Get.put(PersonalCharacteristicsController()),
+    return GetBuilder<SurveyDetailController>(
+      init: Get.put(SurveyDetailController()),
       builder: (controller) {
         final textTheme = context.textTheme;
         var survey = controller.model.getSurveyFromCode(surveyCode);
