@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:prapare/controllers/services/theme_service.dart';
 import 'package:prapare/themes.dart';
 import 'package:prapare/_internal/components/custom.dart' as custom;
+import 'package:prapare/views/settings/settings_dialog.dart';
 import 'package:prapare/views/survey/shared/survey_detail.dart';
 import 'package:prapare/views/survey/shared/toggle_tab_checked.dart';
 import 'package:prapare/views/survey/survey_controller.dart';
@@ -40,6 +41,11 @@ class SurveyView extends StatelessWidget {
                     pinned: true,
                     floating: true,
                     snap: true,
+                    actions: [
+                      IconButton(
+                          icon: Icon(Icons.settings),
+                          onPressed: () => settingsDialog())
+                    ],
                     forceElevated: innerBoxIsScrolled,
                     bottom: PreferredSize(
                       /// Preferred size used to match custom tab heights

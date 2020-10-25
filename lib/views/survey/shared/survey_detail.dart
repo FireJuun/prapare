@@ -3,8 +3,6 @@ import 'package:get/get.dart';
 import 'package:prapare/models/data/survey/question.dart';
 import 'package:prapare/views/survey/shared/survey_detail_controller.dart';
 
-//todos: 1) make the selections persistent (currently changes revert back to defaults when you switch between tabs - whyyyy??) and 2) make it write to a spreadsheet (for now), and ultimately write to a FHIR database
-
 class SurveyDetail extends StatelessWidget {
   final String surveyCode;
 
