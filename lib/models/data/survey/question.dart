@@ -39,7 +39,7 @@ class Question {
     }
 
     /// initialize the answer list, then create each answer in the list
-    answers = <Answer>[];
+    answers = <Answer>{};
     for (var answer in item.answerOption) {
       answers.add(Answer.fromAnswerOption(answer));
     }
@@ -52,7 +52,7 @@ class Question {
   String text;
 
   /// this will be the list of possible answers to the question
-  List<Answer> answers;
+  Set<Answer> answers;
 
   /// this will be the format of the question
   QFormat format;
