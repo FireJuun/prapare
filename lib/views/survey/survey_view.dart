@@ -63,10 +63,12 @@ class SurveyView extends StatelessWidget {
                             (index) => custom.Tab(
                               // using custom TabBar to set height as a workaround
                               // issue: https://github.com/flutter/flutter/issues/13322
-                              icon: SvgPicture.asset(
-                                  surveyController.getTabIconFromIndex(
-                                      index, surveyController.rxTabIndex),
-                                  height: _tabHeight),
+                              icon: Obx(
+                                () => SvgPicture.asset(
+                                    surveyController.getTabIconFromIndex(
+                                        index, surveyController.rxTabIndex),
+                                    height: _tabHeight),
+                              ),
                             ),
                           )
                         ],
