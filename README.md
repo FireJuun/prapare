@@ -4,7 +4,7 @@ A patient-facing Flutter app that allows for entry of Social Determinants of Hea
 
 This app builds directly off of the work pioneered in the [PRAPARE] project, though at this time it is not formally affiliated with PRAPARE.
 
-![Demo](demo.gif)
+<img src="demo.gif" width="250"/>
 
 ## Design
 
