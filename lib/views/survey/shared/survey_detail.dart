@@ -13,7 +13,6 @@ class SurveyDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     // for now, using GetBuilder instead of GetX so that update() calls in the controller will trigger a redraw of the UI
     return GetBuilder<SurveyDetailController>(
-      init: Get.put(SurveyDetailController()),
       builder: (controller) {
         final textTheme = context.textTheme;
         var survey = controller.data.getSurveyFromCode(surveyCode);

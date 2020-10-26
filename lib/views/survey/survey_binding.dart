@@ -1,5 +1,6 @@
 import 'package:get/instance_manager.dart';
 import 'package:prapare/controllers/questionnaire_controller.dart';
+import 'package:prapare/views/survey/shared/survey_detail_controller.dart';
 import 'package:prapare/views/survey/survey_controller.dart';
 
 class SurveyBinding implements Bindings {
@@ -7,5 +8,6 @@ class SurveyBinding implements Bindings {
   void dependencies() {
     Get.put<SurveyController>(SurveyController());
     Get.put<QuestionnaireController>(QuestionnaireController());
+    Get.put<SurveyDetailController>(SurveyDetailController());
   }
 }
