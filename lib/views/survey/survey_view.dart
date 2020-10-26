@@ -25,7 +25,7 @@ class SurveyView extends StatelessWidget {
     return Scaffold(
       backgroundColor: appTheme.bg2,
       body: NestedScrollView(
-        // floatHeaderSlivers: true,
+        floatHeaderSlivers: true,
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           // print('scrolled? $innerBoxIsScrolled');
           // These are the slivers that show up in the "outer" scroll view.
