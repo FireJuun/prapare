@@ -1,130 +1,93 @@
 import 'package:flutter/material.dart';
-// hide TextTheme;
-// above "hide" command is necessary to resolve the error "Error: 'TextTheme' is imported from both 'package:flutter/src/material/text_theme.dart' and 'package:prapare/themes.dart'."
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:prapare/controllers/services/theme_service.dart';
-import 'package:prapare/styled_components/app_logo.dart';
 import 'package:prapare/themes.dart';
+import 'package:prapare/_internal/components/custom.dart' as custom;
 import 'package:prapare/views/settings/settings_dialog.dart';
+import 'package:prapare/views/survey/shared/survey_detail.dart';
+import 'package:prapare/views/survey/shared/survey_header_flexible.dart';
+import 'package:prapare/views/survey/shared/toggle_tab_checked.dart';
 import 'package:prapare/views/survey/survey_controller.dart';
-import 'package:prapare/views/survey/tabs/home_tab.dart';
-import 'package:prapare/views/survey/tabs/money_tab.dart';
-import 'package:prapare/views/survey/tabs/other_tab.dart';
-import 'package:prapare/views/survey/tabs/personal_tab.dart';
-import 'package:prapare/views/survey/tabs/social_tab.dart';
 
 class SurveyView extends StatelessWidget {
+  final double _collapsedHeight = 68.0;
+  final double _expandedHeight = 200.0;
+
   @override
   Widget build(BuildContext context) {
     final AppTheme appTheme = Get.find<ThemeService>()
         .getAppThemeFromBrightness(context.theme.brightness);
-    final TextTheme textTheme = context.textTheme;
     final SurveyController surveyController = Get.find();
     final tabList = surveyController.tabModel.tabList;
 
+    // spec: https://api.flutter.dev/flutter/widgets/NestedScrollView-class.html
     return Scaffold(
       backgroundColor: appTheme.bg2,
-      body: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            title: AppLogoNoTagline(),
-            snap: true,
-            floating: true,
-            pinned: true,
-            actions: [
-              IconButton(
-                  icon: Icon(Icons.settings), onPressed: () => settingsDialog())
-            ],
-            bottom: TabBar(
-              controller: surveyController.tabController,
-              unselectedLabelColor: appTheme.grey,
-              labelColor: Colors.black,
-              tabs: [
-                /// spread operator used for more concise code
-                /// obx and rxTabIndex used to trigger redraw on data change
-                /// function passes index of tabList, which is used by
-                /// the controller to get the same tabList item
-                ...List.generate(
-                  tabList.length,
-                  (index) => Obx(
-                    () => Tab(
-                      icon: SvgPicture.asset(
-                          surveyController.getTabIconFromIndex(
-                              index, surveyController.rxTabIndex)),
-                    ),
-                  ),
-                )
-              ],
+      body: NestedScrollView(
+        floatHeaderSlivers: true,
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          // print('scrolled? $innerBoxIsScrolled');
+          // These are the slivers that show up in the "outer" scroll view.
+          return <Widget>[
+            SliverOverlapAbsorber(
+              handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+              sliver: SliverAppBar(
+                excludeHeaderSemantics: true,
+                forceElevated: innerBoxIsScrolled,
+                pinned: true,
+                floating: true,
+                snap: true,
+                actions: [
+                  IconButton(
+                      icon: Icon(Icons.settings),
+                      onPressed: () => settingsDialog())
+                ],
+                expandedHeight: _expandedHeight,
+                collapsedHeight: _collapsedHeight,
+                flexibleSpace: SurveyHeaderFlexible(),
+              ),
             ),
-          ),
-          SliverPersistentHeader(
-            pinned: true,
-            delegate: _SliverAppBarDelegate(
-                child: PreferredSize(
-              preferredSize: Size.fromHeight(80.0),
-              child: SizedBox(
-                /// This box also persists under the SliverAppBar widget
-                /// Using Align and Padding to get around that,
-                /// though there's probably a more elegant way
-                height: 100.0,
-                width: double.infinity,
-                child: Obx(
-                  () => Container(
-                    color: surveyController.getTabBackgroundColorFromIndex(
-                        surveyController.rxTabIndex, appTheme),
-                    child: Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Padding(
-                          padding: const EdgeInsets.only(bottom: 16.0),
-                          child: Text(
-                            tabList[surveyController.rxTabIndex].title,
-                            style: context.theme.accentTextTheme.headline5,
-                            textAlign: TextAlign.center,
+          ];
+        },
+        body: TabBarView(
+          controller: surveyController.tabController,
+          children: tabList
+              .map(
+                (e) => SafeArea(
+                  top: false,
+                  bottom: false,
+                  child: Builder(
+                    builder: (BuildContext context) {
+                      return CustomScrollView(
+                        key: PageStorageKey<String>(e.id.toString()),
+                        slivers: <Widget>[
+                          SliverOverlapInjector(
+                            handle:
+                                NestedScrollView.sliverOverlapAbsorberHandleFor(
+                                    context),
                           ),
-                        )),
+                          SliverPadding(
+                            padding: const EdgeInsets.all(8.0),
+                            sliver: SliverList(
+                              delegate: SliverChildListDelegate(
+                                [
+                                  SurveyDetail(surveyCode: e.code),
+                                  // todo: implement check for when all data fields have data, then remove [ToggleTabChecked]
+                                  ToggleTabChecked(),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      );
+                    },
                   ),
                 ),
-              ),
-            )),
-          ),
-          SliverFillRemaining(
-            child: TabBarView(
-              controller: surveyController.tabController,
-              children: [
-                PersonalTab(),
-                HomeTab(),
-                MoneyTab(),
-                SocialTab(),
-                OtherTab(),
-              ],
-            ),
-          )
-        ],
+              )
+              .toList(),
+        ),
       ),
     );
-  }
-}
-
-class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
-  final PreferredSize child;
-
-  _SliverAppBarDelegate({this.child});
-
-  @override
-  Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return child;
-  }
-
-  @override
-  double get maxExtent => child.preferredSize.height;
-
-  @override
-  double get minExtent => child.preferredSize.height;
-
-  @override
-  bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {
-    return true;
   }
 }

@@ -4,6 +4,8 @@ A patient-facing Flutter app that allows for entry of Social Determinants of Hea
 
 This app builds directly off of the work pioneered in the [PRAPARE] project, though at this time it is not formally affiliated with PRAPARE.
 
+<img align="right" src="demo.gif" width="250"/>
+
 ## Design
 
 A basic [prototype] and relevant [wireframes] were created in Figma prior to app creation.
@@ -24,7 +26,7 @@ Our take on MVC+S is as follows:
 
 The following is the folder structure under the `/lib` folder:
 
-- `/_internal` - _custom components/variations of existing Flutter widgets, utils, and the like_
+- `/_internal` - _custom components/variations of existing Flutter widgets, utils, constants, and the like_
 - `/controllers` - _the controllers typically used to manage state and/or perform a function_
   - `/commands` - _performs a specific task (login, submit, edit) by the user_
   - `/services` - _connects the app to outside world (e.g. REST, http, file storage)_

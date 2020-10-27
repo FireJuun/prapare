@@ -1,19 +1,13 @@
 import 'package:get/instance_manager.dart';
 import 'package:prapare/controllers/questionnaire_controller.dart';
-import 'package:prapare/controllers/services/fhir_service.dart';
-//import 'package:prapare/controllers/services/theme_service.dart'; commenting this out to try to get my changes to darkmode to display
-import 'package:prapare/themes.dart';
-import 'package:prapare/models/fhir_model.dart';
-import 'package:http/http.dart' as http;
+import 'package:prapare/views/survey/shared/survey_detail_controller.dart';
 import 'package:prapare/views/survey/survey_controller.dart';
 
 class SurveyBinding implements Bindings {
-  final FhirModel model =
-      FhirModel(apiClient: FhirService(httpClient: http.Client()));
-
   @override
   void dependencies() {
-    Get.put<QuestionnaireController>(QuestionnaireController(model: model));
     Get.put<SurveyController>(SurveyController());
+    Get.put<QuestionnaireController>(QuestionnaireController());
+    Get.put<SurveyDetailController>(SurveyDetailController());
   }
 }

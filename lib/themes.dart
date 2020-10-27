@@ -20,19 +20,19 @@ class _AppColors {
   //this is the orange color only used for the surface of the "New Survey" button on the home screen in dark mode
   static const Color orangeRed = Color(0xFFCA542B);
   //this is the orange (slightly red) color in the light mode "Personal Characteristics" banner
-  static const Color orangeRedDark = Color(0xFF250505);
+  static const Color orangeRedDarkMode = Color(0xFFB16C54);
   //this is the dark mode "personal characteristics" banner - 773422
   static const Color red = Color(0xff621c1c);
   //this is the light mode "money and resources" banner
-  static const Color redDark = Color(0x44731c1c);
+  static const Color redDarkMode = Color(0xFF984F46);
   //this is the dark mode "money and resources" banner
   static const Color blue = Color(0xFF567599);
   //this is the light mode "family and home" banner color
-  static const Color blueDark = Color(0xFF050525);
+  static const Color blueDarkMode = Color(0xFF5087AC);
   //this is the dark mode "family and home" banner - FF002F4E
   static const Color blueGreen = Color(0xFF005A6C);
   //this is the light mode "social and emotional health" banner
-  static const Color blueGreenDark = Color(0x33006274);
+  static const Color blueGreenDarkMode = Color(0xFF277787);
   //this is the dark mode "social and emotional health" banner
   static const Color greySurface = Color(0xFFE4E4E3);
   //this is the light mode color used for the home view background and the settings menu background
@@ -40,8 +40,8 @@ class _AppColors {
   //not currently being used
   static const Color grey = Color(0xFF636463);
   //this is the light mode "optional measures" banner
-  static const Color greyDark = Color(0x55636463);
-  //this is the dark AND light mode "optional measures" banner
+  static const Color greyDarkMode = Color(0xFF868686);
+  //this is the dark mode "optional measures" banner
   static const Color blackSurface = Color(0xff050505);
   //this is the dark mode "PRAPARE" banner color - 052505
   static const Color blackSurfaceDark = Color(0xFFE4E4E3);
@@ -60,7 +60,7 @@ TextTheme _buildTextTheme() {
     headline2: _style(60.0, FontWeight.bold),
     headline3: _style(48.0, FontWeight.normal),
     headline4: _style(36.0, FontWeight.bold),
-    headline5: _style(32.0, FontWeight.normal),
+    headline5: _style(30.0, FontWeight.normal),
     headline6: _style(20.0, FontWeight.w500),
     bodyText1: _style(18.0, FontWeight.normal),
     bodyText2: _style(14.0, FontWeight.normal),
@@ -142,14 +142,14 @@ class AppTheme {
           ..primaryVariant = _AppColors.green
           ..secondary = _AppColors.orangeDark
           ..secondaryVariant = _AppColors.orange
-          ..heading1 = _AppColors.orangeRedDark
-          ..heading2 = _AppColors.blueDark
-          ..heading3 = _AppColors.redDark
-          ..heading4 = _AppColors.blueGreenDark
-          ..heading5 = _AppColors.greyDark
-          ..grey = _AppColors.greyDark
-          ..error = _AppColors.redDark
-          ..focus = _AppColors.greyDark;
+          ..heading1 = _AppColors.orangeRedDarkMode
+          ..heading2 = _AppColors.blueDarkMode
+          ..heading3 = _AppColors.redDarkMode
+          ..heading4 = _AppColors.blueGreenDarkMode
+          ..heading5 = _AppColors.greyDarkMode
+          ..grey = _AppColors.grey
+          ..error = _AppColors.redDarkMode
+          ..focus = _AppColors.grey;
     }
     return AppTheme.fromType(defaultTheme);
   }
