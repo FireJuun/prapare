@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/routes/routes.dart';
@@ -19,7 +21,10 @@ class HomeView extends StatelessWidget {
               StyledButtonLarge(
                   title: S.BTN_NEW_SURVEY,
                   onPressed: () => Get.toNamed(Routes.SURVEY)),
-              StyledButtonLarge(title: S.BTN_EDIT_SURVEY),
+              StyledButtonLarge(
+                title: S.BTN_EDIT_SURVEY,
+                onPressed: () => print(Platform.localeName),
+              ),
               StyledButtonLarge(title: S.BTN_SUBMIT_SHARE),
               Align(
                   alignment: FractionalOffset(0.8, 0),
