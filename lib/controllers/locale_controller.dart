@@ -15,11 +15,11 @@ class LocaleController extends GetxController {
 
   String get currentLanguage => language.value;
 
-  // @override
-  // void onReady() async {
-  //   setInitialLocalLanguage();
-  //   super.onInit();
-  // }
+  @override
+  void onReady() async {
+    setInitialLocalLanguage();
+    super.onInit();
+  }
 
   Future<LocaleController> init() async {
     await setInitialLocalLanguage();

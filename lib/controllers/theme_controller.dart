@@ -17,9 +17,10 @@ class ThemeController extends GetxController {
   ThemeMode get themeMode => _themeMode;
   String get currentTheme => themeString.value;
 
-  Future<ThemeController> init() async {
+  @override
+  void onReady() async {
     await getThemeModeFromStore();
-    return this;
+    super.onInit();
   }
 
   Future<void> setThemeMode(ThemeMode value) async {
