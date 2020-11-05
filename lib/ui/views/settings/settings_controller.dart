@@ -22,22 +22,22 @@ class SettingsController extends GetxController {
 
   // _rxLocale necessary for dynamic loading of locale checkbox
   // defaults to system on first load, then changes based on preferences
-  Rx<Locale> _rxLocale;
-  get rxLocale => this._rxLocale.value;
-  set rxLocale(value) => this._rxLocale.value = value;
+  // Rx<Locale> _rxLocale;
+  // get rxLocale => this._rxLocale.value;
+  // set rxLocale(value) => this._rxLocale.value = value;
 
-  Future<void> setLocale(Locale obj) async {
-    await _localeService.setLocale(obj);
-    _rxLocale.value = obj;
-    // Get.forceAppUpdate();
-    update();
-    // setThemeMode(_rxThemeMode.value);
-  }
+  // Future<void> setLocale(Locale obj) async {
+  //   await _localeService.setLocale(obj);
+  //   _rxLocale.value = obj;
+  //   // Get.forceAppUpdate();
+  //   update();
+  //   // setThemeMode(_rxThemeMode.value);
+  // }
 
   @override
   void onInit() {
     _rxThemeMode = _themeService.themeMode.obs;
-    _rxLocale = _localeService.activeLocale.obs;
+    // _rxLocale = _localeService.activeLocale.obs;
     super.onInit();
   }
 }

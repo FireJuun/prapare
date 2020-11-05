@@ -1,54 +1,73 @@
-import 'dart:io';
+import 'dart:ui' as ui;
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:prapare/_internal/utils/localization/available_languages.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:prapare/localization.dart';
+import 'package:prapare/models/menu_options_model.dart';
 
-/// spec: https://gist.github.com/RodBr/37310335c6639f486bb3c8a628052405
-/// Like Theme, uses SharedPreferences to set language
-
-class LocaleService extends GetxService {
+// spec: https://github.com/delay/flutter_starter
+class LocaleService extends GetxController {
   static LocaleService get to => Get.find();
 
-  SharedPreferences prefs;
+  final language = "".obs;
+  final store = GetStorage();
 
-  // todo: test different locales, handle optional country codes
-  Locale _activeLocale;
-  Locale get activeLocale => this._activeLocale;
-  set activeLocale(value) => this._activeLocale = value;
+  String get currentLanguage => language.value;
 
-  Locale getPlatformLocale() => Locale(Platform.localeName.split('_')[0]);
+  // @override
+  // void onReady() async {
+  //   setInitialLocalLanguage();
+  //   super.onInit();
+  // }
 
-  List<Map<String, String>> getAvailableLanguages() => availableLanguages();
-
-  List<Locale> getAvailableLocales() =>
-      getAvailableLanguages().map((e) => Locale(e['iso369-1'])).toList();
-
-  Future<void> setLocale(Locale obj) async {
-    // Change theme, then update ThemeMode notifiers
-    Get.updateLocale(obj);
-    _activeLocale = obj;
-
-    // Save data for later retrieval
-    prefs = await SharedPreferences.getInstance();
-    await prefs.setString('locale', activeLocale.languageCode.toString());
+  Future<LocaleService> init() async {
+    await setInitialLocalLanguage();
+    return this;
   }
 
-  Future<void> getLocaleFromPreferences() async {
-    prefs = await SharedPreferences.getInstance();
-    String localeName =
-        prefs.getString(('locale')) ?? getPlatformLocale().toString();
-    try {
-      _activeLocale = Locale(localeName);
-    } catch (e) {
-      _activeLocale = getPlatformLocale();
+  // Retrieves and Sets language based on device settings
+  setInitialLocalLanguage() {
+    if ((currentLanguageStore.value == '') ||
+        (currentLanguageStore.value == null)) {
+      String _deviceLanguage = ui.window.locale.toString();
+      _deviceLanguage =
+          _deviceLanguage.substring(0, 2); //only get 1st 2 characters
+      print(ui.window.locale.toString());
+      updateLanguage(_deviceLanguage);
     }
   }
 
-  Future<LocaleService> init() async {
-    await getLocaleFromPreferences();
-    return this;
+// Gets current language stored
+  RxString get currentLanguageStore {
+    language.value = store.read('language');
+    return language;
+  }
+
+  // gets the language locale app is set to
+  Locale get getLocale {
+    if ((currentLanguageStore.value == '') ||
+        (currentLanguageStore.value == null)) {
+      language.value = MenuOptionsModel.defaultLanguage;
+      updateLanguage(MenuOptionsModel.defaultLanguage);
+    }
+    // gets the default language key (from the translation language system)
+    Locale _updatedLocal = AppLocalizations.languages.keys.first;
+    // looks for matching language key stored and sets to it
+    AppLocalizations.languages.keys.forEach((locale) {
+      if (locale.languageCode == currentLanguage) {
+        _updatedLocal = locale;
+      }
+    });
+    print('getLocale: ' + _updatedLocal.toString());
+    return _updatedLocal;
+  }
+
+// updates the language stored
+  Future<void> updateLanguage(String value) async {
+    language.value = value;
+    await store.write('language', value);
+    Get.updateLocale(getLocale);
+    update();
   }
 }

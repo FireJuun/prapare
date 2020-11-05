@@ -1,8 +1,5 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:prapare/controllers/controllers.dart';
 import 'package:prapare/routes/routes.dart';
 import 'package:prapare/strings.dart';
 import 'package:prapare/ui/styled_components/styled_components.dart';
@@ -24,7 +21,7 @@ class HomeView extends StatelessWidget {
                   onPressed: () => Get.toNamed(Routes.SURVEY)),
               StyledButtonLarge(
                 title: S.BTN_EDIT_SURVEY,
-                onPressed: () => print(LocaleService.to.activeLocale),
+                onPressed: () {},
               ),
               StyledButtonLarge(title: S.BTN_SUBMIT_SHARE),
               Align(

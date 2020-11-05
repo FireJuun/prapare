@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/controllers/controllers.dart';
+import 'package:prapare/localization.dart';
+import 'package:prapare/models/data/menu_option.dart';
 import 'package:prapare/strings.dart';
 import 'package:prapare/ui/views/settings/settings_controller.dart';
 
@@ -10,6 +12,20 @@ Future<void> settingsDialog() async =>
 class _SettingsDialogContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final labels = AppLocalizations.of(context);
+    final List<MenuOption> themeOptions = [
+      MenuOption(
+          key: "system",
+          value: labels.settings.system,
+          icon: Icons.brightness_4),
+      MenuOption(
+          key: "light",
+          value: labels.settings.light,
+          icon: Icons.brightness_low),
+      MenuOption(
+          key: "dark", value: labels.settings.dark, icon: Icons.brightness_3)
+    ];
+
     TextTheme textTheme = context.textTheme;
     return Dialog(
       child: Padding(
@@ -55,15 +71,15 @@ class _SettingsDialogContent extends StatelessWidget {
                         child:
                             Text(S.STG_LANGUAGE, style: textTheme.bodyText1)),
                     Center(child: Text('...', style: textTheme.bodyText1)),
-                    ...LocaleService.to.getAvailableLanguages().map(
-                          (e) => RadioListTile(
-                            title: Text(e['language'].capitalize,
-                                style: textTheme.bodyText1),
-                            value: Locale(e['iso369-1']),
-                            groupValue: controller.rxLocale,
-                            onChanged: (value) => controller.setLocale(value),
-                          ),
-                        ),
+                    // ...LocaleService.to.getAvailableLanguages().map(
+                    //       (e) => RadioListTile(
+                    //         title: Text(e['language'].capitalize,
+                    //             style: textTheme.bodyText1),
+                    //         value: Locale(e['iso369-1']),
+                    //         groupValue: controller.rxLocale,
+                    //         onChanged: (value) => controller.setLocale(value),
+                    //       ),
+                    //     ),
                   ],
                 ),
               ),
