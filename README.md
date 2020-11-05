@@ -21,7 +21,7 @@ Our take on MVC+S is as follows:
 - `controller`: Manages state of the model and resultant data. Controller classes typically extend `GetxController` (automatically disposed) and `GetxService` (rarely/never disposed)
 - `service`: Connects your app with the outside world (e.g. internet or local file system).
 - `command`: A high level function that performs a specific task, such as login/logout. It may utilize controllers, APIs, models, etc as necessary.
-<img align="center" src="getMVCS.png" width="450"/>
+<img align="center" src="getMVCS.png" width="550"/>
 
 ## Folder Structure
 
@@ -122,7 +122,7 @@ For VS Code, install the Dart and Flutter plugin. Set your editor to [format on 
 
 ## Questions
 
-We have a Slack channel and welcome new members/contributors.
+We have a [Slack channel] and welcome new members/contributors.
 
 [production-level]: https://github.com/gskinnerTeam/flokk
 [Dart style guide]: https://dart.dev/guides/language/effective-dart/style
@@ -133,4 +133,5 @@ We have a Slack channel and welcome new members/contributors.
 [PRAPARE]: https://www.nachc.org/research-and-data/prapare/
 [prototype]: https://www.figma.com/proto/cWKc5iTzhoddhxMov05rWG/PRAPARE?node-id=5%3A2&scaling=scale-down
 [simple]: https://github.com/gskinnerTeam/flutter-mvcs-hello-world
+[Slack channel]: https://bit.ly/flutterjuun-slack
 [wireframes]: https://www.figma.com/file/cWKc5iTzhoddhxMov05rWG/PRAPARE?node-id=0%3A1
