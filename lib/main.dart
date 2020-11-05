@@ -31,9 +31,11 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeService.to.themeMode,
       locale: LocaleService.to.activeLocale,
       translations: MyTranslations(),
-      // localizationsDelegates: const [
-      //   GlobalMaterialLocalizations.delegate,
-      // ],
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      // supportedLocales: LocaleService.to.getAvailableLocales(),
     );
   }
 }

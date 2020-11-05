@@ -23,6 +23,9 @@ class LocaleService extends GetxService {
 
   List<Map<String, String>> getAvailableLanguages() => availableLanguages();
 
+  List<Locale> getAvailableLocales() =>
+      getAvailableLanguages().map((e) => Locale(e['iso369-1'])).toList();
+
   Future<void> setLocale(Locale obj) async {
     // Change theme, then update ThemeMode notifiers
     Get.updateLocale(obj);
