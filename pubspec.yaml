@@ -22,20 +22,24 @@ environment:
 
 dependencies:
   flutter:
-    sdk: flutter
+    sdk: flutter  
   flutter_localizations:
     sdk: flutter
   cupertino_icons: ^1.0.0
   fhir: ^0.0.9
+  flutter_sheet_localization: ^2.0.0
+  
   flutter_svg: ^0.19.0
   get: ^3.15.0
+  get_storage: ^1.3.2
   http: ^0.12.2
-  shared_preferences: ^0.5.12+2
   translator: ^0.1.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_sheet_localization_generator: ^2.0.0
+  build_runner: ^1.3.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

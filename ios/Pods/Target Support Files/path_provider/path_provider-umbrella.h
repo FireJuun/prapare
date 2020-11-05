@@ -10,8 +10,8 @@
 #endif
 #endif
 
-#import "FLTSharedPreferencesPlugin.h"
+#import "FLTPathProviderPlugin.h"
 
-FOUNDATION_EXPORT double shared_preferencesVersionNumber;
-FOUNDATION_EXPORT const unsigned char shared_preferencesVersionString[];
+FOUNDATION_EXPORT double path_providerVersionNumber;
+FOUNDATION_EXPORT const unsigned char path_providerVersionString[];
 

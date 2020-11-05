@@ -14,7 +14,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>shared_preferences.xcscheme</key>
+		<key>path_provider.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
