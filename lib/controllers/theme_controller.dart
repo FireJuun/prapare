@@ -7,8 +7,8 @@ import 'package:prapare/ui/themes.dart';
 // https://gist.github.com/RodBr/37310335c6639f486bb3c8a628052405
 // https://medium.com/swlh/flutter-dynamic-themes-in-3-lines-c3b375f292e3
 
-class ThemeService extends GetxController {
-  static ThemeService get to => Get.find();
+class ThemeController extends GetxController {
+  static ThemeController get to => Get.find();
 
   final themeString = ''.obs;
   final store = GetStorage();
@@ -17,7 +17,7 @@ class ThemeService extends GetxController {
   ThemeMode get themeMode => _themeMode;
   String get currentTheme => themeString.value;
 
-  Future<ThemeService> init() async {
+  Future<ThemeController> init() async {
     await getThemeModeFromStore();
     return this;
   }

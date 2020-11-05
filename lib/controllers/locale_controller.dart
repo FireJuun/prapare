@@ -7,8 +7,8 @@ import 'package:prapare/localization.dart';
 import 'package:prapare/models/menu_options_model.dart';
 
 // spec: https://github.com/delay/flutter_starter
-class LocaleService extends GetxController {
-  static LocaleService get to => Get.find();
+class LocaleController extends GetxController {
+  static LocaleController get to => Get.find();
 
   final language = "".obs;
   final store = GetStorage();
@@ -21,7 +21,7 @@ class LocaleService extends GetxController {
   //   super.onInit();
   // }
 
-  Future<LocaleService> init() async {
+  Future<LocaleController> init() async {
     await setInitialLocalLanguage();
     return this;
   }

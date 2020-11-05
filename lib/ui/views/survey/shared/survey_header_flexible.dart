@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:prapare/_internal/components/custom.dart' as custom;
-import 'package:prapare/controllers/theme_service.dart';
+import 'package:prapare/controllers/theme_controller.dart';
 import 'package:prapare/ui/styled_components/app_logo.dart';
 import 'package:prapare/ui/themes.dart';
 import 'package:prapare/ui/views/survey/survey_controller.dart';
@@ -15,7 +15,7 @@ class SurveyHeaderFlexible extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final AppTheme appTheme = Get.find<ThemeService>()
+    final AppTheme appTheme = Get.find<ThemeController>()
         .getAppThemeFromBrightness(context.theme.brightness);
     final SurveyController surveyController = Get.find();
     final tabList = surveyController.tabModel.tabList;
