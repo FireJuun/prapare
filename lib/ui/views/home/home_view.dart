@@ -20,13 +20,12 @@ class HomeView extends StatelessWidget {
             children: [
               AppLogo(),
               StyledButtonLarge(
-                  title: S.BTN_NEW_SURVEY,
+                  title: labels.general.newSurvey,
                   onPressed: () => Get.toNamed(Routes.SURVEY)),
-              StyledButtonLarge(
-                title: S.BTN_EDIT_SURVEY,
-                // onPressed: () => print(labels.general.birthDate),
-              ),
-              StyledButtonLarge(title: S.BTN_SUBMIT_SHARE),
+              StyledButtonLarge(title: labels.general.editSurvey
+                  // onPressed: () => print(labels.general.birthDate),
+                  ),
+              StyledButtonLarge(title: labels.general.submitShare),
               Align(
                   alignment: FractionalOffset(0.8, 0),
                   child: IconButton(
