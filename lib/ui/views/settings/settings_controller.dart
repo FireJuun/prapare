@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/controllers/controllers.dart';
+import 'package:prapare/models/data/menu_option.dart';
 
 class SettingsController extends GetxController {
   static SettingsController get to => Get.find();
@@ -20,24 +21,25 @@ class SettingsController extends GetxController {
     update();
   }
 
-  // _rxLocale necessary for dynamic loading of locale checkbox
+  // _rxLanguage necessary for dynamic loading of locale checkbox
   // defaults to system on first load, then changes based on preferences
-  // Rx<Locale> _rxLocale;
-  // get rxLocale => this._rxLocale.value;
-  // set rxLocale(value) => this._rxLocale.value = value;
+  RxString _rxLanguage;
+  get rxLanguage => this._rxLanguage.value;
+  set rxLanguage(value) => this._rxLanguage.value = value;
 
-  // Future<void> setLocale(Locale obj) async {
-  //   await _localeService.setLocale(obj);
-  //   _rxLocale.value = obj;
-  //   // Get.forceAppUpdate();
-  //   update();
-  //   // setThemeMode(_rxThemeMode.value);
-  // }
+  Future<void> setLocale(String obj) async {
+    await _localeController.updateLanguage(obj);
+    _rxLanguage.value = obj;
+    Get.forceAppUpdate();
+    update();
+  }
+
+  List<MenuOption> getlanguageOptions() => _localeController.languageOptions;
 
   @override
   void onInit() {
     _rxThemeMode = _themeController.themeMode.obs;
-    // _rxLocale = _localeService.activeLocale.obs;
+    _rxLanguage = _localeController.currentLanguage.obs;
     super.onInit();
   }
 }

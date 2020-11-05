@@ -71,15 +71,18 @@ class _SettingsDialogContent extends StatelessWidget {
                         child:
                             Text(S.STG_LANGUAGE, style: textTheme.bodyText1)),
                     Center(child: Text('...', style: textTheme.bodyText1)),
-                    // ...LocaleService.to.getAvailableLanguages().map(
-                    //       (e) => RadioListTile(
-                    //         title: Text(e['language'].capitalize,
-                    //             style: textTheme.bodyText1),
-                    //         value: Locale(e['iso369-1']),
-                    //         groupValue: controller.rxLocale,
-                    //         onChanged: (value) => controller.setLocale(value),
-                    //       ),
-                    //     ),
+                    ...controller.getlanguageOptions().map(
+                          (e) => RadioListTile(
+                            title: Text(e.value, style: textTheme.bodyText1),
+                            value: e.key,
+                            groupValue: controller.rxLanguage,
+                            onChanged: (value) async => await controller.setLocale(value),
+                            // async {
+                            //   await controller.setLocale(value);
+                            //   Get.forceAppUpdate();
+                            // },
+                          ),
+                        ),
                   ],
                 ),
               ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:prapare/localization.dart';
 import 'package:prapare/routes/routes.dart';
 import 'package:prapare/strings.dart';
 import 'package:prapare/ui/styled_components/styled_components.dart';
@@ -8,6 +9,8 @@ import 'package:prapare/ui/views/settings/settings_dialog.dart';
 class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final labels = AppLocalizations.of(context);
+
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -21,7 +24,7 @@ class HomeView extends StatelessWidget {
                   onPressed: () => Get.toNamed(Routes.SURVEY)),
               StyledButtonLarge(
                 title: S.BTN_EDIT_SURVEY,
-                onPressed: () {},
+                // onPressed: () => print(labels.general.birthDate),
               ),
               StyledButtonLarge(title: S.BTN_SUBMIT_SHARE),
               Align(
