@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:prapare/_internal/utils/theme_mode_util.dart';
 import 'package:prapare/ui/themes.dart';
 
 // spec: https://github.com/delay/flutter_starter
@@ -23,9 +24,9 @@ class ThemeController extends GetxController {
     super.onInit();
   }
 
-  Future<void> setThemeMode(ThemeMode value) async {
-    themeString.value = value.toString().split('.')[1];
-    _themeMode = value;
+  Future<void> setThemeMode(ThemeMode obj) async {
+    themeString.value = ThemeModeUtil().convertThemeModeToString(obj);
+    _themeMode = obj;
     Get.changeThemeMode(_themeMode);
     await store.write('theme', themeString);
     update();

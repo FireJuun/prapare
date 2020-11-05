@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:prapare/_internal/utils/theme_mode_util.dart';
 import 'package:prapare/localization.dart';
 import 'package:prapare/models/data/menu_option.dart';
 import 'package:prapare/ui/views/settings/settings_controller.dart';
@@ -45,26 +46,14 @@ class _SettingsDialogContent extends StatelessWidget {
                     Center(
                         child: Text(labels.app.chooseTheme,
                             style: textTheme.bodyText1)),
-                    RadioListTile(
-                      title: Text(labels.settings.system,
-                          style: textTheme.bodyText1),
-                      value: ThemeMode.system,
-                      groupValue: controller.rxThemeMode,
-                      onChanged: (value) => controller.setThemeMode(value),
-                    ),
-                    RadioListTile(
-                      title: Text(labels.settings.dark,
-                          style: textTheme.bodyText1),
-                      value: ThemeMode.dark,
-                      groupValue: controller.rxThemeMode,
-                      onChanged: (value) => controller.setThemeMode(value),
-                    ),
-                    RadioListTile(
-                      title: Text(labels.settings.light,
-                          style: textTheme.bodyText1),
-                      value: ThemeMode.light,
-                      groupValue: controller.rxThemeMode,
-                      onChanged: (value) => controller.setThemeMode(value),
+                    ...themeOptions.map(
+                      (e) => RadioListTile(
+                        title: Text(e.value, style: textTheme.bodyText1),
+                        value: ThemeModeUtil().convertStringToThemeMode(e.key),
+                        groupValue: controller.rxThemeMode,
+                        onChanged: (newValue) =>
+                            controller.setThemeMode(newValue),
+                      ),
                     ),
                     SizedBox(height: 24),
 
@@ -72,7 +61,6 @@ class _SettingsDialogContent extends StatelessWidget {
                     Center(
                         child: Text(labels.app.chooseLanguage,
                             style: textTheme.bodyText1)),
-                    Center(child: Text('...', style: textTheme.bodyText1)),
                     ...controller.getlanguageOptions().map(
                           (e) => RadioListTile(
                             title: Text(e.value, style: textTheme.bodyText1),
@@ -80,10 +68,6 @@ class _SettingsDialogContent extends StatelessWidget {
                             groupValue: controller.rxLanguage,
                             onChanged: (value) async =>
                                 await controller.setLocale(value),
-                            // async {
-                            //   await controller.setLocale(value);
-                            //   Get.forceAppUpdate();
-                            // },
                           ),
                         ),
                   ],

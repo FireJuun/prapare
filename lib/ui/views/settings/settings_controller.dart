@@ -12,8 +12,8 @@ class SettingsController extends GetxController {
   // _rxThemeMode necessary for dynamic loading of various themes
   // defaults to system on first load, then changes theme based on preferences
   Rx<ThemeMode> _rxThemeMode;
-  get rxThemeMode => this._rxThemeMode.value;
-  set rxThemeMode(value) => this._rxThemeMode.value = value;
+  ThemeMode get rxThemeMode => this._rxThemeMode.value;
+  set rxThemeMode(ThemeMode value) => this._rxThemeMode.value = value;
 
   Future<void> setThemeMode(ThemeMode obj) async {
     await _themeController.setThemeMode(obj);
