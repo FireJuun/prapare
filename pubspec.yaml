@@ -23,12 +23,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   cupertino_icons: ^1.0.0
+  fhir: ^0.0.9
   flutter_svg: ^0.19.0
   get: ^3.12.1
   http: ^0.12.2
   shared_preferences: ^0.5.12+2
-  fhir: ^0.0.9
+  translator: ^0.1.5
 
 dev_dependencies:
   flutter_test:
