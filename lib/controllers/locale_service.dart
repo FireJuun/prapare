@@ -30,7 +30,7 @@ class LocaleService extends GetxService {
 
     // Save data for later retrieval
     prefs = await SharedPreferences.getInstance();
-    await prefs.setString('locale', activeLocale.toString());
+    await prefs.setString('locale', activeLocale.languageCode.toString());
   }
 
   Future<void> getLocaleFromPreferences() async {

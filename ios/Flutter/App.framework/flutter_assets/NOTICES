@@ -6485,12 +6485,6 @@ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 --------------------------------------------------------------------------------
 get
-get_core
-get_instance
-get_navigation
-get_rx
-get_state_manager
-get_utils
 
 MIT License
 

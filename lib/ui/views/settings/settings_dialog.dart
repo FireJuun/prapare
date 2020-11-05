@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:prapare/controllers/controllers.dart';
 import 'package:prapare/strings.dart';
 import 'package:prapare/ui/views/settings/settings_controller.dart';
 
@@ -22,6 +23,8 @@ class _SettingsDialogContent extends StatelessWidget {
                 builder: (controller) => ListView(
                   children: <Widget>[
                     SizedBox(height: 24),
+
+                    // *** CHOOSE THEME ***
                     Center(
                         child:
                             Text(S.STG_THEME_MODE, style: textTheme.bodyText1)),
@@ -46,10 +49,21 @@ class _SettingsDialogContent extends StatelessWidget {
                       onChanged: (value) => controller.setThemeMode(value),
                     ),
                     SizedBox(height: 24),
+
+                    // *** CHOOSE LANGUAGE ***
                     Center(
                         child:
                             Text(S.STG_LANGUAGE, style: textTheme.bodyText1)),
                     Center(child: Text('...', style: textTheme.bodyText1)),
+                    ...LocaleService.to.getAvailableLanguages().map(
+                          (e) => RadioListTile(
+                            title: Text(e['language'].capitalize,
+                                style: textTheme.bodyText1),
+                            value: Locale(e['iso369-1']),
+                            groupValue: controller.rxLocale,
+                            onChanged: (value) => controller.setLocale(value),
+                          ),
+                        ),
                   ],
                 ),
               ),

@@ -5,7 +5,7 @@ import 'package:prapare/controllers/controllers.dart';
 class SettingsController extends GetxController {
   static SettingsController get to => Get.find();
 
-  final ThemeService _themeController = Get.find();
+  final ThemeService _themeService = Get.find();
   final LocaleService _localeService = Get.find();
 
   // _rxThemeMode necessary for dynamic loading of various themes
@@ -15,7 +15,7 @@ class SettingsController extends GetxController {
   set rxThemeMode(value) => this._rxThemeMode.value = value;
 
   Future<void> setThemeMode(ThemeMode obj) async {
-    await _themeController.setThemeMode(obj);
+    await _themeService.setThemeMode(obj);
     _rxThemeMode.value = obj;
     update();
   }
@@ -29,12 +29,15 @@ class SettingsController extends GetxController {
   Future<void> setLocale(Locale obj) async {
     await _localeService.setLocale(obj);
     _rxLocale.value = obj;
+    // Get.forceAppUpdate();
     update();
+    // setThemeMode(_rxThemeMode.value);
   }
 
   @override
   void onInit() {
-    _rxThemeMode = _themeController.themeMode.obs;
+    _rxThemeMode = _themeService.themeMode.obs;
+    _rxLocale = _localeService.activeLocale.obs;
     super.onInit();
   }
 }
