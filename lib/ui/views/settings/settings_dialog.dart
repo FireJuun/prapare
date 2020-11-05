@@ -76,9 +76,7 @@ class _SettingsDialogContent extends StatelessWidget {
             ),
             TextButton(
                 onPressed: () => Get.back(),
-                // todo: change 'Update Profile' -> 'OK'
-                child: Text(labels.settings.updateProfile,
-                    style: textTheme.headline6))
+                child: Text(labels.settings.ok, style: textTheme.headline6))
           ],
         ),
       ),

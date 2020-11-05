@@ -9,7 +9,7 @@ import 'package:prapare/api_keys.dart';
 part 'localization.g.dart';
 
 @SheetLocalization(ApiKeys.localeSpreadsheetId, ApiKeys.localeSheetId,
-    4) // <- See 1. to get DOCID and SHEETID
+    5) // <- See 1. to get DOCID and SHEETID
 // the `1` is the generated version. You must increment it each time you want to regenerate
 // a new version of the labels.
 class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -10,11 +10,11 @@ class MenuOptionsModel {
   // https://docs.google.com/spreadsheets/d/1oS7iJ6ocrZBA53SxRfKF0CG9HAaXeKtzvsTBhgG4Zzk/edit?usp=sharing
 
   static final List<MenuOption> languageOptions = [
-    MenuOption(key: "zh", value: "中文"), //Chinese
-    MenuOption(key: "de", value: "Deutsche"), //German
     MenuOption(key: "en", value: "English"), //English
     MenuOption(key: "es", value: "Español"), //Spanish
     MenuOption(key: "fr", value: "Français"), //French
+    MenuOption(key: "de", value: "Deutsche"), //German
+    MenuOption(key: "zh", value: "中文"), //Chinese
     MenuOption(key: "hi", value: "हिन्दी"), //Hindi
     MenuOption(key: "ja", value: "日本語"), //Japanese
     MenuOption(key: "pt", value: "Português"), //Portuguese
