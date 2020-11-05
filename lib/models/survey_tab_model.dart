@@ -1,4 +1,4 @@
-import 'package:prapare/icons.dart';
+import 'package:prapare/ui/icons.dart';
 import 'package:prapare/models/data/survey_tab_data.dart';
 import 'package:prapare/strings.dart';
 

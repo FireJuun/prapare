@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:prapare/_internal/components/custom.dart' as custom;
-import 'package:prapare/controllers/services/theme_service.dart';
-import 'package:prapare/styled_components/app_logo.dart';
-import 'package:prapare/themes.dart';
-import 'package:prapare/views/survey/survey_controller.dart';
+import 'package:prapare/controllers/theme_service.dart';
+import 'package:prapare/ui/styled_components/app_logo.dart';
+import 'package:prapare/ui/themes.dart';
+import 'package:prapare/ui/views/survey/survey_controller.dart';
 
 // spec: https://stackoverflow.com/questions/63231817/custom-flexiblespacebar-widget
 

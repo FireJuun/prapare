@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:prapare/themes.dart';
+import 'package:prapare/ui/themes.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 // spec: https://gist.github.com/RodBr/37310335c6639f486bb3c8a628052405

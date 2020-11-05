@@ -2,7 +2,9 @@
 
 A patient-facing Flutter app that allows for entry of Social Determinants of Health (SDOH) data in their own native language.
 
-This app builds directly off of the work pioneered in the [PRAPARE] project, though at this time it is not formally affiliated with PRAPARE.
+This app directly builds off of the work pioneered in the [PRAPARE] project, though at this time it is not formally affiliated with PRAPARE.
+
+A related [Youtube playlist] and a [demo repository] exist to teach the concepts & components used when building this app. 
 
 <img align="right" src="demo.gif" width="250"/>
 
@@ -124,14 +126,16 @@ For VS Code, install the Dart and Flutter plugin. Set your editor to [format on 
 
 We have a [Slack channel] and welcome new members/contributors.
 
-[production-level]: https://github.com/gskinnerTeam/flokk
+[demo repository]: https://github.com/FireJuun/get_fluttered
 [Dart style guide]: https://dart.dev/guides/language/effective-dart/style
 [format on save]: https://flutter.dev/docs/development/tools/formatting#automatically-formatting-code-in-vs-code
 [Get]: https://pub.dev/packages/get#the-three-pillars
 [Getx pattern]: https://github.com/kauemurakami/getx_pattern
 [Model-View-Controller+Services]: https://blog.gskinner.com/archives/2020/09/flutter-state-management-with-mvcs.html
 [PRAPARE]: https://www.nachc.org/research-and-data/prapare/
+[production-level]: https://github.com/gskinnerTeam/flokk
 [prototype]: https://www.figma.com/proto/cWKc5iTzhoddhxMov05rWG/PRAPARE?node-id=5%3A2&scaling=scale-down
 [simple]: https://github.com/gskinnerTeam/flutter-mvcs-hello-world
 [Slack channel]: https://bit.ly/flutterjuun-slack
 [wireframes]: https://www.figma.com/file/cWKc5iTzhoddhxMov05rWG/PRAPARE?node-id=0%3A1
+[Youtube playlist]: https://www.youtube.com/playlist?list=PL_e311Xg2aCQX98onj3OZ2XAE5vm8fCI1

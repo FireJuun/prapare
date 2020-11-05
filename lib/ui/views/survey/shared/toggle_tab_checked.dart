@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 import 'package:prapare/models/data/survey_tab_data.dart';
-import 'package:prapare/views/survey/survey_controller.dart';
+import 'package:prapare/ui/views/survey/survey_controller.dart';
 
 class ToggleTabChecked extends StatelessWidget {
   @override

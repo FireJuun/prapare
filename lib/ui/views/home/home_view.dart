@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:prapare/routes/app_pages.dart';
+import 'package:prapare/routes/routes.dart';
 import 'package:prapare/strings.dart';
-import 'package:prapare/styled_components/app_logo.dart';
-import 'package:prapare/styled_components/styled_button_large.dart';
-import 'package:prapare/views/settings/settings_dialog.dart';
+import 'package:prapare/ui/styled_components/styled_components.dart';
+import 'package:prapare/ui/views/settings/settings_dialog.dart';
 
 class HomeView extends StatelessWidget {
   @override

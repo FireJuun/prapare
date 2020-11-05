@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:prapare/controllers/services/theme_service.dart';
-import 'package:prapare/themes.dart';
+import 'package:prapare/controllers/theme_service.dart';
+import 'package:prapare/ui/themes.dart';
 import 'package:prapare/_internal/components/custom.dart' as custom;
-import 'package:prapare/views/settings/settings_dialog.dart';
-import 'package:prapare/views/survey/shared/survey_detail.dart';
-import 'package:prapare/views/survey/shared/survey_header_flexible.dart';
-import 'package:prapare/views/survey/shared/toggle_tab_checked.dart';
-import 'package:prapare/views/survey/survey_controller.dart';
+import 'package:prapare/ui/views/settings/settings_dialog.dart';
+import 'package:prapare/ui/views/survey/shared/survey_detail/survey_detail.dart';
+import 'package:prapare/ui/views/survey/shared/survey_header_flexible.dart';
+import 'package:prapare/ui/views/survey/shared/toggle_tab_checked.dart';
+import 'package:prapare/ui/views/survey/survey_controller.dart';
 
 class SurveyView extends StatelessWidget {
   final double _collapsedHeight = 68.0;

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 import 'package:prapare/models/data/survey_tab_data.dart';
 import 'package:prapare/models/survey_tab_model.dart';
-import 'package:prapare/themes.dart';
+import 'package:prapare/ui/themes.dart';
 
 class SurveyController extends GetxController
     with SingleGetTickerProviderMixin {

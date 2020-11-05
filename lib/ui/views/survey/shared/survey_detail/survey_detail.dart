@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/models/data/survey/question.dart';
-import 'package:prapare/views/survey/shared/survey_detail_controller.dart';
+import 'package:prapare/ui/views/survey/shared/survey_detail/survey_detail_controller.dart';
 
 class SurveyDetail extends StatelessWidget {
   final String surveyCode;

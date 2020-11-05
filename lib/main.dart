@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:prapare/controllers/services/theme_service.dart';
-import 'package:prapare/routes/app_pages.dart';
-import 'package:prapare/views/home/home_view.dart';
+import 'package:prapare/controllers/theme_service.dart';
+import 'package:prapare/routes/routes.dart';
+import 'package:prapare/ui/views/home/home_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

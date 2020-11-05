@@ -1,7 +1,8 @@
 import 'package:get/route_manager.dart';
-import 'package:prapare/views/home/home_view.dart';
-import 'package:prapare/views/survey/survey_binding.dart';
-import 'package:prapare/views/survey/survey_view.dart';
+import 'package:prapare/ui/views/home/home_view.dart';
+import 'package:prapare/ui/views/survey/survey_binding.dart';
+import 'package:prapare/ui/views/survey/survey_view.dart';
+
 part 'app_routes.dart';
 
 abstract class AppPages {
