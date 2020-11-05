@@ -1468,6 +1468,2794 @@ class AppLocalizations {
         updateProfile: "更新配置文件",
       ),
     ),
+    Locale.fromSubtags(languageCode: "fa"): AppLocalizations_Labels(
+      app: AppLocalizations_Labels_App(
+        chooseLanguage: "زبان را انتخاب کنید",
+        chooseTheme: "انتخاب موضوع",
+        settings: "تنظیمات برنامه",
+        system: "سیستم",
+        title: "Prapare",
+      ),
+      auth: AppLocalizations_Labels_Auth(
+        cancel: "لغو کردن",
+        changePassword: "تغییر رمز عبور",
+        email: "پست الکترونیک",
+        password: "کلمه عبور",
+        resetPassword: "بازیابی رمز عبور",
+        signIn: "ورود",
+        signUp: "ثبت نام",
+        submit: "ارسال",
+        userName: "نام کاربری",
+      ),
+      dates: AppLocalizations_Labels_Dates(
+        month: AppLocalizations_Labels_Dates_Month(
+          april: "آوریل",
+          august: "اوت",
+          december: "دسامبر",
+          february: "فوریه",
+          january: "ژانویه",
+          july: "جولای",
+          june: "ژوئن",
+          march: "مارس",
+          may: "ممکن است",
+          november: "نوامبر",
+          october: "اکتبر",
+          september: "سپتامبر",
+        ),
+        weekday: AppLocalizations_Labels_Dates_Weekday(
+          friday: "جمعه",
+          monday: "دوشنبه",
+          saturday: "شنبه",
+          sunday: "یکشنبه",
+          thursday: "پنج شنبه",
+          tuesday: "سهشنبه",
+          wednesday: "چهار شنبه",
+        ),
+      ),
+      general: AppLocalizations_Labels_General(
+        birthDate: "تاریخ تولد",
+        dateofBirth: "تاریخ تولد",
+        editSurvey: "بررسی ویرایش",
+        familyName: "نام خانوادگی",
+        female: "زن",
+        givenNames: "اسامی با توجه به",
+        male: "نر",
+        newSurvey: "نظرسنجی جدید",
+        relationship: "ارتباط",
+        search: "جستجو کردن",
+        submitShare: "ارسال / اشتراک",
+        address: AppLocalizations_Labels_General_Address(
+          title: "نشانی",
+          city: "شهرستان",
+          country: "کشور",
+          county: "شهرستان",
+          district: "ناحیه",
+          neighborhood: "همسایگی",
+          postalCode: "کد پستی",
+          state: "دولت",
+        ),
+        relation: AppLocalizations_Labels_General_Relation(
+          title: "رابطه",
+          aunt: "عمه",
+          brother: "برادر",
+          daughter: "فرزند دختر",
+          father: "پدر",
+          grandfather: "پدر بزرگ",
+          grandmother: "مادر بزرگ",
+          mother: "مادر",
+          nephew: "پسر خواهر یا برادر",
+          niece: "دختر برادر یا خواهر و غیره",
+          sister: "خواهر",
+          son: "فرزند پسر",
+          uncle: "عمو یا دایی",
+        ),
+        sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
+          title: "جنسی در هنگام تولد",
+          female: "زن",
+          male: "نر",
+        ),
+      ),
+      language: AppLocalizations_Labels_Language(
+        title: "زبان را انتخاب کنید",
+        inEnglish: "Farsi",
+      ),
+      medical: AppLocalizations_Labels_Medical(
+        growth: "رشد",
+        immunization: "ایمن سازی",
+        immunizations: "ایمن سازی",
+        vaccine: "واکسن",
+        vaccines: "واکسن ها",
+      ),
+      prapare: AppLocalizations_Labels_Prapare(
+        title:
+            "پروتکل برای پاسخ به بررسی و دارایی بیماران، خطرات، و تجارب [PRAPARE]",
+        familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
+          title: "خانواده و خانه",
+          address: "چه آدرسی در زندگی می کنند؟",
+          household:
+              "چگونه بسیاری از اعضای خانواده جمله خود شما، شما در حال حاضر با زندگی می کنند؟",
+          housing: "وضعیت مسکن خود را امروز چیست؟",
+          losingHousing: "آیا شما در مورد دست دادن مسکن خود را نگران است؟",
+        ),
+        moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
+          title: "پول و منابع",
+          income:
+              "در طول سال گذشته، چه کل درآمد ترکیبی را برای شما و اعضای خانواده شما با زندگی می کنند؟ این اطلاعات به ما کمک می تعیین اگر شما واجد شرایط برای هر گونه مزایای هستند.",
+          insurance: "بیمه اصلی شما چیست؟",
+          school: "بالاترین سطح از مدرسه که شما به پایان رسید چیست؟",
+          transportation:
+              "تا فقدان حمل و نقل شما را از پزشکی نگه ملاقات ها، جلسات، محل کار، و یا از گرفتن همه چیز مورد نیاز برای زندگی روزمره؟",
+          without:
+              "در سال گذشته، شما یا هر یک از اعضای خانواده شما با قادر به دریافت هر یک از موارد زیر که آن را واقعا مورد نیاز بوده است زندگی می کنند؟",
+          work: "وضعیت کار فعلی شما چیست؟",
+        ),
+        optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
+          title: "اقدامات اختیاری",
+          afraid:
+              "در سال گذشته، شما ترس از شریک زندگی خود را و یا شریک سابق بوده است؟",
+          prison:
+              "در سال گذشته، شما بیش از 2 شب در یک ردیف در یک زندان، زندان، بازداشتگاه و یا مرکز بازپروری نوجوانان به سر برد؟",
+          refugee: "آیا یک پناهنده؟",
+          safe:
+              "آیا شما احساس می جسمی و عاطفی امن که در آن شما در حال حاضر زندگی می کنند؟",
+        ),
+        personalCharacteristics:
+            AppLocalizations_Labels_Prapare_PersonalCharacteristics(
+          title: "خصوصیات فردی",
+          language: "به چه زبانی صحبت راحت ترین؟",
+          latino: "آیا شما خودتان اسپانیایی زبان در نظر / لاتین؟",
+          military: "آیا از نیروهای مسلح ایالات متحده آمریکا مرخص؟",
+          race: "که (بازدید کنندگان) مسابقه شما هستند؟",
+          seasonalWork:
+              "در هر نقطه ای در 2 سال گذشته، فصل و یا کار در مزرعه مهاجر شده منبع اصلی خانواده شما و یا خود را از درآمد؟",
+        ),
+        socialAndEmotionalHealth:
+            AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
+          title: "اجتماعی و سلامت عاطفی",
+          stress:
+              "استرس است که وقتی کسی احساس تنش، عصبی، مضطرب و یا نمی توانید در شب خواب به دلیل ذهن شان است. چگونه استرس شما می شود؟",
+          talk:
+              "هر چند وقت یا صحبت کردن با افرادی که شما را در مورد مراقبت و احساس نزدیکی به شما را ببینید (به عنوان مثال: صحبت کردن به دوستان بر روی گوشی، بازدید از دوستان و یا خانواده، رفتن به کلیسا و یا باشگاه جلسات).",
+        ),
+      ),
+      registration: AppLocalizations_Labels_Registration(
+        registerPatient: "ثبت نام بیمار",
+      ),
+      settings: AppLocalizations_Labels_Settings(
+        dark: "تاریک",
+        language: "زبان",
+        light: "سبک",
+        signOut: "خروج از سیستم",
+        system: "سیستم",
+        theme: "موضوع",
+        title: "تنظیمات",
+        updateProfile: "بروزرسانی پروفایل",
+      ),
+    ),
+    Locale.fromSubtags(languageCode: "fr"): AppLocalizations_Labels(
+      app: AppLocalizations_Labels_App(
+        chooseLanguage: "Choisissez la langue",
+        chooseTheme: "choisir un thème",
+        settings: "paramètres d'application",
+        system: "Système",
+        title: "Prapare",
+      ),
+      auth: AppLocalizations_Labels_Auth(
+        cancel: "Annuler",
+        changePassword: "Changer le mot de passe",
+        email: "Email",
+        password: "Mot de passe",
+        resetPassword: "réinitialiser le mot de passe",
+        signIn: "Se connecter",
+        signUp: "S'inscrire",
+        submit: "Soumettre",
+        userName: "Nom d'utilisateur",
+      ),
+      dates: AppLocalizations_Labels_Dates(
+        month: AppLocalizations_Labels_Dates_Month(
+          april: "avril",
+          august: "août",
+          december: "décembre",
+          february: "février",
+          january: "janvier",
+          july: "juillet",
+          june: "juin",
+          march: "Mars",
+          may: "Mai",
+          november: "novembre",
+          october: "octobre",
+          september: "septembre",
+        ),
+        weekday: AppLocalizations_Labels_Dates_Weekday(
+          friday: "Vendredi",
+          monday: "Lundi",
+          saturday: "samedi",
+          sunday: "dimanche",
+          thursday: "Jeudi",
+          tuesday: "Mardi",
+          wednesday: "Mercredi",
+        ),
+      ),
+      general: AppLocalizations_Labels_General(
+        birthDate: "Date de naissance",
+        dateofBirth: "Date de naissance",
+        editSurvey: "Modifier enquête",
+        familyName: "Nom de famille",
+        female: "Femelle",
+        givenNames: "Prénoms",
+        male: "Masculin",
+        newSurvey: "Une nouvelle enquête",
+        relationship: "Relation",
+        search: "Chercher",
+        submitShare: "Déposer / Partager",
+        address: AppLocalizations_Labels_General_Address(
+          title: "Adresse",
+          city: "Ville",
+          country: "Pays",
+          county: "Comté",
+          district: "District",
+          neighborhood: "quartier",
+          postalCode: "code postal",
+          state: "Etat",
+        ),
+        relation: AppLocalizations_Labels_General_Relation(
+          title: "Relation",
+          aunt: "Tante",
+          brother: "Frère",
+          daughter: "Fille",
+          father: "Père",
+          grandfather: "Grand-père",
+          grandmother: "Grand-mère",
+          mother: "Mère",
+          nephew: "Neveu",
+          niece: "Nièce",
+          sister: "Sœur",
+          son: "Fils",
+          uncle: "Oncle",
+        ),
+        sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
+          title: "Sexe à la naissance",
+          female: "Femelle",
+          male: "Masculin",
+        ),
+      ),
+      language: AppLocalizations_Labels_Language(
+        title: "Choose language",
+        inEnglish: "French",
+      ),
+      medical: AppLocalizations_Labels_Medical(
+        growth: "Croissance",
+        immunization: "Immunisation",
+        immunizations: "immunisations",
+        vaccine: "Vaccin",
+        vaccines: "Vaccins",
+      ),
+      prapare: AppLocalizations_Labels_Prapare(
+        title:
+            "Protocole d'intervention et de l'évaluation des actifs des patients, les risques et les expériences [PRAPARE]",
+        familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
+          title: "Famille et accueil",
+          address: "Quelle adresse vivez-vous?",
+          household:
+              "Combien de membres de la famille, y compris vous-même, avez-vous actuellement en temps réel avec?",
+          housing: "Quelle est votre situation de logement aujourd'hui?",
+          losingHousing: "Etes-vous inquiet de perdre votre logement?",
+        ),
+        moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
+          title: "L'argent et des ressources",
+          income:
+              "Au cours de l'année écoulée, quel était le revenu total combiné pour vous et les membres de la famille qui vivent avec vous? Ces informations nous aideront à déterminer si vous êtes admissible à des prestations.",
+          insurance: "Quelle est votre assurance principale?",
+          school:
+              "Quel est le plus haut niveau de l'école que vous avez terminé?",
+          transportation:
+              "Est-ce que le manque de transport que vous gardé des rendez-vous médicaux, des réunions, le travail, ou de faire avancer les choses nécessaires à la vie quotidienne?",
+          without:
+              "L'année dernière, avez-vous ou des membres de la famille qui vivent avec vous été incapable d'obtenir une des conditions suivantes quand il était vraiment nécessaire?",
+          work: "Quelle est votre situation professionnelle actuelle?",
+        ),
+        optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
+          title: "mesures facultatives",
+          afraid:
+              "L'année dernière, vous avez eu peur de votre partenaire ou ex-partenaire?",
+          prison:
+              "L'année dernière, avez-vous passé plus de 2 nuits consécutives dans une prison, prison, centre de détention ou dans un établissement correctionnel pour les jeunes?",
+          refugee: "Vous êtes un réfugié?",
+          safe:
+              "Vous sentez-vous physiquement et émotionnellement sûr où vous en direct?",
+        ),
+        personalCharacteristics:
+            AppLocalizations_Labels_Prapare_PersonalCharacteristics(
+          title: "Caractéristiques personnelles",
+          language: "Quelle langue parlez-vous plus à l'aise?",
+          latino: "Estimez-vous Hispanique / Latino?",
+          military: "Avez-vous été libéré des forces armées des États-Unis?",
+          race: "Quelle race (s) êtes-vous?",
+          seasonalWork:
+              "A tout moment au cours des 2 dernières années, a la saison ou les travaux agricoles migrants été votre ou votre principale source de revenu de la famille?",
+        ),
+        socialAndEmotionalHealth:
+            AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
+          title: "Santé sociale et émotionnelle",
+          stress:
+              "Le stress est quand quelqu'un se sent tendu, nerveux, anxieux ou ne peut pas dormir la nuit parce que leur esprit est troublé. Comment êtes-vous stressé?",
+          talk:
+              "À quelle fréquence vous voyez ou parler aux gens que vous aimez et sentez proches (Par exemple: parler à des amis au téléphone, visite à des amis ou en famille, aller aux réunions de l'église ou club)?",
+        ),
+      ),
+      registration: AppLocalizations_Labels_Registration(
+        registerPatient: "registre des patients",
+      ),
+      settings: AppLocalizations_Labels_Settings(
+        dark: "Sombre",
+        language: "Langue",
+        light: "Lumière",
+        signOut: "Déconnexion",
+        system: "Système",
+        theme: "Thème",
+        title: "Réglages",
+        updateProfile: "Mettre à jour le profil",
+      ),
+    ),
+    Locale.fromSubtags(languageCode: "de"): AppLocalizations_Labels(
+      app: AppLocalizations_Labels_App(
+        chooseLanguage: "Sprache wählen",
+        chooseTheme: "Wähle das Thema",
+        settings: "App Einstellungen",
+        system: "System",
+        title: "Prapare",
+      ),
+      auth: AppLocalizations_Labels_Auth(
+        cancel: "Stornieren",
+        changePassword: "Passwort ändern",
+        email: "Email",
+        password: "Passwort",
+        resetPassword: "Passwort zurücksetzen",
+        signIn: "Einloggen",
+        signUp: "Anmelden",
+        submit: "einreichen",
+        userName: "Nutzername",
+      ),
+      dates: AppLocalizations_Labels_Dates(
+        month: AppLocalizations_Labels_Dates_Month(
+          april: "April",
+          august: "August",
+          december: "Dezember",
+          february: "Februar",
+          january: "Januar",
+          july: "Juli",
+          june: "Juni",
+          march: "März",
+          may: "Kann",
+          november: "November",
+          october: "Oktober",
+          september: "September",
+        ),
+        weekday: AppLocalizations_Labels_Dates_Weekday(
+          friday: "Freitag",
+          monday: "Montag",
+          saturday: "Samstag",
+          sunday: "Sonntag",
+          thursday: "Donnerstag",
+          tuesday: "Dienstag",
+          wednesday: "Mittwoch",
+        ),
+      ),
+      general: AppLocalizations_Labels_General(
+        birthDate: "Geburtsdatum",
+        dateofBirth: "Geburtsdatum",
+        editSurvey: "Umfrage bearbeiten",
+        familyName: "Nachname",
+        female: "Weiblich",
+        givenNames: "Vornamen",
+        male: "Männlich",
+        newSurvey: "neue Umfrage",
+        relationship: "Beziehung",
+        search: "Suche",
+        submitShare: "Senden / Share",
+        address: AppLocalizations_Labels_General_Address(
+          title: "Adresse",
+          city: "Stadt",
+          country: "Land",
+          county: "Bezirk",
+          district: "Kreis",
+          neighborhood: "Gegend",
+          postalCode: "Postleitzahl",
+          state: "Zustand",
+        ),
+        relation: AppLocalizations_Labels_General_Relation(
+          title: "Beziehung",
+          aunt: "Tante",
+          brother: "Bruder",
+          daughter: "Tochter",
+          father: "Vater",
+          grandfather: "Großvater",
+          grandmother: "Oma",
+          mother: "Mutter",
+          nephew: "Neffe",
+          niece: "Nichte",
+          sister: "Schwester",
+          son: "Sohn",
+          uncle: "Onkel",
+        ),
+        sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
+          title: "Sex bei Geburt",
+          female: "Weiblich",
+          male: "Männlich",
+        ),
+      ),
+      language: AppLocalizations_Labels_Language(
+        title: "Sprache wählen",
+        inEnglish: "German",
+      ),
+      medical: AppLocalizations_Labels_Medical(
+        growth: "Wachstum",
+        immunization: "Immunisierung",
+        immunizations: "Immunisierungen",
+        vaccine: "Impfstoff",
+        vaccines: "Impfungen",
+      ),
+      prapare: AppLocalizations_Labels_Prapare(
+        title:
+            "Protokoll zu reagieren und Beurteilung der Patienten Vermögenswerte, Risiken und Erfahrungen [PRAPARE]",
+        familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
+          title: "Familie und Zuhause",
+          address: "Was Adresse wohnen Sie an?",
+          household:
+              "Wie viele Familienmitglieder, einschließlich sich selbst, sind Sie zur Zeit leben mit?",
+          housing: "Was ist Ihr heute Wohnsituation?",
+          losingHousing: "Sind Sie besorgt, über Ihr Gehäuse zu verlieren?",
+        ),
+        moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
+          title: "Geld und Ressourcen",
+          income:
+              "Im vergangenen Jahr, was war das gesamte kombinierte Einkommen für Sie und die Familienmitglieder mit denen Sie leben? Diese Informationen helfen uns festzustellen, ob Sie für alle Leistungen qualifizieren.",
+          insurance: "Was ist Ihre Hauptversicherung?",
+          school: "Was ist die höchste Stufe der Schule, dass Sie fertig sind?",
+          transportation:
+              "Hat Mangel an Transportmitteln gehalten Sie von Arztterminen, Meetings, Arbeit oder aus, dass die Dinge für das tägliche Leben benötigt?",
+          without:
+              "Im vergangenen Jahr haben Sie oder alle Familienmitglieder Ihnen nicht gelungen, leben eine der folgenden Bedingungen zu erhalten, wenn es wirklich nötig war?",
+          work: "Was ist Ihre aktuelle Arbeitssituation?",
+        ),
+        optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
+          title: "optionale Maßnahmen",
+          afraid:
+              "Im vergangenen Jahr haben Sie von Ihrem Partner oder Ex-Partner gefürchtet?",
+          prison:
+              "Im vergangenen Jahr haben Sie mehr als 2 Nächte in einer Reihe in einem Gefängnis, Gefängnis, Strafanstalt oder juvenile JVA verbracht?",
+          refugee: "Sind Sie ein Flüchtling?",
+          safe:
+              "Fühlen Sie sich körperlich und emotional sicher, wo Sie zur Zeit leben?",
+        ),
+        personalCharacteristics:
+            AppLocalizations_Labels_Prapare_PersonalCharacteristics(
+          title: "Persönliche Eigenschaften",
+          language: "Was die Sprache sind Sie am bequemsten zu sprechen?",
+          latino: "Halten Sie sich für Spanisch / Latino?",
+          military:
+              "Haben Sie von den Streitkräften der Vereinigten Staaten entlassen worden?",
+          race: "Welche Rasse (n) sind Sie?",
+          seasonalWork:
+              "An jedem Punkt in den letzten 2 Jahren hat Saison oder Wanderfeldarbeit ist Du oder Ihre Familie Haupteinnahmequelle?",
+        ),
+        socialAndEmotionalHealth:
+            AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
+          title: "Soziale und emotionale Gesundheit",
+          stress:
+              "Stress ist, wenn jemand fühlt sich angespannt, nervös, ängstlich oder kann nachts nicht schlafen, weil ihr Geist beunruhigt. Wie gestresst sind Sie?",
+          talk:
+              "Wie oft sehen Sie oder sprechen Sie mit Menschen, die Sie wichtig ist und das Gefühl der Nähe von (Zum Beispiel: im Gespräch mit Freunden am Telefon, Freunde oder Familie besuchen, in der Kirche gehen oder Clubtreffen)?",
+        ),
+      ),
+      registration: AppLocalizations_Labels_Registration(
+        registerPatient: "Register Patienten",
+      ),
+      settings: AppLocalizations_Labels_Settings(
+        dark: "Dunkel",
+        language: "Sprache",
+        light: "Licht",
+        signOut: "Ausloggen",
+        system: "System",
+        theme: "Thema",
+        title: "die Einstellungen",
+        updateProfile: "Profil aktualisieren",
+      ),
+    ),
+    Locale.fromSubtags(languageCode: "id"): AppLocalizations_Labels(
+      app: AppLocalizations_Labels_App(
+        chooseLanguage: "Pilih bahasa",
+        chooseTheme: "Pilih Tema",
+        settings: "Pengaturan aplikasi",
+        system: "Sistem",
+        title: "Prapare",
+      ),
+      auth: AppLocalizations_Labels_Auth(
+        cancel: "Membatalkan",
+        changePassword: "Ganti kata sandi",
+        email: "Surel",
+        password: "Kata sandi",
+        resetPassword: "Reset password",
+        signIn: "Masuk",
+        signUp: "Daftar",
+        submit: "Kirimkan",
+        userName: "Nama pengguna",
+      ),
+      dates: AppLocalizations_Labels_Dates(
+        month: AppLocalizations_Labels_Dates_Month(
+          april: "April",
+          august: "Agustus",
+          december: "Desember",
+          february: "Februari",
+          january: "Januari",
+          july: "Juli",
+          june: "Juni",
+          march: "Maret",
+          may: "Mungkin",
+          november: "November",
+          october: "Oktober",
+          september: "September",
+        ),
+        weekday: AppLocalizations_Labels_Dates_Weekday(
+          friday: "Jumat",
+          monday: "Senin",
+          saturday: "Sabtu",
+          sunday: "Minggu",
+          thursday: "Kamis",
+          tuesday: "Selasa",
+          wednesday: "Rabu",
+        ),
+      ),
+      general: AppLocalizations_Labels_General(
+        birthDate: "Tanggal lahir",
+        dateofBirth: "Tanggal lahir",
+        editSurvey: "mengedit Survey",
+        familyName: "Nama keluarga",
+        female: "Perempuan",
+        givenNames: "Memberikan nama",
+        male: "Pria",
+        newSurvey: "Survei baru",
+        relationship: "Hubungan",
+        search: "Cari",
+        submitShare: "Menyerahkan / Share",
+        address: AppLocalizations_Labels_General_Address(
+          title: "Alamat",
+          city: "Kota",
+          country: "Negara",
+          county: "daerah",
+          district: "Distrik",
+          neighborhood: "Lingkungan",
+          postalCode: "Kode Pos",
+          state: "Negara",
+        ),
+        relation: AppLocalizations_Labels_General_Relation(
+          title: "Hubungan",
+          aunt: "Bibi",
+          brother: "Saudara",
+          daughter: "Putri",
+          father: "Ayah",
+          grandfather: "Kakek",
+          grandmother: "Nenek",
+          mother: "Ibu",
+          nephew: "Keponakan",
+          niece: "Keponakan",
+          sister: "Saudara",
+          son: "Putra",
+          uncle: "Paman",
+        ),
+        sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
+          title: "Seks di Lahir",
+          female: "Perempuan",
+          male: "Pria",
+        ),
+      ),
+      language: AppLocalizations_Labels_Language(
+        title: "Pilih bahasa",
+        inEnglish: "Indonesian",
+      ),
+      medical: AppLocalizations_Labels_Medical(
+        growth: "Pertumbuhan",
+        immunization: "Imunisasi",
+        immunizations: "imunisasi",
+        vaccine: "Vaksin",
+        vaccines: "Vaksin",
+      ),
+      prapare: AppLocalizations_Labels_Prapare(
+        title:
+            "Protokol untuk Menanggapi dan Menilai Aset Pasien, Risiko, dan Pengalaman [PRAPARE]",
+        familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
+          title: "Keluarga dan Rumah",
+          address: "Apa alamat yang Anda tinggal di?",
+          household:
+              "Berapa banyak anggota keluarga, termasuk Anda, apakah Anda saat ini hidup dengan?",
+          housing: "Apa situasi perumahan Anda hari ini?",
+          losingHousing:
+              "Apakah Anda khawatir tentang kehilangan perumahan Anda?",
+        ),
+        moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
+          title: "Uang dan Sumber Daya",
+          income:
+              "Selama tahun lalu, apa yang pendapatan gabungan total untuk Anda dan anggota keluarga Anda hidup dengan? Informasi ini akan membantu kami menentukan apakah Anda memenuhi syarat untuk manfaat.",
+          insurance: "Apa asuransi utama Anda?",
+          school: "Apa tingkat tertinggi sekolah yang telah selesai?",
+          transportation:
+              "Telah kurangnya transportasi terus Anda dari medis janji, rapat, pekerjaan, atau dari mendapatkan hal-hal yang diperlukan untuk hidup sehari-hari?",
+          without:
+              "Pada tahun lalu, apakah Anda atau anggota keluarga Anda hidup dengan tidak mampu untuk mendapatkan salah satu dari berikut ketika itu benar-benar diperlukan?",
+          work: "Apa situasi kerja Anda saat ini?",
+        ),
+        optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
+          title: "Tindakan opsional",
+          afraid:
+              "Pada tahun lalu, telah Anda takut pasangan Anda atau mantan pasangan?",
+          prison:
+              "Pada tahun lalu, apakah Anda menghabiskan lebih dari 2 malam berturut-turut di penjara, penjara, pusat penahanan, atau fasilitas pemasyarakatan remaja?",
+          refugee: "Apakah Anda seorang pengungsi?",
+          safe:
+              "Apakah Anda merasa secara fisik dan emosional yang aman di mana Anda saat ini tinggal?",
+        ),
+        personalCharacteristics:
+            AppLocalizations_Labels_Prapare_PersonalCharacteristics(
+          title: "Karakteristik pribadi",
+          language: "Bahasa apa yang paling Anda nyaman berbicara?",
+          latino: "Apakah Anda menganggap diri Anda Hispanik / Latino?",
+          military:
+              "Apakah Anda telah keluar dari angkatan bersenjata Amerika Serikat?",
+          race: "ras yang (s) yang Anda?",
+          seasonalWork:
+              "Pada setiap titik dalam 2 tahun terakhir, memiliki musim atau migran pekerjaan pertanian telah Anda atau sumber utama keluarga pendapatan?",
+        ),
+        socialAndEmotionalHealth:
+            AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
+          title: "Sosial dan Kesehatan Emosional",
+          stress:
+              "Stres adalah ketika seseorang merasa tegang, gugup, cemas atau tidak bisa tidur di malam hari karena pikiran mereka terganggu. Bagaimana stres Anda?",
+          talk:
+              "Seberapa sering Anda melihat atau berbicara dengan orang-orang bahwa Anda peduli dan merasa dekat dengan (Misalnya: berbicara dengan teman di telepon, mengunjungi teman atau keluarga, pergi ke pertemuan gereja atau klub)?",
+        ),
+      ),
+      registration: AppLocalizations_Labels_Registration(
+        registerPatient: "Pendaftaran Pasien",
+      ),
+      settings: AppLocalizations_Labels_Settings(
+        dark: "Gelap",
+        language: "Bahasa",
+        light: "Cahaya",
+        signOut: "Keluar",
+        system: "Sistem",
+        theme: "Tema",
+        title: "pengaturan",
+        updateProfile: "Memperbaharui profil",
+      ),
+    ),
+    Locale.fromSubtags(languageCode: "km"): AppLocalizations_Labels(
+      app: AppLocalizations_Labels_App(
+        chooseLanguage: "ជ្រើសរើសភាសា",
+        chooseTheme: "ជ្រើសស្បែក",
+        settings: "ការកំណត់កម្មវិធី",
+        system: "ប្រព័ន្ធ",
+        title: "Prapare",
+      ),
+      auth: AppLocalizations_Labels_Auth(
+        cancel: "បោះបង់",
+        changePassword: "ផ្លាស់ប្តូរពាក្យសម្ងាត់",
+        email: "អ៊ីម៉ែល",
+        password: "ការពាក្យសម្ងាត់",
+        resetPassword: "ពាក្យសម្ងាត់កំណត់ឡើងវិញ",
+        signIn: "ចូល",
+        signUp: "ចុះ​ឈ្មោះ",
+        submit: "ដាក់ស្នើ",
+        userName: "ឈ្មោះ​អ្នកប្រើប្រាស់",
+      ),
+      dates: AppLocalizations_Labels_Dates(
+        month: AppLocalizations_Labels_Dates_Month(
+          april: "ខែមេសា",
+          august: "ខែសីហា",
+          december: "ខែធ្នូ",
+          february: "ខែកុម្ភៈ",
+          january: "ខែមករា",
+          july: "ខែកក្កដា",
+          june: "ខែមិថុនា",
+          march: "ខែមីនា",
+          may: "ឧសភា",
+          november: "ខែវិច្ឆិកា",
+          october: "ខែតុលា",
+          september: "ខែកញ្ញា",
+        ),
+        weekday: AppLocalizations_Labels_Dates_Weekday(
+          friday: "ថ្ងៃសុក្រ",
+          monday: "ថ្ងៃចន្ទ",
+          saturday: "ថ្ងៃសៅរ៍",
+          sunday: "ថ្ងៃអាទិត្យ",
+          thursday: "ថ្ងៃព្រហស្បតិ៍",
+          tuesday: "ថ្ងៃអង្គារ",
+          wednesday: "ថ្ងៃពុធ",
+        ),
+      ),
+      general: AppLocalizations_Labels_General(
+        birthDate: "ថ្ងៃខែ​ឆ្នាំ​កំណើត",
+        dateofBirth: "ថ្ងៃខែ​ឆ្នាំ​កំណើត",
+        editSurvey: "កែសម្រួលការស្ទង់មតិ",
+        familyName: "ឈ្មោះគ្រួសារ",
+        female: "ស្រី",
+        givenNames: "ឈ្មោះ​ហៅក្រៅ",
+        male: "បុរស",
+        newSurvey: "ការស្ទង់មតិថ្មី",
+        relationship: "ទំនាក់ទំនង",
+        search: "ស្វែងរក",
+        submitShare: "ដាក់ស្នើ / ចែករំលែក",
+        address: AppLocalizations_Labels_General_Address(
+          title: "អាសយដ្ឋាន",
+          city: "ទីក្រុង",
+          country: "ប្រទេស",
+          county: "ខោនធី",
+          district: "ស្រុក",
+          neighborhood: "អ្នកជិតខាង",
+          postalCode: "លេខ​កូដ​ប្រៃ​ស​ណី​យ",
+          state: "រដ្ឋ",
+        ),
+        relation: AppLocalizations_Labels_General_Relation(
+          title: "ទំនាក់ទំនង",
+          aunt: "មីង",
+          brother: "បងប្រុស",
+          daughter: "កូនស្រី",
+          father: "ព្រះបិតា",
+          grandfather: "ជីតា",
+          grandmother: "លោកយាយ",
+          mother: "ម្តាយ",
+          nephew: "ក្មួយប្រុស",
+          niece: "ក្មួយស្រី",
+          sister: "បងស្រី",
+          son: "ព្រះបុត្រា",
+          uncle: "ពូ",
+        ),
+        sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
+          title: "ការរួមភេទនៅកំណើត",
+          female: "ស្រី",
+          male: "បុរស",
+        ),
+      ),
+      language: AppLocalizations_Labels_Language(
+        title: "ជ្រើសរើសភាសា",
+        inEnglish: "Khmer",
+      ),
+      medical: AppLocalizations_Labels_Medical(
+        growth: "កំណើន",
+        immunization: "ចាក់ថ្នាំបង្ការរោគ",
+        immunizations: "ចាក់ថ្នាំបង្ការរោគ",
+        vaccine: "ថ្នាំបង្ការ",
+        vaccines: "វ៉ាក់សាំង",
+      ),
+      prapare: AppLocalizations_Labels_Prapare(
+        title:
+            "ពិធីការសម្រាប់ការឆ្លើយតបទៅនឹងទ្រព្យសកម្មនិងការវាយតម្លៃអ្នកជំងឺ, ហានិភ័យ, និងបទពិសោធន៍ [PRAPARE]",
+        familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
+          title: "គ្រួសារនិងទំព័រដើម",
+          address: "តើអ្វីទៅអាសយដ្ឋានតើអ្នករស់នៅ?",
+          household:
+              "តើមានសមាជិកគ្រួសាររួមទាំងខ្លួនអ្នកផ្ទាល់បានធ្វើការផ្សាយបន្តផ្ទាល់ជាមួយអ្នកនាពេលបច្ចុប្បន្ន?",
+          housing: "នេះគឺជាស្ថានភាពផ្ទះរបស់អ្នកថ្ងៃអ្វី?",
+          losingHousing: "តើអ្នកមានការព្រួយបារម្ភពីការបាត់បង់ផ្ទះរបស់អ្នក?",
+        ),
+        moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
+          title: "លុយនិងធនធាន",
+          income:
+              "ក្នុងអំឡុងឆ្នាំកន្លងទៅនេះអ្វីដែលជាប្រាក់ចំណូលសរុបសម្រាប់អ្នកនិងសមាជិកក្រុមគ្រួសាររបស់អ្នករស់នៅជាមួយ? ពនេះនឹងជួយឱ្យយើងកំណត់ថាតើអ្នកមានសិទ្ធិទទួលបានផលប្រយោជន៍ណាមួយឡើយ។",
+          insurance: "ការធានារ៉ាប់រងសំខាន់របស់អ្នកគឺជាអ្វី?",
+          school: "កម្រិតខ្ពស់បំផុតនៃសាលារៀនដែលអ្នកបានបញ្ចប់ជាអ្វី?",
+          transportation:
+              "កង្វះនៃការដឹកជញ្ជូនត្រូវបានរក្សាទុកអ្នកពីពេទ្យណាត់ជួបការប្រជុំការងារឬពីការទទួលបានអ្វីដែលត្រូវការសម្រាប់ការរស់នៅប្រចាំថ្ងៃ?",
+          without:
+              "ក្នុងឆ្នាំកន្លងទៅនេះមានអ្នកឬសមាជិកគ្រួសារណាមួយដែលអ្នករស់នៅជាមួយមិនអាចទទួលបានការណាមួយដូចខាងក្រោមនៅពេលដែលវាត្រូវបានគេត្រូវការជាចាំបាច់ជាការពិត?",
+          work: "ស្ថានភាពការងារបច្ចុប្បន្នរបស់អ្នកគឺជាអ្វី?",
+        ),
+        optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
+          title: "វិធានការជាជម្រើស",
+          afraid:
+              "ក្នុងឆ្នាំកន្លងទៅនេះតើអ្នកមានការភ័យខ្លាចនៃការដៃគូឬដៃគូរបស់អ្នកអតីត?",
+          prison:
+              "ក្នុងឆ្នាំកន្លងមកនេះមានអ្នកចំណាយពេលច្រើនជាង 2 យប់ក្នុងជួរដេកមួយនៅគុកពន្ធ, មណ្ឌលឃុំឃាំងឬការកែប្រែអនីតិជនកន្លែង?",
+          refugee: "តើអ្នកជាជនភៀសខ្លួនមួយ?",
+          safe:
+              "តើអ្នកមានអារម្មណ៍ថាមានសុវត្ថិភាពខាងរូបកាយនិងខាងផ្លូវចិត្ដការផ្សាយបន្តផ្ទាល់បច្ចុប្បន្ននេះកន្លែងដែលអ្នក?",
+        ),
+        personalCharacteristics:
+            AppLocalizations_Labels_Prapare_PersonalCharacteristics(
+          title: "លក្ខណៈផ្ទាល់ខ្លួន",
+          language: "តើអ្វីទៅជាភាសាដែលអ្នកមាននិយាយជាមានផាសុខភាពបំផុត?",
+          latino: "តើអ្នកពិចារណាដោយខ្លួនឯងអ្នកនិយាយភាសា / ប្រុស?",
+          military:
+              "តើអ្នកត្រូវបានរំសាយចេញពីកងកម្លាំងប្រដាប់អាវុធរបស់សហរដ្ឋអាមេរិក?",
+          race: "ការប្រណាំងដែល (s) ដែលអ្នកមាន?",
+          seasonalWork:
+              "នៅចំណុចណាមួយនៅក្នុងរយៈពេល 2 ឆ្នាំមកនេះមានរដូវកាលឬការងារកសិដ្ឋានចំណាកស្រុកបានរបស់អ្នកឬរបស់អ្នកដែលជាប្រភពសំខាន់នៃប្រាក់ចំណូលរបស់គ្រួសារ?",
+        ),
+        socialAndEmotionalHealth:
+            AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
+          title: "សង្គមនិងសុខភាពផ្លូវចិត្ដ",
+          stress:
+              "ស្ត្រេសគឺជាពេលដែលនរណាម្នាក់មានអារម្មណ៍តានតឹង, ភ័យ, រំភើបចិត្តឬមិនអាចដេកលក់នៅពេលយប់ដោយសារតែចិត្តរបស់ពួកគេត្រូវតប់ប្រមល់។ តើធ្វើដូចម្តេចបានសង្កត់ធ្ងន់អ្នកមាន?",
+          talk:
+              "តើធ្វើដូចម្តេចជាញឹកញាប់តើអ្នកឃើញឬនិយាយទៅកាន់មនុស្សដែលអ្នកយកចិត្តទុកដាក់និងមានអារម្មណ៍ជិតស្និទ្ធនឹង (ឧទាហរណ៍: ការនិយាយទៅកាន់មិត្តភក្តិនៅលើទូរស័ព្ទ, ទស្សនាមិត្តភក្តិឬក្រុមគ្រួសារនឹងកិច្ចប្រជុំក្នុងសាសនាចក្រឬក្លឹប)?",
+        ),
+      ),
+      registration: AppLocalizations_Labels_Registration(
+        registerPatient: "ជម្ងឺចុះឈ្មោះ",
+      ),
+      settings: AppLocalizations_Labels_Settings(
+        dark: "ងងឹត",
+        language: "ភាសា",
+        light: "ពន្លឺ",
+        signOut: "ចាកចេញ",
+        system: "ប្រព័ន្ធ",
+        theme: "ស្បែក",
+        title: "ការកំណត់",
+        updateProfile: "ទម្រង់ធ្វើឱ្យទាន់សម័យ",
+      ),
+    ),
+    Locale.fromSubtags(languageCode: "ko"): AppLocalizations_Labels(
+      app: AppLocalizations_Labels_App(
+        chooseLanguage: "언어 선택",
+        chooseTheme: "테마를 선택",
+        settings: "앱 설정",
+        system: "체계",
+        title: "Prapare",
+      ),
+      auth: AppLocalizations_Labels_Auth(
+        cancel: "취소",
+        changePassword: "암호 변경",
+        email: "이메일",
+        password: "암호",
+        resetPassword: "암호를 재설정",
+        signIn: "에 서명",
+        signUp: "가입하기",
+        submit: "제출",
+        userName: "사용자 이름",
+      ),
+      dates: AppLocalizations_Labels_Dates(
+        month: AppLocalizations_Labels_Dates_Month(
+          april: "4 월",
+          august: "팔월",
+          december: "12 월",
+          february: "이월",
+          january: "일월",
+          july: "칠월",
+          june: "유월",
+          march: "행진",
+          may: "할 수있다",
+          november: "십일월",
+          october: "십월",
+          september: "구월",
+        ),
+        weekday: AppLocalizations_Labels_Dates_Weekday(
+          friday: "금요일",
+          monday: "월요일",
+          saturday: "토요일",
+          sunday: "일요일",
+          thursday: "목요일",
+          tuesday: "화요일",
+          wednesday: "수요일",
+        ),
+      ),
+      general: AppLocalizations_Labels_General(
+        birthDate: "생일",
+        dateofBirth: "생년월일",
+        editSurvey: "편집 설문 조사",
+        familyName: "가족 이름",
+        female: "여자",
+        givenNames: "지정된 이름의",
+        male: "남성",
+        newSurvey: "새로운 설문 조사",
+        relationship: "관계",
+        search: "검색",
+        submitShare: "전송 / 공유",
+        address: AppLocalizations_Labels_General_Address(
+          title: "주소",
+          city: "시티",
+          country: "국가",
+          county: "군",
+          district: "지구",
+          neighborhood: "이웃",
+          postalCode: "우편 번호",
+          state: "상태",
+        ),
+        relation: AppLocalizations_Labels_General_Relation(
+          title: "관계",
+          aunt: "이모",
+          brother: "동료",
+          daughter: "딸",
+          father: "아버지",
+          grandfather: "할아버지",
+          grandmother: "할머니",
+          mother: "어머니",
+          nephew: "조카",
+          niece: "조카딸",
+          sister: "여자 형제",
+          son: "아들",
+          uncle: "삼촌",
+        ),
+        sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
+          title: "출생에서 섹스",
+          female: "여자",
+          male: "남성",
+        ),
+      ),
+      language: AppLocalizations_Labels_Language(
+        title: "언어 선택",
+        inEnglish: "Korean",
+      ),
+      medical: AppLocalizations_Labels_Medical(
+        growth: "성장",
+        immunization: "면제",
+        immunizations: "예방 접종",
+        vaccine: "백신",
+        vaccines: "백신",
+      ),
+      prapare: AppLocalizations_Labels_Prapare(
+        title: "에 응답하는 환자의 자산을 평가하기위한 프로토콜 위험 경험 [PRAPARE]",
+        familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
+          title: "가족과 집",
+          address: "당신은 무엇 주소에 살고 있습니까?",
+          household: "자신을 포함하여 얼마나 많은 가족,와 현재 라이브 당신에게 무엇입니까?",
+          housing: "귀하의 주택 상황은 오늘 무엇입니까?",
+          losingHousing: "당신은 당신의 주택을 잃어 버릴까 걱정하고 있습니까?",
+        ),
+        moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
+          title: "돈과 자원",
+          income:
+              "지난 한 해 동안, 당신과 당신이 살고있는 가족 구성원의 총 결합 된 소득은 무엇 이었습니까? 이 정보는 어떤 혜택을받을 수 있는지 우리가 결정하는 데 도움이됩니다.",
+          insurance: "주요 보험은 무엇입니까?",
+          school: "당신이 완료하는 것이 학교의 가장 높은 수준은 무엇인가?",
+          transportation:
+              "교통의 부족은 의료에서 ​​유지하고 약속, 회의, 업무 또는 일상 생활에 필요한 물건을 받고에서?",
+          without: "지난 해,이 당신이나 당신이 정말 필요로 할 때 다음 중 하나를 얻을 수 없었다 함께 살고있는 가족?",
+          work: "현재 작업 상황은 무엇인가?",
+        ),
+        optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
+          title: "옵션 조치",
+          afraid: "지난 해, 당신은 당신의 파트너 또는 전 파트너 두려워했다?",
+          prison: "지난 해에, 당신은 감옥, 교도소, 구치소, 또는 청소년 교정 시설에서 연속 2 박 이상을 보냈습니다?",
+          refugee: "당신은 난민인가?",
+          safe: "당신은 육체적으로 어디 현재 살고 감정적으로 안전 느끼십니까?",
+        ),
+        personalCharacteristics:
+            AppLocalizations_Labels_Prapare_PersonalCharacteristics(
+          title: "개인별 특성",
+          language: "당신은 가장 편안한 말하기 언어는 무엇입니까?",
+          latino: "당신은 라틴 아메리카 / 스페인 스스로 생각하십니까?",
+          military: "당신은 미국의 군대에서 배출 된 적이 있습니까?",
+          race: "당신은 어떤 인종 (들)입니까?",
+          seasonalWork:
+              "지난 이년의 어떤 시점에서, 계절과 이주 농장 일이 소득의 당신 또는 당신의 가족의 주요 원천이되어있다?",
+        ),
+        socialAndEmotionalHealth:
+            AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
+          title: "사회 및 정서적 건강",
+          stress:
+              "누군가가, 긴장 긴장, 불안 느낌 또는 그들의 마음에 근심하기 때문에 밤에 잠을 잘 수 없을 때 스트레스입니다. 당신은 어떻게 스트레스?",
+          talk:
+              "얼마나 자주 당신은 당신이 관심을 종료 느끼는 사람들에게 이야기 나 보이나요 (예를 들어, 친구 나 가족을 방문, 전화로 친구에게 얘기 교회 나 클럽 모임에가는)?",
+        ),
+      ),
+      registration: AppLocalizations_Labels_Registration(
+        registerPatient: "등록 환자",
+      ),
+      settings: AppLocalizations_Labels_Settings(
+        dark: "어두운",
+        language: "언어",
+        light: "빛",
+        signOut: "어",
+        system: "체계",
+        theme: "테마",
+        title: "설정",
+        updateProfile: "프로필 업데이트",
+      ),
+    ),
+    Locale.fromSubtags(languageCode: "lo"): AppLocalizations_Labels(
+      app: AppLocalizations_Labels_App(
+        chooseLanguage: "ເລືອກພາສາ",
+        chooseTheme: "ເລືອກຫົວຂໍ້",
+        settings: "Settings app",
+        system: "ລະບົບ",
+        title: "Prapare",
+      ),
+      auth: AppLocalizations_Labels_Auth(
+        cancel: "ຍົກເລີກການ",
+        changePassword: "ປ່ຽນ​ລະ​ຫັດ​ຜ່ານ",
+        email: "Email",
+        password: "ລະຫັດຜ່ານ",
+        resetPassword: "Reset Password",
+        signIn: "ເຂົ້າ​ສູ່​ລະ​ບົບ",
+        signUp: "ລົງ​ທະ​ບຽນ",
+        submit: "ຍື່ນສະເຫນີ",
+        userName: "ຊື່ຜູ້ໃຊ້",
+      ),
+      dates: AppLocalizations_Labels_Dates(
+        month: AppLocalizations_Labels_Dates_Month(
+          april: "ເມສາ",
+          august: "ສິງຫາ",
+          december: "ທັນວາ",
+          february: "ກຸມພາ",
+          january: "ມັງກອນ",
+          july: "ກໍລະກົດ",
+          june: "ມິຖຸນາ",
+          march: "ມີນາ",
+          may: "ພຶດສະພາ",
+          november: "ພະຈິກ",
+          october: "ຕຸລາ",
+          september: "ກັນຍາ",
+        ),
+        weekday: AppLocalizations_Labels_Dates_Weekday(
+          friday: "ວັນ​ສຸກ",
+          monday: "ຈັນ",
+          saturday: "ເສົາ",
+          sunday: "ວັນອາທິດ",
+          thursday: "ວັນພະຫັດ",
+          tuesday: "ວັນອັງຄານ",
+          wednesday: "ວັນພຸດ",
+        ),
+      ),
+      general: AppLocalizations_Labels_General(
+        birthDate: "ວັນເດືອນປີເກີດ",
+        dateofBirth: "ວັນ​ເດືອນ​ປີ​ເກີດ",
+        editSurvey: "ດັດແກ້ການສໍາຫຼວດ",
+        familyName: "ນາມ​ສະ​ກຸນ",
+        female: "ຍິງ",
+        givenNames: "Names ເນື່ອງ",
+        male: "ຜູ້​ຊາຍ",
+        newSurvey: "ການສໍາຫຼວດໃຫມ່",
+        relationship: "ຄວາມສໍາພັນ",
+        search: "ຄົ້ນຫາ",
+        submitShare: "ຍື່ນສະເຫນີ / Share",
+        address: AppLocalizations_Labels_General_Address(
+          title: "ທີ່ຢູ່",
+          city: "ເມືອງ",
+          country: "ປະເທດ",
+          county: "county",
+          district: "ເມືອງ",
+          neighborhood: "ບ້ານ",
+          postalCode: "ລະ​ຫັດ​ໄປ​ສະ​ນີ",
+          state: "State",
+        ),
+        relation: AppLocalizations_Labels_General_Relation(
+          title: "Relation",
+          aunt: "ປ້າ",
+          brother: "ອ້າຍ",
+          daughter: "ລູກສາວ",
+          father: "ພຣະບິດາ",
+          grandfather: "ປູ່",
+          grandmother: "grandmother",
+          mother: "ແມ່",
+          nephew: "ຫລານຊາຍ",
+          niece: "ຫລານສາວ",
+          sister: "ເອື້ອຍ",
+          son: "ລູກຊາຍ",
+          uncle: "ລຸງ",
+        ),
+        sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
+          title: "ເພດໃນເວລາເກີດ",
+          female: "ຍິງ",
+          male: "ຜູ້​ຊາຍ",
+        ),
+      ),
+      language: AppLocalizations_Labels_Language(
+        title: "ເລືອກພາສາ",
+        inEnglish: "Lao",
+      ),
+      medical: AppLocalizations_Labels_Medical(
+        growth: "ການຂະຫຍາຍຕົວ",
+        immunization: "ປ້ອງກັນພະຍາດ",
+        immunizations: "ພູມຕ້ານທານ",
+        vaccine: "ສັກຢາວັກຊີນ",
+        vaccines: "ວັກ​ຊີນ​ປ້ອງ​ກັນ",
+      ),
+      prapare: AppLocalizations_Labels_Prapare(
+        title:
+            "ອະນຸສັນຍາສໍາລັບການຕອບກັບແລະການປະເມີນຄົນເຈັບຊັບ, ຄວາມສ່ຽງ, ແລະປະສົບການ [PRAPARE]",
+        familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
+          title: "ຄອບຄົວແລະບ້ານ",
+          address: "ທ່ານຢູ່ແນວໃດດໍາລົງຊີວິດຢູ່?",
+          household:
+              "ວິທີການຫຼາຍສະມາຊິກໃນຄອບຄົວ, ລວມທັງຕົວທ່ານເອງ, ເຮັດແນວໃດທ່ານປະຈຸບັນດໍາລົງຊີວິດທີ່ມີ?",
+          housing: "ແມ່ນຫຍັງສະຖານະການທີ່ຢູ່ອາໄສຂອງທ່ານໃນມື້ນີ້?",
+          losingHousing: "ທ່ານກໍາລັງກັງວົນກ່ຽວກັບການສູນເສຍທີ່ຢູ່ອາໄສຂອງທ່ານ?",
+        ),
+        moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
+          title: "ເງິນແລະຊັບພະຍາກອນ",
+          income:
+              "ໃນລະຫວ່າງປີທີ່ຜ່ານມາ, ສິ່ງທີ່ເປັນລາຍຮັບລວມທັງຫມົດສໍາລັບທ່ານແລະສະມາຊິກໃນຄອບຄົວທີ່ທ່ານດໍາລົງຊີວິດທີ່ມີ? ຂໍ້ມູນຂ່າວສານນີ້ຈະຊ່ວຍໃຫ້ພວກເຮົາກໍານົດຖ້າຫາກວ່າທ່ານມີສິດໄດ້ຮັບສໍາລັບຜົນປະໂຫຍດໃດໆ.",
+          insurance: "ແມ່ນຫຍັງກັນຕົ້ນຕໍຂອງທ່ານ?",
+          school: "ລະດັບທີ່ສູງທີ່ສຸດຂອງໂຮງຮຽນທີ່ທ່ານໄດ້ສໍາເລັດການແມ່ນຫຍັງ?",
+          transportation:
+              "ໄດ້ຂາດການຂົນສົ່ງເກັບຮັກສາໄວ້ຈາກທາງການແພດນັດຫມາຍ, ກອງປະຊຸມ, ການເຮັດວຽກ, ຫຼືຈາກການໄດ້ຮັບສິ່ງທີ່ຈໍາເປັນສໍາລັບດໍາລົງຊີວິດປະຈໍາວັນ?",
+          without:
+              "ໃນປີທີ່ຜ່ານມາ, ມີທ່ານຫຼືສະມາຊິກໃນຄອບຄົວທີ່ທ່ານດໍາລົງຊີວິດທີ່ມີບໍ່ສາມາດໄດ້ຮັບການໃດໆຂອງດັ່ງຕໍ່ໄປນີ້ໃນເວລາທີ່ມັນໄດ້ຈໍາເປັນແທ້ບໍ?",
+          work: "ສະຖານະການເຮັດວຽກໃນປະຈຸບັນຂອງທ່ານແມ່ນຫຍັງ?",
+        ),
+        optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
+          title: "ມາດຕະການທາງເລືອກ",
+          afraid:
+              "ໃນປີທີ່ຜ່ານມາ, ທ່ານໄດ້ຢ້ານກົວຂອງຄູ່ຮ່ວມງານຫຼືຄູ່ຮ່ວມງານຂອງ ex-ຂອງທ່ານ?",
+          prison:
+              "ໃນປີທີ່ຜ່ານມາ, ມີທ່ານໃຊ້ເວລາຫຼາຍກ່ວາ 2 ຄືນຕິດຕໍ່ກັນຢູ່ໃນຄຸກ, ຄຸກ, ສູນກັກຂັງຫລືໃນຄຸກເຍົາວະຊົນ?",
+          refugee: "ທ່ານມີຊາວອົບພະຍົບ?",
+          safe:
+              "ທ່ານມີຄວາມຮູ້ສຶກທາງຮ່າງກາຍແລະອາລົມຄວາມປອດໄພບ່ອນທີ່ທ່ານດໍາລົງຊີວິດໃນປະຈຸບັນ?",
+        ),
+        personalCharacteristics:
+            AppLocalizations_Labels_Prapare_PersonalCharacteristics(
+          title: "ລັກສະນະສ່ວນບຸກຄົນ",
+          language: "ສິ່ງທີ່ພາສາທ່ານເວົ້າສະດວກສະບາຍທີ່ສຸດ?",
+          latino: "ທ່ານພິຈາລະນາຕົວທ່ານເອງສະເປນ / ລາຕິນ?",
+          military:
+              "ທ່ານໄດ້ຮັບການປ່ອຍອອກມາຈາກກໍາລັງປະກອບອາວຸດຂອງສະຫະລັດອາເມລິກາ?",
+          race: "ທີ່ (s) ເຊື້ອຊາດແມ່ນທ່ານ?",
+          seasonalWork:
+              "ໃນຈຸດໃດຫນຶ່ງໃນໄລຍະຜ່ານມາ 2 ປີ, ມີລະດູການຫຼືການເຮັດວຽກກະສິກໍາຜູ້ອົບພະຍົບໄດ້ຄອບຄົວຂອງທ່ານຫຼືຂອງທ່ານແຫຼ່ງຕົ້ນຕໍຂອງລາຍຮັບບໍ?",
+        ),
+        socialAndEmotionalHealth:
+            AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
+          title: "ເພື່ອສັງຄົມແລະສຸຂະພາບທາງດ້ານຈິດໃຈ",
+          stress:
+              "ຄວາມກົດດັນແມ່ນໃນເວລາທີ່ຜູ້ໃດຜູ້ຫນຶ່ງຮູ້ສຶກຕຶງຄຽດປະສາດ, ກັງວົນໃຈຫຼືບໍ່ສາມາດນອນໃນຕອນກາງຄືນເນື່ອງຈາກວ່າຈິດໃຈຂອງເຂົາເຈົ້າແມ່ນບັນຫາ. ວິທີເນັ້ນຫນັກ are you?",
+          talk:
+              "ທ່ານໃດມັກເບິ່ງຫຼືສົນທະນາກັບປະຊາຊົນທີ່ທ່ານບົວລະບັດໃນກ່ຽວກັບການແລະມີຄວາມຮູ້ສຶກໃກ້ຊິດກັບ (ສໍາລັບຕົວຢ່າງເຊັ່ນ: ເວົ້າກັບຫມູ່ເພື່ອນຢູ່ໃນໂທລະສັບ, ການຢ້ຽມຢາມຫມູ່ເພື່ອນຫຼືຄອບຄົວ, ການໄປໂບດຫລືສະໂມສອນກອງປະຊຸມ)?",
+        ),
+      ),
+      registration: AppLocalizations_Labels_Registration(
+        registerPatient: "ອົດທົນຫມັກສະມາຊິກ",
+      ),
+      settings: AppLocalizations_Labels_Settings(
+        dark: "ຊ້ໍາ",
+        language: "ພາສາ",
+        light: "ແສງສະຫວ່າງ",
+        signOut: "ອອກ​ຈາກ​ລະ​ບົບ",
+        system: "ລະບົບ",
+        theme: "Theme",
+        title: "ການຕັ້ງຄ່າ",
+        updateProfile: "ແຜງ",
+      ),
+    ),
+    Locale.fromSubtags(languageCode: "mr"): AppLocalizations_Labels(
+      app: AppLocalizations_Labels_App(
+        chooseLanguage: "भाषा निवडा",
+        chooseTheme: "थीम निवडा",
+        settings: "App सेटिंग्ज",
+        system: "प्रणाली",
+        title: "Prapare",
+      ),
+      auth: AppLocalizations_Labels_Auth(
+        cancel: "रद्द करा",
+        changePassword: "पासवर्ड बदला",
+        email: "ईमेल",
+        password: "पासवर्ड",
+        resetPassword: "पासवर्ड रीसेट करा",
+        signIn: "साइन इन करा",
+        signUp: "साइन अप करा",
+        submit: "प्रस्तुत करणे",
+        userName: "वापरकर्तानाव",
+      ),
+      dates: AppLocalizations_Labels_Dates(
+        month: AppLocalizations_Labels_Dates_Month(
+          april: "एप्रिल",
+          august: "ऑगस्ट",
+          december: "डिसेंबर",
+          february: "फेब्रुवारी",
+          january: "जानेवारी",
+          july: "जुलै",
+          june: "जून",
+          march: "मार्च",
+          may: "मे",
+          november: "नोव्हेंबर",
+          october: "ऑक्टोबर",
+          september: "सप्टेंबर",
+        ),
+        weekday: AppLocalizations_Labels_Dates_Weekday(
+          friday: "शुक्रवारी",
+          monday: "सोमवारी",
+          saturday: "शनिवारी",
+          sunday: "रविवारी",
+          thursday: "गुरुवारी",
+          tuesday: "मंगळवारी",
+          wednesday: "बुधवारी",
+        ),
+      ),
+      general: AppLocalizations_Labels_General(
+        birthDate: "जन्मदिनांक",
+        dateofBirth: "जन्म तारीख",
+        editSurvey: "सर्वेक्षण संपादित करा",
+        familyName: "कौटुंबिक नाव",
+        female: "स्त्री",
+        givenNames: "नावे दिली",
+        male: "पुरुष",
+        newSurvey: "नवीन सर्वेक्षण",
+        relationship: "संबंध",
+        search: "शोधा",
+        submitShare: "सबमिट करा / शेअर",
+        address: AppLocalizations_Labels_General_Address(
+          title: "पत्ता",
+          city: "सिटी",
+          country: "देश",
+          county: "तालुका",
+          district: "जिल्हा",
+          neighborhood: "शेजार",
+          postalCode: "पिनकोड",
+          state: "राज्य",
+        ),
+        relation: AppLocalizations_Labels_General_Relation(
+          title: "नाते",
+          aunt: "काकू",
+          brother: "भाऊ",
+          daughter: "मुलगी",
+          father: "वडील",
+          grandfather: "आजोबा",
+          grandmother: "आजी",
+          mother: "आई",
+          nephew: "भाचा",
+          niece: "भाची",
+          sister: "बहीण",
+          son: "मुलगा",
+          uncle: "काका",
+        ),
+        sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
+          title: "जन्म येथे लिंग",
+          female: "स्त्री",
+          male: "पुरुष",
+        ),
+      ),
+      language: AppLocalizations_Labels_Language(
+        title: "भाषा निवडा",
+        inEnglish: "Marathi",
+      ),
+      medical: AppLocalizations_Labels_Medical(
+        growth: "वाढ",
+        immunization: "लसीकरण",
+        immunizations: "लसीकरण",
+        vaccine: "लस",
+        vaccines: "लसीकरण",
+      ),
+      prapare: AppLocalizations_Labels_Prapare(
+        title:
+            "प्रतिसाद आणि रुग्णांना 'मालमत्तेचे मुल्यांकन, प्रोटोकॉल जोखीम, आणि अनुभव [PRAPARE]",
+        familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
+          title: "कुटुंब आणि मुख्यपृष्ठ",
+          address: "आपण काय पत्त्यावर राहता?",
+          household: "किती कुटुंबातील सदस्य, स्वत: ला समावेश, सध्या थेट काय?",
+          housing: "आज आपल्या गृहनिर्माण परिस्थिती काय आहे?",
+          losingHousing: "आपण आपल्या गृहनिर्माण तोट्याचा काळजी का करता?",
+        ),
+        moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
+          title: "मनी आणि संसाधने",
+          income:
+              "गेल्या वर्षी दरम्यान, आपण आणि आपण जगू कुटुंबातील सदस्य एकूण एकत्रित उत्पन्न काय होते? ही माहिती आपण कोणत्याही पात्र तर आपल्याला निर्धारित करण्यात मदत करेल.",
+          insurance: "आपल्या मुख्य विमा काय आहे?",
+          school: "आपण पूर्ण की शाळा सर्वाधिक पातळी काय आहे?",
+          transportation:
+              "वैद्यकीय पासून वाहतूक अभाव आपण ठेवले आहे भेटी, सभा, काम, किंवा दररोज जिवंत आवश्यक गोष्टी मिळत?",
+          without:
+              "गेल्या वर्षी, आपल्याला किंवा आपण तो खरोखर गरज होती तेव्हा खालील काही मिळेना केले राहतात कोणत्याही कुटुंब सदस्य?",
+          work: "आपल्या वर्तमान काम परिस्थिती काय आहे?",
+        ),
+        optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
+          title: "पर्यायी उपाय",
+          afraid:
+              "गेल्या वर्षी, आपण आपल्या भागीदार किंवा माजी भागीदार घाबरत आहेत?",
+          prison:
+              "गेल्या वर्षी, आपण कारागृह, तुरुंगात, स्थानबद्ध केंद्र, किंवा तरूण correctional सुविधा सलग 2 पेक्षा जास्त रात्री खर्च आहे?",
+          refugee: "आपण निर्वासित आहे का?",
+          safe: "आपण शारीरिक आणि भावनिक सुरक्षित जेथे आपण सध्या थेट वाटते का?",
+        ),
+        personalCharacteristics:
+            AppLocalizations_Labels_Prapare_PersonalCharacteristics(
+          title: "वैयक्तिक वैशिष्ट्ये",
+          language: "आपल्याला सर्वात सोयीस्कर बोलणे, काय भाषा आहे?",
+          latino: "आपण हिस्पॅनिक लॅटिनो स्वत: ला विचार नका /?",
+          military: "आपण युनायटेड स्टेट्स फौजा पासून घरी सोडण्यात आले आहे?",
+          race: "आपण कोणत्या शर्यत (s) आहेत?",
+          seasonalWork:
+              "गेल्या 2 वर्षांत कोणत्याही टप्प्यावर, आहे हंगामात किंवा स्थलांतरित शेत काम आपल्या किंवा आपल्या कुटुंबाच्या उत्पन्न मुख्य स्रोत आहे?",
+        ),
+        socialAndEmotionalHealth:
+            AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
+          title: "सामाजिक आणि भावनिक आरोग्य",
+          stress:
+              "कोणीतरी, ताठ चिंताग्रस्त चिंता वाटते किंवा त्यांच्या मन अस्वस्थ रात्री झोपू शकला नाही तेव्हा ताण आहे. आपण कसे भर आहेत?",
+          talk:
+              "किती वेळा आपण किंवा आपण काळजी आणि बंद वाटत की लोक चर्चा पाहू नका (उदाहरणार्थ:,, चर्च किंवा क्लब सभा होणार फोनवर मित्र बोलत मित्र किंवा कुटुंब भेट)?",
+        ),
+      ),
+      registration: AppLocalizations_Labels_Registration(
+        registerPatient: "नोंदणी रुग्णांच्या",
+      ),
+      settings: AppLocalizations_Labels_Settings(
+        dark: "गडद",
+        language: "इंग्रजी",
+        light: "प्रकाश",
+        signOut: "साइन आउट",
+        system: "प्रणाली",
+        theme: "थीम",
+        title: "सेटिंग्ज",
+        updateProfile: "प्रोफाइल अद्यतनित करा",
+      ),
+    ),
+    Locale.fromSubtags(languageCode: "ne"): AppLocalizations_Labels(
+      app: AppLocalizations_Labels_App(
+        chooseLanguage: "भाषा चयन",
+        chooseTheme: "विषयवस्तु रोज्न",
+        settings: "अनुप्रयोग सेटिङ",
+        system: "सिस्टम",
+        title: "Prapare",
+      ),
+      auth: AppLocalizations_Labels_Auth(
+        cancel: "रद्द",
+        changePassword: "पासवर्ड परिवर्तन",
+        email: "इमेल",
+        password: "पासवर्ड",
+        resetPassword: "पासवर्ड रिसेट",
+        signIn: "साइन",
+        signUp: "साइन अप",
+        submit: "पेश",
+        userName: "प्रयोगकर्ता नाम",
+      ),
+      dates: AppLocalizations_Labels_Dates(
+        month: AppLocalizations_Labels_Dates_Month(
+          april: "अप्रिल",
+          august: "अगस्ट",
+          december: "डिसेम्बर",
+          february: "फेब्रुअरी",
+          january: "जनवरी",
+          july: "जुलाई",
+          june: "जुन",
+          march: "मार्च",
+          may: "सक्छ",
+          november: "नोभेम्बर",
+          october: "अक्टोबर",
+          september: "सेप्टेम्बर",
+        ),
+        weekday: AppLocalizations_Labels_Dates_Weekday(
+          friday: "शुक्रवार",
+          monday: "सोमवार",
+          saturday: "शनिबार",
+          sunday: "आइतवार",
+          thursday: "बिहीबार",
+          tuesday: "मंगलवार",
+          wednesday: "बुधवार",
+        ),
+      ),
+      general: AppLocalizations_Labels_General(
+        birthDate: "जन्म मिति",
+        dateofBirth: "जन्म मिति",
+        editSurvey: "सर्वेक्षण सम्पादन",
+        familyName: "परिवार नाम",
+        female: "महिला",
+        givenNames: "नामहरू",
+        male: "पुरुष",
+        newSurvey: "नयाँ सर्वेक्षण",
+        relationship: "सम्बन्ध",
+        search: "खोज",
+        submitShare: "पेश / शेयर",
+        address: AppLocalizations_Labels_General_Address(
+          title: "ठेगाना",
+          city: "शहर",
+          country: "देश",
+          county: "काउन्टी",
+          district: "जिल्ला",
+          neighborhood: "छिमेकी",
+          postalCode: "पिन कोड",
+          state: "राज्य",
+        ),
+        relation: AppLocalizations_Labels_General_Relation(
+          title: "सम्बन्ध",
+          aunt: "चाची",
+          brother: "भाइ",
+          daughter: "छोरी",
+          father: "बुबा",
+          grandfather: "हजुरबुवा",
+          grandmother: "हजुरआमा",
+          mother: "आमा",
+          nephew: "भान्जा",
+          niece: "भान्जी",
+          sister: "बहिनी",
+          son: "छोरा",
+          uncle: "मामा",
+        ),
+        sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
+          title: "जन्म मा सेक्स",
+          female: "महिला",
+          male: "पुरुष",
+        ),
+      ),
+      language: AppLocalizations_Labels_Language(
+        title: "भाषा चयन",
+        inEnglish: "Nepali",
+      ),
+      medical: AppLocalizations_Labels_Medical(
+        growth: "वृद्धि",
+        immunization: "खोप",
+        immunizations: "प्रतिरक्षक",
+        vaccine: "टीका",
+        vaccines: "औषधी",
+      ),
+      prapare: AppLocalizations_Labels_Prapare(
+        title:
+            "जवाफ र बिरामीको सम्पत्ति आकलन लागि प्रोटोकल जोखिम र अनुभवहरू [PRAPARE]",
+        familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
+          title: "परिवार र घर",
+          address: "तपाईं के ठेगानामा बस्छौ?",
+          household:
+              "परिवार आफैलाई सहित कति सदस्यहरू, तपाईं हाल संग प्रत्यक्ष के?",
+          housing: "आज आफ्नो आवास अवस्था के छ?",
+          losingHousing: "तपाईं आफ्नो आवास गुमाउने चिन्तित हुनुहुन्छ?",
+        ),
+        moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
+          title: "पैसा र संसाधन",
+          income:
+              "गत वर्ष समयमा, तपाईं र तपाईंसँग जीवन बिताउन परिवार सदस्यहरूको लागि कुल संयुक्त आय के थियो? यो जानकारी तपाईं कुनै पनि लाभ को लागि योग्य हुनुहुन्छ भने हामीलाई निर्धारण गर्न मद्दत गर्नेछ।",
+          insurance: "आफ्नो मुख्य बीमा के हो?",
+          school: "तपाईं सकियो भनेर स्कूल को उच्चतम स्तर के हो?",
+          transportation:
+              "यातायातका कमी तपाईं चिकित्सा देखि राखिएको छ भेटघाट, सभा, काम, या दैनिक आवश्यक कुराहरू प्राप्त बाट?",
+          without:
+              "गत वर्ष मा, छ तपाईं वा तपाईं यसलाई साँच्चै आवश्यक थियो निम्न कुनै पनि प्राप्त गर्न असमर्थ भएको बस्न कुनै पनि परिवारका सदस्यहरूले?",
+          work: "आफ्नो वर्तमान काम अवस्था के छ?",
+        ),
+        optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
+          title: "वैकल्पिक उपाय",
+          afraid: "गत वर्ष, तपाईंले आफ्नो साझेदार वा पूर्व-साझेदार डराएका छन्?",
+          prison:
+              "गत वर्ष, तपाईंले एक जेल, जेल, हिरासत केन्द्र, वा किशोर correctional सुविधा मा एक पंक्ति मा 2 भन्दा बढी रात बिताए छ?",
+          refugee: "तपाईं शरणार्थी हुन्?",
+          safe:
+              "तपाईं शारीरिक र भावनात्मक सुरक्षित जहाँ तपाईं हाल प्रत्यक्ष महसुस गर्छन्?",
+        ),
+        personalCharacteristics:
+            AppLocalizations_Labels_Prapare_PersonalCharacteristics(
+          title: "व्यक्तिगत लक्षण",
+          language: "तपाईं भन्दा सहज बोल्ने के भाषा हो?",
+          latino: "तपाईं आफैलाई ल्याटिनो विचार गर्छन् हिस्पैनिक /?",
+          military:
+              "तपाईं संयुक्त राज्य अमेरिका को सशस्त्र देखि discharged गरिएको छ?",
+          race: "तपाईं कुन जाति (हरू) छन्?",
+          seasonalWork:
+              "मा पछिल्लो 2 वर्ष कुनै पनि विन्दुमा, सिजन वा प्रवासी खेत काम आफ्नो वा आफ्नो आय को परिवारको मुख्य स्रोत भएको छ?",
+        ),
+        socialAndEmotionalHealth:
+            AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
+          title: "सामाजिक र भावनात्मक स्वास्थ्य",
+          stress:
+              "कसैले काल स्नायु, चिन्तित महसुस वा तिनीहरूको मन परेशान किनभने राति सुत्न सक्छ जब तनाव छ। तपाईं कसरी जोड हो?",
+          talk:
+              "तपाईं ख्याल र बन्द गर्न महसुस कि मान्छे कुरा वा तपाईं कति देख्नुहुन्छ (उदाहरणका लागि: फोन साथीहरूको कुरा, साथी वा परिवार भ्रमण, चर्च वा क्लब बैठकहरूमा जाँदै)?",
+        ),
+      ),
+      registration: AppLocalizations_Labels_Registration(
+        registerPatient: "रजिस्टर रोगी",
+      ),
+      settings: AppLocalizations_Labels_Settings(
+        dark: "गाढा",
+        language: "भाषा",
+        light: "प्रकाश",
+        signOut: "साइन आउट",
+        system: "सिस्टम",
+        theme: "विषय",
+        title: "सेटिङहरू",
+        updateProfile: "प्रोफाइल अद्यावधिक",
+      ),
+    ),
+    Locale.fromSubtags(languageCode: "pt"): AppLocalizations_Labels(
+      app: AppLocalizations_Labels_App(
+        chooseLanguage: "Escolha o seu idioma",
+        chooseTheme: "Escolha Tema",
+        settings: "Configurações do aplicativo",
+        system: "Sistema",
+        title: "Prapare",
+      ),
+      auth: AppLocalizations_Labels_Auth(
+        cancel: "Cancelar",
+        changePassword: "Mudar senha",
+        email: "O email",
+        password: "Senha",
+        resetPassword: "Password Reset",
+        signIn: "Assinar em",
+        signUp: "Inscrever-se",
+        submit: "Enviar",
+        userName: "Nome do usuário",
+      ),
+      dates: AppLocalizations_Labels_Dates(
+        month: AppLocalizations_Labels_Dates_Month(
+          april: "abril",
+          august: "agosto",
+          december: "dezembro",
+          february: "fevereiro",
+          january: "janeiro",
+          july: "Julho",
+          june: "Junho",
+          march: "Março",
+          may: "Maio",
+          november: "novembro",
+          october: "Outubro",
+          september: "setembro",
+        ),
+        weekday: AppLocalizations_Labels_Dates_Weekday(
+          friday: "Sexta-feira",
+          monday: "Segunda-feira",
+          saturday: "sábado",
+          sunday: "domingo",
+          thursday: "quinta-feira",
+          tuesday: "terça",
+          wednesday: "quarta-feira",
+        ),
+      ),
+      general: AppLocalizations_Labels_General(
+        birthDate: "Data de nascimento",
+        dateofBirth: "Data de nascimento",
+        editSurvey: "Editar questionário",
+        familyName: "Sobrenome",
+        female: "Fêmea",
+        givenNames: "Nomes dados",
+        male: "Masculino",
+        newSurvey: "nova pesquisa",
+        relationship: "Relação",
+        search: "Pesquisa",
+        submitShare: "Enviar / Share",
+        address: AppLocalizations_Labels_General_Address(
+          title: "Endereço",
+          city: "Cidade",
+          country: "País",
+          county: "município",
+          district: "Distrito",
+          neighborhood: "Vizinhança",
+          postalCode: "Código postal",
+          state: "Estado",
+        ),
+        relation: AppLocalizations_Labels_General_Relation(
+          title: "Relação",
+          aunt: "Tia",
+          brother: "Irmão",
+          daughter: "Filha",
+          father: "Pai",
+          grandfather: "Avô",
+          grandmother: "Avó",
+          mother: "Mãe",
+          nephew: "Sobrinho",
+          niece: "Sobrinha",
+          sister: "Irmã",
+          son: "Filho",
+          uncle: "Tio",
+        ),
+        sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
+          title: "Sex at Birth",
+          female: "Fêmea",
+          male: "Masculino",
+        ),
+      ),
+      language: AppLocalizations_Labels_Language(
+        title: "Escolha o Seu idioma",
+        inEnglish: "Portuguese",
+      ),
+      medical: AppLocalizations_Labels_Medical(
+        growth: "Crescimento",
+        immunization: "Imunização",
+        immunizations: "imunizações",
+        vaccine: "Vacina",
+        vaccines: "Vacinas",
+      ),
+      prapare: AppLocalizations_Labels_Prapare(
+        title:
+            "Protocolo para responder e avaliação de activos dos pacientes, riscos e Experiências [PRAPARE]",
+        familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
+          title: "Família e Home",
+          address: "Que endereço você mora em?",
+          household:
+              "Quantos membros da família, incluindo o próprio, fazer você atualmente ao vivo com?",
+          housing: "Qual é a sua situação habitacional hoje?",
+          losingHousing: "Você está preocupado em perder o seu habitação?",
+        ),
+        moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
+          title: "Dinheiro e recursos",
+          income:
+              "Durante o ano passado, o que foi o rendimento combinado total para você e os membros da família que vivem com? Esta informação nos ajudará a determinar se você é elegível para todos os benefícios.",
+          insurance: "Qual é o seu seguro principal?",
+          school: "Qual é o mais alto nível de escola que tiver terminado?",
+          transportation:
+              "Tem falta de transporte impediu de médica compromissos, reuniões, trabalho, ou de fazer as coisas necessárias para a vida diária?",
+          without:
+              "No ano passado, você ou qualquer membro da família que vivem com sido incapaz de obter qualquer um dos seguintes quando foi realmente necessário?",
+          work: "Qual é a sua situação de trabalho atual?",
+        ),
+        optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
+          title: "Medidas opcionais",
+          afraid:
+              "No ano passado, você esteve com medo de seu parceiro ou ex-parceiro?",
+          prison:
+              "No ano passado, você gastou mais de 2 noites em uma linha em uma cadeia, prisão, centro de detenção, ou instituição correcional juvenil?",
+          refugee: "É você um refugiado?",
+          safe:
+              "Você se sente fisicamente e emocionalmente seguro, onde você atualmente ao vivo?",
+        ),
+        personalCharacteristics:
+            AppLocalizations_Labels_Prapare_PersonalCharacteristics(
+          title: "Características pessoais",
+          language: "Que língua você está falando mais confortável?",
+          latino: "Você se considera Hispânico / Latino?",
+          military:
+              "Você já foi descarregado das forças armadas dos Estados Unidos?",
+          race: "Qual (s) raça é você?",
+          seasonalWork:
+              "Em qualquer ponto nos últimos 2 anos, tem trabalho agrícola migrante época ou foi o seu ou a sua principal fonte de renda da família?",
+        ),
+        socialAndEmotionalHealth:
+            AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
+          title: "Social e Saúde Emocional",
+          stress:
+              "Stress é quando alguém se sente tenso, nervoso, ansioso ou não consegue dormir à noite porque sua mente está perturbado. Como forçado é você?",
+          talk:
+              "Quantas vezes você ver ou falar com as pessoas que se preocupam com e sentir-se perto de (Por exemplo: falando com amigos no telefone, visitar amigos ou a família, indo às reuniões da igreja ou clube)?",
+        ),
+      ),
+      registration: AppLocalizations_Labels_Registration(
+        registerPatient: "Register paciente",
+      ),
+      settings: AppLocalizations_Labels_Settings(
+        dark: "Sombrio",
+        language: "Língua",
+        light: "Luz",
+        signOut: "Sair",
+        system: "Sistema",
+        theme: "Tema",
+        title: "Definições",
+        updateProfile: "Atualizar perfil",
+      ),
+    ),
+    Locale.fromSubtags(languageCode: "pa"): AppLocalizations_Labels(
+      app: AppLocalizations_Labels_App(
+        chooseLanguage: "ਭਾਸ਼ਾ ਚੁਣੋ",
+        chooseTheme: "ਥੀਮ ਚੁਣੋ",
+        settings: "ਐਪ ਸੈਟਿੰਗ",
+        system: "ਸਿਸਟਮ",
+        title: "Prapare",
+      ),
+      auth: AppLocalizations_Labels_Auth(
+        cancel: "ਰੱਦ ਕਰੋ",
+        changePassword: "ਪਾਸਵਰਡ ਬਦਲੋ",
+        email: "ਈ - ਮੇਲ",
+        password: "ਪਾਸਵਰਡ",
+        resetPassword: "ਮੁੜ ਪਾਸਵਰਡ",
+        signIn: "ਸਾਈਨ - ਇਨ",
+        signUp: "ਸਾਇਨ ਅਪ",
+        submit: "ਜਮ੍ਹਾਂ ਕਰੋ",
+        userName: "ਯੂਜ਼ਰ",
+      ),
+      dates: AppLocalizations_Labels_Dates(
+        month: AppLocalizations_Labels_Dates_Month(
+          april: "ਅਪ੍ਰੈਲ",
+          august: "ਅਗਸਤ",
+          december: "ਦਸੰਬਰ",
+          february: "ਫਰਵਰੀ",
+          january: "ਜਨਵਰੀ",
+          july: "ਜੁਲਾਈ",
+          june: "ਜੂਨ",
+          march: "ਮਾਰਚ",
+          may: "ਮਈ",
+          november: "ਨਵੰਬਰ",
+          october: "ਅਕਤੂਬਰ",
+          september: "ਸਤੰਬਰ",
+        ),
+        weekday: AppLocalizations_Labels_Dates_Weekday(
+          friday: "ਸ਼ੁੱਕਰਵਾਰ ਨੂੰ",
+          monday: "ਸੋਮਵਾਰ",
+          saturday: "ਸ਼ਨੀਵਾਰ",
+          sunday: "ਐਤਵਾਰ ਨੂੰ",
+          thursday: "ਵੀਰਵਾਰ",
+          tuesday: "ਮੰਗਲਵਾਰ",
+          wednesday: "ਬੁੱਧਵਾਰ",
+        ),
+      ),
+      general: AppLocalizations_Labels_General(
+        birthDate: "ਜਨਮ ਮਿਤੀ",
+        dateofBirth: "ਜਨਮ ਤਾਰੀਖ",
+        editSurvey: "ਸਰਵੇਖਣ ਸੋਧ",
+        familyName: "ਖਾਨਦਾਨ ਦਾ ਨਾ",
+        female: "ਔਰਤ",
+        givenNames: "ਦਿੱਤੇ ਹੋਏ ਨਾਂ",
+        male: "ਮਰਦ",
+        newSurvey: "ਨਿਊ ਸਰਵੇ",
+        relationship: "ਰਿਸ਼ਤਾ",
+        search: "ਖੋਜ",
+        submitShare: "ਪੇਸ਼ ਕਰੋ / share",
+        address: AppLocalizations_Labels_General_Address(
+          title: "ਪਤਾ",
+          city: "ਸਿਟੀ",
+          country: "ਦੇਸ਼",
+          county: "ਕਾ",
+          district: "ਜ਼ਿਲ੍ਹਾ",
+          neighborhood: "ਨੇਬਰਹੁੱਡ",
+          postalCode: "ਡਾਕ ਕੋਡ",
+          state: "ਸਟੇਟ",
+        ),
+        relation: AppLocalizations_Labels_General_Relation(
+          title: "ਸਬੰਧ",
+          aunt: "ਮਾਸੀ",
+          brother: "ਭਰਾ",
+          daughter: "ਧੀ",
+          father: "ਪਿਤਾ",
+          grandfather: "ਦਾਦਾ",
+          grandmother: "ਦਾਦੀ",
+          mother: "ਮਾਤਾ",
+          nephew: "ਭਤੀਜੇ",
+          niece: "ਭਤੀਜੀ",
+          sister: "ਭੈਣ",
+          son: "ਪੁੱਤਰ",
+          uncle: "ਅੰਕਲ",
+        ),
+        sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
+          title: "ਜਨਮ ਤੇ ਲਿੰਗ",
+          female: "ਔਰਤ",
+          male: "ਮਰਦ",
+        ),
+      ),
+      language: AppLocalizations_Labels_Language(
+        title: "ਭਾਸ਼ਾ ਚੁਣੋ",
+        inEnglish: "Punjabi",
+      ),
+      medical: AppLocalizations_Labels_Medical(
+        growth: "ਵਿਕਾਸ",
+        immunization: "ਟੀਕਾਕਰਣ",
+        immunizations: "ਟੀਕਾਕਰਣ",
+        vaccine: "ਵੈਕਸੀਨ",
+        vaccines: "ਟੀਕੇ",
+      ),
+      prapare: AppLocalizations_Labels_Prapare(
+        title:
+            "ਦੇ ਜਵਾਬ ਅਤੇ ਮਰੀਜ਼ ਨੂੰ 'ਸੰਪਤੀ ਦਾ ਿਨਰਧਾਰਨ ਲਈ ਪਰੋਟੋਕਾਲ ਖ਼ਤਰੇ, ਅਤੇ ਅਨੁਭਵ [PRAPARE]",
+        familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
+          title: "ਪਰਿਵਾਰ ਅਤੇ ਘਰ",
+          address: "ਕੀ ਪਤਾ ਨੂੰ ਤੁਹਾਡੇ 'ਤੇ ਰਹਿੰਦੇ ਹਨ?",
+          household:
+              "ਪਰਿਵਾਰ ਨੂੰ ਆਪਣੇ ਆਪ ਨੂੰ ਵੀ ਸ਼ਾਮਲ ਕਰਨਾ ਬਹੁਤ ਸਾਰੇ ਅੰਗ, ਹੈ, ਤੁਹਾਨੂੰ ਇਸ ਵੇਲੇ ਦੇ ਨਾਲ ਲਾਈਵ ਕਰਦੇ ਹਨ?",
+          housing: "ਅੱਜ ਆਪਣੇ ਹਾਊਸਿੰਗ ਸਥਿਤੀ ਦਾ ਕੀ ਹੁੰਦਾ ਹੈ?",
+          losingHousing: "ਤੁਹਾਨੂੰ ਆਪਣੇ ਹਾਊਸਿੰਗ ਗੁਆਉਣ ਬਾਰੇ ਚਿੰਤਾ ਕਰ ਰਹੇ ਹੋ?",
+        ),
+        moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
+          title: "ਪੈਸਾ ਅਤੇ ਵਸੀਲੇ",
+          income:
+              "ਪਿਛਲੇ ਸਾਲ ਦੇ ਦੌਰਾਨ, ਤੁਹਾਨੂੰ ਅਤੇ ਪਰਿਵਾਰ ਤੁਹਾਡੇ ਨਾਲ ਰਹਿਣ ਲਈ ਕੁੱਲ ਆਮਦਨ ਦਾ ਕੀ ਸੀ? ਇਹ ਜਾਣਕਾਰੀ ਸਾਡੀ ਮਦਦ ਕਰੇਗਾ ਜੇ ਤੁਹਾਨੂੰ ਇਹ ਪਤਾ ਕਿਸੇ ਵੀ ਲਾਭ ਦੇ ਲਈ ਯੋਗ ਹਨ.",
+          insurance: "ਆਪਣੇ ਮੁੱਖ ਬੀਮਾ ਕੀ ਹੈ?",
+          school: "ਸਕੂਲ ਦੇ ਉੱਚੇ ਪੱਧਰ ਹੈ, ਜੋ ਕਿ ਤੁਹਾਨੂੰ ਮੁਕੰਮਲ ਕਰ ਲਈ ਹੈ ਕੀ ਹੈ?",
+          transportation:
+              "ਆਵਾਜਾਈ ਦੀ ਘਾਟ ਤੁਹਾਨੂੰ ਡਾਕਟਰੀ ਰੱਿਖਆ ਹੈ ਮੁਲਾਕਾਤ, ਮੀਟਿੰਗ, ਦਾ ਕੰਮ, ਜ ਰੋਜ਼ਾਨਾ ਜੀਵਨ ਦੇ ਲਈ ਦੀ ਲੋੜ ਕੁਝ ਪ੍ਰਾਪਤ ਕਰਨ ਤੱਕ?",
+          without:
+              "ਪਿਛਲੇ ਸਾਲ ਦੇ ਵਿੱਚ, ਤੁਹਾਨੂੰ ਜ ਕੋਈ ਵੀ ਪਰਿਵਾਰ ਦੇ ਜੀਅ ਤੁਹਾਨੂੰ ਹੇਠ ਦੇ ਕਿਸੇ ਵੀ ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ, ਜਦ ਇਸ ਨੂੰ ਅਸਲ ਲੋੜ ਸੀ ਸਕੇ ਨਾਲ ਰਹਿਣ?",
+          work: "ਆਪਣੇ ਮੌਜੂਦਾ ਕੰਮ ਦੇ ਹਾਲਾਤ ਨੂੰ ਕੀ ਹੈ?",
+        ),
+        optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
+          title: "ਅਖ਼ਤਿਆਰੀ ਕਦਮ",
+          afraid:
+              "ਪਿਛਲੇ ਸਾਲ ਦੇ ਵਿੱਚ, ਤੁਹਾਨੂੰ ਆਪਣੇ ਸਾਥੀ ਜ ਸਾਬਕਾ ਸਾਥੀ ਦਾ ਡਰ ਗਿਆ ਹੈ?",
+          prison:
+              "ਪਿਛਲੇ ਸਾਲ ਦੇ ਵਿੱਚ, ਤੁਹਾਨੂੰ ਇੱਕ ਜੇਲ੍ਹ, ਨੂੰ ਜੇਲ੍ਹ, ਹਿਰਾਸਤ ਕਦਰ, ਜ ਨਾਬਾਲਗ ਸੁਧਾਰ ਦੀ ਸਹੂਲਤ ਵਿੱਚ ਇੱਕ ਕਤਾਰ 'ਚ ਵੱਧ ਹੋਰ 2 ਰਾਤ ਹੈ?",
+          refugee: "ਜੇਕਰ ਤੁਹਾਡੇ ਕੋਲ ਇੱਕ ਸ਼ਰਨਾਰਥੀ ਹੋ?",
+          safe:
+              "ਤੁਹਾਨੂੰ ਸਰੀਰਕ ਅਤੇ ਜਜ਼ਬਾਤੀ ਸੁਰੱਖਿਅਤ ਹੈ, ਜਿੱਥੇ ਤੁਹਾਨੂੰ ਇਸ ਵੇਲੇ ਲਾਈਵ ਮਹਿਸੂਸ ਕਰਦੇ ਹੋ?",
+        ),
+        personalCharacteristics:
+            AppLocalizations_Labels_Prapare_PersonalCharacteristics(
+          title: "ਨਿੱਜੀ ਅੰਗ",
+          language: "ਤੁਹਾਨੂੰ ਸਭ ਆਰਾਮਦਾਇਕ ਬੋਲਦੇ ਦਾ ਕੀ ਭਾਸ਼ਾ ਹੈ?",
+          latino: "ਤੁਹਾਨੂੰ ਆਪਣੇ ਆਪ ਨੂੰ ਹਿਸਪੈਨਿਕ ਤੇ ਵਿਚਾਰ / ਲੈਟਿਨੋ ਹੋ?",
+          military: "ਤੁਹਾਨੂੰ, ਸੰਯੁਕਤ ਰਾਜ ਅਮਰੀਕਾ ਦੇ ਫੌਜ ਤੱਕ ਛੁੱਟੀ ਕੀਤੀ ਗਈ ਹੈ?",
+          race: "ਕਿਸ ਦੌੜ (ਹਵਾਈਅੱਡੇ) ਹੋ?",
+          seasonalWork:
+              "ਪਿਛਲੇ 2 ਸਾਲ ਵਿਚ ਕਿਸੇ ਵੀ ਮੌਕੇ 'ਤੇ, ਦੇ ਸੀਜ਼ਨ ਜ ਪਰਵਾਸੀ ਦੇ ਫਾਰਮ ਦਾ ਕੰਮ ਆਪਣੇ ਜ ਆਪਣੇ ਪਰਿਵਾਰ ਦੀ ਆਮਦਨ ਦਾ ਮੁੱਖ ਸਰੋਤ ਹੋ ਰਿਹਾ ਹੈ?",
+        ),
+        socialAndEmotionalHealth:
+            AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
+          title: "ਸਮਾਜਕ ਅਤੇ ਭਾਵਾਤਮਕ ਸਿਹਤ",
+          stress:
+              "ਤਣਾਅ, ਜਦ ਕਿਸੇ ਨੂੰ, ਤਣਾਅ ਘਬਰਾ, ਚਿੰਤਾ ਮਹਿਸੂਸ ਕਰਦਾ ਹੈ ਜ, ਕਿਉਕਿ ਆਪਣੇ ਮਨ ਪਰੇਸ਼ਾਨ ਹੈ ਤੇ ਰਾਤ ਨੂੰ ਸੌਣ ਨਾ ਕਰ ਸਕਦਾ ਹੈ. ਤੁਹਾਨੂੰ ਕਿਸ 'ਤੇ ਜ਼ੋਰ ਦਿੱਤਾ ਹੈ?",
+          talk:
+              "ਤੁਹਾਨੂੰ ਜ ਲੋਕ ਹੈ, ਜੋ ਕਿ ਤੁਹਾਨੂੰ ਇਸ ਬਾਰੇ ਪਰਵਾਹ ਹੈ ਅਤੇ ਨੇੜੇ ਮਹਿਸੂਸ ਕਰਨ ਬਾਤ ਕਰਨਾ ਅਕਸਰ ਵੇਖਦੇ ਹੋ (ਉਦਾਹਰਨ ਲਈ: ਫ਼ੋਨ 'ਤੇ ਦੋਸਤ ਨਾਲ ਗੱਲ, ਦੋਸਤ ਜ ਪਰਿਵਾਰ ਨੂੰ ਮਿਲਣ, ਚਰਚ ਜ ਕਲੱਬ ਮੀਟਿੰਗ ਕਰਨ ਜਾ ਰਹੇ)?",
+        ),
+      ),
+      registration: AppLocalizations_Labels_Registration(
+        registerPatient: "ਰਜਿਸਟਰ ਮਰੀਜ਼",
+      ),
+      settings: AppLocalizations_Labels_Settings(
+        dark: "ਹਨੇਰ",
+        language: "ਭਾਸ਼ਾ",
+        light: "ਚਾਨਣ",
+        signOut: "ਸਾਇਨ ਆਉਟ",
+        system: "ਸਿਸਟਮ",
+        theme: "ਥੀਮ",
+        title: "ਸੈਟਿੰਗ",
+        updateProfile: "ਅੱਪਡੇਟ ਪ੍ਰੋਫ਼ਾਈਲ English",
+      ),
+    ),
+    Locale.fromSubtags(languageCode: "so"): AppLocalizations_Labels(
+      app: AppLocalizations_Labels_App(
+        chooseLanguage: "Dooro Language",
+        chooseTheme: "Dooro Theme",
+        settings: "app Settings",
+        system: "System",
+        title: "Prapare",
+      ),
+      auth: AppLocalizations_Labels_Auth(
+        cancel: "Jooji",
+        changePassword: "Badalida Lambarka sirta ah",
+        email: "email",
+        password: "password",
+        resetPassword: "Password keddibna",
+        signIn: "Gal In",
+        signUp: "Saxiix Up",
+        submit: "Gudbi",
+        userName: "username",
+      ),
+      dates: AppLocalizations_Labels_Dates(
+        month: AppLocalizations_Labels_Dates_Month(
+          april: "April",
+          august: "Ogosto",
+          december: "December",
+          february: "February",
+          january: "January",
+          july: "July",
+          june: "June",
+          march: "March",
+          may: "Laga yaabaa",
+          november: "November",
+          october: "October",
+          september: "September",
+        ),
+        weekday: AppLocalizations_Labels_Dates_Weekday(
+          friday: "Friday",
+          monday: "Monday",
+          saturday: "Saturday",
+          sunday: "Sunday",
+          thursday: "Thursday",
+          tuesday: "Tuesday",
+          wednesday: "Wednesday",
+        ),
+      ),
+      general: AppLocalizations_Labels_General(
+        birthDate: "Taariiqda dhalasha",
+        dateofBirth: "Taariikhda Dhalashada",
+        editSurvey: "edit Survey",
+        familyName: "Magaca qoyska",
+        female: "Dheddig",
+        givenNames: "Marka la eego magacyada",
+        male: "Male",
+        newSurvey: "New Survey",
+        relationship: "xiriirka",
+        search: "Raadi",
+        submitShare: "Gudbi / Share",
+        address: AppLocalizations_Labels_General_Address(
+          title: "Address",
+          city: "City",
+          country: "Country",
+          county: "County",
+          district: "Degmada",
+          neighborhood: "Xaafadda",
+          postalCode: "boostada Code",
+          state: "State",
+        ),
+        relation: AppLocalizations_Labels_General_Relation(
+          title: "Xiriirka",
+          aunt: "eedaday",
+          brother: "Brother",
+          daughter: "Gabadhay",
+          father: "Aabbaha",
+          grandfather: "awoowe",
+          grandmother: "ayeeyo",
+          mother: "Hooyo",
+          nephew: "adeer",
+          niece: "walaasha",
+          sister: "Sister",
+          son: "Wiilka",
+          uncle: "adeer",
+        ),
+        sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
+          title: "Sex at Dhalashada",
+          female: "Dheddig",
+          male: "Male",
+        ),
+      ),
+      language: AppLocalizations_Labels_Language(
+        title: "dooro Language",
+        inEnglish: "Somali",
+      ),
+      medical: AppLocalizations_Labels_Medical(
+        growth: "Kobaca",
+        immunization: "Talaalka",
+        immunizations: "tallaalada",
+        vaccine: "tallaalka",
+        vaccines: "Talaalo",
+      ),
+      prapare: AppLocalizations_Labels_Prapare(
+        title:
+            "Protocol Looga iyo Qiimaynta Bukaanka 'Hantida, Khatarta, iyo Waayo aragnimada [PRAPARE]",
+        familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
+          title: "Qoyska iyo Home",
+          address: "Waa maxay cinwaanka ha aad ku nooshahay?",
+          household:
+              "Imisa xubnaha qoyska, aad adigu ku jirto, ee aad samayn hadda la nool?",
+          housing: "Waa maxay xaaladda guryaha maanta?",
+          losingHousing:
+              "Ma waxaad ka walwalsan ah oo ku saabsan badiyay guryaha?",
+        ),
+        moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
+          title: "Money iyo Resources",
+          income:
+              "Intii lagu guda jiray sanadkii la soo dhaafay, waxa uu ahaa dakhliga guud ee la isu geeyey adiga iyo xubnaha qoyska ee aad la nooshahay ee? Macluumaadkan waxaa naga caawin doonaa go'aan ka gaadho haddii aad u qalanto gargaarka kasta.",
+          insurance: "Waa maxay caymiska ugu weyn?",
+          school: "Waa maxay heerka ugu sareeya ee aad dugsi ka dhammeeyaan?",
+          transportation:
+              "Ayaa la'aanta gaadiid kaa celiyey inaad caafimaad ballamaha, shirarka, shaqada, ama waxyaalaha looga baahan yahay nolol maalmeedka hesho?",
+          without:
+              "Sanadkii la soo dhaafay, waxay leeyihiin adiga ama xubin kasta oo qoyska idinla joogay awoodin in ay helaan mid ka mid ah kuwan soo socda marka si dhab ah waxaa loo baahan yahay ma nool yahay?",
+          work: "Waa sidee xaaladda shaqo ee hadda?",
+        ),
+        optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
+          title: "Tallaabooyinka optional",
+          afraid:
+              "Sanadkii la soo dhaafay, waxa aad ka cabsanayn aad isqabtaan ama lammaane hore?",
+          prison:
+              "Sanadkii la soo dhaafay, in aad qarashgareeyay in ka badan 2 habeen oo isku xiga oo jeel ah, xabsi, xarunta dadka lagu haayo, ama xarunta dhallinta asluubta?",
+          refugee: "aad tahay qaxooti?",
+          safe:
+              "Ma dareensan tahay in aad jidh ahaan iyo maskax ahaan ammaan ah meesha aad hadda ku nool?",
+        ),
+        personalCharacteristics:
+            AppLocalizations_Labels_Prapare_PersonalCharacteristics(
+          title: "Astaamaha Personal",
+          language: "waxaad maxay luqadda waa hadalka ugu raaxo leh?",
+          latino: "Ma isleedahay waad Hispanic / Latino?",
+          military:
+              "Ma waxaad laga soo saaray ciidamada qalabka sida ee Maraykanka?",
+          race: "Waa kuwee tartanka (s) aad tahay?",
+          seasonalWork:
+              "Halkaa marka ay marayso kasta ee 2 sano ee la soo dhaafay, ayaa xilli ciyaareedkii ama shaqo beer-galootiga ahayd ama aad isha ugu weyn ee dakhliga qoyskaaga?",
+        ),
+        socialAndEmotionalHealth:
+            AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
+          title: "Caafimaadka iyo Bulshada Qiirada",
+          stress:
+              "Stress waa marka qof uu dareensan yahay mid kacsan, neerfaha, walwal ama ma seexan karo habeenkii sababtoo ah maskaxdooda waxaa la welwelay. Sidee carabka ku tahay?",
+          talk:
+              "Intee jeer aad aragto ama la hadal dadka aad ka naxeyso iyo dareemayaa u dhow (Tusaale: la hadalka saaxiibada on telefoonka, saaxiibada ama qoyska booqanaya, socday kaniisadda ama kooxda kulamada)?",
+        ),
+      ),
+      registration: AppLocalizations_Labels_Registration(
+        registerPatient: "Register bukaanka",
+      ),
+      settings: AppLocalizations_Labels_Settings(
+        dark: "Dark",
+        language: "Language",
+        light: "Light",
+        signOut: "Saxiix Out",
+        system: "System",
+        theme: "theme",
+        title: "Settings",
+        updateProfile: "update Profile",
+      ),
+    ),
+    Locale.fromSubtags(languageCode: "sw"): AppLocalizations_Labels(
+      app: AppLocalizations_Labels_App(
+        chooseLanguage: "Chagua lugha",
+        chooseTheme: "Chagua Theme",
+        settings: "programu ya Mipangilio",
+        system: "Mfumo",
+        title: "Prapare",
+      ),
+      auth: AppLocalizations_Labels_Auth(
+        cancel: "kufuta",
+        changePassword: "Badilisha neno la siri",
+        email: "Barua pepe",
+        password: "password",
+        resetPassword: "Rudisha siri",
+        signIn: "Weka sahihi",
+        signUp: "Jisajili",
+        submit: "wasilisha",
+        userName: "jina la mtumiaji",
+      ),
+      dates: AppLocalizations_Labels_Dates(
+        month: AppLocalizations_Labels_Dates_Month(
+          april: "Aprili",
+          august: "Agosti",
+          december: "Desemba",
+          february: "Februari",
+          january: "Januari",
+          july: "Julai",
+          june: "Juni",
+          march: "Machi",
+          may: "Mei",
+          november: "Novemba",
+          october: "Oktoba",
+          september: "Septemba",
+        ),
+        weekday: AppLocalizations_Labels_Dates_Weekday(
+          friday: "Ijumaa",
+          monday: "Jumatatu",
+          saturday: "Jumamosi",
+          sunday: "Jumapili",
+          thursday: "Alhamisi",
+          tuesday: "Jumanne",
+          wednesday: "Jumatano",
+        ),
+      ),
+      general: AppLocalizations_Labels_General(
+        birthDate: "Tarehe ya kuzaliwa",
+        dateofBirth: "Tarehe ya kuzaliwa",
+        editSurvey: "Hariri Survey",
+        familyName: "Jina la ukoo",
+        female: "mwanamke",
+        givenNames: "Majina kutokana",
+        male: "Mwanaume",
+        newSurvey: "Survey New",
+        relationship: "uhusiano",
+        search: "Tafuta",
+        submitShare: "Wasilisha / Shiriki",
+        address: AppLocalizations_Labels_General_Address(
+          title: "Anuani",
+          city: "City",
+          country: "Nchi",
+          county: "Kata",
+          district: "District",
+          neighborhood: "Neighborhood",
+          postalCode: "Posta",
+          state: "hali",
+        ),
+        relation: AppLocalizations_Labels_General_Relation(
+          title: "uhusiano",
+          aunt: "shangazi",
+          brother: "ndugu",
+          daughter: "Binti",
+          father: "Baba",
+          grandfather: "babu",
+          grandmother: "bibi",
+          mother: "mama",
+          nephew: "mpwa",
+          niece: "mpwa",
+          sister: "dada",
+          son: "mwana",
+          uncle: "Uncle",
+        ),
+        sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
+          title: "Sex katika Uzazi",
+          female: "mwanamke",
+          male: "Mwanaume",
+        ),
+      ),
+      language: AppLocalizations_Labels_Language(
+        title: "Chagua LUGHA",
+        inEnglish: "Swahili",
+      ),
+      medical: AppLocalizations_Labels_Medical(
+        growth: "ukuaji",
+        immunization: "Chanjo",
+        immunizations: "chanjo",
+        vaccine: "chanjo",
+        vaccines: "Chanjo",
+      ),
+      prapare: AppLocalizations_Labels_Prapare(
+        title:
+            "Itifaki ya Akijibu na Tathmini ya Wagonjwa Mali, UN, na Uzoefu [PRAPARE]",
+        familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
+          title: "Familia na Nyumbani",
+          address: "Nini mahali Unaishi katika?",
+          household:
+              "Wangapi familia, ikiwa ni pamoja mwenyewe, je, sasa kuishi na?",
+          housing: "Ni nini nyumba yako hali leo?",
+          losingHousing: "Je, wasiwasi wa kupoteza makazi yako?",
+        ),
+        moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
+          title: "Fedha na rasilimali",
+          income:
+              "Katika kipindi cha mwaka uliopita, yaliyokuwa jumla ya mapato pamoja kwa ajili yako na familia kuishi na? Habari hii itatusaidia kujua kama wewe ni haki kwa ajili ya faida yoyote.",
+          insurance: "Ni nini bima yako kuu?",
+          school: "ni ngazi ya juu ya shule hiyo ya kumaliza nini?",
+          transportation:
+              "Je ukosefu wa usafiri naendelea kutoka matibabu uteuzi, mikutano, kazi, au kutoka kupata mambo zinahitajika kwa ajili ya maisha ya kila siku?",
+          without:
+              "Katika mwaka uliopita, na wewe au wanachama yoyote familia kuishi pamoja kushindwa kupata yoyote ya yafuatayo wakati ilikuwa kweli inahitajika?",
+          work: "Ni nini kazi yako ya sasa na hali?",
+        ),
+        optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
+          title: "Hatua ya hiari",
+          afraid:
+              "Katika mwaka uliopita, umekuwa na hofu ya mpenzi wako au wa zamani wa washirika?",
+          prison:
+              "Katika mwaka uliopita, na wewe alitumia zaidi ya 2 usiku katika mstari gerezani, gereza, kituo cha kizuizini, au vijana wa magereza kituo?",
+          refugee: "Je, wewe ni wakimbizi?",
+          safe:
+              "Unahisi kimwili na kihisia salama ambapo kwa sasa moja kwa moja?",
+        ),
+        personalCharacteristics:
+            AppLocalizations_Labels_Prapare_PersonalCharacteristics(
+          title: "Tabia za kibinafsi",
+          language: "Ni lugha gani wewe ni vizuri zaidi kuzungumza?",
+          latino: "Je, wewe kufikiria mwenyewe Rico / Latino?",
+          military: "Je na kuruhusiwa kutoka vikosi vya kijeshi ya Marekani?",
+          race: "Ni mbio (s) ni nini?",
+          seasonalWork:
+              "Katika hatua yoyote katika kipindi cha miaka 2, ina msimu au wahamiaji kazi mashamba wamekuwa yako au familia chanzo kikuu cha mapato?",
+        ),
+        socialAndEmotionalHealth:
+            AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
+          title: "Jamii na Afya Emotional",
+          stress:
+              "Stress ni wakati mtu anahisi wasiwasi, woga, wasiwasi au hawawezi kulala usiku kwa sababu mawazo yao ni wasiwasi. Jinsi kusisitiza ni wewe?",
+          talk:
+              "Ni mara ngapi wewe kuona au kuzungumza kwa watu unaowajali na kuhisi karibu na (Kwa mfano: kuzungumza na marafiki kwenye simu, kutembelea marafiki au familia, kuhudhuria mikutano kanisa au klabu)?",
+        ),
+      ),
+      registration: AppLocalizations_Labels_Registration(
+        registerPatient: "Daftari mgonjwa",
+      ),
+      settings: AppLocalizations_Labels_Settings(
+        dark: "Dark",
+        language: "lugha",
+        light: "Mwanga",
+        signOut: "Toka",
+        system: "Mfumo",
+        theme: "Theme",
+        title: "mipangilio",
+        updateProfile: "Mwisho profile",
+      ),
+    ),
+    Locale.fromSubtags(languageCode: "tl"): AppLocalizations_Labels(
+      app: AppLocalizations_Labels_App(
+        chooseLanguage: "Piliin ang Wika",
+        chooseTheme: "Pumili ng Theme",
+        settings: "Mga Setting ng app",
+        system: "sistema",
+        title: "Prapare",
+      ),
+      auth: AppLocalizations_Labels_Auth(
+        cancel: "kanselahin",
+        changePassword: "Palitan ANG password",
+        email: "email",
+        password: "password",
+        resetPassword: "I-reset ang Password",
+        signIn: "Mag-sign in",
+        signUp: "Mag-sign Up",
+        submit: "Ipasa",
+        userName: "username",
+      ),
+      dates: AppLocalizations_Labels_Dates(
+        month: AppLocalizations_Labels_Dates_Month(
+          april: "Abril",
+          august: "Agosto",
+          december: "Disyembre",
+          february: "Pebrero",
+          january: "Enero",
+          july: "Hulyo",
+          june: "Hunyo",
+          march: "Marso",
+          may: "Mayo",
+          november: "Nobyembre",
+          october: "Oktubre",
+          september: "Setyembre",
+        ),
+        weekday: AppLocalizations_Labels_Dates_Weekday(
+          friday: "Biyernes",
+          monday: "Lunes",
+          saturday: "Sabado",
+          sunday: "Linggo",
+          thursday: "Huwebes",
+          tuesday: "Martes",
+          wednesday: "Miyerkules",
+        ),
+      ),
+      general: AppLocalizations_Labels_General(
+        birthDate: "Araw ng kapanganakan",
+        dateofBirth: "Araw ng kapanganakan",
+        editSurvey: "I-edit ang Survey",
+        familyName: "Apelyido",
+        female: "babae",
+        givenNames: "Given Pangalan",
+        male: "lalaki",
+        newSurvey: "bagong Survey",
+        relationship: "Relasyon",
+        search: "Hanapan",
+        submitShare: "Isumite / Share",
+        address: AppLocalizations_Labels_General_Address(
+          title: "address",
+          city: "lungsod",
+          country: "bansa",
+          county: "county",
+          district: "distrito",
+          neighborhood: "lugar",
+          postalCode: "Postal Code",
+          state: "estado",
+        ),
+        relation: AppLocalizations_Labels_General_Relation(
+          title: "kaugnayan",
+          aunt: "Tiya",
+          brother: "kapatid na lalaki",
+          daughter: "Anak na babae",
+          father: "ama",
+          grandfather: "lolo",
+          grandmother: "lola",
+          mother: "ina",
+          nephew: "pamangking lalaki",
+          niece: "pamangking babae",
+          sister: "Ate",
+          son: "anak",
+          uncle: "Tiyuhin",
+        ),
+        sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
+          title: "Sex sa Kapanganakan",
+          female: "babae",
+          male: "lalaki",
+        ),
+      ),
+      language: AppLocalizations_Labels_Language(
+        title: "Piliin Ang Bahagi ng Pananalita",
+        inEnglish: "Tagalog",
+      ),
+      medical: AppLocalizations_Labels_Medical(
+        growth: "paglaki",
+        immunization: "pagbibigay ng kabal",
+        immunizations: "Imunisasyon",
+        vaccine: "bakuna",
+        vaccines: "Mga bakuna",
+      ),
+      prapare: AppLocalizations_Labels_Prapare(
+        title:
+            "Protocol para sa Pagtugon sa at Pagtatasa Ang mga pasyente 'Asset, Panganib, at Karanasan [PRAPARE]",
+        familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
+          title: "Pamilya at Tahanan",
+          address: "Anong address ang iyong tinitirhan sa?",
+          household:
+              "Ilang mga miyembro ng pamilya, kabilang ang iyong sarili, gawin ang ikaw ay kasalukuyang live na gamit?",
+          housing: "Ano ang iyong pabahay sitwasyon ngayon?",
+          losingHousing:
+              "Sigurado ka nag-aalala tungkol sa pagkawala ng iyong mga pabahay?",
+        ),
+        moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
+          title: "Pera at Resources",
+          income:
+              "Sa panahon ng nakalipas na taon, ano ang kabuuang pinagsamang kita para sa iyo at sa mga miyembro ng pamilya mo sa bahay? Ang impormasyon na ito ay makakatulong sa amin na matukoy kung ikaw ay karapat-dapat para sa anumang mga benepisyo.",
+          insurance: "Ano ang iyong pangunahing insurance?",
+          school: "Ano ang pinakamataas na antas ng paaralan na natapos mo na?",
+          transportation:
+              "Matagal kakulangan ng transportasyon naman kita sa mga medikal na appointment, pulong, trabaho, o mula sa pagkuha ng mga bagay-bagay na kailangan para sa pang araw-araw na pamumuhay?",
+          without:
+              "Sa nakalipas na taon, mayroon ka o anumang mga miyembro ng pamilya kasama mo sa bahay ay hindi upang makakuha ng anuman sa mga sumusunod na kapag ito ay talagang kinakailangan?",
+          work: "Ano ang iyong kasalukuyang sitwasyon sa trabaho?",
+        ),
+        optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
+          title: "opsyonal Hakbang",
+          afraid:
+              "Sa nakalipas na taon, nakapunta ka na ba natatakot sa iyong partner o ex-partner?",
+          prison:
+              "Sa nakalipas na taon, ikaw ay may na ginugol ng higit sa 2 gabi sa isang hilera sa isang bilangguan, bilangguan, detention center, o pangkabataan koreksyonal na pasilidad?",
+          refugee: "Ikaw ba ay isang refugee?",
+          safe:
+              "Masama ba ang pakiramdam pisikal at emosyonal safe kung saan ka kasalukuyang live na?",
+        ),
+        personalCharacteristics:
+            AppLocalizations_Labels_Prapare_PersonalCharacteristics(
+          title: "Personal na katangian",
+          language: "Anong wika ang ikaw ay pinaka-kumportable sa pagsasalita?",
+          latino: "Huwag isaalang-alang mo ang iyong sarili Hispanic / Latino?",
+          military:
+              "Nakarating na nangaligtas sa armadong pwersa ng Estados Unidos?",
+          race: "Aling lahi (s) ka?",
+          seasonalWork:
+              "Sa anumang punto sa nakalipas na 2 taon, may panahon o migranteng sakahan trabaho ay ang iyong o ang iyong pangunahing pinagkukunan ng kita ng pamilya?",
+        ),
+        socialAndEmotionalHealth:
+            AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
+          title: "Social at emosyonal Kalusugan",
+          stress:
+              "Stress ay kapag may isang taong nakakaramdam panahunan, kinakabahan, nababalisa o hindi makatulog sa gabi dahil ang kanilang mga pag-iisip ay nabagabag. Paano stressed ka?",
+          talk:
+              "Gaano kadalas nakikita mo o talk sa mga tao na mahalaga sa iyo at huwag mag-malapit sa (Halimbawa: pakikipag-usap sa mga kaibigan sa telepono, pagbisita sa mga kaibigan o pamilya, pagsisimba o club pulong)?",
+        ),
+      ),
+      registration: AppLocalizations_Labels_Registration(
+        registerPatient: "Magrehistro Pasyente",
+      ),
+      settings: AppLocalizations_Labels_Settings(
+        dark: "madilim",
+        language: "wika",
+        light: "liwanag",
+        signOut: "Mag-sign Out",
+        system: "sistema",
+        theme: "tema",
+        title: "Mga Setting",
+        updateProfile: "I-update ang Profile",
+      ),
+    ),
+    Locale.fromSubtags(languageCode: "th"): AppLocalizations_Labels(
+      app: AppLocalizations_Labels_App(
+        chooseLanguage: "เลือกภาษา",
+        chooseTheme: "กรุณาเลือกธีม",
+        settings: "การตั้งค่า App",
+        system: "ระบบ",
+        title: "Prapare",
+      ),
+      auth: AppLocalizations_Labels_Auth(
+        cancel: "ยกเลิก",
+        changePassword: "เปลี่ยนรหัสผ่าน",
+        email: "อีเมล์",
+        password: "รหัสผ่าน",
+        resetPassword: "รีเซ็ตรหัสผ่าน",
+        signIn: "เข้าสู่ระบบ",
+        signUp: "ลงชื่อ",
+        submit: "เสนอ",
+        userName: "ชื่อผู้ใช้",
+      ),
+      dates: AppLocalizations_Labels_Dates(
+        month: AppLocalizations_Labels_Dates_Month(
+          april: "เมษายน",
+          august: "สิงหาคม",
+          december: "ธันวาคม",
+          february: "กุมภาพันธ์",
+          january: "มกราคม",
+          july: "กรกฎาคม",
+          june: "มิถุนายน",
+          march: "มีนาคม",
+          may: "อาจ",
+          november: "พฤศจิกายน",
+          october: "ตุลาคม",
+          september: "กันยายน",
+        ),
+        weekday: AppLocalizations_Labels_Dates_Weekday(
+          friday: "วันศุกร์",
+          monday: "วันจันทร์",
+          saturday: "วันเสาร์",
+          sunday: "วันอาทิตย์",
+          thursday: "วันพฤหัสบดี",
+          tuesday: "วันอังคาร",
+          wednesday: "วันพุธ",
+        ),
+      ),
+      general: AppLocalizations_Labels_General(
+        birthDate: "วันที่เกิด",
+        dateofBirth: "วันเกิด",
+        editSurvey: "แก้ไขการสำรวจ",
+        familyName: "นามสกุล",
+        female: "หญิง",
+        givenNames: "ชื่อจริง",
+        male: "ชาย",
+        newSurvey: "การสำรวจใหม่",
+        relationship: "ความสัมพันธ์",
+        search: "ค้นหา",
+        submitShare: "ส่ง / หุ้น",
+        address: AppLocalizations_Labels_General_Address(
+          title: "ที่อยู่",
+          city: "เมือง",
+          country: "ประเทศ",
+          county: "เขต",
+          district: "อำเภอ",
+          neighborhood: "ย่าน",
+          postalCode: "รหัสไปรษณีย์",
+          state: "สถานะ",
+        ),
+        relation: AppLocalizations_Labels_General_Relation(
+          title: "ความสัมพันธ์",
+          aunt: "ป้า",
+          brother: "พี่ชาย",
+          daughter: "ลูกสาว",
+          father: "พ่อ",
+          grandfather: "คุณปู่",
+          grandmother: "ยาย",
+          mother: "แม่",
+          nephew: "หลานชาย",
+          niece: "หลานสาว",
+          sister: "น้องสาว",
+          son: "ลูกชาย",
+          uncle: "ลุง",
+        ),
+        sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
+          title: "เพศที่เกิด",
+          female: "หญิง",
+          male: "ชาย",
+        ),
+      ),
+      language: AppLocalizations_Labels_Language(
+        title: "เลือกภาษา",
+        inEnglish: "Thai",
+      ),
+      medical: AppLocalizations_Labels_Medical(
+        growth: "การเจริญเติบโต",
+        immunization: "การทำให้รอดจาก",
+        immunizations: "การฉีดวัคซีน",
+        vaccine: "วัคซีน",
+        vaccines: "วัคซีน",
+      ),
+      prapare: AppLocalizations_Labels_Prapare(
+        title:
+            "Protocol สำหรับการตอบสนองและการประเมินผู้ป่วยสินทรัพย์เสี่ยงและประสบการณ์ [PRAPARE]",
+        familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
+          title: "ครอบครัวและบ้าน",
+          address: "คุณไม่อยู่อะไรอยู่ที่?",
+          household:
+              "วิธีการหลายสมาชิกในครอบครัวรวมทั้งตัวคุณที่คุณทำอยู่ในขณะมีชีวิตอยู่ด้วย?",
+          housing: "อะไรคือสถานการณ์ที่อยู่อาศัยของคุณวันนี้?",
+          losingHousing: "คุณกังวลเกี่ยวกับการสูญเสียที่อยู่อาศัยของคุณหรือไม่",
+        ),
+        moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
+          title: "เงินและทรัพยากร",
+          income:
+              "ในช่วงปีที่ผ่านมาสิ่งที่เป็นรายได้รวมทั้งหมดสำหรับคุณและสมาชิกในครอบครัวที่คุณอาศัยอยู่ด้วย? ข้อมูลนี้จะช่วยให้เราตรวจสอบว่าคุณมีสิทธิ์ได้รับผลประโยชน์ใด ๆ",
+          insurance: "อะไรคือการประกันหลักของคุณหรือไม่",
+          school: "ระดับสูงสุดของโรงเรียนที่คุณได้เสร็จสิ้นคืออะไร?",
+          transportation:
+              "ได้ขาดการขนส่งทำให้คุณจากทางการแพทย์นัดหมายการประชุมที่ทำงานหรือจากการได้รับในสิ่งที่จำเป็นสำหรับการดำรงชีวิตประจำวัน?",
+          without:
+              "ในปีที่ผ่านมามีคุณหรือสมาชิกในครอบครัวที่คุณอยู่กับรับไม่สามารถที่จะได้รับการใด ๆ ต่อไปเมื่อมันเป็นสิ่งที่จำเป็นจริงๆ?",
+          work: "สถานการณ์การทำงานในปัจจุบันของคุณคืออะไร?",
+        ),
+        optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
+          title: "มาตรการที่เป็นตัวเลือก",
+          afraid:
+              "ในปีที่ผ่านมาที่คุณได้รับกลัวพันธมิตรหรืออดีตพันธมิตรของคุณหรือไม่",
+          prison:
+              "ในปีที่ผ่านมามีคุณใช้เวลากว่า 2 คืนในแถวในคุกคุกศูนย์กักกันหรือสิ่งอำนวยความสะดวกราชทัณฑ์เด็กและเยาวชน?",
+          refugee: "คุณเป็นผู้ลี้ภัยหรือไม่?",
+          safe:
+              "คุณรู้สึกทางร่างกายและอารมณ์ความปลอดภัยที่คุณอาศัยอยู่ในปัจจุบัน?",
+        ),
+        personalCharacteristics:
+            AppLocalizations_Labels_Prapare_PersonalCharacteristics(
+          title: "ลักษณะส่วนบุคคล",
+          language: "ภาษาอะไรคุณกำลังพูดความสะดวกสบายมากที่สุด?",
+          latino: "คุณพิจารณาตัวเอง / สเปนละติน?",
+          military: "คุณได้รับการออกจากกองกำลังติดอาวุธของสหรัฐอเมริกา?",
+          race: "ซึ่ง (s) การแข่งขัน are you?",
+          seasonalWork:
+              "ณ จุดใด ๆ ในอดีตที่ผ่านมา 2 ปีมีฤดูกาลหรือการทำงานในฟาร์มข้ามชาติได้ของคนในครอบครัวของคุณหรือคุณแหล่งที่มาของรายได้?",
+        ),
+        socialAndEmotionalHealth:
+            AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
+          title: "สังคมและสุขภาพทางอารมณ์",
+          stress:
+              "ความเครียดคือเมื่อมีคนรู้สึกเครียดประสาทกังวลหรือไม่สามารถนอนในเวลากลางคืนเพราะใจของพวกเขาเป็นทุกข์ วิธีเน้น are you?",
+          talk:
+              "อย่างไรคุณมักจะเห็นหรือพูดคุยกับคนที่คุณสนใจและรู้สึกใกล้ชิดกับ (ตัวอย่างเช่นการพูดคุยกับเพื่อน ๆ ในโทรศัพท์ไปเยี่ยมเพื่อนหรือสมาชิกในครอบครัวจะไปโบสถ์หรือชมรมการประชุม)?",
+        ),
+      ),
+      registration: AppLocalizations_Labels_Registration(
+        registerPatient: "ผู้ป่วยที่ลงทะเบียน",
+      ),
+      settings: AppLocalizations_Labels_Settings(
+        dark: "มืด",
+        language: "ภาษา",
+        light: "เบา",
+        signOut: "ออกจากระบบ",
+        system: "ระบบ",
+        theme: "กระทู้",
+        title: "การตั้งค่า",
+        updateProfile: "รายละเอียดการปรับปรุง",
+      ),
+    ),
+    Locale.fromSubtags(languageCode: "uz"): AppLocalizations_Labels(
+      app: AppLocalizations_Labels_App(
+        chooseLanguage: "Tilni tanlang",
+        chooseTheme: "Mavzuni tanlash",
+        settings: "App Sozlamalar",
+        system: "tizim",
+        title: "Prapare",
+      ),
+      auth: AppLocalizations_Labels_Auth(
+        cancel: "Bekor qilish",
+        changePassword: "Kalit so'zni o'zgartirish",
+        email: "Email",
+        password: "parol",
+        resetPassword: "Reset Parol",
+        signIn: "Tizimga kirish",
+        signUp: "Ro'yxatdan o'tish",
+        submit: "Submit",
+        userName: "Foydalanuvchi nomi",
+      ),
+      dates: AppLocalizations_Labels_Dates(
+        month: AppLocalizations_Labels_Dates_Month(
+          april: "Aprel",
+          august: "avgust",
+          december: "dekabr",
+          february: "fevral",
+          january: "Yanvar",
+          july: "iyul",
+          june: "iyun",
+          march: "qadam tashlamoq",
+          may: "May",
+          november: "noyabr",
+          october: "oktyabr",
+          september: "sentyabr",
+        ),
+        weekday: AppLocalizations_Labels_Dates_Weekday(
+          friday: "juma",
+          monday: "dushanba",
+          saturday: "shanba",
+          sunday: "yakshanba",
+          thursday: "Payshanba",
+          tuesday: "seshanba",
+          wednesday: "chorshanba",
+        ),
+      ),
+      general: AppLocalizations_Labels_General(
+        birthDate: "Tug'ilgan sana",
+        dateofBirth: "Tug'ilgan sana",
+        editSurvey: "Edit Survey",
+        familyName: "Familiya",
+        female: "ayol",
+        givenNames: "Ism va Sharif",
+        male: "erkak",
+        newSurvey: "Yangi tadqiqot",
+        relationship: "munosabatlar",
+        search: "Qidirmoq",
+        submitShare: "Submit / Share",
+        address: AppLocalizations_Labels_General_Address(
+          title: "manzil",
+          city: "shahar",
+          country: "mamlakat",
+          county: "County",
+          district: "tuman",
+          neighborhood: "Turar joy dahasi",
+          postalCode: "Pochta Indeksi",
+          state: "Davlat",
+        ),
+        relation: AppLocalizations_Labels_General_Relation(
+          title: "qarindosh",
+          aunt: "amma",
+          brother: "aka",
+          daughter: "qiz",
+          father: "ota",
+          grandfather: "buva",
+          grandmother: "buvi",
+          mother: "Ona",
+          nephew: "jiyan",
+          niece: "jiyan",
+          sister: "singil",
+          son: "o'g'il",
+          uncle: "Tog'a",
+        ),
+        sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
+          title: "Tug'ilgan da jinsi",
+          female: "ayol",
+          male: "erkak",
+        ),
+      ),
+      language: AppLocalizations_Labels_Language(
+        title: "Tilni tanlang",
+        inEnglish: "Uzbek",
+      ),
+      medical: AppLocalizations_Labels_Medical(
+        growth: "o'sish",
+        immunization: "emlash",
+        immunizations: "emlash",
+        vaccine: "vaktsina",
+        vaccines: "Vaksinalar",
+      ),
+      prapare: AppLocalizations_Labels_Prapare(
+        title:
+            ", Javob berish va bemor aktivlari baholash uchun Protokol tavakkalchiliklarni, va tajriba [PRAPARE]",
+        familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
+          title: "Oila va uy",
+          address: "Qanday manzili da yashaydi?",
+          household:
+              "O'zingiz shu jumladan qancha oila a'zolari, bilan ayni paytda jonli sizga nima?",
+          housing: "Sizning uy-joy vaziyat bugun nima?",
+          losingHousing: "Agar uy-joy yo'qotib haqida tashvishli?",
+        ),
+        moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
+          title: "Pul va manbalar",
+          income:
+              "O'tgan yil mobaynida siz va siz bilan birga yashayotgan oila a'zolari uchun umumiy kombinatsiyalangan daromad nima edi? Bu ma'lumotlar sizga har qanday foyda uchun ma'qul bo'lsa, bizga aniqlashga yordam beradi.",
+          insurance: "Sizning asosiy sug'urta nima?",
+          school: "Agar tugagan deb maktab eng yuqori darajasi nima?",
+          transportation:
+              "transport yo'qligi tibbiy dan saqlab kelgan randevular, uchrashuvlar, ish, yoki kundalik hayot uchun zarur bo'lgan narsalarni olish?",
+          without:
+              "O'tgan yili, bor yoki, albatta kerak edi quyidagi biron olish olmadi bilan yashash har qanday oila a'zolari?",
+          work: "joriy ish vaziyat qanday?",
+        ),
+        optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
+          title: "ixtiyoriy chora-tadbirlar",
+          afraid: "O'tgan yili, siz hamkor yoki sobiq hamkori qo'rqib edi?",
+          prison:
+              "O'tgan yili, siz qamoqqa, qamoqda, tergov izolyatoriga, yoki voyaga etmagan tuzatish muassasasida ketma-ket ortiq 2-kecha o'tkazdim bor?",
+          refugee: "Agar bir boshpana?",
+          safe: "jismonan va qaerda Siz jonli hissiy xavfsiz his qilasizmi?",
+        ),
+        personalCharacteristics:
+            AppLocalizations_Labels_Prapare_PersonalCharacteristics(
+          title: "shaxsiy xususiyatlari",
+          language: "Agar eng qulay nutq qaysi tilda bo'ladi?",
+          latino: "Agar lotin / Hispanik o'zingiz ko'rib turasizmi?",
+          military: "Qo'shma Shtatlar qurolli kuchlari zaryadsizlanishi bormi?",
+          race: "Qaysi poyga (lar) bor?",
+          seasonalWork:
+              "O'tgan 2 yil ichida har qanday nuqtada, mavsumda yoki migrant xo'jalik ish daromad Sizning yoki Siz va oilasining asosiy manbai bo'ldi?",
+        ),
+        socialAndEmotionalHealth:
+            AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
+          title: "Ijtimoiy va hissiy Sog'liqni saqlash",
+          stress:
+              "Kimdir, tarang, asabiy, bezovta his yoki ularning dahshatga chunki tunda uyqu olmaydi qachon Stress hisoblanadi. Qanday ta'kidladi bor?",
+          talk:
+              "Qanday tez-tez haqida g'amxo'rlik va yaqin his odamlar bilan gaplashish yoki ko'rasanmi (Masalan:, do'stlar yoki oila ziyorat, telefon o'rtoq gapirganda, cherkov yoki klub uchrashuvlar ketadi)?",
+        ),
+      ),
+      registration: AppLocalizations_Labels_Registration(
+        registerPatient: "Ro'yxatdan o'tish Bemor",
+      ),
+      settings: AppLocalizations_Labels_Settings(
+        dark: "Dark",
+        language: "til",
+        light: "yorug'lik",
+        signOut: "Chiqish",
+        system: "tizim",
+        theme: "mavzu",
+        title: "Sozlamalar",
+        updateProfile: "yangilash Profil",
+      ),
+    ),
+    Locale.fromSubtags(languageCode: "vi"): AppLocalizations_Labels(
+      app: AppLocalizations_Labels_App(
+        chooseLanguage: "Chọn ngôn ngữ",
+        chooseTheme: "Chọn Theme",
+        settings: "App Cài đặt",
+        system: "hệ thống",
+        title: "Prapare",
+      ),
+      auth: AppLocalizations_Labels_Auth(
+        cancel: "hủy bỏ",
+        changePassword: "Đổi mật khẩu",
+        email: "E-mail",
+        password: "Mật khẩu",
+        resetPassword: "Đặt lại mật khẩu",
+        signIn: "Đăng nhập",
+        signUp: "Đăng ký",
+        submit: "Gửi đi",
+        userName: "tên tài khoản",
+      ),
+      dates: AppLocalizations_Labels_Dates(
+        month: AppLocalizations_Labels_Dates_Month(
+          april: "tháng tư",
+          august: "tháng Tám",
+          december: "tháng mười hai",
+          february: "Tháng hai",
+          january: "tháng Giêng",
+          july: "tháng bảy",
+          june: "tháng sáu",
+          march: "tháng Ba",
+          may: "có thể",
+          november: "tháng mười một",
+          october: "Tháng Mười",
+          september: "Tháng Chín",
+        ),
+        weekday: AppLocalizations_Labels_Dates_Weekday(
+          friday: "Thứ sáu",
+          monday: "thứ hai",
+          saturday: "ngày thứ bảy",
+          sunday: "chủ nhật",
+          thursday: "Thứ năm",
+          tuesday: "thứ ba",
+          wednesday: "Thứ tư",
+        ),
+      ),
+      general: AppLocalizations_Labels_General(
+        birthDate: "Ngày sinh",
+        dateofBirth: "Ngày sinh",
+        editSurvey: "Sửa Khảo sát",
+        familyName: "Tên gia đình",
+        female: "Giống cái",
+        givenNames: "Tên trao",
+        male: "Nam giới",
+        newSurvey: "Khảo sát mới",
+        relationship: "Mối quan hệ",
+        search: "Tìm kiếm",
+        submitShare: "Gửi / Chia sẻ",
+        address: AppLocalizations_Labels_General_Address(
+          title: "Địa chỉ",
+          city: "thành phố",
+          country: "Quốc gia",
+          county: "quận",
+          district: "Huyện",
+          neighborhood: "Khu vực lân cận",
+          postalCode: "Mã bưu điện",
+          state: "Tiểu bang",
+        ),
+        relation: AppLocalizations_Labels_General_Relation(
+          title: "Quan hệ",
+          aunt: "Cô",
+          brother: "Anh trai",
+          daughter: "Con gái",
+          father: "Bố",
+          grandfather: "Ông nội",
+          grandmother: "Bà ngoại",
+          mother: "Mẹ",
+          nephew: "Cháu trai",
+          niece: "cháu gái",
+          sister: "Em gái",
+          son: "Con trai",
+          uncle: "Chú",
+        ),
+        sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
+          title: "Số giới tính khi sinh",
+          female: "Giống cái",
+          male: "Nam giới",
+        ),
+      ),
+      language: AppLocalizations_Labels_Language(
+        title: "Select language",
+        inEnglish: "Vietnamese",
+      ),
+      medical: AppLocalizations_Labels_Medical(
+        growth: "sự phát triển",
+        immunization: "Tiêm chủng",
+        immunizations: "chích ngừa",
+        vaccine: "vắc-xin",
+        vaccines: "Vắc-xin",
+      ),
+      prapare: AppLocalizations_Labels_Prapare(
+        title:
+            "Nghị định thư cho Hưởng ứng và Đánh giá tài sản Bệnh nhân, rủi ro, và kinh nghiệm [PRAPARE]",
+        familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
+          title: "Gia đình và Trang chủ",
+          address: "địa chỉ làm những gì bạn sống ở?",
+          household:
+              "Có bao nhiêu người trong gia đình, kể cả bạn, làm bạn hiện đang sống với ai?",
+          housing: "tình hình nhà ở của bạn là gì hôm nay?",
+          losingHousing: "Bạn đang lo lắng về việc mất nhà ở của bạn?",
+        ),
+        moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
+          title: "Tiền và Tài nguyên",
+          income:
+              "Trong năm qua, tổng thu nhập kết hợp cho bạn và các thành viên gia đình bạn sống với là gì? Những thông tin này sẽ giúp chúng ta xác định xem bạn có đủ điều kiện cho bất kỳ lợi ích.",
+          insurance: "bảo hiểm chính của bạn là gì?",
+          school: "mức cao nhất của trường mà bạn đã hoàn thành là gì?",
+          transportation:
+              "Đã thiếu vận chuyển giữ bạn từ y tế các cuộc hẹn, các cuộc họp, làm việc, hoặc từ nhận được những điều cần thiết cho cuộc sống hàng ngày?",
+          without:
+              "Trong năm qua, có bạn hay bất kỳ thành viên gia đình bạn sống với đã không thể nhận được bất kỳ những điều sau đây khi nó được thực sự cần thiết?",
+          work: "tình hình công việc hiện tại của bạn là gì?",
+        ),
+        optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
+          title: "Các biện pháp bắt buộc",
+          afraid: "Trong năm qua, Anh đã sợ đối tác của bạn hoặc cựu đối tác?",
+          prison:
+              "Trong năm qua, có bạn đã trải qua hơn 2 đêm liên tiếp trong một nhà tù, nhà tù, trại giam, hoặc cơ sở cải huấn thiếu niên?",
+          refugee: "Bạn có phải là người tị nạn?",
+          safe:
+              "Bạn có cảm thấy chất lẫn tinh thần an toàn, nơi bạn đang sống?",
+        ),
+        personalCharacteristics:
+            AppLocalizations_Labels_Prapare_PersonalCharacteristics(
+          title: "Tính cách con người",
+          language: "Ngôn ngữ nào bạn đang nói thoải mái nhất?",
+          latino: "Bạn có cho rằng mình Hispanic / Latino?",
+          military: "bạn đã được thải ra từ các lực lượng vũ trang của Hoa Kỳ?",
+          race: "Mà (s) đua are you?",
+          seasonalWork:
+              "Tại bất kỳ thời điểm nào trong 2 năm trở lại đây, có mùa hoặc công việc đồng áng nhập cư bị của bạn hoặc bạn nguồn chính của gia đình thu nhập?",
+        ),
+        socialAndEmotionalHealth:
+            AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
+          title: "Xã hội và sức khỏe cảm xúc",
+          stress:
+              "Sự căng thẳng là khi ai đó cảm thấy căng thẳng, hồi hộp, lo lắng hoặc không thể ngủ vào ban đêm vì tâm trí của họ đang gặp rắc rối. Làm thế nào nhấn mạnh là bạn?",
+          talk:
+              "Bao lâu thì bạn nhìn thấy hoặc nói chuyện với những người mà bạn quan tâm và cảm thấy gần gũi đến (Ví dụ: nói chuyện với bạn bè trên điện thoại, thăm bạn bè hoặc gia đình, đi đến các cuộc họp nhà thờ hoặc câu lạc bộ)?",
+        ),
+      ),
+      registration: AppLocalizations_Labels_Registration(
+        registerPatient: "Đăng ký bệnh nhân",
+      ),
+      settings: AppLocalizations_Labels_Settings(
+        dark: "Tối",
+        language: "ngôn ngữ",
+        light: "Ánh sáng",
+        signOut: "Đăng xuất",
+        system: "hệ thống",
+        theme: "chủ đề",
+        title: "Cài đặt",
+        updateProfile: "Cập nhật hồ sơ",
+      ),
+    ),
   };
 
   final AppLocalizations_Labels labels;
