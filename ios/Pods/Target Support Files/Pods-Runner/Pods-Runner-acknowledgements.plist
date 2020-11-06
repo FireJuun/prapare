@@ -14,7 +14,7 @@
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>Copyright 2017 The Chromium Authors. All rights reserved.
+			<string>Copyright 2017, the Flutter project authors. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -43,7 +43,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			<key>License</key>
 			<string>BSD</string>
 			<key>Title</key>
-			<string>shared_preferences</string>
+			<string>path_provider</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>

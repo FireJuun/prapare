@@ -5,7 +5,7 @@ import 'package:prapare/models/data/survey/survey.dart';
 import 'package:prapare/models/questionnaire_model.dart';
 
 class QuestionnaireController extends GetxController {
-  static QuestionnaireController get to => Get.find();
+  // static QuestionnaireController get to => Get.find();
 
   /// A semi-temporary data model, which will be transitioned to harness [prapareSurvey]
   /// For now, the data points have been created manually, and the codes don't quite correlate yet

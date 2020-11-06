@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
-import 'package:prapare/controllers/theme_service.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:prapare/controllers/theme_controller.dart';
+import 'package:prapare/localization.dart';
 import 'package:prapare/routes/routes.dart';
+import 'package:prapare/ui/styled_components/styled_components.dart';
 import 'package:prapare/ui/views/home/home_view.dart';
+
+import 'controllers/controllers.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -12,18 +18,43 @@ void main() async {
 
 // Theme uses GetxService so that it isn't closed during app lifecycle
 Future<void> _initServices() async {
-  await Get.putAsync<ThemeService>(() => ThemeService().init());
+  await GetStorage.init();
+  Get.put<LocaleController>(LocaleController());
+  Get.put<ThemeController>(ThemeController());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      home: HomeView(),
-      getPages: AppPages.pages,
-      theme: ThemeService.to.lightTheme.themeData,
-      darkTheme: ThemeService.to.darkTheme.themeData,
-      themeMode: ThemeService.to.themeMode,
+    ThemeController.to.getThemeModeFromStore();
+    return GetBuilder<LocaleController>(
+      builder: (localeService) {
+        return StyledLoading(
+          child: GetMaterialApp(
+            // *** LOCALES ***
+            locale: localeService.getLocale, // <- Current locale
+            localizationsDelegates: [
+              const AppLocalizationsDelegate(), // <- Your custom delegate
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+            ],
+            supportedLocales: AppLocalizations.languages.keys
+                .toList(), // <- Supported locales
+
+            // *** THEMES ***
+            theme: ThemeController.to.lightTheme.themeData,
+            darkTheme: ThemeController.to.darkTheme.themeData,
+            themeMode: ThemeController.to.themeMode,
+
+            // *** ROUTES ***
+            // initialRoute: "/",
+            home: HomeView(),
+            getPages: AppPages.pages,
+            debugShowCheckedModeBanner: false,
+            //defaultTransition: Transition.fade,
+          ),
+        );
+      },
     );
   }
 }
