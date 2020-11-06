@@ -4,12 +4,6 @@ import 'package:get/utils.dart';
 class _Strings {
   static _Strings instance = _Strings();
 
-  String TITLE_PERSONAL = "Personal Characteristics".tr;
-  String TITLE_HOME = "Family and Home".tr;
-  String TITLE_MONEY = "Money and Resources".tr;
-  String TITLE_SOCIAL = "Social and Emotional Health".tr;
-  String TITLE_OTHER = "Optional Measures".tr;
-
   //todo: automate connection of string to PRAPARE survey data
   String CODE_PERSONAL = "/93043-8";
   String CODE_HOME = "/93042-0";

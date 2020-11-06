@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:prapare/_internal/utils/prapare_codes_util.dart';
+import 'package:prapare/localization.dart';
 import 'package:prapare/models/data/survey/question.dart';
 import 'package:prapare/ui/views/survey/shared/survey_detail/survey_detail_controller.dart';
 
@@ -16,6 +18,8 @@ class SurveyDetail extends StatelessWidget {
       builder: (controller) {
         final textTheme = context.textTheme;
         var survey = controller.data.getSurveyFromCode(surveyCode);
+        final PrapareCodesUtil codesUtil = PrapareCodesUtil();
+        final labels = AppLocalizations.of(context);
 
         Widget mapQuestion(Question question) {
           // Unused: find index of question w/in survey
@@ -30,15 +34,18 @@ class SurveyDetail extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Question title
-              Text('${qTotalIndex + 1}: ${question.text}',
-                  style: textTheme.headline6, textAlign: TextAlign.start),
+              Text(
+                  '${qTotalIndex + 1}: ${codesUtil.getStringFromLinkIdAndLocale(question.code, labels)}',
+                  style: textTheme.headline6,
+                  textAlign: TextAlign.start),
 
               // All answers are mapped out using spread operator
               // todo: add handling of checkboxes and 'other' data entry
               ...question.answers.toList().asMap().entries.map(
                 (answer) {
                   return RadioListTile<String>(
-                    title: Text(question.answers.elementAt(answer.key).text),
+                    title: Text(codesUtil.getStringFromLinkIdAndLocale(
+                        question.answers.elementAt(answer.key).code, labels)),
                     value: question.answers.elementAt(answer.key).code,
                     groupValue: controller
                         .findUserResponseBySurvey(

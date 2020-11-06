@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:prapare/_internal/components/custom.dart' as custom;
+import 'package:prapare/_internal/utils/prapare_codes_util.dart';
 import 'package:prapare/controllers/theme_controller.dart';
+import 'package:prapare/localization.dart';
 import 'package:prapare/ui/styled_components/app_logo.dart';
 import 'package:prapare/ui/themes.dart';
 import 'package:prapare/ui/views/survey/survey_controller.dart';
@@ -19,6 +21,8 @@ class SurveyHeaderFlexible extends StatelessWidget {
         .getAppThemeFromBrightness(context.theme.brightness);
     final SurveyController surveyController = Get.find();
     final tabList = surveyController.tabModel.tabList;
+    final codesUtil = PrapareCodesUtil();
+    final labels = AppLocalizations.of(context);
 
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
@@ -77,7 +81,8 @@ class SurveyHeaderFlexible extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 2.0),
                   child: Center(
                     child: Text(
-                      tabList[surveyController.rxTabIndex].title,
+                      codesUtil.getStringFromLinkIdAndLocale(
+                          tabList[surveyController.rxTabIndex].code, labels),
                       style: isExpanded
                           ? context.theme.accentTextTheme.headline5
                           : context.theme.accentTextTheme.headline6,

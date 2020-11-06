@@ -7,7 +7,6 @@ class SurveyTabModel {
     SurveyTab(
         id: SurveyTabId.PERSONAL,
         code: S.CODE_PERSONAL,
-        title: S.TITLE_PERSONAL,
         active: AppIcons.PERSONAL_ICON,
         activeChecked: AppIcons.PERSONAL_ICON_CHECKED,
         inactive: AppIcons.PERSONAL_ICON_INACTIVE,
@@ -15,7 +14,6 @@ class SurveyTabModel {
     SurveyTab(
         id: SurveyTabId.HOME,
         code: S.CODE_HOME,
-        title: S.TITLE_HOME,
         active: AppIcons.HOME_ICON,
         activeChecked: AppIcons.HOME_ICON_CHECKED,
         inactive: AppIcons.HOME_ICON_INACTIVE,
@@ -23,7 +21,6 @@ class SurveyTabModel {
     SurveyTab(
         id: SurveyTabId.MONEY,
         code: S.CODE_MONEY,
-        title: S.TITLE_MONEY,
         active: AppIcons.MONEY_ICON,
         activeChecked: AppIcons.MONEY_ICON_CHECKED,
         inactive: AppIcons.MONEY_ICON_INACTIVE,
@@ -31,7 +28,6 @@ class SurveyTabModel {
     SurveyTab(
         id: SurveyTabId.SOCIAL,
         code: S.CODE_SOCIAL,
-        title: S.TITLE_SOCIAL,
         active: AppIcons.SOCIAL_ICON,
         activeChecked: AppIcons.SOCIAL_ICON_CHECKED,
         inactive: AppIcons.SOCIAL_ICON_INACTIVE,
@@ -39,7 +35,6 @@ class SurveyTabModel {
     SurveyTab(
         id: SurveyTabId.OTHER,
         code: S.CODE_OTHER,
-        title: S.TITLE_OTHER,
         active: AppIcons.OTHER_ICON,
         activeChecked: AppIcons.OTHER_ICON_CHECKED,
         inactive: AppIcons.OTHER_ICON_INACTIVE,
