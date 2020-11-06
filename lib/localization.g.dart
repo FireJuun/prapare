@@ -69,7 +69,6 @@ class AppLocalizations {
         search: "Search",
         submitShare: "Submit/Share",
         address: AppLocalizations_Labels_General_Address(
-          title: "Address",
           city: "City",
           country: "Country",
           county: "County",
@@ -77,9 +76,9 @@ class AppLocalizations {
           neighborhood: "Neighborhood",
           postalCode: "Postal Code",
           state: "State",
+          title: "Address",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          title: "Relation",
           aunt: "Aunt",
           brother: "Brother",
           daughter: "Daughter",
@@ -91,17 +90,18 @@ class AppLocalizations {
           niece: "Niece",
           sister: "Sister",
           son: "Son",
+          title: "Relation",
           uncle: "Uncle",
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
-          title: "Sex at Birth",
           female: "Female",
           male: "Male",
+          title: "Sex at Birth",
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        title: "English",
         inEnglish: "English",
+        title: "English",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "Growth",
@@ -113,20 +113,94 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "Protocol for Responding to and Assessing Patients' Assets, Risks, and Experiences [PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          chooseNotToAnswer: "I choose not to answer this question",
+          no: "No",
+          yes: "Yes",
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing:
+                "I do not have housing (staying with others, in a hotel, in a shelter, living outside on the street, on a beach, in a car, or in a park)",
+            iHaveHousing: "I have housing",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "A little bit",
+            notAtAll: "Not at all",
+            quiteABit: "Quite a bit",
+            somewhat: "Somewhat",
+            veryMuch: "Very much",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "5 or more times a week",
+            lessThanOnceAWeek: "Less than once a week",
+            oneOrTwoTimesAWeek: "1 or 2 times a week",
+            threeToFiveTimesAWeek: "3 to 5 times a week",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "CHIP Medicaid",
+            medicaid: "Medicaid",
+            medicare: "Medicare",
+            noneOrUninsured: "None/uninsured",
+            otherPublicInsuranceChip: "Other public insurance (CHIP)",
+            otherPublicInsuranceNotChip: "Other public insurance (not CHIP)",
+            privateInsurance: "Private insurance",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "English",
+            languageOtherThanEnglish: "Language other than English",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "American Indian/Alaskan Native",
+            asian: "Asian",
+            blackAfricanAmerican: "Black/African American",
+            nativeHawaiian: "Native Hawaiian",
+            other: "Other",
+            pacificIslander: "Pacific Islander",
+            white: "White",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "High school diploma or GED",
+            lessThanHighSchoolDegree: "Less than high school degree",
+            moreThanHighSchool: "More than high school",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            yesKeptFromMedical:
+                "Yes, it has kept me from medical appointments or from getting my medications",
+            yesKeptFromNonMedical:
+                "Yes, it has kept me from non-medical meetings, appointments, work, or from getting things that I need",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "Child care",
+            clothing: "Clothing",
+            food: "Food",
+            medicineOrAnyHealthCare:
+                "Medicine or Any Health Care (Medical, Dental, Mental Health, Vision)",
+            other: "Other",
+            phone: "Phone",
+            utilities: "Utilities",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "Full-time work",
+            otherwiseUnemployedButNotSeekingWork:
+                "Otherwise unemployed but not seeking work (ex: student, retired, disabled, unpaid primary care giver)",
+            partTimeOrTemporaryWork: "Part-time or temporary work",
+            unemployed: "Unemployed",
+          ),
+        ),
         familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
-          title: "Family and Home",
           address: "What address do you live at?",
           household:
               "How many family members, including yourself, do you currently live with?",
           housing: "What is your housing situation today?",
           losingHousing: "Are you worried about losing your housing?",
+          title: "Family and Home",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
-          title: "Money and Resources",
           income:
               "During the past year, what was the total combined income for you and the family members you live with? This information will help us determine if you are eligible for any benefits.",
           insurance: "What is your main insurance?",
           school: "What is the highest level of school that you have finished?",
+          title: "Money and Resources",
           transportation:
               "Has lack of transportation kept you from medical appointments, meetings, work, or from getting things needed for daily living?",
           without:
@@ -134,7 +208,6 @@ class AppLocalizations {
           work: "What is your current work situation?",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
-          title: "Optional Measures",
           afraid:
               "In the past year, have you been afraid of your partner or ex-partner?",
           prison:
@@ -142,10 +215,10 @@ class AppLocalizations {
           refugee: "Are you a refugee?",
           safe:
               "Do you feel physically and emotionally safe where you currently live?",
+          title: "Optional Measures",
         ),
         personalCharacteristics:
             AppLocalizations_Labels_Prapare_PersonalCharacteristics(
-          title: "Personal Characteristics",
           language: "What language are you most comfortable speaking?",
           latino: "Do you consider yourself Hispanic/Latino?",
           military:
@@ -153,14 +226,15 @@ class AppLocalizations {
           race: "Which race(s) are you?",
           seasonalWork:
               "At any point in the past 2 years, has season or migrant farm work been your or your family's main source of income?",
+          title: "Personal Characteristics",
         ),
         socialAndEmotionalHealth:
             AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
-          title: "Social and Emotional Health",
           stress:
               "Stress is when someone feels tense, nervous, anxious or can't sleep at night because their mind is troubled. How stressed are you?",
           talk:
               "How often do you see or talk to people that you care about and feel close to (For example: talking to friends on the phone, visiting friends or family, going to church or club meetings)?",
+          title: "Social and Emotional Health",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -235,7 +309,6 @@ class AppLocalizations {
         search: "Buscar",
         submitShare: "Presentar / Compartir",
         address: AppLocalizations_Labels_General_Address(
-          title: "Habla a",
           city: "Ciudad",
           country: "País",
           county: "Condado",
@@ -243,9 +316,9 @@ class AppLocalizations {
           neighborhood: "Barrio",
           postalCode: "Código postal",
           state: "Estado",
+          title: "Habla a",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          title: "Relación",
           aunt: "Tía",
           brother: "Hermano",
           daughter: "Hija",
@@ -257,17 +330,18 @@ class AppLocalizations {
           niece: "Sobrina",
           sister: "Hermana",
           son: "Hijo",
+          title: "Relación",
           uncle: "Tío",
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
-          title: "El sexo en el nacimiento",
           female: "Hembra",
           male: "Masculino",
+          title: "El sexo en el nacimiento",
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        title: "Elige lengua",
         inEnglish: "Spanish",
+        title: "Elige lengua",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "Crecimiento",
@@ -279,20 +353,94 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "Protocolo para responder y evaluar los activos de los pacientes, riesgos y experiencias [PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          chooseNotToAnswer: "No decide contestar esta pregunta",
+          no: "No",
+          yes: "si",
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing:
+                "No tengo vivienda (en casa de otros, en un hotel, en un refugio, que viven fuera en la calle, en una playa, en un coche o en un parque)",
+            iHaveHousing: "Tengo la vivienda",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "Un poco",
+            notAtAll: "De ningún modo",
+            quiteABit: "Bastante",
+            somewhat: "Algo",
+            veryMuch: "Mucho",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "5 o más veces a la semana",
+            lessThanOnceAWeek: "Menos que una vez a la semana",
+            oneOrTwoTimesAWeek: "1 o 2 veces a la semana",
+            threeToFiveTimesAWeek: "3 a 5 veces a la semana",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "CHIP Medicaid",
+            medicaid: "Seguro de enfermedad",
+            medicare: "Seguro médico del estado",
+            noneOrUninsured: "Ninguno / no asegurados",
+            otherPublicInsuranceChip: "Otro seguro público (CHIP)",
+            otherPublicInsuranceNotChip: "Otro seguro público (no CHIP)",
+            privateInsurance: "Seguro privado",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "Inglés",
+            languageOtherThanEnglish: "Idioma distinto del Inglés",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "Indio Americano Nativo de Alaska /",
+            asian: "asiático",
+            blackAfricanAmerican: "Negro americano / África",
+            nativeHawaiian: "nativo de Hawai",
+            other: "Otro",
+            pacificIslander: "Islas del Pacífico",
+            white: "Blanco",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "diploma de escuela secundaria o GED",
+            lessThanHighSchoolDegree: "Menos de grado de la escuela secundaria",
+            moreThanHighSchool: "Más de la escuela secundaria",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            yesKeptFromMedical:
+                "Sí, me ha mantenido desde las citas médicas o de conseguir mis medicamentos",
+            yesKeptFromNonMedical:
+                "Sí, me ha impedido no médico reuniones, citas, trabajo, o de conseguir las cosas que necesitan",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "Cuidado de los niños",
+            clothing: "Ropa",
+            food: "Comida",
+            medicineOrAnyHealthCare:
+                "Cualquier medicina o la atención de la salud (médicos, dentales, salud mental, la visión)",
+            other: "Otro",
+            phone: "Teléfono",
+            utilities: "Utilidades",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "Trabajo de tiempo completo",
+            otherwiseUnemployedButNotSeekingWork:
+                "De lo contrario en paro, pero que no buscan trabajo (por ejemplo: estudiantes, jubilados, discapacitados, dador de atención primaria no remunerado)",
+            partTimeOrTemporaryWork: "A tiempo parcial o temporal",
+            unemployed: "Desempleados",
+          ),
+        ),
         familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
-          title: "Familia y Hogar",
           address: "¿Qué dirección vive usted en?",
           household:
               "¿Cuántos miembros de la familia, incluido usted, que hacen actualmente vivo con?",
           housing: "¿Cuál es su situación de vivienda hoy en día?",
           losingHousing: "¿Está preocupado por la pérdida de su vivienda?",
+          title: "Familia y Hogar",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
-          title: "Dinero y recursos",
           income:
               "Durante el año pasado, ¿cuál fue el ingreso total combinado para usted y los miembros de la familia que viven con usted? Esta información nos ayudará a determinar si usted es elegible para ningún beneficio.",
           insurance: "¿Cuál es su principal seguro?",
           school: "¿Cuál es el nivel más alto de la escuela que ha terminado?",
+          title: "Dinero y recursos",
           transportation:
               "Ha falta de transporte le impidió médica citas, reuniones, trabajo, o de hacer las cosas necesarias para la vida diaria?",
           without:
@@ -300,7 +448,6 @@ class AppLocalizations {
           work: "¿Cual es tu situación laboral actual?",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
-          title: "Medidas opcionales",
           afraid:
               "En el último año, ¿ha tenido miedo de su pareja o ex pareja?",
           prison:
@@ -308,10 +455,10 @@ class AppLocalizations {
           refugee: "¿Es usted un refugiado?",
           safe:
               "¿Se siente física y emocionalmente seguro donde actualmente vivo?",
+          title: "Medidas opcionales",
         ),
         personalCharacteristics:
             AppLocalizations_Labels_Prapare_PersonalCharacteristics(
-          title: "Características personales",
           language: "¿Qué idioma se siente más cómodo hablando?",
           latino: "¿Se considera usted Hispano / Latino?",
           military:
@@ -319,14 +466,15 @@ class AppLocalizations {
           race: "¿Qué (s) raza es usted?",
           seasonalWork:
               "En cualquier momento de los últimos 2 años, tiene la temporada o el trabajo agrícola migrante estado o la de su familia principal fuente de ingresos?",
+          title: "Características personales",
         ),
         socialAndEmotionalHealth:
             AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
-          title: "Salud Emocional y Social",
           stress:
               "El estrés es cuando alguien se siente tenso, nervioso, ansioso o no puede dormir por la noche debido a que su mente está preocupada. ¿Qué tan estresado está usted?",
           talk:
               "¿Con qué frecuencia ve o habla con la gente que se preocupa y se siente cerca (Por ejemplo: hablar con amigos por teléfono, visitas a amigos o familiares, ir a reuniones de la iglesia o del club)?",
+          title: "Salud Emocional y Social",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -401,7 +549,6 @@ class AppLocalizations {
         search: "بحث",
         submitShare: "إرسال / حصة",
         address: AppLocalizations_Labels_General_Address(
-          title: "عنوان",
           city: "مدينة",
           country: "بلد",
           county: "مقاطعة",
@@ -409,9 +556,9 @@ class AppLocalizations {
           neighborhood: "حي",
           postalCode: "رمز بريدي",
           state: "حالة",
+          title: "عنوان",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          title: "علاقة",
           aunt: "عمة",
           brother: "شقيق",
           daughter: "ابنة",
@@ -423,17 +570,18 @@ class AppLocalizations {
           niece: "ابنة الاخ",
           sister: "أخت",
           son: "ابن",
+          title: "علاقة",
           uncle: "اخو الام",
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
-          title: "الجنس عند الولادة",
           female: "أنثى",
           male: "الذكر",
+          title: "الجنس عند الولادة",
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        title: "اختيار اللغة",
         inEnglish: "Arabic",
+        title: "اختيار اللغة",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "نمو",
@@ -445,19 +593,93 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "بروتوكول للاستجابة للوتقييم الأصول المرضى، والمخاطر، والخبرات [PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          chooseNotToAnswer: "أنا اخترت عدم الإجابة على هذا السؤال",
+          no: "لا",
+          yes: "نعم",
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing:
+                "ليس لدي سكن (البقاء مع الآخرين، في أحد الفنادق، في ملجأ خارج يعيشون في الشوارع، على الشاطئ، في السيارة، أو في الحديقة)",
+            iHaveHousing: "لدي الإسكان",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "قليلا",
+            notAtAll: "لا على الاطلاق",
+            quiteABit: "اهدا قليلا",
+            somewhat: "قليلا",
+            veryMuch: "كثيرا جدا",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "5 مرات أو أكثر في الأسبوع",
+            lessThanOnceAWeek: "أقل من مرة في الأسبوع",
+            oneOrTwoTimesAWeek: "1 أو 2 مرات في الأسبوع",
+            threeToFiveTimesAWeek: "3-5 مرات في الأسبوع",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "CHIP المعونة الطبية",
+            medicaid: "مساعدة طبية للفقراء",
+            medicare: "الرعاية الطبية",
+            noneOrUninsured: "لا شيء / غير المؤمن عليهم",
+            otherPublicInsuranceChip: "التأمين العامة الأخرى (CHIP)",
+            otherPublicInsuranceNotChip: "التأمين العامة الأخرى (وليس CHIP)",
+            privateInsurance: "التأمين الخاص",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "الإنجليزية",
+            languageOtherThanEnglish: "لغة أخرى غير الإنجليزية",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "هنود أمريكا / ألاسكا الأصليين",
+            asian: "آسيا",
+            blackAfricanAmerican: "أسود / افريقى",
+            nativeHawaiian: "هاواي الأصليين",
+            other: "آخر",
+            pacificIslander: "جزر المحيط الهادئ",
+            white: "أبيض",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "شهادة الدراسة الثانوية أو GED",
+            lessThanHighSchoolDegree: "أقل من شهادة الثانوية العامة",
+            moreThanHighSchool: "أكثر من المدرسة الثانوية",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            yesKeptFromMedical:
+                "نعم، فإنه أبقى لي من المواعيد الطبية أو من الحصول على الأدوية بلدي",
+            yesKeptFromNonMedical:
+                "نعم، فإنه أبقى لي من غير الطبية الاجتماعات والمواعيد، والعمل، أو من الحصول على الأشياء التي أحتاج",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "رعاية الأطفال",
+            clothing: "ملابس",
+            food: "طعام",
+            medicineOrAnyHealthCare:
+                "الطب أو أي الرعاية الصحية (الطب، طب الأسنان، الصحة النفسية، الرؤية)",
+            other: "آخر",
+            phone: "هاتف",
+            utilities: "خدمات",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "العمل بدوام كامل",
+            otherwiseUnemployedButNotSeekingWork:
+                "العاطلين عن العمل على خلاف ذلك ولكن لا يبحثون عن عمل (مثال: طالب، متقاعد، تعطيل أو مقدم الرعاية الأولية غير مدفوعة الأجر)",
+            partTimeOrTemporaryWork: "بدوام جزئي أو عمل مؤقت",
+            unemployed: "عاطلين عن العمل",
+          ),
+        ),
         familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
-          title: "الأسرة المنزل و",
           address: "ما عنوان تعيشين في؟",
           household: "كم عدد أفراد الأسرة، بما في ذلك نفسك، هل يعيش حاليا؟",
           housing: "ما هو الوضع السكني اليوم؟",
           losingHousing: "هل أنت قلق حول فقدان السكن الخاص؟",
+          title: "الأسرة المنزل و",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
-          title: "المال والموارد",
           income:
               "وخلال العام الماضي، ما كان إجمالي الدخل المشترك لك ولأفراد الأسرة التي تعيش معها؟ هذه المعلومات سوف تساعدنا على تحديد ما إذا كنت مؤهلا للحصول على أي فوائد.",
           insurance: "ما هو التأمين الرئيسي الخاص بك؟",
           school: "ما هو أعلى مستوى من المدرسة التي كنت قد انتهى؟",
+          title: "المال والموارد",
           transportation:
               "وقد نقص وسائل النقل أبقى لكم من الطب المواعيد والاجتماعات والعمل، أو من الحصول على الأشياء اللازمة للحياة اليومية؟",
           without:
@@ -465,31 +687,31 @@ class AppLocalizations {
           work: "ما هو وضع عملك الحالي؟",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
-          title: "تدابير اختياري",
           afraid:
               "في العام الماضي، هل كان خائفا من شريك حياتك أو شريك السابقين؟",
           prison:
               "في العام الماضي، وقد قضيت أكثر من 2 ليال في صف واحد في السجن، والسجن، مركز الاحتجاز أو إصلاحية الأحداث؟",
           refugee: "هل أنت لاجئ؟",
           safe: "هل تشعر جسديا وعاطفيا آمن المكان الذي تعيش فيه حاليا؟",
+          title: "تدابير اختياري",
         ),
         personalCharacteristics:
             AppLocalizations_Labels_Prapare_PersonalCharacteristics(
-          title: "الخصائص الشخصية",
           language: "ما هي اللغة أنت تتحدث أكثر راحة؟",
           latino: "هل تعتبر نفسك اسباني / امريكا؟",
           military: "هل تم تسريحه من القوات المسلحة للولايات المتحدة؟",
           race: "منها (ق) سباق أنت؟",
           seasonalWork:
               "في أي وقت في السنوات الماضية 2، لديها الموسم أو العمل في المزارع المهاجرين كان لديك أو لديك المصدر الرئيسي للدخل العائلة؟",
+          title: "الخصائص الشخصية",
         ),
         socialAndEmotionalHealth:
             AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
-          title: "الصحة النفسية الاجتماعية و",
           stress:
               "الإجهاد هو عندما يشعر شخص ما متوترة، عصبية، قلق أو لا يستطيع النوم في الليل لأن المضطربة أذهانهم. كيف شدد أنت؟",
           talk:
               "كيف وغالبا ما تشاهد أو التحدث الى الناس أنك تهتم وتشعر بالقرب من (على سبيل المثال: التحدث مع الأصدقاء على الهاتف، وزيارة الأصدقاء أو العائلة، والذهاب إلى الكنيسة أو ناد الاجتماعات)؟",
+          title: "الصحة النفسية الاجتماعية و",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -564,7 +786,6 @@ class AppLocalizations {
         search: "खोज",
         submitShare: "जमा करें / शेयर",
         address: AppLocalizations_Labels_General_Address(
-          title: "पता",
           city: "Faridabad",
           country: "देश",
           county: "काउंटी",
@@ -572,9 +793,9 @@ class AppLocalizations {
           neighborhood: "आस - पड़ोस",
           postalCode: "डाक कोड",
           state: "राज्य",
+          title: "पता",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          title: "रिश्ता",
           aunt: "चाची",
           brother: "भाई",
           daughter: "बेटी",
@@ -586,17 +807,18 @@ class AppLocalizations {
           niece: "भांजी",
           sister: "बहन",
           son: "बेटा",
+          title: "रिश्ता",
           uncle: "चाचा",
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
-          title: "जन्म के समय लिंग",
           female: "महिला",
           male: "नर",
+          title: "जन्म के समय लिंग",
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        title: "भाषा चुनें",
         inEnglish: "Hindi",
+        title: "भाषा चुनें",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "विकास",
@@ -608,20 +830,94 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "के जवाब में और मरीजों के संपत्ति का आकलन, के लिए प्रोटोकॉल जोखिम, और अनुभव [PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          chooseNotToAnswer: "मैं इस सवाल का जवाब न करना चुन",
+          no: "नहीं",
+          yes: "हाँ",
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing:
+                "मैं आवास की जरूरत नहीं है (अन्य लोगों के साथ रहने, एक होटल में, एक शरण में, एक कार में सड़क पर बाहर रहने वाले, एक समुद्र तट पर, या एक पार्क में)",
+            iHaveHousing: "मैं आवास है",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "थोड़ा सा",
+            notAtAll: "हर्गिज नहीं",
+            quiteABit: "बहुत थोड़ा",
+            somewhat: "कुछ हद तक",
+            veryMuch: "बहुत ज्यादा",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "5 या अधिक बार एक हफ्ते",
+            lessThanOnceAWeek: "सप्ताह में एक बार से भी कम",
+            oneOrTwoTimesAWeek: "1 या 2 बार एक हफ्ते",
+            threeToFiveTimesAWeek: "एक सप्ताह में 3 से 5 बार",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "चिप मेडिकेड",
+            medicaid: "मेडिकेड",
+            medicare: "चिकित्सा",
+            noneOrUninsured: "कोई नहीं / बिना बीमा",
+            otherPublicInsuranceChip: "अन्य सार्वजनिक बीमा (चिप)",
+            otherPublicInsuranceNotChip: "अन्य सार्वजनिक बीमा (नहीं चिप)",
+            privateInsurance: "निजी बीमा",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "अंग्रेज़ी",
+            languageOtherThanEnglish: "भाषा अंग्रेजी के अलावा अन्य",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "अमेरिकी भारतीय / अलास्का मूल निवासी",
+            asian: "एशियाई",
+            blackAfricanAmerican: "श्याम / अफ़्रीकी अमेरिकी",
+            nativeHawaiian: "देशी हवाईयन",
+            other: "अन्य",
+            pacificIslander: "प्रशांत द्वीप",
+            white: "सफेद",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "हाई स्कूल डिप्लोम अथवा जीईडी",
+            lessThanHighSchoolDegree: "उच्च विद्यालय की डिग्री से भी कम",
+            moreThanHighSchool: "हाई स्कूल से अधिक",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            yesKeptFromMedical:
+                "हाँ, यह मुझे चिकित्सा नियुक्तियों से या मेरे दवाओं को प्राप्त करने से रखा गया है",
+            yesKeptFromNonMedical:
+                "हाँ, यह मेरी ओर से गैर चिकित्सा मीटिंग, अपॉइंटमेंट, काम, या चीजों को प्राप्त करने से है कि मैं जरूरत को रखा गया है",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "बच्चे की देखभाल",
+            clothing: "कपड़े",
+            food: "खाना",
+            medicineOrAnyHealthCare:
+                "चिकित्सा या किसी भी स्वास्थ्य देखभाल (मेडिकल, डेंटल, मानसिक स्वास्थ्य, विजन)",
+            other: "अन्य",
+            phone: "फ़ोन",
+            utilities: "उपयोगिताएँ",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "पूरा समय काम करना",
+            otherwiseUnemployedButNotSeekingWork:
+                "अन्यथा बेरोजगार लेकिन मांग काम नहीं (पूर्व: छात्र, सेवानिवृत्त, विकलांग, अवैतनिक प्राथमिक-रेख करने वाला)",
+            partTimeOrTemporaryWork: "अंशकालिक या अस्थायी काम",
+            unemployed: "बेरोज़गार",
+          ),
+        ),
         familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
-          title: "परिवार और घर",
           address: "क्या पता आप में रहते हैं?",
           household:
               "परिवार स्वयं को मिलाकर कितने सदस्य,, आप वर्तमान में साथ रहते हैं?",
           housing: "आज अपने आवास स्थिति क्या है?",
           losingHousing: "आप अपने आवास खोने के बारे में चिंतित हैं?",
+          title: "परिवार और घर",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
-          title: "पैसा और संसाधन",
           income:
               "पिछले एक साल के दौरान, आप और परिवार के सदस्यों आप के साथ रहती के लिए कुल संयोजित आय क्या था? यह जानकारी हमें मदद मिलेगी निर्धारित अगर आप किसी भी लाभ के लिए पात्र हैं।",
           insurance: "आपका मुख्य बीमा क्या है?",
           school: "स्कूल के उच्चतम स्तर है कि आप समाप्त कर दिया है क्या है?",
+          title: "पैसा और संसाधन",
           transportation:
               "परिवहन की कमी आप चिकित्सा से रखा गया है नियुक्तियों, बैठकों, काम, या दैनिक जीवन के लिए आवश्यक चीजों को प्राप्त करने से?",
           without:
@@ -629,17 +925,16 @@ class AppLocalizations {
           work: "अपने वर्तमान काम स्थिति क्या है?",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
-          title: "वैकल्पिक उपाय",
           afraid: "पिछले एक साल में, आप अपने साथी या पूर्व साथी का डर रहे हैं?",
           prison:
               "पिछले एक साल में, आप एक जेल, जेल, निरोध केंद्र, या किशोर सुधारक सुविधा में एक पंक्ति में अधिक से अधिक 2 रातों खर्च किया है?",
           refugee: "आप एक शरणार्थी हैं?",
           safe:
               "आप शारीरिक और भावनात्मक रूप सुरक्षित जहां आप वर्तमान में जीना महसूस करते हैं?",
+          title: "वैकल्पिक उपाय",
         ),
         personalCharacteristics:
             AppLocalizations_Labels_Prapare_PersonalCharacteristics(
-          title: "व्यक्तिगत विशेषताओं",
           language: "आप सबसे अधिक आरामदायक बोल कौन-सी भाषा है?",
           latino: "आप अपने आप को हिस्पैनिक पर विचार / लातीनी है?",
           military:
@@ -647,14 +942,15 @@ class AppLocalizations {
           race: "कौन सा दौड़ (रों) आप कर रहे हैं?",
           seasonalWork:
               "पिछले 2 वर्षों में किसी भी समय, मौसम या प्रवासी कृषि कार्य अपने या अपने परिवार की आय का मुख्य स्रोत रहा है?",
+          title: "व्यक्तिगत विशेषताओं",
         ),
         socialAndEmotionalHealth:
             AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
-          title: "सामाजिक और भावनात्मक स्वास्थ्य",
           stress:
               "तनाव, जब कोई व्यक्ति तनाव में परेशान, उत्सुक महसूस करता है या क्योंकि उनके मन परेशान है रात में सो नहीं सकता है। आप कैसे बल दिया कर रहे हैं?",
           talk:
               "आप या जिन लोगों ने आपके बारे में परवाह है और के करीब महसूस करने के लिए बात करते हैं कितनी बार देख पा रहे हैं (उदाहरण के लिए: फोन पर दोस्तों के लिए बात कर रही है, दोस्तों या परिवार का दौरा, चर्च या क्लब बैठकों के लिए जा रहा)?",
+          title: "सामाजिक और भावनात्मक स्वास्थ्य",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -729,7 +1025,6 @@ class AppLocalizations {
         search: "Поиск",
         submitShare: "Отправить / Share",
         address: AppLocalizations_Labels_General_Address(
-          title: "Адрес",
           city: "город",
           country: "Страна",
           county: "округ",
@@ -737,9 +1032,9 @@ class AppLocalizations {
           neighborhood: "окрестности",
           postalCode: "Почтовый Код",
           state: "состояние",
+          title: "Адрес",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          title: "Связь",
           aunt: "тетка",
           brother: "Родной брат",
           daughter: "Дочь",
@@ -751,17 +1046,18 @@ class AppLocalizations {
           niece: "Племянница",
           sister: "Сестра",
           son: "Сын",
+          title: "Связь",
           uncle: "Дядя",
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
-          title: "Пол при рождении",
           female: "женский",
           male: "мужчина",
+          title: "Пол при рождении",
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        title: "Выберите язык",
         inEnglish: "Russian",
+        title: "Выберите язык",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "рост",
@@ -773,21 +1069,98 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "Протокол ответов и оценка активов пациентов, риски и опыт [PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          chooseNotToAnswer: "Я не отвечать на этот вопрос",
+          no: "нет",
+          yes: "да",
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing:
+                "У меня нет жилья (оставаясь с другими, в гостинице, в приюте, живущих за пределами на улице, на пляже, в автомобиле или в парке)",
+            iHaveHousing: "У меня есть жилье",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "Совсем немного",
+            notAtAll: "Не за что",
+            quiteABit: "Немного",
+            somewhat: "В некотором роде",
+            veryMuch: "Очень сильно",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "5 или более раз в неделю",
+            lessThanOnceAWeek: "Реже, чем раз в неделю",
+            oneOrTwoTimesAWeek: "1 или 2 раза в неделю",
+            threeToFiveTimesAWeek: "От 3 до 5 раз в неделю",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "CHIP Medicaid",
+            medicaid: "федеральная система медицинской помощи неимущим",
+            medicare: "страхование здоровья по старости",
+            noneOrUninsured: "Ни / незастрахованы",
+            otherPublicInsuranceChip:
+                "Другое государственное страхование (CHIP)",
+            otherPublicInsuranceNotChip:
+                "Другое общественное страхование (не CHIP)",
+            privateInsurance: "Частное страхование",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "английский",
+            languageOtherThanEnglish: "Язык кроме английского",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative:
+                "Американские индейцы / коренные жители Аляски",
+            asian: "азиатка",
+            blackAfricanAmerican: "Черный / афро-американец",
+            nativeHawaiian: "Гавайский",
+            other: "Другие",
+            pacificIslander: "островов Тихого океана",
+            white: "белый",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "Высокий диплом школы или GED",
+            lessThanHighSchoolDegree: "Менее высокая степень школы",
+            moreThanHighSchool: "Более средней школы",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            yesKeptFromMedical:
+                "Да, он сохранил меня от медицинского назначения или получать мои лекарства",
+            yesKeptFromNonMedical:
+                "Да, он сохранил меня от немедицинского встречи, встречи, работа, или получать то, что мне нужно",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "охрана детства",
+            clothing: "Одежда",
+            food: "питание",
+            medicineOrAnyHealthCare:
+                "Медицина и здравоохранение Любой (медицинский, стоматологический, психическое здоровье, зрение)",
+            other: "Другие",
+            phone: "Телефон",
+            utilities: "коммунальные услуги",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "Полный рабочий день",
+            otherwiseUnemployedButNotSeekingWork:
+                "В противном случае без работы, но не ищет работу (например: студент, пенсионер, инвалид, неоплачиваемый первичная медицинская помощь даритель)",
+            partTimeOrTemporaryWork: "Частичная занятость или временная работа",
+            unemployed: "Безработные",
+          ),
+        ),
         familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
-          title: "Семья и дом",
           address: "Какой адрес вы живете в?",
           household:
               "Сколько членов семьи, включая себя, как вы в настоящее время живут с?",
           housing: "Какова ваша жилищная ситуация сегодня?",
           losingHousing: "Вы беспокоитесь о потере жилья?",
+          title: "Семья и дом",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
-          title: "Деньги и ресурсы",
           income:
               "В течение прошлого года, что было общее совокупный доход для вас и членов семьи, вы живете с? Эта информация поможет нам определить, если вы имеете право на любые льготы.",
           insurance: "Ваше главное страхование?",
           school:
               "Какой самый высокий уровень учебного заведения, что вы закончили?",
+          title: "Деньги и ресурсы",
           transportation:
               "Имеет отсутствие транспорта держали вас от медицинского назначения, встречи, работа, или от получения вещи, необходимой для повседневной жизни?",
           without:
@@ -795,7 +1168,6 @@ class AppLocalizations {
           work: "Какова текущая ситуация работы?",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
-          title: "Дополнительные меры",
           afraid:
               "В прошлом году, вы боялись своего партнера или бывшего партнера?",
           prison:
@@ -803,24 +1175,25 @@ class AppLocalizations {
           refugee: "Вы беженец?",
           safe:
               "Вы чувствуете себя физически и эмоционально безопасно, где вы в настоящее время живут?",
+          title: "Дополнительные меры",
         ),
         personalCharacteristics:
             AppLocalizations_Labels_Prapare_PersonalCharacteristics(
-          title: "Личные характеристики",
           language: "Какой язык вы наиболее комфортно говоря?",
           latino: "Считаете ли вы себя Испанец / выходец из Латинской Америки?",
           military: "Вы были выгружены из вооруженных сил Соединенных Штатов?",
           race: "Какие расы (ы) вы?",
           seasonalWork:
               "В любой момент в течение последних 2-х лет, имеет сезон или мигрант сельскохозяйственные работы были ваши или ваши основным источником семьи дохода?",
+          title: "Личные характеристики",
         ),
         socialAndEmotionalHealth:
             AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
-          title: "Социальное и эмоциональное здоровье",
           stress:
               "Стресс, когда кто-то чувствует себя напряженным, нервным, тревоги или не может спать по ночам, потому что их ум смутился. Как подчеркнул вы?",
           talk:
               "Как часто вы видите или поговорить с людьми, которые вам небезразличны и чувствовать себя ближе к (К примеру: говорить с друзьями по телефону, в гостях у друзей или родственников, ходить в церковь или клубных встреч)?",
+          title: "Социальное и эмоциональное здоровье",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -895,7 +1268,6 @@ class AppLocalizations {
         search: "অনুসন্ধান করুন",
         submitShare: "জমা দিন / শেয়ার",
         address: AppLocalizations_Labels_General_Address(
-          title: "ঠিকানা",
           city: "শহর",
           country: "দেশ",
           county: "বিভাগ",
@@ -903,9 +1275,9 @@ class AppLocalizations {
           neighborhood: "আশপাশ",
           postalCode: "পোস্ট অফিসের নাম্বার",
           state: "রাষ্ট্র",
+          title: "ঠিকানা",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          title: "সম্পর্ক",
           aunt: "মাসি",
           brother: "ভাই",
           daughter: "কন্যা",
@@ -917,17 +1289,18 @@ class AppLocalizations {
           niece: "ভাইঝি",
           sister: "বোন",
           son: "পুত্র",
+          title: "সম্পর্ক",
           uncle: "চাচা",
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
-          title: "জন্মের সময় যৌন",
           female: "মহিলা",
           male: "পুরুষ",
+          title: "জন্মের সময় যৌন",
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        title: "ভাষা নির্বাচন করুন",
         inEnglish: "Bengali",
+        title: "ভাষা নির্বাচন করুন",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "উন্নতি",
@@ -939,20 +1312,94 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "জবাবে এবং রোগীদের 'সম্পদ দ্বায়িত্বপ্রাপ্ত জন্য প্রোটোকল ঝুঁকি, এবং অভিজ্ঞতা [PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          chooseNotToAnswer: "আমি এই প্রশ্নের উত্তর দিতে না করে",
+          no: "না",
+          yes: "হ্যাঁ",
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing:
+                "আমি হাউজিং আপনার কাছে নেই (অন্যদের সাথে স্থিত, হোটেল, একটি আশ্রয়, একটি গাড়িতে রাস্তায় বাইরে থাকা একটি সৈকতে, অথবা পার্কে)",
+            iHaveHousing: "আমি হাউজিং আছে",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "একটু খানি",
+            notAtAll: "একদমই না",
+            quiteABit: "খুব সামান্য",
+            somewhat: "কিছুটা",
+            veryMuch: "খুব",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "5 বা তার বেশী বার সপ্তাহে",
+            lessThanOnceAWeek: "সপ্তাহে একবার চেয়ে কম",
+            oneOrTwoTimesAWeek: "1 বা 2 বার সপ্তাহে",
+            threeToFiveTimesAWeek: "এক সপ্তাহ 3 থেকে 5 বার",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "চিপ মেডিকেড",
+            medicaid: "মেডিকেড",
+            medicare: "মেডিকেয়ার",
+            noneOrUninsured: "কোনটি / ইনশিওরেন্স",
+            otherPublicInsuranceChip: "অন্যান্য প্রকাশ্য বীমা (চিপ)",
+            otherPublicInsuranceNotChip: "অন্যান্য প্রকাশ্য বীমা (না চিপ)",
+            privateInsurance: "ব্যক্তিগত বীমা",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "ইংরেজি",
+            languageOtherThanEnglish: "ভাষা ইংরেজি ছাড়া অন্য",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "আমেরিকান ভারতীয় / আলাস্কা দেশীয়",
+            asian: "এশিয়ান",
+            blackAfricanAmerican: "কালো / আফ্রিকান আমেরিকান",
+            nativeHawaiian: "দেশীয় হাওয়াইয়ান",
+            other: "অন্যান্য",
+            pacificIslander: "প্যাসিফিক দ্বীপের",
+            white: "সাদা",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "হাই স্কুল ডিপ্লোমা বা জিইডি",
+            lessThanHighSchoolDegree: "উচ্চ বিদ্যালয় ডিগ্রী কম",
+            moreThanHighSchool: "উচ্চ বিদ্যালয় বেশি",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            yesKeptFromMedical:
+                "হ্যাঁ, এটা আমাকে চিকিৎসা কলকব্জা থেকে অথবা আমার ঔষধ পাওয়া থেকে রেখেছেন",
+            yesKeptFromNonMedical:
+                "হ্যাঁ, এটা আমার কাছ থেকে অ চিকিৎসাবিদ্যা সভা, কলকব্জা, কাজ, বা জিনিষ পেয়ে থেকে যে আমি প্রয়োজন রেখেছেন",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "শিশু যত্ন",
+            clothing: "বস্ত্র",
+            food: "খাদ্য",
+            medicineOrAnyHealthCare:
+                "মেডিসিন বা অন্য কোন স্বাস্থ্য সেবা (চিকিৎসা, ডেন্টাল মেন্টাল হেলথ ভিশন)",
+            other: "অন্যান্য",
+            phone: "ফোন",
+            utilities: "উপযোগিতা",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "সম্পূর্ণ সময় কাজ",
+            otherwiseUnemployedButNotSeekingWork:
+                "তা না হলে বেকার কিন্তু সচেষ্ট কাজ নয় (উদা: ছাত্র, অবসরপ্রাপ্ত, নিষ্ক্রিয়, অবৈতনিক প্রাথমিক যত্ন দাতা)",
+            partTimeOrTemporaryWork: "পার্ট-টাইম বা অস্থায়ী কাজ",
+            unemployed: "বেকার",
+          ),
+        ),
         familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
-          title: "বাড়ি ও পরিবারের",
           address: "কি ঠিকানা তোমার দিকে বসবাস করেন?",
           household:
               "পরিবার নিজেকে সহ কত সদস্য,, আপনি বর্তমানে সঙ্গে বসবাস করেন?",
           housing: "আজ আপনার হাউজিং পরিস্থিতি কি?",
           losingHousing: "আপনি আপনার হাউজিং হারিয়ে যাওয়ার বিষয়ে চিন্তিত?",
+          title: "বাড়ি ও পরিবারের",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
-          title: "মানি অ্যান্ড রিসোর্সেস",
           income:
               "গত বছর সময়, আপনি এবং পরিবারের সদস্যদের আপনার সাথে বসবাস মোট সম্মিলিত আয় কি ছিল? এই তথ্যটি আমাদের সাহায্য করবে তা নির্ধারণ যদি আপনার কোন বেনিফিট জন্য যোগ্য।",
           insurance: "আপনার প্রধান বীমা কি?",
           school: "স্কুল সর্বোচ্চ স্তরের যে আপনি শেষ করেছি কি?",
+          title: "মানি অ্যান্ড রিসোর্সেস",
           transportation:
               "পরিবহন অভাব আপনি চিকিৎসা থেকে রেখেছেন কলকব্জা, মিটিং, কাজ, বা দৈনন্দিন জীবনযাপন জন্য প্রয়োজনীয় জিনিষ পেয়ে থেকে?",
           without:
@@ -960,31 +1407,31 @@ class AppLocalizations {
           work: "আপনার বর্তমান কাজের পরিস্থিতি কি?",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
-          title: "ঐচ্ছিক ব্যবস্থা",
           afraid: "গত বছর, আপনি আপনার সঙ্গী বা সাবেক অংশীদার ভয় ছিলে?",
           prison:
               "গত বছর, আপনি একটি জেল, কারাগার, বন্দিশালা, অথবা কিশোরী শাস্তিমূলক সুবিধা একটি সারিতে বেশি 2 রাত্রি অতিবাহিত আছে?",
           refugee: "আপনি যদি একটি শরণার্থী হয়?",
           safe:
               "আপনি শারীরিক ও মানসিকভাবে নিরাপদ যেখানে আপনি বর্তমানে লাইভ মনে করেন?",
+          title: "ঐচ্ছিক ব্যবস্থা",
         ),
         personalCharacteristics:
             AppLocalizations_Labels_Prapare_PersonalCharacteristics(
-          title: "ব্যক্তিগত বৈশিষ্ট্য",
           language: "আপনি সবচেয়ে আরামদায়ক ভাষী কোন ভাষায় রয়েছে?",
           latino: "আপনি নিজেকে হিস্পানিক বিবেচনা / ল্যাটিনো করেন?",
           military: "আপনি যুক্তরাষ্ট্রের সশস্ত্র বাহিনী থেকে খালাস করা হয়েছে?",
           race: "কোনটি জাতি (গুলি) আপনি কি করছেন?",
           seasonalWork:
               "গত 2 বছর কোনো মুহুর্তে, ঋতু বা প্রবাসী খামার কাজ আপনার বা আপনার পরিবারের আয়ের প্রধান উৎস হয়েছে?",
+          title: "ব্যক্তিগত বৈশিষ্ট্য",
         ),
         socialAndEmotionalHealth:
             AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
-          title: "সামাজিক ও সংবেদনগত স্বাস্থ্য",
           stress:
               "স্ট্রেস যখন কেউ, ক্রিয়ার কাল স্নায়বিক, উদ্বিগ্ন মতানুযায়ী অথবা কারণ তাদের মন অস্থির হয় রাতে ঘুমাতে পারি না। আপনি কিভাবে জোর কোথায়?",
           talk:
               "আপনি বা মানুষ যে আপনার পছন্দের এবং পাসে মনে আলাপ কিভাবে প্রায়ই দেখতে পাচ্ছ (উদাহরণস্বরূপ: ফোনে বন্ধুদের সঙ্গে আলাপকালে বন্ধু বা পরিবারের পরিদর্শন, গির্জা বা ক্লাব মিটিং যাচ্ছে)?",
+          title: "সামাজিক ও সংবেদনগত স্বাস্থ্য",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -1059,7 +1506,6 @@ class AppLocalizations {
         search: "ရှာဖှေ",
         submitShare: "Submit / ဝေမျှမယ်",
         address: AppLocalizations_Labels_General_Address(
-          title: "လိပ်စာ",
           city: "မြို့",
           country: "ပြည်",
           county: "ကောင်တီ",
@@ -1067,9 +1513,9 @@ class AppLocalizations {
           neighborhood: "ရပ်ကွက်ထဲ",
           postalCode: "စာတိုက်သင်္ကေတ",
           state: "ပြည်နယ်",
+          title: "လိပ်စာ",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          title: "ဆှေမြိုး",
           aunt: "အဒေါ်",
           brother: "အစ်ကို",
           daughter: "သမီး",
@@ -1081,17 +1527,18 @@ class AppLocalizations {
           niece: "တူမ",
           sister: "အစ်မ",
           son: "သား",
+          title: "ဆှေမြိုး",
           uncle: "ဘကြီး",
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
-          title: "မွေးဖွားခြင်းမှာလိင်",
           female: "အမြိုးသမီး",
           male: "အထီး",
+          title: "မွေးဖွားခြင်းမှာလိင်",
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        title: "ဘာသာစကားများကိုရွေးချယ်ပါ",
         inEnglish: "Burmese",
+        title: "ဘာသာစကားများကိုရွေးချယ်ပါ",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "တိုးတက်မှုနှုန်း",
@@ -1103,21 +1550,95 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "ပြန်ကြားခြင်းနှင့်လူနာများ '' ပိုင်ဆိုင်မှုအကဲဖြတ်ဘို့ပရိုတိုကော, အန္တရာယ်များနှင့်တွေ့ကြုံမှုများ [PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          chooseNotToAnswer: "ငါသည်ဤမေးခွန်းကိုဖြေဖို့မရှေးခယျြ",
+          no: "အဘယ်သူမျှမ",
+          yes: "ဟုတ်ကဲ့",
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing:
+                "ငါ (ကကမ်းခြေပေါ်တစ်ဦးကားထဲတွင်, ဒါမှမဟုတ်တစ်ဦးပန်းခြံထဲမှာလမ်းပေါ်မှာအပြင်ဘက်တွင်နေထိုင်သောတစ်အမိုးအကာအတွက်ဟိုတယ်များတွင်အခြားသူများနှင့်တည်းခို,) အိမ်ရာရှိသည်မဟုတ်ကြဘူး",
+            iHaveHousing: "ကျွန်မအိမ်ရာရှိ",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "အနည်းငယ်",
+            notAtAll: "အကုန်လုံးတော့မဟုတ်ဘူး",
+            quiteABit: "အတော်လေးနည်းနည်း",
+            somewhat: "အတော်အတန်",
+            veryMuch: "အများကြီး",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "5 သို့မဟုတ်ထိုထက်ပိုအဆတစ်ပါတ်",
+            lessThanOnceAWeek: "တစ်ပါတ်တစ်ကြိမ်ထက်လျော့နည်း",
+            oneOrTwoTimesAWeek: "1 သို့မဟုတ် 2 ကြိမ်တစ်ပတ်လျှင်",
+            threeToFiveTimesAWeek: "3 မှ 5 ကြိမ်တစ်ပတ်လျှင်",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "CHIP Medicaid ကို",
+            medicaid: "Medicaid ကို",
+            medicare: "Medicare",
+            noneOrUninsured: "အဘယ်သူမျှမ / မရှိသဖြင့်",
+            otherPublicInsuranceChip: "အခွားသောအများပြည်သူအာမခံ (CHIP)",
+            otherPublicInsuranceNotChip: "အခွားသောအများပြည်သူအာမခံ (မ CHIP)",
+            privateInsurance: "ပုဂ္ဂလိကအာမခံ",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "အင်္ဂလိပ်",
+            languageOtherThanEnglish: "အင်္ဂလိပ်ထက်အခြားဘာသာစကား",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "အမေရိကန်အိန္ဒိယ / Alaskan Native",
+            asian: "အာရှ",
+            blackAfricanAmerican: "အမေရိကန်က Black / အာဖရိကန်",
+            nativeHawaiian: "native ဟာဝယေံ",
+            other: "အခြား",
+            pacificIslander: "ပစိဖိတ်ကျွန်းသား",
+            white: "အဖြူ",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "အထက်တန်းကျောင်းဒီပလိုမာသို့မဟုတ် GED",
+            lessThanHighSchoolDegree: "အထက်တန်းကျောင်းဒီဂရီထက်လျော့နည်း",
+            moreThanHighSchool: "ပိုများသောအထက်တန်းကျောင်းထက်",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            yesKeptFromMedical:
+                "ဟုတ်ကဲ့, ကဆေးဘက်ဆိုင်ရာချိန်းထံမှသို့မဟုတ်ကျွန်ုပ်၏ဆေးဝါးများရတဲ့ထဲကအကြှနျုပျကိုထား",
+            yesKeptFromNonMedical:
+                "ဟုတ်ပါတယ်, ငါလိုအပ်ကြောင်း Non-ဆေးဘက်ဆိုင်ရာအစည်းအဝေးတွေ, ချိန်း, အလုပ်, ဒါမှမဟုတ်အမှုအရာရတဲ့ကနေမှအကြှနျုပျကိုထား",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "ကလေးသူငယ်စောင့်ရှောက်မှု",
+            clothing: "အဝတ်အစား",
+            food: "အစာ",
+            medicineOrAnyHealthCare:
+                "ဆေးပညာသို့မဟုတ်မဆိုကျန်းမာရေးပြုစုစောင့်ရှောက်မှု (ဆေးပညာ, သွားဘက်ဆိုင်ရာ, စိတ်ပိုင်းဆိုင်ရာကျန်းမာရေး, မျှော်မှန်းချက်)",
+            other: "အခြား",
+            phone: "ဖုန်းနံပါတ်",
+            utilities: "အသုံးအဆောင်များ",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "အချိန်ပြည့်အလုပ်",
+            otherwiseUnemployedButNotSeekingWork:
+                "(ကျောင်းသား, အငြိမ်းစား, အားပိတ်ထားသည်, မရတဲ့အဓိကစောင့်ရှောက်မှုပေးဟောင်း) အလုပ်ရှာကြံဒီလိုမှမဟုတ်ရင်အလုပ်လက်မဲ့သော်လည်းမ",
+            partTimeOrTemporaryWork: "အပိုင်း-အချိန်သို့မဟုတ်ယာယီအလုပ်",
+            unemployed: "အလုပ်လက်မဲ့သော",
+          ),
+        ),
         familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
-          title: "မိသားစုနှင့်နေအိမ်",
           address: "သငျသညျမှာဘယျလိုလိပ်စာအသက်ရှင်နေထိုင်သလဲ?",
           household:
               "ကိုယ့်ကိုကိုယ်အပါအဝင်ဘယ်နှစ်ယောက်မိသားစုဝင်များ, အတူသင်တို့သည်လက်ရှိတွင်တိုက်ရိုက်ထုတ်လွှကြသနည်း",
           housing: "သင့်ရဲ့အိမ်ယာအခွအေနေယနေ့ကဘာလဲ?",
           losingHousing:
               "သင်သည်သင်၏အိုးအိမ်ဆုံးရှုံးအကြောင်းကိုစိုးရိမ်နေကြသနည်း",
+          title: "မိသားစုနှင့်နေအိမ်",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
-          title: "ငွေကြေးနှင့်အရင်းအမြစ်များ",
           income:
               "လွန်ခဲ့သောနှစ်အတွင်းသင်နှင့်သင်နှင့်အတူအသက်ရှင်နေထိုင်မိသားစုအဖွဲ့ဝင်များစုစုပေါင်းစုစုပေါင်းဝင်ငွေအဘယျသို့ရခဲ့သလဲ ဤအချက်အလက်သည်သင်မည်သည့်အကျိုးခံစားခွင့်များအတွက်အရည်အချင်းပြည့်မီလျှင်ဆုံးဖြတ်ရန်ကျွန်တော်တို့ကိုကူညီလိမ့်မယ်။",
           insurance: "သင့်ရဲ့အဓိကအာမခံကဘာလဲ?",
           school: "သငျသညျကိုလက်စသတ်ပြီကျောင်းမှ၏အမြင့်ဆုံးအဆင့်အထိကဘာလဲ?",
+          title: "ငွေကြေးနှင့်အရင်းအမြစ်များ",
           transportation:
               "သယ်ယူပို့ဆောင်ရေးမရှိခြင်းဆေးဘက်ဆိုင်ရာချိန်း, အစည်းအဝေးများ, အလုပ်ကနေဒါမှမဟုတ်နေ့စဉ်လူနေမှုအတှကျလိုအပျသောအရာတို့ကိုလာပြီထံမှသင်တို့ကိုစောင့်ရှောက်ခဲ့သလဲ",
           without:
@@ -1125,7 +1646,6 @@ class AppLocalizations {
           work: "သင့်လက်ရှိအလုပ်အခွအေနေကဘာလဲ?",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
-          title: "optional ဆောင်ရွက်ချက်များ",
           afraid:
               "လွန်ခဲ့သောနှစ်တွင်, သင်သည်သင်၏လုပ်ဖော်ကိုင်ဖက်သို့မဟုတ်ဟောင်း partner ၏ကြောက်လန့်ခဲ့သလဲ",
           prison:
@@ -1133,10 +1653,10 @@ class AppLocalizations {
           refugee: "သငျသညျဒုက္ခသည်တစ်ဦးဖြစ်ပါသလား",
           safe:
               "ဘယ်မှာသင်လက်ရှိတိုက်ရိုက်ထုတ်လွှသင်သည်ရုပ်ပိုင်းဆိုင်ရာနှင့်စိတ်ပိုင်းလုံခြုံခံစားရပါသလော",
+          title: "optional ဆောင်ရွက်ချက်များ",
         ),
         personalCharacteristics:
             AppLocalizations_Labels_Prapare_PersonalCharacteristics(
-          title: "ပုဂ္ဂိုလ်ရေးလက်ခဏာ",
           language: "သငျသညျအမြားဆုံးအဆင်ပြေစကားပြောအဘယ်အရာဘာသာစကားရှိပါသလဲ",
           latino: "သင်ကိုယ်တိုင်ဟစ်စပန်းနစ် / လက်တင်စဉ်းစားပါသလား?",
           military:
@@ -1144,14 +1664,15 @@ class AppLocalizations {
           race: "ဘယ်ပြိုင်ပွဲ (s) ကိုသငျသညျရှိပါသလဲ",
           seasonalWork:
               "လွန်ခဲ့သော 2 နှစ်အတွင်းမည်သည့်အချက်မှာရာသီသို့မဟုတ်ရွှေ့ပြောင်းလယ်ယာအလုပ်ဝင်ငွေသင်၏သို့မဟုတ်သင့်မိသားစုရဲ့အဓိကအရင်းအမြစ်ဖြစ်ခဲ့သလဲ",
+          title: "ပုဂ္ဂိုလ်ရေးလက်ခဏာ",
         ),
         socialAndEmotionalHealth:
             AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
-          title: "လူမှုရေးနှင့်စိတ်ခံစားမှုကျန်းမာရေး",
           stress:
               "တစ်စုံတစ်ဦးက, တင်းမာနေအာရုံကြော, စိုးရိမ်ပူပန်ခံစားရသို့မဟုတ်မိမိတို့၏စိတ်ကိုနှောငျ့ရှကျသောကွောငျ့ညမှာအိပ်မနိုင်သည့်အခါစိတ်ဖိစီးမှုဖြစ်ပါတယ်။ သငျသညျကိုဘယ်လိုအလေးပေးရှိပါသလဲ",
           talk:
               "(: ဖုန်းတွင်မိတ်ဆွေများစကားပြောသူငယ်ချင်းများသို့မဟုတ်မိသားစုသွားရောက်လည်ပတ်, ခရစ်ယာန်ဘုရားကျောင်းသို့မဟုတ်ကလပ်အစည်းအဝေးများသွားဥပမာ) မကြာခဏဘယ်လိုသင်ဂရုစိုက်ခြင်းနှင့်နီးကပ်မှခံစားမိကြောင်းလူမျိုးကိုတွေ့မြင်သို့မဟုတ်ဆွေးနွေးချက်သလဲ?",
+          title: "လူမှုရေးနှင့်စိတ်ခံစားမှုကျန်းမာရေး",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -1226,7 +1747,6 @@ class AppLocalizations {
         search: "搜索",
         submitShare: "提交/股",
         address: AppLocalizations_Labels_General_Address(
-          title: "地址",
           city: "市",
           country: "国家",
           county: "县",
@@ -1234,9 +1754,9 @@ class AppLocalizations {
           neighborhood: "邻里",
           postalCode: "邮政编码",
           state: "州",
+          title: "地址",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          title: "关系",
           aunt: "姑妈",
           brother: "哥哥",
           daughter: "女儿",
@@ -1248,17 +1768,18 @@ class AppLocalizations {
           niece: "侄女",
           sister: "妹妹",
           son: "儿子",
+          title: "关系",
           uncle: "叔叔",
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
-          title: "性别出生",
           female: "女",
           male: "男",
+          title: "性别出生",
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        title: "选择语言",
         inEnglish: "Chinese (Simplified)",
+        title: "选择语言",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "发展",
@@ -1269,43 +1790,113 @@ class AppLocalizations {
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title: "用于响应和评估患者的资产，风险协议，与经验[PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          chooseNotToAnswer: "我选择不回答这个问题",
+          no: "没有",
+          yes: "是",
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing: "我没有住房（保持与他人在酒店里，在庇护所，流落街头外，在海滩上，在汽车，或在公园）",
+            iHaveHousing: "我有住房",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "一点点",
+            notAtAll: "一点也不",
+            quiteABit: "颇有几分",
+            somewhat: "有些",
+            veryMuch: "非常",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "每周5次以上",
+            lessThanOnceAWeek: "不到一个星期不到一次",
+            oneOrTwoTimesAWeek: "一周1〜2次",
+            threeToFiveTimesAWeek: "每周3〜5倍",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "CHIP医疗补助",
+            medicaid: "医疗补助",
+            medicare: "医保",
+            noneOrUninsured: "无/无保险",
+            otherPublicInsuranceChip: "其他公共保险（CHIP）",
+            otherPublicInsuranceNotChip: "其他公共保险（不CHIP）",
+            privateInsurance: "私人保险",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "英语",
+            languageOtherThanEnglish: "语言英语以外",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "美国印第安人/阿拉斯加原住民",
+            asian: "亚洲",
+            blackAfricanAmerican: "黑人/非洲裔美国人",
+            nativeHawaiian: "夏威夷原住民",
+            other: "其他",
+            pacificIslander: "太平洋岛民",
+            white: "白色",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "高中文凭或GED",
+            lessThanHighSchoolDegree: "高中以上学历减",
+            moreThanHighSchool: "比高中更",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            yesKeptFromMedical: "是的，它使我从医疗预约或让我的药",
+            yesKeptFromNonMedical: "是的，它使我从非医学会议，约会，工作，或收拾东西，我需要",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "保育",
+            clothing: "服装",
+            food: "餐饮",
+            medicineOrAnyHealthCare: "医学或任何医疗（医疗，牙科，心理健康，视力）",
+            other: "其他",
+            phone: "电话",
+            utilities: "公用事业",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "全职工作",
+            otherwiseUnemployedButNotSeekingWork:
+                "否则失业但不找工作（例如：学生，退休，残疾人，无偿主要照顾者）",
+            partTimeOrTemporaryWork: "兼职或临时工作",
+            unemployed: "失业的",
+          ),
+        ),
         familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
-          title: "家庭和家庭",
           address: "你住在什么地址多少？",
           household: "有多少家庭成员，包括你自己，你现在住在一起？",
           housing: "今天是你的住房情况吗？",
           losingHousing: "您是否担心失去你的房？",
+          title: "家庭和家庭",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
-          title: "金钱和资源",
           income: "在过去的一年中，什么对你和你住在一起的家庭成员合计总收入？这些信息将帮助我们确定您是否有资格获得任何好处。",
           insurance: "你的主要保险是什么？",
           school: "什么是你已经完成了学校的最高水平？",
+          title: "金钱和资源",
           transportation: "已经缺乏交通工具让你从医疗约会，会议，工作，或需要得到日常生活的东西呢？",
           without: "在过去的一年里，有你或你住在一起一直无法得到任何以下的时候，确实需要它的家庭成员中？",
           work: "什么是您目前的工作情况如何？",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
-          title: "择措施",
           afraid: "在过去的一年里，你一直害怕你的伴侣或前伴侣？",
           prison: "在过去的一年里，有你的行中的监狱，监狱，看守所，或少年教养所花费超过2晚？",
           refugee: "你是难民？",
           safe: "你觉得身体和情感安全您目前的居住？",
+          title: "择措施",
         ),
         personalCharacteristics:
             AppLocalizations_Labels_Prapare_PersonalCharacteristics(
-          title: "人物的特征",
           language: "你是什​​么语言最舒服的说话？",
           latino: "你认为自己是西班牙/拉丁美洲？",
           military: "您是否曾经被美国的武装力量释放？",
           race: "哪个种族（S）是吗？",
           seasonalWork: "在过去的两年中任何点都具有季节或外来农民工是你或你的家庭的主要收入来源？",
+          title: "人物的特征",
         ),
         socialAndEmotionalHealth:
             AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
-          title: "社会和情感健康",
           stress: "压力是当有人感到紧张，紧张，焦虑或因为他们的心是困扰无法入睡。你怎么调都？",
           talk: "你经常看到或谈话，你关心和感到亲近的人（例如：在电话上交谈的朋友，来访的朋友或家人，去教堂或俱乐部会议）？",
+          title: "社会和情感健康",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -1380,7 +1971,6 @@ class AppLocalizations {
         search: "搜索",
         submitShare: "提交/股",
         address: AppLocalizations_Labels_General_Address(
-          title: "地址",
           city: "市",
           country: "國家",
           county: "縣",
@@ -1388,9 +1978,9 @@ class AppLocalizations {
           neighborhood: "鄰里",
           postalCode: "郵政編碼",
           state: "州",
+          title: "地址",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          title: "關係",
           aunt: "姑媽",
           brother: "哥哥",
           daughter: "女兒",
@@ -1402,17 +1992,18 @@ class AppLocalizations {
           niece: "侄女",
           sister: "妹妹",
           son: "兒子",
+          title: "關係",
           uncle: "叔叔",
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
-          title: "性別出生",
           female: "女",
           male: "男",
+          title: "性別出生",
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        title: "選擇語言",
         inEnglish: "Chinese(Traditional)",
+        title: "選擇語言",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "發展",
@@ -1423,43 +2014,113 @@ class AppLocalizations {
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title: "用於響應和評估患者的資產，風險協議，與經驗[PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          chooseNotToAnswer: "我選擇不回答這個問題",
+          no: "沒有",
+          yes: "是",
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing: "我沒有住房（保持與他人在酒店裡，在庇護所，流落街頭外，在海灘上，在汽車，或在公園）",
+            iHaveHousing: "我有住房",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "一點點",
+            notAtAll: "一點也不",
+            quiteABit: "頗有幾分",
+            somewhat: "有些",
+            veryMuch: "非常",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "每週5次以上",
+            lessThanOnceAWeek: "不到一個星期不到一次",
+            oneOrTwoTimesAWeek: "一周1〜2次",
+            threeToFiveTimesAWeek: "每週3〜5倍",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "CHIP醫療補助",
+            medicaid: "醫療",
+            medicare: "醫保",
+            noneOrUninsured: "無/無保險",
+            otherPublicInsuranceChip: "其他公共保險（CHIP）",
+            otherPublicInsuranceNotChip: "其他公共保險（不CHIP）",
+            privateInsurance: "私人保險",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "英語",
+            languageOtherThanEnglish: "語言英語以外",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "美國印第安人/阿拉斯加原住民",
+            asian: "亞洲",
+            blackAfricanAmerican: "黑人/非洲裔美國人",
+            nativeHawaiian: "夏威夷原住民",
+            other: "其他",
+            pacificIslander: "太平洋島民",
+            white: "白色",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "高中文憑或GED",
+            lessThanHighSchoolDegree: "高中以上學歷減",
+            moreThanHighSchool: "比高中更",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            yesKeptFromMedical: "是的，它使我從醫療預約或讓我的藥",
+            yesKeptFromNonMedical: "是的，它使我從非醫學會議，約會，工作，或收拾東西，我需要",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "保育",
+            clothing: "服裝",
+            food: "餐飲",
+            medicineOrAnyHealthCare: "醫學或任何醫療（醫療，牙科，心理健康，視力）",
+            other: "其他",
+            phone: "電話",
+            utilities: "公用事業",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "全職工作",
+            otherwiseUnemployedButNotSeekingWork:
+                "否則失業但不找工作（例如：學生，退休，殘疾人，無償主要照顧者）",
+            partTimeOrTemporaryWork: "兼職或臨時工作",
+            unemployed: "失業的",
+          ),
+        ),
         familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
-          title: "家庭和家庭",
           address: "你住在什麼地址多少？",
           household: "有多少家庭成員，包括你自己，你現在住在一起？",
           housing: "今天是你的住房情況嗎？",
           losingHousing: "您是否擔心失去你的房？",
+          title: "家庭和家庭",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
-          title: "金錢和資源",
           income: "在過去的一年中，什麼對你和你住在一起的家庭成員合計總收入？這些信息將幫助我們確定您是否有資格獲得任何好處。",
           insurance: "你的主要保險是什麼？",
           school: "什麼是你已經完成了學校的最高水平？",
+          title: "金錢和資源",
           transportation: "已經缺乏交通工具讓你從醫療約會，會議，工作，或需要得到日常生活的東西呢？",
           without: "在過去的一年裡，有你或你住在一起一直無法得到任何以下的時候，確實需要它的家庭成員中？",
           work: "什麼是您目前的工作情況如何？",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
-          title: "擇措施",
           afraid: "在過去的一年裡，你一直害怕你的伴侶或前伴侶？",
           prison: "在過去的一年裡，有你的行中的監獄，監獄，看守所，或少年教養所花費超過2晚？",
           refugee: "你是難民？",
           safe: "你覺得身體和情感安全您目前的居住？",
+          title: "擇措施",
         ),
         personalCharacteristics:
             AppLocalizations_Labels_Prapare_PersonalCharacteristics(
-          title: "人物的特徵",
           language: "你是什​​麼語言最舒服的說話？",
           latino: "你認為自己是西班牙/拉丁美洲？",
           military: "您是否曾經被美國的武裝力量釋放？",
           race: "哪個種族（S）是嗎？",
           seasonalWork: "在過去的兩年中任何點都具有季節或外來農民工是你或你的家庭的主要收入來源？",
+          title: "人物的特徵",
         ),
         socialAndEmotionalHealth:
             AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
-          title: "社會和情感健康",
           stress: "壓力是當有人感到緊張，緊張，焦慮或因為他們的心是困擾無法入睡。你怎麼調都？",
           talk: "你經常看到或談話，你關心和感到親近的人（例如：在電話上交談的朋友，來訪的朋友或家人，去教堂或俱樂部會議）？",
+          title: "社會和情感健康",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -1534,7 +2195,6 @@ class AppLocalizations {
         search: "جستجو کردن",
         submitShare: "ارسال / اشتراک",
         address: AppLocalizations_Labels_General_Address(
-          title: "نشانی",
           city: "شهرستان",
           country: "کشور",
           county: "شهرستان",
@@ -1542,9 +2202,9 @@ class AppLocalizations {
           neighborhood: "همسایگی",
           postalCode: "کد پستی",
           state: "دولت",
+          title: "نشانی",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          title: "رابطه",
           aunt: "عمه",
           brother: "برادر",
           daughter: "فرزند دختر",
@@ -1556,17 +2216,18 @@ class AppLocalizations {
           niece: "دختر برادر یا خواهر و غیره",
           sister: "خواهر",
           son: "فرزند پسر",
+          title: "رابطه",
           uncle: "عمو یا دایی",
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
-          title: "جنسی در هنگام تولد",
           female: "زن",
           male: "نر",
+          title: "جنسی در هنگام تولد",
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        title: "زبان را انتخاب کنید",
         inEnglish: "Farsi",
+        title: "زبان را انتخاب کنید",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "رشد",
@@ -1578,20 +2239,94 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "پروتکل برای پاسخ به بررسی و دارایی بیماران، خطرات، و تجارب [PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          chooseNotToAnswer: "من را انتخاب کنید پاسخ به این سوال نمی",
+          no: "خیر",
+          yes: "آره",
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing:
+                "من مسکن ندارد (ماندن با دیگران، در یک هتل، در یک پناهگاه، در خارج زندگی در خیابان، در ساحل، در یک ماشین، یا در یک پارک)",
+            iHaveHousing: "من مسکن",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "کمی",
+            notAtAll: "اصلا",
+            quiteABit: "کمی زیاد",
+            somewhat: "قدری",
+            veryMuch: "خیلی زیاد",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "5 بار یا بیشتر در هفته",
+            lessThanOnceAWeek: "کمتر از یک بار در هفته",
+            oneOrTwoTimesAWeek: "1 یا 2 بار در هفته",
+            threeToFiveTimesAWeek: "3 تا 5 بار در هفته",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "CHIP مدیکید",
+            medicaid: "خدمات درمانی",
+            medicare: "مدیکر",
+            noneOrUninsured: "هیچ / بیمه",
+            otherPublicInsuranceChip: "دیگر بیمه های عمومی (CHIP)",
+            otherPublicInsuranceNotChip: "دیگر بیمه های عمومی (CHIP نیست)",
+            privateInsurance: "بیمه های خصوصی",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "انگلیسی",
+            languageOtherThanEnglish: "زبان غیر از انگلیسی",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "سرخپوست آمریکایی / بومی آلاسکا",
+            asian: "آسیایی",
+            blackAfricanAmerican: "سیاه و سفید آمریکا / آفریقایی",
+            nativeHawaiian: "بومی هاوایی",
+            other: "دیگر",
+            pacificIslander: "جزایر اقیانوس آرام",
+            white: "سفید",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "دیپلم دبیرستان و یا GED",
+            lessThanHighSchoolDegree: "کمتر از درجه مدرسه",
+            moreThanHighSchool: "بیش از دبیرستان",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            yesKeptFromMedical:
+                "بله، آن را به من از قرار ملاقات های پزشکی و یا از گرفتن داروها من نگه داشته",
+            yesKeptFromNonMedical:
+                "بله، آن را به من از غیر پزشکی جلسات، قرار ملاقات، محل کار، و یا از کارها که من نیاز نگه داشته",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "مراقبت از کودکان",
+            clothing: "تن پوش",
+            food: "غذا",
+            medicineOrAnyHealthCare:
+                "پزشکی و یا هر بهداشت و درمان (پزشکی، دندانپزشکی، سلامت روان، چشم انداز)",
+            other: "دیگر",
+            phone: "تلفن",
+            utilities: "خدمات رفاهی",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "کار تمام وقت",
+            otherwiseUnemployedButNotSeekingWork:
+                "در غیر این صورت بیکار اما به دنبال کار نمی (سابق: دانش آموز، بازنشسته، از کار افتاده، مراقبت های اولیه پرداخت نشده دهنده)",
+            partTimeOrTemporaryWork: "پاره وقت و یا کار موقت",
+            unemployed: "بی کار",
+          ),
+        ),
         familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
-          title: "خانواده و خانه",
           address: "چه آدرسی در زندگی می کنند؟",
           household:
               "چگونه بسیاری از اعضای خانواده جمله خود شما، شما در حال حاضر با زندگی می کنند؟",
           housing: "وضعیت مسکن خود را امروز چیست؟",
           losingHousing: "آیا شما در مورد دست دادن مسکن خود را نگران است؟",
+          title: "خانواده و خانه",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
-          title: "پول و منابع",
           income:
               "در طول سال گذشته، چه کل درآمد ترکیبی را برای شما و اعضای خانواده شما با زندگی می کنند؟ این اطلاعات به ما کمک می تعیین اگر شما واجد شرایط برای هر گونه مزایای هستند.",
           insurance: "بیمه اصلی شما چیست؟",
           school: "بالاترین سطح از مدرسه که شما به پایان رسید چیست؟",
+          title: "پول و منابع",
           transportation:
               "تا فقدان حمل و نقل شما را از پزشکی نگه ملاقات ها، جلسات، محل کار، و یا از گرفتن همه چیز مورد نیاز برای زندگی روزمره؟",
           without:
@@ -1599,7 +2334,6 @@ class AppLocalizations {
           work: "وضعیت کار فعلی شما چیست؟",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
-          title: "اقدامات اختیاری",
           afraid:
               "در سال گذشته، شما ترس از شریک زندگی خود را و یا شریک سابق بوده است؟",
           prison:
@@ -1607,24 +2341,25 @@ class AppLocalizations {
           refugee: "آیا یک پناهنده؟",
           safe:
               "آیا شما احساس می جسمی و عاطفی امن که در آن شما در حال حاضر زندگی می کنند؟",
+          title: "اقدامات اختیاری",
         ),
         personalCharacteristics:
             AppLocalizations_Labels_Prapare_PersonalCharacteristics(
-          title: "خصوصیات فردی",
           language: "به چه زبانی صحبت راحت ترین؟",
           latino: "آیا شما خودتان اسپانیایی زبان در نظر / لاتین؟",
           military: "آیا از نیروهای مسلح ایالات متحده آمریکا مرخص؟",
           race: "که (بازدید کنندگان) مسابقه شما هستند؟",
           seasonalWork:
               "در هر نقطه ای در 2 سال گذشته، فصل و یا کار در مزرعه مهاجر شده منبع اصلی خانواده شما و یا خود را از درآمد؟",
+          title: "خصوصیات فردی",
         ),
         socialAndEmotionalHealth:
             AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
-          title: "اجتماعی و سلامت عاطفی",
           stress:
               "استرس است که وقتی کسی احساس تنش، عصبی، مضطرب و یا نمی توانید در شب خواب به دلیل ذهن شان است. چگونه استرس شما می شود؟",
           talk:
               "هر چند وقت یا صحبت کردن با افرادی که شما را در مورد مراقبت و احساس نزدیکی به شما را ببینید (به عنوان مثال: صحبت کردن به دوستان بر روی گوشی، بازدید از دوستان و یا خانواده، رفتن به کلیسا و یا باشگاه جلسات).",
+          title: "اجتماعی و سلامت عاطفی",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -1699,7 +2434,6 @@ class AppLocalizations {
         search: "Chercher",
         submitShare: "Déposer / Partager",
         address: AppLocalizations_Labels_General_Address(
-          title: "Adresse",
           city: "Ville",
           country: "Pays",
           county: "Comté",
@@ -1707,9 +2441,9 @@ class AppLocalizations {
           neighborhood: "quartier",
           postalCode: "code postal",
           state: "Etat",
+          title: "Adresse",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          title: "Relation",
           aunt: "Tante",
           brother: "Frère",
           daughter: "Fille",
@@ -1721,17 +2455,18 @@ class AppLocalizations {
           niece: "Nièce",
           sister: "Sœur",
           son: "Fils",
+          title: "Relation",
           uncle: "Oncle",
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
-          title: "Sexe à la naissance",
           female: "Femelle",
           male: "Masculin",
+          title: "Sexe à la naissance",
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        title: "Choose language",
         inEnglish: "French",
+        title: "Choose language",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "Croissance",
@@ -1743,21 +2478,97 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "Protocole d'intervention et de l'évaluation des actifs des patients, les risques et les expériences [PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          chooseNotToAnswer: "Je ne pas répondre à cette question",
+          no: "Non",
+          yes: "Oui",
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing:
+                "Je n'ai pas de logement (rester avec les autres, dans un hôtel, dans un abri, vivant à l'extérieur dans la rue, sur une plage, dans une voiture ou dans un parc)",
+            iHaveHousing: "J'ai logement",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "Un petit peu",
+            notAtAll: "Pas du tout",
+            quiteABit: "Un peu",
+            somewhat: "Quelque peu",
+            veryMuch: "Beaucoup",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "5 fois ou plus par semaine",
+            lessThanOnceAWeek: "Moins d'une fois par semaine",
+            oneOrTwoTimesAWeek: "1 ou 2 fois par semaine",
+            threeToFiveTimesAWeek: "3 à 5 fois par semaine",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "CHIP Medicaid",
+            medicaid: "assistance médicale aux indigents",
+            medicare: "Assurance-maladie",
+            noneOrUninsured: "Aucune / non assuré",
+            otherPublicInsuranceChip: "Autres assurance publique (CHIP)",
+            otherPublicInsuranceNotChip:
+                "Autres assurances publiques (non CHIP)",
+            privateInsurance: "Assurance privée",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "Anglais",
+            languageOtherThanEnglish: "Langue autre que l'anglais",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "Indien de l'Amérique / Alaska Native",
+            asian: "asiatique",
+            blackAfricanAmerican: "Noir / afro-américaine",
+            nativeHawaiian: "hawaïennes",
+            other: "Autre",
+            pacificIslander: "insulaire Pacifique",
+            white: "blanc",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed:
+                "Diplôme d'études secondaires ou de formation générale",
+            lessThanHighSchoolDegree: "Moins de degré élevé d'école",
+            moreThanHighSchool: "Plus de lycée",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            yesKeptFromMedical:
+                "Oui, il m'a empêché de rendez-vous médicaux ou d'obtenir mes médicaments",
+            yesKeptFromNonMedical:
+                "Oui, il m'a tenu des réunions non-médical, rendez-vous, le travail, ou de faire avancer les choses que j'ai besoin",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "Garde d'enfants",
+            clothing: "Vêtements",
+            food: "Nourriture",
+            medicineOrAnyHealthCare:
+                "Médecine ou les soins de santé (médical, dentaire, santé mentale, Vision)",
+            other: "Autre",
+            phone: "Téléphone",
+            utilities: "Utilitaires",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "Travail à temps plein",
+            otherwiseUnemployedButNotSeekingWork:
+                "Sinon, au chômage, mais pas en quête de travail (ex: étudiant, retraité, handicapé, dispensateur de soins primaires non rémunérés)",
+            partTimeOrTemporaryWork: "À temps partiel ou le travail temporaire",
+            unemployed: "Sans emploi",
+          ),
+        ),
         familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
-          title: "Famille et accueil",
           address: "Quelle adresse vivez-vous?",
           household:
               "Combien de membres de la famille, y compris vous-même, avez-vous actuellement en temps réel avec?",
           housing: "Quelle est votre situation de logement aujourd'hui?",
           losingHousing: "Etes-vous inquiet de perdre votre logement?",
+          title: "Famille et accueil",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
-          title: "L'argent et des ressources",
           income:
               "Au cours de l'année écoulée, quel était le revenu total combiné pour vous et les membres de la famille qui vivent avec vous? Ces informations nous aideront à déterminer si vous êtes admissible à des prestations.",
           insurance: "Quelle est votre assurance principale?",
           school:
               "Quel est le plus haut niveau de l'école que vous avez terminé?",
+          title: "L'argent et des ressources",
           transportation:
               "Est-ce que le manque de transport que vous gardé des rendez-vous médicaux, des réunions, le travail, ou de faire avancer les choses nécessaires à la vie quotidienne?",
           without:
@@ -1765,7 +2576,6 @@ class AppLocalizations {
           work: "Quelle est votre situation professionnelle actuelle?",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
-          title: "mesures facultatives",
           afraid:
               "L'année dernière, vous avez eu peur de votre partenaire ou ex-partenaire?",
           prison:
@@ -1773,24 +2583,25 @@ class AppLocalizations {
           refugee: "Vous êtes un réfugié?",
           safe:
               "Vous sentez-vous physiquement et émotionnellement sûr où vous en direct?",
+          title: "mesures facultatives",
         ),
         personalCharacteristics:
             AppLocalizations_Labels_Prapare_PersonalCharacteristics(
-          title: "Caractéristiques personnelles",
           language: "Quelle langue parlez-vous plus à l'aise?",
           latino: "Estimez-vous Hispanique / Latino?",
           military: "Avez-vous été libéré des forces armées des États-Unis?",
           race: "Quelle race (s) êtes-vous?",
           seasonalWork:
               "A tout moment au cours des 2 dernières années, a la saison ou les travaux agricoles migrants été votre ou votre principale source de revenu de la famille?",
+          title: "Caractéristiques personnelles",
         ),
         socialAndEmotionalHealth:
             AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
-          title: "Santé sociale et émotionnelle",
           stress:
               "Le stress est quand quelqu'un se sent tendu, nerveux, anxieux ou ne peut pas dormir la nuit parce que leur esprit est troublé. Comment êtes-vous stressé?",
           talk:
               "À quelle fréquence vous voyez ou parler aux gens que vous aimez et sentez proches (Par exemple: parler à des amis au téléphone, visite à des amis ou en famille, aller aux réunions de l'église ou club)?",
+          title: "Santé sociale et émotionnelle",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -1865,7 +2676,6 @@ class AppLocalizations {
         search: "Suche",
         submitShare: "Senden / Share",
         address: AppLocalizations_Labels_General_Address(
-          title: "Adresse",
           city: "Stadt",
           country: "Land",
           county: "Bezirk",
@@ -1873,9 +2683,9 @@ class AppLocalizations {
           neighborhood: "Gegend",
           postalCode: "Postleitzahl",
           state: "Zustand",
+          title: "Adresse",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          title: "Beziehung",
           aunt: "Tante",
           brother: "Bruder",
           daughter: "Tochter",
@@ -1887,17 +2697,18 @@ class AppLocalizations {
           niece: "Nichte",
           sister: "Schwester",
           son: "Sohn",
+          title: "Beziehung",
           uncle: "Onkel",
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
-          title: "Sex bei Geburt",
           female: "Weiblich",
           male: "Männlich",
+          title: "Sex bei Geburt",
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        title: "Sprache wählen",
         inEnglish: "German",
+        title: "Sprache wählen",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "Wachstum",
@@ -1909,20 +2720,95 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "Protokoll zu reagieren und Beurteilung der Patienten Vermögenswerte, Risiken und Erfahrungen [PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          chooseNotToAnswer: "Ich wähle nicht, diese Frage zu beantworten",
+          no: "Nein",
+          yes: "Ja",
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing:
+                "Ich habe nicht Gehäuse (mit anderen zu bleiben, in einem Hotel, in einem Tierheim, lebt draußen auf der Straße, am Strand, in einem Auto oder in einem Park)",
+            iHaveHousing: "Ich habe Gehäuse",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "Ein bisschen",
+            notAtAll: "Überhaupt nicht",
+            quiteABit: "Ganz ein bisschen",
+            somewhat: "Etwas",
+            veryMuch: "Sehr viel",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "5 oder mehr Mal pro Woche",
+            lessThanOnceAWeek: "Weniger als einmal pro Woche",
+            oneOrTwoTimesAWeek: "1 oder 2 mal pro Woche",
+            threeToFiveTimesAWeek: "3 bis 5 mal pro Woche",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "CHIP Medicaid",
+            medicaid: "Medicaid",
+            medicare: "Medicare",
+            noneOrUninsured: "Keine / nicht versichert",
+            otherPublicInsuranceChip: "Andere öffentliche Versicherung (CHIP)",
+            otherPublicInsuranceNotChip:
+                "Andere öffentliche Versicherung (nicht CHIP)",
+            privateInsurance: "Privatversicherung",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "Englisch",
+            languageOtherThanEnglish: "Andere Sprache als Englisch",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "American Indian / Alaska Native",
+            asian: "asiatisch",
+            blackAfricanAmerican: "Schwarz / African American",
+            nativeHawaiian: "hawaiianische",
+            other: "Andere",
+            pacificIslander: "pazifische Inselbewohner",
+            white: "Weiß",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "High-School-Diplom oder GED",
+            lessThanHighSchoolDegree: "Weniger als High-School-Abschluss",
+            moreThanHighSchool: "Mehr als High-School",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            yesKeptFromMedical:
+                "Ja, hat es hält mich von Arztterminen oder von meinen Medikamente bekommen",
+            yesKeptFromNonMedical:
+                "Ja, es hat mich gehalten von nicht-medizinischen Konferenzen, Termine, Arbeit oder von den Dingen bekommen, die ich brauche,",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "Kinderbetreuung",
+            clothing: "Kleidung",
+            food: "Essen",
+            medicineOrAnyHealthCare:
+                "Medikament oder Gesundheitswesen (Medical, Dental, Geistige Gesundheit, Vision)",
+            other: "Andere",
+            phone: "Telefon",
+            utilities: "Dienstprogramme",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "Vollzeitarbeit",
+            otherwiseUnemployedButNotSeekingWork:
+                "Ansonsten arbeitslos, aber nicht nach Arbeit suchen (zB: Student, Rentner, Behinderte, unbezahlte Grundversorgung Geber)",
+            partTimeOrTemporaryWork: "Teilzeit oder Zeitarbeit",
+            unemployed: "Arbeitslos",
+          ),
+        ),
         familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
-          title: "Familie und Zuhause",
           address: "Was Adresse wohnen Sie an?",
           household:
               "Wie viele Familienmitglieder, einschließlich sich selbst, sind Sie zur Zeit leben mit?",
           housing: "Was ist Ihr heute Wohnsituation?",
           losingHousing: "Sind Sie besorgt, über Ihr Gehäuse zu verlieren?",
+          title: "Familie und Zuhause",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
-          title: "Geld und Ressourcen",
           income:
               "Im vergangenen Jahr, was war das gesamte kombinierte Einkommen für Sie und die Familienmitglieder mit denen Sie leben? Diese Informationen helfen uns festzustellen, ob Sie für alle Leistungen qualifizieren.",
           insurance: "Was ist Ihre Hauptversicherung?",
           school: "Was ist die höchste Stufe der Schule, dass Sie fertig sind?",
+          title: "Geld und Ressourcen",
           transportation:
               "Hat Mangel an Transportmitteln gehalten Sie von Arztterminen, Meetings, Arbeit oder aus, dass die Dinge für das tägliche Leben benötigt?",
           without:
@@ -1930,7 +2816,6 @@ class AppLocalizations {
           work: "Was ist Ihre aktuelle Arbeitssituation?",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
-          title: "optionale Maßnahmen",
           afraid:
               "Im vergangenen Jahr haben Sie von Ihrem Partner oder Ex-Partner gefürchtet?",
           prison:
@@ -1938,10 +2823,10 @@ class AppLocalizations {
           refugee: "Sind Sie ein Flüchtling?",
           safe:
               "Fühlen Sie sich körperlich und emotional sicher, wo Sie zur Zeit leben?",
+          title: "optionale Maßnahmen",
         ),
         personalCharacteristics:
             AppLocalizations_Labels_Prapare_PersonalCharacteristics(
-          title: "Persönliche Eigenschaften",
           language: "Was die Sprache sind Sie am bequemsten zu sprechen?",
           latino: "Halten Sie sich für Spanisch / Latino?",
           military:
@@ -1949,14 +2834,15 @@ class AppLocalizations {
           race: "Welche Rasse (n) sind Sie?",
           seasonalWork:
               "An jedem Punkt in den letzten 2 Jahren hat Saison oder Wanderfeldarbeit ist Du oder Ihre Familie Haupteinnahmequelle?",
+          title: "Persönliche Eigenschaften",
         ),
         socialAndEmotionalHealth:
             AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
-          title: "Soziale und emotionale Gesundheit",
           stress:
               "Stress ist, wenn jemand fühlt sich angespannt, nervös, ängstlich oder kann nachts nicht schlafen, weil ihr Geist beunruhigt. Wie gestresst sind Sie?",
           talk:
               "Wie oft sehen Sie oder sprechen Sie mit Menschen, die Sie wichtig ist und das Gefühl der Nähe von (Zum Beispiel: im Gespräch mit Freunden am Telefon, Freunde oder Familie besuchen, in der Kirche gehen oder Clubtreffen)?",
+          title: "Soziale und emotionale Gesundheit",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -2031,7 +2917,6 @@ class AppLocalizations {
         search: "Cari",
         submitShare: "Menyerahkan / Share",
         address: AppLocalizations_Labels_General_Address(
-          title: "Alamat",
           city: "Kota",
           country: "Negara",
           county: "daerah",
@@ -2039,9 +2924,9 @@ class AppLocalizations {
           neighborhood: "Lingkungan",
           postalCode: "Kode Pos",
           state: "Negara",
+          title: "Alamat",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          title: "Hubungan",
           aunt: "Bibi",
           brother: "Saudara",
           daughter: "Putri",
@@ -2053,17 +2938,18 @@ class AppLocalizations {
           niece: "Keponakan",
           sister: "Saudara",
           son: "Putra",
+          title: "Hubungan",
           uncle: "Paman",
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
-          title: "Seks di Lahir",
           female: "Perempuan",
           male: "Pria",
+          title: "Seks di Lahir",
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        title: "Pilih bahasa",
         inEnglish: "Indonesian",
+        title: "Pilih bahasa",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "Pertumbuhan",
@@ -2075,21 +2961,95 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "Protokol untuk Menanggapi dan Menilai Aset Pasien, Risiko, dan Pengalaman [PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          chooseNotToAnswer: "Aku memilih untuk tidak menjawab pertanyaan ini",
+          no: "Tidak",
+          yes: "Iya",
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing:
+                "Saya tidak memiliki perumahan (tinggal dengan orang lain, di sebuah hotel, di tempat penampungan, yang tinggal di luar di jalan, di pantai, di dalam mobil, atau di taman)",
+            iHaveHousing: "Saya memiliki perumahan",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "Sedikit",
+            notAtAll: "Tidak semuanya",
+            quiteABit: "Sedikit",
+            somewhat: "Agak",
+            veryMuch: "Sangat banyak",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "5 kali atau lebih seminggu",
+            lessThanOnceAWeek: "Kurang dari sekali seminggu",
+            oneOrTwoTimesAWeek: "1 atau 2 kali seminggu",
+            threeToFiveTimesAWeek: "3 sampai 5 kali seminggu",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "CHIP Medicaid",
+            medicaid: "Medicaid",
+            medicare: "Medicare",
+            noneOrUninsured: "Tidak ada / tidak diasuransikan",
+            otherPublicInsuranceChip: "Asuransi umum lainnya (CHIP)",
+            otherPublicInsuranceNotChip: "Asuransi umum lainnya (tidak CHIP)",
+            privateInsurance: "asuransi swasta",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "Inggris",
+            languageOtherThanEnglish: "Bahasa selain bahasa Inggris",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "American Indian / Alaska Native",
+            asian: "Asia",
+            blackAfricanAmerican: "Black / Afrika Amerika",
+            nativeHawaiian: "Hawaii asli",
+            other: "Lain",
+            pacificIslander: "penduduk pulau Pasifik",
+            white: "putih",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "ijazah sekolah tinggi atau GED",
+            lessThanHighSchoolDegree: "Kurang dari tingkat SMA",
+            moreThanHighSchool: "Lebih dari SMA",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            yesKeptFromMedical:
+                "Ya, itu telah membuat saya dari janji medis atau dari mendapatkan obat saya",
+            yesKeptFromNonMedical:
+                "Ya, itu telah membuat saya dari non-medis pertemuan, janji, pekerjaan, atau dari mendapatkan hal-hal yang saya butuhkan",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "perawatan anak",
+            clothing: "Pakaian",
+            food: "Makanan",
+            medicineOrAnyHealthCare:
+                "Obat atau Setiap Kesehatan (Medical, Dental, Mental Health, Vision)",
+            other: "Lain",
+            phone: "Telepon",
+            utilities: "Keperluan",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "pekerjaan penuh waktu",
+            otherwiseUnemployedButNotSeekingWork:
+                "Jika tidak menganggur tetapi tidak mencari pekerjaan (ex: mahasiswa, pensiunan, cacat, pemberi perawatan primer yang belum dibayar)",
+            partTimeOrTemporaryWork: "Paruh waktu atau pekerjaan sementara",
+            unemployed: "Penganggur",
+          ),
+        ),
         familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
-          title: "Keluarga dan Rumah",
           address: "Apa alamat yang Anda tinggal di?",
           household:
               "Berapa banyak anggota keluarga, termasuk Anda, apakah Anda saat ini hidup dengan?",
           housing: "Apa situasi perumahan Anda hari ini?",
           losingHousing:
               "Apakah Anda khawatir tentang kehilangan perumahan Anda?",
+          title: "Keluarga dan Rumah",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
-          title: "Uang dan Sumber Daya",
           income:
               "Selama tahun lalu, apa yang pendapatan gabungan total untuk Anda dan anggota keluarga Anda hidup dengan? Informasi ini akan membantu kami menentukan apakah Anda memenuhi syarat untuk manfaat.",
           insurance: "Apa asuransi utama Anda?",
           school: "Apa tingkat tertinggi sekolah yang telah selesai?",
+          title: "Uang dan Sumber Daya",
           transportation:
               "Telah kurangnya transportasi terus Anda dari medis janji, rapat, pekerjaan, atau dari mendapatkan hal-hal yang diperlukan untuk hidup sehari-hari?",
           without:
@@ -2097,7 +3057,6 @@ class AppLocalizations {
           work: "Apa situasi kerja Anda saat ini?",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
-          title: "Tindakan opsional",
           afraid:
               "Pada tahun lalu, telah Anda takut pasangan Anda atau mantan pasangan?",
           prison:
@@ -2105,10 +3064,10 @@ class AppLocalizations {
           refugee: "Apakah Anda seorang pengungsi?",
           safe:
               "Apakah Anda merasa secara fisik dan emosional yang aman di mana Anda saat ini tinggal?",
+          title: "Tindakan opsional",
         ),
         personalCharacteristics:
             AppLocalizations_Labels_Prapare_PersonalCharacteristics(
-          title: "Karakteristik pribadi",
           language: "Bahasa apa yang paling Anda nyaman berbicara?",
           latino: "Apakah Anda menganggap diri Anda Hispanik / Latino?",
           military:
@@ -2116,14 +3075,15 @@ class AppLocalizations {
           race: "ras yang (s) yang Anda?",
           seasonalWork:
               "Pada setiap titik dalam 2 tahun terakhir, memiliki musim atau migran pekerjaan pertanian telah Anda atau sumber utama keluarga pendapatan?",
+          title: "Karakteristik pribadi",
         ),
         socialAndEmotionalHealth:
             AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
-          title: "Sosial dan Kesehatan Emosional",
           stress:
               "Stres adalah ketika seseorang merasa tegang, gugup, cemas atau tidak bisa tidur di malam hari karena pikiran mereka terganggu. Bagaimana stres Anda?",
           talk:
               "Seberapa sering Anda melihat atau berbicara dengan orang-orang bahwa Anda peduli dan merasa dekat dengan (Misalnya: berbicara dengan teman di telepon, mengunjungi teman atau keluarga, pergi ke pertemuan gereja atau klub)?",
+          title: "Sosial dan Kesehatan Emosional",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -2198,7 +3158,6 @@ class AppLocalizations {
         search: "ស្វែងរក",
         submitShare: "ដាក់ស្នើ / ចែករំលែក",
         address: AppLocalizations_Labels_General_Address(
-          title: "អាសយដ្ឋាន",
           city: "ទីក្រុង",
           country: "ប្រទេស",
           county: "ខោនធី",
@@ -2206,9 +3165,9 @@ class AppLocalizations {
           neighborhood: "អ្នកជិតខាង",
           postalCode: "លេខ​កូដ​ប្រៃ​ស​ណី​យ",
           state: "រដ្ឋ",
+          title: "អាសយដ្ឋាន",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          title: "ទំនាក់ទំនង",
           aunt: "មីង",
           brother: "បងប្រុស",
           daughter: "កូនស្រី",
@@ -2220,17 +3179,18 @@ class AppLocalizations {
           niece: "ក្មួយស្រី",
           sister: "បងស្រី",
           son: "ព្រះបុត្រា",
+          title: "ទំនាក់ទំនង",
           uncle: "ពូ",
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
-          title: "ការរួមភេទនៅកំណើត",
           female: "ស្រី",
           male: "បុរស",
+          title: "ការរួមភេទនៅកំណើត",
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        title: "ជ្រើសរើសភាសា",
         inEnglish: "Khmer",
+        title: "ជ្រើសរើសភាសា",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "កំណើន",
@@ -2242,20 +3202,95 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "ពិធីការសម្រាប់ការឆ្លើយតបទៅនឹងទ្រព្យសកម្មនិងការវាយតម្លៃអ្នកជំងឺ, ហានិភ័យ, និងបទពិសោធន៍ [PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          chooseNotToAnswer: "ខ្ញុំជ្រើសរើសមិនឆ្លើយតបនឹងសំណួរនេះ",
+          no: "គ្មាន",
+          yes: "បាទ",
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing:
+                "ខ្ញុំមិនមានលំនៅដ្ឋាន (ស្នាក់នៅជាមួយអ្នកផ្សេង, នៅក្នុងសណ្ឋាគារមួយនៅក្នុងទីជំរកមួយនៅខាងក្រៅដែលរស់នៅលើចិញ្ចើមផ្លូវ, នៅលើឆ្នេរខ្សាច់មួយ, នៅក្នុងរថយន្តមួយ, ឬនៅក្នុងឧទ្យានមួយ)",
+            iHaveHousing: "ខ្ញុំមានលំនៅស្ថាន",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "បន្តិចបន្តួច",
+            notAtAll: "មិននៅទាំងអស់",
+            quiteABit: "បន្តិច",
+            somewhat: "បន្តិច",
+            veryMuch: "ច្រើនណាស់",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "5 ឬច្រើនដងក្នុងមួយសប្តាហ៍",
+            lessThanOnceAWeek: "តិចជាងម្តងក្នុងមួយសប្តាហ៍",
+            oneOrTwoTimesAWeek: "1 ឬ 2 ដងក្នុងមួយសប្តាហ៍",
+            threeToFiveTimesAWeek: "3 ទៅ 5 ដងក្នុងមួយសប្តាហ៍",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "CHIP Medicaid",
+            medicaid: "Medicaid",
+            medicare: "របស់ Medicare",
+            noneOrUninsured: "គ្មាន / គ្មានការធានារ៉ាប់រង",
+            otherPublicInsuranceChip: "ការធានារ៉ាប់រងសាធារណៈផ្សេងទៀត (CHIP)",
+            otherPublicInsuranceNotChip:
+                "ការធានារ៉ាប់រងសាធារណៈផ្សេងទៀត (មិន CHIP)",
+            privateInsurance: "ធានារ៉ាប់រងឯកជន",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "ភាសាអង់គ្លេស",
+            languageOtherThanEnglish: "ភាសាផ្សេងទៀតជាជាងភាសាអង់គ្លេស",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "អាមេរិកឥណ្ឌា / Alaskan ដើម",
+            asian: "អាស៊ី",
+            blackAfricanAmerican: "ខ្មៅអាមេរិក / អាហ្រ្វិក",
+            nativeHawaiian: "មានដើមកំណើតនៅហាវ៉ៃ",
+            other: "ផ្សេងទៀត",
+            pacificIslander: "កោះប៉ាស៊ីហ្វិក",
+            white: "ស",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "សញ្ញាប័ត្រវិទ្យាល័យឬ GED",
+            lessThanHighSchoolDegree: "តិចជាងសញ្ញាបត្រមធ្យមសិក្សា",
+            moreThanHighSchool: "ច្រើនជាងសាលារៀនខ្ពស់",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            yesKeptFromMedical:
+                "បាទ, វាត្រូវបានរក្សាទុកខ្ញុំពីការណាត់ជួបពេទ្យឬពីការទទួលយកថ្នាំរបស់ខ្ញុំ",
+            yesKeptFromNonMedical:
+                "បាទ, វាត្រូវបានរក្សាទុកខ្ញុំពីការមិនវេជ្ជសាស្រ្តកិច្ចប្រជុំ, ការណាត់ជួប, ការងារ, ឬពីការទទួលបានអ្វីដែលខ្ញុំត្រូវការ",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "ការថែទាំកុមារ",
+            clothing: "សម្លៀកបំពាក់",
+            food: "អាហារ",
+            medicineOrAnyHealthCare:
+                "ថាំពទ្យឬថែទាំសុខភាពមួយចំនួន (ការពិនិត្យពេទ្យ, ធ្មេញ, សុខភាពផ្លូវចិត្ត, អង្គការទស្សនៈ)",
+            other: "ផ្សេងទៀត",
+            phone: "ទូរស័ព្ទ",
+            utilities: "ឧបករណ៍ប្រើប្រាស់",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "ការងារពេញម៉ោង",
+            otherwiseUnemployedButNotSeekingWork:
+                "បើមិនដូច្នោះទេគ្មានការងារធ្វើប៉ុន្តែមិនស្វែងរកការងារ (អតីត: និស្សិតចូលនិវត្តន៍, ជនពិការ, អ្នកផ្ដល់ការថែទាំបឋមប្រាក់)",
+            partTimeOrTemporaryWork: "ផ្នែកមួយម៉ោងឬការងារជាបណ្តោះអាសន្ន",
+            unemployed: "គ្មាន​ការងារ​ធ្វើ",
+          ),
+        ),
         familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
-          title: "គ្រួសារនិងទំព័រដើម",
           address: "តើអ្វីទៅអាសយដ្ឋានតើអ្នករស់នៅ?",
           household:
               "តើមានសមាជិកគ្រួសាររួមទាំងខ្លួនអ្នកផ្ទាល់បានធ្វើការផ្សាយបន្តផ្ទាល់ជាមួយអ្នកនាពេលបច្ចុប្បន្ន?",
           housing: "នេះគឺជាស្ថានភាពផ្ទះរបស់អ្នកថ្ងៃអ្វី?",
           losingHousing: "តើអ្នកមានការព្រួយបារម្ភពីការបាត់បង់ផ្ទះរបស់អ្នក?",
+          title: "គ្រួសារនិងទំព័រដើម",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
-          title: "លុយនិងធនធាន",
           income:
               "ក្នុងអំឡុងឆ្នាំកន្លងទៅនេះអ្វីដែលជាប្រាក់ចំណូលសរុបសម្រាប់អ្នកនិងសមាជិកក្រុមគ្រួសាររបស់អ្នករស់នៅជាមួយ? ពនេះនឹងជួយឱ្យយើងកំណត់ថាតើអ្នកមានសិទ្ធិទទួលបានផលប្រយោជន៍ណាមួយឡើយ។",
           insurance: "ការធានារ៉ាប់រងសំខាន់របស់អ្នកគឺជាអ្វី?",
           school: "កម្រិតខ្ពស់បំផុតនៃសាលារៀនដែលអ្នកបានបញ្ចប់ជាអ្វី?",
+          title: "លុយនិងធនធាន",
           transportation:
               "កង្វះនៃការដឹកជញ្ជូនត្រូវបានរក្សាទុកអ្នកពីពេទ្យណាត់ជួបការប្រជុំការងារឬពីការទទួលបានអ្វីដែលត្រូវការសម្រាប់ការរស់នៅប្រចាំថ្ងៃ?",
           without:
@@ -2263,7 +3298,6 @@ class AppLocalizations {
           work: "ស្ថានភាពការងារបច្ចុប្បន្នរបស់អ្នកគឺជាអ្វី?",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
-          title: "វិធានការជាជម្រើស",
           afraid:
               "ក្នុងឆ្នាំកន្លងទៅនេះតើអ្នកមានការភ័យខ្លាចនៃការដៃគូឬដៃគូរបស់អ្នកអតីត?",
           prison:
@@ -2271,10 +3305,10 @@ class AppLocalizations {
           refugee: "តើអ្នកជាជនភៀសខ្លួនមួយ?",
           safe:
               "តើអ្នកមានអារម្មណ៍ថាមានសុវត្ថិភាពខាងរូបកាយនិងខាងផ្លូវចិត្ដការផ្សាយបន្តផ្ទាល់បច្ចុប្បន្ននេះកន្លែងដែលអ្នក?",
+          title: "វិធានការជាជម្រើស",
         ),
         personalCharacteristics:
             AppLocalizations_Labels_Prapare_PersonalCharacteristics(
-          title: "លក្ខណៈផ្ទាល់ខ្លួន",
           language: "តើអ្វីទៅជាភាសាដែលអ្នកមាននិយាយជាមានផាសុខភាពបំផុត?",
           latino: "តើអ្នកពិចារណាដោយខ្លួនឯងអ្នកនិយាយភាសា / ប្រុស?",
           military:
@@ -2282,14 +3316,15 @@ class AppLocalizations {
           race: "ការប្រណាំងដែល (s) ដែលអ្នកមាន?",
           seasonalWork:
               "នៅចំណុចណាមួយនៅក្នុងរយៈពេល 2 ឆ្នាំមកនេះមានរដូវកាលឬការងារកសិដ្ឋានចំណាកស្រុកបានរបស់អ្នកឬរបស់អ្នកដែលជាប្រភពសំខាន់នៃប្រាក់ចំណូលរបស់គ្រួសារ?",
+          title: "លក្ខណៈផ្ទាល់ខ្លួន",
         ),
         socialAndEmotionalHealth:
             AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
-          title: "សង្គមនិងសុខភាពផ្លូវចិត្ដ",
           stress:
               "ស្ត្រេសគឺជាពេលដែលនរណាម្នាក់មានអារម្មណ៍តានតឹង, ភ័យ, រំភើបចិត្តឬមិនអាចដេកលក់នៅពេលយប់ដោយសារតែចិត្តរបស់ពួកគេត្រូវតប់ប្រមល់។ តើធ្វើដូចម្តេចបានសង្កត់ធ្ងន់អ្នកមាន?",
           talk:
               "តើធ្វើដូចម្តេចជាញឹកញាប់តើអ្នកឃើញឬនិយាយទៅកាន់មនុស្សដែលអ្នកយកចិត្តទុកដាក់និងមានអារម្មណ៍ជិតស្និទ្ធនឹង (ឧទាហរណ៍: ការនិយាយទៅកាន់មិត្តភក្តិនៅលើទូរស័ព្ទ, ទស្សនាមិត្តភក្តិឬក្រុមគ្រួសារនឹងកិច្ចប្រជុំក្នុងសាសនាចក្រឬក្លឹប)?",
+          title: "សង្គមនិងសុខភាពផ្លូវចិត្ដ",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -2364,7 +3399,6 @@ class AppLocalizations {
         search: "검색",
         submitShare: "전송 / 공유",
         address: AppLocalizations_Labels_General_Address(
-          title: "주소",
           city: "시티",
           country: "국가",
           county: "군",
@@ -2372,9 +3406,9 @@ class AppLocalizations {
           neighborhood: "이웃",
           postalCode: "우편 번호",
           state: "상태",
+          title: "주소",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          title: "관계",
           aunt: "이모",
           brother: "동료",
           daughter: "딸",
@@ -2386,17 +3420,18 @@ class AppLocalizations {
           niece: "조카딸",
           sister: "여자 형제",
           son: "아들",
+          title: "관계",
           uncle: "삼촌",
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
-          title: "출생에서 섹스",
           female: "여자",
           male: "남성",
+          title: "출생에서 섹스",
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        title: "언어 선택",
         inEnglish: "Korean",
+        title: "언어 선택",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "성장",
@@ -2407,48 +3442,120 @@ class AppLocalizations {
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title: "에 응답하는 환자의 자산을 평가하기위한 프로토콜 위험 경험 [PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          chooseNotToAnswer: "나는이 질문에 대답하지 않도록 선택",
+          no: "아니",
+          yes: "예",
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing:
+                "나는 주택이 (쉼터에서, 호텔에서, 다른 사람과 체재 차에, 해변에서, 거리에서 외부 생활을하거나 공원에서)하지 않는다",
+            iHaveHousing: "나는 주택을",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "조금",
+            notAtAll: "전혀",
+            quiteABit: "상당히",
+            somewhat: "약간",
+            veryMuch: "흠뻑",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "5 회 이상 주",
+            lessThanOnceAWeek: "일주일에 한 번 미만",
+            oneOrTwoTimesAWeek: "1 주일에 2 회",
+            threeToFiveTimesAWeek: "3 ~ 5 회",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "CHIP 메디 케이드 (Medicaid)",
+            medicaid: "메디 케이드 (Medicaid)",
+            medicare: "메디 케어",
+            noneOrUninsured: "없음 / 보험",
+            otherPublicInsuranceChip: "기타 공공 보험 (CHIP)",
+            otherPublicInsuranceNotChip: "기타 공공 보험 (하지 CHIP)",
+            privateInsurance: "개인 보험",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "영어",
+            languageOtherThanEnglish: "영어 이외의 언어",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "아메리칸 인디언 / 알래스카 원주민",
+            asian: "아시아 사람",
+            blackAfricanAmerican: "블랙 / 아프리카 계 미국인",
+            nativeHawaiian: "하와이 원주민",
+            other: "다른",
+            pacificIslander: "태평양 섬",
+            white: "하얀",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "고등학교 졸업장 또는 GED",
+            lessThanHighSchoolDegree: "고등학교도 미만",
+            moreThanHighSchool: "고등학교 이상",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            yesKeptFromMedical: "네, 의료 약속이나 내 약물 치료를 받고에서 저를 유지하고있다",
+            yesKeptFromNonMedical:
+                "네, 비 의료 회의, 약속, 작업, 또는 물건을 받고에서 내가 필요에서 저를 유지하고있다",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "육아",
+            clothing: "의류",
+            food: "음식",
+            medicineOrAnyHealthCare: "의학 또는 모든 건강 관리 (의료, 치과, 정신 건강, 비전)",
+            other: "다른",
+            phone: "전화",
+            utilities: "유용",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "풀 타임 일",
+            otherwiseUnemployedButNotSeekingWork:
+                "그렇지 않으면 실업자하지만 일을 추구하지 (예 : 학생, 은퇴, 장애인, 무급 일차 진료주는 사람)",
+            partTimeOrTemporaryWork: "파트 타임 또는 임시 작업",
+            unemployed: "한가한",
+          ),
+        ),
         familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
-          title: "가족과 집",
           address: "당신은 무엇 주소에 살고 있습니까?",
           household: "자신을 포함하여 얼마나 많은 가족,와 현재 라이브 당신에게 무엇입니까?",
           housing: "귀하의 주택 상황은 오늘 무엇입니까?",
           losingHousing: "당신은 당신의 주택을 잃어 버릴까 걱정하고 있습니까?",
+          title: "가족과 집",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
-          title: "돈과 자원",
           income:
               "지난 한 해 동안, 당신과 당신이 살고있는 가족 구성원의 총 결합 된 소득은 무엇 이었습니까? 이 정보는 어떤 혜택을받을 수 있는지 우리가 결정하는 데 도움이됩니다.",
           insurance: "주요 보험은 무엇입니까?",
           school: "당신이 완료하는 것이 학교의 가장 높은 수준은 무엇인가?",
+          title: "돈과 자원",
           transportation:
               "교통의 부족은 의료에서 ​​유지하고 약속, 회의, 업무 또는 일상 생활에 필요한 물건을 받고에서?",
           without: "지난 해,이 당신이나 당신이 정말 필요로 할 때 다음 중 하나를 얻을 수 없었다 함께 살고있는 가족?",
           work: "현재 작업 상황은 무엇인가?",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
-          title: "옵션 조치",
           afraid: "지난 해, 당신은 당신의 파트너 또는 전 파트너 두려워했다?",
           prison: "지난 해에, 당신은 감옥, 교도소, 구치소, 또는 청소년 교정 시설에서 연속 2 박 이상을 보냈습니다?",
           refugee: "당신은 난민인가?",
           safe: "당신은 육체적으로 어디 현재 살고 감정적으로 안전 느끼십니까?",
+          title: "옵션 조치",
         ),
         personalCharacteristics:
             AppLocalizations_Labels_Prapare_PersonalCharacteristics(
-          title: "개인별 특성",
           language: "당신은 가장 편안한 말하기 언어는 무엇입니까?",
           latino: "당신은 라틴 아메리카 / 스페인 스스로 생각하십니까?",
           military: "당신은 미국의 군대에서 배출 된 적이 있습니까?",
           race: "당신은 어떤 인종 (들)입니까?",
           seasonalWork:
               "지난 이년의 어떤 시점에서, 계절과 이주 농장 일이 소득의 당신 또는 당신의 가족의 주요 원천이되어있다?",
+          title: "개인별 특성",
         ),
         socialAndEmotionalHealth:
             AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
-          title: "사회 및 정서적 건강",
           stress:
               "누군가가, 긴장 긴장, 불안 느낌 또는 그들의 마음에 근심하기 때문에 밤에 잠을 잘 수 없을 때 스트레스입니다. 당신은 어떻게 스트레스?",
           talk:
               "얼마나 자주 당신은 당신이 관심을 종료 느끼는 사람들에게 이야기 나 보이나요 (예를 들어, 친구 나 가족을 방문, 전화로 친구에게 얘기 교회 나 클럽 모임에가는)?",
+          title: "사회 및 정서적 건강",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -2523,7 +3630,6 @@ class AppLocalizations {
         search: "ຄົ້ນຫາ",
         submitShare: "ຍື່ນສະເຫນີ / Share",
         address: AppLocalizations_Labels_General_Address(
-          title: "ທີ່ຢູ່",
           city: "ເມືອງ",
           country: "ປະເທດ",
           county: "county",
@@ -2531,9 +3637,9 @@ class AppLocalizations {
           neighborhood: "ບ້ານ",
           postalCode: "ລະ​ຫັດ​ໄປ​ສະ​ນີ",
           state: "State",
+          title: "ທີ່ຢູ່",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          title: "Relation",
           aunt: "ປ້າ",
           brother: "ອ້າຍ",
           daughter: "ລູກສາວ",
@@ -2545,17 +3651,18 @@ class AppLocalizations {
           niece: "ຫລານສາວ",
           sister: "ເອື້ອຍ",
           son: "ລູກຊາຍ",
+          title: "Relation",
           uncle: "ລຸງ",
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
-          title: "ເພດໃນເວລາເກີດ",
           female: "ຍິງ",
           male: "ຜູ້​ຊາຍ",
+          title: "ເພດໃນເວລາເກີດ",
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        title: "ເລືອກພາສາ",
         inEnglish: "Lao",
+        title: "ເລືອກພາສາ",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "ການຂະຫຍາຍຕົວ",
@@ -2567,20 +3674,94 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "ອະນຸສັນຍາສໍາລັບການຕອບກັບແລະການປະເມີນຄົນເຈັບຊັບ, ຄວາມສ່ຽງ, ແລະປະສົບການ [PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          chooseNotToAnswer: "ຂ້າພະເຈົ້າເລືອກທີ່ຈະບໍ່ຕອບຄໍາຖາມນີ້",
+          no: "No",
+          yes: "Yes",
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing:
+                "ຂ້າພະເຈົ້າບໍ່ມີທີ່ຢູ່ອາໄສ (ພັກກັບຄົນອື່ນ, ໃນໂຮງແຮມ, ໃນທີ່ພັກອາໄສ, ອາໄສຢູ່ນອກກ່ຽວກັບຖະຫນົນຫົນທາງ, ສຸດຫາດຊາຍໃນລົດ, ຫຼືຢູ່ໃນ park ໄດ້)",
+            iHaveHousing: "ຂ້າພະເຈົ້າມີທີ່ຢູ່ອາໄສ",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "ຫນ້ອຍ​ຫນຶ່ງ",
+            notAtAll: "ບໍ່​ແມ່ນ​ທັງ​ຫມົດ",
+            quiteABit: "ທີ່ຂ້ອນຂ້າງນ້ອຍ",
+            somewhat: "ຫລາຍສົມຄວນ",
+            veryMuch: "ຫລາຍໆ",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "5 ຫຼືຫຼາຍກວ່າເວລາອາທິດ",
+            lessThanOnceAWeek: "ຫນ້ອຍກ່ວາຄັ້ງຕໍ່ອາທິດ",
+            oneOrTwoTimesAWeek: "1 ຫຼື 2 ຄັ້ງຕໍ່ອາທິດ",
+            threeToFiveTimesAWeek: "3 ຫາ 5 ເທື່ອຕໍ່ອາທິດ",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "CHIP Medicaid",
+            medicaid: "Medicaid",
+            medicare: "Medicare",
+            noneOrUninsured: "ບໍ່ມີ / ປະກັນໄພ",
+            otherPublicInsuranceChip: "ການປະກັນໄພສາທາລະນະອື່ນ ໆ (ຊິບ)",
+            otherPublicInsuranceNotChip: "ການປະກັນໄພສາທາລະນະອື່ນ ໆ (ບໍ່ຊິບ)",
+            privateInsurance: "ການປະກັນໄພເອກະຊົນ",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "ພາສາອັງກິດ",
+            languageOtherThanEnglish: "ພາສາອື່ນທີ່ບໍ່ແມ່ນພາສາອັງກິດ",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "ອາເມລິກາອິນເດຍ / ອະແລສະກາພື້ນເມືອງ",
+            asian: "Asian",
+            blackAfricanAmerican: "ສີດໍາ / ອາຟຣິກາອາເມລິກາ",
+            nativeHawaiian: "ຮາວາຍພື້ນເມືອງ",
+            other: "ອື່ນ ໆ",
+            pacificIslander: "ເກາະປາຊີຟິກ",
+            white: "ສີຂາວ",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "ໃບປະກາດຈົບ High ຫຼື GED",
+            lessThanHighSchoolDegree: "ຫນ້ອຍກ່ວາລະດັບໂຮງຮຽນສູງ",
+            moreThanHighSchool: "ຫຼາຍກ່ວາໂຮງຮຽນສູງ",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            yesKeptFromMedical:
+                "ແມ່ນແລ້ວ, ມັນໄດ້ເກັບຮັກສາໄວ້ໃຫ້ຂ້າພະເຈົ້າຈາກກວດສຸຂະພາບຫລືຈາກການໄດ້ຮັບຢາປິ່ນປົວຂອງຂ້າພະເຈົ້າ",
+            yesKeptFromNonMedical:
+                "ແມ່ນແລ້ວ, ມັນໄດ້ເກັບຮັກສາໄວ້ໃຫ້ຂ້າພະເຈົ້າຈາກທີ່ບໍ່ແມ່ນທາງການແພດກອງປະຊຸມ, ນັດຫມາຍ, ການເຮັດວຽກ, ຫຼືຈາກການໄດ້ຮັບສິ່ງທີ່ຂ້າພະເຈົ້າຕ້ອງການ",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "ການດູແລເດັກນ້ອຍ",
+            clothing: "ເສື້ອຜ້າ",
+            food: "ອາຫານ",
+            medicineOrAnyHealthCare:
+                "ຢາປົວພະຍາດຫຼືທຸກການດູແລສຸຂະພາບ (ສຸຂະພາບ, ທັນຕະກໍາ, ສຸຂະພາບຈິດ, ວິໄສທັດ)",
+            other: "ອື່ນ ໆ",
+            phone: "ໂທລະສັບ",
+            utilities: "ລະນູປະໂພກ",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "ການເຮັດວຽກເຕັມເວລາ",
+            otherwiseUnemployedButNotSeekingWork:
+                "ຖ້າບໍ່ດັ່ງນັ້ນການຫວ່າງງານແຕ່ບໍ່ໄດ້ຊອກຫາການເຮັດວຽກ (ex: ນັກສຶກສາ, ບໍານານ, ຄົນພິການ, ການດູແລປະຖົມບໍ່ທັນໄດ້ຈ່າຍຜູ້ມອບ)",
+            partTimeOrTemporaryWork: "ສ່ວນທີ່ໃຊ້ເວລາຫຼືການເຮັດວຽກຊົ່ວຄາວ",
+            unemployed: "Unemployed",
+          ),
+        ),
         familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
-          title: "ຄອບຄົວແລະບ້ານ",
           address: "ທ່ານຢູ່ແນວໃດດໍາລົງຊີວິດຢູ່?",
           household:
               "ວິທີການຫຼາຍສະມາຊິກໃນຄອບຄົວ, ລວມທັງຕົວທ່ານເອງ, ເຮັດແນວໃດທ່ານປະຈຸບັນດໍາລົງຊີວິດທີ່ມີ?",
           housing: "ແມ່ນຫຍັງສະຖານະການທີ່ຢູ່ອາໄສຂອງທ່ານໃນມື້ນີ້?",
           losingHousing: "ທ່ານກໍາລັງກັງວົນກ່ຽວກັບການສູນເສຍທີ່ຢູ່ອາໄສຂອງທ່ານ?",
+          title: "ຄອບຄົວແລະບ້ານ",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
-          title: "ເງິນແລະຊັບພະຍາກອນ",
           income:
               "ໃນລະຫວ່າງປີທີ່ຜ່ານມາ, ສິ່ງທີ່ເປັນລາຍຮັບລວມທັງຫມົດສໍາລັບທ່ານແລະສະມາຊິກໃນຄອບຄົວທີ່ທ່ານດໍາລົງຊີວິດທີ່ມີ? ຂໍ້ມູນຂ່າວສານນີ້ຈະຊ່ວຍໃຫ້ພວກເຮົາກໍານົດຖ້າຫາກວ່າທ່ານມີສິດໄດ້ຮັບສໍາລັບຜົນປະໂຫຍດໃດໆ.",
           insurance: "ແມ່ນຫຍັງກັນຕົ້ນຕໍຂອງທ່ານ?",
           school: "ລະດັບທີ່ສູງທີ່ສຸດຂອງໂຮງຮຽນທີ່ທ່ານໄດ້ສໍາເລັດການແມ່ນຫຍັງ?",
+          title: "ເງິນແລະຊັບພະຍາກອນ",
           transportation:
               "ໄດ້ຂາດການຂົນສົ່ງເກັບຮັກສາໄວ້ຈາກທາງການແພດນັດຫມາຍ, ກອງປະຊຸມ, ການເຮັດວຽກ, ຫຼືຈາກການໄດ້ຮັບສິ່ງທີ່ຈໍາເປັນສໍາລັບດໍາລົງຊີວິດປະຈໍາວັນ?",
           without:
@@ -2588,7 +3769,6 @@ class AppLocalizations {
           work: "ສະຖານະການເຮັດວຽກໃນປະຈຸບັນຂອງທ່ານແມ່ນຫຍັງ?",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
-          title: "ມາດຕະການທາງເລືອກ",
           afraid:
               "ໃນປີທີ່ຜ່ານມາ, ທ່ານໄດ້ຢ້ານກົວຂອງຄູ່ຮ່ວມງານຫຼືຄູ່ຮ່ວມງານຂອງ ex-ຂອງທ່ານ?",
           prison:
@@ -2596,10 +3776,10 @@ class AppLocalizations {
           refugee: "ທ່ານມີຊາວອົບພະຍົບ?",
           safe:
               "ທ່ານມີຄວາມຮູ້ສຶກທາງຮ່າງກາຍແລະອາລົມຄວາມປອດໄພບ່ອນທີ່ທ່ານດໍາລົງຊີວິດໃນປະຈຸບັນ?",
+          title: "ມາດຕະການທາງເລືອກ",
         ),
         personalCharacteristics:
             AppLocalizations_Labels_Prapare_PersonalCharacteristics(
-          title: "ລັກສະນະສ່ວນບຸກຄົນ",
           language: "ສິ່ງທີ່ພາສາທ່ານເວົ້າສະດວກສະບາຍທີ່ສຸດ?",
           latino: "ທ່ານພິຈາລະນາຕົວທ່ານເອງສະເປນ / ລາຕິນ?",
           military:
@@ -2607,14 +3787,15 @@ class AppLocalizations {
           race: "ທີ່ (s) ເຊື້ອຊາດແມ່ນທ່ານ?",
           seasonalWork:
               "ໃນຈຸດໃດຫນຶ່ງໃນໄລຍະຜ່ານມາ 2 ປີ, ມີລະດູການຫຼືການເຮັດວຽກກະສິກໍາຜູ້ອົບພະຍົບໄດ້ຄອບຄົວຂອງທ່ານຫຼືຂອງທ່ານແຫຼ່ງຕົ້ນຕໍຂອງລາຍຮັບບໍ?",
+          title: "ລັກສະນະສ່ວນບຸກຄົນ",
         ),
         socialAndEmotionalHealth:
             AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
-          title: "ເພື່ອສັງຄົມແລະສຸຂະພາບທາງດ້ານຈິດໃຈ",
           stress:
               "ຄວາມກົດດັນແມ່ນໃນເວລາທີ່ຜູ້ໃດຜູ້ຫນຶ່ງຮູ້ສຶກຕຶງຄຽດປະສາດ, ກັງວົນໃຈຫຼືບໍ່ສາມາດນອນໃນຕອນກາງຄືນເນື່ອງຈາກວ່າຈິດໃຈຂອງເຂົາເຈົ້າແມ່ນບັນຫາ. ວິທີເນັ້ນຫນັກ are you?",
           talk:
               "ທ່ານໃດມັກເບິ່ງຫຼືສົນທະນາກັບປະຊາຊົນທີ່ທ່ານບົວລະບັດໃນກ່ຽວກັບການແລະມີຄວາມຮູ້ສຶກໃກ້ຊິດກັບ (ສໍາລັບຕົວຢ່າງເຊັ່ນ: ເວົ້າກັບຫມູ່ເພື່ອນຢູ່ໃນໂທລະສັບ, ການຢ້ຽມຢາມຫມູ່ເພື່ອນຫຼືຄອບຄົວ, ການໄປໂບດຫລືສະໂມສອນກອງປະຊຸມ)?",
+          title: "ເພື່ອສັງຄົມແລະສຸຂະພາບທາງດ້ານຈິດໃຈ",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -2689,7 +3870,6 @@ class AppLocalizations {
         search: "शोधा",
         submitShare: "सबमिट करा / शेअर",
         address: AppLocalizations_Labels_General_Address(
-          title: "पत्ता",
           city: "सिटी",
           country: "देश",
           county: "तालुका",
@@ -2697,9 +3877,9 @@ class AppLocalizations {
           neighborhood: "शेजार",
           postalCode: "पिनकोड",
           state: "राज्य",
+          title: "पत्ता",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          title: "नाते",
           aunt: "काकू",
           brother: "भाऊ",
           daughter: "मुलगी",
@@ -2711,17 +3891,18 @@ class AppLocalizations {
           niece: "भाची",
           sister: "बहीण",
           son: "मुलगा",
+          title: "नाते",
           uncle: "काका",
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
-          title: "जन्म येथे लिंग",
           female: "स्त्री",
           male: "पुरुष",
+          title: "जन्म येथे लिंग",
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        title: "भाषा निवडा",
         inEnglish: "Marathi",
+        title: "भाषा निवडा",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "वाढ",
@@ -2733,19 +3914,93 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "प्रतिसाद आणि रुग्णांना 'मालमत्तेचे मुल्यांकन, प्रोटोकॉल जोखीम, आणि अनुभव [PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          chooseNotToAnswer: "मी या प्रश्नाचे उत्तर नाही नीवडा",
+          no: "नाही",
+          yes: "होय",
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing:
+                "मी गृहनिर्माण नाही (, एक हॉटेल, एक निवारा, इतरांसह राहण्याच्या, कार रस्त्यावर बाहेर राहणा एक बीच वर, किंवा पार्क मध्ये)",
+            iHaveHousing: "मी गृहनिर्माण आहे",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "थोडे",
+            notAtAll: "अजिबात नाही",
+            quiteABit: "थोडा",
+            somewhat: "काहीसे",
+            veryMuch: "खुप",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "5 किंवा अधिक वेळा आठवड्यातून",
+            lessThanOnceAWeek: "आठवड्यातून एकदा पेक्षा कमी",
+            oneOrTwoTimesAWeek: "1 किंवा 2 वेळा आठवड्यातून",
+            threeToFiveTimesAWeek: "एक आठवडा 3 ते 5 वेळा",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "चिप Medicaid",
+            medicaid: "Medicaid",
+            medicare: "वैद्यकीय",
+            noneOrUninsured: "काहीही / uninsured",
+            otherPublicInsuranceChip: "इतर सार्वजनिक विमा (चिप)",
+            otherPublicInsuranceNotChip: "इतर सार्वजनिक विमा (नाही चिप)",
+            privateInsurance: "खासगी विमा",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "इंग्रजी",
+            languageOtherThanEnglish: "इंग्रजी व्यतिरिक्त इतर भाषा",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "अमेरिकन भारतीय / Alaskan नेटिव्ह",
+            asian: "आशियाई",
+            blackAfricanAmerican: "काळा / आफ्रिकन अमेरिकन",
+            nativeHawaiian: "मूळ हवाईयन",
+            other: "इतर",
+            pacificIslander: "प्रशांत महासागराचे रहिवासी",
+            white: "व्हाइट",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "हायस्कूल डिप्लोमा किंवा GED",
+            lessThanHighSchoolDegree: "उच्च माध्यमिक शाळा पदवी पेक्षा कमी",
+            moreThanHighSchool: "माध्यमिक शाळा पेक्षा अधिक",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            yesKeptFromMedical:
+                "होय, हे वैद्यकीय भेटी किंवा माझे औषधे मिळत मला ठेवले आहे",
+            yesKeptFromNonMedical:
+                "होय, हे न वैद्यकीय सभा, भेटी, काम, किंवा गोष्टी मिळत मी आवश्यक आहे की मला ठेवले आहे",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "बाल काळजी",
+            clothing: "कपडे",
+            food: "अन्न",
+            medicineOrAnyHealthCare:
+                "औषध किंवा कोणतीही हेल्थ केअर (वैद्यकीय, दंत, मानसिक आरोग्य, दृष्टी)",
+            other: "इतर",
+            phone: "फोन",
+            utilities: "उपयुक्तता",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "पूर्ण-वेळ काम",
+            otherwiseUnemployedButNotSeekingWork:
+                "अन्यथा बेरोजगार पण काम शोधत नाही (उदा: विद्यार्थी, निवृत्त, अपंग, बाकी प्राथमिक काळजी देणारा)",
+            partTimeOrTemporaryWork: "अर्धवेळ किंवा तात्पुरती काम",
+            unemployed: "बेरोजगार",
+          ),
+        ),
         familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
-          title: "कुटुंब आणि मुख्यपृष्ठ",
           address: "आपण काय पत्त्यावर राहता?",
           household: "किती कुटुंबातील सदस्य, स्वत: ला समावेश, सध्या थेट काय?",
           housing: "आज आपल्या गृहनिर्माण परिस्थिती काय आहे?",
           losingHousing: "आपण आपल्या गृहनिर्माण तोट्याचा काळजी का करता?",
+          title: "कुटुंब आणि मुख्यपृष्ठ",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
-          title: "मनी आणि संसाधने",
           income:
               "गेल्या वर्षी दरम्यान, आपण आणि आपण जगू कुटुंबातील सदस्य एकूण एकत्रित उत्पन्न काय होते? ही माहिती आपण कोणत्याही पात्र तर आपल्याला निर्धारित करण्यात मदत करेल.",
           insurance: "आपल्या मुख्य विमा काय आहे?",
           school: "आपण पूर्ण की शाळा सर्वाधिक पातळी काय आहे?",
+          title: "मनी आणि संसाधने",
           transportation:
               "वैद्यकीय पासून वाहतूक अभाव आपण ठेवले आहे भेटी, सभा, काम, किंवा दररोज जिवंत आवश्यक गोष्टी मिळत?",
           without:
@@ -2753,31 +4008,31 @@ class AppLocalizations {
           work: "आपल्या वर्तमान काम परिस्थिती काय आहे?",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
-          title: "पर्यायी उपाय",
           afraid:
               "गेल्या वर्षी, आपण आपल्या भागीदार किंवा माजी भागीदार घाबरत आहेत?",
           prison:
               "गेल्या वर्षी, आपण कारागृह, तुरुंगात, स्थानबद्ध केंद्र, किंवा तरूण correctional सुविधा सलग 2 पेक्षा जास्त रात्री खर्च आहे?",
           refugee: "आपण निर्वासित आहे का?",
           safe: "आपण शारीरिक आणि भावनिक सुरक्षित जेथे आपण सध्या थेट वाटते का?",
+          title: "पर्यायी उपाय",
         ),
         personalCharacteristics:
             AppLocalizations_Labels_Prapare_PersonalCharacteristics(
-          title: "वैयक्तिक वैशिष्ट्ये",
           language: "आपल्याला सर्वात सोयीस्कर बोलणे, काय भाषा आहे?",
           latino: "आपण हिस्पॅनिक लॅटिनो स्वत: ला विचार नका /?",
           military: "आपण युनायटेड स्टेट्स फौजा पासून घरी सोडण्यात आले आहे?",
           race: "आपण कोणत्या शर्यत (s) आहेत?",
           seasonalWork:
               "गेल्या 2 वर्षांत कोणत्याही टप्प्यावर, आहे हंगामात किंवा स्थलांतरित शेत काम आपल्या किंवा आपल्या कुटुंबाच्या उत्पन्न मुख्य स्रोत आहे?",
+          title: "वैयक्तिक वैशिष्ट्ये",
         ),
         socialAndEmotionalHealth:
             AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
-          title: "सामाजिक आणि भावनिक आरोग्य",
           stress:
               "कोणीतरी, ताठ चिंताग्रस्त चिंता वाटते किंवा त्यांच्या मन अस्वस्थ रात्री झोपू शकला नाही तेव्हा ताण आहे. आपण कसे भर आहेत?",
           talk:
               "किती वेळा आपण किंवा आपण काळजी आणि बंद वाटत की लोक चर्चा पाहू नका (उदाहरणार्थ:,, चर्च किंवा क्लब सभा होणार फोनवर मित्र बोलत मित्र किंवा कुटुंब भेट)?",
+          title: "सामाजिक आणि भावनिक आरोग्य",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -2852,7 +4107,6 @@ class AppLocalizations {
         search: "खोज",
         submitShare: "पेश / शेयर",
         address: AppLocalizations_Labels_General_Address(
-          title: "ठेगाना",
           city: "शहर",
           country: "देश",
           county: "काउन्टी",
@@ -2860,9 +4114,9 @@ class AppLocalizations {
           neighborhood: "छिमेकी",
           postalCode: "पिन कोड",
           state: "राज्य",
+          title: "ठेगाना",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          title: "सम्बन्ध",
           aunt: "चाची",
           brother: "भाइ",
           daughter: "छोरी",
@@ -2874,17 +4128,18 @@ class AppLocalizations {
           niece: "भान्जी",
           sister: "बहिनी",
           son: "छोरा",
+          title: "सम्बन्ध",
           uncle: "मामा",
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
-          title: "जन्म मा सेक्स",
           female: "महिला",
           male: "पुरुष",
+          title: "जन्म मा सेक्स",
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        title: "भाषा चयन",
         inEnglish: "Nepali",
+        title: "भाषा चयन",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "वृद्धि",
@@ -2896,20 +4151,94 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "जवाफ र बिरामीको सम्पत्ति आकलन लागि प्रोटोकल जोखिम र अनुभवहरू [PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          chooseNotToAnswer: "यो प्रश्नको जवाफ छनौट छैन म",
+          no: "कुनै",
+          yes: "हो",
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing:
+                "म आवास छैन (अरूसँग,, रहन होटल मा एक आश्रय मा एक समुद्र तट मा सडक मा बस्ने बाहिर, एक कार, वा एक पार्क मा)",
+            iHaveHousing: "म आवास छ",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "एक सानो बिट",
+            notAtAll: "हुदै हैन",
+            quiteABit: "एकदम बिट",
+            somewhat: "केही हदसम्म",
+            veryMuch: "धेरै",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "थप 5 पटक एक हप्ताको",
+            lessThanOnceAWeek: "हप्ताको एक पटक भन्दा कम",
+            oneOrTwoTimesAWeek: "एक हप्ताको 1 वा 2 पटक",
+            threeToFiveTimesAWeek: "एक हप्ताको 3 5 पटक",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "चिप Medicaid",
+            medicaid: "Medicaid",
+            medicare: "चिकित्सा",
+            noneOrUninsured: "कुनै पनि / uninsured",
+            otherPublicInsuranceChip: "अन्य सार्वजनिक बीमा (चिप)",
+            otherPublicInsuranceNotChip: "अन्य सार्वजनिक बीमा (छैन चिप)",
+            privateInsurance: "निजी बीमा",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "अंग्रेजी",
+            languageOtherThanEnglish: "अंग्रेजी भन्दा अन्य भाषा",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "अमेरिकी भारतीय / अलास्का मूल निवासी",
+            asian: "एशियाली",
+            blackAfricanAmerican: "कालो / अफ्रिकी अमेरिकी",
+            nativeHawaiian: "देशी हवाईयन",
+            other: "अन्य",
+            pacificIslander: "प्यासिफिक आइल्यान्डर",
+            white: "सेतो",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "उच्च विद्यालय उपाधि वा GED",
+            lessThanHighSchoolDegree: "उच्च विद्यालय डिग्री भन्दा कम",
+            moreThanHighSchool: "उच्च विद्यालय भन्दा बढी",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            yesKeptFromMedical:
+                "हो, यो चिकित्सा भेटघाट देखि वा मेरो दबाइहरु रही मलाई राखिएको छ",
+            yesKeptFromNonMedical:
+                "हो, यो गैर-चिकित्सा सभा, भेटघाट, काम, वा कुराहरू प्राप्त बाट म चाहिन्छ भनेर मलाई राखिएको छ",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "बाल हेरविचार",
+            clothing: "वस्त्र",
+            food: "खाद्य",
+            medicineOrAnyHealthCare:
+                "चिकित्सा वा कुनै पनि स्वास्थ्य हेरविचार (चिकित्सा, दन्त चिकित्सा, मानसिक स्वास्थ्य, विजन)",
+            other: "अन्य",
+            phone: "फोन",
+            utilities: "उपयोगिता",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "पूर्ण-समय काम",
+            otherwiseUnemployedButNotSeekingWork:
+                "अन्यथा बेरोजगार तर काम खोज्दै छैन (पूर्व: विद्यार्थी, सेवानिवृत्त, असक्षम, बेतलबी प्राथमिक हेरविचार दिनेलाई)",
+            partTimeOrTemporaryWork: "भाग-समय वा अस्थायी काम",
+            unemployed: "बेरोजगार",
+          ),
+        ),
         familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
-          title: "परिवार र घर",
           address: "तपाईं के ठेगानामा बस्छौ?",
           household:
               "परिवार आफैलाई सहित कति सदस्यहरू, तपाईं हाल संग प्रत्यक्ष के?",
           housing: "आज आफ्नो आवास अवस्था के छ?",
           losingHousing: "तपाईं आफ्नो आवास गुमाउने चिन्तित हुनुहुन्छ?",
+          title: "परिवार र घर",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
-          title: "पैसा र संसाधन",
           income:
               "गत वर्ष समयमा, तपाईं र तपाईंसँग जीवन बिताउन परिवार सदस्यहरूको लागि कुल संयुक्त आय के थियो? यो जानकारी तपाईं कुनै पनि लाभ को लागि योग्य हुनुहुन्छ भने हामीलाई निर्धारण गर्न मद्दत गर्नेछ।",
           insurance: "आफ्नो मुख्य बीमा के हो?",
           school: "तपाईं सकियो भनेर स्कूल को उच्चतम स्तर के हो?",
+          title: "पैसा र संसाधन",
           transportation:
               "यातायातका कमी तपाईं चिकित्सा देखि राखिएको छ भेटघाट, सभा, काम, या दैनिक आवश्यक कुराहरू प्राप्त बाट?",
           without:
@@ -2917,17 +4246,16 @@ class AppLocalizations {
           work: "आफ्नो वर्तमान काम अवस्था के छ?",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
-          title: "वैकल्पिक उपाय",
           afraid: "गत वर्ष, तपाईंले आफ्नो साझेदार वा पूर्व-साझेदार डराएका छन्?",
           prison:
               "गत वर्ष, तपाईंले एक जेल, जेल, हिरासत केन्द्र, वा किशोर correctional सुविधा मा एक पंक्ति मा 2 भन्दा बढी रात बिताए छ?",
           refugee: "तपाईं शरणार्थी हुन्?",
           safe:
               "तपाईं शारीरिक र भावनात्मक सुरक्षित जहाँ तपाईं हाल प्रत्यक्ष महसुस गर्छन्?",
+          title: "वैकल्पिक उपाय",
         ),
         personalCharacteristics:
             AppLocalizations_Labels_Prapare_PersonalCharacteristics(
-          title: "व्यक्तिगत लक्षण",
           language: "तपाईं भन्दा सहज बोल्ने के भाषा हो?",
           latino: "तपाईं आफैलाई ल्याटिनो विचार गर्छन् हिस्पैनिक /?",
           military:
@@ -2935,14 +4263,15 @@ class AppLocalizations {
           race: "तपाईं कुन जाति (हरू) छन्?",
           seasonalWork:
               "मा पछिल्लो 2 वर्ष कुनै पनि विन्दुमा, सिजन वा प्रवासी खेत काम आफ्नो वा आफ्नो आय को परिवारको मुख्य स्रोत भएको छ?",
+          title: "व्यक्तिगत लक्षण",
         ),
         socialAndEmotionalHealth:
             AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
-          title: "सामाजिक र भावनात्मक स्वास्थ्य",
           stress:
               "कसैले काल स्नायु, चिन्तित महसुस वा तिनीहरूको मन परेशान किनभने राति सुत्न सक्छ जब तनाव छ। तपाईं कसरी जोड हो?",
           talk:
               "तपाईं ख्याल र बन्द गर्न महसुस कि मान्छे कुरा वा तपाईं कति देख्नुहुन्छ (उदाहरणका लागि: फोन साथीहरूको कुरा, साथी वा परिवार भ्रमण, चर्च वा क्लब बैठकहरूमा जाँदै)?",
+          title: "सामाजिक र भावनात्मक स्वास्थ्य",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -3017,7 +4346,6 @@ class AppLocalizations {
         search: "Pesquisa",
         submitShare: "Enviar / Share",
         address: AppLocalizations_Labels_General_Address(
-          title: "Endereço",
           city: "Cidade",
           country: "País",
           county: "município",
@@ -3025,9 +4353,9 @@ class AppLocalizations {
           neighborhood: "Vizinhança",
           postalCode: "Código postal",
           state: "Estado",
+          title: "Endereço",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          title: "Relação",
           aunt: "Tia",
           brother: "Irmão",
           daughter: "Filha",
@@ -3039,17 +4367,18 @@ class AppLocalizations {
           niece: "Sobrinha",
           sister: "Irmã",
           son: "Filho",
+          title: "Relação",
           uncle: "Tio",
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
-          title: "Sex at Birth",
           female: "Fêmea",
           male: "Masculino",
+          title: "Sex at Birth",
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        title: "Escolha o Seu idioma",
         inEnglish: "Portuguese",
+        title: "Escolha o Seu idioma",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "Crescimento",
@@ -3061,20 +4390,95 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "Protocolo para responder e avaliação de activos dos pacientes, riscos e Experiências [PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          chooseNotToAnswer: "Eu optar por não responder a esta pergunta",
+          no: "Não",
+          yes: "sim",
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing:
+                "Eu não têm habitação (ficar com os outros, em um hotel, em um abrigo, que vivem fora na rua, em uma praia, em um carro, ou em um parque)",
+            iHaveHousing: "Tenho habitação",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "Um pouco",
+            notAtAll: "De modo nenhum",
+            quiteABit: "Bastante",
+            somewhat: "Um pouco",
+            veryMuch: "Muitíssimo",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "5 ou mais vezes por semana",
+            lessThanOnceAWeek: "Menos de uma vez por semana",
+            oneOrTwoTimesAWeek: "1 ou 2 vezes por semana",
+            threeToFiveTimesAWeek: "3 a 5 vezes por semana",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "CHIP Medicaid",
+            medicaid: "Medicaid",
+            medicare: "Medicare",
+            noneOrUninsured: "Nenhum / segurados",
+            otherPublicInsuranceChip: "Outros seguros públicos (CHIP)",
+            otherPublicInsuranceNotChip: "Outros seguros públicos (não CHIP)",
+            privateInsurance: "Seguro privado",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "Inglês",
+            languageOtherThanEnglish: "Idioma diferente do Inglês",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative:
+                "Dos índios americanos / nativos do Alasca",
+            asian: "asiático",
+            blackAfricanAmerican: "Americano Preto / Africano",
+            nativeHawaiian: "nativo havaiano",
+            other: "De outros",
+            pacificIslander: "Ilhas do Pacífico",
+            white: "Branco",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "diploma do ensino médio ou GED",
+            lessThanHighSchoolDegree: "Menos de grau do ensino médio",
+            moreThanHighSchool: "Mais do que o ensino médio",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            yesKeptFromMedical:
+                "Sim, ele me impediu de consultas médicas ou de obter meus medicamentos",
+            yesKeptFromNonMedical:
+                "Sim, ele me impediu de não-médicos reuniões, compromissos, trabalho, ou de fazer as coisas que eu preciso",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "cuidado de crianças",
+            clothing: "Roupas",
+            food: "Comida",
+            medicineOrAnyHealthCare:
+                "Medicina ou Qualquer Saúde (Médicos, Odontológicos, Saúde Mental, Vision)",
+            other: "De outros",
+            phone: "telefone",
+            utilities: "Serviços de utilidade pública",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "Trabalho em tempo integral",
+            otherwiseUnemployedButNotSeekingWork:
+                "Caso contrário desempregados, mas não à procura de trabalho (ex: estudante, aposentado, pessoas com deficiência, doador da atenção primária não remunerado)",
+            partTimeOrTemporaryWork: "Part-time ou trabalho temporário",
+            unemployed: "desempregado",
+          ),
+        ),
         familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
-          title: "Família e Home",
           address: "Que endereço você mora em?",
           household:
               "Quantos membros da família, incluindo o próprio, fazer você atualmente ao vivo com?",
           housing: "Qual é a sua situação habitacional hoje?",
           losingHousing: "Você está preocupado em perder o seu habitação?",
+          title: "Família e Home",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
-          title: "Dinheiro e recursos",
           income:
               "Durante o ano passado, o que foi o rendimento combinado total para você e os membros da família que vivem com? Esta informação nos ajudará a determinar se você é elegível para todos os benefícios.",
           insurance: "Qual é o seu seguro principal?",
           school: "Qual é o mais alto nível de escola que tiver terminado?",
+          title: "Dinheiro e recursos",
           transportation:
               "Tem falta de transporte impediu de médica compromissos, reuniões, trabalho, ou de fazer as coisas necessárias para a vida diária?",
           without:
@@ -3082,7 +4486,6 @@ class AppLocalizations {
           work: "Qual é a sua situação de trabalho atual?",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
-          title: "Medidas opcionais",
           afraid:
               "No ano passado, você esteve com medo de seu parceiro ou ex-parceiro?",
           prison:
@@ -3090,10 +4493,10 @@ class AppLocalizations {
           refugee: "É você um refugiado?",
           safe:
               "Você se sente fisicamente e emocionalmente seguro, onde você atualmente ao vivo?",
+          title: "Medidas opcionais",
         ),
         personalCharacteristics:
             AppLocalizations_Labels_Prapare_PersonalCharacteristics(
-          title: "Características pessoais",
           language: "Que língua você está falando mais confortável?",
           latino: "Você se considera Hispânico / Latino?",
           military:
@@ -3101,14 +4504,15 @@ class AppLocalizations {
           race: "Qual (s) raça é você?",
           seasonalWork:
               "Em qualquer ponto nos últimos 2 anos, tem trabalho agrícola migrante época ou foi o seu ou a sua principal fonte de renda da família?",
+          title: "Características pessoais",
         ),
         socialAndEmotionalHealth:
             AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
-          title: "Social e Saúde Emocional",
           stress:
               "Stress é quando alguém se sente tenso, nervoso, ansioso ou não consegue dormir à noite porque sua mente está perturbado. Como forçado é você?",
           talk:
               "Quantas vezes você ver ou falar com as pessoas que se preocupam com e sentir-se perto de (Por exemplo: falando com amigos no telefone, visitar amigos ou a família, indo às reuniões da igreja ou clube)?",
+          title: "Social e Saúde Emocional",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -3183,7 +4587,6 @@ class AppLocalizations {
         search: "ਖੋਜ",
         submitShare: "ਪੇਸ਼ ਕਰੋ / share",
         address: AppLocalizations_Labels_General_Address(
-          title: "ਪਤਾ",
           city: "ਸਿਟੀ",
           country: "ਦੇਸ਼",
           county: "ਕਾ",
@@ -3191,9 +4594,9 @@ class AppLocalizations {
           neighborhood: "ਨੇਬਰਹੁੱਡ",
           postalCode: "ਡਾਕ ਕੋਡ",
           state: "ਸਟੇਟ",
+          title: "ਪਤਾ",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          title: "ਸਬੰਧ",
           aunt: "ਮਾਸੀ",
           brother: "ਭਰਾ",
           daughter: "ਧੀ",
@@ -3205,17 +4608,18 @@ class AppLocalizations {
           niece: "ਭਤੀਜੀ",
           sister: "ਭੈਣ",
           son: "ਪੁੱਤਰ",
+          title: "ਸਬੰਧ",
           uncle: "ਅੰਕਲ",
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
-          title: "ਜਨਮ ਤੇ ਲਿੰਗ",
           female: "ਔਰਤ",
           male: "ਮਰਦ",
+          title: "ਜਨਮ ਤੇ ਲਿੰਗ",
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        title: "ਭਾਸ਼ਾ ਚੁਣੋ",
         inEnglish: "Punjabi",
+        title: "ਭਾਸ਼ਾ ਚੁਣੋ",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "ਵਿਕਾਸ",
@@ -3227,20 +4631,94 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "ਦੇ ਜਵਾਬ ਅਤੇ ਮਰੀਜ਼ ਨੂੰ 'ਸੰਪਤੀ ਦਾ ਿਨਰਧਾਰਨ ਲਈ ਪਰੋਟੋਕਾਲ ਖ਼ਤਰੇ, ਅਤੇ ਅਨੁਭਵ [PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          chooseNotToAnswer: "ਮੈਨੂੰ ਇਸ ਸਵਾਲ ਦਾ ਜਵਾਬ ਨਾ",
+          no: "ਕੋਈ",
+          yes: "ਜੀ",
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing:
+                "ਮੈਨੂੰ ਹਾਊਸਿੰਗ ਦੀ ਲੋੜ ਨਹ ਹੈ (ਹੋਰ ਹੋਰ ਦੇ ਨਾਲ ਰਹਿਣ, ਇਕ ਹੋਟਲ ਵਿਚ, ਇੱਕ ਪਨਾਹ ਵਿੱਚ, ਇੱਕ ਕਾਰ ਵਿੱਚ ਗਲੀ 'ਤੇ ਬਾਹਰ ਰਹਿ, ਇੱਕ ਬੀਚ' ਤੇ,, ਜ ਇੱਕ ਪਾਰਕ ਵਿੱਚ)",
+            iHaveHousing: "ਮੈਨੂੰ ਹਾਊਸਿੰਗ ਹੈ",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "ਥੋੜਾ ਜਿਹਾ",
+            notAtAll: "ਬਿਲਕੁਲ ਨਹੀਂ",
+            quiteABit: "ਕਾਫੀ ਕੁੱਝ",
+            somewhat: "ਕੁਝ",
+            veryMuch: "ਬਹੁਤ",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "5 ਜ ਹੋਰ ਵਾਰ ਇੱਕ ਹਫ਼ਤੇ",
+            lessThanOnceAWeek: "ਇੱਕ ਵਾਰ ਇੱਕ ਹਫ਼ਤੇ ਵੱਧ ਘੱਟ",
+            oneOrTwoTimesAWeek: "1 ਜ 2 ਵਾਰ ਇੱਕ ਹਫ਼ਤੇ",
+            threeToFiveTimesAWeek: "ਇੱਕ ਹਫ਼ਤੇ 3 ਨੂੰ 5 ਵਾਰ",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "CHIP ਮੈਡੀਕੇਡ",
+            medicaid: "ਮੈਡੀਕੇਡ",
+            medicare: "ਮੈਡੀਕੇਅਰ",
+            noneOrUninsured: "ਕੋਈ / ਰਹਿਤ",
+            otherPublicInsuranceChip: "ਹੋਰ ਜਨਤਕ ਬੀਮਾ (CHIP)",
+            otherPublicInsuranceNotChip: "ਹੋਰ ਜਨਤਕ ਬੀਮਾ (ਨਾ CHIP)",
+            privateInsurance: "ਨਿਜੀ ਬੀਮਾ",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "ਅੰਗਰੇਜ਼ੀ",
+            languageOtherThanEnglish: "ਭਾਸ਼ਾ ਅੰਗਰੇਜ਼ੀ ਦੇ ਇਲਾਵਾ ਹੋਰ",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "ਅਮਰੀਕੀ ਭਾਰਤੀ / ਅਲਾਸਕਾ ਨੇਟਿਵ",
+            asian: "ਏਸ਼ੀਆਈ",
+            blackAfricanAmerican: "ਕਾਲਾ / ਅਫ਼ਰੀਕੀ ਅਮਰੀਕੀ",
+            nativeHawaiian: "ਸਵਦੇਸ਼ੀ ਹਵਾਈਅਨ",
+            other: "ਹੋਰ",
+            pacificIslander: "ਪੈਸੀਫਿਕ ਦੀਪ",
+            white: "ਵ੍ਹਾਈਟ",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "ਹਾਈ ਸਕੂਲ ਿਡਪਲੋਮਾ ਜ GED",
+            lessThanHighSchoolDegree: "ਹਾਈ ਸਕੂਲ ਡਿਗਰੀ ਘੱਟ",
+            moreThanHighSchool: "ਹਾਈ ਸਕੂਲ ਵੱਧ",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            yesKeptFromMedical:
+                "ਜੀ, ਇਸ ਨੂੰ ਮੈਨੂੰ ਡਾਕਟਰੀ ਮੁਲਾਕਾਤ ਜ ਦਵਾਈ ਪ੍ਰਾਪਤ ਕਰਨ ਤੱਕ ਰੱਖਿਆ ਗਿਆ ਹੈ",
+            yesKeptFromNonMedical:
+                "ਜੀ, ਇਸ ਨੂੰ ਮੈਨੂੰ ਗੈਰ-ਮੈਡੀਕਲ ਮੀਟਿੰਗ, ਮੁਲਾਕਾਤ, ਕੰਮ, ਜ ਕੁਝ ਪ੍ਰਾਪਤ ਕਰਨ ਤੱਕ ਹੈ, ਜੋ ਕਿ ਮੈਨੂੰ ਲੋੜ ਰੱਖਿਆ ਹੈ",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "ਬਾਲ ਦੇਖਭਾਲ",
+            clothing: "ਕੱਪੜੇ",
+            food: "ਭੋਜਨ",
+            medicineOrAnyHealthCare:
+                "ਦਵਾਈ ਜ ਕੋਈ ਵੀ ਹੈਲਥ ਕੇਅਰ (ਮੈਡੀਕਲ, ਦੰਦ, ਮਾਨਸਿਕ ਸਿਹਤ, ਵਿਜ਼ਨ)",
+            other: "ਹੋਰ",
+            phone: "ਫੋਨ",
+            utilities: "ਸਹੂਲਤ",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "ਪੂਰਾ-ਟਾਈਮ ਕੰਮ",
+            otherwiseUnemployedButNotSeekingWork:
+                "ਨਹੀ ਬੇਰੁਜ਼ਗਾਰ ਪਰ ਮੰਗ ਨੂੰ ਕੰਮ ਨਾ (ਸਾਬਕਾ: ਵਿਦਿਆਰਥੀ, ਸੇਵਾਮੁਕਤ, ਅਯੋਗ, ਅਵੇਤਨਕ ਪ੍ਰਾਇਮਰੀ ਦੇਖਭਾਲ ਦੇਣ ਵਾਲੇ)",
+            partTimeOrTemporaryWork: "ਭਾਗ-ਵਾਰ ਜ ਅਸਥਾਈ ਕੰਮ",
+            unemployed: "ਬੇਰੁਜ਼ਗਾਰ",
+          ),
+        ),
         familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
-          title: "ਪਰਿਵਾਰ ਅਤੇ ਘਰ",
           address: "ਕੀ ਪਤਾ ਨੂੰ ਤੁਹਾਡੇ 'ਤੇ ਰਹਿੰਦੇ ਹਨ?",
           household:
               "ਪਰਿਵਾਰ ਨੂੰ ਆਪਣੇ ਆਪ ਨੂੰ ਵੀ ਸ਼ਾਮਲ ਕਰਨਾ ਬਹੁਤ ਸਾਰੇ ਅੰਗ, ਹੈ, ਤੁਹਾਨੂੰ ਇਸ ਵੇਲੇ ਦੇ ਨਾਲ ਲਾਈਵ ਕਰਦੇ ਹਨ?",
           housing: "ਅੱਜ ਆਪਣੇ ਹਾਊਸਿੰਗ ਸਥਿਤੀ ਦਾ ਕੀ ਹੁੰਦਾ ਹੈ?",
           losingHousing: "ਤੁਹਾਨੂੰ ਆਪਣੇ ਹਾਊਸਿੰਗ ਗੁਆਉਣ ਬਾਰੇ ਚਿੰਤਾ ਕਰ ਰਹੇ ਹੋ?",
+          title: "ਪਰਿਵਾਰ ਅਤੇ ਘਰ",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
-          title: "ਪੈਸਾ ਅਤੇ ਵਸੀਲੇ",
           income:
               "ਪਿਛਲੇ ਸਾਲ ਦੇ ਦੌਰਾਨ, ਤੁਹਾਨੂੰ ਅਤੇ ਪਰਿਵਾਰ ਤੁਹਾਡੇ ਨਾਲ ਰਹਿਣ ਲਈ ਕੁੱਲ ਆਮਦਨ ਦਾ ਕੀ ਸੀ? ਇਹ ਜਾਣਕਾਰੀ ਸਾਡੀ ਮਦਦ ਕਰੇਗਾ ਜੇ ਤੁਹਾਨੂੰ ਇਹ ਪਤਾ ਕਿਸੇ ਵੀ ਲਾਭ ਦੇ ਲਈ ਯੋਗ ਹਨ.",
           insurance: "ਆਪਣੇ ਮੁੱਖ ਬੀਮਾ ਕੀ ਹੈ?",
           school: "ਸਕੂਲ ਦੇ ਉੱਚੇ ਪੱਧਰ ਹੈ, ਜੋ ਕਿ ਤੁਹਾਨੂੰ ਮੁਕੰਮਲ ਕਰ ਲਈ ਹੈ ਕੀ ਹੈ?",
+          title: "ਪੈਸਾ ਅਤੇ ਵਸੀਲੇ",
           transportation:
               "ਆਵਾਜਾਈ ਦੀ ਘਾਟ ਤੁਹਾਨੂੰ ਡਾਕਟਰੀ ਰੱਿਖਆ ਹੈ ਮੁਲਾਕਾਤ, ਮੀਟਿੰਗ, ਦਾ ਕੰਮ, ਜ ਰੋਜ਼ਾਨਾ ਜੀਵਨ ਦੇ ਲਈ ਦੀ ਲੋੜ ਕੁਝ ਪ੍ਰਾਪਤ ਕਰਨ ਤੱਕ?",
           without:
@@ -3248,7 +4726,6 @@ class AppLocalizations {
           work: "ਆਪਣੇ ਮੌਜੂਦਾ ਕੰਮ ਦੇ ਹਾਲਾਤ ਨੂੰ ਕੀ ਹੈ?",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
-          title: "ਅਖ਼ਤਿਆਰੀ ਕਦਮ",
           afraid:
               "ਪਿਛਲੇ ਸਾਲ ਦੇ ਵਿੱਚ, ਤੁਹਾਨੂੰ ਆਪਣੇ ਸਾਥੀ ਜ ਸਾਬਕਾ ਸਾਥੀ ਦਾ ਡਰ ਗਿਆ ਹੈ?",
           prison:
@@ -3256,24 +4733,25 @@ class AppLocalizations {
           refugee: "ਜੇਕਰ ਤੁਹਾਡੇ ਕੋਲ ਇੱਕ ਸ਼ਰਨਾਰਥੀ ਹੋ?",
           safe:
               "ਤੁਹਾਨੂੰ ਸਰੀਰਕ ਅਤੇ ਜਜ਼ਬਾਤੀ ਸੁਰੱਖਿਅਤ ਹੈ, ਜਿੱਥੇ ਤੁਹਾਨੂੰ ਇਸ ਵੇਲੇ ਲਾਈਵ ਮਹਿਸੂਸ ਕਰਦੇ ਹੋ?",
+          title: "ਅਖ਼ਤਿਆਰੀ ਕਦਮ",
         ),
         personalCharacteristics:
             AppLocalizations_Labels_Prapare_PersonalCharacteristics(
-          title: "ਨਿੱਜੀ ਅੰਗ",
           language: "ਤੁਹਾਨੂੰ ਸਭ ਆਰਾਮਦਾਇਕ ਬੋਲਦੇ ਦਾ ਕੀ ਭਾਸ਼ਾ ਹੈ?",
           latino: "ਤੁਹਾਨੂੰ ਆਪਣੇ ਆਪ ਨੂੰ ਹਿਸਪੈਨਿਕ ਤੇ ਵਿਚਾਰ / ਲੈਟਿਨੋ ਹੋ?",
           military: "ਤੁਹਾਨੂੰ, ਸੰਯੁਕਤ ਰਾਜ ਅਮਰੀਕਾ ਦੇ ਫੌਜ ਤੱਕ ਛੁੱਟੀ ਕੀਤੀ ਗਈ ਹੈ?",
           race: "ਕਿਸ ਦੌੜ (ਹਵਾਈਅੱਡੇ) ਹੋ?",
           seasonalWork:
               "ਪਿਛਲੇ 2 ਸਾਲ ਵਿਚ ਕਿਸੇ ਵੀ ਮੌਕੇ 'ਤੇ, ਦੇ ਸੀਜ਼ਨ ਜ ਪਰਵਾਸੀ ਦੇ ਫਾਰਮ ਦਾ ਕੰਮ ਆਪਣੇ ਜ ਆਪਣੇ ਪਰਿਵਾਰ ਦੀ ਆਮਦਨ ਦਾ ਮੁੱਖ ਸਰੋਤ ਹੋ ਰਿਹਾ ਹੈ?",
+          title: "ਨਿੱਜੀ ਅੰਗ",
         ),
         socialAndEmotionalHealth:
             AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
-          title: "ਸਮਾਜਕ ਅਤੇ ਭਾਵਾਤਮਕ ਸਿਹਤ",
           stress:
               "ਤਣਾਅ, ਜਦ ਕਿਸੇ ਨੂੰ, ਤਣਾਅ ਘਬਰਾ, ਚਿੰਤਾ ਮਹਿਸੂਸ ਕਰਦਾ ਹੈ ਜ, ਕਿਉਕਿ ਆਪਣੇ ਮਨ ਪਰੇਸ਼ਾਨ ਹੈ ਤੇ ਰਾਤ ਨੂੰ ਸੌਣ ਨਾ ਕਰ ਸਕਦਾ ਹੈ. ਤੁਹਾਨੂੰ ਕਿਸ 'ਤੇ ਜ਼ੋਰ ਦਿੱਤਾ ਹੈ?",
           talk:
               "ਤੁਹਾਨੂੰ ਜ ਲੋਕ ਹੈ, ਜੋ ਕਿ ਤੁਹਾਨੂੰ ਇਸ ਬਾਰੇ ਪਰਵਾਹ ਹੈ ਅਤੇ ਨੇੜੇ ਮਹਿਸੂਸ ਕਰਨ ਬਾਤ ਕਰਨਾ ਅਕਸਰ ਵੇਖਦੇ ਹੋ (ਉਦਾਹਰਨ ਲਈ: ਫ਼ੋਨ 'ਤੇ ਦੋਸਤ ਨਾਲ ਗੱਲ, ਦੋਸਤ ਜ ਪਰਿਵਾਰ ਨੂੰ ਮਿਲਣ, ਚਰਚ ਜ ਕਲੱਬ ਮੀਟਿੰਗ ਕਰਨ ਜਾ ਰਹੇ)?",
+          title: "ਸਮਾਜਕ ਅਤੇ ਭਾਵਾਤਮਕ ਸਿਹਤ",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -3348,7 +4826,6 @@ class AppLocalizations {
         search: "Raadi",
         submitShare: "Gudbi / Share",
         address: AppLocalizations_Labels_General_Address(
-          title: "Address",
           city: "City",
           country: "Country",
           county: "County",
@@ -3356,9 +4833,9 @@ class AppLocalizations {
           neighborhood: "Xaafadda",
           postalCode: "boostada Code",
           state: "State",
+          title: "Address",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          title: "Xiriirka",
           aunt: "eedaday",
           brother: "Brother",
           daughter: "Gabadhay",
@@ -3370,17 +4847,18 @@ class AppLocalizations {
           niece: "walaasha",
           sister: "Sister",
           son: "Wiilka",
+          title: "Xiriirka",
           uncle: "adeer",
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
-          title: "Sex at Dhalashada",
           female: "Dheddig",
           male: "Male",
+          title: "Sex at Dhalashada",
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        title: "dooro Language",
         inEnglish: "Somali",
+        title: "dooro Language",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "Kobaca",
@@ -3392,21 +4870,96 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "Protocol Looga iyo Qiimaynta Bukaanka 'Hantida, Khatarta, iyo Waayo aragnimada [PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          chooseNotToAnswer: "Waxaan doortaan in ay ka jawaabaan su'aashan",
+          no: "No",
+          yes: "Haa",
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing:
+                "Waxaan aadan haysan guryaha (dadka kale sii joogi, in hoteel, hooyga ah, oo ku nool meel ka baxsan wadada, xeebta ah, baabuur, ama in park a)",
+            iHaveHousing: "Waxaan leeyahay guryaha",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "Xoogaa yar",
+            notAtAll: "Ma aha at dhan",
+            quiteABit: "qayb ilaa xad ah",
+            somewhat: "Waxbaa",
+            veryMuch: "Aad u badan",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "5 jeer ama ka badan toddobaadkii",
+            lessThanOnceAWeek: "In ka yar toddobaadkii hal mar",
+            oneOrTwoTimesAWeek: "1 ama 2 jeer toddobaadkii",
+            threeToFiveTimesAWeek: "3 ilaa 5 jeer toddobaadkii",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "CHIP Medicaid",
+            medicaid: "Medicaid",
+            medicare: "Medicare",
+            noneOrUninsured: "None / caymis",
+            otherPublicInsuranceChip: "caymiska dadweynaha kale (CHIP)",
+            otherPublicInsuranceNotChip:
+                "caymiska kale ee dadweynaha (ma CHIP)",
+            privateInsurance: "caymiska gaarka ah",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "English",
+            languageOtherThanEnglish: "Luqadda Ingiriisiga ahayn",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "American Indian / Alaska",
+            asian: "Asian",
+            blackAfricanAmerican: "Madow / African American",
+            nativeHawaiian: "Hawaiian Dhalad",
+            other: "kale",
+            pacificIslander: "Pacific Islander",
+            white: "White",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "shahaadada dugsiga sare ama GED",
+            lessThanHighSchoolDegree: "In ka yar shahaado dugsi sare",
+            moreThanHighSchool: "In ka badan dugsiga sare",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            yesKeptFromMedical:
+                "Haa, waxa uu iga celisay ballamaha caafimaad ama ka helitaanka daawooyinka aan",
+            yesKeptFromNonMedical:
+                "Haa, waxa uu iga celisay non-caafimaadka shirarka, ballamaha, shaqada, ama wax ka qaadan in aan u baahanahay",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "daryeelka ilmaha",
+            clothing: "dharka",
+            food: "Cuntada",
+            medicineOrAnyHealthCare:
+                "Medicine ama Care kasta Caafimaadka (Medical, ilkaha, Caafimaadka Maskaxda, Vision)",
+            other: "kale",
+            phone: "Phone",
+            utilities: "Utilities",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "shaqo waqti-buuxa",
+            otherwiseUnemployedButNotSeekingWork:
+                "Haddii shaqo la'aan laakiin shaqada aan doonaynin (ex: arday, fariistay, dadka naafada ah, waase daryeelka aasaasiga ah aan la bixin)",
+            partTimeOrTemporaryWork: "Part-time ama shaqo ku meel gaar ah",
+            unemployed: "Shaqo la'aan",
+          ),
+        ),
         familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
-          title: "Qoyska iyo Home",
           address: "Waa maxay cinwaanka ha aad ku nooshahay?",
           household:
               "Imisa xubnaha qoyska, aad adigu ku jirto, ee aad samayn hadda la nool?",
           housing: "Waa maxay xaaladda guryaha maanta?",
           losingHousing:
               "Ma waxaad ka walwalsan ah oo ku saabsan badiyay guryaha?",
+          title: "Qoyska iyo Home",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
-          title: "Money iyo Resources",
           income:
               "Intii lagu guda jiray sanadkii la soo dhaafay, waxa uu ahaa dakhliga guud ee la isu geeyey adiga iyo xubnaha qoyska ee aad la nooshahay ee? Macluumaadkan waxaa naga caawin doonaa go'aan ka gaadho haddii aad u qalanto gargaarka kasta.",
           insurance: "Waa maxay caymiska ugu weyn?",
           school: "Waa maxay heerka ugu sareeya ee aad dugsi ka dhammeeyaan?",
+          title: "Money iyo Resources",
           transportation:
               "Ayaa la'aanta gaadiid kaa celiyey inaad caafimaad ballamaha, shirarka, shaqada, ama waxyaalaha looga baahan yahay nolol maalmeedka hesho?",
           without:
@@ -3414,7 +4967,6 @@ class AppLocalizations {
           work: "Waa sidee xaaladda shaqo ee hadda?",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
-          title: "Tallaabooyinka optional",
           afraid:
               "Sanadkii la soo dhaafay, waxa aad ka cabsanayn aad isqabtaan ama lammaane hore?",
           prison:
@@ -3422,10 +4974,10 @@ class AppLocalizations {
           refugee: "aad tahay qaxooti?",
           safe:
               "Ma dareensan tahay in aad jidh ahaan iyo maskax ahaan ammaan ah meesha aad hadda ku nool?",
+          title: "Tallaabooyinka optional",
         ),
         personalCharacteristics:
             AppLocalizations_Labels_Prapare_PersonalCharacteristics(
-          title: "Astaamaha Personal",
           language: "waxaad maxay luqadda waa hadalka ugu raaxo leh?",
           latino: "Ma isleedahay waad Hispanic / Latino?",
           military:
@@ -3433,14 +4985,15 @@ class AppLocalizations {
           race: "Waa kuwee tartanka (s) aad tahay?",
           seasonalWork:
               "Halkaa marka ay marayso kasta ee 2 sano ee la soo dhaafay, ayaa xilli ciyaareedkii ama shaqo beer-galootiga ahayd ama aad isha ugu weyn ee dakhliga qoyskaaga?",
+          title: "Astaamaha Personal",
         ),
         socialAndEmotionalHealth:
             AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
-          title: "Caafimaadka iyo Bulshada Qiirada",
           stress:
               "Stress waa marka qof uu dareensan yahay mid kacsan, neerfaha, walwal ama ma seexan karo habeenkii sababtoo ah maskaxdooda waxaa la welwelay. Sidee carabka ku tahay?",
           talk:
               "Intee jeer aad aragto ama la hadal dadka aad ka naxeyso iyo dareemayaa u dhow (Tusaale: la hadalka saaxiibada on telefoonka, saaxiibada ama qoyska booqanaya, socday kaniisadda ama kooxda kulamada)?",
+          title: "Caafimaadka iyo Bulshada Qiirada",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -3515,7 +5068,6 @@ class AppLocalizations {
         search: "Tafuta",
         submitShare: "Wasilisha / Shiriki",
         address: AppLocalizations_Labels_General_Address(
-          title: "Anuani",
           city: "City",
           country: "Nchi",
           county: "Kata",
@@ -3523,9 +5075,9 @@ class AppLocalizations {
           neighborhood: "Neighborhood",
           postalCode: "Posta",
           state: "hali",
+          title: "Anuani",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          title: "uhusiano",
           aunt: "shangazi",
           brother: "ndugu",
           daughter: "Binti",
@@ -3537,17 +5089,18 @@ class AppLocalizations {
           niece: "mpwa",
           sister: "dada",
           son: "mwana",
+          title: "uhusiano",
           uncle: "Uncle",
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
-          title: "Sex katika Uzazi",
           female: "mwanamke",
           male: "Mwanaume",
+          title: "Sex katika Uzazi",
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        title: "Chagua LUGHA",
         inEnglish: "Swahili",
+        title: "Chagua LUGHA",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "ukuaji",
@@ -3559,20 +5112,94 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "Itifaki ya Akijibu na Tathmini ya Wagonjwa Mali, UN, na Uzoefu [PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          chooseNotToAnswer: "I kuchagua si kujibu swali hili",
+          no: "Hapana",
+          yes: "Ndiyo",
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing:
+                "Sina makazi (kukaa na watu wengine, katika hoteli, katika makazi, na kuishi nje mitaani, pwani, katika gari, au katika Hifadhi)",
+            iHaveHousing: "Nina nyumba",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "Kidogo",
+            notAtAll: "Hapana kabisa",
+            quiteABit: "Kimya kidogo",
+            somewhat: "Kiasi fulani",
+            veryMuch: "Sana",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "mara 5 au zaidi ya wiki",
+            lessThanOnceAWeek: "Chini ya mara moja kwa wiki",
+            oneOrTwoTimesAWeek: "1 au 2 kwa wiki",
+            threeToFiveTimesAWeek: "3 hadi 5 kwa wiki",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "CHIP matibabu",
+            medicaid: "Medicaid",
+            medicare: "Medicare",
+            noneOrUninsured: "Hakuna / uninsured",
+            otherPublicInsuranceChip: "Nyingine Bima ya umma (CHIP)",
+            otherPublicInsuranceNotChip: "Nyingine Bima ya umma (si CHIP)",
+            privateInsurance: "bima binafsi",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "english",
+            languageOtherThanEnglish: "Lugha tofauti na Kiingereza",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "American Indian / Alaskan Native",
+            asian: "Asia",
+            blackAfricanAmerican: "Nyeusi / African American",
+            nativeHawaiian: "Native Hawaiian",
+            other: "Nyingine",
+            pacificIslander: "Pacific Kisiwani",
+            white: "White",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "Shule ya sekondari ya diploma au GED",
+            lessThanHighSchoolDegree: "Chini ya kiwango cha juu shule",
+            moreThanHighSchool: "Zaidi ya shule ya sekondari",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            yesKeptFromMedical:
+                "Ndiyo, ina naendelea kutoka uteuzi wa matibabu au kutoka kupata dawa yangu",
+            yesKeptFromNonMedical:
+                "Ndiyo, ina naendelea kutoka yasiyo ya kimatibabu mikutano, uteuzi, kazi, au kutoka kupata mambo ambayo nahitaji",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "huduma ya watoto",
+            clothing: "nguo",
+            food: "chakula",
+            medicineOrAnyHealthCare:
+                "Dawa au Care yoyote Afya (Medical, meno, Afya ya Akili, Vision)",
+            other: "Nyingine",
+            phone: "simu",
+            utilities: "huduma",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "kazi ya kudumu",
+            otherwiseUnemployedButNotSeekingWork:
+                "Vinginevyo ajira lakini si kutafuta kazi (kwa mfano: mwanafunzi, wastaafu, walemavu, bila kulipwa huduma za msingi mtoaji)",
+            partTimeOrTemporaryWork: "Sehemu ya muda au kazi ya muda mfupi",
+            unemployed: "ajira",
+          ),
+        ),
         familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
-          title: "Familia na Nyumbani",
           address: "Nini mahali Unaishi katika?",
           household:
               "Wangapi familia, ikiwa ni pamoja mwenyewe, je, sasa kuishi na?",
           housing: "Ni nini nyumba yako hali leo?",
           losingHousing: "Je, wasiwasi wa kupoteza makazi yako?",
+          title: "Familia na Nyumbani",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
-          title: "Fedha na rasilimali",
           income:
               "Katika kipindi cha mwaka uliopita, yaliyokuwa jumla ya mapato pamoja kwa ajili yako na familia kuishi na? Habari hii itatusaidia kujua kama wewe ni haki kwa ajili ya faida yoyote.",
           insurance: "Ni nini bima yako kuu?",
           school: "ni ngazi ya juu ya shule hiyo ya kumaliza nini?",
+          title: "Fedha na rasilimali",
           transportation:
               "Je ukosefu wa usafiri naendelea kutoka matibabu uteuzi, mikutano, kazi, au kutoka kupata mambo zinahitajika kwa ajili ya maisha ya kila siku?",
           without:
@@ -3580,7 +5207,6 @@ class AppLocalizations {
           work: "Ni nini kazi yako ya sasa na hali?",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
-          title: "Hatua ya hiari",
           afraid:
               "Katika mwaka uliopita, umekuwa na hofu ya mpenzi wako au wa zamani wa washirika?",
           prison:
@@ -3588,24 +5214,25 @@ class AppLocalizations {
           refugee: "Je, wewe ni wakimbizi?",
           safe:
               "Unahisi kimwili na kihisia salama ambapo kwa sasa moja kwa moja?",
+          title: "Hatua ya hiari",
         ),
         personalCharacteristics:
             AppLocalizations_Labels_Prapare_PersonalCharacteristics(
-          title: "Tabia za kibinafsi",
           language: "Ni lugha gani wewe ni vizuri zaidi kuzungumza?",
           latino: "Je, wewe kufikiria mwenyewe Rico / Latino?",
           military: "Je na kuruhusiwa kutoka vikosi vya kijeshi ya Marekani?",
           race: "Ni mbio (s) ni nini?",
           seasonalWork:
               "Katika hatua yoyote katika kipindi cha miaka 2, ina msimu au wahamiaji kazi mashamba wamekuwa yako au familia chanzo kikuu cha mapato?",
+          title: "Tabia za kibinafsi",
         ),
         socialAndEmotionalHealth:
             AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
-          title: "Jamii na Afya Emotional",
           stress:
               "Stress ni wakati mtu anahisi wasiwasi, woga, wasiwasi au hawawezi kulala usiku kwa sababu mawazo yao ni wasiwasi. Jinsi kusisitiza ni wewe?",
           talk:
               "Ni mara ngapi wewe kuona au kuzungumza kwa watu unaowajali na kuhisi karibu na (Kwa mfano: kuzungumza na marafiki kwenye simu, kutembelea marafiki au familia, kuhudhuria mikutano kanisa au klabu)?",
+          title: "Jamii na Afya Emotional",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -3680,7 +5307,6 @@ class AppLocalizations {
         search: "Hanapan",
         submitShare: "Isumite / Share",
         address: AppLocalizations_Labels_General_Address(
-          title: "address",
           city: "lungsod",
           country: "bansa",
           county: "county",
@@ -3688,9 +5314,9 @@ class AppLocalizations {
           neighborhood: "lugar",
           postalCode: "Postal Code",
           state: "estado",
+          title: "address",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          title: "kaugnayan",
           aunt: "Tiya",
           brother: "kapatid na lalaki",
           daughter: "Anak na babae",
@@ -3702,17 +5328,18 @@ class AppLocalizations {
           niece: "pamangking babae",
           sister: "Ate",
           son: "anak",
+          title: "kaugnayan",
           uncle: "Tiyuhin",
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
-          title: "Sex sa Kapanganakan",
           female: "babae",
           male: "lalaki",
+          title: "Sex sa Kapanganakan",
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        title: "Piliin Ang Bahagi ng Pananalita",
         inEnglish: "Tagalog",
+        title: "Piliin Ang Bahagi ng Pananalita",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "paglaki",
@@ -3724,21 +5351,97 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "Protocol para sa Pagtugon sa at Pagtatasa Ang mga pasyente 'Asset, Panganib, at Karanasan [PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          chooseNotToAnswer: "I piliing hindi upang sagutin ang tanong na ito",
+          no: "Hindi",
+          yes: "oo",
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing:
+                "Wala akong pabahay (naglalagi sa iba, sa isang hotel, sa isang mag-ampon, nakatira sa labas sa kalye, sa isang beach, sa isang kotse, o sa isang parke)",
+            iHaveHousing: "Mayroon akong pabahay",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "Konti lang",
+            notAtAll: "Hindi talaga",
+            quiteABit: "Medyo isang bit",
+            somewhat: "medyo",
+            veryMuch: "napaka",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "5 o higit pang beses sa isang linggo",
+            lessThanOnceAWeek: "Mas mababa kaysa sa minsan sa isang linggo",
+            oneOrTwoTimesAWeek: "1 o 2 beses sa isang linggo",
+            threeToFiveTimesAWeek: "3 hanggang 5 beses sa isang linggo",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "CHIP Medicaid",
+            medicaid: "Medicaid",
+            medicare: "Medicare",
+            noneOrUninsured: "Wala / uninsured",
+            otherPublicInsuranceChip:
+                "Iba pang mga pampublikong insurance (CHIP)",
+            otherPublicInsuranceNotChip:
+                "Iba pang mga pampublikong insurance (hindi CHIP)",
+            privateInsurance: "pribadong insurance",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "Ingles",
+            languageOtherThanEnglish: "Wika maliban sa Ingles",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "American Indian / Katutubong Alaska",
+            asian: "Asyano",
+            blackAfricanAmerican: "Itim / African American",
+            nativeHawaiian: "Native Hawaiian",
+            other: "iba",
+            pacificIslander: "Pacific Islander",
+            white: "puti",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "High school diploma o GED",
+            lessThanHighSchoolDegree: "Mas mababa sa mataas na antas school",
+            moreThanHighSchool: "Higit sa high school",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            yesKeptFromMedical:
+                "Oo, ito ay pinananatiling sa akin mula sa mga medikal na appointment o mula sa pagkuha ng aking mga gamot",
+            yesKeptFromNonMedical:
+                "Oo, ito ay pinananatiling sa akin mula sa mga di-medikal na mga pulong, appointment, trabaho, o mula sa pagkuha ng mga bagay-bagay na kailangan ko",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "pangangalaga sa bata",
+            clothing: "damit",
+            food: "Pagkain",
+            medicineOrAnyHealthCare:
+                "Medicine o Anumang Health Care (Medical, Dental, Mental Health, Vision)",
+            other: "iba",
+            phone: "telepono",
+            utilities: "Mga Utility",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "Full time na trabaho",
+            otherwiseUnemployedButNotSeekingWork:
+                "Kung hindi man walang trabaho pero hindi na naghahanap ng trabaho (hal: student, retirado, may kapansanan, hindi bayad na mga pangunahing tagabigay ng pangangalaga)",
+            partTimeOrTemporaryWork: "Part-time o pansamantalang trabaho",
+            unemployed: "walang trabaho",
+          ),
+        ),
         familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
-          title: "Pamilya at Tahanan",
           address: "Anong address ang iyong tinitirhan sa?",
           household:
               "Ilang mga miyembro ng pamilya, kabilang ang iyong sarili, gawin ang ikaw ay kasalukuyang live na gamit?",
           housing: "Ano ang iyong pabahay sitwasyon ngayon?",
           losingHousing:
               "Sigurado ka nag-aalala tungkol sa pagkawala ng iyong mga pabahay?",
+          title: "Pamilya at Tahanan",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
-          title: "Pera at Resources",
           income:
               "Sa panahon ng nakalipas na taon, ano ang kabuuang pinagsamang kita para sa iyo at sa mga miyembro ng pamilya mo sa bahay? Ang impormasyon na ito ay makakatulong sa amin na matukoy kung ikaw ay karapat-dapat para sa anumang mga benepisyo.",
           insurance: "Ano ang iyong pangunahing insurance?",
           school: "Ano ang pinakamataas na antas ng paaralan na natapos mo na?",
+          title: "Pera at Resources",
           transportation:
               "Matagal kakulangan ng transportasyon naman kita sa mga medikal na appointment, pulong, trabaho, o mula sa pagkuha ng mga bagay-bagay na kailangan para sa pang araw-araw na pamumuhay?",
           without:
@@ -3746,7 +5449,6 @@ class AppLocalizations {
           work: "Ano ang iyong kasalukuyang sitwasyon sa trabaho?",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
-          title: "opsyonal Hakbang",
           afraid:
               "Sa nakalipas na taon, nakapunta ka na ba natatakot sa iyong partner o ex-partner?",
           prison:
@@ -3754,10 +5456,10 @@ class AppLocalizations {
           refugee: "Ikaw ba ay isang refugee?",
           safe:
               "Masama ba ang pakiramdam pisikal at emosyonal safe kung saan ka kasalukuyang live na?",
+          title: "opsyonal Hakbang",
         ),
         personalCharacteristics:
             AppLocalizations_Labels_Prapare_PersonalCharacteristics(
-          title: "Personal na katangian",
           language: "Anong wika ang ikaw ay pinaka-kumportable sa pagsasalita?",
           latino: "Huwag isaalang-alang mo ang iyong sarili Hispanic / Latino?",
           military:
@@ -3765,14 +5467,15 @@ class AppLocalizations {
           race: "Aling lahi (s) ka?",
           seasonalWork:
               "Sa anumang punto sa nakalipas na 2 taon, may panahon o migranteng sakahan trabaho ay ang iyong o ang iyong pangunahing pinagkukunan ng kita ng pamilya?",
+          title: "Personal na katangian",
         ),
         socialAndEmotionalHealth:
             AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
-          title: "Social at emosyonal Kalusugan",
           stress:
               "Stress ay kapag may isang taong nakakaramdam panahunan, kinakabahan, nababalisa o hindi makatulog sa gabi dahil ang kanilang mga pag-iisip ay nabagabag. Paano stressed ka?",
           talk:
               "Gaano kadalas nakikita mo o talk sa mga tao na mahalaga sa iyo at huwag mag-malapit sa (Halimbawa: pakikipag-usap sa mga kaibigan sa telepono, pagbisita sa mga kaibigan o pamilya, pagsisimba o club pulong)?",
+          title: "Social at emosyonal Kalusugan",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -3847,7 +5550,6 @@ class AppLocalizations {
         search: "ค้นหา",
         submitShare: "ส่ง / หุ้น",
         address: AppLocalizations_Labels_General_Address(
-          title: "ที่อยู่",
           city: "เมือง",
           country: "ประเทศ",
           county: "เขต",
@@ -3855,9 +5557,9 @@ class AppLocalizations {
           neighborhood: "ย่าน",
           postalCode: "รหัสไปรษณีย์",
           state: "สถานะ",
+          title: "ที่อยู่",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          title: "ความสัมพันธ์",
           aunt: "ป้า",
           brother: "พี่ชาย",
           daughter: "ลูกสาว",
@@ -3869,17 +5571,18 @@ class AppLocalizations {
           niece: "หลานสาว",
           sister: "น้องสาว",
           son: "ลูกชาย",
+          title: "ความสัมพันธ์",
           uncle: "ลุง",
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
-          title: "เพศที่เกิด",
           female: "หญิง",
           male: "ชาย",
+          title: "เพศที่เกิด",
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        title: "เลือกภาษา",
         inEnglish: "Thai",
+        title: "เลือกภาษา",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "การเจริญเติบโต",
@@ -3891,20 +5594,94 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "Protocol สำหรับการตอบสนองและการประเมินผู้ป่วยสินทรัพย์เสี่ยงและประสบการณ์ [PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          chooseNotToAnswer: "ผมเลือกที่จะไม่ตอบคำถามนี้",
+          no: "ไม่",
+          yes: "ใช่",
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing:
+                "ฉันไม่ได้มีที่อยู่อาศัย (อยู่กับคนอื่น ๆ ในโรงแรมในที่กำบังนอกอาศัยอยู่บนถนนอยู่บนชายหาดในรถหรือในสวนสาธารณะ)",
+            iHaveHousing: "ผมมีที่อยู่อาศัย",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "นิดหน่อย",
+            notAtAll: "ไม่ใช่เลย",
+            quiteABit: "ไม่น้อย",
+            somewhat: "ค่อนข้าง",
+            veryMuch: "เป็นอย่างมาก",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "หรือมากกว่า 5 ครั้งต่อสัปดาห์",
+            lessThanOnceAWeek: "น้อยกว่าสัปดาห์ละครั้ง",
+            oneOrTwoTimesAWeek: "1 หรือ 2 ครั้งต่อสัปดาห์",
+            threeToFiveTimesAWeek: "3-5 ครั้งต่อสัปดาห์",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "CHIP Medicaid",
+            medicaid: "Medicaid",
+            medicare: "เมดิแคร์",
+            noneOrUninsured: "ไม่มี / ประกันภัย",
+            otherPublicInsuranceChip: "ประกันที่สาธารณะอื่น ๆ (Chip)",
+            otherPublicInsuranceNotChip: "ประกันสาธารณะอื่น ๆ (ไม่ CHIP)",
+            privateInsurance: "ประกันภัยเอกชน",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "อังกฤษ",
+            languageOtherThanEnglish: "ภาษาอื่นที่ไม่ใช่ภาษาอังกฤษ",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "อเมริกันอินเดีย / อลาสก้าพื้นเมือง",
+            asian: "เอเชีย",
+            blackAfricanAmerican: "ดำ / แอฟริกันอเมริกัน",
+            nativeHawaiian: "พื้นเมืองฮาวาย",
+            other: "อื่น ๆ",
+            pacificIslander: "ชาวเกาะแปซิฟิก",
+            white: "ขาว",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "ประกาศนียบัตรมัธยมศึกษาตอนปลายหรือเก๊",
+            lessThanHighSchoolDegree: "น้อยกว่าระดับโรงเรียนมัธยม",
+            moreThanHighSchool: "มากกว่าโรงเรียนมัธยม",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            yesKeptFromMedical:
+                "ใช่มันได้เก็บฉันจากการนัดหมายทางการแพทย์หรือจากการได้รับยาของฉัน",
+            yesKeptFromNonMedical:
+                "ใช่มันได้เก็บฉันจากที่ไม่ใช่แพทย์การประชุมการนัดหมายที่ทำงานหรือจากการได้รับในสิ่งที่ฉันต้องการ",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "ดูแลเด็ก",
+            clothing: "เสื้อผ้า",
+            food: "อาหาร",
+            medicineOrAnyHealthCare:
+                "แพทย์หรือการดูแลสุขภาพ (แพทย์, ทันตกรรม, สุขภาพจิตวิสัยทัศน์)",
+            other: "อื่น ๆ",
+            phone: "โทรศัพท์",
+            utilities: "ยูทิลิตี้",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "ทำงานเต็มเวลา",
+            otherwiseUnemployedButNotSeekingWork:
+                "มิฉะนั้นตกงาน แต่ไม่หางานทำ (เช่น: นักเรียนเกษียณ, คนพิการ, การดูแลหลักไม่ได้ชำระเงินที่มอบให้)",
+            partTimeOrTemporaryWork: "งาน Part-time หรือทำงานชั่วคราว",
+            unemployed: "ว่างงาน",
+          ),
+        ),
         familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
-          title: "ครอบครัวและบ้าน",
           address: "คุณไม่อยู่อะไรอยู่ที่?",
           household:
               "วิธีการหลายสมาชิกในครอบครัวรวมทั้งตัวคุณที่คุณทำอยู่ในขณะมีชีวิตอยู่ด้วย?",
           housing: "อะไรคือสถานการณ์ที่อยู่อาศัยของคุณวันนี้?",
           losingHousing: "คุณกังวลเกี่ยวกับการสูญเสียที่อยู่อาศัยของคุณหรือไม่",
+          title: "ครอบครัวและบ้าน",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
-          title: "เงินและทรัพยากร",
           income:
               "ในช่วงปีที่ผ่านมาสิ่งที่เป็นรายได้รวมทั้งหมดสำหรับคุณและสมาชิกในครอบครัวที่คุณอาศัยอยู่ด้วย? ข้อมูลนี้จะช่วยให้เราตรวจสอบว่าคุณมีสิทธิ์ได้รับผลประโยชน์ใด ๆ",
           insurance: "อะไรคือการประกันหลักของคุณหรือไม่",
           school: "ระดับสูงสุดของโรงเรียนที่คุณได้เสร็จสิ้นคืออะไร?",
+          title: "เงินและทรัพยากร",
           transportation:
               "ได้ขาดการขนส่งทำให้คุณจากทางการแพทย์นัดหมายการประชุมที่ทำงานหรือจากการได้รับในสิ่งที่จำเป็นสำหรับการดำรงชีวิตประจำวัน?",
           without:
@@ -3912,7 +5689,6 @@ class AppLocalizations {
           work: "สถานการณ์การทำงานในปัจจุบันของคุณคืออะไร?",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
-          title: "มาตรการที่เป็นตัวเลือก",
           afraid:
               "ในปีที่ผ่านมาที่คุณได้รับกลัวพันธมิตรหรืออดีตพันธมิตรของคุณหรือไม่",
           prison:
@@ -3920,24 +5696,25 @@ class AppLocalizations {
           refugee: "คุณเป็นผู้ลี้ภัยหรือไม่?",
           safe:
               "คุณรู้สึกทางร่างกายและอารมณ์ความปลอดภัยที่คุณอาศัยอยู่ในปัจจุบัน?",
+          title: "มาตรการที่เป็นตัวเลือก",
         ),
         personalCharacteristics:
             AppLocalizations_Labels_Prapare_PersonalCharacteristics(
-          title: "ลักษณะส่วนบุคคล",
           language: "ภาษาอะไรคุณกำลังพูดความสะดวกสบายมากที่สุด?",
           latino: "คุณพิจารณาตัวเอง / สเปนละติน?",
           military: "คุณได้รับการออกจากกองกำลังติดอาวุธของสหรัฐอเมริกา?",
           race: "ซึ่ง (s) การแข่งขัน are you?",
           seasonalWork:
               "ณ จุดใด ๆ ในอดีตที่ผ่านมา 2 ปีมีฤดูกาลหรือการทำงานในฟาร์มข้ามชาติได้ของคนในครอบครัวของคุณหรือคุณแหล่งที่มาของรายได้?",
+          title: "ลักษณะส่วนบุคคล",
         ),
         socialAndEmotionalHealth:
             AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
-          title: "สังคมและสุขภาพทางอารมณ์",
           stress:
               "ความเครียดคือเมื่อมีคนรู้สึกเครียดประสาทกังวลหรือไม่สามารถนอนในเวลากลางคืนเพราะใจของพวกเขาเป็นทุกข์ วิธีเน้น are you?",
           talk:
               "อย่างไรคุณมักจะเห็นหรือพูดคุยกับคนที่คุณสนใจและรู้สึกใกล้ชิดกับ (ตัวอย่างเช่นการพูดคุยกับเพื่อน ๆ ในโทรศัพท์ไปเยี่ยมเพื่อนหรือสมาชิกในครอบครัวจะไปโบสถ์หรือชมรมการประชุม)?",
+          title: "สังคมและสุขภาพทางอารมณ์",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -4012,7 +5789,6 @@ class AppLocalizations {
         search: "Qidirmoq",
         submitShare: "Submit / Share",
         address: AppLocalizations_Labels_General_Address(
-          title: "manzil",
           city: "shahar",
           country: "mamlakat",
           county: "County",
@@ -4020,9 +5796,9 @@ class AppLocalizations {
           neighborhood: "Turar joy dahasi",
           postalCode: "Pochta Indeksi",
           state: "Davlat",
+          title: "manzil",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          title: "qarindosh",
           aunt: "amma",
           brother: "aka",
           daughter: "qiz",
@@ -4034,17 +5810,18 @@ class AppLocalizations {
           niece: "jiyan",
           sister: "singil",
           son: "o'g'il",
+          title: "qarindosh",
           uncle: "Tog'a",
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
-          title: "Tug'ilgan da jinsi",
           female: "ayol",
           male: "erkak",
+          title: "Tug'ilgan da jinsi",
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        title: "Tilni tanlang",
         inEnglish: "Uzbek",
+        title: "Tilni tanlang",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "o'sish",
@@ -4056,20 +5833,94 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title:
             ", Javob berish va bemor aktivlari baholash uchun Protokol tavakkalchiliklarni, va tajriba [PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          chooseNotToAnswer: "Men bu savolga javob berish emas, balki tanlang",
+          no: "yo'q",
+          yes: "ha",
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing:
+                "Men uy-joy bor (bir boshpana ham, bir mehmonxonada, boshqalar bilan qolaman bir mashinada, bir sohil, ko'chada tashqarida yashayotgan, yoki bog'da) emas",
+            iHaveHousing: "Men uy-joy bor",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "Ozgina",
+            notAtAll: "Arzimaydi",
+            quiteABit: "Bir oz",
+            somewhat: "biroz",
+            veryMuch: "Juda",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "5 yoki ko'proq marta, bir hafta",
+            lessThanOnceAWeek: "Haftasiga bir marta ortiq kamroq",
+            oneOrTwoTimesAWeek: "1 yoki 2 marta, bir hafta",
+            threeToFiveTimesAWeek: "3 5 marta, bir hafta",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "uz Medicaid",
+            medicaid: "Tibbiy",
+            medicare: "Medicare",
+            noneOrUninsured: "Hech / sug'urta qilinmagan",
+            otherPublicInsuranceChip: "Boshqa davlat sug'urta (jip)",
+            otherPublicInsuranceNotChip: "Boshqa davlat sug'urta (emas jip)",
+            privateInsurance: "xususiy sug'urta",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "Ingliz tili",
+            languageOtherThanEnglish: "Ingliz tilidan boshqa til",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "American India / Alaska Mahalliy",
+            asian: "Osiyolik",
+            blackAfricanAmerican: "Qora / Afrika Amerika",
+            nativeHawaiian: "Native Gavayi",
+            other: "boshqa",
+            pacificIslander: "Tinch okeani orollarida",
+            white: "oq rang",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "Oliy maktab diplom yoki GED",
+            lessThanHighSchoolDegree: "o'rta darajada kamroq",
+            moreThanHighSchool: "Maktabni ko'proq",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            yesKeptFromMedical:
+                "Ha, u tibbiy tayinlash yoki mening dori olish meni saqlar",
+            yesKeptFromNonMedical:
+                "Ha, u non-tibbiy uchrashuvlar, randevular, ish, yoki narsalarni olish men kerak, deb meni saqlar",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "bola parvarishi",
+            clothing: "kiyim",
+            food: "Ovqat",
+            medicineOrAnyHealthCare:
+                "Tibbiyot yoki har qanday Sog'liqni saqlash (tibbiy, stomatologik, ruhiy salomatligi, Vision)",
+            other: "boshqa",
+            phone: "Telefon",
+            utilities: "Utilities",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "To'liq ish kuni",
+            otherwiseUnemployedButNotSeekingWork:
+                "Aks holda ishsiz, ammo ish qiluvchi emas (ex: talaba, nafaqaga chiqqan, nogiron, to'lanmagan birlamchi saqlash beradigan)",
+            partTimeOrTemporaryWork: "Vaqtinchalik yoki vaqtinchalik ish",
+            unemployed: "ishsiz",
+          ),
+        ),
         familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
-          title: "Oila va uy",
           address: "Qanday manzili da yashaydi?",
           household:
               "O'zingiz shu jumladan qancha oila a'zolari, bilan ayni paytda jonli sizga nima?",
           housing: "Sizning uy-joy vaziyat bugun nima?",
           losingHousing: "Agar uy-joy yo'qotib haqida tashvishli?",
+          title: "Oila va uy",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
-          title: "Pul va manbalar",
           income:
               "O'tgan yil mobaynida siz va siz bilan birga yashayotgan oila a'zolari uchun umumiy kombinatsiyalangan daromad nima edi? Bu ma'lumotlar sizga har qanday foyda uchun ma'qul bo'lsa, bizga aniqlashga yordam beradi.",
           insurance: "Sizning asosiy sug'urta nima?",
           school: "Agar tugagan deb maktab eng yuqori darajasi nima?",
+          title: "Pul va manbalar",
           transportation:
               "transport yo'qligi tibbiy dan saqlab kelgan randevular, uchrashuvlar, ish, yoki kundalik hayot uchun zarur bo'lgan narsalarni olish?",
           without:
@@ -4077,30 +5928,30 @@ class AppLocalizations {
           work: "joriy ish vaziyat qanday?",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
-          title: "ixtiyoriy chora-tadbirlar",
           afraid: "O'tgan yili, siz hamkor yoki sobiq hamkori qo'rqib edi?",
           prison:
               "O'tgan yili, siz qamoqqa, qamoqda, tergov izolyatoriga, yoki voyaga etmagan tuzatish muassasasida ketma-ket ortiq 2-kecha o'tkazdim bor?",
           refugee: "Agar bir boshpana?",
           safe: "jismonan va qaerda Siz jonli hissiy xavfsiz his qilasizmi?",
+          title: "ixtiyoriy chora-tadbirlar",
         ),
         personalCharacteristics:
             AppLocalizations_Labels_Prapare_PersonalCharacteristics(
-          title: "shaxsiy xususiyatlari",
           language: "Agar eng qulay nutq qaysi tilda bo'ladi?",
           latino: "Agar lotin / Hispanik o'zingiz ko'rib turasizmi?",
           military: "Qo'shma Shtatlar qurolli kuchlari zaryadsizlanishi bormi?",
           race: "Qaysi poyga (lar) bor?",
           seasonalWork:
               "O'tgan 2 yil ichida har qanday nuqtada, mavsumda yoki migrant xo'jalik ish daromad Sizning yoki Siz va oilasining asosiy manbai bo'ldi?",
+          title: "shaxsiy xususiyatlari",
         ),
         socialAndEmotionalHealth:
             AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
-          title: "Ijtimoiy va hissiy Sog'liqni saqlash",
           stress:
               "Kimdir, tarang, asabiy, bezovta his yoki ularning dahshatga chunki tunda uyqu olmaydi qachon Stress hisoblanadi. Qanday ta'kidladi bor?",
           talk:
               "Qanday tez-tez haqida g'amxo'rlik va yaqin his odamlar bilan gaplashish yoki ko'rasanmi (Masalan:, do'stlar yoki oila ziyorat, telefon o'rtoq gapirganda, cherkov yoki klub uchrashuvlar ketadi)?",
+          title: "Ijtimoiy va hissiy Sog'liqni saqlash",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -4175,7 +6026,6 @@ class AppLocalizations {
         search: "Tìm kiếm",
         submitShare: "Gửi / Chia sẻ",
         address: AppLocalizations_Labels_General_Address(
-          title: "Địa chỉ",
           city: "thành phố",
           country: "Quốc gia",
           county: "quận",
@@ -4183,9 +6033,9 @@ class AppLocalizations {
           neighborhood: "Khu vực lân cận",
           postalCode: "Mã bưu điện",
           state: "Tiểu bang",
+          title: "Địa chỉ",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          title: "Quan hệ",
           aunt: "Cô",
           brother: "Anh trai",
           daughter: "Con gái",
@@ -4197,17 +6047,18 @@ class AppLocalizations {
           niece: "cháu gái",
           sister: "Em gái",
           son: "Con trai",
+          title: "Quan hệ",
           uncle: "Chú",
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
-          title: "Số giới tính khi sinh",
           female: "Giống cái",
           male: "Nam giới",
+          title: "Số giới tính khi sinh",
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        title: "Select language",
         inEnglish: "Vietnamese",
+        title: "Select language",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "sự phát triển",
@@ -4219,20 +6070,94 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "Nghị định thư cho Hưởng ứng và Đánh giá tài sản Bệnh nhân, rủi ro, và kinh nghiệm [PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          chooseNotToAnswer: "Tôi chọn không trả lời câu hỏi này",
+          no: "Không",
+          yes: "Đúng",
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing:
+                "Tôi không có nhà ở (ở với người khác, trong một khách sạn, ở một nơi trú ẩn, ngoài sống trên đường phố, trên một bãi biển, trong một chiếc xe, hoặc trong công viên)",
+            iHaveHousing: "Tôi có nhà ở",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "Một chút",
+            notAtAll: "Không có gì",
+            quiteABit: "Khá một chút",
+            somewhat: "hơi",
+            veryMuch: "Rất nhiều",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "5 hoặc nhiều lần một tuần",
+            lessThanOnceAWeek: "Ít hơn một lần một tuần",
+            oneOrTwoTimesAWeek: "1 hoặc 2 lần một tuần",
+            threeToFiveTimesAWeek: "3-5 lần một tuần",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "CHIP Medicaid",
+            medicaid: "Medicaid",
+            medicare: "Medicare",
+            noneOrUninsured: "Không / không có bảo hiểm",
+            otherPublicInsuranceChip: "bảo hiểm công cộng khác (CHIP)",
+            otherPublicInsuranceNotChip: "bảo hiểm công cộng khác (không CHIP)",
+            privateInsurance: "Bảo hiểm tư nhân",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "Tiếng Anh",
+            languageOtherThanEnglish: "Ngôn ngữ khác ngoài tiếng Anh",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "Mỹ Da Đỏ / Thổ Dân Alaska",
+            asian: "Châu Á",
+            blackAfricanAmerican: "Đen Mỹ / châu Phi",
+            nativeHawaiian: "Hawaii bản địa",
+            other: "khác",
+            pacificIslander: "Thái Bình Dương",
+            white: "trắng",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "bằng tốt nghiệp trung học hoặc GED",
+            lessThanHighSchoolDegree: "Ít hơn mức độ trung học",
+            moreThanHighSchool: "Hơn trung học",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            yesKeptFromMedical:
+                "Vâng, nó đã giữ tôi từ các cuộc hẹn y tế hoặc từ nhận thuốc của tôi",
+            yesKeptFromNonMedical:
+                "Vâng, nó đã giữ tôi từ phi y tế các cuộc họp, các cuộc hẹn, công việc, hoặc từ nhận được những điều mà tôi cần",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "Chăm sóc trẻ em",
+            clothing: "quần áo",
+            food: "Món ăn",
+            medicineOrAnyHealthCare:
+                "Y hoặc Bất kỳ chăm sóc sức khỏe (y tế, nha khoa, Sức khỏe Tâm thần, Vision)",
+            other: "khác",
+            phone: "Điện thoại",
+            utilities: "Tiện ích",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "Công việc toàn thời gian",
+            otherwiseUnemployedButNotSeekingWork:
+                "Nếu không thất nghiệp nhưng không tìm kiếm công việc (ví dụ: sinh viên, nghỉ hưu, người khuyết tật, chăm sóc ban đầu chưa thanh toán giver)",
+            partTimeOrTemporaryWork: "Bán thời gian hoặc làm việc tạm thời",
+            unemployed: "người thất nghiệp",
+          ),
+        ),
         familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
-          title: "Gia đình và Trang chủ",
           address: "địa chỉ làm những gì bạn sống ở?",
           household:
               "Có bao nhiêu người trong gia đình, kể cả bạn, làm bạn hiện đang sống với ai?",
           housing: "tình hình nhà ở của bạn là gì hôm nay?",
           losingHousing: "Bạn đang lo lắng về việc mất nhà ở của bạn?",
+          title: "Gia đình và Trang chủ",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
-          title: "Tiền và Tài nguyên",
           income:
               "Trong năm qua, tổng thu nhập kết hợp cho bạn và các thành viên gia đình bạn sống với là gì? Những thông tin này sẽ giúp chúng ta xác định xem bạn có đủ điều kiện cho bất kỳ lợi ích.",
           insurance: "bảo hiểm chính của bạn là gì?",
           school: "mức cao nhất của trường mà bạn đã hoàn thành là gì?",
+          title: "Tiền và Tài nguyên",
           transportation:
               "Đã thiếu vận chuyển giữ bạn từ y tế các cuộc hẹn, các cuộc họp, làm việc, hoặc từ nhận được những điều cần thiết cho cuộc sống hàng ngày?",
           without:
@@ -4240,31 +6165,31 @@ class AppLocalizations {
           work: "tình hình công việc hiện tại của bạn là gì?",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
-          title: "Các biện pháp bắt buộc",
           afraid: "Trong năm qua, Anh đã sợ đối tác của bạn hoặc cựu đối tác?",
           prison:
               "Trong năm qua, có bạn đã trải qua hơn 2 đêm liên tiếp trong một nhà tù, nhà tù, trại giam, hoặc cơ sở cải huấn thiếu niên?",
           refugee: "Bạn có phải là người tị nạn?",
           safe:
               "Bạn có cảm thấy chất lẫn tinh thần an toàn, nơi bạn đang sống?",
+          title: "Các biện pháp bắt buộc",
         ),
         personalCharacteristics:
             AppLocalizations_Labels_Prapare_PersonalCharacteristics(
-          title: "Tính cách con người",
           language: "Ngôn ngữ nào bạn đang nói thoải mái nhất?",
           latino: "Bạn có cho rằng mình Hispanic / Latino?",
           military: "bạn đã được thải ra từ các lực lượng vũ trang của Hoa Kỳ?",
           race: "Mà (s) đua are you?",
           seasonalWork:
               "Tại bất kỳ thời điểm nào trong 2 năm trở lại đây, có mùa hoặc công việc đồng áng nhập cư bị của bạn hoặc bạn nguồn chính của gia đình thu nhập?",
+          title: "Tính cách con người",
         ),
         socialAndEmotionalHealth:
             AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
-          title: "Xã hội và sức khỏe cảm xúc",
           stress:
               "Sự căng thẳng là khi ai đó cảm thấy căng thẳng, hồi hộp, lo lắng hoặc không thể ngủ vào ban đêm vì tâm trí của họ đang gặp rắc rối. Làm thế nào nhấn mạnh là bạn?",
           talk:
               "Bao lâu thì bạn nhìn thấy hoặc nói chuyện với những người mà bạn quan tâm và cảm thấy gần gũi đến (Ví dụ: nói chuyện với bạn bè trên điện thoại, thăm bạn bè hoặc gia đình, đi đến các cuộc họp nhà thờ hoặc câu lạc bộ)?",
+          title: "Xã hội và sức khỏe cảm xúc",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -4516,16 +6441,14 @@ class AppLocalizations_Labels_Dates {
 
 class AppLocalizations_Labels_General_Address {
   const AppLocalizations_Labels_General_Address(
-      {this.title,
-      this.city,
+      {this.city,
       this.country,
       this.county,
       this.district,
       this.neighborhood,
       this.postalCode,
-      this.state});
-
-  final String title;
+      this.state,
+      this.title});
 
   final String city;
 
@@ -4541,10 +6464,10 @@ class AppLocalizations_Labels_General_Address {
 
   final String state;
 
+  final String title;
+
   String getByKey(String key) {
     switch (key) {
-      case 'title':
-        return title;
       case 'city':
         return city;
       case 'country':
@@ -4559,6 +6482,8 @@ class AppLocalizations_Labels_General_Address {
         return postalCode;
       case 'state':
         return state;
+      case 'title':
+        return title;
       default:
         return '';
     }
@@ -4567,8 +6492,7 @@ class AppLocalizations_Labels_General_Address {
 
 class AppLocalizations_Labels_General_Relation {
   const AppLocalizations_Labels_General_Relation(
-      {this.title,
-      this.aunt,
+      {this.aunt,
       this.brother,
       this.daughter,
       this.father,
@@ -4579,9 +6503,8 @@ class AppLocalizations_Labels_General_Relation {
       this.niece,
       this.sister,
       this.son,
+      this.title,
       this.uncle});
-
-  final String title;
 
   final String aunt;
 
@@ -4605,12 +6528,12 @@ class AppLocalizations_Labels_General_Relation {
 
   final String son;
 
+  final String title;
+
   final String uncle;
 
   String getByKey(String key) {
     switch (key) {
-      case 'title':
-        return title;
       case 'aunt':
         return aunt;
       case 'brother':
@@ -4633,6 +6556,8 @@ class AppLocalizations_Labels_General_Relation {
         return sister;
       case 'son':
         return son;
+      case 'title':
+        return title;
       case 'uncle':
         return uncle;
       default:
@@ -4643,22 +6568,22 @@ class AppLocalizations_Labels_General_Relation {
 
 class AppLocalizations_Labels_General_SexAtBirth {
   const AppLocalizations_Labels_General_SexAtBirth(
-      {this.title, this.female, this.male});
-
-  final String title;
+      {this.female, this.male, this.title});
 
   final String female;
 
   final String male;
 
+  final String title;
+
   String getByKey(String key) {
     switch (key) {
-      case 'title':
-        return title;
       case 'female':
         return female;
       case 'male':
         return male;
+      case 'title':
+        return title;
       default:
         return '';
     }
@@ -4741,18 +6666,18 @@ class AppLocalizations_Labels_General {
 }
 
 class AppLocalizations_Labels_Language {
-  const AppLocalizations_Labels_Language({this.title, this.inEnglish});
-
-  final String title;
+  const AppLocalizations_Labels_Language({this.inEnglish, this.title});
 
   final String inEnglish;
 
+  final String title;
+
   String getByKey(String key) {
     switch (key) {
-      case 'title':
-        return title;
       case 'inEnglish':
         return inEnglish;
+      case 'title':
+        return title;
       default:
         return '';
     }
@@ -4795,15 +6720,391 @@ class AppLocalizations_Labels_Medical {
   }
 }
 
+class AppLocalizations_Labels_Prapare_Answers_Housing {
+  const AppLocalizations_Labels_Prapare_Answers_Housing(
+      {this.iDoNotHaveHousing, this.iHaveHousing});
+
+  final String iDoNotHaveHousing;
+
+  final String iHaveHousing;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'iDoNotHaveHousing':
+        return iDoNotHaveHousing;
+      case 'iHaveHousing':
+        return iHaveHousing;
+      default:
+        return '';
+    }
+  }
+}
+
+class AppLocalizations_Labels_Prapare_Answers_HowMuch {
+  const AppLocalizations_Labels_Prapare_Answers_HowMuch(
+      {this.aLittleBit,
+      this.notAtAll,
+      this.quiteABit,
+      this.somewhat,
+      this.veryMuch});
+
+  final String aLittleBit;
+
+  final String notAtAll;
+
+  final String quiteABit;
+
+  final String somewhat;
+
+  final String veryMuch;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'aLittleBit':
+        return aLittleBit;
+      case 'notAtAll':
+        return notAtAll;
+      case 'quiteABit':
+        return quiteABit;
+      case 'somewhat':
+        return somewhat;
+      case 'veryMuch':
+        return veryMuch;
+      default:
+        return '';
+    }
+  }
+}
+
+class AppLocalizations_Labels_Prapare_Answers_HowOften {
+  const AppLocalizations_Labels_Prapare_Answers_HowOften(
+      {this.fiftyOrMoreTimesAWeek,
+      this.lessThanOnceAWeek,
+      this.oneOrTwoTimesAWeek,
+      this.threeToFiveTimesAWeek});
+
+  final String fiftyOrMoreTimesAWeek;
+
+  final String lessThanOnceAWeek;
+
+  final String oneOrTwoTimesAWeek;
+
+  final String threeToFiveTimesAWeek;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'fiftyOrMoreTimesAWeek':
+        return fiftyOrMoreTimesAWeek;
+      case 'lessThanOnceAWeek':
+        return lessThanOnceAWeek;
+      case 'oneOrTwoTimesAWeek':
+        return oneOrTwoTimesAWeek;
+      case 'threeToFiveTimesAWeek':
+        return threeToFiveTimesAWeek;
+      default:
+        return '';
+    }
+  }
+}
+
+class AppLocalizations_Labels_Prapare_Answers_Insurance {
+  const AppLocalizations_Labels_Prapare_Answers_Insurance(
+      {this.chipMedicaid,
+      this.medicaid,
+      this.medicare,
+      this.noneOrUninsured,
+      this.otherPublicInsuranceChip,
+      this.otherPublicInsuranceNotChip,
+      this.privateInsurance});
+
+  final String chipMedicaid;
+
+  final String medicaid;
+
+  final String medicare;
+
+  final String noneOrUninsured;
+
+  final String otherPublicInsuranceChip;
+
+  final String otherPublicInsuranceNotChip;
+
+  final String privateInsurance;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'chipMedicaid':
+        return chipMedicaid;
+      case 'medicaid':
+        return medicaid;
+      case 'medicare':
+        return medicare;
+      case 'noneOrUninsured':
+        return noneOrUninsured;
+      case 'otherPublicInsuranceChip':
+        return otherPublicInsuranceChip;
+      case 'otherPublicInsuranceNotChip':
+        return otherPublicInsuranceNotChip;
+      case 'privateInsurance':
+        return privateInsurance;
+      default:
+        return '';
+    }
+  }
+}
+
+class AppLocalizations_Labels_Prapare_Answers_Language {
+  const AppLocalizations_Labels_Prapare_Answers_Language(
+      {this.english, this.languageOtherThanEnglish});
+
+  final String english;
+
+  final String languageOtherThanEnglish;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'english':
+        return english;
+      case 'languageOtherThanEnglish':
+        return languageOtherThanEnglish;
+      default:
+        return '';
+    }
+  }
+}
+
+class AppLocalizations_Labels_Prapare_Answers_Race {
+  const AppLocalizations_Labels_Prapare_Answers_Race(
+      {this.americanIndianAlaskanNative,
+      this.asian,
+      this.blackAfricanAmerican,
+      this.nativeHawaiian,
+      this.other,
+      this.pacificIslander,
+      this.white});
+
+  final String americanIndianAlaskanNative;
+
+  final String asian;
+
+  final String blackAfricanAmerican;
+
+  final String nativeHawaiian;
+
+  final String other;
+
+  final String pacificIslander;
+
+  final String white;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'americanIndianAlaskanNative':
+        return americanIndianAlaskanNative;
+      case 'asian':
+        return asian;
+      case 'blackAfricanAmerican':
+        return blackAfricanAmerican;
+      case 'nativeHawaiian':
+        return nativeHawaiian;
+      case 'other':
+        return other;
+      case 'pacificIslander':
+        return pacificIslander;
+      case 'white':
+        return white;
+      default:
+        return '';
+    }
+  }
+}
+
+class AppLocalizations_Labels_Prapare_Answers_School {
+  const AppLocalizations_Labels_Prapare_Answers_School(
+      {this.highSchoolDiplomaOrGed,
+      this.lessThanHighSchoolDegree,
+      this.moreThanHighSchool});
+
+  final String highSchoolDiplomaOrGed;
+
+  final String lessThanHighSchoolDegree;
+
+  final String moreThanHighSchool;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'highSchoolDiplomaOrGed':
+        return highSchoolDiplomaOrGed;
+      case 'lessThanHighSchoolDegree':
+        return lessThanHighSchoolDegree;
+      case 'moreThanHighSchool':
+        return moreThanHighSchool;
+      default:
+        return '';
+    }
+  }
+}
+
+class AppLocalizations_Labels_Prapare_Answers_Transportation {
+  const AppLocalizations_Labels_Prapare_Answers_Transportation(
+      {this.yesKeptFromMedical, this.yesKeptFromNonMedical});
+
+  final String yesKeptFromMedical;
+
+  final String yesKeptFromNonMedical;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'yesKeptFromMedical':
+        return yesKeptFromMedical;
+      case 'yesKeptFromNonMedical':
+        return yesKeptFromNonMedical;
+      default:
+        return '';
+    }
+  }
+}
+
+class AppLocalizations_Labels_Prapare_Answers_Without {
+  const AppLocalizations_Labels_Prapare_Answers_Without(
+      {this.childCare,
+      this.clothing,
+      this.food,
+      this.medicineOrAnyHealthCare,
+      this.other,
+      this.phone,
+      this.utilities});
+
+  final String childCare;
+
+  final String clothing;
+
+  final String food;
+
+  final String medicineOrAnyHealthCare;
+
+  final String other;
+
+  final String phone;
+
+  final String utilities;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'childCare':
+        return childCare;
+      case 'clothing':
+        return clothing;
+      case 'food':
+        return food;
+      case 'medicineOrAnyHealthCare':
+        return medicineOrAnyHealthCare;
+      case 'other':
+        return other;
+      case 'phone':
+        return phone;
+      case 'utilities':
+        return utilities;
+      default:
+        return '';
+    }
+  }
+}
+
+class AppLocalizations_Labels_Prapare_Answers_Work {
+  const AppLocalizations_Labels_Prapare_Answers_Work(
+      {this.fullTimeWork,
+      this.otherwiseUnemployedButNotSeekingWork,
+      this.partTimeOrTemporaryWork,
+      this.unemployed});
+
+  final String fullTimeWork;
+
+  final String otherwiseUnemployedButNotSeekingWork;
+
+  final String partTimeOrTemporaryWork;
+
+  final String unemployed;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'fullTimeWork':
+        return fullTimeWork;
+      case 'otherwiseUnemployedButNotSeekingWork':
+        return otherwiseUnemployedButNotSeekingWork;
+      case 'partTimeOrTemporaryWork':
+        return partTimeOrTemporaryWork;
+      case 'unemployed':
+        return unemployed;
+      default:
+        return '';
+    }
+  }
+}
+
+class AppLocalizations_Labels_Prapare_Answers {
+  const AppLocalizations_Labels_Prapare_Answers(
+      {this.chooseNotToAnswer,
+      this.no,
+      this.yes,
+      this.housing,
+      this.howMuch,
+      this.howOften,
+      this.insurance,
+      this.language,
+      this.race,
+      this.school,
+      this.transportation,
+      this.without,
+      this.work});
+
+  final String chooseNotToAnswer;
+
+  final String no;
+
+  final String yes;
+
+  final AppLocalizations_Labels_Prapare_Answers_Housing housing;
+
+  final AppLocalizations_Labels_Prapare_Answers_HowMuch howMuch;
+
+  final AppLocalizations_Labels_Prapare_Answers_HowOften howOften;
+
+  final AppLocalizations_Labels_Prapare_Answers_Insurance insurance;
+
+  final AppLocalizations_Labels_Prapare_Answers_Language language;
+
+  final AppLocalizations_Labels_Prapare_Answers_Race race;
+
+  final AppLocalizations_Labels_Prapare_Answers_School school;
+
+  final AppLocalizations_Labels_Prapare_Answers_Transportation transportation;
+
+  final AppLocalizations_Labels_Prapare_Answers_Without without;
+
+  final AppLocalizations_Labels_Prapare_Answers_Work work;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'chooseNotToAnswer':
+        return chooseNotToAnswer;
+      case 'no':
+        return no;
+      case 'yes':
+        return yes;
+      default:
+        return '';
+    }
+  }
+}
+
 class AppLocalizations_Labels_Prapare_FamilyAndHome {
   const AppLocalizations_Labels_Prapare_FamilyAndHome(
-      {this.title,
-      this.address,
+      {this.address,
       this.household,
       this.housing,
-      this.losingHousing});
-
-  final String title;
+      this.losingHousing,
+      this.title});
 
   final String address;
 
@@ -4813,10 +7114,10 @@ class AppLocalizations_Labels_Prapare_FamilyAndHome {
 
   final String losingHousing;
 
+  final String title;
+
   String getByKey(String key) {
     switch (key) {
-      case 'title':
-        return title;
       case 'address':
         return address;
       case 'household':
@@ -4825,6 +7126,8 @@ class AppLocalizations_Labels_Prapare_FamilyAndHome {
         return housing;
       case 'losingHousing':
         return losingHousing;
+      case 'title':
+        return title;
       default:
         return '';
     }
@@ -4833,21 +7136,21 @@ class AppLocalizations_Labels_Prapare_FamilyAndHome {
 
 class AppLocalizations_Labels_Prapare_MoneyAndResources {
   const AppLocalizations_Labels_Prapare_MoneyAndResources(
-      {this.title,
-      this.income,
+      {this.income,
       this.insurance,
       this.school,
+      this.title,
       this.transportation,
       this.without,
       this.work});
-
-  final String title;
 
   final String income;
 
   final String insurance;
 
   final String school;
+
+  final String title;
 
   final String transportation;
 
@@ -4857,14 +7160,14 @@ class AppLocalizations_Labels_Prapare_MoneyAndResources {
 
   String getByKey(String key) {
     switch (key) {
-      case 'title':
-        return title;
       case 'income':
         return income;
       case 'insurance':
         return insurance;
       case 'school':
         return school;
+      case 'title':
+        return title;
       case 'transportation':
         return transportation;
       case 'without':
@@ -4879,9 +7182,7 @@ class AppLocalizations_Labels_Prapare_MoneyAndResources {
 
 class AppLocalizations_Labels_Prapare_OptionalMeasures {
   const AppLocalizations_Labels_Prapare_OptionalMeasures(
-      {this.title, this.afraid, this.prison, this.refugee, this.safe});
-
-  final String title;
+      {this.afraid, this.prison, this.refugee, this.safe, this.title});
 
   final String afraid;
 
@@ -4891,10 +7192,10 @@ class AppLocalizations_Labels_Prapare_OptionalMeasures {
 
   final String safe;
 
+  final String title;
+
   String getByKey(String key) {
     switch (key) {
-      case 'title':
-        return title;
       case 'afraid':
         return afraid;
       case 'prison':
@@ -4903,6 +7204,8 @@ class AppLocalizations_Labels_Prapare_OptionalMeasures {
         return refugee;
       case 'safe':
         return safe;
+      case 'title':
+        return title;
       default:
         return '';
     }
@@ -4911,14 +7214,12 @@ class AppLocalizations_Labels_Prapare_OptionalMeasures {
 
 class AppLocalizations_Labels_Prapare_PersonalCharacteristics {
   const AppLocalizations_Labels_Prapare_PersonalCharacteristics(
-      {this.title,
-      this.language,
+      {this.language,
       this.latino,
       this.military,
       this.race,
-      this.seasonalWork});
-
-  final String title;
+      this.seasonalWork,
+      this.title});
 
   final String language;
 
@@ -4930,10 +7231,10 @@ class AppLocalizations_Labels_Prapare_PersonalCharacteristics {
 
   final String seasonalWork;
 
+  final String title;
+
   String getByKey(String key) {
     switch (key) {
-      case 'title':
-        return title;
       case 'language':
         return language;
       case 'latino':
@@ -4944,6 +7245,8 @@ class AppLocalizations_Labels_Prapare_PersonalCharacteristics {
         return race;
       case 'seasonalWork':
         return seasonalWork;
+      case 'title':
+        return title;
       default:
         return '';
     }
@@ -4952,22 +7255,22 @@ class AppLocalizations_Labels_Prapare_PersonalCharacteristics {
 
 class AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth {
   const AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
-      {this.title, this.stress, this.talk});
-
-  final String title;
+      {this.stress, this.talk, this.title});
 
   final String stress;
 
   final String talk;
 
+  final String title;
+
   String getByKey(String key) {
     switch (key) {
-      case 'title':
-        return title;
       case 'stress':
         return stress;
       case 'talk':
         return talk;
+      case 'title':
+        return title;
       default:
         return '';
     }
@@ -4977,6 +7280,7 @@ class AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth {
 class AppLocalizations_Labels_Prapare {
   const AppLocalizations_Labels_Prapare(
       {this.title,
+      this.answers,
       this.familyAndHome,
       this.moneyAndResources,
       this.optionalMeasures,
@@ -4984,6 +7288,8 @@ class AppLocalizations_Labels_Prapare {
       this.socialAndEmotionalHealth});
 
   final String title;
+
+  final AppLocalizations_Labels_Prapare_Answers answers;
 
   final AppLocalizations_Labels_Prapare_FamilyAndHome familyAndHome;
 

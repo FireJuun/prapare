@@ -16,15 +16,15 @@ class _SettingsDialogContent extends StatelessWidget {
     //todo: extract into controller
     final List<MenuOption> themeOptions = [
       MenuOption(
-          key: "system",
-          value: labels.settings.system,
-          icon: Icons.brightness_4),
-      MenuOption(
-          key: "light",
+          key: 'light',
           value: labels.settings.light,
           icon: Icons.brightness_low),
       MenuOption(
-          key: "dark", value: labels.settings.dark, icon: Icons.brightness_3)
+          key: 'dark', value: labels.settings.dark, icon: Icons.brightness_3),
+      MenuOption(
+          key: 'system',
+          value: labels.settings.system,
+          icon: Icons.brightness_4),
     ];
 
     TextTheme textTheme = context.textTheme;
