@@ -34,6 +34,9 @@ class PrapareCodesUtil {
           return labels.prapare.familyAndHome.housing;
         case "/93042-0/93033-9":
           return labels.prapare.familyAndHome.losingHousing;
+        case "/93042-0/56799-0":
+          //? FYI: worded differently in FHIR resource
+          return labels.prapare.familyAndHome.address;
 
         // *** MONEY AND RESOURCES ***
         case "/93041-2":
@@ -84,11 +87,13 @@ class PrapareCodesUtil {
 
         // *** ANSWER CODES ***
         case "LA33-6":
-          return labels.prapare.answers.yes;
+          return labels.prapare.answers.basic.yes;
         case "LA32-8":
-          return labels.prapare.answers.no;
+          return labels.prapare.answers.basic.no;
+        case "LA14072-5":
+          return labels.prapare.answers.basic.unsure;
         case "LA30122-8":
-          return labels.prapare.answers.chooseNotToAnswer;
+          return labels.prapare.answers.basic.chooseNotToAnswer;
 
         case "LA46-8":
           // todo: allow for user entry responses

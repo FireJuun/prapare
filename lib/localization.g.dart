@@ -57,6 +57,7 @@ class AppLocalizations {
         ),
       ),
       general: AppLocalizations_Labels_General(
+        allPatients: "All Patients",
         birthDate: "Birthdate",
         dateofBirth: "Date of Birth",
         editSurvey: "Edit Survey",
@@ -64,6 +65,8 @@ class AppLocalizations {
         female: "Female",
         givenNames: "Given Names",
         male: "Male",
+        mySchedule: "My Schedule",
+        newPatient: "New Patient",
         newSurvey: "New Survey",
         relationship: "Relationship",
         search: "Search",
@@ -114,9 +117,12 @@ class AppLocalizations {
         title:
             "Protocol for Responding to and Assessing Patients' Assets, Risks, and Experiences [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
-          chooseNotToAnswer: "I choose not to answer this question",
-          no: "No",
-          yes: "Yes",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer: "I choose not to answer this question",
+            no: "No",
+            unsure: "Unsure",
+            yes: "Yes",
+          ),
           housing: AppLocalizations_Labels_Prapare_Answers_Housing(
             iDoNotHaveHousing:
                 "I do not have housing (staying with others, in a hotel, in a shelter, living outside on the street, on a beach, in a car, or in a park)",
@@ -251,6 +257,9 @@ class AppLocalizations {
         title: "Settings",
         updateProfile: "Update Profile",
       ),
+      vigor: AppLocalizations_Labels_Vigor(
+        title: "Vigor",
+      ),
     ),
     Locale.fromSubtags(languageCode: "es"): AppLocalizations_Labels(
       app: AppLocalizations_Labels_App(
@@ -297,6 +306,7 @@ class AppLocalizations {
         ),
       ),
       general: AppLocalizations_Labels_General(
+        allPatients: "todos los pacientes",
         birthDate: "Fecha de nacimiento",
         dateofBirth: "Fecha de nacimiento",
         editSurvey: "Editar encuesta",
@@ -304,6 +314,8 @@ class AppLocalizations {
         female: "Hembra",
         givenNames: "Nombres dados",
         male: "Masculino",
+        mySchedule: "Mi horario",
+        newPatient: "Paciente nuevo",
         newSurvey: "nueva Encuesta",
         relationship: "Relación",
         search: "Buscar",
@@ -341,7 +353,7 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Spanish",
-        title: "Elige lengua",
+        title: "Español",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "Crecimiento",
@@ -354,9 +366,12 @@ class AppLocalizations {
         title:
             "Protocolo para responder y evaluar los activos de los pacientes, riesgos y experiencias [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
-          chooseNotToAnswer: "No decide contestar esta pregunta",
-          no: "No",
-          yes: "si",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer: "No decide contestar esta pregunta",
+            no: "No",
+            unsure: "Inseguro",
+            yes: "si",
+          ),
           housing: AppLocalizations_Labels_Prapare_Answers_Housing(
             iDoNotHaveHousing:
                 "No tengo vivienda (en casa de otros, en un hotel, en un refugio, que viven fuera en la calle, en una playa, en un coche o en un parque)",
@@ -491,6 +506,9 @@ class AppLocalizations {
         title: "ajustes",
         updateProfile: "Actualización del perfil",
       ),
+      vigor: AppLocalizations_Labels_Vigor(
+        title: "Vigor",
+      ),
     ),
     Locale.fromSubtags(languageCode: "ar"): AppLocalizations_Labels(
       app: AppLocalizations_Labels_App(
@@ -537,6 +555,7 @@ class AppLocalizations {
         ),
       ),
       general: AppLocalizations_Labels_General(
+        allPatients: "كل المرضى",
         birthDate: "تاريخ الولادة",
         dateofBirth: "تاريخ الولادة",
         editSurvey: "تحرير مسح",
@@ -544,6 +563,8 @@ class AppLocalizations {
         female: "أنثى",
         givenNames: "أسماء مسماه",
         male: "الذكر",
+        mySchedule: "جدولي",
+        newPatient: "مريض جديد",
         newSurvey: "مسح جديد",
         relationship: "صلة",
         search: "بحث",
@@ -581,7 +602,7 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Arabic",
-        title: "اختيار اللغة",
+        title: "عربى",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "نمو",
@@ -594,9 +615,12 @@ class AppLocalizations {
         title:
             "بروتوكول للاستجابة للوتقييم الأصول المرضى، والمخاطر، والخبرات [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
-          chooseNotToAnswer: "أنا اخترت عدم الإجابة على هذا السؤال",
-          no: "لا",
-          yes: "نعم",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer: "أنا اخترت عدم الإجابة على هذا السؤال",
+            no: "لا",
+            unsure: "غير متأكد",
+            yes: "نعم",
+          ),
           housing: AppLocalizations_Labels_Prapare_Answers_Housing(
             iDoNotHaveHousing:
                 "ليس لدي سكن (البقاء مع الآخرين، في أحد الفنادق، في ملجأ خارج يعيشون في الشوارع، على الشاطئ، في السيارة، أو في الحديقة)",
@@ -728,6 +752,9 @@ class AppLocalizations {
         title: "إعدادات",
         updateProfile: "تحديث الملف",
       ),
+      vigor: AppLocalizations_Labels_Vigor(
+        title: "قوة",
+      ),
     ),
     Locale.fromSubtags(languageCode: "hi"): AppLocalizations_Labels(
       app: AppLocalizations_Labels_App(
@@ -774,6 +801,7 @@ class AppLocalizations {
         ),
       ),
       general: AppLocalizations_Labels_General(
+        allPatients: "सभी मरीजों को",
         birthDate: "जन्म दिन",
         dateofBirth: "जन्म की तारीख",
         editSurvey: "सर्वे संपादित करें",
@@ -781,6 +809,8 @@ class AppLocalizations {
         female: "महिला",
         givenNames: "दिए गए नाम",
         male: "नर",
+        mySchedule: "मेरे अनुसूची",
+        newPatient: "नए रोगी",
         newSurvey: "नए सर्वेक्षण",
         relationship: "संबंध",
         search: "खोज",
@@ -818,7 +848,7 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Hindi",
-        title: "भाषा चुनें",
+        title: "हिंदी",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "विकास",
@@ -831,9 +861,12 @@ class AppLocalizations {
         title:
             "के जवाब में और मरीजों के संपत्ति का आकलन, के लिए प्रोटोकॉल जोखिम, और अनुभव [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
-          chooseNotToAnswer: "मैं इस सवाल का जवाब न करना चुन",
-          no: "नहीं",
-          yes: "हाँ",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer: "मैं इस सवाल का जवाब न करना चुन",
+            no: "नहीं",
+            unsure: "अनिश्चित",
+            yes: "हाँ",
+          ),
           housing: AppLocalizations_Labels_Prapare_Answers_Housing(
             iDoNotHaveHousing:
                 "मैं आवास की जरूरत नहीं है (अन्य लोगों के साथ रहने, एक होटल में, एक शरण में, एक कार में सड़क पर बाहर रहने वाले, एक समुद्र तट पर, या एक पार्क में)",
@@ -967,6 +1000,9 @@ class AppLocalizations {
         title: "समायोजन",
         updateProfile: "प्रोफ़ाइल अपडेट करें",
       ),
+      vigor: AppLocalizations_Labels_Vigor(
+        title: "ताक़त",
+      ),
     ),
     Locale.fromSubtags(languageCode: "ru"): AppLocalizations_Labels(
       app: AppLocalizations_Labels_App(
@@ -1013,6 +1049,7 @@ class AppLocalizations {
         ),
       ),
       general: AppLocalizations_Labels_General(
+        allPatients: "Все пациенты",
         birthDate: "Дата рождения",
         dateofBirth: "Дата рождения",
         editSurvey: "Изменить опрос",
@@ -1020,6 +1057,8 @@ class AppLocalizations {
         female: "женский",
         givenNames: "Второе имя",
         male: "мужчина",
+        mySchedule: "Мое расписание",
+        newPatient: "Новый пациент",
         newSurvey: "повторная съемка",
         relationship: "отношения",
         search: "Поиск",
@@ -1057,7 +1096,7 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Russian",
-        title: "Выберите язык",
+        title: "русский",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "рост",
@@ -1070,9 +1109,12 @@ class AppLocalizations {
         title:
             "Протокол ответов и оценка активов пациентов, риски и опыт [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
-          chooseNotToAnswer: "Я не отвечать на этот вопрос",
-          no: "нет",
-          yes: "да",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer: "Я не отвечать на этот вопрос",
+            no: "нет",
+            unsure: "неуверенный",
+            yes: "да",
+          ),
           housing: AppLocalizations_Labels_Prapare_Answers_Housing(
             iDoNotHaveHousing:
                 "У меня нет жилья (оставаясь с другими, в гостинице, в приюте, живущих за пределами на улице, на пляже, в автомобиле или в парке)",
@@ -1210,6 +1252,9 @@ class AppLocalizations {
         title: "настройки",
         updateProfile: "Обновить профиль",
       ),
+      vigor: AppLocalizations_Labels_Vigor(
+        title: "сила",
+      ),
     ),
     Locale.fromSubtags(languageCode: "bn"): AppLocalizations_Labels(
       app: AppLocalizations_Labels_App(
@@ -1256,6 +1301,7 @@ class AppLocalizations {
         ),
       ),
       general: AppLocalizations_Labels_General(
+        allPatients: "সব রোগীদের",
         birthDate: "জন্ম তারিখ",
         dateofBirth: "জন্ম তারিখ",
         editSurvey: "সার্ভে সম্পাদনা",
@@ -1263,6 +1309,8 @@ class AppLocalizations {
         female: "মহিলা",
         givenNames: "প্রদত্ত নাম",
         male: "পুরুষ",
+        mySchedule: "আমার সময়সূচি",
+        newPatient: "নিউ রোগীর",
         newSurvey: "নতুন জরিপ",
         relationship: "সম্পর্ক",
         search: "অনুসন্ধান করুন",
@@ -1300,7 +1348,7 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Bengali",
-        title: "ভাষা নির্বাচন করুন",
+        title: "বাংলা",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "উন্নতি",
@@ -1313,9 +1361,12 @@ class AppLocalizations {
         title:
             "জবাবে এবং রোগীদের 'সম্পদ দ্বায়িত্বপ্রাপ্ত জন্য প্রোটোকল ঝুঁকি, এবং অভিজ্ঞতা [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
-          chooseNotToAnswer: "আমি এই প্রশ্নের উত্তর দিতে না করে",
-          no: "না",
-          yes: "হ্যাঁ",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer: "আমি এই প্রশ্নের উত্তর দিতে না করে",
+            no: "না",
+            unsure: "অবিশ্বাস্য",
+            yes: "হ্যাঁ",
+          ),
           housing: AppLocalizations_Labels_Prapare_Answers_Housing(
             iDoNotHaveHousing:
                 "আমি হাউজিং আপনার কাছে নেই (অন্যদের সাথে স্থিত, হোটেল, একটি আশ্রয়, একটি গাড়িতে রাস্তায় বাইরে থাকা একটি সৈকতে, অথবা পার্কে)",
@@ -1448,6 +1499,9 @@ class AppLocalizations {
         title: "সেটিংস",
         updateProfile: "হালনাগাদ প্রফাইল",
       ),
+      vigor: AppLocalizations_Labels_Vigor(
+        title: "তেজ",
+      ),
     ),
     Locale.fromSubtags(languageCode: "my"): AppLocalizations_Labels(
       app: AppLocalizations_Labels_App(
@@ -1494,6 +1548,7 @@ class AppLocalizations {
         ),
       ),
       general: AppLocalizations_Labels_General(
+        allPatients: "အားလုံးလူနာများ",
         birthDate: "မွေးရက်",
         dateofBirth: "မွေးရက်",
         editSurvey: "Edit ကိုစစ်တမ်း",
@@ -1501,6 +1556,8 @@ class AppLocalizations {
         female: "အမြိုးသမီး",
         givenNames: "ပေးထားသောအမည်",
         male: "အထီး",
+        mySchedule: "အကြှနျုပျ၏ဇယား",
+        newPatient: "နယူးလူနာ",
         newSurvey: "နယူးစစ်တမ်း",
         relationship: "relationship",
         search: "ရှာဖှေ",
@@ -1538,7 +1595,7 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Burmese",
-        title: "ဘာသာစကားများကိုရွေးချယ်ပါ",
+        title: "မြန်မာ",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "တိုးတက်မှုနှုန်း",
@@ -1551,9 +1608,12 @@ class AppLocalizations {
         title:
             "ပြန်ကြားခြင်းနှင့်လူနာများ '' ပိုင်ဆိုင်မှုအကဲဖြတ်ဘို့ပရိုတိုကော, အန္တရာယ်များနှင့်တွေ့ကြုံမှုများ [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
-          chooseNotToAnswer: "ငါသည်ဤမေးခွန်းကိုဖြေဖို့မရှေးခယျြ",
-          no: "အဘယ်သူမျှမ",
-          yes: "ဟုတ်ကဲ့",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer: "ငါသည်ဤမေးခွန်းကိုဖြေဖို့မရှေးခယျြ",
+            no: "အဘယ်သူမျှမ",
+            unsure: "စိတ်မချသော",
+            yes: "ဟုတ်ကဲ့",
+          ),
           housing: AppLocalizations_Labels_Prapare_Answers_Housing(
             iDoNotHaveHousing:
                 "ငါ (ကကမ်းခြေပေါ်တစ်ဦးကားထဲတွင်, ဒါမှမဟုတ်တစ်ဦးပန်းခြံထဲမှာလမ်းပေါ်မှာအပြင်ဘက်တွင်နေထိုင်သောတစ်အမိုးအကာအတွက်ဟိုတယ်များတွင်အခြားသူများနှင့်တည်းခို,) အိမ်ရာရှိသည်မဟုတ်ကြဘူး",
@@ -1689,6 +1749,9 @@ class AppLocalizations {
         title: "Settings များ",
         updateProfile: "Update ကိုကိုယ်ရေးဖိုင်",
       ),
+      vigor: AppLocalizations_Labels_Vigor(
+        title: "သန်စွမ်း",
+      ),
     ),
     Locale.fromSubtags(languageCode: "zh_CN"): AppLocalizations_Labels(
       app: AppLocalizations_Labels_App(
@@ -1735,6 +1798,7 @@ class AppLocalizations {
         ),
       ),
       general: AppLocalizations_Labels_General(
+        allPatients: "所有患者",
         birthDate: "生日",
         dateofBirth: "出生日期",
         editSurvey: "编辑调查",
@@ -1742,6 +1806,8 @@ class AppLocalizations {
         female: "女",
         givenNames: "姓",
         male: "男",
+        mySchedule: "我的日程表",
+        newPatient: "新患者",
         newSurvey: "新调查",
         relationship: "关系",
         search: "搜索",
@@ -1779,7 +1845,7 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Chinese (Simplified)",
-        title: "选择语言",
+        title: "简体中文）",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "发展",
@@ -1791,9 +1857,12 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title: "用于响应和评估患者的资产，风险协议，与经验[PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
-          chooseNotToAnswer: "我选择不回答这个问题",
-          no: "没有",
-          yes: "是",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer: "我选择不回答这个问题",
+            no: "没有",
+            unsure: "不确定",
+            yes: "是",
+          ),
           housing: AppLocalizations_Labels_Prapare_Answers_Housing(
             iDoNotHaveHousing: "我没有住房（保持与他人在酒店里，在庇护所，流落街头外，在海滩上，在汽车，或在公园）",
             iHaveHousing: "我有住房",
@@ -1913,6 +1982,9 @@ class AppLocalizations {
         title: "设置",
         updateProfile: "更新配置文件",
       ),
+      vigor: AppLocalizations_Labels_Vigor(
+        title: "活力",
+      ),
     ),
     Locale.fromSubtags(languageCode: "zh_TW"): AppLocalizations_Labels(
       app: AppLocalizations_Labels_App(
@@ -1959,6 +2031,7 @@ class AppLocalizations {
         ),
       ),
       general: AppLocalizations_Labels_General(
+        allPatients: "所有患者",
         birthDate: "生日",
         dateofBirth: "出生日期",
         editSurvey: "編輯調查",
@@ -1966,6 +2039,8 @@ class AppLocalizations {
         female: "女",
         givenNames: "姓",
         male: "男",
+        mySchedule: "我的日程表",
+        newPatient: "新患者",
         newSurvey: "新調查",
         relationship: "關係",
         search: "搜索",
@@ -2002,8 +2077,8 @@ class AppLocalizations {
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        inEnglish: "Chinese(Traditional)",
-        title: "選擇語言",
+        inEnglish: "Chinese (Traditional)",
+        title: "中國傳統的）",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "發展",
@@ -2015,9 +2090,12 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title: "用於響應和評估患者的資產，風險協議，與經驗[PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
-          chooseNotToAnswer: "我選擇不回答這個問題",
-          no: "沒有",
-          yes: "是",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer: "我選擇不回答這個問題",
+            no: "沒有",
+            unsure: "不確定",
+            yes: "是",
+          ),
           housing: AppLocalizations_Labels_Prapare_Answers_Housing(
             iDoNotHaveHousing: "我沒有住房（保持與他人在酒店裡，在庇護所，流落街頭外，在海灘上，在汽車，或在公園）",
             iHaveHousing: "我有住房",
@@ -2037,7 +2115,7 @@ class AppLocalizations {
           ),
           insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
             chipMedicaid: "CHIP醫療補助",
-            medicaid: "醫療",
+            medicaid: "醫療補助",
             medicare: "醫保",
             noneOrUninsured: "無/無保險",
             otherPublicInsuranceChip: "其他公共保險（CHIP）",
@@ -2137,6 +2215,9 @@ class AppLocalizations {
         title: "設置",
         updateProfile: "更新配置文件",
       ),
+      vigor: AppLocalizations_Labels_Vigor(
+        title: "活力",
+      ),
     ),
     Locale.fromSubtags(languageCode: "fa"): AppLocalizations_Labels(
       app: AppLocalizations_Labels_App(
@@ -2183,6 +2264,7 @@ class AppLocalizations {
         ),
       ),
       general: AppLocalizations_Labels_General(
+        allPatients: "همه بیماران",
         birthDate: "تاریخ تولد",
         dateofBirth: "تاریخ تولد",
         editSurvey: "بررسی ویرایش",
@@ -2190,6 +2272,8 @@ class AppLocalizations {
         female: "زن",
         givenNames: "اسامی با توجه به",
         male: "نر",
+        mySchedule: "برنامه من",
+        newPatient: "بیمار جدید",
         newSurvey: "نظرسنجی جدید",
         relationship: "ارتباط",
         search: "جستجو کردن",
@@ -2227,7 +2311,7 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Farsi",
-        title: "زبان را انتخاب کنید",
+        title: "فارسی",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "رشد",
@@ -2240,9 +2324,12 @@ class AppLocalizations {
         title:
             "پروتکل برای پاسخ به بررسی و دارایی بیماران، خطرات، و تجارب [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
-          chooseNotToAnswer: "من را انتخاب کنید پاسخ به این سوال نمی",
-          no: "خیر",
-          yes: "آره",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer: "من را انتخاب کنید پاسخ به این سوال نمی",
+            no: "خیر",
+            unsure: "مردد",
+            yes: "آره",
+          ),
           housing: AppLocalizations_Labels_Prapare_Answers_Housing(
             iDoNotHaveHousing:
                 "من مسکن ندارد (ماندن با دیگران، در یک هتل، در یک پناهگاه، در خارج زندگی در خیابان، در ساحل، در یک ماشین، یا در یک پارک)",
@@ -2376,6 +2463,9 @@ class AppLocalizations {
         title: "تنظیمات",
         updateProfile: "بروزرسانی پروفایل",
       ),
+      vigor: AppLocalizations_Labels_Vigor(
+        title: "قدرت",
+      ),
     ),
     Locale.fromSubtags(languageCode: "fr"): AppLocalizations_Labels(
       app: AppLocalizations_Labels_App(
@@ -2422,6 +2512,7 @@ class AppLocalizations {
         ),
       ),
       general: AppLocalizations_Labels_General(
+        allPatients: "tous les patients",
         birthDate: "Date de naissance",
         dateofBirth: "Date de naissance",
         editSurvey: "Modifier enquête",
@@ -2429,6 +2520,8 @@ class AppLocalizations {
         female: "Femelle",
         givenNames: "Prénoms",
         male: "Masculin",
+        mySchedule: "Mon emploi du temps",
+        newPatient: "nouveau patient",
         newSurvey: "Une nouvelle enquête",
         relationship: "Relation",
         search: "Chercher",
@@ -2466,7 +2559,7 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "French",
-        title: "Choose language",
+        title: "français",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "Croissance",
@@ -2479,9 +2572,12 @@ class AppLocalizations {
         title:
             "Protocole d'intervention et de l'évaluation des actifs des patients, les risques et les expériences [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
-          chooseNotToAnswer: "Je ne pas répondre à cette question",
-          no: "Non",
-          yes: "Oui",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer: "Je ne pas répondre à cette question",
+            no: "Non",
+            unsure: "Incertain",
+            yes: "Oui",
+          ),
           housing: AppLocalizations_Labels_Prapare_Answers_Housing(
             iDoNotHaveHousing:
                 "Je n'ai pas de logement (rester avec les autres, dans un hôtel, dans un abri, vivant à l'extérieur dans la rue, sur une plage, dans une voiture ou dans un parc)",
@@ -2618,6 +2714,9 @@ class AppLocalizations {
         title: "Réglages",
         updateProfile: "Mettre à jour le profil",
       ),
+      vigor: AppLocalizations_Labels_Vigor(
+        title: "Vigueur",
+      ),
     ),
     Locale.fromSubtags(languageCode: "de"): AppLocalizations_Labels(
       app: AppLocalizations_Labels_App(
@@ -2664,6 +2763,7 @@ class AppLocalizations {
         ),
       ),
       general: AppLocalizations_Labels_General(
+        allPatients: "alle Patienten",
         birthDate: "Geburtsdatum",
         dateofBirth: "Geburtsdatum",
         editSurvey: "Umfrage bearbeiten",
@@ -2671,6 +2771,8 @@ class AppLocalizations {
         female: "Weiblich",
         givenNames: "Vornamen",
         male: "Männlich",
+        mySchedule: "Mein Terminplan",
+        newPatient: "Neuer Patient",
         newSurvey: "neue Umfrage",
         relationship: "Beziehung",
         search: "Suche",
@@ -2708,7 +2810,7 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "German",
-        title: "Sprache wählen",
+        title: "Deutsche",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "Wachstum",
@@ -2721,9 +2823,12 @@ class AppLocalizations {
         title:
             "Protokoll zu reagieren und Beurteilung der Patienten Vermögenswerte, Risiken und Erfahrungen [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
-          chooseNotToAnswer: "Ich wähle nicht, diese Frage zu beantworten",
-          no: "Nein",
-          yes: "Ja",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer: "Ich wähle nicht, diese Frage zu beantworten",
+            no: "Nein",
+            unsure: "Unsicher",
+            yes: "Ja",
+          ),
           housing: AppLocalizations_Labels_Prapare_Answers_Housing(
             iDoNotHaveHousing:
                 "Ich habe nicht Gehäuse (mit anderen zu bleiben, in einem Hotel, in einem Tierheim, lebt draußen auf der Straße, am Strand, in einem Auto oder in einem Park)",
@@ -2859,6 +2964,9 @@ class AppLocalizations {
         title: "die Einstellungen",
         updateProfile: "Profil aktualisieren",
       ),
+      vigor: AppLocalizations_Labels_Vigor(
+        title: "Kraft",
+      ),
     ),
     Locale.fromSubtags(languageCode: "id"): AppLocalizations_Labels(
       app: AppLocalizations_Labels_App(
@@ -2905,6 +3013,7 @@ class AppLocalizations {
         ),
       ),
       general: AppLocalizations_Labels_General(
+        allPatients: "semua Pasien",
         birthDate: "Tanggal lahir",
         dateofBirth: "Tanggal lahir",
         editSurvey: "mengedit Survey",
@@ -2912,6 +3021,8 @@ class AppLocalizations {
         female: "Perempuan",
         givenNames: "Memberikan nama",
         male: "Pria",
+        mySchedule: "Jadwal saya",
+        newPatient: "Pasien baru",
         newSurvey: "Survei baru",
         relationship: "Hubungan",
         search: "Cari",
@@ -2949,7 +3060,7 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Indonesian",
-        title: "Pilih bahasa",
+        title: "bahasa Indonesia",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "Pertumbuhan",
@@ -2962,9 +3073,13 @@ class AppLocalizations {
         title:
             "Protokol untuk Menanggapi dan Menilai Aset Pasien, Risiko, dan Pengalaman [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
-          chooseNotToAnswer: "Aku memilih untuk tidak menjawab pertanyaan ini",
-          no: "Tidak",
-          yes: "Iya",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer:
+                "Aku memilih untuk tidak menjawab pertanyaan ini",
+            no: "Tidak",
+            unsure: "tidak yakin",
+            yes: "Iya",
+          ),
           housing: AppLocalizations_Labels_Prapare_Answers_Housing(
             iDoNotHaveHousing:
                 "Saya tidak memiliki perumahan (tinggal dengan orang lain, di sebuah hotel, di tempat penampungan, yang tinggal di luar di jalan, di pantai, di dalam mobil, atau di taman)",
@@ -3100,6 +3215,249 @@ class AppLocalizations {
         title: "pengaturan",
         updateProfile: "Memperbaharui profil",
       ),
+      vigor: AppLocalizations_Labels_Vigor(
+        title: "Semangat",
+      ),
+    ),
+    Locale.fromSubtags(languageCode: "ja"): AppLocalizations_Labels(
+      app: AppLocalizations_Labels_App(
+        chooseLanguage: "言語を選択",
+        chooseTheme: "テーマを選択してください",
+        settings: "アプリの設定",
+        system: "システム",
+        title: "Prapare",
+      ),
+      auth: AppLocalizations_Labels_Auth(
+        cancel: "キャンセル",
+        changePassword: "パスワードを変更する",
+        email: "Eメール",
+        password: "パスワード",
+        resetPassword: "パスワードを再設定する",
+        signIn: "サインイン",
+        signUp: "サインアップ",
+        submit: "参加する",
+        userName: "ユーザー名",
+      ),
+      dates: AppLocalizations_Labels_Dates(
+        month: AppLocalizations_Labels_Dates_Month(
+          april: "四月",
+          august: "八月",
+          december: "12月",
+          february: "2月",
+          january: "1月",
+          july: "七月",
+          june: "六月",
+          march: "行進",
+          may: "五月",
+          november: "十一月",
+          october: "10月",
+          september: "九月",
+        ),
+        weekday: AppLocalizations_Labels_Dates_Weekday(
+          friday: "金曜日",
+          monday: "月曜",
+          saturday: "土曜日",
+          sunday: "日曜日",
+          thursday: "木曜日",
+          tuesday: "火曜日",
+          wednesday: "水曜日",
+        ),
+      ),
+      general: AppLocalizations_Labels_General(
+        allPatients: "すべての患者",
+        birthDate: "誕生日",
+        dateofBirth: "生年月日",
+        editSurvey: "編集調査",
+        familyName: "苗字",
+        female: "女性",
+        givenNames: "名前",
+        male: "男性",
+        mySchedule: "私のスケジュール",
+        newPatient: "新しい患者",
+        newSurvey: "新しい調査",
+        relationship: "関係",
+        search: "探す",
+        submitShare: "送信/共有",
+        address: AppLocalizations_Labels_General_Address(
+          city: "市",
+          country: "国",
+          county: "郡",
+          district: "地区",
+          neighborhood: "ご近所",
+          postalCode: "郵便番号",
+          state: "状態",
+          title: "住所",
+        ),
+        relation: AppLocalizations_Labels_General_Relation(
+          aunt: "叔母",
+          brother: "兄",
+          daughter: "娘",
+          father: "お父さん",
+          grandfather: "祖父",
+          grandmother: "祖母",
+          mother: "母",
+          nephew: "甥",
+          niece: "姪",
+          sister: "シスター",
+          son: "息子",
+          title: "関係",
+          uncle: "おじさん",
+        ),
+        sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
+          female: "女性",
+          male: "男性",
+          title: "出生時のセックス",
+        ),
+      ),
+      language: AppLocalizations_Labels_Language(
+        inEnglish: "Japanese",
+        title: "日本語",
+      ),
+      medical: AppLocalizations_Labels_Medical(
+        growth: "成長",
+        immunization: "免疫",
+        immunizations: "予防接種",
+        vaccine: "ワクチン",
+        vaccines: "ワクチン",
+      ),
+      prapare: AppLocalizations_Labels_Prapare(
+        title: "対応や患者の資産を評価するための議定書、リスク、および経験[PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer: "私はこの質問に答えるしないことを選択します",
+            no: "番号",
+            unsure: "わかりません",
+            yes: "はい",
+          ),
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing:
+                "私は（ビーチで、車の中で、あるいは公園で、路上で外に住んで、避難所では、ホテル内に他の人と一緒に暮らす、）は、ハウジングを持っていません",
+            iHaveHousing: "私は住宅を持っています",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "若干",
+            notAtAll: "どういたしまして",
+            quiteABit: "かなり",
+            somewhat: "幾分",
+            veryMuch: "とても",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "5回以上週",
+            lessThanOnceAWeek: "週に一回未満",
+            oneOrTwoTimesAWeek: "1または2回の週",
+            threeToFiveTimesAWeek: "3〜5回週",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "CHIPメディケイド",
+            medicaid: "メディケイド",
+            medicare: "メディケア",
+            noneOrUninsured: "なし/無保険",
+            otherPublicInsuranceChip: "その他の公的保険（CHIP）",
+            otherPublicInsuranceNotChip: "その他の公的保険（ないCHIP）",
+            privateInsurance: "民間の保険",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "英語",
+            languageOtherThanEnglish: "英語以外の言語",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "アメリカインディアン/アラスカネイティブ",
+            asian: "アジアの",
+            blackAfricanAmerican: "ブラック/アフリカ系アメリカ人",
+            nativeHawaiian: "ハワイ先住民",
+            other: "他の",
+            pacificIslander: "太平洋諸島",
+            white: "白い",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "高校の卒業証書またはGED",
+            lessThanHighSchoolDegree: "高校度未満",
+            moreThanHighSchool: "高校以上",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            yesKeptFromMedical: "はい、それは医療の予定からか、私の薬を得ることから私を維持しています",
+            yesKeptFromNonMedical:
+                "はい、それは私が必要という非医療会議、予定、仕事、または物事を得ることからから私を維持しています",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "育児",
+            clothing: "衣類",
+            food: "食物",
+            medicineOrAnyHealthCare: "医学または任意のヘルスケア（医療、歯科、精神衛生、ビジョン）",
+            other: "他の",
+            phone: "電話",
+            utilities: "ユーティリティ",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "フルタイム勤務",
+            otherwiseUnemployedButNotSeekingWork:
+                "それ以外の場合は失業者が、仕事を求めていない（例：学生、引退した、無効、未払いの主介護者）",
+            partTimeOrTemporaryWork: "パートタイムや一時的な作業",
+            unemployed: "無職",
+          ),
+        ),
+        familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
+          address: "あなたはどのようなアドレスに住んでいますか？",
+          household: "自分を含めどのように多くの家族、とあなたが現在住んでいますか？",
+          housing: "あなたの住宅事情は、今日は何ですか？",
+          losingHousing: "あなたの住宅を失うことを心配していますか？",
+          title: "家族とホーム",
+        ),
+        moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
+          income:
+              "昨年中は、あなたとあなたが一緒に暮らす家族のための合わせた合計収入は何でしたか？この情報は、任意の給付の資格がある場合は、私たちが判断するのに役立ちます。",
+          insurance: "あなたの主な保険は何ですか？",
+          school: "あなたが終了したことを学校の最高レベルは何ですか？",
+          title: "お金とリソース",
+          transportation:
+              "交通機関の欠如は、医療予定、会議、仕事、または日常生活に必要なものを得ることからあなたを守っていますか？",
+          without:
+              "昨年、あなたやあなたが一緒に暮らすすべての家族のメンバーは、それが本当に必要な時に、次のいずれかを取得することができませんでしたか？",
+          work: "あなたの現在の作業状況は何ですか？",
+        ),
+        optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
+          afraid: "昨年、あなたはあなたのパートナーまたはex-パートナーを恐れていますか？",
+          prison: "昨年、あなたは刑務所、刑務所、拘置所、または少年矯正施設内の行で2泊以上を費やしていますか？",
+          refugee: "あなたは難民か？",
+          safe: "あなたは物理的に、どこ現在ライブ感情的に安全だと感じますか？",
+          title: "オプションの対策",
+        ),
+        personalCharacteristics:
+            AppLocalizations_Labels_Prapare_PersonalCharacteristics(
+          language: "あなたが最も快適話す言語は何ですか？",
+          latino: "あなた自身ヒスパニック/ラテン考えるのですか？",
+          military: "あなたは、米国の軍隊から排出されていますか？",
+          race: "あなたはどちらのレース（s）はありますか？",
+          seasonalWork: "過去2年間の任意の時点で、季節や移民農作業は、収入のあなたやあなたの家族の主な情報源となっていますか？",
+          title: "個人的特徴",
+        ),
+        socialAndEmotionalHealth:
+            AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
+          stress:
+              "誰かが、緊張緊張、不安を感じているか、彼らの心を悩まされているので、夜に眠ることができないとき、ストレスがあります。あなたはどのように強調していますか？",
+          talk:
+              "どのくらいの頻度であなたが気にして近くに感じることを人に話すかを参照してください（例：、友人や家族を訪問し、電話で友人に話し、教会やクラブの会合に行きますか）？",
+          title: "社会的、感情的な健康",
+        ),
+      ),
+      registration: AppLocalizations_Labels_Registration(
+        registerPatient: "登録患者",
+      ),
+      settings: AppLocalizations_Labels_Settings(
+        dark: "闇",
+        language: "言語",
+        light: "光",
+        ok: "OK",
+        signOut: "サインアウト",
+        system: "システム",
+        theme: "テーマ",
+        title: "設定",
+        updateProfile: "プロフィールを更新",
+      ),
+      vigor: AppLocalizations_Labels_Vigor(
+        title: "活力",
+      ),
     ),
     Locale.fromSubtags(languageCode: "km"): AppLocalizations_Labels(
       app: AppLocalizations_Labels_App(
@@ -3146,6 +3504,7 @@ class AppLocalizations {
         ),
       ),
       general: AppLocalizations_Labels_General(
+        allPatients: "អ្នកជំងឺទាំងអស់",
         birthDate: "ថ្ងៃខែ​ឆ្នាំ​កំណើត",
         dateofBirth: "ថ្ងៃខែ​ឆ្នាំ​កំណើត",
         editSurvey: "កែសម្រួលការស្ទង់មតិ",
@@ -3153,6 +3512,8 @@ class AppLocalizations {
         female: "ស្រី",
         givenNames: "ឈ្មោះ​ហៅក្រៅ",
         male: "បុរស",
+        mySchedule: "កាលវិភាគ​របស់​ខ្ញុំ",
+        newPatient: "ជម្ងឺថ្មី",
         newSurvey: "ការស្ទង់មតិថ្មី",
         relationship: "ទំនាក់ទំនង",
         search: "ស្វែងរក",
@@ -3190,7 +3551,7 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Khmer",
-        title: "ជ្រើសរើសភាសា",
+        title: "ភាសាខ្មែរ",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "កំណើន",
@@ -3203,9 +3564,12 @@ class AppLocalizations {
         title:
             "ពិធីការសម្រាប់ការឆ្លើយតបទៅនឹងទ្រព្យសកម្មនិងការវាយតម្លៃអ្នកជំងឺ, ហានិភ័យ, និងបទពិសោធន៍ [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
-          chooseNotToAnswer: "ខ្ញុំជ្រើសរើសមិនឆ្លើយតបនឹងសំណួរនេះ",
-          no: "គ្មាន",
-          yes: "បាទ",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer: "ខ្ញុំជ្រើសរើសមិនឆ្លើយតបនឹងសំណួរនេះ",
+            no: "គ្មាន",
+            unsure: "មិនប្រាកដ",
+            yes: "បាទ",
+          ),
           housing: AppLocalizations_Labels_Prapare_Answers_Housing(
             iDoNotHaveHousing:
                 "ខ្ញុំមិនមានលំនៅដ្ឋាន (ស្នាក់នៅជាមួយអ្នកផ្សេង, នៅក្នុងសណ្ឋាគារមួយនៅក្នុងទីជំរកមួយនៅខាងក្រៅដែលរស់នៅលើចិញ្ចើមផ្លូវ, នៅលើឆ្នេរខ្សាច់មួយ, នៅក្នុងរថយន្តមួយ, ឬនៅក្នុងឧទ្យានមួយ)",
@@ -3341,6 +3705,9 @@ class AppLocalizations {
         title: "ការកំណត់",
         updateProfile: "ទម្រង់ធ្វើឱ្យទាន់សម័យ",
       ),
+      vigor: AppLocalizations_Labels_Vigor(
+        title: "ភាពរឹងមាំខាង",
+      ),
     ),
     Locale.fromSubtags(languageCode: "ko"): AppLocalizations_Labels(
       app: AppLocalizations_Labels_App(
@@ -3387,6 +3754,7 @@ class AppLocalizations {
         ),
       ),
       general: AppLocalizations_Labels_General(
+        allPatients: "모든 환자",
         birthDate: "생일",
         dateofBirth: "생년월일",
         editSurvey: "편집 설문 조사",
@@ -3394,6 +3762,8 @@ class AppLocalizations {
         female: "여자",
         givenNames: "지정된 이름의",
         male: "남성",
+        mySchedule: "내 일정",
+        newPatient: "새로운 환자",
         newSurvey: "새로운 설문 조사",
         relationship: "관계",
         search: "검색",
@@ -3431,7 +3801,7 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Korean",
-        title: "언어 선택",
+        title: "한국어",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "성장",
@@ -3443,9 +3813,12 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title: "에 응답하는 환자의 자산을 평가하기위한 프로토콜 위험 경험 [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
-          chooseNotToAnswer: "나는이 질문에 대답하지 않도록 선택",
-          no: "아니",
-          yes: "예",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer: "나는이 질문에 대답하지 않도록 선택",
+            no: "아니",
+            unsure: "불안정한",
+            yes: "예",
+          ),
           housing: AppLocalizations_Labels_Prapare_Answers_Housing(
             iDoNotHaveHousing:
                 "나는 주택이 (쉼터에서, 호텔에서, 다른 사람과 체재 차에, 해변에서, 거리에서 외부 생활을하거나 공원에서)하지 않는다",
@@ -3572,6 +3945,9 @@ class AppLocalizations {
         title: "설정",
         updateProfile: "프로필 업데이트",
       ),
+      vigor: AppLocalizations_Labels_Vigor(
+        title: "활기",
+      ),
     ),
     Locale.fromSubtags(languageCode: "lo"): AppLocalizations_Labels(
       app: AppLocalizations_Labels_App(
@@ -3618,6 +3994,7 @@ class AppLocalizations {
         ),
       ),
       general: AppLocalizations_Labels_General(
+        allPatients: "ຄົນເຈັບທັງຫມົດ",
         birthDate: "ວັນເດືອນປີເກີດ",
         dateofBirth: "ວັນ​ເດືອນ​ປີ​ເກີດ",
         editSurvey: "ດັດແກ້ການສໍາຫຼວດ",
@@ -3625,6 +4002,8 @@ class AppLocalizations {
         female: "ຍິງ",
         givenNames: "Names ເນື່ອງ",
         male: "ຜູ້​ຊາຍ",
+        mySchedule: "ຕາຕະລາງຂອງຂ້າພະເຈົ້າ",
+        newPatient: "ອົດທົນໃຫມ່",
         newSurvey: "ການສໍາຫຼວດໃຫມ່",
         relationship: "ຄວາມສໍາພັນ",
         search: "ຄົ້ນຫາ",
@@ -3662,7 +4041,7 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Lao",
-        title: "ເລືອກພາສາ",
+        title: "ລາວ",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "ການຂະຫຍາຍຕົວ",
@@ -3675,9 +4054,12 @@ class AppLocalizations {
         title:
             "ອະນຸສັນຍາສໍາລັບການຕອບກັບແລະການປະເມີນຄົນເຈັບຊັບ, ຄວາມສ່ຽງ, ແລະປະສົບການ [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
-          chooseNotToAnswer: "ຂ້າພະເຈົ້າເລືອກທີ່ຈະບໍ່ຕອບຄໍາຖາມນີ້",
-          no: "No",
-          yes: "Yes",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer: "ຂ້າພະເຈົ້າເລືອກທີ່ຈະບໍ່ຕອບຄໍາຖາມນີ້",
+            no: "No",
+            unsure: "ບໍ່ແນ່ໃຈ",
+            yes: "Yes",
+          ),
           housing: AppLocalizations_Labels_Prapare_Answers_Housing(
             iDoNotHaveHousing:
                 "ຂ້າພະເຈົ້າບໍ່ມີທີ່ຢູ່ອາໄສ (ພັກກັບຄົນອື່ນ, ໃນໂຮງແຮມ, ໃນທີ່ພັກອາໄສ, ອາໄສຢູ່ນອກກ່ຽວກັບຖະຫນົນຫົນທາງ, ສຸດຫາດຊາຍໃນລົດ, ຫຼືຢູ່ໃນ park ໄດ້)",
@@ -3812,6 +4194,9 @@ class AppLocalizations {
         title: "ການຕັ້ງຄ່າ",
         updateProfile: "ແຜງ",
       ),
+      vigor: AppLocalizations_Labels_Vigor(
+        title: "ຢ່າງແຂງແຮງ",
+      ),
     ),
     Locale.fromSubtags(languageCode: "mr"): AppLocalizations_Labels(
       app: AppLocalizations_Labels_App(
@@ -3858,6 +4243,7 @@ class AppLocalizations {
         ),
       ),
       general: AppLocalizations_Labels_General(
+        allPatients: "सर्व रुग्णांना",
         birthDate: "जन्मदिनांक",
         dateofBirth: "जन्म तारीख",
         editSurvey: "सर्वेक्षण संपादित करा",
@@ -3865,6 +4251,8 @@ class AppLocalizations {
         female: "स्त्री",
         givenNames: "नावे दिली",
         male: "पुरुष",
+        mySchedule: "माझे वेळापत्रक",
+        newPatient: "नवीन रुग्णांच्या",
         newSurvey: "नवीन सर्वेक्षण",
         relationship: "संबंध",
         search: "शोधा",
@@ -3902,7 +4290,7 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Marathi",
-        title: "भाषा निवडा",
+        title: "मराठी",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "वाढ",
@@ -3915,9 +4303,12 @@ class AppLocalizations {
         title:
             "प्रतिसाद आणि रुग्णांना 'मालमत्तेचे मुल्यांकन, प्रोटोकॉल जोखीम, आणि अनुभव [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
-          chooseNotToAnswer: "मी या प्रश्नाचे उत्तर नाही नीवडा",
-          no: "नाही",
-          yes: "होय",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer: "मी या प्रश्नाचे उत्तर नाही नीवडा",
+            no: "नाही",
+            unsure: "अनिश्चित",
+            yes: "होय",
+          ),
           housing: AppLocalizations_Labels_Prapare_Answers_Housing(
             iDoNotHaveHousing:
                 "मी गृहनिर्माण नाही (, एक हॉटेल, एक निवारा, इतरांसह राहण्याच्या, कार रस्त्यावर बाहेर राहणा एक बीच वर, किंवा पार्क मध्ये)",
@@ -4049,6 +4440,9 @@ class AppLocalizations {
         title: "सेटिंग्ज",
         updateProfile: "प्रोफाइल अद्यतनित करा",
       ),
+      vigor: AppLocalizations_Labels_Vigor(
+        title: "जोम",
+      ),
     ),
     Locale.fromSubtags(languageCode: "ne"): AppLocalizations_Labels(
       app: AppLocalizations_Labels_App(
@@ -4095,6 +4489,7 @@ class AppLocalizations {
         ),
       ),
       general: AppLocalizations_Labels_General(
+        allPatients: "सबै विरामी",
         birthDate: "जन्म मिति",
         dateofBirth: "जन्म मिति",
         editSurvey: "सर्वेक्षण सम्पादन",
@@ -4102,6 +4497,8 @@ class AppLocalizations {
         female: "महिला",
         givenNames: "नामहरू",
         male: "पुरुष",
+        mySchedule: "मेरो तालिका",
+        newPatient: "नयाँ रोगी",
         newSurvey: "नयाँ सर्वेक्षण",
         relationship: "सम्बन्ध",
         search: "खोज",
@@ -4139,7 +4536,7 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Nepali",
-        title: "भाषा चयन",
+        title: "नेपाली",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "वृद्धि",
@@ -4152,9 +4549,12 @@ class AppLocalizations {
         title:
             "जवाफ र बिरामीको सम्पत्ति आकलन लागि प्रोटोकल जोखिम र अनुभवहरू [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
-          chooseNotToAnswer: "यो प्रश्नको जवाफ छनौट छैन म",
-          no: "कुनै",
-          yes: "हो",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer: "यो प्रश्नको जवाफ छनौट छैन म",
+            no: "कुनै",
+            unsure: "अनिश्चित",
+            yes: "हो",
+          ),
           housing: AppLocalizations_Labels_Prapare_Answers_Housing(
             iDoNotHaveHousing:
                 "म आवास छैन (अरूसँग,, रहन होटल मा एक आश्रय मा एक समुद्र तट मा सडक मा बस्ने बाहिर, एक कार, वा एक पार्क मा)",
@@ -4288,6 +4688,9 @@ class AppLocalizations {
         title: "सेटिङहरू",
         updateProfile: "प्रोफाइल अद्यावधिक",
       ),
+      vigor: AppLocalizations_Labels_Vigor(
+        title: "ताकत",
+      ),
     ),
     Locale.fromSubtags(languageCode: "pt"): AppLocalizations_Labels(
       app: AppLocalizations_Labels_App(
@@ -4334,6 +4737,7 @@ class AppLocalizations {
         ),
       ),
       general: AppLocalizations_Labels_General(
+        allPatients: "Todos os pacientes",
         birthDate: "Data de nascimento",
         dateofBirth: "Data de nascimento",
         editSurvey: "Editar questionário",
@@ -4341,6 +4745,8 @@ class AppLocalizations {
         female: "Fêmea",
         givenNames: "Nomes dados",
         male: "Masculino",
+        mySchedule: "Meu horário",
+        newPatient: "New Patient",
         newSurvey: "nova pesquisa",
         relationship: "Relação",
         search: "Pesquisa",
@@ -4378,7 +4784,7 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Portuguese",
-        title: "Escolha o Seu idioma",
+        title: "Português",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "Crescimento",
@@ -4391,9 +4797,12 @@ class AppLocalizations {
         title:
             "Protocolo para responder e avaliação de activos dos pacientes, riscos e Experiências [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
-          chooseNotToAnswer: "Eu optar por não responder a esta pergunta",
-          no: "Não",
-          yes: "sim",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer: "Eu optar por não responder a esta pergunta",
+            no: "Não",
+            unsure: "inseguro",
+            yes: "sim",
+          ),
           housing: AppLocalizations_Labels_Prapare_Answers_Housing(
             iDoNotHaveHousing:
                 "Eu não têm habitação (ficar com os outros, em um hotel, em um abrigo, que vivem fora na rua, em uma praia, em um carro, ou em um parque)",
@@ -4529,6 +4938,9 @@ class AppLocalizations {
         title: "Definições",
         updateProfile: "Atualizar perfil",
       ),
+      vigor: AppLocalizations_Labels_Vigor(
+        title: "Vigor",
+      ),
     ),
     Locale.fromSubtags(languageCode: "pa"): AppLocalizations_Labels(
       app: AppLocalizations_Labels_App(
@@ -4575,6 +4987,7 @@ class AppLocalizations {
         ),
       ),
       general: AppLocalizations_Labels_General(
+        allPatients: "ਸਾਰੇ ਮਰੀਜ਼",
         birthDate: "ਜਨਮ ਮਿਤੀ",
         dateofBirth: "ਜਨਮ ਤਾਰੀਖ",
         editSurvey: "ਸਰਵੇਖਣ ਸੋਧ",
@@ -4582,6 +4995,8 @@ class AppLocalizations {
         female: "ਔਰਤ",
         givenNames: "ਦਿੱਤੇ ਹੋਏ ਨਾਂ",
         male: "ਮਰਦ",
+        mySchedule: "ਮੇਰੀ ਤਹਿ",
+        newPatient: "ਨਿਊ ਮਰੀਜ਼",
         newSurvey: "ਨਿਊ ਸਰਵੇ",
         relationship: "ਰਿਸ਼ਤਾ",
         search: "ਖੋਜ",
@@ -4619,7 +5034,7 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Punjabi",
-        title: "ਭਾਸ਼ਾ ਚੁਣੋ",
+        title: "ਪੰਜਾਬੀ ਦੇ",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "ਵਿਕਾਸ",
@@ -4632,9 +5047,12 @@ class AppLocalizations {
         title:
             "ਦੇ ਜਵਾਬ ਅਤੇ ਮਰੀਜ਼ ਨੂੰ 'ਸੰਪਤੀ ਦਾ ਿਨਰਧਾਰਨ ਲਈ ਪਰੋਟੋਕਾਲ ਖ਼ਤਰੇ, ਅਤੇ ਅਨੁਭਵ [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
-          chooseNotToAnswer: "ਮੈਨੂੰ ਇਸ ਸਵਾਲ ਦਾ ਜਵਾਬ ਨਾ",
-          no: "ਕੋਈ",
-          yes: "ਜੀ",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer: "ਮੈਨੂੰ ਇਸ ਸਵਾਲ ਦਾ ਜਵਾਬ ਨਾ",
+            no: "ਕੋਈ",
+            unsure: "ਯਕੀਨ",
+            yes: "ਜੀ",
+          ),
           housing: AppLocalizations_Labels_Prapare_Answers_Housing(
             iDoNotHaveHousing:
                 "ਮੈਨੂੰ ਹਾਊਸਿੰਗ ਦੀ ਲੋੜ ਨਹ ਹੈ (ਹੋਰ ਹੋਰ ਦੇ ਨਾਲ ਰਹਿਣ, ਇਕ ਹੋਟਲ ਵਿਚ, ਇੱਕ ਪਨਾਹ ਵਿੱਚ, ਇੱਕ ਕਾਰ ਵਿੱਚ ਗਲੀ 'ਤੇ ਬਾਹਰ ਰਹਿ, ਇੱਕ ਬੀਚ' ਤੇ,, ਜ ਇੱਕ ਪਾਰਕ ਵਿੱਚ)",
@@ -4768,6 +5186,9 @@ class AppLocalizations {
         title: "ਸੈਟਿੰਗ",
         updateProfile: "ਅੱਪਡੇਟ ਪ੍ਰੋਫ਼ਾਈਲ English",
       ),
+      vigor: AppLocalizations_Labels_Vigor(
+        title: "ਜੋਸ਼",
+      ),
     ),
     Locale.fromSubtags(languageCode: "so"): AppLocalizations_Labels(
       app: AppLocalizations_Labels_App(
@@ -4814,6 +5235,7 @@ class AppLocalizations {
         ),
       ),
       general: AppLocalizations_Labels_General(
+        allPatients: "All Bukaanka",
         birthDate: "Taariiqda dhalasha",
         dateofBirth: "Taariikhda Dhalashada",
         editSurvey: "edit Survey",
@@ -4821,6 +5243,8 @@ class AppLocalizations {
         female: "Dheddig",
         givenNames: "Marka la eego magacyada",
         male: "Male",
+        mySchedule: "My Schedule",
+        newPatient: "bukaanka New",
         newSurvey: "New Survey",
         relationship: "xiriirka",
         search: "Raadi",
@@ -4858,7 +5282,7 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Somali",
-        title: "dooro Language",
+        title: "Soomaali",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "Kobaca",
@@ -4871,9 +5295,12 @@ class AppLocalizations {
         title:
             "Protocol Looga iyo Qiimaynta Bukaanka 'Hantida, Khatarta, iyo Waayo aragnimada [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
-          chooseNotToAnswer: "Waxaan doortaan in ay ka jawaabaan su'aashan",
-          no: "No",
-          yes: "Haa",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer: "Waxaan doortaan in ay ka jawaabaan su'aashan",
+            no: "No",
+            unsure: "hubin",
+            yes: "Haa",
+          ),
           housing: AppLocalizations_Labels_Prapare_Answers_Housing(
             iDoNotHaveHousing:
                 "Waxaan aadan haysan guryaha (dadka kale sii joogi, in hoteel, hooyga ah, oo ku nool meel ka baxsan wadada, xeebta ah, baabuur, ama in park a)",
@@ -5010,6 +5437,9 @@ class AppLocalizations {
         title: "Settings",
         updateProfile: "update Profile",
       ),
+      vigor: AppLocalizations_Labels_Vigor(
+        title: "luminayey",
+      ),
     ),
     Locale.fromSubtags(languageCode: "sw"): AppLocalizations_Labels(
       app: AppLocalizations_Labels_App(
@@ -5056,6 +5486,7 @@ class AppLocalizations {
         ),
       ),
       general: AppLocalizations_Labels_General(
+        allPatients: "Wagonjwa wote",
         birthDate: "Tarehe ya kuzaliwa",
         dateofBirth: "Tarehe ya kuzaliwa",
         editSurvey: "Hariri Survey",
@@ -5063,6 +5494,8 @@ class AppLocalizations {
         female: "mwanamke",
         givenNames: "Majina kutokana",
         male: "Mwanaume",
+        mySchedule: "Ratiba yangu",
+        newPatient: "mgonjwa New",
         newSurvey: "Survey New",
         relationship: "uhusiano",
         search: "Tafuta",
@@ -5100,7 +5533,7 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Swahili",
-        title: "Chagua LUGHA",
+        title: "Kiswahili",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "ukuaji",
@@ -5113,9 +5546,12 @@ class AppLocalizations {
         title:
             "Itifaki ya Akijibu na Tathmini ya Wagonjwa Mali, UN, na Uzoefu [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
-          chooseNotToAnswer: "I kuchagua si kujibu swali hili",
-          no: "Hapana",
-          yes: "Ndiyo",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer: "I kuchagua si kujibu swali hili",
+            no: "Hapana",
+            unsure: "uhakika",
+            yes: "Ndiyo",
+          ),
           housing: AppLocalizations_Labels_Prapare_Answers_Housing(
             iDoNotHaveHousing:
                 "Sina makazi (kukaa na watu wengine, katika hoteli, katika makazi, na kuishi nje mitaani, pwani, katika gari, au katika Hifadhi)",
@@ -5249,6 +5685,9 @@ class AppLocalizations {
         title: "mipangilio",
         updateProfile: "Mwisho profile",
       ),
+      vigor: AppLocalizations_Labels_Vigor(
+        title: "nguvu",
+      ),
     ),
     Locale.fromSubtags(languageCode: "tl"): AppLocalizations_Labels(
       app: AppLocalizations_Labels_App(
@@ -5295,6 +5734,7 @@ class AppLocalizations {
         ),
       ),
       general: AppLocalizations_Labels_General(
+        allPatients: "Ang lahat ng mga pasyente",
         birthDate: "Araw ng kapanganakan",
         dateofBirth: "Araw ng kapanganakan",
         editSurvey: "I-edit ang Survey",
@@ -5302,6 +5742,8 @@ class AppLocalizations {
         female: "babae",
         givenNames: "Given Pangalan",
         male: "lalaki",
+        mySchedule: "Aking Talaan",
+        newPatient: "bagong Pasyente",
         newSurvey: "bagong Survey",
         relationship: "Relasyon",
         search: "Hanapan",
@@ -5339,7 +5781,7 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Tagalog",
-        title: "Piliin Ang Bahagi ng Pananalita",
+        title: "Tagalog",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "paglaki",
@@ -5352,9 +5794,13 @@ class AppLocalizations {
         title:
             "Protocol para sa Pagtugon sa at Pagtatasa Ang mga pasyente 'Asset, Panganib, at Karanasan [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
-          chooseNotToAnswer: "I piliing hindi upang sagutin ang tanong na ito",
-          no: "Hindi",
-          yes: "oo",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer:
+                "I piliing hindi upang sagutin ang tanong na ito",
+            no: "Hindi",
+            unsure: "Hindi sigurado",
+            yes: "oo",
+          ),
           housing: AppLocalizations_Labels_Prapare_Answers_Housing(
             iDoNotHaveHousing:
                 "Wala akong pabahay (naglalagi sa iba, sa isang hotel, sa isang mag-ampon, nakatira sa labas sa kalye, sa isang beach, sa isang kotse, o sa isang parke)",
@@ -5492,6 +5938,9 @@ class AppLocalizations {
         title: "Mga Setting",
         updateProfile: "I-update ang Profile",
       ),
+      vigor: AppLocalizations_Labels_Vigor(
+        title: "kalakasan",
+      ),
     ),
     Locale.fromSubtags(languageCode: "th"): AppLocalizations_Labels(
       app: AppLocalizations_Labels_App(
@@ -5538,6 +5987,7 @@ class AppLocalizations {
         ),
       ),
       general: AppLocalizations_Labels_General(
+        allPatients: "ผู้ป่วยทั้งหมด",
         birthDate: "วันที่เกิด",
         dateofBirth: "วันเกิด",
         editSurvey: "แก้ไขการสำรวจ",
@@ -5545,6 +5995,8 @@ class AppLocalizations {
         female: "หญิง",
         givenNames: "ชื่อจริง",
         male: "ชาย",
+        mySchedule: "ตารางของฉัน",
+        newPatient: "ผู้ป่วยใหม่",
         newSurvey: "การสำรวจใหม่",
         relationship: "ความสัมพันธ์",
         search: "ค้นหา",
@@ -5582,7 +6034,7 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Thai",
-        title: "เลือกภาษา",
+        title: "ไทย",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "การเจริญเติบโต",
@@ -5595,9 +6047,12 @@ class AppLocalizations {
         title:
             "Protocol สำหรับการตอบสนองและการประเมินผู้ป่วยสินทรัพย์เสี่ยงและประสบการณ์ [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
-          chooseNotToAnswer: "ผมเลือกที่จะไม่ตอบคำถามนี้",
-          no: "ไม่",
-          yes: "ใช่",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer: "ผมเลือกที่จะไม่ตอบคำถามนี้",
+            no: "ไม่",
+            unsure: "ไม่มั่นใจ",
+            yes: "ใช่",
+          ),
           housing: AppLocalizations_Labels_Prapare_Answers_Housing(
             iDoNotHaveHousing:
                 "ฉันไม่ได้มีที่อยู่อาศัย (อยู่กับคนอื่น ๆ ในโรงแรมในที่กำบังนอกอาศัยอยู่บนถนนอยู่บนชายหาดในรถหรือในสวนสาธารณะ)",
@@ -5731,6 +6186,9 @@ class AppLocalizations {
         title: "การตั้งค่า",
         updateProfile: "รายละเอียดการปรับปรุง",
       ),
+      vigor: AppLocalizations_Labels_Vigor(
+        title: "พลัง",
+      ),
     ),
     Locale.fromSubtags(languageCode: "uz"): AppLocalizations_Labels(
       app: AppLocalizations_Labels_App(
@@ -5777,6 +6235,7 @@ class AppLocalizations {
         ),
       ),
       general: AppLocalizations_Labels_General(
+        allPatients: "barcha bemorlar",
         birthDate: "Tug'ilgan sana",
         dateofBirth: "Tug'ilgan sana",
         editSurvey: "Edit Survey",
@@ -5784,6 +6243,8 @@ class AppLocalizations {
         female: "ayol",
         givenNames: "Ism va Sharif",
         male: "erkak",
+        mySchedule: "Mening jadvali",
+        newPatient: "Yangi kasal",
         newSurvey: "Yangi tadqiqot",
         relationship: "munosabatlar",
         search: "Qidirmoq",
@@ -5821,7 +6282,7 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Uzbek",
-        title: "Tilni tanlang",
+        title: "O'zbekiston",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "o'sish",
@@ -5834,9 +6295,13 @@ class AppLocalizations {
         title:
             ", Javob berish va bemor aktivlari baholash uchun Protokol tavakkalchiliklarni, va tajriba [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
-          chooseNotToAnswer: "Men bu savolga javob berish emas, balki tanlang",
-          no: "yo'q",
-          yes: "ha",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer:
+                "Men bu savolga javob berish emas, balki tanlang",
+            no: "yo'q",
+            unsure: "noaniq",
+            yes: "ha",
+          ),
           housing: AppLocalizations_Labels_Prapare_Answers_Housing(
             iDoNotHaveHousing:
                 "Men uy-joy bor (bir boshpana ham, bir mehmonxonada, boshqalar bilan qolaman bir mashinada, bir sohil, ko'chada tashqarida yashayotgan, yoki bog'da) emas",
@@ -5968,6 +6433,9 @@ class AppLocalizations {
         title: "Sozlamalar",
         updateProfile: "yangilash Profil",
       ),
+      vigor: AppLocalizations_Labels_Vigor(
+        title: "kuch",
+      ),
     ),
     Locale.fromSubtags(languageCode: "vi"): AppLocalizations_Labels(
       app: AppLocalizations_Labels_App(
@@ -6014,6 +6482,7 @@ class AppLocalizations {
         ),
       ),
       general: AppLocalizations_Labels_General(
+        allPatients: "Tất cả các bệnh nhân",
         birthDate: "Ngày sinh",
         dateofBirth: "Ngày sinh",
         editSurvey: "Sửa Khảo sát",
@@ -6021,6 +6490,8 @@ class AppLocalizations {
         female: "Giống cái",
         givenNames: "Tên trao",
         male: "Nam giới",
+        mySchedule: "Thời gian biểu của tôi",
+        newPatient: "Bệnh nhân mới",
         newSurvey: "Khảo sát mới",
         relationship: "Mối quan hệ",
         search: "Tìm kiếm",
@@ -6058,7 +6529,7 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Vietnamese",
-        title: "Select language",
+        title: "Tiếng Việt",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "sự phát triển",
@@ -6071,9 +6542,12 @@ class AppLocalizations {
         title:
             "Nghị định thư cho Hưởng ứng và Đánh giá tài sản Bệnh nhân, rủi ro, và kinh nghiệm [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
-          chooseNotToAnswer: "Tôi chọn không trả lời câu hỏi này",
-          no: "Không",
-          yes: "Đúng",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer: "Tôi chọn không trả lời câu hỏi này",
+            no: "Không",
+            unsure: "không chắc chắn",
+            yes: "Đúng",
+          ),
           housing: AppLocalizations_Labels_Prapare_Answers_Housing(
             iDoNotHaveHousing:
                 "Tôi không có nhà ở (ở với người khác, trong một khách sạn, ở một nơi trú ẩn, ngoài sống trên đường phố, trên một bãi biển, trong một chiếc xe, hoặc trong công viên)",
@@ -6205,6 +6679,9 @@ class AppLocalizations {
         theme: "chủ đề",
         title: "Cài đặt",
         updateProfile: "Cập nhật hồ sơ",
+      ),
+      vigor: AppLocalizations_Labels_Vigor(
+        title: "sức mạnh",
       ),
     ),
   };
@@ -6592,13 +7069,16 @@ class AppLocalizations_Labels_General_SexAtBirth {
 
 class AppLocalizations_Labels_General {
   const AppLocalizations_Labels_General(
-      {this.birthDate,
+      {this.allPatients,
+      this.birthDate,
       this.dateofBirth,
       this.editSurvey,
       this.familyName,
       this.female,
       this.givenNames,
       this.male,
+      this.mySchedule,
+      this.newPatient,
       this.newSurvey,
       this.relationship,
       this.search,
@@ -6606,6 +7086,8 @@ class AppLocalizations_Labels_General {
       this.address,
       this.relation,
       this.sexAtBirth});
+
+  final String allPatients;
 
   final String birthDate;
 
@@ -6620,6 +7102,10 @@ class AppLocalizations_Labels_General {
   final String givenNames;
 
   final String male;
+
+  final String mySchedule;
+
+  final String newPatient;
 
   final String newSurvey;
 
@@ -6637,6 +7123,8 @@ class AppLocalizations_Labels_General {
 
   String getByKey(String key) {
     switch (key) {
+      case 'allPatients':
+        return allPatients;
       case 'birthDate':
         return birthDate;
       case 'dateofBirth':
@@ -6651,6 +7139,10 @@ class AppLocalizations_Labels_General {
         return givenNames;
       case 'male':
         return male;
+      case 'mySchedule':
+        return mySchedule;
+      case 'newPatient':
+        return newPatient;
       case 'newSurvey':
         return newSurvey;
       case 'relationship':
@@ -6714,6 +7206,34 @@ class AppLocalizations_Labels_Medical {
         return vaccine;
       case 'vaccines':
         return vaccines;
+      default:
+        return '';
+    }
+  }
+}
+
+class AppLocalizations_Labels_Prapare_Answers_Basic {
+  const AppLocalizations_Labels_Prapare_Answers_Basic(
+      {this.chooseNotToAnswer, this.no, this.unsure, this.yes});
+
+  final String chooseNotToAnswer;
+
+  final String no;
+
+  final String unsure;
+
+  final String yes;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'chooseNotToAnswer':
+        return chooseNotToAnswer;
+      case 'no':
+        return no;
+      case 'unsure':
+        return unsure;
+      case 'yes':
+        return yes;
       default:
         return '';
     }
@@ -7044,9 +7564,7 @@ class AppLocalizations_Labels_Prapare_Answers_Work {
 
 class AppLocalizations_Labels_Prapare_Answers {
   const AppLocalizations_Labels_Prapare_Answers(
-      {this.chooseNotToAnswer,
-      this.no,
-      this.yes,
+      {this.basic,
       this.housing,
       this.howMuch,
       this.howOften,
@@ -7058,11 +7576,7 @@ class AppLocalizations_Labels_Prapare_Answers {
       this.without,
       this.work});
 
-  final String chooseNotToAnswer;
-
-  final String no;
-
-  final String yes;
+  final AppLocalizations_Labels_Prapare_Answers_Basic basic;
 
   final AppLocalizations_Labels_Prapare_Answers_Housing housing;
 
@@ -7086,12 +7600,6 @@ class AppLocalizations_Labels_Prapare_Answers {
 
   String getByKey(String key) {
     switch (key) {
-      case 'chooseNotToAnswer':
-        return chooseNotToAnswer;
-      case 'no':
-        return no;
-      case 'yes':
-        return yes;
       default:
         return '';
     }
@@ -7384,6 +7892,21 @@ class AppLocalizations_Labels_Settings {
   }
 }
 
+class AppLocalizations_Labels_Vigor {
+  const AppLocalizations_Labels_Vigor({this.title});
+
+  final String title;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'title':
+        return title;
+      default:
+        return '';
+    }
+  }
+}
+
 class AppLocalizations_Labels {
   const AppLocalizations_Labels(
       {this.app,
@@ -7394,7 +7917,8 @@ class AppLocalizations_Labels {
       this.medical,
       this.prapare,
       this.registration,
-      this.settings});
+      this.settings,
+      this.vigor});
 
   final AppLocalizations_Labels_App app;
 
@@ -7413,6 +7937,8 @@ class AppLocalizations_Labels {
   final AppLocalizations_Labels_Registration registration;
 
   final AppLocalizations_Labels_Settings settings;
+
+  final AppLocalizations_Labels_Vigor vigor;
 
   String getByKey(String key) {
     switch (key) {
