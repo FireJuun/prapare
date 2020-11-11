@@ -14,8 +14,6 @@ class MenuOptionsModel {
     MenuOption(key: 'en', englishValue: 'English', value: 'English'),
     MenuOption(key: 'es', englishValue: 'Spanish', value: 'Español'),
     MenuOption(key: 'ar', englishValue: 'Arabic', value: 'عربى'),
-    MenuOption(key: 'hi', englishValue: 'Hindi', value: 'हिंदी'),
-    MenuOption(key: 'ru', englishValue: 'Russian', value: 'русский'),
     MenuOption(key: 'bn', englishValue: 'Bengali', value: 'বাংলা'),
     MenuOption(key: 'my', englishValue: 'Burmese', value: 'မြန်မာ'),
     MenuOption(
@@ -25,6 +23,7 @@ class MenuOptionsModel {
     MenuOption(key: 'fa', englishValue: 'Farsi', value: 'فارسی'),
     MenuOption(key: 'fr', englishValue: 'French', value: 'Français'),
     MenuOption(key: 'de', englishValue: 'German', value: 'Deutsche'),
+    MenuOption(key: 'hi', englishValue: 'Hindi', value: 'हिंदी'),
     MenuOption(
         key: 'id', englishValue: 'Indonesian', value: 'bahasa Indonesia'),
     MenuOption(key: 'ja', englishValue: 'Japanese', value: '日本語'),
@@ -35,7 +34,9 @@ class MenuOptionsModel {
     MenuOption(key: 'ne', englishValue: 'Nepali', value: 'नेपाली'),
     MenuOption(key: 'pt', englishValue: 'Portuguese', value: 'Português'),
     MenuOption(key: 'pa', englishValue: 'Punjabi', value: 'ਪੰਜਾਬੀ ਦੇ'),
-    MenuOption(key: 'so', englishValue: 'Somali', value: 'Soomaali'),
+    MenuOption(key: 'ru', englishValue: 'Russian', value: 'русский'),
+    // Somali not currently supported, per https://flutter.dev/tutorials/internationalization/
+    // MenuOption(key: 'so', englishValue: 'Somali', value: 'Soomaali'),
     MenuOption(key: 'sw', englishValue: 'Swahili', value: 'Kiswahili'),
     MenuOption(key: 'tl', englishValue: 'Tagalog', value: 'Tagalog'),
     MenuOption(key: 'th', englishValue: 'Thai', value: 'ไทย'),

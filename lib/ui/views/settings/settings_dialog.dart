@@ -16,15 +16,23 @@ class _SettingsDialogContent extends StatelessWidget {
     //todo: extract into controller
     final List<MenuOption> themeOptions = [
       MenuOption(
-          key: 'light',
-          value: labels.settings.light,
-          icon: Icons.brightness_low),
+        key: 'light',
+        englishValue: 'light',
+        value: labels.settings.light,
+        icon: Icons.brightness_low,
+      ),
       MenuOption(
-          key: 'dark', value: labels.settings.dark, icon: Icons.brightness_3),
+        key: 'dark',
+        englishValue: 'dark',
+        value: labels.settings.dark,
+        icon: Icons.brightness_3,
+      ),
       MenuOption(
-          key: 'system',
-          value: labels.settings.system,
-          icon: Icons.brightness_4),
+        key: 'system',
+        englishValue: 'system',
+        value: labels.settings.system,
+        icon: Icons.brightness_4,
+      ),
     ];
 
     final TextTheme textTheme = context.textTheme;
@@ -49,6 +57,9 @@ class _SettingsDialogContent extends StatelessWidget {
                     ...themeOptions.map(
                       (e) => RadioListTile(
                         title: Text(e.value, style: textTheme.bodyText1),
+                        subtitle: (controller.rxLanguage == 'en')
+                            ? null
+                            : Text(e.englishValue, style: textTheme.bodyText2),
                         value: ThemeModeUtil().convertStringToThemeMode(e.key),
                         groupValue: controller.rxThemeMode,
                         onChanged: (newValue) =>
