@@ -9,7 +9,8 @@ class SurveyTab {
       @required this.activeChecked,
       @required this.inactive,
       @required this.inactiveChecked,
-      this.isChecked});
+      isChecked})
+      : isChecked = isChecked ?? false.obs;
 
   SurveyTabId id;
   String code;
@@ -17,7 +18,7 @@ class SurveyTab {
   String activeChecked;
   String inactive;
   String inactiveChecked;
-  RxBool isChecked = false.obs;
+  RxBool isChecked;
 }
 
 enum SurveyTabId { PERSONAL, HOME, MONEY, SOCIAL, OTHER }
