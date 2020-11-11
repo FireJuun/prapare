@@ -170,16 +170,18 @@ class PrapareCodesUtil {
           return labels.prapare.answers.without.medicineOrAnyHealthCare;
         case 'LA30129-3':
           return labels.prapare.answers.without.phone;
+
         // case 'LA46-8':
         //todo: this value needs to accept write-in + boolean
         // return labels.prapare.answers.without.other;
 
         //todo: these also have valueStrings + one extra answer:
-        // 'LA30257-2' patient unable to respond;
         case 'LA30133-5':
           return labels.prapare.answers.transportation.yesKeptFromMedical;
         case 'LA30134-3':
           return labels.prapare.answers.transportation.yesKeptFromNonMedical;
+        case 'LA30257-2':
+          return labels.prapare.answers.transportation.unableToRespond;
 
         case 'LA27722-0':
           return labels.prapare.answers.howOften.lessThanOnceAWeek;

@@ -1,9 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 part of 'localization.dart';
-// ignore_for_file: camel_case_types
-// ignore_for_file: prefer_single_quotes
-// ignore_for_file: prefer_const_constructors
 
 // **************************************************************************
 // SheetLocalizationGenerator
@@ -173,6 +170,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "Patient unable to respond",
             yesKeptFromMedical:
                 "Yes, it has kept me from medical appointments or from getting my medications",
             yesKeptFromNonMedical:
@@ -421,6 +419,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "El paciente es incapaz de responder",
             yesKeptFromMedical:
                 "Sí, me ha mantenido desde las citas médicas o de conseguir mis medicamentos",
             yesKeptFromNonMedical:
@@ -669,6 +668,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "المريض غير قادر على الاستجابة",
             yesKeptFromMedical:
                 "نعم، فإنه أبقى لي من المواعيد الطبية أو من الحصول على الأدوية بلدي",
             yesKeptFromNonMedical:
@@ -914,6 +914,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "जवाब देने में असमर्थ मरीज",
             yesKeptFromMedical:
                 "हाँ, यह मुझे चिकित्सा नियुक्तियों से या मेरे दवाओं को प्राप्त करने से रखा गया है",
             yesKeptFromNonMedical:
@@ -1164,6 +1165,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "Пациент не в состоянии реагировать",
             yesKeptFromMedical:
                 "Да, он сохранил меня от медицинского назначения или получать мои лекарства",
             yesKeptFromNonMedical:
@@ -1412,6 +1414,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "সাড়া অক্ষম পেসেন্ট",
             yesKeptFromMedical:
                 "হ্যাঁ, এটা আমাকে চিকিৎসা কলকব্জা থেকে অথবা আমার ঔষধ পাওয়া থেকে রেখেছেন",
             yesKeptFromNonMedical:
@@ -1658,6 +1661,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "တုံ့ပြန်နိုင်ခြင်းလူနာ",
             yesKeptFromMedical:
                 "ဟုတ်ကဲ့, ကဆေးဘက်ဆိုင်ရာချိန်းထံမှသို့မဟုတ်ကျွန်ုပ်၏ဆေးဝါးများရတဲ့ထဲကအကြှနျုပျကိုထား",
             yesKeptFromNonMedical:
@@ -1905,6 +1909,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "病人无法响应",
             yesKeptFromMedical: "是的，它使我从医疗预约或让我的药",
             yesKeptFromNonMedical: "是的，它使我从非医学会议，约会，工作，或收拾东西，我需要",
           ),
@@ -2137,6 +2142,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "病人無法響應",
             yesKeptFromMedical: "是的，它使我從醫療預約或讓我的藥",
             yesKeptFromNonMedical: "是的，它使我從非醫學會議，約會，工作，或收拾東西，我需要",
           ),
@@ -2371,6 +2377,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "بیمار قادر به پاسخ",
             yesKeptFromMedical:
                 "بله، آن را به من از قرار ملاقات های پزشکی و یا از گرفتن داروها من نگه داشته",
             yesKeptFromNonMedical:
@@ -2620,6 +2627,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "Patient incapable de répondre",
             yesKeptFromMedical:
                 "Oui, il m'a empêché de rendez-vous médicaux ou d'obtenir mes médicaments",
             yesKeptFromNonMedical:
@@ -2869,6 +2877,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "Patient nicht in der Lage zu reagieren",
             yesKeptFromMedical:
                 "Ja, hat es hält mich von Arztterminen oder von meinen Medikamente bekommen",
             yesKeptFromNonMedical:
@@ -3118,6 +3127,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "Pasien dapat merespon",
             yesKeptFromMedical:
                 "Ya, itu telah membuat saya dari janji medis atau dari mendapatkan obat saya",
             yesKeptFromNonMedical:
@@ -3366,6 +3376,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "応答できない患者",
             yesKeptFromMedical: "はい、それは医療の予定からか、私の薬を得ることから私を維持しています",
             yesKeptFromNonMedical:
                 "はい、それは私が必要という非医療会議、予定、仕事、または物事を得ることからから私を維持しています",
@@ -3607,6 +3618,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "អ្នកជំងឺដែលមិនអាចឆ្លើយតប",
             yesKeptFromMedical:
                 "បាទ, វាត្រូវបានរក្សាទុកខ្ញុំពីការណាត់ជួបពេទ្យឬពីការទទួលយកថ្នាំរបស់ខ្ញុំ",
             yesKeptFromNonMedical:
@@ -3854,6 +3866,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "응답 할 수없는 환자",
             yesKeptFromMedical: "네, 의료 약속이나 내 약물 치료를 받고에서 저를 유지하고있다",
             yesKeptFromNonMedical:
                 "네, 비 의료 회의, 약속, 작업, 또는 물건을 받고에서 내가 필요에서 저를 유지하고있다",
@@ -4094,6 +4107,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "ເຈັບບໍ່ສາມາດທີ່ຈະຕອບ",
             yesKeptFromMedical:
                 "ແມ່ນແລ້ວ, ມັນໄດ້ເກັບຮັກສາໄວ້ໃຫ້ຂ້າພະເຈົ້າຈາກກວດສຸຂະພາບຫລືຈາກການໄດ້ຮັບຢາປິ່ນປົວຂອງຂ້າພະເຈົ້າ",
             yesKeptFromNonMedical:
@@ -4342,6 +4356,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "प्रतिसाद देऊ शकत रुग्णांच्या",
             yesKeptFromMedical:
                 "होय, हे वैद्यकीय भेटी किंवा माझे औषधे मिळत मला ठेवले आहे",
             yesKeptFromNonMedical:
@@ -4587,6 +4602,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "प्रतिक्रिया गर्न असमर्थ रोगी",
             yesKeptFromMedical:
                 "हो, यो चिकित्सा भेटघाट देखि वा मेरो दबाइहरु रही मलाई राखिएको छ",
             yesKeptFromNonMedical:
@@ -4835,6 +4851,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "Paciente incapaz de responder",
             yesKeptFromMedical:
                 "Sim, ele me impediu de consultas médicas ou de obter meus medicamentos",
             yesKeptFromNonMedical:
@@ -5083,6 +5100,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "ਜਵਾਬ ਦੇਣ ਲਈ ਅਸਮਰੱਥ ਹੈ ਮਰੀਜ਼",
             yesKeptFromMedical:
                 "ਜੀ, ਇਸ ਨੂੰ ਮੈਨੂੰ ਡਾਕਟਰੀ ਮੁਲਾਕਾਤ ਜ ਦਵਾਈ ਪ੍ਰਾਪਤ ਕਰਨ ਤੱਕ ਰੱਖਿਆ ਗਿਆ ਹੈ",
             yesKeptFromNonMedical:
@@ -5331,6 +5349,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "Patient awoodin in ay jawaab",
             yesKeptFromMedical:
                 "Haa, waxa uu iga celisay ballamaha caafimaad ama ka helitaanka daawooyinka aan",
             yesKeptFromNonMedical:
@@ -5580,6 +5599,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "Mgonjwa hawezi kujibu",
             yesKeptFromMedical:
                 "Ndiyo, ina naendelea kutoka uteuzi wa matibabu au kutoka kupata dawa yangu",
             yesKeptFromNonMedical:
@@ -5830,6 +5850,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "Pasyente magawang tumugon",
             yesKeptFromMedical:
                 "Oo, ito ay pinananatiling sa akin mula sa mga medikal na appointment o mula sa pagkuha ng aking mga gamot",
             yesKeptFromNonMedical:
@@ -6079,6 +6100,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "ผู้ป่วยไม่สามารถตอบสนอง",
             yesKeptFromMedical:
                 "ใช่มันได้เก็บฉันจากการนัดหมายทางการแพทย์หรือจากการได้รับยาของฉัน",
             yesKeptFromNonMedical:
@@ -6327,6 +6349,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "javob olmagan bemor",
             yesKeptFromMedical:
                 "Ha, u tibbiy tayinlash yoki mening dori olish meni saqlar",
             yesKeptFromNonMedical:
@@ -6572,6 +6595,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "Bệnh nhân không có khả năng đáp ứng",
             yesKeptFromMedical:
                 "Vâng, nó đã giữ tôi từ các cuộc hẹn y tế hoặc từ nhận thuốc của tôi",
             yesKeptFromNonMedical:
@@ -7438,7 +7462,11 @@ class AppLocalizations_Labels_Prapare_Answers_School {
 
 class AppLocalizations_Labels_Prapare_Answers_Transportation {
   const AppLocalizations_Labels_Prapare_Answers_Transportation(
-      {this.yesKeptFromMedical, this.yesKeptFromNonMedical});
+      {this.unableToRespond,
+      this.yesKeptFromMedical,
+      this.yesKeptFromNonMedical});
+
+  final String unableToRespond;
 
   final String yesKeptFromMedical;
 
@@ -7446,6 +7474,8 @@ class AppLocalizations_Labels_Prapare_Answers_Transportation {
 
   String getByKey(String key) {
     switch (key) {
+      case 'unableToRespond':
+        return unableToRespond;
       case 'yesKeptFromMedical':
         return yesKeptFromMedical;
       case 'yesKeptFromNonMedical':
