@@ -27,7 +27,7 @@ class _SettingsDialogContent extends StatelessWidget {
           icon: Icons.brightness_4),
     ];
 
-    TextTheme textTheme = context.textTheme;
+    final TextTheme textTheme = context.textTheme;
     return Dialog(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 24.0),
@@ -40,7 +40,7 @@ class _SettingsDialogContent extends StatelessWidget {
                 init: SettingsController(),
                 builder: (controller) => ListView(
                   children: <Widget>[
-                    SizedBox(height: 24),
+                    const SizedBox(height: 24),
 
                     // *** CHOOSE THEME ***
                     Center(
@@ -55,7 +55,7 @@ class _SettingsDialogContent extends StatelessWidget {
                             controller.setThemeMode(newValue),
                       ),
                     ),
-                    SizedBox(height: 24),
+                    const SizedBox(height: 24),
 
                     // *** CHOOSE LANGUAGE ***
                     Center(

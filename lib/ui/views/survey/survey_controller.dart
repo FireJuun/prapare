@@ -7,11 +7,11 @@ import 'package:prapare/ui/themes.dart';
 class SurveyController extends GetxController
     with SingleGetTickerProviderMixin {
   TabController _tabController;
-  get tabController => this._tabController;
+  TabController get tabController => _tabController;
 
   final _rxTabIndex = 0.obs;
-  set rxTabIndex(value) => this._rxTabIndex.value = value;
-  get rxTabIndex => this._rxTabIndex.value;
+  set rxTabIndex(value) => _rxTabIndex.value = value;
+  int get rxTabIndex => _rxTabIndex.value;
 
   final SurveyTabModel tabModel = SurveyTabModel();
 
@@ -19,7 +19,7 @@ class SurveyController extends GetxController
       obj.isChecked.value = !obj.isChecked.value;
 
   String getTabIconFromIndex(int index, int ctrlIndex) {
-    SurveyTab obj = tabModel.tabList[index];
+    final SurveyTab obj = tabModel.tabList[index];
     if (index == ctrlIndex) {
       return (obj.isChecked.value) ? obj.activeChecked : obj.active;
     } else

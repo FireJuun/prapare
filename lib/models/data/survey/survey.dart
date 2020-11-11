@@ -4,6 +4,8 @@ import 'question.dart';
 /// it may be a survey, or it may just be a group of questions, but it is the
 /// group of questions that should be displayed together
 class Survey {
+  Survey({this.code, this.title, this.text, this.questions});
+
   /// the code that is used to designate the particular questionnaire
   final String code;
 
@@ -15,6 +17,4 @@ class Survey {
 
   /// the list of questions to display
   List<Question> questions;
-
-  Survey({this.code, this.title, this.text, this.questions});
 }

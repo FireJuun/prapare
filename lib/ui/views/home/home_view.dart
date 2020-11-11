@@ -26,9 +26,9 @@ class HomeView extends StatelessWidget {
                   ),
               StyledButtonLarge(title: labels.general.submitShare),
               Align(
-                  alignment: FractionalOffset(0.8, 0),
+                  alignment: const FractionalOffset(0.8, 0),
                   child: IconButton(
-                      icon: Icon(Icons.settings, size: 36),
+                      icon: const Icon(Icons.settings, size: 36),
                       onPressed: () => settingsDialog()))
             ],
           ),

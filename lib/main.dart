@@ -10,7 +10,7 @@ import 'package:prapare/ui/views/home/home_view.dart';
 
 import 'controllers/controllers.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await _initServices();
   runApp(MyApp());
@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
           child: GetMaterialApp(
             // *** LOCALES ***
             locale: localeService.getLocale, // <- Current locale
+            // ignore: prefer_const_literals_to_create_immutables
             localizationsDelegates: [
               const AppLocalizationsDelegate(), // <- Your custom delegate
               GlobalMaterialLocalizations.delegate,

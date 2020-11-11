@@ -34,9 +34,9 @@ class SurveyDetailController extends GetxController {
 
   void setUserAnswerBySurvey(
       {@required Survey survey, @required int qIndex, @required int ansIndex}) {
-    UserResponse userResponse =
+    final UserResponse userResponse =
         findUserResponseBySurvey(survey: survey, qIndex: qIndex).value;
-    String surveyAnswerCode =
+    final String surveyAnswerCode =
         survey.questions[qIndex].answers.elementAt(ansIndex).code;
     // if they're already equal, toggle answer off to ''
     userResponse.answerCode =
@@ -45,7 +45,7 @@ class SurveyDetailController extends GetxController {
     update();
   }
 
-  RxSet<UserResponse> _personalResponses = <UserResponse>{}.obs;
-  RxSet<UserResponse> get personalResponses => this._personalResponses;
-  set personalResponses(Set<UserResponse> value) => this._personalResponses;
+  final RxSet<UserResponse> _personalResponses = <UserResponse>{}.obs;
+  RxSet<UserResponse> get personalResponses => _personalResponses;
+  set personalResponses(Set<UserResponse> value) => _personalResponses;
 }

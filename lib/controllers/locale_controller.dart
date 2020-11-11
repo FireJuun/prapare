@@ -11,16 +11,16 @@ import 'package:prapare/models/menu_options_model.dart';
 class LocaleController extends GetxController {
   static LocaleController get to => Get.find();
 
-  final language = "".obs;
+  final language = ''.obs;
   final store = GetStorage();
   final List<MenuOption> languageOptions = MenuOptionsModel.languageOptions;
 
   String get currentLanguage => language.value;
 
   @override
-  void onReady() async {
+  Future<void> onReady() async {
     setInitialLocalLanguage();
-    super.onInit();
+    super.onReady();
   }
 
   Future<LocaleController> init() async {
@@ -29,7 +29,7 @@ class LocaleController extends GetxController {
   }
 
   // Retrieves and Sets language based on device settings
-  setInitialLocalLanguage() {
+  Future<void> setInitialLocalLanguage() async {
     if ((currentLanguageStore.value == '') ||
         (currentLanguageStore.value == null)) {
       String _deviceLanguage = ui.window.locale.toString();

@@ -3,23 +3,25 @@ import 'package:get/get.dart';
 import 'package:prapare/_internal/utils/prapare_codes_util.dart';
 import 'package:prapare/localization.dart';
 import 'package:prapare/models/data/survey/question.dart';
+import 'package:prapare/models/data/survey/survey.dart';
 import 'package:prapare/ui/views/survey/shared/survey_detail/survey_detail_controller.dart';
 
 class SurveyDetail extends StatelessWidget {
-  final String surveyCode;
-
   const SurveyDetail({Key key, @required this.surveyCode})
       : assert(surveyCode != null),
         super(key: key);
 
+  final String surveyCode;
+
+  @override
   Widget build(BuildContext context) {
     // for now, using GetBuilder instead of GetX so that update() calls in the controller will trigger a redraw of the UI
     return GetBuilder<SurveyDetailController>(
       builder: (controller) {
-        final textTheme = context.textTheme;
-        var survey = controller.data.getSurveyFromCode(surveyCode);
+        final TextTheme textTheme = context.textTheme;
+        final Survey survey = controller.data.getSurveyFromCode(surveyCode);
         final PrapareCodesUtil codesUtil = PrapareCodesUtil();
-        final labels = AppLocalizations.of(context);
+        final AppLocalizations_Labels labels = AppLocalizations.of(context);
 
         Widget mapQuestion(Question question) {
           // Unused: find index of question w/in survey
@@ -62,7 +64,7 @@ class SurveyDetail extends StatelessWidget {
                 },
               ),
               // Extra padding at end
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
             ],
           );
         }

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:prapare/controllers/theme_controller.dart';
 import 'package:prapare/ui/themes.dart';
-import 'package:prapare/_internal/components/custom.dart' as custom;
 import 'package:prapare/ui/views/settings/settings_dialog.dart';
 import 'package:prapare/ui/views/survey/shared/survey_detail/survey_detail.dart';
 import 'package:prapare/ui/views/survey/shared/survey_header_flexible.dart';
@@ -40,7 +38,7 @@ class SurveyView extends StatelessWidget {
                 snap: true,
                 actions: [
                   IconButton(
-                      icon: Icon(Icons.settings),
+                      icon: const Icon(Icons.settings),
                       onPressed: () => settingsDialog())
                 ],
                 expandedHeight: _expandedHeight,

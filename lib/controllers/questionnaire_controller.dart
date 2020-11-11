@@ -10,14 +10,14 @@ class QuestionnaireController extends GetxController {
   /// A semi-temporary data model, which will be transitioned to harness [prapareSurvey]
   /// For now, the data points have been created manually, and the codes don't quite correlate yet
 
-  QuestionnaireModel _model = QuestionnaireModel();
+  final QuestionnaireModel _model = QuestionnaireModel();
 
   //todo: implement error handling / orElse
   Survey getSurveyFromCode(String code) => _model.data.surveys
       .firstWhere((e) => e.code == code, orElse: () => Survey());
 
   int getTotalIndexFromQuestion(Question question) {
-    List<Question> tempQuestionList = [
+    final List<Question> tempQuestionList = [
       ..._model.data.surveys.map((e) => e.questions).expand((x) => x)
     ];
 

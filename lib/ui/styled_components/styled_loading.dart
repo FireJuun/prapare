@@ -20,13 +20,13 @@ bool _loaderShown = false;
 Widget _loadingIndicator;
 
 class StyledLoading extends StatelessWidget {
-  final Widget child;
-  final Widget loader;
-  final bool darkTheme;
-
   const StyledLoading(
       {Key key, this.child, this.loader, this.darkTheme = false})
       : super(key: key);
+
+  final Widget child;
+  final Widget loader;
+  final bool darkTheme;
 
   @override
   Widget build(BuildContext context) {
@@ -41,11 +41,15 @@ class StyledLoading extends StatelessWidget {
 
 OverlayState get _overlayState {
   final context = _tKey.currentContext;
-  if (context == null) return null;
+  if (context == null) {
+    return null;
+  }
 
   NavigatorState navigator;
   void visitor(Element element) {
-    if (navigator != null) return;
+    if (navigator != null) {
+      return;
+    }
 
     if (element.widget is Navigator) {
       navigator = (element as StatefulElement).state;
@@ -67,7 +71,7 @@ Future<void> showLoadingIndicator(
     debugPrint('Showing loading overlay');
     final _child = Center(
       child: SizedBox(
-        child: _loadingIndicator ?? CircularProgressIndicator(),
+        child: _loadingIndicator ?? const CircularProgressIndicator(),
         /*(Platform.isAndroid
                 ? CircularProgressIndicator()
                 : CupertinoActivityIndicator()),*/
@@ -89,7 +93,7 @@ Future<void> showLoadingIndicator(
     );
   } catch (err) {
     debugPrint('Exception showing loading overlay\n${err.toString()}');
-    throw err;
+    rethrow;
   }
 }
 
@@ -99,7 +103,7 @@ Future<void> hideLoadingIndicator() async {
     await _hideOverlay();
   } catch (err) {
     debugPrint('Exception hiding loading overlay');
-    throw err;
+    rethrow;
   }
 }
 
@@ -123,7 +127,7 @@ Future<void> _showOverlay({@required Widget child}) async {
     _loaderShown = true;
   } catch (err) {
     debugPrint('Exception inserting loading overlay\n${err.toString()}');
-    throw err;
+    rethrow;
   }
 }
 
@@ -133,6 +137,6 @@ Future<void> _hideOverlay() async {
     _loaderShown = false;
   } catch (err) {
     debugPrint('Exception removing loading overlay\n${err.toString()}');
-    throw err;
+    rethrow;
   }
 }

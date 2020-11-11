@@ -1,5 +1,6 @@
-import 'dart:math' as math;
+// import 'dart:math' as math;
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:prapare/_internal/components/custom.dart' as custom;
@@ -30,7 +31,7 @@ class SurveyHeaderFlexible extends StatelessWidget {
         // todo: extract to animation controller, add animation effects
         final settings = context
             .dependOnInheritedWidgetOfExactType<FlexibleSpaceBarSettings>();
-        final bool isExpanded = (settings.currentExtent == settings.maxExtent);
+        final bool isExpanded = settings.currentExtent == settings.maxExtent;
         // final deltaExtent = settings.maxExtent - settings.minExtent;
         // final t =
         //     (1.0 - (settings.currentExtent - settings.minExtent) / deltaExtent)
@@ -47,7 +48,7 @@ class SurveyHeaderFlexible extends StatelessWidget {
               preferredSize: Size.fromHeight(_tabHeight),
               child: TabBar(
                 labelPadding:
-                    EdgeInsets.symmetric(horizontal: 2.0, vertical: 0.0),
+                    const EdgeInsets.symmetric(horizontal: 2.0, vertical: 0.0),
                 controller: surveyController.tabController,
                 unselectedLabelColor: appTheme.grey,
                 labelColor: Colors.black,
@@ -78,7 +79,7 @@ class SurveyHeaderFlexible extends StatelessWidget {
                   height: 70,
                   color: surveyController.getTabBackgroundColorFromIndex(
                       surveyController.rxTabIndex, appTheme),
-                  padding: EdgeInsets.symmetric(horizontal: 2.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 2.0),
                   child: Center(
                     child: Text(
                       codesUtil.getStringFromLinkIdAndLocale(
@@ -105,7 +106,7 @@ class SurveyHeaderFlexible extends StatelessWidget {
             );
 
         Widget _buildCollapsed() => Padding(
-              padding: EdgeInsets.symmetric(horizontal: 40),
+              padding: const EdgeInsets.symmetric(horizontal: 40),
               child: Row(children: [
                 Obx(() => SvgPicture.asset(
                     surveyController.getTabIconFromIndex(

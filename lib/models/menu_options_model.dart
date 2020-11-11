@@ -1,7 +1,8 @@
 import 'package:prapare/models/data/menu_option.dart';
 
 class MenuOptionsModel {
-  static final String defaultLanguage = 'en';
+  static const String defaultLanguage = 'en';
+
   // spec: https://github.com/delay/flutter_starter
   // List of languages that are supported.  Used in selector.
   // Follow this plugin for translating a google sheet to languages

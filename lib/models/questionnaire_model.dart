@@ -6,8 +6,8 @@ import 'package:prapare/models/data/survey/survey.dart';
 import 'package:prapare/models/data/survey/user_response.dart';
 
 class QuestionnaireModel {
-  FhirQuestionnaire _data = FhirQuestionnaire();
-  FhirQuestionnaire get data => this._data;
+  final FhirQuestionnaire _data = FhirQuestionnaire();
+  FhirQuestionnaire get data => _data;
 
   /// loads the survey (currently saved locally, but could be queried from
   /// elswhere), then creates a list of Surveys from the questionnaire
@@ -34,7 +34,7 @@ class QuestionnaireModel {
     final stillGroup = item.item
         .indexWhere((subItem) => subItem.type == QuestionnaireItemType.group);
     if (stillGroup == -1) {
-      Survey newSurvey = Survey(
+      final Survey newSurvey = Survey(
         code: item.linkId,
         title: _data.title,
         text: item.text,
@@ -74,13 +74,14 @@ class QuestionnaireModel {
   }
 
   List<QuestionnaireResponseItem> _getResponse(List<QuestionnaireItem> item) {
-    var response = <QuestionnaireResponseItem>[];
+    final response = <QuestionnaireResponseItem>[];
     for (var subItem in item) {
       /// iteratively loops through each item in the item list, if it's a choice
       /// meaning that it's a question, will go ahead and craet the item in the
       /// list to return
       if (subItem.type == QuestionnaireItemType.choice) {
-        var responsesForThisItem = _data.userResponses.toList();
+        final List<UserResponse> responsesForThisItem =
+            _data.userResponses.toList();
         responsesForThisItem
             .retainWhere((response) => response.questionCode == subItem.linkId);
         if (responsesForThisItem.isNotEmpty) {
@@ -115,9 +116,9 @@ class QuestionnaireModel {
   /// from the original questionnaire
   List<QuestionnaireResponseAnswer> _getAnswers(
       QuestionnaireItem item, List<UserResponse> responsesForThisItem) {
-    var responseAnswer = <QuestionnaireResponseAnswer>[];
+    final responseAnswer = <QuestionnaireResponseAnswer>[];
     for (var answer in responsesForThisItem) {
-      var thisAnswer = item.answerOption.firstWhere(
+      final QuestionnaireAnswerOption thisAnswer = item.answerOption.firstWhere(
           (option) => option.valueCoding.code == Code(answer.answerCode),
           orElse: () => null);
       responseAnswer.add(

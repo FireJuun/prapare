@@ -38,3 +38,12 @@ class AppIcons {
       'assets/icons/social_icon_inactive.svg';
   static const String SOCIAL_ICON = 'assets/icons/social_icon.svg';
 }
+
+class AppImages {
+  static const String LOGO_TAGLINE =
+      'assets/images/PRAPARE-Logo-with-tagline.png';
+  static const String LOGO_NO_TAGLINE =
+      'assets/images/PRAPARE-Logo-no-tagline.png';
+  static const String LOGO_NO_TAGLINE_DARK =
+      'assets/images/PRAPARE-Logo-no-tagline-dark.png';
+}

@@ -3,7 +3,7 @@ import 'package:prapare/models/data/survey_tab_data.dart';
 import 'package:prapare/strings.dart';
 
 class SurveyTabModel {
-  List<SurveyTab> _tabList = [
+  final List<SurveyTab> _tabList = [
     SurveyTab(
         id: SurveyTabId.PERSONAL,
         code: S.CODE_PERSONAL,
@@ -40,6 +40,6 @@ class SurveyTabModel {
         inactive: AppIcons.OTHER_ICON_INACTIVE,
         inactiveChecked: AppIcons.OTHER_ICON_INACTIVE_CHECKED),
   ];
-  List<SurveyTab> get tabList => this._tabList;
-  set tabList(List<SurveyTab> value) => this._tabList;
+  List<SurveyTab> get tabList => _tabList;
+  set tabList(List<SurveyTab> value) => _tabList;
 }
