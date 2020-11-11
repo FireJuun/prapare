@@ -64,6 +64,8 @@ class _SettingsDialogContent extends StatelessWidget {
                     ...controller.getlanguageOptions().map(
                           (e) => RadioListTile(
                             title: Text(e.value, style: textTheme.bodyText1),
+                            subtitle: Text(e.englishValue,
+                                style: textTheme.bodyText2),
                             value: e.key,
                             groupValue: controller.rxLanguage,
                             onChanged: (value) async =>
