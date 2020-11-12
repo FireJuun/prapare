@@ -25,7 +25,6 @@ class QuestionnaireModel {
         }
       }
     }
-    // return questionnaire;
   }
 
   /// creates the survey from the group of questions that should be displayed
@@ -49,9 +48,7 @@ class QuestionnaireModel {
       _data.surveys.add(newSurvey);
     } else {
       /// if the subItem is also a group, then it will recursively call this fxn
-      for (var g in item.item) {
-        _surveyFromGroup(g);
-      }
+      item.item.forEach((g) => _surveyFromGroup(g));
     }
   }
 

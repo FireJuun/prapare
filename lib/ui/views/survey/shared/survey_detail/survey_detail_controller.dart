@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
-import 'package:prapare/models/data/survey/question.dart';
 import 'package:prapare/models/data/survey/survey.dart';
 import 'package:prapare/models/data/survey/user_response.dart';
 import 'package:prapare/controllers/questionnaire_controller.dart';

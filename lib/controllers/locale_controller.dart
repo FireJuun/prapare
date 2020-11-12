@@ -23,11 +23,6 @@ class LocaleController extends GetxController {
     super.onReady();
   }
 
-  Future<LocaleController> init() async {
-    await setInitialLocalLanguage();
-    return this;
-  }
-
   // Retrieves and Sets language based on device settings
   Future<void> setInitialLocalLanguage() async {
     if ((currentLanguageStore.value == '') ||

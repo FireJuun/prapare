@@ -1,7 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 part of 'localization.dart';
-
+// ignore_for_file: camel_case_types
+// ignore_for_file: prefer_single_quotes
+// ignore_for_file: prefer_const_constructors
 // **************************************************************************
 // SheetLocalizationGenerator
 // **************************************************************************
