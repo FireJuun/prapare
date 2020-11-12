@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-import 'response.dart';
+import 'response_type.dart';
 
 /// represents the class that is passed back from the user
 class UserResponse {
@@ -8,7 +8,7 @@ class UserResponse {
     @required this.surveyCode,
     @required this.questionCode,
     @required this.answerCode,
-    @required this.response,
+    @required this.responseType,
   });
 
   /// specifies the survey
@@ -21,5 +21,5 @@ class UserResponse {
   String answerCode;
 
   /// union class of the type of responses allowed
-  Response response;
+  ResponseType responseType;
 }

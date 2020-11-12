@@ -21,6 +21,8 @@ class Question {
     if (itemType != ItemType.group &&
         itemType != ItemType.display &&
         itemType != ItemType.question) {
+      ///  initialize the answer list
+      answers = <Answer>{};
       if (itemType != ItemType.choice) {
         format = questionMap[item.type.toString()];
       } else {
@@ -48,13 +50,12 @@ class Question {
             format = qType[qformat];
           }
         }
-      }
-    }
 
-    /// initialize the answer list, then create each answer in the list
-    answers = <Answer>{};
-    for (var answer in item.answerOption) {
-      answers.add(Answer.fromAnswerOption(answer));
+        /// then create each answer in the list
+        for (var answer in item.answerOption) {
+          answers.add(Answer.fromAnswerOption(answer));
+        }
+      }
     }
   }
 
