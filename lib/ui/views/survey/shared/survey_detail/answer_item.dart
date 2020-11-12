@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/_internal/utils/prapare_codes_util.dart';
+import 'package:prapare/controllers/controllers.dart';
 import 'package:prapare/localization.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/ui/views/survey/shared/survey_detail/survey_detail_controller.dart';
@@ -12,18 +13,19 @@ class AnswerItem extends StatelessWidget {
       @required this.question,
       @required this.qIndex,
       @required this.answer,
-      @required this.answerIndex})
+      @required this.ansIndex})
       : super(key: key);
 
   final Survey survey;
   final Question question;
   final int qIndex;
   final Answer answer;
-  final int answerIndex;
+  final int ansIndex;
 
   @override
   Widget build(BuildContext context) {
     final SurveyDetailController controller = Get.find();
+    final UserResponsesController responses = Get.find();
     final PrapareCodesUtil codesUtil = PrapareCodesUtil();
 
     try {
@@ -31,26 +33,25 @@ class AnswerItem extends StatelessWidget {
 
         // **** Checkbox Answer ***
         case answerType.checkbox:
-          final Rx<UserResponse> response = controller.findUserResponseBySurvey(
-              survey: survey, qIndex: qIndex);
+          final UserResponse _response = responses.findCheckboxResponse(
+              survey: survey, qIndex: qIndex, ansIndex: ansIndex);
 
           return CheckboxListTile(
               title: _AnswerTitle(answer: answer),
-              value: response.value.responseType.value,
-              onChanged: (value) => controller.toggleChecked(response));
+              value: _response.responseType.value,
+              onChanged: (value) => controller.toggleChecked(_response));
 
         // **** DEFAULT: Radio Button Answer ***
         default:
+          final _response =
+              responses.findRadioButtonResponse(survey: survey, qIndex: qIndex);
           return RadioListTile<String>(
             title: _AnswerTitle(answer: answer),
             value: answer.code,
-            groupValue: controller
-                .findUserResponseBySurvey(survey: survey, qIndex: qIndex)
-                .value
-                .answerCode,
+            groupValue: _response.answerCode,
             toggleable: true,
-            onChanged: (String value) => controller.setUserAnswerBySurvey(
-                survey: survey, qIndex: qIndex, ansIndex: answerIndex),
+            onChanged: (String value) =>
+                responses.removeOldAndCreateNew(value, _response),
           );
       }
     } catch (error) {

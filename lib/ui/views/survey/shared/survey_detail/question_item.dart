@@ -49,7 +49,7 @@ class QuestionItem extends StatelessWidget {
                 question: question,
                 qIndex: qIndex,
                 answer: entry.value,
-                answerIndex: entry.key,
+                ansIndex: entry.key,
               ),
             ),
         // Extra padding at end
