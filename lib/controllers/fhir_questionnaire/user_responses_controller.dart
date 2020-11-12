@@ -4,49 +4,39 @@ import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/response_type.dart';
 
 class UserResponsesController extends GetxController {
-  final RxList<UserResponse> _rxResponses = <UserResponse>[].obs;
-  RxList<UserResponse> get rxResponses => _rxResponses;
+  final RxSet<UserResponse> _rxResponses = <UserResponse>{}.obs;
+  RxSet<UserResponse> get rxResponses => _rxResponses;
 
   void updateUserResponse(UserResponse item) {
     // check for previous response by survey/question/answer
     final index = _findResponseIndex(item);
 
-    // index of -1 means this elements wasn't found in the set
-    if (index != -1) {
-      _rxResponses.remove(_rxResponses.elementAt(index));
-    }
+    // remove old response, if present, then add new response
+    _rxResponses.remove(_rxResponses.elementAt(index));
     _rxResponses.add(item);
+
+    // temporary, for testing
     print('All Responses:');
     _rxResponses.map((e) => print(
         's: ${e.surveyCode}  q: ${e.questionCode}  a: ${e.answerCode}  '));
     update();
   }
 
-  void removeOldAndCreateNew(String value, UserResponse _response) {
-    //todo: extract into separate command
-    // if (_response != null) {
-    //   removeOldUserResponse(_response);
-    // }
-
-    final newResponse = UserResponse(
-      surveyCode: _response?.surveyCode,
-      questionCode: _response?.questionCode,
-      answerCode: value,
-      responseType: ResponseBoolean(false),
-    );
-    updateUserResponse(newResponse);
-  }
-
-  void removeOldUserResponse(UserResponse item) {
-    _rxResponses.remove(_rxResponses.firstWhere((e) => e == item));
-  }
-
   int _findResponseIndex(UserResponse item) {
     // Get index of the set that satisfies the condition
     return _rxResponses.toList().indexWhere((e) =>
-        e.surveyCode == item.surveyCode && e.questionCode == item.questionCode);
+        e.surveyCode == item.surveyCode &&
+        e.questionCode == item.questionCode &&
+        e.answerCode == item.answerCode);
   }
 
+  // todo: extract into standalone ToggleCheckboxCommand
+  void toggleChecked(UserResponse item) {
+    item.responseType.value = !item.responseType.value;
+    update();
+  }
+
+  // todo: combine these, and implement viewcontroller data handling for checkboxes and for radio buttons
   UserResponse findCheckboxResponse(
       {@required Survey survey, @required int qIndex, @required int ansIndex}) {
     final String _surveyCode = survey.code;
