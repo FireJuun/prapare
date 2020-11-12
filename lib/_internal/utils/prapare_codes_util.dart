@@ -1,16 +1,36 @@
 import 'package:prapare/localization.dart';
 
 class PrapareCodesUtil {
-  String getStringFromLinkIdAndLocale(
+  String getTitleFromLinkIdAndLocale(
       String linkId, AppLocalizations_Labels labels) {
     try {
       switch (linkId) {
         case '/93025-5':
           return labels.prapare.title;
-
-        // *** PERSONAL CHARACTERISTICS ***
         case '/93043-8':
           return labels.prapare.personalCharacteristics.title;
+        case '/93042-0':
+          return labels.prapare.familyAndHome.title;
+        case '/93041-2':
+          return labels.prapare.moneyAndResources.title;
+        case '/93040-4':
+          return labels.prapare.socialAndEmotionalHealth.title;
+        case '/93039-6':
+          return labels.prapare.optionalMeasures.title;
+        default:
+          return 'error: incorrect FHIR Title';
+      }
+    } catch (error) {
+      return error.message;
+    }
+  }
+
+  String getQuestionFromLinkIdAndLocale(
+      String linkId, AppLocalizations_Labels labels) {
+    try {
+      switch (linkId) {
+
+        // *** PERSONAL CHARACTERISTICS ***
         case '/93043-8/56051-6':
           return labels.prapare.personalCharacteristics.latino;
         case '/93043-8/32624-9':
@@ -23,8 +43,6 @@ class PrapareCodesUtil {
           return labels.prapare.personalCharacteristics.language;
 
         // *** FAMILY AND HOME ***
-        case '/93042-0':
-          return labels.prapare.familyAndHome.title;
         case '/93042-0/63512-8':
           // todo: this accepts a decimal response
           //? FYI: worded differently in FHIR resource
@@ -39,8 +57,6 @@ class PrapareCodesUtil {
           return labels.prapare.familyAndHome.address;
 
         // *** MONEY AND RESOURCES ***
-        case '/93041-2':
-          return labels.prapare.moneyAndResources.title;
         case '/93041-2/82589-3':
           //? FYI: worded differently in FHIR resource
           return labels.prapare.moneyAndResources.school;
@@ -63,16 +79,12 @@ class PrapareCodesUtil {
           return labels.prapare.moneyAndResources.transportation;
 
         // *** SOCIAL AND EMOTIONAL HEALTH ***
-        case '/93040-4':
-          return labels.prapare.socialAndEmotionalHealth.title;
         case '/93040-4/93029-7':
           return labels.prapare.socialAndEmotionalHealth.talk;
         case '/93040-4/93038-8':
           return labels.prapare.socialAndEmotionalHealth.stress;
 
         // *** OPTIONAL MEASURES ***
-        case '/93039-6':
-          return labels.prapare.optionalMeasures.title;
         case '/93039-6/93028-9':
           return labels.prapare.optionalMeasures.prison;
         case '/93039-6/93027-1':
@@ -82,8 +94,20 @@ class PrapareCodesUtil {
         case '/93039-6/76501-6':
           // todo: this resource is missing two answer choices:
           // I have not had a partner in the past year
-          // choose not to answer
           return labels.prapare.optionalMeasures.afraid;
+
+        default:
+          return 'error: incorrect FHIR Question';
+      }
+    } catch (error) {
+      return error.message;
+    }
+  }
+
+  String getAnswerFromLinkIdAndLocale(
+      String linkId, AppLocalizations_Labels labels) {
+    try {
+      switch (linkId) {
 
         // *** ANSWER CODES ***
         case 'LA33-6':
@@ -204,7 +228,7 @@ class PrapareCodesUtil {
           return labels.prapare.answers.howMuch.veryMuch;
 
         default:
-          return 'error: incorrect FHIR coding';
+          return 'error: incorrect FHIR Answer';
       }
     } catch (error) {
       return error.message;

@@ -82,7 +82,7 @@ class SurveyHeaderFlexible extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 2.0),
                   child: Center(
                     child: Text(
-                      codesUtil.getStringFromLinkIdAndLocale(
+                      codesUtil.getTitleFromLinkIdAndLocale(
                           tabList[surveyController.rxTabIndex].code, labels),
                       style: isExpanded
                           ? context.theme.accentTextTheme.headline5

@@ -36,7 +36,7 @@ class SurveyDetail extends StatelessWidget {
             children: [
               // Question title
               Text(
-                  '${qTotalIndex + 1}: ${codesUtil.getStringFromLinkIdAndLocale(question.code, labels)}',
+                  '${qTotalIndex + 1}: ${codesUtil.getQuestionFromLinkIdAndLocale(question.code, labels)}',
                   style: textTheme.headline6,
                   textAlign: TextAlign.start),
 
@@ -45,7 +45,7 @@ class SurveyDetail extends StatelessWidget {
               ...question.answers.toList().asMap().entries.map(
                 (answer) {
                   return RadioListTile<String>(
-                    title: Text(codesUtil.getStringFromLinkIdAndLocale(
+                    title: Text(codesUtil.getAnswerFromLinkIdAndLocale(
                         question.answers.elementAt(answer.key).code, labels)),
                     value: question.answers.elementAt(answer.key).code,
                     groupValue: controller
