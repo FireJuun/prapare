@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:prapare/controllers/questionnaire_controller.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
+import 'package:prapare/models/fhir_questionnaire/survey/response_type.dart';
 
 class SurveyDetailController extends GetxController {
   final QuestionnaireController data = Get.find();
@@ -24,6 +25,7 @@ class SurveyDetailController extends GetxController {
             surveyCode: survey.code,
             questionCode: survey.questions[qIndex].code,
             answerCode: '',
+            responseType: ResponseString(''),
           ),
         );
         return _personalResponses.last;
@@ -45,7 +47,7 @@ class SurveyDetailController extends GetxController {
   }
 
   void toggleChecked(Rx<UserResponse> item) {
-    item.value.answerBoolean = !item.value.answerBoolean;
+    item.value.responseType.value = !item.value.responseType.value;
     update();
   }
 

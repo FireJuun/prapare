@@ -1,0 +1,53 @@
+/// itemType as defined: https://www.hl7.org/fhir/valueset-item-type.html
+const questionMap = {
+  'boolean': QFormat.boolean,
+  'decimal': QFormat.decimal,
+  'integer': QFormat.integer,
+  'date': QFormat.date,
+  'dateTime': QFormat.dateTime,
+  'time': QFormat.time,
+  'string': QFormat.string,
+  'text': QFormat.text,
+  'url': QFormat.url,
+  'open_choice': QFormat.open_choice,
+  'attachment': QFormat.attachment,
+  'reference': QFormat.reference,
+  'quantity': QFormat.quantity,
+};
+
+const qType = {
+  'autocomplete': QFormat.autocomplete,
+  'drop-down': QFormat.drop_down,
+  'check-box': QFormat.check_box,
+  'lookup': QFormat.lookup,
+  'radio-button': QFormat.radio_button,
+  'slider': QFormat.slider,
+  'spinner': QFormat.spinner,
+  'text-box': QFormat.text_box,
+};
+
+enum QFormat {
+  boolean,
+  decimal,
+  integer,
+  date,
+  dateTime,
+  time,
+  string,
+  text,
+  url,
+  autocomplete,
+  drop_down,
+  check_box,
+  lookup,
+  radio_button,
+  slider,
+  spinner,
+  text_box,
+  choice,
+  open_choice,
+  attachment,
+  reference,
+  quantity,
+  invalid,
+}

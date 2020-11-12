@@ -36,7 +36,7 @@ class AnswerItem extends StatelessWidget {
 
           return CheckboxListTile(
               title: _AnswerTitle(answer: answer),
-              value: response.value.answerBoolean,
+              value: response.value.responseType.value,
               onChanged: (value) => controller.toggleChecked(response));
 
         // **** DEFAULT: Radio Button Answer ***
