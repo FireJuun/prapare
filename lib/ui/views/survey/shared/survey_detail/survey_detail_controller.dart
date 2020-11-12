@@ -25,7 +25,7 @@ class SurveyDetailController extends GetxController {
             surveyCode: survey.code,
             questionCode: survey.questions[qIndex].code,
             answerCode: '',
-            responseType: ResponseType(''),
+            responseType: ResponseString(''),
           ),
         );
         return _personalResponses.last;
