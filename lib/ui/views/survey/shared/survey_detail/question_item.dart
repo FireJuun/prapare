@@ -27,7 +27,7 @@ class QuestionItem extends StatelessWidget {
     final AppLocalizations_Labels labels = AppLocalizations.of(context);
 
     /// Combine all questions, then get index number
-    /// Note that this assumems each question / survey is unique
+    /// Note that this assumes each question / survey is unique
     final int qTotalIndex = controller.data.getTotalIndexFromQuestion(question);
 
     return Column(
@@ -39,15 +39,17 @@ class QuestionItem extends StatelessWidget {
             style: textTheme.headline6,
             textAlign: TextAlign.start),
 
-        // All answers are mapped out using spread operator
         // todo: add handling of checkboxes and 'other' data entry
+        /// All answers are mapped using spread operator
+        /// toList() is required given answers are start as a set
+        /// asMap().entries.map() are used to pass index w/ values
         ...question.answers.toList().asMap().entries.map(
-              (answer) => AnswerItem(
+              (entry) => AnswerItem(
                 survey: survey,
                 question: question,
                 qIndex: qIndex,
-                answer: answer.value,
-                answerIndex: answer.key,
+                answer: entry.value,
+                answerIndex: entry.key,
               ),
             ),
         // Extra padding at end

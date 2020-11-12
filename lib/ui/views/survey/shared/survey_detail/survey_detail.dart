@@ -20,15 +20,12 @@ class SurveyDetail extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Column(
-            /// asMap().map()...values.toList() used to pass index w/ map
-            /// spec: https://fireship.io/snippets/dart-how-to-get-the-index-on-array-loop-map/
+            /// asMap().entries.map()...toList() used to pass index w/ map
             children: survey.questions
                 .asMap()
-                .map((index, question) => MapEntry(
-                    index,
-                    QuestionItem(
-                        survey: survey, qIndex: index, question: question)))
-                .values
+                .entries
+                .map((entry) => QuestionItem(
+                    survey: survey, qIndex: entry.key, question: entry.value))
                 .toList(),
           ),
         );

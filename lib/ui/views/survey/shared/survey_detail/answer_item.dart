@@ -28,9 +28,8 @@ class AnswerItem extends StatelessWidget {
     final AppLocalizations_Labels labels = AppLocalizations.of(context);
 
     return RadioListTile<String>(
-      title: Text(codesUtil.getAnswerFromLinkIdAndLocale(
-          question.answers.elementAt(answerIndex).code, labels)),
-      value: question.answers.elementAt(answerIndex).code,
+      title: Text(codesUtil.getAnswerFromLinkIdAndLocale(answer.code, labels)),
+      value: answer.code,
       groupValue: controller
           .findUserResponseBySurvey(survey: survey, qIndex: qIndex)
           .value
