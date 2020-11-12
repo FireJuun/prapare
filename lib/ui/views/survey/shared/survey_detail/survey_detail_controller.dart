@@ -8,9 +8,6 @@ import 'package:prapare/controllers/questionnaire_controller.dart';
 class SurveyDetailController extends GetxController {
   final QuestionnaireController data = Get.find();
 
-  int findIndexByQuestion(Survey survey, Question question) =>
-      survey.questions.indexOf(question);
-
   Rx<UserResponse> findUserResponseBySurvey(
       {@required Survey survey, @required int qIndex}) {
     // return response, as connected by survey code and question code

@@ -7,11 +7,13 @@ import 'package:prapare/models/data/survey/survey.dart';
 import 'package:prapare/ui/views/survey/shared/survey_detail/survey_detail_controller.dart';
 
 class SurveyDetail extends StatelessWidget {
-  const SurveyDetail({Key key, @required this.surveyCode})
+  const SurveyDetail(
+      {Key key, @required this.surveyCode, @required this.tabIndex})
       : assert(surveyCode != null),
         super(key: key);
 
   final String surveyCode;
+  final int tabIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +25,7 @@ class SurveyDetail extends StatelessWidget {
         final PrapareCodesUtil codesUtil = PrapareCodesUtil();
         final AppLocalizations_Labels labels = AppLocalizations.of(context);
 
-        Widget mapQuestion(Question question) {
-          // Unused: find index of question w/in survey
-          final int qIndex = controller.findIndexByQuestion(survey, question);
-
+        Widget mapQuestion(int qIndex, Question question) {
           /// Combine all questions, then get index number
           /// Note that this assumems each question / survey is unique
           final int qTotalIndex =
@@ -72,9 +71,14 @@ class SurveyDetail extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Column(
-            children: <Widget>[
-              ...survey.questions.map((e) => mapQuestion(e)),
-            ],
+            /// asMap().map()...values.toList() used to pass index w/ map
+            /// spec: https://fireship.io/snippets/dart-how-to-get-the-index-on-array-loop-map/
+            children: survey.questions
+                .asMap()
+                .map((index, question) =>
+                    MapEntry(index, mapQuestion(index, question)))
+                .values
+                .toList(),
           ),
         );
       },

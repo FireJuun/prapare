@@ -50,39 +50,46 @@ class SurveyView extends StatelessWidget {
         },
         body: TabBarView(
           controller: surveyController.tabController,
+
+          /// asMap().map()...values.toList() used to pass index w/ map
+          /// spec: https://fireship.io/snippets/dart-how-to-get-the-index-on-array-loop-map/
           children: tabList
+              .asMap()
               .map(
-                (e) => SafeArea(
-                  top: false,
-                  bottom: false,
-                  child: Builder(
-                    builder: (BuildContext context) {
-                      return CustomScrollView(
-                        key: PageStorageKey<String>(e.id.toString()),
-                        slivers: <Widget>[
-                          SliverOverlapInjector(
-                            handle:
-                                NestedScrollView.sliverOverlapAbsorberHandleFor(
-                                    context),
-                          ),
-                          SliverPadding(
-                            padding: const EdgeInsets.all(8.0),
-                            sliver: SliverList(
-                              delegate: SliverChildListDelegate(
-                                [
-                                  SurveyDetail(surveyCode: e.code),
-                                  // todo: implement check for when all data fields have data, then remove [ToggleTabChecked]
-                                  ToggleTabChecked(),
-                                ],
+                (i, e) => MapEntry(
+                    i,
+                    SafeArea(
+                      top: false,
+                      bottom: false,
+                      child: Builder(
+                        builder: (BuildContext context) {
+                          return CustomScrollView(
+                            key: PageStorageKey<String>(e.id.toString()),
+                            slivers: <Widget>[
+                              SliverOverlapInjector(
+                                handle: NestedScrollView
+                                    .sliverOverlapAbsorberHandleFor(context),
                               ),
-                            ),
-                          ),
-                        ],
-                      );
-                    },
-                  ),
-                ),
+                              SliverPadding(
+                                padding: const EdgeInsets.all(8.0),
+                                sliver: SliverList(
+                                  delegate: SliverChildListDelegate(
+                                    [
+                                      SurveyDetail(
+                                          tabIndex: i, surveyCode: e.code),
+                                      // todo: implement check for when all data fields have data, then remove [ToggleTabChecked]
+                                      ToggleTabChecked(),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          );
+                        },
+                      ),
+                    )),
               )
+              .values
               .toList(),
         ),
       ),
