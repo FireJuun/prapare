@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/controllers/controllers.dart';
-import 'package:prapare/models/data/menu_option.dart';
+import 'package:prapare/models/menu_options/menu_option.dart';
 
 class SettingsController extends GetxController {
   static SettingsController get to => Get.find();

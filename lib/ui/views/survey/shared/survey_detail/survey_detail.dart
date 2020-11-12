@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:prapare/models/data/survey/export.dart';
+import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/ui/views/survey/shared/survey_detail/survey_detail_controller.dart';
 
 import 'question_item.dart';

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/_internal/utils/prapare_codes_util.dart';
 import 'package:prapare/localization.dart';
-import 'package:prapare/models/data/survey/export.dart';
+import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 
 import 'answer_item.dart';
 import 'survey_detail_controller.dart';

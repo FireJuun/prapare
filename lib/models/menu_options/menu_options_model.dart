@@ -1,4 +1,4 @@
-import 'package:prapare/models/data/menu_option.dart';
+import 'package:prapare/models/menu_options/menu_option.dart';
 
 class MenuOptionsModel {
   static const String defaultLanguage = 'en';

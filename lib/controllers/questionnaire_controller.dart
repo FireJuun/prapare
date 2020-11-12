@@ -1,8 +1,7 @@
 import 'package:get/state_manager.dart';
 import 'package:prapare/_internal/constants/prapare_survey.dart';
-import 'package:prapare/models/data/survey/question.dart';
-import 'package:prapare/models/data/survey/survey.dart';
-import 'package:prapare/models/questionnaire_model.dart';
+import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
+import 'package:prapare/models/fhir_questionnaire/questionnaire_model.dart';
 
 class QuestionnaireController extends GetxController {
   /// A semi-temporary data model, which will be transitioned to harness [prapareSurvey]

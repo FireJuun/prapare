@@ -1,8 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
-import 'package:prapare/models/data/survey/survey.dart';
-import 'package:prapare/models/data/survey/user_response.dart';
 import 'package:prapare/controllers/questionnaire_controller.dart';
+import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 
 class SurveyDetailController extends GetxController {
   final QuestionnaireController data = Get.find();

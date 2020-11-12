@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:prapare/localization.dart';
-import 'package:prapare/models/data/menu_option.dart';
-import 'package:prapare/models/menu_options_model.dart';
+import 'package:prapare/models/menu_options/menu_option.dart';
+import 'package:prapare/models/menu_options/menu_options_model.dart';
 
 // spec: https://github.com/delay/flutter_starter
 class LocaleController extends GetxController {

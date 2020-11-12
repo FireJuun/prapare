@@ -1,5 +1,5 @@
 import 'package:prapare/ui/icons.dart';
-import 'package:prapare/models/data/survey_tab_data.dart';
+import 'package:prapare/models/survey_tab/survey_tab_data.dart';
 import 'package:prapare/strings.dart';
 
 class SurveyTabModel {
