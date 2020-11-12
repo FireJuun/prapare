@@ -37,4 +37,5 @@ enum ItemType {
   attachment,
   reference,
   quantity,
+  invalid,
 }
