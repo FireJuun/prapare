@@ -6,6 +6,8 @@ import 'package:prapare/models/data/survey/question.dart';
 import 'package:prapare/models/data/survey/survey.dart';
 import 'package:prapare/ui/views/survey/shared/survey_detail/survey_detail_controller.dart';
 
+import 'answer_item.dart';
+
 class SurveyDetail extends StatelessWidget {
   const SurveyDetail(
       {Key key, @required this.surveyCode, @required this.tabIndex})
@@ -43,25 +45,14 @@ class SurveyDetail extends StatelessWidget {
               // All answers are mapped out using spread operator
               // todo: add handling of checkboxes and 'other' data entry
               ...question.answers.toList().asMap().entries.map(
-                (answer) {
-                  return RadioListTile<String>(
-                    title: Text(codesUtil.getAnswerFromLinkIdAndLocale(
-                        question.answers.elementAt(answer.key).code, labels)),
-                    value: question.answers.elementAt(answer.key).code,
-                    groupValue: controller
-                        .findUserResponseBySurvey(
-                            survey: survey, qIndex: qIndex)
-                        .value
-                        .answerCode,
-                    toggleable: true,
-                    onChanged: (String value) =>
-                        controller.setUserAnswerBySurvey(
-                            survey: survey,
-                            qIndex: qIndex,
-                            ansIndex: answer.key),
-                  );
-                },
-              ),
+                    (answer) => AnswerItem(
+                      survey: survey,
+                      question: question,
+                      qIndex: qIndex,
+                      answer: answer.value,
+                      answerIndex: answer.key,
+                    ),
+                  ),
               // Extra padding at end
               const SizedBox(height: 16),
             ],
