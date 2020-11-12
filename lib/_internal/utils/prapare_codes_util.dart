@@ -1,6 +1,23 @@
 import 'package:prapare/localization.dart';
 
+enum answerType { radio, checkbox, string_short, string_long, boolean }
+
 class PrapareCodesUtil {
+  /// hard-coded for now
+  /// todo: use FHIR resource to determine answer type
+  answerType getAnswerTypeFromQuestionCode(String linkId) {
+    try {
+      switch (linkId) {
+        case '/93043-8/32624-9':
+          return answerType.checkbox;
+        default:
+          return answerType.radio;
+      }
+    } catch (error) {
+      return error.message;
+    }
+  }
+
   String getTitleFromLinkIdAndLocale(
       String linkId, AppLocalizations_Labels labels) {
     try {

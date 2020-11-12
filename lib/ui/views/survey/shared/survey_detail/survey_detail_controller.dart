@@ -14,6 +14,10 @@ class SurveyDetailController extends GetxController {
       (e) =>
           e.surveyCode == survey.code &&
           e.questionCode == survey.questions[qIndex].code,
+      // Added to handle checkbox items
+      // todo: clean up data model
+      // e.answerCode ==
+      //     survey.questions[qIndex].answers.elementAt(ansIndex).code,
       // if no response exists, create a new one
       orElse: () {
         _personalResponses.add(
@@ -38,6 +42,11 @@ class SurveyDetailController extends GetxController {
     userResponse.answerCode =
         (userResponse.answerCode == surveyAnswerCode) ? '' : surveyAnswerCode;
 
+    update();
+  }
+
+  void toggleChecked(Rx<UserResponse> item) {
+    item.value.answerBoolean = !item.value.answerBoolean;
     update();
   }
 

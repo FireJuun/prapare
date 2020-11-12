@@ -6,9 +6,9 @@ class UserResponse {
     @required this.surveyCode,
     @required this.questionCode,
     @required this.answerCode,
-    this.answerBoolean,
-    this.answerDecimal,
-    this.answerString,
+    this.answerBoolean = false,
+    this.answerDecimal = 0.0,
+    this.answerString = '',
   });
 
   /// specifies the survey
@@ -21,7 +21,7 @@ class UserResponse {
   String answerCode;
 
   /// In some cases, boolean answers are accepted
-  String answerBoolean;
+  bool answerBoolean;
 
   /// In other cases, decimals are accepted
   /// While FHIR accepts this resource as a decimal...
