@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:prapare/controllers/controllers.dart';
 import 'package:prapare/controllers/theme_controller.dart';
 import 'package:prapare/ui/themes.dart';
 import 'package:prapare/ui/views/settings/settings_dialog.dart';
@@ -16,8 +17,9 @@ class SurveyView extends StatelessWidget {
   Widget build(BuildContext context) {
     final AppTheme appTheme = Get.find<ThemeController>()
         .getAppThemeFromBrightness(context.theme.brightness);
-    final SurveyController surveyController = Get.find();
-    final tabList = surveyController.tabModel.tabList;
+    final QuestionnaireController dataController = Get.find();
+    final SurveyController controller = Get.find();
+    final tabList = controller.tabModel.tabList;
 
     // spec: https://api.flutter.dev/flutter/widgets/NestedScrollView-class.html
     return Scaffold(
@@ -49,47 +51,46 @@ class SurveyView extends StatelessWidget {
           ];
         },
         body: TabBarView(
-          controller: surveyController.tabController,
+          controller: controller.tabController,
 
           /// asMap().map()...values.toList() used to pass index w/ map
           /// spec: https://fireship.io/snippets/dart-how-to-get-the-index-on-array-loop-map/
           children: tabList
-              .asMap()
               .map(
-                (i, e) => MapEntry(
-                    i,
-                    SafeArea(
-                      top: false,
-                      bottom: false,
-                      child: Builder(
-                        builder: (BuildContext context) {
-                          return CustomScrollView(
-                            key: PageStorageKey<String>(e.id.toString()),
-                            slivers: <Widget>[
-                              SliverOverlapInjector(
-                                handle: NestedScrollView
-                                    .sliverOverlapAbsorberHandleFor(context),
-                              ),
-                              SliverPadding(
-                                padding: const EdgeInsets.all(8.0),
-                                sliver: SliverList(
-                                  delegate: SliverChildListDelegate(
-                                    [
-                                      SurveyDetail(
-                                          tabIndex: i, surveyCode: e.code),
-                                      // todo: implement check for when all data fields have data, then remove [ToggleTabChecked]
-                                      ToggleTabChecked(),
-                                    ],
+                (e) => SafeArea(
+                  top: false,
+                  bottom: false,
+                  child: Builder(
+                    builder: (BuildContext context) {
+                      return CustomScrollView(
+                        key: PageStorageKey<String>(e.id.toString()),
+                        slivers: <Widget>[
+                          SliverOverlapInjector(
+                            handle:
+                                NestedScrollView.sliverOverlapAbsorberHandleFor(
+                                    context),
+                          ),
+                          SliverPadding(
+                            padding: const EdgeInsets.all(8.0),
+                            sliver: SliverList(
+                              delegate: SliverChildListDelegate(
+                                [
+                                  SurveyDetail(
+                                    survey: dataController
+                                        .getSurveyFromCode(e.code),
                                   ),
-                                ),
+                                  // todo: implement check for when all data fields have data, then remove [ToggleTabChecked]
+                                  ToggleTabChecked(),
+                                ],
                               ),
-                            ],
-                          );
-                        },
-                      ),
-                    )),
+                            ),
+                          ),
+                        ],
+                      );
+                    },
+                  ),
+                ),
               )
-              .values
               .toList(),
         ),
       ),
