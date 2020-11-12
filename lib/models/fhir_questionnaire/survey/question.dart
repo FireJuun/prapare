@@ -1,10 +1,11 @@
 import 'package:fhir/r4.dart';
 
 import 'answer.dart';
+import 'item_type.dart';
 
 /// this class will represent a single question for a survey
 class Question {
-  Question({this.code, this.text, this.answers, this.format});
+  Question({this.code, this.text, this.answers, this.itemType, this.format});
 
   Question.fromChoiceItem(QuestionnaireItem item) {
     /// unique id for item in Questionnaire
@@ -12,6 +13,11 @@ class Question {
 
     /// Primary text for item (although not required)
     text = item.text;
+
+    switch(item.type){
+      case 
+
+    }
 
     if (item.extension_ != null) {
       /// ensures that there is an extension for the item
@@ -54,19 +60,17 @@ class Question {
   /// this will be the list of possible answers to the question
   Set<Answer> answers;
 
+    /// this will be the list of possible answers to the question
+  ItemType itemType;
+
   /// this will be the format of the question
   QFormat format;
 }
 
-/// specify how the question should be presented to the user
-enum QFormat {
-  radio,
-  check_boxes,
-  drop_down,
-}
 
-const formatMap = {
-  'drop-down': QFormat.drop_down,
-  'check-boxes': QFormat.check_boxes,
-  'radio': QFormat.radio,
-};
+
+// const formatMap = {
+//   'drop-down': QFormat.drop_down,
+//   'check-boxes': QFormat.check_boxes,
+//   'radio': QFormat.radio,
+// };
