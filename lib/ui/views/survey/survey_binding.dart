@@ -6,7 +6,7 @@ class SurveyBinding implements Bindings {
   @override
   void dependencies() {
     Get.put<SurveyController>(SurveyController());
-    Get.put<QuestionnaireController>(QuestionnaireController());
     Get.put<UserResponsesController>(UserResponsesController());
+    Get.put<QuestionnaireController>(QuestionnaireController());
   }
 }

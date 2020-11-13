@@ -11,19 +11,18 @@ class AnswerItem extends StatelessWidget {
       {Key key,
       @required this.survey,
       @required this.qIndex,
-      @required this.answer,
       @required this.ansIndex})
       : super(key: key);
 
   final Survey survey;
   final int qIndex;
-  final Answer answer;
   final int ansIndex;
 
   @override
   Widget build(BuildContext context) {
     final UserResponsesController controller = Get.find();
     final PrapareCodesUtil codesUtil = PrapareCodesUtil();
+    final answer = survey.questions[qIndex].answers.elementAt(ansIndex);
 
     try {
       switch (codesUtil

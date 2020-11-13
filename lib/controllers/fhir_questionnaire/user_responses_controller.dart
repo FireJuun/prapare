@@ -4,6 +4,8 @@ import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/response_type.dart';
 
 class UserResponsesController extends GetxController {
+  static UserResponsesController get to => Get.find();
+
   final RxSet<UserResponse> _rxResponses = <UserResponse>{}.obs;
   RxSet<UserResponse> get rxResponses => _rxResponses;
 
@@ -29,6 +31,15 @@ class UserResponsesController extends GetxController {
         e.questionCode == item.questionCode &&
         e.answerCode == item.answerCode);
   }
+
+  UserResponse findUserResponse(
+          {@required String surveyCode,
+          @required String questionCode,
+          @required String answerCode}) =>
+      _rxResponses.toList().firstWhere((e) =>
+          e.surveyCode == surveyCode &&
+          e.questionCode == questionCode &&
+          e.answerCode == answerCode);
 
   // todo: extract into standalone ToggleCheckboxCommand
   void toggleChecked(UserResponse item) {

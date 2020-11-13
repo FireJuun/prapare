@@ -29,7 +29,7 @@ class QuestionItem extends StatelessWidget {
     final int qTotalIndex = controller.getTotalIndexFromQuestion(question);
 
     return GetBuilder<QuestionItemController>(
-      init: QuestionItemController(survey: survey, qIndex: qIndex),
+      init: QuestionItemController(survey: survey),
       builder: (_) {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,7 +48,6 @@ class QuestionItem extends StatelessWidget {
                   (entry) => AnswerItem(
                     survey: survey,
                     qIndex: qIndex,
-                    answer: entry.value,
                     ansIndex: entry.key,
                   ),
                 ),
