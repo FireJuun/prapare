@@ -27,12 +27,9 @@ class AnswerItem extends StatelessWidget {
         surveyCode: survey.code,
         questionCode: question.code,
         answerCode: answer.code);
-    final UserResponse activeResponse =
-        controller.findActiveResponse(question.code);
 
     try {
       switch (codesUtil.getAnswerTypeFromQuestionCode(question.code)) {
-
         // **** Checkbox Answer ***
         case answerType.checkbox:
           return AnswerItemCheckbox(answer: answer, userResponse: userResponse);
@@ -42,7 +39,6 @@ class AnswerItem extends StatelessWidget {
           return AnswerItemRadioButton(
             answer: answer,
             userResponse: userResponse,
-            activeResponse: activeResponse,
           );
       }
     } catch (error) {

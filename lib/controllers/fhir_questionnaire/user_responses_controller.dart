@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
-import 'package:prapare/models/fhir_questionnaire/survey/response_type.dart';
 
 class UserResponsesController extends GetxController {
   static UserResponsesController get to => Get.find();
@@ -45,40 +44,14 @@ class UserResponsesController extends GetxController {
   UserResponse findActiveResponse(String questionCode) =>
       _rxMappedActiveResponses[questionCode];
 
-  // todo: extract into standalone ToggleCheckboxCommand
-  void toggleChecked(UserResponse item) {
-    item.responseType.value = !item.responseType.value;
+  void setAllQuestionBooleansToFalse(String questionCode) {
+    _rxResponses.forEach(
+      (e) {
+        if (e.questionCode == questionCode) {
+          e.responseType.value = false;
+        }
+      },
+    );
     update();
   }
-
-  // todo: combine these, and implement viewcontroller data handling for checkboxes and for radio buttons
-  // UserResponse findCheckboxResponse(
-  //     {@required Survey survey, @required int qIndex, @required int ansIndex}) {
-  //   final String _surveyCode = survey.code;
-  //   final String _questionCode = survey.questions[qIndex].code;
-  //   final String _answerCode =
-  //       survey.questions[qIndex].answers.elementAt(ansIndex).code;
-
-  //   return _rxResponses.firstWhere(
-  //     (e) =>
-  //         e.surveyCode == _surveyCode &&
-  //         e.questionCode == _questionCode &&
-  //         e.answerCode == _answerCode,
-  //     orElse: () {
-  //       _rxResponses.add(
-  //         UserResponse(
-  //           surveyCode: _surveyCode,
-  //           questionCode: _questionCode,
-
-  //           /// answer code used to match the checkbox
-  //           /// boolean value determines if this is checked
-  //           /// todo: ignore [false] checkbox userResponses at time of survey submission
-  //           answerCode: _answerCode,
-  //           responseType: ResponseBoolean(false),
-  //         ),
-  //       );
-  //       return _rxResponses.last;
-  //     },
-  //   );
-  // }
 }
