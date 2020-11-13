@@ -22,19 +22,23 @@ class AnswerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final PrapareCodesUtil codesUtil = PrapareCodesUtil();
+    final UserResponsesController controller = Get.find();
+    final UserResponse userResponse = controller.findUserResponse(
+        surveyCode: survey.code,
+        questionCode: question.code,
+        answerCode: answer.code);
 
     try {
       switch (codesUtil.getAnswerTypeFromQuestionCode(question.code)) {
 
         // **** Checkbox Answer ***
         case answerType.checkbox:
-          return AnswerItemCheckbox(
-              survey: survey, question: question, answer: answer);
+          return AnswerItemCheckbox(answer: answer, userResponse: userResponse);
 
         // **** DEFAULT: Radio Button Answer ***
         default:
           return AnswerItemRadioButton(
-              survey: survey, question: question, answer: answer);
+              answer: answer, userResponse: userResponse);
       }
     } catch (error) {
       return Container(child: Text(error.message));

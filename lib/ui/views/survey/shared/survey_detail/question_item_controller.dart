@@ -21,15 +21,25 @@ class QuestionItemController extends GetxController {
   /// surveyList, <questionList, <userResponse for the answer>>
   final RxList<List<UserResponse>> _activeResponse = [<UserResponse>[]].obs;
 
-  UserResponse findActiveResponse(
-      {@required Survey survey,
-      @required Question question,
-      @required Answer answer}) {}
+  // UserResponse findActiveResponse(
+  //     {@required Survey survey,
+  //     @required Question question,
+  //     @required Answer answer}) {
+  //   // flatten all responses into single list to query
+  //   final List<UserResponse> _allResponses =
+  //       _activeResponse.expand((e) => e).toList();
+  //   // find response by code.
+  //   // this can be optimized to its own util
+  //   // todo: implement orElse
+  //   return _allResponses.firstWhere(
+  //       (response) =>
+  //           response.surveyCode == survey.code &&
+  //           response.questionCode == question.code &&
+  //           response.answerCode == answer.code,
+  //       orElse: () => UserResponse());
+  // }
 
-  UserResponse findUserResponse(
-      {@required Survey survey,
-      @required Question question,
-      @required Answer answer}) {}
+  // List<UserResponse>
 
   // todo: extract
   void toggleCheckboxCommand(
@@ -64,11 +74,11 @@ class QuestionItemController extends GetxController {
     update();
   }
 
-  UserResponse getActiveRadioButtonFromIndex(
-          {@required int sIndex, @required int qIndex}) =>
-      _qUserResponses.elementAt(sIndex).elementAt(qIndex).firstWhere(
-          (e) => e.responseType.value,
-          orElse: () => UserResponse());
+  // UserResponse getActiveRadioButtonFromIndex(
+  //         {@required int sIndex, @required int qIndex}) =>
+  //     _qUserResponses.elementAt(sIndex).elementAt(qIndex).firstWhere(
+  //         (e) => e.responseType.value,
+  //         orElse: () => UserResponse());
 
   // ******* INITIALIZERS *******
   void _loadAllUserResponseOptions() {
@@ -95,10 +105,8 @@ class QuestionItemController extends GetxController {
       // add this survey to the RxList
       _qUserResponses.add(_questionList);
       // then reset _questionList for next iterable
-      print('$_questionList added');
       _questionList.clear();
     });
-    print('complete');
   }
 
   @override
