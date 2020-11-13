@@ -16,7 +16,7 @@ class Question {
     text = item.text;
 
     /// just defines itemType, it is required in FHIR
-    itemType = itemTypeMap[item.type.toString()];
+    itemType = itemTypeMap[item.type.toString().split('.')[1]];
 
     if (itemType != ItemType.group &&
         itemType != ItemType.display &&
@@ -50,12 +50,10 @@ class Question {
             format = qType[qformat];
           }
         }
-
-        /// then create each answer in the list
-        for (var answer in item.answerOption) {
-          answers.add(Answer.fromAnswerOption(answer));
-        }
       }
+
+      /// then create each answer in the list
+      item.answerOption.forEach((e) => answers.add(Answer.fromAnswerOption(e)));
     }
   }
 
