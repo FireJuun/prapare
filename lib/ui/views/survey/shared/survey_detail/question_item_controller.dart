@@ -6,22 +6,23 @@ import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 // todo: this needs to be called before all surveys, and hold all data
 // it cannot be passed as multiples / inherited widget
 class QuestionItemController extends GetxController {
-  QuestionItemController({@required this.survey}) : assert(survey != null);
-
-  // Passed variables
-  final Survey survey;
-
+  final QuestionnaireController _questionnaireController = Get.find();
   final UserResponsesController _responsesController = Get.find();
 
-  // contains a list of all relevant responses
-  final RxSet<RxSet<UserResponse>> _qUserResponses = {<UserResponse>{}.obs}.obs;
-  RxSet<RxSet<UserResponse>> get qUserResponses => _qUserResponses;
+  /// contains a list of all relevant responses
+  /// surveyList, <questionSet, <answerSet, <userResponse>>>
+  final RxList<RxSet<RxSet<UserResponse>>> _qUserResponses = [
+    {<UserResponse>{}.obs}.obs
+  ].obs;
+  RxList<RxSet<RxSet<UserResponse>>> get qUserResponses => _qUserResponses;
 
   /// contains the active response for a given question
   /// RxList used instead of RxSet, as this can have duplicates
-  /// One example si the presence of blank UserResponse() items created onInit
-  final RxList<UserResponse> _activeResponse = <UserResponse>[].obs;
-  RxList<UserResponse> get activeResponse => _activeResponse;
+  /// One example is the presence of blank UserResponse() items created onInit
+  /// surveyList, <questionList, <userResponse for the answer>>
+  final RxList<RxList<UserResponse>> _activeResponse =
+      [<UserResponse>[].obs].obs;
+  RxList<RxList<UserResponse>> get activeResponse => _activeResponse;
 
   // todo: extract
   void toggleCheckboxCommand(
@@ -35,67 +36,71 @@ class QuestionItemController extends GetxController {
   void toggleRadioButtonCommand(
       {@required UserResponse oldResponse,
       @required UserResponse newResponse,
+      @required int sIndex,
       @required int qIndex}) {
     // if toggled to off state
     if (newResponse == null) {
       oldResponse.responseType.value = false;
-      _activeResponse[qIndex] = UserResponse();
+      _activeResponse[sIndex][qIndex] = UserResponse();
     } else {
       // find all responses in the set and turn off their booleans
       _qUserResponses
+          .elementAt(sIndex)
           .elementAt(qIndex)
           .forEach((e) => e.responseType.value = false);
 
       // then toggle this boolean
       newResponse.responseType.value = true;
       // set active response field
-      _activeResponse[qIndex] = newResponse;
+      _activeResponse[sIndex][qIndex] = newResponse;
     }
 
     update();
   }
 
-  UserResponse getActiveRadioButtonFromQuestionIndex(int qIndex) =>
-      _qUserResponses.elementAt(qIndex).firstWhere((e) => e.responseType.value,
+  UserResponse getActiveRadioButtonFromIndex(
+          {@required int sIndex, @required int qIndex}) =>
+      _qUserResponses.elementAt(sIndex).elementAt(qIndex).firstWhere(
+          (e) => e.responseType.value,
           orElse: () => UserResponse());
 
   // ******* INITIALIZERS *******
-  void _loadAllUserResponseOptionsForSurvey() {
+  void _loadAllUserResponseOptions() {
     _qUserResponses.clear();
+
     // create a new RxSet item for each question
-    survey.questions.forEach(
-      (quest) {
-        // answer items each contain the relevant UserResponse
-        final RxSet<UserResponse> _items = quest.answers
-            .map((ans) => _responsesController.findUserResponse(
-                surveyCode: survey.code,
-                questionCode: quest.code,
-                answerCode: ans.code))
-            .toSet()
-            .obs;
-        _qUserResponses.add(_items);
-      },
-    );
-  }
+    _questionnaireController.getQuestionnaire().surveys.forEach((survey) {
+      // question set has unique questions w/in a survey
+      final RxSet<RxSet<UserResponse>> _questionSet =
+          {<UserResponse>{}.obs}.obs;
 
-  void _loadActiveResponses() {
-    // clear responses from last tab
-    _activeResponse.clear();
+      survey.questions
+          .map((quest) {
+            // answer set contains each relevant UserResponse
+            final RxSet<UserResponse> _answerSet = quest.answers
+                .map((ans) => _responsesController.findUserResponse(
+                    surveyCode: survey.code,
+                    questionCode: quest.code,
+                    answerCode: ans.code))
+                .toSet()
+                .obs;
 
-    // add responses to new tab
-    survey.questions.forEach(
-      (q) => _activeResponse.add(
-        // todo: check UserResponses for last active if question is radio button
-        // ! otherwise, this will be blank everytime you swap tabs
-        UserResponse(),
-      ),
-    );
+            _questionSet.add(_answerSet);
+
+            // _surveyItem.add(_items);
+          })
+          .toSet()
+          .obs;
+      // create a new list item for qUserResponses holding the survey data
+
+      // add this survey to the RxList
+      _qUserResponses.add(_questionSet);
+    });
   }
 
   @override
   void onInit() {
-    _loadAllUserResponseOptionsForSurvey();
-    _loadActiveResponses();
+    _loadAllUserResponseOptions();
     super.onInit();
   }
 }

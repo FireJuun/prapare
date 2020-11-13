@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:prapare/_internal/constants/prapare_survey.dart';
 import 'package:prapare/controllers/controllers.dart';
+import 'package:prapare/models/fhir_questionnaire/fhir_questionnaire.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/models/fhir_questionnaire/questionnaire_model.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/response_type.dart';
@@ -16,6 +17,15 @@ class QuestionnaireController extends GetxController {
   //todo: implement error handling / orElse
   Survey getSurveyFromCode(String code) => _model.data.surveys
       .firstWhere((e) => e.code == code, orElse: () => Survey());
+
+  //todo: implement error handling / orElse
+  Survey getSurveyFromIndex(int sIndex) => _model.data.surveys[sIndex];
+
+  //todo: implement error handling / orElse
+  int getSurveyIndexFromSurvey(Survey survey) =>
+      _model.data.surveys.indexWhere((e) => e == survey);
+
+  FhirQuestionnaire getQuestionnaire() => _model.data;
 
   int getTotalIndexFromQuestion(Question question) =>
       _allQuestions.indexOf(question);
