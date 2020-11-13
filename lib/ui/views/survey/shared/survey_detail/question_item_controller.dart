@@ -11,9 +11,9 @@ class QuestionItemController extends GetxController {
 
   /// contains a list of all relevant responses
   /// surveyList, <questionSet, <answerSet, <userResponse>>>
-  final RxList<List<Set<UserResponse>>> _qUserResponses = [
-    [<UserResponse>{}]
-  ].obs;
+  // final RxList<List<Set<UserResponse>>> _qUserResponses = [
+  //   [<UserResponse>{}]
+  // ].obs;
 
   /// contains the active response for a given question
   /// RxList used instead of RxSet, as this can have duplicates
@@ -81,37 +81,37 @@ class QuestionItemController extends GetxController {
   //         orElse: () => UserResponse());
 
   // ******* INITIALIZERS *******
-  void _loadAllUserResponseOptions() {
-    _qUserResponses.clear();
-    // question set has unique questions w/in a survey
-    final List<Set<UserResponse>> _questionList = [];
+  // void _loadAllUserResponseOptions() {
+  //   _qUserResponses.clear();
+  //   // question set has unique questions w/in a survey
+  //   final List<Set<UserResponse>> _questionList = [];
 
-    // create a new List item for each question
-    _questionnaireController.getQuestionnaire().surveys.forEach((survey) {
-      survey.questions.forEach(
-        (quest) {
-          // answer set contains each relevant UserResponse
-          final Set<UserResponse> _answerSet = quest.answers
-              .map((ans) => _responsesController.findUserResponse(
-                  surveyCode: survey.code,
-                  questionCode: quest.code,
-                  answerCode: ans.code))
-              .toSet();
-          _questionList.add(_answerSet);
-        },
-      );
-      // create a new list item for qUserResponses holding the survey data
+  //   // create a new List item for each question
+  //   _questionnaireController.getQuestionnaire().surveys.forEach((survey) {
+  //     survey.questions.forEach(
+  //       (quest) {
+  //         // answer set contains each relevant UserResponse
+  //         final Set<UserResponse> _answerSet = quest.answers
+  //             .map((ans) => _responsesController.findUserResponse(
+  //                 surveyCode: survey.code,
+  //                 questionCode: quest.code,
+  //                 answerCode: ans.code))
+  //             .toSet();
+  //         _questionList.add(_answerSet);
+  //       },
+  //     );
+  //     // create a new list item for qUserResponses holding the survey data
 
-      // add this survey to the RxList
-      _qUserResponses.add(_questionList);
-      // then reset _questionList for next iterable
-      _questionList.clear();
-    });
-  }
+  //     // add this survey to the RxList
+  //     _qUserResponses.add(_questionList);
+  //     // then reset _questionList for next iterable
+  //     _questionList.clear();
+  //   });
+  // }
 
-  @override
-  void onInit() {
-    _loadAllUserResponseOptions();
-    super.onInit();
-  }
+  // @override
+  // void onInit() {
+  //   _loadAllUserResponseOptions();
+  //   super.onInit();
+  // }
 }

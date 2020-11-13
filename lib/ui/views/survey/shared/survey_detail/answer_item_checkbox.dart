@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 
+import 'answer_item_checkbox_controller.dart';
 import 'answer_title.dart';
 import 'question_item_controller.dart';
 
@@ -17,10 +18,17 @@ class AnswerItemCheckbox extends StatelessWidget {
   Widget build(BuildContext context) {
     final QuestionItemController controller = Get.find();
 
-    return CheckboxListTile(
-        title: AnswerTitle(answer: answer),
-        value: userResponse.responseType.value,
-        onChanged: (newValue) =>
-            controller.toggleCheckboxCommand(userResponse: userResponse));
+    return GetX<AnswerItemCheckboxController>(
+      init: AnswerItemCheckboxController(),
+      initState: (_) {},
+      builder: (_) {
+        _.rxUserResponse = userResponse;
+        return CheckboxListTile(
+            title: AnswerTitle(answer: answer),
+            value: _.rxUserResponse.responseType.value,
+            onChanged: (newValue) =>
+                controller.toggleCheckboxCommand(userResponse: userResponse));
+      },
+    );
   }
 }
