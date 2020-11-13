@@ -10,35 +10,31 @@ import 'answer_item_radio_button.dart';
 class AnswerItem extends StatelessWidget {
   const AnswerItem(
       {Key key,
-      @required this.sIndex,
-      @required this.qIndex,
-      @required this.ansIndex})
+      @required this.survey,
+      @required this.question,
+      @required this.answer})
       : super(key: key);
 
-  final int sIndex;
-  final int qIndex;
-  final int ansIndex;
+  final Survey survey;
+  final Question question;
+  final Answer answer;
 
   @override
   Widget build(BuildContext context) {
     final PrapareCodesUtil codesUtil = PrapareCodesUtil();
-    final QuestionnaireController _questionnaireController = Get.find();
-
-    final Survey survey = _questionnaireController.getSurveyFromIndex(sIndex);
 
     try {
-      switch (codesUtil
-          .getAnswerTypeFromQuestionCode(survey.questions[qIndex].code)) {
+      switch (codesUtil.getAnswerTypeFromQuestionCode(question.code)) {
 
         // **** Checkbox Answer ***
         case answerType.checkbox:
           return AnswerItemCheckbox(
-              sIndex: sIndex, qIndex: qIndex, ansIndex: ansIndex);
+              survey: survey, question: question, answer: answer);
 
         // **** DEFAULT: Radio Button Answer ***
         default:
           return AnswerItemRadioButton(
-              sIndex: sIndex, qIndex: qIndex, ansIndex: ansIndex);
+              survey: survey, question: question, answer: answer);
       }
     } catch (error) {
       return Container(child: Text(error.message));

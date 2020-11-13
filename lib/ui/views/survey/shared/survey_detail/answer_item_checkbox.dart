@@ -9,26 +9,21 @@ import 'question_item_controller.dart';
 class AnswerItemCheckbox extends StatelessWidget {
   const AnswerItemCheckbox(
       {Key key,
-      @required this.sIndex,
-      @required this.qIndex,
-      @required this.ansIndex})
+      @required this.survey,
+      @required this.question,
+      @required this.answer})
       : super(key: key);
 
-  final int sIndex;
-  final int qIndex;
-  final int ansIndex;
+  final Survey survey;
+  final Question question;
+  final Answer answer;
 
   @override
   Widget build(BuildContext context) {
     final QuestionItemController controller = Get.find();
-    final QuestionnaireController _questionnaireController = Get.find();
 
-    final Survey survey = _questionnaireController.getSurveyFromIndex(sIndex);
-    final Answer answer = survey.questions[qIndex].answers.elementAt(ansIndex);
-    final UserResponse userResponse = controller.qUserResponses
-        .elementAt(sIndex)
-        .elementAt(qIndex)
-        .elementAt(ansIndex);
+    final UserResponse userResponse = controller.findUserResponse();
+    final UserResponse activeResponse = controller.findActiveResponse();
 
     return CheckboxListTile(
         title: AnswerTitle(answer: answer),

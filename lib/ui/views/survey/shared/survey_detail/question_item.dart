@@ -8,11 +8,11 @@ import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'answer_item.dart';
 
 class QuestionItem extends StatelessWidget {
-  const QuestionItem({Key key, @required this.survey, @required this.qIndex})
+  const QuestionItem({Key key, @required this.survey, @required this.question})
       : super(key: key);
 
   final Survey survey;
-  final int qIndex;
+  final Question question;
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +20,6 @@ class QuestionItem extends StatelessWidget {
     final QuestionnaireController controller = Get.find();
     final PrapareCodesUtil codesUtil = PrapareCodesUtil();
     final AppLocalizations_Labels labels = AppLocalizations.of(context);
-    final Question question = survey.questions[qIndex];
-
-    final int sIndex = controller.getSurveyIndexFromSurvey(survey);
 
     /// Combine all questions, then get index number
     /// Note that this assumes each question / survey is unique
@@ -41,11 +38,11 @@ class QuestionItem extends StatelessWidget {
         /// All answers are mapped using spread operator
         /// toList() is required given answers are start as a set
         /// asMap().entries.map() are used to pass index w/ values
-        ...question.answers.toList().asMap().entries.map(
+        ...question.answers.toList().map(
               (entry) => AnswerItem(
-                sIndex: sIndex,
-                qIndex: qIndex,
-                ansIndex: entry.key,
+                survey: survey,
+                question: question,
+                answer: entry,
               ),
             ),
         // Extra padding at end
