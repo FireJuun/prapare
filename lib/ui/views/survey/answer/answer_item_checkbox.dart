@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:prapare/controllers/commands/commands.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
-import 'package:prapare/ui/views/survey/question/question_item_controller.dart';
 
 import 'answer_item_checkbox_controller.dart';
 import 'answer_title.dart';
@@ -16,8 +16,6 @@ class AnswerItemCheckbox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final QuestionItemController controller = Get.find();
-
     return GetX<AnswerItemCheckboxController>(
       init: AnswerItemCheckboxController(),
       initState: (_) {},
@@ -26,8 +24,8 @@ class AnswerItemCheckbox extends StatelessWidget {
         return CheckboxListTile(
             title: AnswerTitle(answer: answer),
             value: _.rxUserResponse.responseType.value,
-            onChanged: (newValue) =>
-                controller.toggleCheckboxCommand(userResponse: userResponse));
+            onChanged: (newValue) async =>
+                ToggleCheckboxCommand().execute(userResponse: userResponse));
       },
     );
   }

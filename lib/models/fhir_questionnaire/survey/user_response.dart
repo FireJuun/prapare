@@ -11,6 +11,16 @@ class UserResponse {
     @required this.responseType,
   });
 
+  // not ideal, but used during first instance of reactive variables
+  factory UserResponse.defaultNull() {
+    return UserResponse(
+      answerCode: null,
+      questionCode: null,
+      responseType: null,
+      surveyCode: null,
+    );
+  }
+
   /// specifies the survey
   String surveyCode;
 
