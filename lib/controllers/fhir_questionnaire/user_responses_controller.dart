@@ -9,6 +9,11 @@ class UserResponsesController extends GetxController {
   final RxSet<UserResponse> _rxResponses = <UserResponse>{}.obs;
   RxSet<UserResponse> get rxResponses => _rxResponses;
 
+  final RxMap<String, UserResponse> _rxMappedActiveResponses =
+      <String, UserResponse>{}.obs;
+  RxMap<String, UserResponse> get rxMappedActiveResponses =>
+      _rxMappedActiveResponses;
+
   void updateUserResponse(UserResponse item) {
     // check for previous response by survey/question/answer
     final index = _findResponseIndex(item);
@@ -17,10 +22,6 @@ class UserResponsesController extends GetxController {
     _rxResponses.remove(_rxResponses.elementAt(index));
     _rxResponses.add(item);
 
-    // temporary, for testing
-    print('All Responses:');
-    _rxResponses.map((e) => print(
-        's: ${e.surveyCode}  q: ${e.questionCode}  a: ${e.answerCode}  '));
     update();
   }
 
@@ -41,6 +42,9 @@ class UserResponsesController extends GetxController {
           e.questionCode == questionCode &&
           e.answerCode == answerCode);
 
+  UserResponse findActiveResponse(String questionCode) =>
+      _rxMappedActiveResponses[questionCode];
+
   // todo: extract into standalone ToggleCheckboxCommand
   void toggleChecked(UserResponse item) {
     item.responseType.value = !item.responseType.value;
@@ -48,52 +52,33 @@ class UserResponsesController extends GetxController {
   }
 
   // todo: combine these, and implement viewcontroller data handling for checkboxes and for radio buttons
-  UserResponse findCheckboxResponse(
-      {@required Survey survey, @required int qIndex, @required int ansIndex}) {
-    final String _surveyCode = survey.code;
-    final String _questionCode = survey.questions[qIndex].code;
-    final String _answerCode =
-        survey.questions[qIndex].answers.elementAt(ansIndex).code;
+  // UserResponse findCheckboxResponse(
+  //     {@required Survey survey, @required int qIndex, @required int ansIndex}) {
+  //   final String _surveyCode = survey.code;
+  //   final String _questionCode = survey.questions[qIndex].code;
+  //   final String _answerCode =
+  //       survey.questions[qIndex].answers.elementAt(ansIndex).code;
 
-    return _rxResponses.firstWhere(
-      (e) =>
-          e.surveyCode == _surveyCode &&
-          e.questionCode == _questionCode &&
-          e.answerCode == _answerCode,
-      orElse: () {
-        _rxResponses.add(
-          UserResponse(
-            surveyCode: _surveyCode,
-            questionCode: _questionCode,
+  //   return _rxResponses.firstWhere(
+  //     (e) =>
+  //         e.surveyCode == _surveyCode &&
+  //         e.questionCode == _questionCode &&
+  //         e.answerCode == _answerCode,
+  //     orElse: () {
+  //       _rxResponses.add(
+  //         UserResponse(
+  //           surveyCode: _surveyCode,
+  //           questionCode: _questionCode,
 
-            /// answer code used to match the checkbox
-            /// boolean value determines if this is checked
-            /// todo: ignore [false] checkbox userResponses at time of survey submission
-            answerCode: _answerCode,
-            responseType: ResponseBoolean(false),
-          ),
-        );
-        return _rxResponses.last;
-      },
-    );
-  }
-
-  UserResponse findRadioButtonResponse(
-      {@required Survey survey, @required int qIndex}) {
-    return _rxResponses.firstWhere(
-      (e) =>
-          e.surveyCode == survey.code &&
-          e.questionCode == survey.questions[qIndex].code,
-      orElse: () {
-        _rxResponses.add(UserResponse(
-          surveyCode: survey.code,
-          questionCode: survey.questions[qIndex].code,
-          // blank answer code initially
-          responseType: ResponseBoolean(false),
-          answerCode: '',
-        ));
-        return _rxResponses.last;
-      },
-    );
-  }
+  //           /// answer code used to match the checkbox
+  //           /// boolean value determines if this is checked
+  //           /// todo: ignore [false] checkbox userResponses at time of survey submission
+  //           answerCode: _answerCode,
+  //           responseType: ResponseBoolean(false),
+  //         ),
+  //       );
+  //       return _rxResponses.last;
+  //     },
+  //   );
+  // }
 }

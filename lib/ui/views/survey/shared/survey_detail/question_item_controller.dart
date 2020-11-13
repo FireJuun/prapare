@@ -55,21 +55,22 @@ class QuestionItemController extends GetxController {
     @required UserResponse newResponse,
   }) {
     // if toggled to off state
-    // if (newResponse == null) {
-    //   oldResponse.responseType.value = false;
-    //   _activeResponse[sIndex][qIndex] = UserResponse();
-    // } else {
-    //   // find all responses in the set and turn off their booleans
-    //   _qUserResponses
-    //       .elementAt(sIndex)
-    //       .elementAt(qIndex)
-    //       .forEach((e) => e.responseType.value = false);
+    if (newResponse == null) {
+      oldResponse.responseType.value = false;
+      // _activeResponse[sIndex][qIndex] = UserResponse();
+    } else {
+      // find all responses in the set and turn off their booleans
+      // todo: find all responses from userAnswers controller
 
-    //   // then toggle this boolean
-    //   newResponse.responseType.value = true;
-    //   // set active response field
-    //   _activeResponse[sIndex][qIndex] = newResponse;
-    // }
+      // _qUserResponses
+      //     .elementAt(sIndex)
+      //     .elementAt(qIndex)
+      //     .forEach((e) => e.responseType.value = false);
+
+      // then toggle this boolean
+      newResponse.responseType.value = true;
+      // set active response field
+    }
 
     update();
   }

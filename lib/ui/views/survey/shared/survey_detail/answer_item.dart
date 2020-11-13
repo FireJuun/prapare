@@ -27,6 +27,8 @@ class AnswerItem extends StatelessWidget {
         surveyCode: survey.code,
         questionCode: question.code,
         answerCode: answer.code);
+    final UserResponse activeResponse =
+        controller.findActiveResponse(question.code);
 
     try {
       switch (codesUtil.getAnswerTypeFromQuestionCode(question.code)) {
@@ -38,7 +40,10 @@ class AnswerItem extends StatelessWidget {
         // **** DEFAULT: Radio Button Answer ***
         default:
           return AnswerItemRadioButton(
-              answer: answer, userResponse: userResponse);
+            answer: answer,
+            userResponse: userResponse,
+            activeResponse: activeResponse,
+          );
       }
     } catch (error) {
       return Container(child: Text(error.message));

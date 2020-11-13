@@ -52,11 +52,32 @@ class QuestionnaireController extends GetxController {
     );
   }
 
+  void _mapAllActiveResponses() {
+    /// defaults to blank answer on first load
+    /// afterwards, the new UserResponse will be updated to reflect the selected item
+    /// then ResponseBoolean will be selected to true for that item
+    /// todo: ignore question types that aren't radio-buttons
+    _model.data.surveys.forEach(
+      (s) => s.questions.forEach(
+        (q) => _responsesController.rxMappedActiveResponses.add(
+          q.code,
+          UserResponse(
+            surveyCode: s.code,
+            questionCode: q.code,
+            answerCode: '',
+            responseType: ResponseBoolean(false),
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   void onInit() {
     _model.loadAndCreateSurvey();
     _mapAllQuestions();
     _mapAllUserResponses();
+    _mapAllActiveResponses();
     super.onInit();
   }
 }
