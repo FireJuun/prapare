@@ -5,8 +5,8 @@ import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'answer_title.dart';
 import 'question_item_controller.dart';
 
-class AnswerItemCheckbox extends StatelessWidget {
-  const AnswerItemCheckbox(
+class AnswerItemRadioButton extends StatelessWidget {
+  const AnswerItemRadioButton(
       {Key key,
       @required this.survey,
       @required this.qIndex,
@@ -21,14 +21,19 @@ class AnswerItemCheckbox extends StatelessWidget {
   Widget build(BuildContext context) {
     final QuestionItemController controller = Get.find();
     final answer = survey.questions[qIndex].answers.elementAt(ansIndex);
-
     final userResponse =
         controller.qUserResponses.elementAt(qIndex).elementAt(ansIndex);
 
-    return CheckboxListTile(
-        title: AnswerTitle(answer: answer),
-        value: userResponse.responseType.value,
-        onChanged: (newValue) =>
-            controller.toggleCheckboxCommand(userResponse: userResponse));
+    return RadioListTile<UserResponse>(
+      title: AnswerTitle(answer: answer),
+      value: userResponse,
+      groupValue: controller.activeResponse[qIndex],
+      toggleable: true,
+      onChanged: (newResponse) => controller.toggleRadioButtonCommand(
+        oldResponse: userResponse,
+        newResponse: newResponse,
+        qIndex: qIndex,
+      ),
+    );
   }
 }

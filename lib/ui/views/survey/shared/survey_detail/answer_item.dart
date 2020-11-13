@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:prapare/_internal/utils/prapare_codes_util.dart';
-import 'package:prapare/controllers/controllers.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 
-import 'answer_title.dart';
+import 'answer_item_checkbox.dart';
+import 'answer_item_radio_button.dart';
 
 class AnswerItem extends StatelessWidget {
   const AnswerItem(
@@ -20,9 +19,7 @@ class AnswerItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final UserResponsesController controller = Get.find();
     final PrapareCodesUtil codesUtil = PrapareCodesUtil();
-    final answer = survey.questions[qIndex].answers.elementAt(ansIndex);
 
     try {
       switch (codesUtil
@@ -30,25 +27,13 @@ class AnswerItem extends StatelessWidget {
 
         // **** Checkbox Answer ***
         case answerType.checkbox:
-          final UserResponse _response = controller.findCheckboxResponse(
+          return AnswerItemCheckbox(
               survey: survey, qIndex: qIndex, ansIndex: ansIndex);
-
-          return CheckboxListTile(
-              title: AnswerTitle(answer: answer),
-              value: _response.responseType.value,
-              onChanged: (value) => controller.toggleChecked(_response));
 
         // **** DEFAULT: Radio Button Answer ***
         default:
-          final _response = controller.findRadioButtonResponse(
-              survey: survey, qIndex: qIndex);
-          return RadioListTile<String>(
-            title: AnswerTitle(answer: answer),
-            value: _response.answerCode,
-            groupValue: _response.answerCode,
-            toggleable: true,
-            onChanged: (String value) => controller,
-          );
+          return AnswerItemRadioButton(
+              survey: survey, qIndex: qIndex, ansIndex: ansIndex);
       }
     } catch (error) {
       return Container(child: Text(error.message));
