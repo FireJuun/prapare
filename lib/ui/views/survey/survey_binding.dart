@@ -1,6 +1,6 @@
 import 'package:get/instance_manager.dart';
 import 'package:prapare/controllers/controllers.dart';
-import 'package:prapare/ui/views/survey/shared/survey_detail/question_item_controller.dart';
+import 'package:prapare/ui/views/survey/question/question_item_controller.dart';
 import 'package:prapare/ui/views/survey/survey_controller.dart';
 
 class SurveyBinding implements Bindings {

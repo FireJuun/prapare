@@ -4,9 +4,9 @@ import 'package:prapare/controllers/controllers.dart';
 import 'package:prapare/controllers/theme_controller.dart';
 import 'package:prapare/ui/themes.dart';
 import 'package:prapare/ui/views/settings/settings_dialog.dart';
-import 'package:prapare/ui/views/survey/shared/survey_detail/survey_detail.dart';
-import 'package:prapare/ui/views/survey/shared/survey_header_flexible.dart';
-import 'package:prapare/ui/views/survey/shared/toggle_tab_checked.dart';
+import 'package:prapare/ui/views/survey/survey_detail.dart';
+import 'package:prapare/ui/views/survey/header/survey_header_flexible.dart';
+import 'package:prapare/ui/views/survey/header/toggle_tab_checked.dart';
 import 'package:prapare/ui/views/survey/survey_controller.dart';
 
 class SurveyView extends StatelessWidget {

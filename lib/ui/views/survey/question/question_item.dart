@@ -4,8 +4,7 @@ import 'package:prapare/_internal/utils/prapare_codes_util.dart';
 import 'package:prapare/controllers/controllers.dart';
 import 'package:prapare/localization.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
-
-import 'answer_item.dart';
+import 'package:prapare/ui/views/survey/answer/answer_item.dart';
 
 class QuestionItem extends StatelessWidget {
   const QuestionItem({Key key, @required this.survey, @required this.question})

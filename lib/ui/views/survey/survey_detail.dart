@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 
-import 'question_item.dart';
+import 'question/question_item.dart';
 
 class SurveyDetail extends StatelessWidget {
   const SurveyDetail({Key key, @required this.survey})
