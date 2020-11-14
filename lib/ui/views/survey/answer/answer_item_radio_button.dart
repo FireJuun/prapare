@@ -16,18 +16,22 @@ class AnswerItemRadioButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final UserResponsesController responsesController = Get.find();
+    return GetX<UserResponsesController>(
+      builder: (responsesController) {
+        final rxActiveResponse = responsesController
+            .findActiveResponse(rxUserResponse.value.questionCode);
 
-    return Obx(() => RadioListTile<Rx<UserResponse>>(
+        return RadioListTile<UserResponse>(
           title: AnswerTitle(answer: answer),
-          value: rxUserResponse,
-          groupValue: responsesController
-              .findActiveResponse(rxUserResponse.value.questionCode),
+          value: rxUserResponse.value,
+          groupValue: rxActiveResponse.value,
           toggleable: true,
           onChanged: (newResponse) async {
-            ToggleRadioButtonCommand().execute(
-                oldResponse: rxUserResponse, newResponse: newResponse.value);
+            await ToggleRadioButtonCommand()
+                .execute(oldResponse: rxUserResponse, newResponse: newResponse);
           },
-        ));
+        );
+      },
+    );
   }
 }

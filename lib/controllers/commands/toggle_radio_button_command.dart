@@ -14,15 +14,17 @@ class ToggleRadioButtonCommand extends AbstractCommand {
       // set this boolean to false
       oldResponse.value.responseType.value = false;
 
-      // and reset the active UserResponse
-      responsesController
-          .rxMappedActiveResponses[oldResponse.value.questionCode]
-          .value = UserResponse(
+      final UserResponse _blankAnswerResponse = UserResponse(
         surveyCode: oldResponse.value.surveyCode,
         questionCode: oldResponse.value.questionCode,
         answerCode: '',
         responseType: ResponseBoolean(false),
       );
+
+      // reset the mapped userResponse (so that the button toggles off)
+      responsesController
+          .rxMappedActiveResponses[oldResponse.value.questionCode]
+          .value = _blankAnswerResponse;
     } else {
       // find all responses in the set and turn off their booleans
       responsesController
@@ -30,12 +32,12 @@ class ToggleRadioButtonCommand extends AbstractCommand {
 
       // then toggle this boolean
       newResponse.responseType.value = true;
+
       // set active response field
       responsesController
           .rxMappedActiveResponses[oldResponse.value.questionCode]
           .value = newResponse;
     }
-
     responsesController.update();
   }
 }
