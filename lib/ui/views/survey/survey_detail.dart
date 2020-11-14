@@ -15,6 +15,8 @@ class SurveyDetail extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+
         /// asMap().entries.map()...toList() used to pass index w/ map
         /// This is used to build each Question as its own QuestionItem widget
         children: survey.questions

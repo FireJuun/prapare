@@ -53,7 +53,8 @@ class Question {
       }
 
       /// then create each answer in the list
-      item.answerOption.forEach((e) => answers.add(Answer.fromAnswerOption(e)));
+      item.answerOption
+          ?.forEach((e) => answers.add(Answer.fromAnswerOption(e)));
     }
   }
 
