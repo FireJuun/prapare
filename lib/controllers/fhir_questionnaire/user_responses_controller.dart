@@ -5,53 +5,40 @@ import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 class UserResponsesController extends GetxController {
   static UserResponsesController get to => Get.find();
 
-  final RxSet<UserResponse> _rxResponses = <UserResponse>{}.obs;
-  RxSet<UserResponse> get rxResponses => _rxResponses;
+  final RxSet<Rx<UserResponse>> _rxResponses = <Rx<UserResponse>>{}.obs;
+  RxSet<Rx<UserResponse>> get rxResponses => _rxResponses;
 
-  final RxMap<String, UserResponse> _rxMappedActiveResponses =
-      <String, UserResponse>{}.obs;
-  RxMap<String, UserResponse> get rxMappedActiveResponses =>
+  final RxMap<String, Rx<UserResponse>> _rxMappedActiveResponses =
+      <String, Rx<UserResponse>>{}.obs;
+  RxMap<String, Rx<UserResponse>> get rxMappedActiveResponses =>
       _rxMappedActiveResponses;
 
-  void updateUserResponse(UserResponse item) {
-    // check for previous response by survey/question/answer
-    final index = _findResponseIndex(item);
-
-    // remove old response, if present, then add new response
-    _rxResponses.remove(_rxResponses.elementAt(index));
-    _rxResponses.add(item);
-
-    update();
+  void updateUserResponse(Rx<UserResponse> oldItem, UserResponse newItem) {
+    oldItem.update((e) => e = newItem ?? UserResponse.defaultNull());
   }
 
-  int _findResponseIndex(UserResponse item) {
-    // Get index of the set that satisfies the condition
-    return _rxResponses.toList().indexWhere((e) =>
-        e.surveyCode == item.surveyCode &&
-        e.questionCode == item.questionCode &&
-        e.answerCode == item.answerCode);
-  }
-
-  UserResponse findUserResponse(
+  Rx<UserResponse> findRxUserResponse(
           {@required String surveyCode,
           @required String questionCode,
           @required String answerCode}) =>
       _rxResponses.toList().firstWhere((e) =>
-          e.surveyCode == surveyCode &&
-          e.questionCode == questionCode &&
-          e.answerCode == answerCode);
+          e.value.surveyCode == surveyCode &&
+          e.value.questionCode == questionCode &&
+          e.value.answerCode == answerCode);
 
-  UserResponse findActiveResponse(String questionCode) =>
+  Rx<UserResponse> findActiveResponse(String questionCode) =>
       _rxMappedActiveResponses[questionCode];
 
   void setAllQuestionBooleansToFalse(String questionCode) {
     _rxResponses.forEach(
       (e) {
-        if (e.questionCode == questionCode) {
-          e.responseType.value = false;
+        if (e.value.questionCode == questionCode) {
+          // calls update to trigger Rx redraws, if applicable
+          e.update((val) {
+            val.responseType.value = false;
+          });
         }
       },
     );
-    update();
   }
 }

@@ -41,11 +41,11 @@ class QuestionnaireController extends GetxController {
         (q) => q.answers.forEach(
           (ans) => _responsesController.rxResponses.add(
             UserResponse(
-              surveyCode: s.code,
-              questionCode: q.code,
-              answerCode: ans.code,
-              responseType: ResponseBoolean(false),
-            ),
+                    surveyCode: s.code,
+                    questionCode: q.code,
+                    answerCode: ans.code,
+                    responseType: ResponseBoolean(false))
+                .obs,
           ),
         ),
       ),
@@ -66,7 +66,7 @@ class QuestionnaireController extends GetxController {
             questionCode: q.code,
             answerCode: '',
             responseType: ResponseBoolean(false),
-          ),
+          ).obs,
         ),
       ),
     );

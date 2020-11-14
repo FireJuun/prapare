@@ -23,7 +23,7 @@ class AnswerItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final PrapareCodesUtil codesUtil = PrapareCodesUtil();
     final UserResponsesController controller = Get.find();
-    final UserResponse userResponse = controller.findUserResponse(
+    final Rx<UserResponse> userResponse = controller.findRxUserResponse(
         surveyCode: survey.code,
         questionCode: question.code,
         answerCode: answer.code);
@@ -32,13 +32,14 @@ class AnswerItem extends StatelessWidget {
       switch (codesUtil.getAnswerTypeFromQuestionCode(question.code)) {
         // **** Checkbox Answer ***
         case answerType.checkbox:
-          return AnswerItemCheckbox(answer: answer, userResponse: userResponse);
+          return AnswerItemCheckbox(
+              answer: answer, rxUserResponse: userResponse);
 
         // **** DEFAULT: Radio Button Answer ***
         default:
           return AnswerItemRadioButton(
             answer: answer,
-            userResponse: userResponse,
+            rxUserResponse: userResponse,
           );
       }
     } catch (error) {

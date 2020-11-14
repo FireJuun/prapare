@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:prapare/controllers/commands/abstract_command.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 
 class ToggleCheckboxCommand extends AbstractCommand {
   Future<void> execute(
-      {@required UserResponse userResponse, bool newValue}) async {
-    userResponse.responseType.value =
-        newValue ?? !userResponse.responseType.value;
+      {@required Rx<UserResponse> rxUserResponse, bool newValue}) async {
+    // create new UserResponse class with different value property
+    final UserResponse newResponse = rxUserResponse.value;
+    newResponse.responseType.value =
+        newValue ?? !newResponse.responseType.value;
 
-    // is this necessary?
-    questionnaireController.update();
+    // update the stream with the new class
+    responsesController.updateUserResponse(rxUserResponse, newResponse);
   }
 }

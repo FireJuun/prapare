@@ -3,6 +3,8 @@ import 'package:flutter/foundation.dart';
 import 'response_type.dart';
 
 /// represents the class that is passed back from the user
+class RxUserResponse {}
+
 class UserResponse {
   UserResponse({
     @required this.surveyCode,
