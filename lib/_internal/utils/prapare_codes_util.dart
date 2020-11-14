@@ -109,8 +109,6 @@ class PrapareCodesUtil {
         case '/93039-6/93026-3':
           return labels.prapare.optionalMeasures.safe;
         case '/93039-6/76501-6':
-          // todo: this resource is missing two answer choices:
-          // I have not had a partner in the past year
           return labels.prapare.optionalMeasures.afraid;
 
         default:
@@ -243,6 +241,10 @@ class PrapareCodesUtil {
           return labels.prapare.answers.howMuch.quiteABit;
         case 'LA13914-9':
           return labels.prapare.answers.howMuch.veryMuch;
+
+        // todo: this answer choice needs a valueCoding code
+        case 'XXXX':
+          return labels.prapare.answers.partner.noPartnerInLastYear;
 
         default:
           return 'error: incorrect FHIR Answer';
