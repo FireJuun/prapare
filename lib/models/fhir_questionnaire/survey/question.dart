@@ -25,6 +25,7 @@ class Question {
       answers = <Answer>{};
       if (itemType != ItemType.choice) {
         format = questionMap[item.type.toString()];
+        // todo: add Answer() for string and decimal types
       } else {
         if (item.extension_ != null) {
           /// ensures that there is an extension for the item
