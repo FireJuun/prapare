@@ -57,6 +57,11 @@ class SurveyController extends GetxController
     });
   }
 
+  // skip the last tab item (optional), then see if all are checked
+  bool validateIfRequiredSurveysComplete() => tabModel.tabList
+      .take(tabModel.tabList.length - 1)
+      .every((e) => e.isChecked.value);
+
   String getTabIconFromIndex(int index, int ctrlIndex) {
     final SurveyTab obj = tabModel.tabList[index];
     if (index == ctrlIndex) {
