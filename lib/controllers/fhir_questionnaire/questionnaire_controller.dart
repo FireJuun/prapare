@@ -5,12 +5,14 @@ import 'package:prapare/models/fhir_questionnaire/fhir_questionnaire.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/models/fhir_questionnaire/questionnaire_model.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/response_type.dart';
+import 'package:prapare/ui/views/survey/survey_controller.dart';
 
 class QuestionnaireController extends GetxController {
   /// A semi-temporary data model, which will be transitioned to harness [prapareSurvey]
   /// For now, the data points have been created manually, and the codes don't quite correlate yet
 
   final QuestionnaireModel _model = QuestionnaireModel();
+
   final UserResponsesController _responsesController = Get.find();
   List<Question> _allQuestions;
 

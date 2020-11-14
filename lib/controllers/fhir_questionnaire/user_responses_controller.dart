@@ -29,6 +29,23 @@ class UserResponsesController extends GetxController {
   Rx<UserResponse> findActiveResponse(String questionCode) =>
       _rxMappedActiveResponses[questionCode];
 
+  void setCheckboxActiveBooleanByAnswers(String questionCode) {
+    bool validator = false;
+
+    // get all responses for a question, then see if a response set as true
+    _rxResponses
+        .toList()
+        .where((e) => e.value.questionCode == questionCode)
+        .forEach((ans) {
+      if (ans.value.responseType.value == true) {
+        validator = true;
+      }
+    });
+
+    // active response value determined by above validation steps
+    _rxMappedActiveResponses[questionCode].value.responseType.value = validator;
+  }
+
   void setAllQuestionBooleansToFalse(String questionCode) {
     _rxResponses.forEach(
       (e) {

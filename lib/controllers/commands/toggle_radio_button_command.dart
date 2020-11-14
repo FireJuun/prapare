@@ -38,6 +38,8 @@ class ToggleRadioButtonCommand extends AbstractCommand {
           .rxMappedActiveResponses[oldResponse.value.questionCode]
           .value = newResponse;
     }
-    responsesController.update();
+
+    // check validator to see if survey is complete
+    surveyController.validateIfSurveyIsCompleted(oldResponse.value.surveyCode);
   }
 }

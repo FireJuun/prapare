@@ -6,7 +6,6 @@ import 'package:prapare/ui/themes.dart';
 import 'package:prapare/ui/views/settings/settings_dialog.dart';
 import 'package:prapare/ui/views/survey/survey_detail.dart';
 import 'package:prapare/ui/views/survey/header/survey_header_flexible.dart';
-import 'package:prapare/ui/views/survey/header/toggle_tab_checked.dart';
 import 'package:prapare/ui/views/survey/survey_controller.dart';
 
 class SurveyView extends StatelessWidget {
@@ -79,8 +78,6 @@ class SurveyView extends StatelessWidget {
                                     survey: dataController
                                         .getSurveyFromCode(e.code),
                                   ),
-                                  // todo: implement check for when all data fields have data, then remove [ToggleTabChecked]
-                                  ToggleTabChecked(),
                                 ],
                               ),
                             ),
