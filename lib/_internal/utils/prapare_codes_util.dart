@@ -1,6 +1,14 @@
 import 'package:prapare/localization.dart';
 
-enum answerType { radio, checkbox, decimal, string_short, string_long, boolean }
+enum answerType {
+  boolean,
+  checkbox,
+  decimal,
+  decimal_int,
+  radio,
+  string,
+  string_long,
+}
 
 class PrapareCodesUtil {
   /// hard-coded for now
@@ -13,7 +21,7 @@ class PrapareCodesUtil {
           return answerType.checkbox;
         // labels.prapare.familyAndHome.household
         case '/93042-0/63512-8':
-          return answerType.decimal;
+          return answerType.decimal_int;
         // labels.prapare.familyAndHome.address
         case '/93042-0/56799-0':
           return answerType.string_long;

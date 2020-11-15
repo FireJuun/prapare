@@ -37,19 +37,20 @@ class AnswerItem extends StatelessWidget {
           return AnswerItemCheckbox(
               answer: answer, rxUserResponse: userResponse);
 
-        // **** Decimal Answer ***
+        // **** Decimal Answers ***
         case answerType.decimal:
           return AnswerItemDecimal(
               answer: answer, rxUserResponse: userResponse);
+        case answerType.decimal_int:
+          return AnswerItemDecimal(
+              answer: answer, rxUserResponse: userResponse, isInteger: true);
 
         // **** String Answers ***
+        case answerType.string:
+          return AnswerItemString(answer: answer, rxUserResponse: userResponse);
         case answerType.string_long:
           return AnswerItemString(
               answer: answer, rxUserResponse: userResponse, isMultiLine: true);
-
-        case answerType.string_short:
-          return AnswerItemString(
-              answer: answer, rxUserResponse: userResponse, isMultiLine: false);
 
         // **** DEFAULT: Radio Button Answer ***
         default:
