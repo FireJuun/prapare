@@ -1222,6 +1222,32 @@ const prapareSurvey = {
                     }
                   ],
                   "valueCoding": {"code": "LA32-8", "display": "No"}
+                },
+                {
+                  "extension": [
+                    {
+                      "url":
+                          "http://hl7.org/fhir/StructureDefinition/questionnaire-optionPrefix",
+                      "valueString": "2"
+                    }
+                  ],
+                  "valueCoding": {
+                    "code": "XXXX",
+                    "display": "I have not had a partner in the past year"
+                  }
+                },
+                {
+                  "extension": [
+                    {
+                      "url":
+                          "http://hl7.org/fhir/StructureDefinition/questionnaire-optionPrefix",
+                      "valueString": "3"
+                    }
+                  ],
+                  "valueCoding": {
+                    "code": "LA30122-8",
+                    "display": "I choose not to answer this question"
+                  }
                 }
               ]
             }

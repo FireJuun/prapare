@@ -5,7 +5,6 @@ import 'package:prapare/models/fhir_questionnaire/fhir_questionnaire.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/models/fhir_questionnaire/questionnaire_model.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/response_type.dart';
-import 'package:prapare/ui/views/survey/survey_controller.dart';
 
 class QuestionnaireController extends GetxController {
   /// A semi-temporary data model, which will be transitioned to harness [prapareSurvey]
@@ -42,12 +41,21 @@ class QuestionnaireController extends GetxController {
       (s) => s.questions.forEach(
         (q) => q.answers.forEach(
           (ans) => _responsesController.rxResponses.add(
-            UserResponse(
-                    surveyCode: s.code,
-                    questionCode: q.code,
-                    answerCode: ans.code,
-                    responseType: ResponseBoolean(false))
-                .obs,
+            // if AnswerType.choice ==> use booleans, otherwise strings
+            // todo: update with various additional response types
+            (ans.code == 'decimal' || ans.code == 'string')
+                ? UserResponse(
+                        surveyCode: s.code,
+                        questionCode: q.code,
+                        answerCode: ans.code,
+                        responseType: ResponseString(''))
+                    .obs
+                : UserResponse(
+                        surveyCode: s.code,
+                        questionCode: q.code,
+                        answerCode: ans.code,
+                        responseType: ResponseBoolean(false))
+                    .obs,
           ),
         ),
       ),

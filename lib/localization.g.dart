@@ -2,6 +2,10 @@
 
 part of 'localization.dart';
 
+// ignore_for_file: camel_case_types
+// ignore_for_file: prefer_single_quotes
+// ignore_for_file: prefer_const_constructors
+
 // **************************************************************************
 // SheetLocalizationGenerator
 // **************************************************************************
@@ -155,6 +159,9 @@ class AppLocalizations {
             english: "English",
             languageOtherThanEnglish: "Language other than English",
           ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear: "I have not had a partner in the past year",
+          ),
           race: AppLocalizations_Labels_Prapare_Answers_Race(
             americanIndianAlaskanNative: "American Indian/Alaskan Native",
             asian: "Asian",
@@ -256,9 +263,6 @@ class AppLocalizations {
         theme: "Theme",
         title: "Settings",
         updateProfile: "Update Profile",
-      ),
-      vigor: AppLocalizations_Labels_Vigor(
-        title: "Vigor",
       ),
     ),
     Locale.fromSubtags(languageCode: "es"): AppLocalizations_Labels(
@@ -404,6 +408,9 @@ class AppLocalizations {
             english: "Inglés",
             languageOtherThanEnglish: "Idioma distinto del Inglés",
           ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear: "No he tenido una pareja en el último año",
+          ),
           race: AppLocalizations_Labels_Prapare_Answers_Race(
             americanIndianAlaskanNative: "Indio Americano Nativo de Alaska /",
             asian: "asiático",
@@ -505,9 +512,6 @@ class AppLocalizations {
         theme: "Tema",
         title: "ajustes",
         updateProfile: "Actualización del perfil",
-      ),
-      vigor: AppLocalizations_Labels_Vigor(
-        title: "Vigor",
       ),
     ),
     Locale.fromSubtags(languageCode: "ar"): AppLocalizations_Labels(
@@ -653,6 +657,9 @@ class AppLocalizations {
             english: "الإنجليزية",
             languageOtherThanEnglish: "لغة أخرى غير الإنجليزية",
           ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear: "لم تتح لي شريكا في العام الماضي",
+          ),
           race: AppLocalizations_Labels_Prapare_Answers_Race(
             americanIndianAlaskanNative: "هنود أمريكا / ألاسكا الأصليين",
             asian: "آسيا",
@@ -751,9 +758,6 @@ class AppLocalizations {
         theme: "موضوع",
         title: "إعدادات",
         updateProfile: "تحديث الملف",
-      ),
-      vigor: AppLocalizations_Labels_Vigor(
-        title: "قوة",
       ),
     ),
     Locale.fromSubtags(languageCode: "hi"): AppLocalizations_Labels(
@@ -899,6 +903,9 @@ class AppLocalizations {
             english: "अंग्रेज़ी",
             languageOtherThanEnglish: "भाषा अंग्रेजी के अलावा अन्य",
           ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear: "मैं पिछले एक साल में एक साथी नहीं किया है",
+          ),
           race: AppLocalizations_Labels_Prapare_Answers_Race(
             americanIndianAlaskanNative: "अमेरिकी भारतीय / अलास्का मूल निवासी",
             asian: "एशियाई",
@@ -999,9 +1006,6 @@ class AppLocalizations {
         theme: "विषय",
         title: "समायोजन",
         updateProfile: "प्रोफ़ाइल अपडेट करें",
-      ),
-      vigor: AppLocalizations_Labels_Vigor(
-        title: "ताक़त",
       ),
     ),
     Locale.fromSubtags(languageCode: "ru"): AppLocalizations_Labels(
@@ -1149,6 +1153,9 @@ class AppLocalizations {
             english: "английский",
             languageOtherThanEnglish: "Язык кроме английского",
           ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear: "У меня не было партнера в прошлом году",
+          ),
           race: AppLocalizations_Labels_Prapare_Answers_Race(
             americanIndianAlaskanNative:
                 "Американские индейцы / коренные жители Аляски",
@@ -1251,9 +1258,6 @@ class AppLocalizations {
         theme: "тема",
         title: "настройки",
         updateProfile: "Обновить профиль",
-      ),
-      vigor: AppLocalizations_Labels_Vigor(
-        title: "сила",
       ),
     ),
     Locale.fromSubtags(languageCode: "bn"): AppLocalizations_Labels(
@@ -1399,6 +1403,9 @@ class AppLocalizations {
             english: "ইংরেজি",
             languageOtherThanEnglish: "ভাষা ইংরেজি ছাড়া অন্য",
           ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear: "আমি গত বছর একটি অংশীদার ছিল না",
+          ),
           race: AppLocalizations_Labels_Prapare_Answers_Race(
             americanIndianAlaskanNative: "আমেরিকান ভারতীয় / আলাস্কা দেশীয়",
             asian: "এশিয়ান",
@@ -1498,9 +1505,6 @@ class AppLocalizations {
         theme: "বিষয়",
         title: "সেটিংস",
         updateProfile: "হালনাগাদ প্রফাইল",
-      ),
-      vigor: AppLocalizations_Labels_Vigor(
-        title: "তেজ",
       ),
     ),
     Locale.fromSubtags(languageCode: "my"): AppLocalizations_Labels(
@@ -1646,6 +1650,9 @@ class AppLocalizations {
             english: "အင်္ဂလိပ်",
             languageOtherThanEnglish: "အင်္ဂလိပ်ထက်အခြားဘာသာစကား",
           ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear: "ငါအတိတ်တစ်နှစ်အတွက်မိတ်ဖက်ခဲ့ကြပြီမဟုတ်",
+          ),
           race: AppLocalizations_Labels_Prapare_Answers_Race(
             americanIndianAlaskanNative: "အမေရိကန်အိန္ဒိယ / Alaskan Native",
             asian: "အာရှ",
@@ -1748,9 +1755,6 @@ class AppLocalizations {
         theme: "အကွောငျး",
         title: "Settings များ",
         updateProfile: "Update ကိုကိုယ်ရေးဖိုင်",
-      ),
-      vigor: AppLocalizations_Labels_Vigor(
-        title: "သန်စွမ်း",
       ),
     ),
     Locale.fromSubtags(languageCode: "zh_CN"): AppLocalizations_Labels(
@@ -1894,6 +1898,9 @@ class AppLocalizations {
             english: "英语",
             languageOtherThanEnglish: "语言英语以外",
           ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear: "我没有在过去一年的合作伙伴",
+          ),
           race: AppLocalizations_Labels_Prapare_Answers_Race(
             americanIndianAlaskanNative: "美国印第安人/阿拉斯加原住民",
             asian: "亚洲",
@@ -1981,9 +1988,6 @@ class AppLocalizations {
         theme: "主题",
         title: "设置",
         updateProfile: "更新配置文件",
-      ),
-      vigor: AppLocalizations_Labels_Vigor(
-        title: "活力",
       ),
     ),
     Locale.fromSubtags(languageCode: "zh_TW"): AppLocalizations_Labels(
@@ -2127,6 +2131,9 @@ class AppLocalizations {
             english: "英語",
             languageOtherThanEnglish: "語言英語以外",
           ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear: "我沒有在過去一年的合作夥伴",
+          ),
           race: AppLocalizations_Labels_Prapare_Answers_Race(
             americanIndianAlaskanNative: "美國印第安人/阿拉斯加原住民",
             asian: "亞洲",
@@ -2214,9 +2221,6 @@ class AppLocalizations {
         theme: "主題",
         title: "設置",
         updateProfile: "更新配置文件",
-      ),
-      vigor: AppLocalizations_Labels_Vigor(
-        title: "活力",
       ),
     ),
     Locale.fromSubtags(languageCode: "fa"): AppLocalizations_Labels(
@@ -2362,6 +2366,9 @@ class AppLocalizations {
             english: "انگلیسی",
             languageOtherThanEnglish: "زبان غیر از انگلیسی",
           ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear: "من یک شریک در سال گذشته نداشته است",
+          ),
           race: AppLocalizations_Labels_Prapare_Answers_Race(
             americanIndianAlaskanNative: "سرخپوست آمریکایی / بومی آلاسکا",
             asian: "آسیایی",
@@ -2462,9 +2469,6 @@ class AppLocalizations {
         theme: "موضوع",
         title: "تنظیمات",
         updateProfile: "بروزرسانی پروفایل",
-      ),
-      vigor: AppLocalizations_Labels_Vigor(
-        title: "قدرت",
       ),
     ),
     Locale.fromSubtags(languageCode: "fr"): AppLocalizations_Labels(
@@ -2611,6 +2615,10 @@ class AppLocalizations {
             english: "Anglais",
             languageOtherThanEnglish: "Langue autre que l'anglais",
           ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear:
+                "Je n'ai pas eu un partenaire dans l'année écoulée",
+          ),
           race: AppLocalizations_Labels_Prapare_Answers_Race(
             americanIndianAlaskanNative: "Indien de l'Amérique / Alaska Native",
             asian: "asiatique",
@@ -2713,9 +2721,6 @@ class AppLocalizations {
         theme: "Thème",
         title: "Réglages",
         updateProfile: "Mettre à jour le profil",
-      ),
-      vigor: AppLocalizations_Labels_Vigor(
-        title: "Vigueur",
       ),
     ),
     Locale.fromSubtags(languageCode: "de"): AppLocalizations_Labels(
@@ -2862,6 +2867,9 @@ class AppLocalizations {
             english: "Englisch",
             languageOtherThanEnglish: "Andere Sprache als Englisch",
           ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear: "Ich hatte keinen Partner im vergangenen Jahr",
+          ),
           race: AppLocalizations_Labels_Prapare_Answers_Race(
             americanIndianAlaskanNative: "American Indian / Alaska Native",
             asian: "asiatisch",
@@ -2963,9 +2971,6 @@ class AppLocalizations {
         theme: "Thema",
         title: "die Einstellungen",
         updateProfile: "Profil aktualisieren",
-      ),
-      vigor: AppLocalizations_Labels_Vigor(
-        title: "Kraft",
       ),
     ),
     Locale.fromSubtags(languageCode: "id"): AppLocalizations_Labels(
@@ -3112,6 +3117,10 @@ class AppLocalizations {
             english: "Inggris",
             languageOtherThanEnglish: "Bahasa selain bahasa Inggris",
           ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear:
+                "Saya tidak punya pasangan dalam satu tahun terakhir",
+          ),
           race: AppLocalizations_Labels_Prapare_Answers_Race(
             americanIndianAlaskanNative: "American Indian / Alaska Native",
             asian: "Asia",
@@ -3214,9 +3223,6 @@ class AppLocalizations {
         theme: "Tema",
         title: "pengaturan",
         updateProfile: "Memperbaharui profil",
-      ),
-      vigor: AppLocalizations_Labels_Vigor(
-        title: "Semangat",
       ),
     ),
     Locale.fromSubtags(languageCode: "ja"): AppLocalizations_Labels(
@@ -3361,6 +3367,9 @@ class AppLocalizations {
             english: "英語",
             languageOtherThanEnglish: "英語以外の言語",
           ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear: "私は昨年のパートナーを持っていませんでした",
+          ),
           race: AppLocalizations_Labels_Prapare_Answers_Race(
             americanIndianAlaskanNative: "アメリカインディアン/アラスカネイティブ",
             asian: "アジアの",
@@ -3454,9 +3463,6 @@ class AppLocalizations {
         theme: "テーマ",
         title: "設定",
         updateProfile: "プロフィールを更新",
-      ),
-      vigor: AppLocalizations_Labels_Vigor(
-        title: "活力",
       ),
     ),
     Locale.fromSubtags(languageCode: "km"): AppLocalizations_Labels(
@@ -3603,6 +3609,9 @@ class AppLocalizations {
             english: "ភាសាអង់គ្លេស",
             languageOtherThanEnglish: "ភាសាផ្សេងទៀតជាជាងភាសាអង់គ្លេស",
           ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear: "ខ្ញុំមិនមានដៃគូនៅក្នុងឆ្នាំកន្លងទៅនេះ",
+          ),
           race: AppLocalizations_Labels_Prapare_Answers_Race(
             americanIndianAlaskanNative: "អាមេរិកឥណ្ឌា / Alaskan ដើម",
             asian: "អាស៊ី",
@@ -3704,9 +3713,6 @@ class AppLocalizations {
         theme: "ស្បែក",
         title: "ការកំណត់",
         updateProfile: "ទម្រង់ធ្វើឱ្យទាន់សម័យ",
-      ),
-      vigor: AppLocalizations_Labels_Vigor(
-        title: "ភាពរឹងមាំខាង",
       ),
     ),
     Locale.fromSubtags(languageCode: "ko"): AppLocalizations_Labels(
@@ -3851,6 +3857,9 @@ class AppLocalizations {
             english: "영어",
             languageOtherThanEnglish: "영어 이외의 언어",
           ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear: "나는 지난 해의 파트너가 없었어요",
+          ),
           race: AppLocalizations_Labels_Prapare_Answers_Race(
             americanIndianAlaskanNative: "아메리칸 인디언 / 알래스카 원주민",
             asian: "아시아 사람",
@@ -3944,9 +3953,6 @@ class AppLocalizations {
         theme: "테마",
         title: "설정",
         updateProfile: "프로필 업데이트",
-      ),
-      vigor: AppLocalizations_Labels_Vigor(
-        title: "활기",
       ),
     ),
     Locale.fromSubtags(languageCode: "lo"): AppLocalizations_Labels(
@@ -4092,6 +4098,10 @@ class AppLocalizations {
             english: "ພາສາອັງກິດ",
             languageOtherThanEnglish: "ພາສາອື່ນທີ່ບໍ່ແມ່ນພາສາອັງກິດ",
           ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear:
+                "ຂ້າພະເຈົ້າຍັງບໍ່ທັນໄດ້ມີຄູ່ຮ່ວມງານໃນປີທີ່ຜ່ານມາໄດ້",
+          ),
           race: AppLocalizations_Labels_Prapare_Answers_Race(
             americanIndianAlaskanNative: "ອາເມລິກາອິນເດຍ / ອະແລສະກາພື້ນເມືອງ",
             asian: "Asian",
@@ -4193,9 +4203,6 @@ class AppLocalizations {
         theme: "Theme",
         title: "ການຕັ້ງຄ່າ",
         updateProfile: "ແຜງ",
-      ),
-      vigor: AppLocalizations_Labels_Vigor(
-        title: "ຢ່າງແຂງແຮງ",
       ),
     ),
     Locale.fromSubtags(languageCode: "mr"): AppLocalizations_Labels(
@@ -4341,6 +4348,9 @@ class AppLocalizations {
             english: "इंग्रजी",
             languageOtherThanEnglish: "इंग्रजी व्यतिरिक्त इतर भाषा",
           ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear: "मी नाही गेल्या वर्षी एक भागीदार होते",
+          ),
           race: AppLocalizations_Labels_Prapare_Answers_Race(
             americanIndianAlaskanNative: "अमेरिकन भारतीय / Alaskan नेटिव्ह",
             asian: "आशियाई",
@@ -4439,9 +4449,6 @@ class AppLocalizations {
         theme: "थीम",
         title: "सेटिंग्ज",
         updateProfile: "प्रोफाइल अद्यतनित करा",
-      ),
-      vigor: AppLocalizations_Labels_Vigor(
-        title: "जोम",
       ),
     ),
     Locale.fromSubtags(languageCode: "ne"): AppLocalizations_Labels(
@@ -4587,6 +4594,9 @@ class AppLocalizations {
             english: "अंग्रेजी",
             languageOtherThanEnglish: "अंग्रेजी भन्दा अन्य भाषा",
           ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear: "म गत वर्ष एक साझेदार थियो छैन",
+          ),
           race: AppLocalizations_Labels_Prapare_Answers_Race(
             americanIndianAlaskanNative: "अमेरिकी भारतीय / अलास्का मूल निवासी",
             asian: "एशियाली",
@@ -4688,9 +4698,6 @@ class AppLocalizations {
         title: "सेटिङहरू",
         updateProfile: "प्रोफाइल अद्यावधिक",
       ),
-      vigor: AppLocalizations_Labels_Vigor(
-        title: "ताकत",
-      ),
     ),
     Locale.fromSubtags(languageCode: "pt"): AppLocalizations_Labels(
       app: AppLocalizations_Labels_App(
@@ -4730,7 +4737,7 @@ class AppLocalizations {
           friday: "Sexta-feira",
           monday: "Segunda-feira",
           saturday: "sábado",
-          sunday: "domingo",
+          sunday: "Domigo",
           thursday: "quinta-feira",
           tuesday: "terça",
           wednesday: "quarta-feira",
@@ -4835,6 +4842,9 @@ class AppLocalizations {
             english: "Inglês",
             languageOtherThanEnglish: "Idioma diferente do Inglês",
           ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear: "Eu não tive um parceiro no último ano",
+          ),
           race: AppLocalizations_Labels_Prapare_Answers_Race(
             americanIndianAlaskanNative:
                 "Dos índios americanos / nativos do Alasca",
@@ -4937,9 +4947,6 @@ class AppLocalizations {
         theme: "Tema",
         title: "Definições",
         updateProfile: "Atualizar perfil",
-      ),
-      vigor: AppLocalizations_Labels_Vigor(
-        title: "Vigor",
       ),
     ),
     Locale.fromSubtags(languageCode: "pa"): AppLocalizations_Labels(
@@ -5085,6 +5092,9 @@ class AppLocalizations {
             english: "ਅੰਗਰੇਜ਼ੀ",
             languageOtherThanEnglish: "ਭਾਸ਼ਾ ਅੰਗਰੇਜ਼ੀ ਦੇ ਇਲਾਵਾ ਹੋਰ",
           ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear: "ਮੈਨੂੰ ਪਿਛਲੇ ਸਾਲ 'ਚ ਇੱਕ ਸਾਥੀ ਸੀ, ਨਾ ਹੈ",
+          ),
           race: AppLocalizations_Labels_Prapare_Answers_Race(
             americanIndianAlaskanNative: "ਅਮਰੀਕੀ ਭਾਰਤੀ / ਅਲਾਸਕਾ ਨੇਟਿਵ",
             asian: "ਏਸ਼ੀਆਈ",
@@ -5185,9 +5195,6 @@ class AppLocalizations {
         theme: "ਥੀਮ",
         title: "ਸੈਟਿੰਗ",
         updateProfile: "ਅੱਪਡੇਟ ਪ੍ਰੋਫ਼ਾਈਲ English",
-      ),
-      vigor: AppLocalizations_Labels_Vigor(
-        title: "ਜੋਸ਼",
       ),
     ),
     Locale.fromSubtags(languageCode: "so"): AppLocalizations_Labels(
@@ -5334,6 +5341,10 @@ class AppLocalizations {
             english: "English",
             languageOtherThanEnglish: "Luqadda Ingiriisiga ahayn",
           ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear:
+                "Anigu uma aan la Wadaage in sanadkii la soo dhaafay",
+          ),
           race: AppLocalizations_Labels_Prapare_Answers_Race(
             americanIndianAlaskanNative: "American Indian / Alaska",
             asian: "Asian",
@@ -5436,9 +5447,6 @@ class AppLocalizations {
         theme: "theme",
         title: "Settings",
         updateProfile: "update Profile",
-      ),
-      vigor: AppLocalizations_Labels_Vigor(
-        title: "luminayey",
       ),
     ),
     Locale.fromSubtags(languageCode: "sw"): AppLocalizations_Labels(
@@ -5584,6 +5592,9 @@ class AppLocalizations {
             english: "english",
             languageOtherThanEnglish: "Lugha tofauti na Kiingereza",
           ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear: "Mimi si alikuwa mpenzi katika mwaka uliopita",
+          ),
           race: AppLocalizations_Labels_Prapare_Answers_Race(
             americanIndianAlaskanNative: "American Indian / Alaskan Native",
             asian: "Asia",
@@ -5684,9 +5695,6 @@ class AppLocalizations {
         theme: "Theme",
         title: "mipangilio",
         updateProfile: "Mwisho profile",
-      ),
-      vigor: AppLocalizations_Labels_Vigor(
-        title: "nguvu",
       ),
     ),
     Locale.fromSubtags(languageCode: "tl"): AppLocalizations_Labels(
@@ -5835,6 +5843,10 @@ class AppLocalizations {
             english: "Ingles",
             languageOtherThanEnglish: "Wika maliban sa Ingles",
           ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear:
+                "Hindi ko pa nagkaroon ng isang partner sa nakaraang taon",
+          ),
           race: AppLocalizations_Labels_Prapare_Answers_Race(
             americanIndianAlaskanNative: "American Indian / Katutubong Alaska",
             asian: "Asyano",
@@ -5937,9 +5949,6 @@ class AppLocalizations {
         theme: "tema",
         title: "Mga Setting",
         updateProfile: "I-update ang Profile",
-      ),
-      vigor: AppLocalizations_Labels_Vigor(
-        title: "kalakasan",
       ),
     ),
     Locale.fromSubtags(languageCode: "th"): AppLocalizations_Labels(
@@ -6085,6 +6094,9 @@ class AppLocalizations {
             english: "อังกฤษ",
             languageOtherThanEnglish: "ภาษาอื่นที่ไม่ใช่ภาษาอังกฤษ",
           ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear: "ฉันไม่ได้มีหุ้นส่วนในปีที่ผ่านมา",
+          ),
           race: AppLocalizations_Labels_Prapare_Answers_Race(
             americanIndianAlaskanNative: "อเมริกันอินเดีย / อลาสก้าพื้นเมือง",
             asian: "เอเชีย",
@@ -6185,9 +6197,6 @@ class AppLocalizations {
         theme: "กระทู้",
         title: "การตั้งค่า",
         updateProfile: "รายละเอียดการปรับปรุง",
-      ),
-      vigor: AppLocalizations_Labels_Vigor(
-        title: "พลัง",
       ),
     ),
     Locale.fromSubtags(languageCode: "uz"): AppLocalizations_Labels(
@@ -6334,6 +6343,9 @@ class AppLocalizations {
             english: "Ingliz tili",
             languageOtherThanEnglish: "Ingliz tilidan boshqa til",
           ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear: "Men o'tgan yili bir sherigi yo'q",
+          ),
           race: AppLocalizations_Labels_Prapare_Answers_Race(
             americanIndianAlaskanNative: "American India / Alaska Mahalliy",
             asian: "Osiyolik",
@@ -6432,9 +6444,6 @@ class AppLocalizations {
         theme: "mavzu",
         title: "Sozlamalar",
         updateProfile: "yangilash Profil",
-      ),
-      vigor: AppLocalizations_Labels_Vigor(
-        title: "kuch",
       ),
     ),
     Locale.fromSubtags(languageCode: "vi"): AppLocalizations_Labels(
@@ -6580,6 +6589,9 @@ class AppLocalizations {
             english: "Tiếng Anh",
             languageOtherThanEnglish: "Ngôn ngữ khác ngoài tiếng Anh",
           ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear: "Tôi đã không có một đối tác trong năm qua",
+          ),
           race: AppLocalizations_Labels_Prapare_Answers_Race(
             americanIndianAlaskanNative: "Mỹ Da Đỏ / Thổ Dân Alaska",
             asian: "Châu Á",
@@ -6679,9 +6691,6 @@ class AppLocalizations {
         theme: "chủ đề",
         title: "Cài đặt",
         updateProfile: "Cập nhật hồ sơ",
-      ),
-      vigor: AppLocalizations_Labels_Vigor(
-        title: "sức mạnh",
       ),
     ),
   };
@@ -7393,6 +7402,22 @@ class AppLocalizations_Labels_Prapare_Answers_Language {
   }
 }
 
+class AppLocalizations_Labels_Prapare_Answers_Partner {
+  const AppLocalizations_Labels_Prapare_Answers_Partner(
+      {this.noPartnerInLastYear});
+
+  final String noPartnerInLastYear;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'noPartnerInLastYear':
+        return noPartnerInLastYear;
+      default:
+        return '';
+    }
+  }
+}
+
 class AppLocalizations_Labels_Prapare_Answers_Race {
   const AppLocalizations_Labels_Prapare_Answers_Race(
       {this.americanIndianAlaskanNative,
@@ -7567,6 +7592,7 @@ class AppLocalizations_Labels_Prapare_Answers {
       this.howOften,
       this.insurance,
       this.language,
+      this.partner,
       this.race,
       this.school,
       this.transportation,
@@ -7586,6 +7612,8 @@ class AppLocalizations_Labels_Prapare_Answers {
   final AppLocalizations_Labels_Prapare_Answers_Insurance insurance;
 
   final AppLocalizations_Labels_Prapare_Answers_Language language;
+
+  final AppLocalizations_Labels_Prapare_Answers_Partner partner;
 
   final AppLocalizations_Labels_Prapare_Answers_Race race;
 
@@ -7893,21 +7921,6 @@ class AppLocalizations_Labels_Settings {
   }
 }
 
-class AppLocalizations_Labels_Vigor {
-  const AppLocalizations_Labels_Vigor({this.title});
-
-  final String title;
-
-  String getByKey(String key) {
-    switch (key) {
-      case 'title':
-        return title;
-      default:
-        return '';
-    }
-  }
-}
-
 class AppLocalizations_Labels {
   const AppLocalizations_Labels(
       {this.app,
@@ -7918,8 +7931,7 @@ class AppLocalizations_Labels {
       this.medical,
       this.prapare,
       this.registration,
-      this.settings,
-      this.vigor});
+      this.settings});
 
   final AppLocalizations_Labels_App app;
 
@@ -7938,8 +7950,6 @@ class AppLocalizations_Labels {
   final AppLocalizations_Labels_Registration registration;
 
   final AppLocalizations_Labels_Settings settings;
-
-  final AppLocalizations_Labels_Vigor vigor;
 
   String getByKey(String key) {
     switch (key) {

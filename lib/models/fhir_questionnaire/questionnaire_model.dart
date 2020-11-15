@@ -38,12 +38,16 @@ class QuestionnaireModel {
         text: item.text,
         questions: <Question>[],
       );
-      for (var q in item.item) {
-        /// if the questions are single questions, it creates new question objects
-        if (q.type == QuestionnaireItemType.choice) {
+
+      // todo: verify QuestionnaireItemType is being called correctly
+      item.item.forEach((q) {
+        if (q.type != QuestionnaireItemType.group &&
+            q.type != QuestionnaireItemType.display) {
+          /// if the questions are single questions, it creates new question objects
           newSurvey.questions.add(Question.fromChoiceItem(q));
         }
-      }
+      });
+
       _data.surveys.add(newSurvey);
     } else {
       /// if the subItem is also a group, then it will recursively call this fxn

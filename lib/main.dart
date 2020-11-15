@@ -20,12 +20,12 @@ Future<void> _initServices() async {
   await GetStorage.init();
   Get.put<LocaleController>(LocaleController());
   Get.put<ThemeController>(ThemeController());
+  await ThemeController.to.getThemeModeFromStore();
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    ThemeController.to.getThemeModeFromStore();
     return GetMaterialApp(
       // *** LOCALES ***
       locale: LocaleController.to.getLocale, // <- Current locale

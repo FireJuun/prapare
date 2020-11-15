@@ -1,6 +1,14 @@
 import 'package:prapare/localization.dart';
 
-enum answerType { radio, checkbox, string_short, string_long, boolean }
+enum answerType {
+  boolean,
+  checkbox,
+  decimal,
+  decimal_int,
+  radio,
+  string,
+  string_long,
+}
 
 class PrapareCodesUtil {
   /// hard-coded for now
@@ -8,8 +16,26 @@ class PrapareCodesUtil {
   answerType getAnswerTypeFromQuestionCode(String linkId) {
     try {
       switch (linkId) {
+        // labels.prapare.personalCharacteristics.race
         case '/93043-8/32624-9':
           return answerType.checkbox;
+        // labels.prapare.familyAndHome.household
+        case '/93042-0/63512-8':
+          return answerType.decimal_int;
+        // labels.prapare.familyAndHome.address
+        case '/93042-0/56799-0':
+          return answerType.string_long;
+
+        // labels.prapare.moneyAndResources.income
+        case '/93041-2/63586-2':
+          // todo: this accepts decimal + choose not to respond
+          return answerType.decimal;
+        // labels.prapare.moneyAndResources.without;
+        case '/93041-2/93031-3':
+          // todo: this is a check multiple...which swaps yes/no
+          // radio for now, need to swap
+          return answerType.radio;
+
         default:
           return answerType.radio;
       }
@@ -109,8 +135,6 @@ class PrapareCodesUtil {
         case '/93039-6/93026-3':
           return labels.prapare.optionalMeasures.safe;
         case '/93039-6/76501-6':
-          // todo: this resource is missing two answer choices:
-          // I have not had a partner in the past year
           return labels.prapare.optionalMeasures.afraid;
 
         default:
@@ -243,6 +267,10 @@ class PrapareCodesUtil {
           return labels.prapare.answers.howMuch.quiteABit;
         case 'LA13914-9':
           return labels.prapare.answers.howMuch.veryMuch;
+
+        // todo: this answer choice needs a valueCoding code
+        case 'XXXX':
+          return labels.prapare.answers.partner.noPartnerInLastYear;
 
         default:
           return 'error: incorrect FHIR Answer';
