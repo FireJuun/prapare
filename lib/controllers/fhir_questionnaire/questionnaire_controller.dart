@@ -42,12 +42,21 @@ class QuestionnaireController extends GetxController {
       (s) => s.questions.forEach(
         (q) => q.answers.forEach(
           (ans) => _responsesController.rxResponses.add(
-            UserResponse(
-                    surveyCode: s.code,
-                    questionCode: q.code,
-                    answerCode: ans.code,
-                    responseType: ResponseBoolean(false))
-                .obs,
+            // if AnswerType.choice ==> use booleans, otherwise strings
+            // todo: update with various additional response types
+            (ans.code == 'decimal' || ans.code == 'string')
+                ? UserResponse(
+                        surveyCode: s.code,
+                        questionCode: q.code,
+                        answerCode: ans.code,
+                        responseType: ResponseString(''))
+                    .obs
+                : UserResponse(
+                        surveyCode: s.code,
+                        questionCode: q.code,
+                        answerCode: ans.code,
+                        responseType: ResponseBoolean(false))
+                    .obs,
           ),
         ),
       ),
