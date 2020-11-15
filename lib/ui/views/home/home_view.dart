@@ -12,27 +12,38 @@ class HomeView extends StatelessWidget {
 
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 48.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              AppLogo(),
-              StyledButtonLarge(
-                  title: labels.general.newSurvey,
-                  onPressed: () => Get.toNamed(Routes.SURVEY)),
-              StyledButtonLarge(title: labels.general.editSurvey
-                  // onPressed: () => print(labels.general.birthDate),
-                  ),
-              StyledButtonLarge(title: labels.general.submitShare),
-              Align(
-                  alignment: const FractionalOffset(0.8, 0),
-                  child: IconButton(
-                      icon: const Icon(Icons.settings, size: 36),
-                      onPressed: () => settingsDialog()))
-            ],
-          ),
-        ),
+        child: LayoutBuilder(builder:
+            (BuildContext context, BoxConstraints viewportConstraints) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 48.0),
+            child: SingleChildScrollView(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  minHeight: viewportConstraints.maxHeight,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    AppLogo(),
+                    StyledButtonLarge(
+                        title: labels.general.newSurvey,
+                        onPressed: () => Get.toNamed(Routes.SURVEY)),
+                    StyledButtonLarge(title: labels.general.editSurvey
+                        // onPressed: () => print(labels.general.birthDate),
+                        ),
+                    StyledButtonLarge(title: labels.general.submitShare),
+                    Align(
+                        alignment: const FractionalOffset(0.8, 0),
+                        child: IconButton(
+                            icon: const Icon(Icons.settings, size: 36),
+                            onPressed: () => settingsDialog()))
+                  ],
+                ),
+              ),
+            ),
+          );
+        }),
       ),
     );
   }
