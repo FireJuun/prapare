@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class StyledButtonLarge extends StatelessWidget {
+  const StyledButtonLarge({@required this.title, this.onPressed});
+
   final String title;
   final Function onPressed;
 
-  StyledButtonLarge({@required this.title, this.onPressed});
-
   @override
   Widget build(BuildContext context) {
-    TextTheme textTheme = context.textTheme;
+    final TextTheme textTheme = context.textTheme;
 
     return FlatButton(
       child: SizedBox(
@@ -26,7 +26,7 @@ class StyledButtonLarge extends StatelessWidget {
                   borderRadius: BorderRadius.circular(22),
                   color: (onPressed != null)
                       ? context.theme.colorScheme.primary
-                      : Color(0xFFB5B5B5),
+                      : const Color(0xFFB5B5B5),
                 ),
               ),
             ),

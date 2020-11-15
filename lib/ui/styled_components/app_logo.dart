@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:prapare/ui/icons.dart';
 
 class AppLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
+    return const Padding(
+      padding: EdgeInsets.all(16.0),
       child: Image(
-        image: AssetImage('assets/images/PRAPARE-Logo-with-tagline.png'),
+        image: AssetImage(AppImages.LOGO_TAGLINE),
       ),
     );
   }
@@ -19,8 +20,8 @@ class AppLogoNoTagline extends StatelessWidget {
       height: 48,
       child: Image.asset(
         Theme.of(context).brightness == Brightness.light
-            ? 'assets/images/PRAPARE-Logo-no-tagline.png'
-            : 'assets/images/PRAPARE-Logo-no-tagline-dark.png',
+            ? AppImages.LOGO_NO_TAGLINE
+            : AppImages.LOGO_NO_TAGLINE_DARK,
         // this changes the PRAPARE logo on the survey view depending
         // on the theme (the original logo gets washed out in dark theme)
         // the colors in the new dark theme logo could use improvement

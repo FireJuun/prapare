@@ -117,6 +117,7 @@ class AppLocalizations {
         title:
             "Protocol for Responding to and Assessing Patients' Assets, Risks, and Experiences [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "Other",
           basic: AppLocalizations_Labels_Prapare_Answers_Basic(
             chooseNotToAnswer: "I choose not to answer this question",
             no: "No",
@@ -159,7 +160,6 @@ class AppLocalizations {
             asian: "Asian",
             blackAfricanAmerican: "Black/African American",
             nativeHawaiian: "Native Hawaiian",
-            other: "Other",
             pacificIslander: "Pacific Islander",
             white: "White",
           ),
@@ -170,6 +170,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "Patient unable to respond",
             yesKeptFromMedical:
                 "Yes, it has kept me from medical appointments or from getting my medications",
             yesKeptFromNonMedical:
@@ -181,7 +182,6 @@ class AppLocalizations {
             food: "Food",
             medicineOrAnyHealthCare:
                 "Medicine or Any Health Care (Medical, Dental, Mental Health, Vision)",
-            other: "Other",
             phone: "Phone",
             utilities: "Utilities",
           ),
@@ -366,6 +366,7 @@ class AppLocalizations {
         title:
             "Protocolo para responder y evaluar los activos de los pacientes, riesgos y experiencias [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "Otro",
           basic: AppLocalizations_Labels_Prapare_Answers_Basic(
             chooseNotToAnswer: "No decide contestar esta pregunta",
             no: "No",
@@ -408,7 +409,6 @@ class AppLocalizations {
             asian: "asiático",
             blackAfricanAmerican: "Negro americano / África",
             nativeHawaiian: "nativo de Hawai",
-            other: "Otro",
             pacificIslander: "Islas del Pacífico",
             white: "Blanco",
           ),
@@ -419,6 +419,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "El paciente es incapaz de responder",
             yesKeptFromMedical:
                 "Sí, me ha mantenido desde las citas médicas o de conseguir mis medicamentos",
             yesKeptFromNonMedical:
@@ -430,7 +431,6 @@ class AppLocalizations {
             food: "Comida",
             medicineOrAnyHealthCare:
                 "Cualquier medicina o la atención de la salud (médicos, dentales, salud mental, la visión)",
-            other: "Otro",
             phone: "Teléfono",
             utilities: "Utilidades",
           ),
@@ -615,6 +615,7 @@ class AppLocalizations {
         title:
             "بروتوكول للاستجابة للوتقييم الأصول المرضى، والمخاطر، والخبرات [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "آخر",
           basic: AppLocalizations_Labels_Prapare_Answers_Basic(
             chooseNotToAnswer: "أنا اخترت عدم الإجابة على هذا السؤال",
             no: "لا",
@@ -657,7 +658,6 @@ class AppLocalizations {
             asian: "آسيا",
             blackAfricanAmerican: "أسود / افريقى",
             nativeHawaiian: "هاواي الأصليين",
-            other: "آخر",
             pacificIslander: "جزر المحيط الهادئ",
             white: "أبيض",
           ),
@@ -668,6 +668,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "المريض غير قادر على الاستجابة",
             yesKeptFromMedical:
                 "نعم، فإنه أبقى لي من المواعيد الطبية أو من الحصول على الأدوية بلدي",
             yesKeptFromNonMedical:
@@ -679,7 +680,6 @@ class AppLocalizations {
             food: "طعام",
             medicineOrAnyHealthCare:
                 "الطب أو أي الرعاية الصحية (الطب، طب الأسنان، الصحة النفسية، الرؤية)",
-            other: "آخر",
             phone: "هاتف",
             utilities: "خدمات",
           ),
@@ -861,6 +861,7 @@ class AppLocalizations {
         title:
             "के जवाब में और मरीजों के संपत्ति का आकलन, के लिए प्रोटोकॉल जोखिम, और अनुभव [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "अन्य",
           basic: AppLocalizations_Labels_Prapare_Answers_Basic(
             chooseNotToAnswer: "मैं इस सवाल का जवाब न करना चुन",
             no: "नहीं",
@@ -903,7 +904,6 @@ class AppLocalizations {
             asian: "एशियाई",
             blackAfricanAmerican: "श्याम / अफ़्रीकी अमेरिकी",
             nativeHawaiian: "देशी हवाईयन",
-            other: "अन्य",
             pacificIslander: "प्रशांत द्वीप",
             white: "सफेद",
           ),
@@ -914,6 +914,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "जवाब देने में असमर्थ मरीज",
             yesKeptFromMedical:
                 "हाँ, यह मुझे चिकित्सा नियुक्तियों से या मेरे दवाओं को प्राप्त करने से रखा गया है",
             yesKeptFromNonMedical:
@@ -925,7 +926,6 @@ class AppLocalizations {
             food: "खाना",
             medicineOrAnyHealthCare:
                 "चिकित्सा या किसी भी स्वास्थ्य देखभाल (मेडिकल, डेंटल, मानसिक स्वास्थ्य, विजन)",
-            other: "अन्य",
             phone: "फ़ोन",
             utilities: "उपयोगिताएँ",
           ),
@@ -1109,6 +1109,7 @@ class AppLocalizations {
         title:
             "Протокол ответов и оценка активов пациентов, риски и опыт [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "Другие",
           basic: AppLocalizations_Labels_Prapare_Answers_Basic(
             chooseNotToAnswer: "Я не отвечать на этот вопрос",
             no: "нет",
@@ -1154,7 +1155,6 @@ class AppLocalizations {
             asian: "азиатка",
             blackAfricanAmerican: "Черный / афро-американец",
             nativeHawaiian: "Гавайский",
-            other: "Другие",
             pacificIslander: "островов Тихого океана",
             white: "белый",
           ),
@@ -1165,6 +1165,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "Пациент не в состоянии реагировать",
             yesKeptFromMedical:
                 "Да, он сохранил меня от медицинского назначения или получать мои лекарства",
             yesKeptFromNonMedical:
@@ -1176,7 +1177,6 @@ class AppLocalizations {
             food: "питание",
             medicineOrAnyHealthCare:
                 "Медицина и здравоохранение Любой (медицинский, стоматологический, психическое здоровье, зрение)",
-            other: "Другие",
             phone: "Телефон",
             utilities: "коммунальные услуги",
           ),
@@ -1361,6 +1361,7 @@ class AppLocalizations {
         title:
             "জবাবে এবং রোগীদের 'সম্পদ দ্বায়িত্বপ্রাপ্ত জন্য প্রোটোকল ঝুঁকি, এবং অভিজ্ঞতা [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "অন্যান্য",
           basic: AppLocalizations_Labels_Prapare_Answers_Basic(
             chooseNotToAnswer: "আমি এই প্রশ্নের উত্তর দিতে না করে",
             no: "না",
@@ -1403,7 +1404,6 @@ class AppLocalizations {
             asian: "এশিয়ান",
             blackAfricanAmerican: "কালো / আফ্রিকান আমেরিকান",
             nativeHawaiian: "দেশীয় হাওয়াইয়ান",
-            other: "অন্যান্য",
             pacificIslander: "প্যাসিফিক দ্বীপের",
             white: "সাদা",
           ),
@@ -1414,6 +1414,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "সাড়া অক্ষম পেসেন্ট",
             yesKeptFromMedical:
                 "হ্যাঁ, এটা আমাকে চিকিৎসা কলকব্জা থেকে অথবা আমার ঔষধ পাওয়া থেকে রেখেছেন",
             yesKeptFromNonMedical:
@@ -1425,7 +1426,6 @@ class AppLocalizations {
             food: "খাদ্য",
             medicineOrAnyHealthCare:
                 "মেডিসিন বা অন্য কোন স্বাস্থ্য সেবা (চিকিৎসা, ডেন্টাল মেন্টাল হেলথ ভিশন)",
-            other: "অন্যান্য",
             phone: "ফোন",
             utilities: "উপযোগিতা",
           ),
@@ -1608,6 +1608,7 @@ class AppLocalizations {
         title:
             "ပြန်ကြားခြင်းနှင့်လူနာများ '' ပိုင်ဆိုင်မှုအကဲဖြတ်ဘို့ပရိုတိုကော, အန္တရာယ်များနှင့်တွေ့ကြုံမှုများ [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "အခြား",
           basic: AppLocalizations_Labels_Prapare_Answers_Basic(
             chooseNotToAnswer: "ငါသည်ဤမေးခွန်းကိုဖြေဖို့မရှေးခယျြ",
             no: "အဘယ်သူမျှမ",
@@ -1650,7 +1651,6 @@ class AppLocalizations {
             asian: "အာရှ",
             blackAfricanAmerican: "အမေရိကန်က Black / အာဖရိကန်",
             nativeHawaiian: "native ဟာဝယေံ",
-            other: "အခြား",
             pacificIslander: "ပစိဖိတ်ကျွန်းသား",
             white: "အဖြူ",
           ),
@@ -1661,6 +1661,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "တုံ့ပြန်နိုင်ခြင်းလူနာ",
             yesKeptFromMedical:
                 "ဟုတ်ကဲ့, ကဆေးဘက်ဆိုင်ရာချိန်းထံမှသို့မဟုတ်ကျွန်ုပ်၏ဆေးဝါးများရတဲ့ထဲကအကြှနျုပျကိုထား",
             yesKeptFromNonMedical:
@@ -1672,7 +1673,6 @@ class AppLocalizations {
             food: "အစာ",
             medicineOrAnyHealthCare:
                 "ဆေးပညာသို့မဟုတ်မဆိုကျန်းမာရေးပြုစုစောင့်ရှောက်မှု (ဆေးပညာ, သွားဘက်ဆိုင်ရာ, စိတ်ပိုင်းဆိုင်ရာကျန်းမာရေး, မျှော်မှန်းချက်)",
-            other: "အခြား",
             phone: "ဖုန်းနံပါတ်",
             utilities: "အသုံးအဆောင်များ",
           ),
@@ -1857,6 +1857,7 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title: "用于响应和评估患者的资产，风险协议，与经验[PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "其他",
           basic: AppLocalizations_Labels_Prapare_Answers_Basic(
             chooseNotToAnswer: "我选择不回答这个问题",
             no: "没有",
@@ -1898,7 +1899,6 @@ class AppLocalizations {
             asian: "亚洲",
             blackAfricanAmerican: "黑人/非洲裔美国人",
             nativeHawaiian: "夏威夷原住民",
-            other: "其他",
             pacificIslander: "太平洋岛民",
             white: "白色",
           ),
@@ -1909,6 +1909,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "病人无法响应",
             yesKeptFromMedical: "是的，它使我从医疗预约或让我的药",
             yesKeptFromNonMedical: "是的，它使我从非医学会议，约会，工作，或收拾东西，我需要",
           ),
@@ -1917,7 +1918,6 @@ class AppLocalizations {
             clothing: "服装",
             food: "餐饮",
             medicineOrAnyHealthCare: "医学或任何医疗（医疗，牙科，心理健康，视力）",
-            other: "其他",
             phone: "电话",
             utilities: "公用事业",
           ),
@@ -2090,6 +2090,7 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title: "用於響應和評估患者的資產，風險協議，與經驗[PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "其他",
           basic: AppLocalizations_Labels_Prapare_Answers_Basic(
             chooseNotToAnswer: "我選擇不回答這個問題",
             no: "沒有",
@@ -2131,7 +2132,6 @@ class AppLocalizations {
             asian: "亞洲",
             blackAfricanAmerican: "黑人/非洲裔美國人",
             nativeHawaiian: "夏威夷原住民",
-            other: "其他",
             pacificIslander: "太平洋島民",
             white: "白色",
           ),
@@ -2142,6 +2142,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "病人無法響應",
             yesKeptFromMedical: "是的，它使我從醫療預約或讓我的藥",
             yesKeptFromNonMedical: "是的，它使我從非醫學會議，約會，工作，或收拾東西，我需要",
           ),
@@ -2150,7 +2151,6 @@ class AppLocalizations {
             clothing: "服裝",
             food: "餐飲",
             medicineOrAnyHealthCare: "醫學或任何醫療（醫療，牙科，心理健康，視力）",
-            other: "其他",
             phone: "電話",
             utilities: "公用事業",
           ),
@@ -2324,6 +2324,7 @@ class AppLocalizations {
         title:
             "پروتکل برای پاسخ به بررسی و دارایی بیماران، خطرات، و تجارب [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "دیگر",
           basic: AppLocalizations_Labels_Prapare_Answers_Basic(
             chooseNotToAnswer: "من را انتخاب کنید پاسخ به این سوال نمی",
             no: "خیر",
@@ -2366,7 +2367,6 @@ class AppLocalizations {
             asian: "آسیایی",
             blackAfricanAmerican: "سیاه و سفید آمریکا / آفریقایی",
             nativeHawaiian: "بومی هاوایی",
-            other: "دیگر",
             pacificIslander: "جزایر اقیانوس آرام",
             white: "سفید",
           ),
@@ -2377,6 +2377,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "بیمار قادر به پاسخ",
             yesKeptFromMedical:
                 "بله، آن را به من از قرار ملاقات های پزشکی و یا از گرفتن داروها من نگه داشته",
             yesKeptFromNonMedical:
@@ -2388,7 +2389,6 @@ class AppLocalizations {
             food: "غذا",
             medicineOrAnyHealthCare:
                 "پزشکی و یا هر بهداشت و درمان (پزشکی، دندانپزشکی، سلامت روان، چشم انداز)",
-            other: "دیگر",
             phone: "تلفن",
             utilities: "خدمات رفاهی",
           ),
@@ -2572,6 +2572,7 @@ class AppLocalizations {
         title:
             "Protocole d'intervention et de l'évaluation des actifs des patients, les risques et les expériences [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "Autre",
           basic: AppLocalizations_Labels_Prapare_Answers_Basic(
             chooseNotToAnswer: "Je ne pas répondre à cette question",
             no: "Non",
@@ -2615,7 +2616,6 @@ class AppLocalizations {
             asian: "asiatique",
             blackAfricanAmerican: "Noir / afro-américaine",
             nativeHawaiian: "hawaïennes",
-            other: "Autre",
             pacificIslander: "insulaire Pacifique",
             white: "blanc",
           ),
@@ -2627,6 +2627,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "Patient incapable de répondre",
             yesKeptFromMedical:
                 "Oui, il m'a empêché de rendez-vous médicaux ou d'obtenir mes médicaments",
             yesKeptFromNonMedical:
@@ -2638,7 +2639,6 @@ class AppLocalizations {
             food: "Nourriture",
             medicineOrAnyHealthCare:
                 "Médecine ou les soins de santé (médical, dentaire, santé mentale, Vision)",
-            other: "Autre",
             phone: "Téléphone",
             utilities: "Utilitaires",
           ),
@@ -2823,6 +2823,7 @@ class AppLocalizations {
         title:
             "Protokoll zu reagieren und Beurteilung der Patienten Vermögenswerte, Risiken und Erfahrungen [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "Andere",
           basic: AppLocalizations_Labels_Prapare_Answers_Basic(
             chooseNotToAnswer: "Ich wähle nicht, diese Frage zu beantworten",
             no: "Nein",
@@ -2866,7 +2867,6 @@ class AppLocalizations {
             asian: "asiatisch",
             blackAfricanAmerican: "Schwarz / African American",
             nativeHawaiian: "hawaiianische",
-            other: "Andere",
             pacificIslander: "pazifische Inselbewohner",
             white: "Weiß",
           ),
@@ -2877,6 +2877,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "Patient nicht in der Lage zu reagieren",
             yesKeptFromMedical:
                 "Ja, hat es hält mich von Arztterminen oder von meinen Medikamente bekommen",
             yesKeptFromNonMedical:
@@ -2888,7 +2889,6 @@ class AppLocalizations {
             food: "Essen",
             medicineOrAnyHealthCare:
                 "Medikament oder Gesundheitswesen (Medical, Dental, Geistige Gesundheit, Vision)",
-            other: "Andere",
             phone: "Telefon",
             utilities: "Dienstprogramme",
           ),
@@ -3073,6 +3073,7 @@ class AppLocalizations {
         title:
             "Protokol untuk Menanggapi dan Menilai Aset Pasien, Risiko, dan Pengalaman [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "Lain",
           basic: AppLocalizations_Labels_Prapare_Answers_Basic(
             chooseNotToAnswer:
                 "Aku memilih untuk tidak menjawab pertanyaan ini",
@@ -3116,7 +3117,6 @@ class AppLocalizations {
             asian: "Asia",
             blackAfricanAmerican: "Black / Afrika Amerika",
             nativeHawaiian: "Hawaii asli",
-            other: "Lain",
             pacificIslander: "penduduk pulau Pasifik",
             white: "putih",
           ),
@@ -3127,6 +3127,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "Pasien dapat merespon",
             yesKeptFromMedical:
                 "Ya, itu telah membuat saya dari janji medis atau dari mendapatkan obat saya",
             yesKeptFromNonMedical:
@@ -3138,7 +3139,6 @@ class AppLocalizations {
             food: "Makanan",
             medicineOrAnyHealthCare:
                 "Obat atau Setiap Kesehatan (Medical, Dental, Mental Health, Vision)",
-            other: "Lain",
             phone: "Telepon",
             utilities: "Keperluan",
           ),
@@ -3323,6 +3323,7 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title: "対応や患者の資産を評価するための議定書、リスク、および経験[PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "他の",
           basic: AppLocalizations_Labels_Prapare_Answers_Basic(
             chooseNotToAnswer: "私はこの質問に答えるしないことを選択します",
             no: "番号",
@@ -3365,7 +3366,6 @@ class AppLocalizations {
             asian: "アジアの",
             blackAfricanAmerican: "ブラック/アフリカ系アメリカ人",
             nativeHawaiian: "ハワイ先住民",
-            other: "他の",
             pacificIslander: "太平洋諸島",
             white: "白い",
           ),
@@ -3376,6 +3376,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "応答できない患者",
             yesKeptFromMedical: "はい、それは医療の予定からか、私の薬を得ることから私を維持しています",
             yesKeptFromNonMedical:
                 "はい、それは私が必要という非医療会議、予定、仕事、または物事を得ることからから私を維持しています",
@@ -3385,7 +3386,6 @@ class AppLocalizations {
             clothing: "衣類",
             food: "食物",
             medicineOrAnyHealthCare: "医学または任意のヘルスケア（医療、歯科、精神衛生、ビジョン）",
-            other: "他の",
             phone: "電話",
             utilities: "ユーティリティ",
           ),
@@ -3564,6 +3564,7 @@ class AppLocalizations {
         title:
             "ពិធីការសម្រាប់ការឆ្លើយតបទៅនឹងទ្រព្យសកម្មនិងការវាយតម្លៃអ្នកជំងឺ, ហានិភ័យ, និងបទពិសោធន៍ [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "ផ្សេងទៀត",
           basic: AppLocalizations_Labels_Prapare_Answers_Basic(
             chooseNotToAnswer: "ខ្ញុំជ្រើសរើសមិនឆ្លើយតបនឹងសំណួរនេះ",
             no: "គ្មាន",
@@ -3607,7 +3608,6 @@ class AppLocalizations {
             asian: "អាស៊ី",
             blackAfricanAmerican: "ខ្មៅអាមេរិក / អាហ្រ្វិក",
             nativeHawaiian: "មានដើមកំណើតនៅហាវ៉ៃ",
-            other: "ផ្សេងទៀត",
             pacificIslander: "កោះប៉ាស៊ីហ្វិក",
             white: "ស",
           ),
@@ -3618,6 +3618,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "អ្នកជំងឺដែលមិនអាចឆ្លើយតប",
             yesKeptFromMedical:
                 "បាទ, វាត្រូវបានរក្សាទុកខ្ញុំពីការណាត់ជួបពេទ្យឬពីការទទួលយកថ្នាំរបស់ខ្ញុំ",
             yesKeptFromNonMedical:
@@ -3629,7 +3630,6 @@ class AppLocalizations {
             food: "អាហារ",
             medicineOrAnyHealthCare:
                 "ថាំពទ្យឬថែទាំសុខភាពមួយចំនួន (ការពិនិត្យពេទ្យ, ធ្មេញ, សុខភាពផ្លូវចិត្ត, អង្គការទស្សនៈ)",
-            other: "ផ្សេងទៀត",
             phone: "ទូរស័ព្ទ",
             utilities: "ឧបករណ៍ប្រើប្រាស់",
           ),
@@ -3813,6 +3813,7 @@ class AppLocalizations {
       prapare: AppLocalizations_Labels_Prapare(
         title: "에 응답하는 환자의 자산을 평가하기위한 프로토콜 위험 경험 [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "다른",
           basic: AppLocalizations_Labels_Prapare_Answers_Basic(
             chooseNotToAnswer: "나는이 질문에 대답하지 않도록 선택",
             no: "아니",
@@ -3855,7 +3856,6 @@ class AppLocalizations {
             asian: "아시아 사람",
             blackAfricanAmerican: "블랙 / 아프리카 계 미국인",
             nativeHawaiian: "하와이 원주민",
-            other: "다른",
             pacificIslander: "태평양 섬",
             white: "하얀",
           ),
@@ -3866,6 +3866,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "응답 할 수없는 환자",
             yesKeptFromMedical: "네, 의료 약속이나 내 약물 치료를 받고에서 저를 유지하고있다",
             yesKeptFromNonMedical:
                 "네, 비 의료 회의, 약속, 작업, 또는 물건을 받고에서 내가 필요에서 저를 유지하고있다",
@@ -3875,7 +3876,6 @@ class AppLocalizations {
             clothing: "의류",
             food: "음식",
             medicineOrAnyHealthCare: "의학 또는 모든 건강 관리 (의료, 치과, 정신 건강, 비전)",
-            other: "다른",
             phone: "전화",
             utilities: "유용",
           ),
@@ -4054,6 +4054,7 @@ class AppLocalizations {
         title:
             "ອະນຸສັນຍາສໍາລັບການຕອບກັບແລະການປະເມີນຄົນເຈັບຊັບ, ຄວາມສ່ຽງ, ແລະປະສົບການ [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "ອື່ນ ໆ",
           basic: AppLocalizations_Labels_Prapare_Answers_Basic(
             chooseNotToAnswer: "ຂ້າພະເຈົ້າເລືອກທີ່ຈະບໍ່ຕອບຄໍາຖາມນີ້",
             no: "No",
@@ -4096,7 +4097,6 @@ class AppLocalizations {
             asian: "Asian",
             blackAfricanAmerican: "ສີດໍາ / ອາຟຣິກາອາເມລິກາ",
             nativeHawaiian: "ຮາວາຍພື້ນເມືອງ",
-            other: "ອື່ນ ໆ",
             pacificIslander: "ເກາະປາຊີຟິກ",
             white: "ສີຂາວ",
           ),
@@ -4107,6 +4107,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "ເຈັບບໍ່ສາມາດທີ່ຈະຕອບ",
             yesKeptFromMedical:
                 "ແມ່ນແລ້ວ, ມັນໄດ້ເກັບຮັກສາໄວ້ໃຫ້ຂ້າພະເຈົ້າຈາກກວດສຸຂະພາບຫລືຈາກການໄດ້ຮັບຢາປິ່ນປົວຂອງຂ້າພະເຈົ້າ",
             yesKeptFromNonMedical:
@@ -4118,7 +4119,6 @@ class AppLocalizations {
             food: "ອາຫານ",
             medicineOrAnyHealthCare:
                 "ຢາປົວພະຍາດຫຼືທຸກການດູແລສຸຂະພາບ (ສຸຂະພາບ, ທັນຕະກໍາ, ສຸຂະພາບຈິດ, ວິໄສທັດ)",
-            other: "ອື່ນ ໆ",
             phone: "ໂທລະສັບ",
             utilities: "ລະນູປະໂພກ",
           ),
@@ -4303,6 +4303,7 @@ class AppLocalizations {
         title:
             "प्रतिसाद आणि रुग्णांना 'मालमत्तेचे मुल्यांकन, प्रोटोकॉल जोखीम, आणि अनुभव [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "इतर",
           basic: AppLocalizations_Labels_Prapare_Answers_Basic(
             chooseNotToAnswer: "मी या प्रश्नाचे उत्तर नाही नीवडा",
             no: "नाही",
@@ -4345,7 +4346,6 @@ class AppLocalizations {
             asian: "आशियाई",
             blackAfricanAmerican: "काळा / आफ्रिकन अमेरिकन",
             nativeHawaiian: "मूळ हवाईयन",
-            other: "इतर",
             pacificIslander: "प्रशांत महासागराचे रहिवासी",
             white: "व्हाइट",
           ),
@@ -4356,6 +4356,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "प्रतिसाद देऊ शकत रुग्णांच्या",
             yesKeptFromMedical:
                 "होय, हे वैद्यकीय भेटी किंवा माझे औषधे मिळत मला ठेवले आहे",
             yesKeptFromNonMedical:
@@ -4367,7 +4368,6 @@ class AppLocalizations {
             food: "अन्न",
             medicineOrAnyHealthCare:
                 "औषध किंवा कोणतीही हेल्थ केअर (वैद्यकीय, दंत, मानसिक आरोग्य, दृष्टी)",
-            other: "इतर",
             phone: "फोन",
             utilities: "उपयुक्तता",
           ),
@@ -4549,6 +4549,7 @@ class AppLocalizations {
         title:
             "जवाफ र बिरामीको सम्पत्ति आकलन लागि प्रोटोकल जोखिम र अनुभवहरू [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "अन्य",
           basic: AppLocalizations_Labels_Prapare_Answers_Basic(
             chooseNotToAnswer: "यो प्रश्नको जवाफ छनौट छैन म",
             no: "कुनै",
@@ -4591,7 +4592,6 @@ class AppLocalizations {
             asian: "एशियाली",
             blackAfricanAmerican: "कालो / अफ्रिकी अमेरिकी",
             nativeHawaiian: "देशी हवाईयन",
-            other: "अन्य",
             pacificIslander: "प्यासिफिक आइल्यान्डर",
             white: "सेतो",
           ),
@@ -4602,6 +4602,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "प्रतिक्रिया गर्न असमर्थ रोगी",
             yesKeptFromMedical:
                 "हो, यो चिकित्सा भेटघाट देखि वा मेरो दबाइहरु रही मलाई राखिएको छ",
             yesKeptFromNonMedical:
@@ -4613,7 +4614,6 @@ class AppLocalizations {
             food: "खाद्य",
             medicineOrAnyHealthCare:
                 "चिकित्सा वा कुनै पनि स्वास्थ्य हेरविचार (चिकित्सा, दन्त चिकित्सा, मानसिक स्वास्थ्य, विजन)",
-            other: "अन्य",
             phone: "फोन",
             utilities: "उपयोगिता",
           ),
@@ -4797,6 +4797,7 @@ class AppLocalizations {
         title:
             "Protocolo para responder e avaliação de activos dos pacientes, riscos e Experiências [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "De outros",
           basic: AppLocalizations_Labels_Prapare_Answers_Basic(
             chooseNotToAnswer: "Eu optar por não responder a esta pergunta",
             no: "Não",
@@ -4840,7 +4841,6 @@ class AppLocalizations {
             asian: "asiático",
             blackAfricanAmerican: "Americano Preto / Africano",
             nativeHawaiian: "nativo havaiano",
-            other: "De outros",
             pacificIslander: "Ilhas do Pacífico",
             white: "Branco",
           ),
@@ -4851,6 +4851,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "Paciente incapaz de responder",
             yesKeptFromMedical:
                 "Sim, ele me impediu de consultas médicas ou de obter meus medicamentos",
             yesKeptFromNonMedical:
@@ -4862,7 +4863,6 @@ class AppLocalizations {
             food: "Comida",
             medicineOrAnyHealthCare:
                 "Medicina ou Qualquer Saúde (Médicos, Odontológicos, Saúde Mental, Vision)",
-            other: "De outros",
             phone: "telefone",
             utilities: "Serviços de utilidade pública",
           ),
@@ -5047,6 +5047,7 @@ class AppLocalizations {
         title:
             "ਦੇ ਜਵਾਬ ਅਤੇ ਮਰੀਜ਼ ਨੂੰ 'ਸੰਪਤੀ ਦਾ ਿਨਰਧਾਰਨ ਲਈ ਪਰੋਟੋਕਾਲ ਖ਼ਤਰੇ, ਅਤੇ ਅਨੁਭਵ [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "ਹੋਰ",
           basic: AppLocalizations_Labels_Prapare_Answers_Basic(
             chooseNotToAnswer: "ਮੈਨੂੰ ਇਸ ਸਵਾਲ ਦਾ ਜਵਾਬ ਨਾ",
             no: "ਕੋਈ",
@@ -5089,7 +5090,6 @@ class AppLocalizations {
             asian: "ਏਸ਼ੀਆਈ",
             blackAfricanAmerican: "ਕਾਲਾ / ਅਫ਼ਰੀਕੀ ਅਮਰੀਕੀ",
             nativeHawaiian: "ਸਵਦੇਸ਼ੀ ਹਵਾਈਅਨ",
-            other: "ਹੋਰ",
             pacificIslander: "ਪੈਸੀਫਿਕ ਦੀਪ",
             white: "ਵ੍ਹਾਈਟ",
           ),
@@ -5100,6 +5100,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "ਜਵਾਬ ਦੇਣ ਲਈ ਅਸਮਰੱਥ ਹੈ ਮਰੀਜ਼",
             yesKeptFromMedical:
                 "ਜੀ, ਇਸ ਨੂੰ ਮੈਨੂੰ ਡਾਕਟਰੀ ਮੁਲਾਕਾਤ ਜ ਦਵਾਈ ਪ੍ਰਾਪਤ ਕਰਨ ਤੱਕ ਰੱਖਿਆ ਗਿਆ ਹੈ",
             yesKeptFromNonMedical:
@@ -5111,7 +5112,6 @@ class AppLocalizations {
             food: "ਭੋਜਨ",
             medicineOrAnyHealthCare:
                 "ਦਵਾਈ ਜ ਕੋਈ ਵੀ ਹੈਲਥ ਕੇਅਰ (ਮੈਡੀਕਲ, ਦੰਦ, ਮਾਨਸਿਕ ਸਿਹਤ, ਵਿਜ਼ਨ)",
-            other: "ਹੋਰ",
             phone: "ਫੋਨ",
             utilities: "ਸਹੂਲਤ",
           ),
@@ -5295,6 +5295,7 @@ class AppLocalizations {
         title:
             "Protocol Looga iyo Qiimaynta Bukaanka 'Hantida, Khatarta, iyo Waayo aragnimada [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "kale",
           basic: AppLocalizations_Labels_Prapare_Answers_Basic(
             chooseNotToAnswer: "Waxaan doortaan in ay ka jawaabaan su'aashan",
             no: "No",
@@ -5338,7 +5339,6 @@ class AppLocalizations {
             asian: "Asian",
             blackAfricanAmerican: "Madow / African American",
             nativeHawaiian: "Hawaiian Dhalad",
-            other: "kale",
             pacificIslander: "Pacific Islander",
             white: "White",
           ),
@@ -5349,6 +5349,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "Patient awoodin in ay jawaab",
             yesKeptFromMedical:
                 "Haa, waxa uu iga celisay ballamaha caafimaad ama ka helitaanka daawooyinka aan",
             yesKeptFromNonMedical:
@@ -5360,7 +5361,6 @@ class AppLocalizations {
             food: "Cuntada",
             medicineOrAnyHealthCare:
                 "Medicine ama Care kasta Caafimaadka (Medical, ilkaha, Caafimaadka Maskaxda, Vision)",
-            other: "kale",
             phone: "Phone",
             utilities: "Utilities",
           ),
@@ -5546,6 +5546,7 @@ class AppLocalizations {
         title:
             "Itifaki ya Akijibu na Tathmini ya Wagonjwa Mali, UN, na Uzoefu [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "Nyingine",
           basic: AppLocalizations_Labels_Prapare_Answers_Basic(
             chooseNotToAnswer: "I kuchagua si kujibu swali hili",
             no: "Hapana",
@@ -5588,7 +5589,6 @@ class AppLocalizations {
             asian: "Asia",
             blackAfricanAmerican: "Nyeusi / African American",
             nativeHawaiian: "Native Hawaiian",
-            other: "Nyingine",
             pacificIslander: "Pacific Kisiwani",
             white: "White",
           ),
@@ -5599,6 +5599,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "Mgonjwa hawezi kujibu",
             yesKeptFromMedical:
                 "Ndiyo, ina naendelea kutoka uteuzi wa matibabu au kutoka kupata dawa yangu",
             yesKeptFromNonMedical:
@@ -5610,7 +5611,6 @@ class AppLocalizations {
             food: "chakula",
             medicineOrAnyHealthCare:
                 "Dawa au Care yoyote Afya (Medical, meno, Afya ya Akili, Vision)",
-            other: "Nyingine",
             phone: "simu",
             utilities: "huduma",
           ),
@@ -5794,6 +5794,7 @@ class AppLocalizations {
         title:
             "Protocol para sa Pagtugon sa at Pagtatasa Ang mga pasyente 'Asset, Panganib, at Karanasan [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "iba",
           basic: AppLocalizations_Labels_Prapare_Answers_Basic(
             chooseNotToAnswer:
                 "I piliing hindi upang sagutin ang tanong na ito",
@@ -5839,7 +5840,6 @@ class AppLocalizations {
             asian: "Asyano",
             blackAfricanAmerican: "Itim / African American",
             nativeHawaiian: "Native Hawaiian",
-            other: "iba",
             pacificIslander: "Pacific Islander",
             white: "puti",
           ),
@@ -5850,6 +5850,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "Pasyente magawang tumugon",
             yesKeptFromMedical:
                 "Oo, ito ay pinananatiling sa akin mula sa mga medikal na appointment o mula sa pagkuha ng aking mga gamot",
             yesKeptFromNonMedical:
@@ -5861,7 +5862,6 @@ class AppLocalizations {
             food: "Pagkain",
             medicineOrAnyHealthCare:
                 "Medicine o Anumang Health Care (Medical, Dental, Mental Health, Vision)",
-            other: "iba",
             phone: "telepono",
             utilities: "Mga Utility",
           ),
@@ -6047,6 +6047,7 @@ class AppLocalizations {
         title:
             "Protocol สำหรับการตอบสนองและการประเมินผู้ป่วยสินทรัพย์เสี่ยงและประสบการณ์ [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "อื่น ๆ",
           basic: AppLocalizations_Labels_Prapare_Answers_Basic(
             chooseNotToAnswer: "ผมเลือกที่จะไม่ตอบคำถามนี้",
             no: "ไม่",
@@ -6089,7 +6090,6 @@ class AppLocalizations {
             asian: "เอเชีย",
             blackAfricanAmerican: "ดำ / แอฟริกันอเมริกัน",
             nativeHawaiian: "พื้นเมืองฮาวาย",
-            other: "อื่น ๆ",
             pacificIslander: "ชาวเกาะแปซิฟิก",
             white: "ขาว",
           ),
@@ -6100,6 +6100,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "ผู้ป่วยไม่สามารถตอบสนอง",
             yesKeptFromMedical:
                 "ใช่มันได้เก็บฉันจากการนัดหมายทางการแพทย์หรือจากการได้รับยาของฉัน",
             yesKeptFromNonMedical:
@@ -6111,7 +6112,6 @@ class AppLocalizations {
             food: "อาหาร",
             medicineOrAnyHealthCare:
                 "แพทย์หรือการดูแลสุขภาพ (แพทย์, ทันตกรรม, สุขภาพจิตวิสัยทัศน์)",
-            other: "อื่น ๆ",
             phone: "โทรศัพท์",
             utilities: "ยูทิลิตี้",
           ),
@@ -6295,6 +6295,7 @@ class AppLocalizations {
         title:
             ", Javob berish va bemor aktivlari baholash uchun Protokol tavakkalchiliklarni, va tajriba [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "boshqa",
           basic: AppLocalizations_Labels_Prapare_Answers_Basic(
             chooseNotToAnswer:
                 "Men bu savolga javob berish emas, balki tanlang",
@@ -6338,7 +6339,6 @@ class AppLocalizations {
             asian: "Osiyolik",
             blackAfricanAmerican: "Qora / Afrika Amerika",
             nativeHawaiian: "Native Gavayi",
-            other: "boshqa",
             pacificIslander: "Tinch okeani orollarida",
             white: "oq rang",
           ),
@@ -6349,6 +6349,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "javob olmagan bemor",
             yesKeptFromMedical:
                 "Ha, u tibbiy tayinlash yoki mening dori olish meni saqlar",
             yesKeptFromNonMedical:
@@ -6360,7 +6361,6 @@ class AppLocalizations {
             food: "Ovqat",
             medicineOrAnyHealthCare:
                 "Tibbiyot yoki har qanday Sog'liqni saqlash (tibbiy, stomatologik, ruhiy salomatligi, Vision)",
-            other: "boshqa",
             phone: "Telefon",
             utilities: "Utilities",
           ),
@@ -6542,6 +6542,7 @@ class AppLocalizations {
         title:
             "Nghị định thư cho Hưởng ứng và Đánh giá tài sản Bệnh nhân, rủi ro, và kinh nghiệm [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "khác",
           basic: AppLocalizations_Labels_Prapare_Answers_Basic(
             chooseNotToAnswer: "Tôi chọn không trả lời câu hỏi này",
             no: "Không",
@@ -6584,7 +6585,6 @@ class AppLocalizations {
             asian: "Châu Á",
             blackAfricanAmerican: "Đen Mỹ / châu Phi",
             nativeHawaiian: "Hawaii bản địa",
-            other: "khác",
             pacificIslander: "Thái Bình Dương",
             white: "trắng",
           ),
@@ -6595,6 +6595,7 @@ class AppLocalizations {
           ),
           transportation:
               AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "Bệnh nhân không có khả năng đáp ứng",
             yesKeptFromMedical:
                 "Vâng, nó đã giữ tôi từ các cuộc hẹn y tế hoặc từ nhận thuốc của tôi",
             yesKeptFromNonMedical:
@@ -6606,7 +6607,6 @@ class AppLocalizations {
             food: "Món ăn",
             medicineOrAnyHealthCare:
                 "Y hoặc Bất kỳ chăm sóc sức khỏe (y tế, nha khoa, Sức khỏe Tâm thần, Vision)",
-            other: "khác",
             phone: "Điện thoại",
             utilities: "Tiện ích",
           ),
@@ -7399,7 +7399,6 @@ class AppLocalizations_Labels_Prapare_Answers_Race {
       this.asian,
       this.blackAfricanAmerican,
       this.nativeHawaiian,
-      this.other,
       this.pacificIslander,
       this.white});
 
@@ -7410,8 +7409,6 @@ class AppLocalizations_Labels_Prapare_Answers_Race {
   final String blackAfricanAmerican;
 
   final String nativeHawaiian;
-
-  final String other;
 
   final String pacificIslander;
 
@@ -7427,8 +7424,6 @@ class AppLocalizations_Labels_Prapare_Answers_Race {
         return blackAfricanAmerican;
       case 'nativeHawaiian':
         return nativeHawaiian;
-      case 'other':
-        return other;
       case 'pacificIslander':
         return pacificIslander;
       case 'white':
@@ -7467,7 +7462,11 @@ class AppLocalizations_Labels_Prapare_Answers_School {
 
 class AppLocalizations_Labels_Prapare_Answers_Transportation {
   const AppLocalizations_Labels_Prapare_Answers_Transportation(
-      {this.yesKeptFromMedical, this.yesKeptFromNonMedical});
+      {this.unableToRespond,
+      this.yesKeptFromMedical,
+      this.yesKeptFromNonMedical});
+
+  final String unableToRespond;
 
   final String yesKeptFromMedical;
 
@@ -7475,6 +7474,8 @@ class AppLocalizations_Labels_Prapare_Answers_Transportation {
 
   String getByKey(String key) {
     switch (key) {
+      case 'unableToRespond':
+        return unableToRespond;
       case 'yesKeptFromMedical':
         return yesKeptFromMedical;
       case 'yesKeptFromNonMedical':
@@ -7491,7 +7492,6 @@ class AppLocalizations_Labels_Prapare_Answers_Without {
       this.clothing,
       this.food,
       this.medicineOrAnyHealthCare,
-      this.other,
       this.phone,
       this.utilities});
 
@@ -7502,8 +7502,6 @@ class AppLocalizations_Labels_Prapare_Answers_Without {
   final String food;
 
   final String medicineOrAnyHealthCare;
-
-  final String other;
 
   final String phone;
 
@@ -7519,8 +7517,6 @@ class AppLocalizations_Labels_Prapare_Answers_Without {
         return food;
       case 'medicineOrAnyHealthCare':
         return medicineOrAnyHealthCare;
-      case 'other':
-        return other;
       case 'phone':
         return phone;
       case 'utilities':
@@ -7564,7 +7560,8 @@ class AppLocalizations_Labels_Prapare_Answers_Work {
 
 class AppLocalizations_Labels_Prapare_Answers {
   const AppLocalizations_Labels_Prapare_Answers(
-      {this.basic,
+      {this.other,
+      this.basic,
       this.housing,
       this.howMuch,
       this.howOften,
@@ -7575,6 +7572,8 @@ class AppLocalizations_Labels_Prapare_Answers {
       this.transportation,
       this.without,
       this.work});
+
+  final String other;
 
   final AppLocalizations_Labels_Prapare_Answers_Basic basic;
 
@@ -7600,6 +7599,8 @@ class AppLocalizations_Labels_Prapare_Answers {
 
   String getByKey(String key) {
     switch (key) {
+      case 'other':
+        return other;
       default:
         return '';
     }

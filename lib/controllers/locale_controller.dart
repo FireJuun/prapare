@@ -4,32 +4,27 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:prapare/localization.dart';
-import 'package:prapare/models/data/menu_option.dart';
-import 'package:prapare/models/menu_options_model.dart';
+import 'package:prapare/models/menu_options/menu_option.dart';
+import 'package:prapare/models/menu_options/menu_options_model.dart';
 
 // spec: https://github.com/delay/flutter_starter
 class LocaleController extends GetxController {
   static LocaleController get to => Get.find();
 
-  final language = "".obs;
+  final language = ''.obs;
   final store = GetStorage();
   final List<MenuOption> languageOptions = MenuOptionsModel.languageOptions;
 
   String get currentLanguage => language.value;
 
   @override
-  void onReady() async {
+  Future<void> onReady() async {
     setInitialLocalLanguage();
-    super.onInit();
-  }
-
-  Future<LocaleController> init() async {
-    await setInitialLocalLanguage();
-    return this;
+    super.onReady();
   }
 
   // Retrieves and Sets language based on device settings
-  setInitialLocalLanguage() {
+  Future<void> setInitialLocalLanguage() async {
     if ((currentLanguageStore.value == '') ||
         (currentLanguageStore.value == null)) {
       String _deviceLanguage = ui.window.locale.toString();

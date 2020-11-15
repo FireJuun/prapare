@@ -19,9 +19,9 @@ class ThemeController extends GetxController {
   String get currentTheme => themeString.value;
 
   @override
-  void onReady() async {
+  Future<void> onReady() async {
     await getThemeModeFromStore();
-    super.onInit();
+    super.onReady();
   }
 
   Future<void> setThemeMode(ThemeMode obj) async {
@@ -45,7 +45,7 @@ class ThemeController extends GetxController {
   }
 
   Future<void> getThemeModeFromStore() async {
-    String _themeString = await store.read('theme') ?? 'system';
+    final String _themeString = await store.read('theme') ?? 'system';
     setThemeMode(getThemeModeFromString(_themeString));
   }
 
@@ -64,10 +64,10 @@ class ThemeController extends GetxController {
   }
 
   // App Themes (Light vs Dark)
-  AppTheme _lightTheme = AppTheme.fromType(ThemeType.Prapare);
-  AppTheme get lightTheme => this._lightTheme;
-  AppTheme _darkTheme = AppTheme.fromType(ThemeType.Prapare_Dark);
-  AppTheme get darkTheme => this._darkTheme;
+  final AppTheme _lightTheme = AppTheme.fromType(ThemeType.Prapare);
+  AppTheme get lightTheme => _lightTheme;
+  final AppTheme _darkTheme = AppTheme.fromType(ThemeType.Prapare_Dark);
+  AppTheme get darkTheme => _darkTheme;
 
   AppTheme getAppThemeFromBrightness(Brightness b) {
     return (b == Brightness.dark) ? _darkTheme : _lightTheme;

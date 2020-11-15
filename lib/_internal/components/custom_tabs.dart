@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 // @dart = 2.8
+// ignore_for_file: always_put_control_body_on_new_line
 
 import 'dart:async';
 import 'dart:ui' show lerpDouble;

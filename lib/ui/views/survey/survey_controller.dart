@@ -1,25 +1,69 @@
 import 'package:flutter/material.dart';
-import 'package:get/state_manager.dart';
-import 'package:prapare/models/data/survey_tab_data.dart';
-import 'package:prapare/models/survey_tab_model.dart';
+import 'package:get/get.dart';
+import 'package:prapare/controllers/controllers.dart';
+import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
+import 'package:prapare/models/survey_tab/survey_tab_data.dart';
+import 'package:prapare/models/survey_tab/survey_tab_model.dart';
 import 'package:prapare/ui/themes.dart';
 
 class SurveyController extends GetxController
     with SingleGetTickerProviderMixin {
-  TabController _tabController;
-  get tabController => this._tabController;
+  final QuestionnaireController _questionnaireController = Get.find();
+  final UserResponsesController _responsesController = Get.find();
 
-  final _rxTabIndex = 0.obs;
-  set rxTabIndex(value) => this._rxTabIndex.value = value;
-  get rxTabIndex => this._rxTabIndex.value;
+  TabController _tabController;
+  TabController get tabController => _tabController;
+
+  // Used to decide which tab is active, as determined by the tab controller
+  final RxInt _rxTabIndex = 0.obs;
+  set rxTabIndex(value) => _rxTabIndex.value = value;
+  int get rxTabIndex => _rxTabIndex.value;
 
   final SurveyTabModel tabModel = SurveyTabModel();
 
-  void toggleChecked(SurveyTab obj) =>
-      obj.isChecked.value = !obj.isChecked.value;
+  // holds state of which tabs are checked, mapped by survey code
+  final RxMap<String, RxBool> _rxMappedValidatedTabs = <String, RxBool>{}.obs;
+  RxMap<String, RxBool> get rxMappedValidatedTabs => _rxMappedValidatedTabs;
+
+  bool validateIfSurveyIsCompleted(String surveyCode) {
+    final Survey survey =
+        _questionnaireController.getSurveyFromCode(surveyCode);
+    // for each question in this survey...
+    return survey.questions.every((q) {
+      // check to see if the mapped active response has a boolean of true
+
+      // blank radiobuttons have '' answer codes and false values
+      // checkboxes will have true values, ?? in active response
+      // todo: implement means to verify at least one checkbox is active
+      final activeResponses =
+          _responsesController.rxMappedActiveResponses[q.code];
+
+      // todo: figure out if this is also this necessary
+      // activeResponses.value.answerCode != '' &&
+      if (activeResponses.value.responseType.value == true) {
+        // get relevant SurveyTab, and toggle it as checked
+        tabModel.tabList
+            .firstWhere((e) => e.code == survey.code)
+            .isChecked
+            .value = true;
+        return true;
+      } else {
+        tabModel.tabList
+            .firstWhere((e) => e.code == survey.code)
+            .isChecked
+            .value = false;
+        return false;
+      }
+    });
+  }
+
+  // skip the last tab item (optional), then see if all are checked
+  bool validateIfRequiredSurveysComplete() => tabModel.tabList
+      .take(tabModel.tabList.length - 1)
+      .every((e) => e.isChecked.value);
 
   String getTabIconFromIndex(int index, int ctrlIndex) {
-    SurveyTab obj = tabModel.tabList[index];
+    final SurveyTab obj = tabModel.tabList[index];
     if (index == ctrlIndex) {
       return (obj.isChecked.value) ? obj.activeChecked : obj.active;
     } else
@@ -43,6 +87,13 @@ class SurveyController extends GetxController
     }
   }
 
+  void _mapAllSurveyValidators() {
+    _questionnaireController
+        .getQuestionnaire()
+        .surveys
+        .forEach((s) => _rxMappedValidatedTabs.add(s.code, false.obs));
+  }
+
   @override
   void onInit() {
     _tabController = TabController(
@@ -50,6 +101,7 @@ class SurveyController extends GetxController
         length: tabModel.tabList.length,
         vsync: this)
       ..addListener(() => _rxTabIndex.value = _tabController.index);
+    _mapAllSurveyValidators();
     super.onInit();
   }
 

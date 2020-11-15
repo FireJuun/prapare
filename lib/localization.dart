@@ -6,10 +6,15 @@ import 'package:prapare/api_keys.dart';
 // spec: https://github.com/aloisdeniel/flutter_sheet_localization
 // also: https://github.com/delay/flutter_starter
 
+// Putting this in generated file removes warnings
+// ignore_for_file: camel_case_types
+// ignore_for_file: prefer_single_quotes
+// ignore_for_file: prefer_const_constructors
+
 part 'localization.g.dart';
 
 @SheetLocalization(ApiKeys.localeSpreadsheetId, ApiKeys.localeSheetId,
-    8) // <- See 1. to get DOCID and SHEETID
+    10) // <- See 1. to get DOCID and SHEETID
 // the `1` is the generated version. You must increment it each time you want to regenerate
 // a new version of the labels.
 class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
