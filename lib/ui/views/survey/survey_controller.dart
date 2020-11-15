@@ -38,9 +38,9 @@ class SurveyController extends GetxController
       final activeResponses =
           _responsesController.rxMappedActiveResponses[q.code];
 
-      // todo: figure out if this is also this necessary
-      // activeResponses.value.answerCode != '' &&
-      if (activeResponses.value.responseType.value == true) {
+      // since ResponseType varies, for now we are handling strings / bool
+      final test = activeResponses.value.responseType.value;
+      if ((test is bool && test == true) || (test is String && test != '')) {
         // get relevant SurveyTab, and toggle it as checked
         tabModel.tabList
             .firstWhere((e) => e.code == survey.code)

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:prapare/controllers/commands/commands.dart';
+import 'package:prapare/controllers/controllers.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 
 class AnswerItemString extends StatefulWidget {
@@ -47,14 +49,8 @@ class _AnswerItemStringState extends State<AnswerItemString> {
   void initState() {
     _textEditingController = TextEditingController(
         text: widget.rxUserResponse.value.responseType.value);
-    // after 1 second, store this new text in rxUserResponse
-    // todo: change location of where it's stored in rxUserResponse
-    debounce(_obj, (value) {
-      // set rxUserResponse to new (debounced) value
-      widget.rxUserResponse.value.responseType.value = value;
-      // todo: update active response in UserResponsesController
-      // todo: extract this into a named command
-    }, time: const Duration(seconds: 1));
+    DebounceAndSaveResponseCommand()
+        .execute(rxString: _obj, response: widget.rxUserResponse);
     super.initState();
   }
 

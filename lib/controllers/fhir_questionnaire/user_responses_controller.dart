@@ -3,8 +3,6 @@ import 'package:get/get.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 
 class UserResponsesController extends GetxController {
-  static UserResponsesController get to => Get.find();
-
   final RxSet<Rx<UserResponse>> _rxResponses = <Rx<UserResponse>>{}.obs;
   RxSet<Rx<UserResponse>> get rxResponses => _rxResponses;
 
