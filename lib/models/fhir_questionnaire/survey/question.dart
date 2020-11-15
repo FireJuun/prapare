@@ -25,7 +25,17 @@ class Question {
       answers = <Answer>{};
       if (itemType != ItemType.choice) {
         format = questionMap[item.type.toString()];
-        // todo: add Answer() for string and decimal types
+        switch (itemType) {
+          case ItemType.decimal:
+            answers.add(Answer(code: 'decimal', text: ''));
+            break;
+          case ItemType.string:
+            answers.add(Answer(code: 'string', text: ''));
+            break;
+          default:
+            break;
+        }
+        // todo: verify Answer().code for string / decimal is what we want
       } else {
         if (item.extension_ != null) {
           /// ensures that there is an extension for the item
@@ -54,6 +64,7 @@ class Question {
       }
 
       /// then create each answer in the list
+      // todo: this only works for [ItemType.choice] answers
       item.answerOption
           ?.forEach((e) => answers.add(Answer.fromAnswerOption(e)));
     }

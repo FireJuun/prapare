@@ -7,6 +7,7 @@ import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'answer_item_checkbox.dart';
 import 'answer_item_decimal.dart';
 import 'answer_item_radio_button.dart';
+import 'answer_item_string.dart';
 
 class AnswerItem extends StatelessWidget {
   const AnswerItem(
@@ -40,6 +41,15 @@ class AnswerItem extends StatelessWidget {
         case answerType.decimal:
           return AnswerItemDecimal(
               answer: answer, rxUserResponse: userResponse);
+
+        // **** String Answers ***
+        case answerType.string_long:
+          return AnswerItemString(
+              answer: answer, rxUserResponse: userResponse, isMultiLine: true);
+
+        case answerType.string_short:
+          return AnswerItemString(
+              answer: answer, rxUserResponse: userResponse, isMultiLine: false);
 
         // **** DEFAULT: Radio Button Answer ***
         default:

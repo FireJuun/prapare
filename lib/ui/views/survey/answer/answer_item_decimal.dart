@@ -13,11 +13,14 @@ class AnswerItemDecimal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // todo: handle item entry + debounce
-    return TextField(
-        // onSubmitted: () {},
-        decoration: InputDecoration(
-      border: OutlineInputBorder(),
-      labelText: 'Password',
-    ));
+    return const Padding(
+      padding: EdgeInsets.symmetric(vertical: 16.0),
+      child: TextField(
+          keyboardType: TextInputType.numberWithOptions(decimal: true),
+          decoration: InputDecoration(
+            border: OutlineInputBorder(),
+            labelText: 'answer: decimal',
+          )),
+    );
   }
 }
