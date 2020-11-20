@@ -35,14 +35,13 @@ class UserResponsesController extends GetxController {
         .toList()
         .where((e) => e.value.questionLinkId == questionLinkId)
         .forEach((ans) {
-      if (ans.value.responseType.value == true) {
+      if (ans.value.answers[0].value == true) {
         validator = true;
       }
     });
 
     // active response value determined by above validation steps
-    _rxMappedActiveResponses[questionLinkId].value.responseType.value =
-        validator;
+    _rxMappedActiveResponses[questionLinkId].value.answers[0].value = validator;
   }
 
   void setAllQuestionBooleansToFalse(String questionLinkId) {
@@ -51,7 +50,7 @@ class UserResponsesController extends GetxController {
         if (e.value.questionLinkId == questionLinkId) {
           // calls update to trigger Rx redraws, if applicable
           e.update((val) {
-            val.responseType.value = false;
+            val.answers[0].value = false;
           });
         }
       },
