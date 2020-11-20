@@ -61,10 +61,42 @@ class Question extends SurveyItem {
 
     /// if we didn't assign a format above, then it will be none.
     question.format ??= QFormat.none;
+
+    /// checks if there are nested subItems for this question, if there are,
+    /// it will add each of them in turn
+    if (item.item != null) {
+      if (item.item.isNotEmpty) {
+        for (var subItem in item.item) {
+          question.subQuestions.add(Question.fromItem(subItem));
+        }
+      }
+    }
+
     return question;
   }
 
-  /// this will be the list of possible answers to the question
+  /// This will be the list of possible answers to the question, for instance,
+  /// choice would be QuestionnaireItemType.choice. Other allowed values (for
+  /// use in this class), are boolean, decimal, integer, date, dateTime, time,
+  /// string, text, url, choice, open_choice, attachment, reference, quantity,
+  /// and invalid.
+  ///
+  /// These will be the expected types of answers returned for this question.
+  ///
+  /// Boolean, integer and dateTime are the same as their dart cognates
+  ///
+  /// Decimal will be a Dart double
+  ///
+  /// Date and Time will both be passed as a Dart DateTime, but the time or date
+  /// (respectively) will be ignored when the response is created
+  ///
+  /// String and text are both Strings, although FHIR expects text to be a
+  /// shorter text field
+  ///
+  /// Url will also be a string
+  ///
+  /// Attachment, reference and quantity are FHIR classes and not fully
+  /// implemented here yet
   QuestionnaireItemType itemType;
 
   /// this will be the format of the question
