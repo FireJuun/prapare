@@ -39,17 +39,17 @@ class SurveyController extends GetxController
           _responsesController.rxMappedActiveResponses[q.linkId];
 
       // since ResponseType varies, for now we are handling strings / bool
-      final test = activeResponses.value. .responseType.value;
+      final test = activeResponses.value.answers[0].value;
       if ((test is bool && test == true) || (test is String && test != '')) {
         // get relevant SurveyTab, and toggle it as checked
         tabModel.tabList
-            .firstWhere((e) => e.code == survey.code)
+            .firstWhere((e) => e.code == survey.linkId)
             .isChecked
             .value = true;
         return true;
       } else {
         tabModel.tabList
-            .firstWhere((e) => e.code == survey.code)
+            .firstWhere((e) => e.code == survey.linkId)
             .isChecked
             .value = false;
         return false;

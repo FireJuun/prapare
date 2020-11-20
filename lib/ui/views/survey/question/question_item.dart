@@ -29,7 +29,7 @@ class QuestionItem extends StatelessWidget {
       children: [
         // Question title
         Text(
-            '${qTotalIndex + 1}: ${codesUtil.getQuestionFromLinkIdAndLocale(question.code, labels)}',
+            '${qTotalIndex + 1}: ${codesUtil.getQuestionFromLinkIdAndLocale(question.linkId, labels)}',
             style: textTheme.headline6,
             textAlign: TextAlign.start),
 

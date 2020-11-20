@@ -83,8 +83,8 @@ class QuestionnaireModel {
       if (subItem.type == QuestionnaireItemType.choice) {
         final List<UserResponse> responsesForThisItem =
             _data.userResponses.toList();
-        responsesForThisItem
-            .retainWhere((response) => response.questionCode == subItem.linkId);
+        responsesForThisItem.retainWhere(
+            (response) => response.questionLinkId == subItem.linkId);
         if (responsesForThisItem.isNotEmpty) {
           response.add(
             QuestionnaireResponseItem(
@@ -120,7 +120,7 @@ class QuestionnaireModel {
     final responseAnswer = <QuestionnaireResponseAnswer>[];
     for (var answer in responsesForThisItem) {
       final QuestionnaireAnswerOption thisAnswer = item.answerOption.firstWhere(
-          (option) => option.valueCoding.code == Code(answer.answerCode),
+          (option) => option.valueCoding.code == Code(answer.questionLinkId),
           orElse: () => null);
       responseAnswer.add(
           QuestionnaireResponseAnswer(valueCoding: thisAnswer?.valueCoding));
