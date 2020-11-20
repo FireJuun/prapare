@@ -3,6 +3,7 @@ import 'package:prapare/_internal/constants/prapare_survey.dart';
 
 import 'fhir_questionnaire.dart';
 import 'survey/export.dart';
+import 'survey/survey_item.dart';
 
 class QuestionnaireModel {
   final FhirQuestionnaire _data = FhirQuestionnaire();
@@ -15,30 +16,35 @@ class QuestionnaireModel {
     _data.title =
         _data.questionnaire?.title ?? _data.questionnaire?.name ?? 'New Survey';
     if (_data.questionnaire != null) {
-      _data.surveys = <Survey>[];
-      for (var item in _data.questionnaire.item) {
-        if (item.type == QuestionnaireItemType.group) {
-          /// creates a "Survey" from each group of questions that should be
-          /// displayed together
-          _surveyFromGroup(item);
+      if (_data.questionnaire.item != null) {
+        if (_data.questionnaire.item[0].type == QuestionnaireItemType.group) {
+          /// creates a Survey from the initial group
+          /// ToDo: generalize for cases where there is only one group
+          /// encasing everything else as is currently true in PRAPARE
+
+          _data.survey = Survey(
+            linkId: _data.questionnaire.item[0].linkId,
+            text: _data.questionnaire.item[0].text,
+            surveyItems: <SurveyItem>[],
+          );
+          for (var item in _data.questionnaire.item[0].item) {
+            _data.survey.surveyItems.add(_itemFromItem(item));
+          }
         }
       }
     }
   }
 
-  /// creates the survey from the group of questions that should be displayed
-  /// together
-  void _surveyFromGroup(QuestionnaireItem item) {
+  /// creates a new surveyItem from the fhir item that is passed
+  SurveyItem _itemFromItem(QuestionnaireItem item) {
+    var surveyItem;
+    if (item.type == QuestionnaireItemType.group) {
+      surveyItem = Group();
+      for (var subItem in item.item) {}
+    }
     final stillGroup = item.item
         .indexWhere((subItem) => subItem.type == QuestionnaireItemType.group);
     if (stillGroup == -1) {
-      final Survey newSurvey = Survey(
-        code: item.linkId,
-        title: _data.title,
-        text: item.text,
-        questions: <Question>[],
-      );
-
       // todo: verify QuestionnaireItemType is being called correctly
       item.item.forEach((q) {
         if (q.type != QuestionnaireItemType.group &&

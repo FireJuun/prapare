@@ -1,9 +1,9 @@
-import 'package:prapare/models/fhir_questionnaire/survey/survey_item.dart';
+part of 'survey_item.dart';
 
 /// this class will represent a group - either a list of groups, a list of
 /// questions, or a mixture of the two
-class Group extends SurveyItem {
-  Group({this.linkId, this.text, this.surveyItems});
+class ItemGroup extends SurveyItem {
+  ItemGroup({this.linkId, this.text, this.surveyItems});
 
   /// this is the unique code that identifies
   String linkId;

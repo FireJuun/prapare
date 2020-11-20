@@ -1,8 +1,4 @@
-import 'package:fhir/r4.dart';
-import 'package:prapare/models/fhir_questionnaire/survey/survey_item.dart';
-
-import 'answer.dart';
-import 'qformat.dart';
+part of 'survey_item.dart';
 
 /// this class will represent a single question for a survey
 class Question extends SurveyItem {
