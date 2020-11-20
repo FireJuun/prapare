@@ -8,17 +8,16 @@ class ToggleCheckboxCommand extends AbstractCommand {
       {@required Rx<UserResponse> rxUserResponse, bool newValue}) async {
     // create new UserResponse class with different value property
     final UserResponse newResponse = rxUserResponse.value;
-    newResponse.responseType.value =
-        newValue ?? !newResponse.responseType.value;
+    newResponse.answers[0].value = newValue ?? !newResponse.answers[0].value;
 
     // update the stream with the new class
     responsesController.updateUserResponse(rxUserResponse, newResponse);
 
     // ensure ActiveResponse value matches the new boolean
     responsesController
-        .setCheckboxActiveBooleanByAnswers(newResponse.questionCode);
+        .setCheckboxActiveBooleanByAnswers(newResponse.questionLinkId);
 
     // check validator to see if survey is complete
-    surveyController.validateIfSurveyIsCompleted(newResponse.surveyCode);
+    surveyController.validateIfSurveyIsCompleted(newResponse.surveyLinkId);
   }
 }

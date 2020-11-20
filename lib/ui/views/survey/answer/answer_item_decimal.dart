@@ -47,7 +47,8 @@ class _AnswerItemDecimalState extends State<AnswerItemDecimal> {
   @override
   void initState() {
     _textEditingController = TextEditingController(
-        text: widget.rxUserResponse.value.responseType.value);
+        // ToDo: works only for answer
+        text: widget.rxUserResponse.value.answers[0].value);
     DebounceAndSaveResponseCommand()
         .execute(rxString: _obj, response: widget.rxUserResponse);
     super.initState();

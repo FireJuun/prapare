@@ -29,17 +29,17 @@ class SurveyController extends GetxController
     final Survey survey =
         _questionnaireController.getSurveyFromCode(surveyCode);
     // for each question in this survey...
-    return survey.questions.every((q) {
+    return survey.surveyItems.every((q) {
       // check to see if the mapped active response has a boolean of true
 
       // blank radiobuttons have '' answer codes and false values
       // checkboxes will have true values, ?? in active response
       // todo: implement means to verify at least one checkbox is active
       final activeResponses =
-          _responsesController.rxMappedActiveResponses[q.code];
+          _responsesController.rxMappedActiveResponses[q.linkId];
 
       // since ResponseType varies, for now we are handling strings / bool
-      final test = activeResponses.value.responseType.value;
+      final test = activeResponses.value. .responseType.value;
       if ((test is bool && test == true) || (test is String && test != '')) {
         // get relevant SurveyTab, and toggle it as checked
         tabModel.tabList
