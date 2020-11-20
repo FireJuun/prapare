@@ -1,26 +1,28 @@
+// ignore_for_file: prefer_final_locals
 part of 'survey_item.dart';
 
 /// this class will represent a single question for a survey
 class Question extends SurveyItem {
   Question({
-    this.linkId,
-    this.text,
+    String linkId,
+    String text,
     this.itemType,
     this.format,
     this.answers,
     this.mandatory,
     this.multiAnswer,
     this.subQuestions,
-  });
+  }) : super(linkId, text);
 
-  Question.fromItem(QuestionnaireItem item) {
-    linkId = item.linkId;
-    text = item.text;
-    itemType = item.type;
-    answers = <Answer>{};
-    mandatory = item.required_ == null ? false : item.required_.result();
-    multiAnswer = item.repeats == null ? false : item.repeats.result();
-    subQuestions = <Question>[];
+  factory Question.fromItem(QuestionnaireItem item) {
+    var question = Question(
+        linkId: item.linkId,
+        text: item.text,
+        itemType: item.type,
+        answers: <Answer>{},
+        mandatory: item.required_ == null ? false : item.required_.result(),
+        multiAnswer: item.repeats == null ? false : item.repeats.result(),
+        subQuestions: <Question>[]);
 
     /// if the question is a choice or open-choice, it means that there will be
     /// a pre-defined list of allowable answers to be displayed to the user
@@ -44,12 +46,12 @@ class Question extends SurveyItem {
                 FhirUri('http://hl7.org/fhir/questionnaire-item-control'));
 
         /// we map the format to one of the allowed choices
-        format = choiceType[coding.code];
+        question.format = choiceType[coding.code];
 
         /// if we can't find it in that list, we state that it is an unknown
         /// format to differentiate it from those questions without a list
         /// of pre-defined choices
-        format ??= QFormat.unknown;
+        question.format ??= QFormat.unknown;
 
         /// generate list of allowed answers
         item.answerOption
@@ -58,14 +60,9 @@ class Question extends SurveyItem {
     }
 
     /// if we didn't assign a format above, then it will be none.
-    format ??= QFormat.none;
+    question.format ??= QFormat.none;
+    return question;
   }
-
-  /// this is the code that will be used to identfy the question and passed back
-  String linkId;
-
-  /// this will be the text in the question displayed to the user
-  String text;
 
   /// this will be the list of possible answers to the question
   QuestionnaireItemType itemType;
