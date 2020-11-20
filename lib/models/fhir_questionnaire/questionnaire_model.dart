@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_typing_uninitialized_variables
+
 import 'package:fhir/r4.dart';
 import 'package:prapare/_internal/constants/prapare_survey.dart';
 
@@ -38,27 +40,20 @@ class QuestionnaireModel {
   /// creates a new surveyItem from the fhir item that is passed
   SurveyItem _itemFromItem(QuestionnaireItem item) {
     var surveyItem;
-    if (item.type == QuestionnaireItemType.group) {
-      surveyItem = Group();
-      for (var subItem in item.item) {}
-    }
-    final stillGroup = item.item
-        .indexWhere((subItem) => subItem.type == QuestionnaireItemType.group);
-    if (stillGroup == -1) {
-      // todo: verify QuestionnaireItemType is being called correctly
-      item.item.forEach((q) {
-        if (q.type != QuestionnaireItemType.group &&
-            q.type != QuestionnaireItemType.display) {
-          /// if the questions are single questions, it creates new question objects
-          newSurvey.questions.add(Question.fromChoiceItem(q));
-        }
-      });
 
-      _data.surveys.add(newSurvey);
+    /// first checks if the item is a group, if so, recursively calls this
+    /// function to add surveyItems to the groups subitems
+    if (item.type == QuestionnaireItemType.group) {
+      surveyItem = ItemGroup.fromItem(item);
+      for (var subItem in item.item) {
+        surveyItem.surveyItems.add(_itemFromItem(subItem));
+      }
     } else {
-      /// if the subItem is also a group, then it will recursively call this fxn
-      item.item.forEach((g) => _surveyFromGroup(g));
+      /// if the item is not a group it is a question
+      /// ToDo: display - not a question or group
+      surveyItem = Question.fromItem(item);
     }
+    return surveyItem;
   }
 
   /// adds userResponses, can do it iterativelly or all at once

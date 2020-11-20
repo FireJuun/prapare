@@ -13,6 +13,54 @@ class Question extends SurveyItem {
     this.subQuestions,
   });
 
+  Question.fromItem(QuestionnaireItem item) {
+    linkId = item.linkId;
+    text = item.text;
+    itemType = item.type;
+    answers = <Answer>{};
+    mandatory = item.required_ == null ? false : item.required_.result();
+    multiAnswer = item.repeats == null ? false : item.repeats.result();
+    subQuestions = <Question>[];
+
+    /// if the question is a choice or open-choice, it means that there will be
+    /// a pre-defined list of allowable answers to be displayed to the user
+    if (item.type == QuestionnaireItemType.choice ||
+        item.type == QuestionnaireItemType.open_choice) {
+      /// the type is listed under the extension with the url
+      /// http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl
+      final ext = item.extension_.firstWhere(
+          (searchExt) =>
+              searchExt.url ==
+              FhirUri(
+                  'http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl'),
+          orElse: () => null);
+
+      /// under that extension is a valueCodeableConcept, containing a coding,
+      /// with the system: http://hl7.org/fhir/questionnaire-item-control
+      if (ext != null) {
+        final coding = ext.valueCodeableConcept.coding.firstWhere(
+            (searchCoding) =>
+                searchCoding.system ==
+                FhirUri('http://hl7.org/fhir/questionnaire-item-control'));
+
+        /// we map the format to one of the allowed choices
+        format = choiceType[coding.code];
+
+        /// if we can't find it in that list, we state that it is an unknown
+        /// format to differentiate it from those questions without a list
+        /// of pre-defined choices
+        format ??= QFormat.unknown;
+
+        /// generate list of allowed answers
+        item.answerOption
+            ?.forEach((e) => answers.add(Answer.fromAnswerOption(e)));
+      }
+    }
+
+    /// if we didn't assign a format above, then it will be none.
+    format ??= QFormat.none;
+  }
+
   /// this is the code that will be used to identfy the question and passed back
   String linkId;
 
@@ -37,65 +85,3 @@ class Question extends SurveyItem {
   /// if there are sub-questions, they will be listed here
   List<Question> subQuestions;
 }
-
-// Question.fromChoiceItem(QuestionnaireItem item) {
-//   /// unique id for item in Questionnaire
-//   code = item.linkId;
-
-//   /// Primary text for item (although not required)
-//   text = item.text;
-
-//   /// just defines itemType, it is required in FHIR
-//   itemType = itemTypeMap[item.type.toString().split('.')[1]];
-
-//   if (itemType != ItemType.group &&
-//       itemType != ItemType.display &&
-//       itemType != ItemType.question) {
-//     ///  initialize the answer list
-//     answers = <Answer>{};
-//     if (itemType != ItemType.choice) {
-//       format = questionMap[item.type.toString()];
-//       switch (itemType) {
-//         case ItemType.decimal:
-//           answers.add(Answer(code: 'decimal', text: ''));
-//           break;
-//         case ItemType.string:
-//           answers.add(Answer(code: 'string', text: ''));
-//           break;
-//         default:
-//           break;
-//       }
-//       // todo: verify Answer().code for string / decimal is what we want
-//     } else {
-//       if (item.extension_ != null) {
-//         /// ensures that there is an extension for the item
-//         final FhirExtension ext = item.extension_.firstWhere(
-//           (ext) =>
-//               ext.url ==
-//               FhirUri(
-//                 'http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl',
-//               ),
-//           orElse: () => null,
-//         );
-
-//         /// ensures the extension has a codeable concept with coding
-//         if (ext?.valueCodeableConcept?.coding != null) {
-//           /// looks for the first CodeableConcept that defines the question type
-//           final Code qformat = ext.valueCodeableConcept.coding
-//               .firstWhere((coding) =>
-//                   coding.system ==
-//                   FhirUri('http://hl7.org/fhir/questionnaire-item-control'))
-//               .code; // and extracts the code
-
-//           /// this code is then changed to an enum for easy use by us
-//           format = qType[qformat];
-//         }
-//       }
-//     }
-
-//     /// then create each answer in the list
-//     // todo: this only works for [ItemType.choice] answers
-//     item.answerOption
-//         ?.forEach((e) => answers.add(Answer.fromAnswerOption(e)));
-//   }
-// }

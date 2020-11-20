@@ -4,6 +4,11 @@ part of 'survey_item.dart';
 /// questions, or a mixture of the two
 class ItemGroup extends SurveyItem {
   ItemGroup({this.linkId, this.text, this.surveyItems});
+  ItemGroup.fromItem(QuestionnaireItem item) {
+    linkId = item.linkId;
+    text = item.text;
+    surveyItems = <SurveyItem>[];
+  }
 
   /// this is the unique code that identifies
   String linkId;
