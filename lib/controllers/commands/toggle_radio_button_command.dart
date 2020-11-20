@@ -14,7 +14,6 @@ class ToggleRadioButtonCommand extends AbstractCommand {
       oldResponse.value.answers[0].value = false;
 
       final UserResponse _blankAnswerResponse = UserResponse(
-        surveyLinkId: oldResponse.value.surveyLinkId,
         questionLinkId: oldResponse.value.questionLinkId,
         answers: [AnswerBoolean(false)],
       );
@@ -38,7 +37,8 @@ class ToggleRadioButtonCommand extends AbstractCommand {
     }
 
     // check validator to see if survey is complete
+    // ToDo: not sure how to change this method
     surveyController
-        .validateIfSurveyIsCompleted(oldResponse.value.surveyLinkId);
+        .validateIfSurveyIsCompleted(oldResponse.value.questionLinkId);
   }
 }

@@ -3,12 +3,12 @@ import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 
 import 'question/question_item.dart';
 
-class SurveyDetail extends StatelessWidget {
-  const SurveyDetail({Key key, @required this.survey})
-      : assert(survey != null),
+class GroupDetail extends StatelessWidget {
+  const GroupDetail({Key key, @required this.group})
+      : assert(group != null),
         super(key: key);
 
-  final Survey survey;
+  final ItemGroup group;
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +19,8 @@ class SurveyDetail extends StatelessWidget {
 
         /// asMap().entries.map()...toList() used to pass index w/ map
         /// This is used to build each Question as its own QuestionItem widget
-        children: survey.surveyItems
-            .map((entry) => QuestionItem(survey: survey, question: entry))
+        children: group.surveyItems
+            .map((entry) => QuestionItem(group: group, question: entry))
             .toList(),
       ),
     );

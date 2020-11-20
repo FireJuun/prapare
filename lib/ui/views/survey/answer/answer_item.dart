@@ -12,12 +12,12 @@ import 'answer_item_string.dart';
 class AnswerItem extends StatelessWidget {
   const AnswerItem(
       {Key key,
-      @required this.survey,
+      @required this.group,
       @required this.question,
       @required this.answer})
       : super(key: key);
 
-  final Survey survey;
+  final ItemGroup group;
   final Question question;
   final Answer answer;
 
@@ -26,9 +26,7 @@ class AnswerItem extends StatelessWidget {
     final PrapareCodesUtil codesUtil = PrapareCodesUtil();
     final UserResponsesController controller = Get.find();
     final Rx<UserResponse> userResponse = controller.findRxUserResponse(
-        surveyLinkId: survey.linkId,
-        questionLinkId: question.linkId,
-        answerCode: answer.code);
+        questionLinkId: question.linkId, answerCode: answer.code);
 
     try {
       switch (codesUtil.getAnswerTypeFromQuestionCode(question.linkId)) {

@@ -6,8 +6,7 @@ import 'package:prapare/models/survey_tab/survey_tab_data.dart';
 import 'package:prapare/models/survey_tab/survey_tab_model.dart';
 import 'package:prapare/ui/themes.dart';
 
-class SurveyController extends GetxController
-    with SingleGetTickerProviderMixin {
+class GroupController extends GetxController with SingleGetTickerProviderMixin {
   final QuestionnaireController _questionnaireController = Get.find();
   final UserResponsesController _responsesController = Get.find();
 
@@ -26,10 +25,10 @@ class SurveyController extends GetxController
   RxMap<String, RxBool> get rxMappedValidatedTabs => _rxMappedValidatedTabs;
 
   bool validateIfSurveyIsCompleted(String surveyCode) {
-    final Survey survey =
-        _questionnaireController.getSurveyFromCode(surveyCode);
+    final ItemGroup group =
+        _questionnaireController.getGroupFromCode(surveyCode);
     // for each question in this survey...
-    return survey.surveyItems.every((q) {
+    return group.surveyItems.every((q) {
       // check to see if the mapped active response has a boolean of true
 
       // blank radiobuttons have '' answer codes and false values
@@ -43,13 +42,13 @@ class SurveyController extends GetxController
       if ((test is bool && test == true) || (test is String && test != '')) {
         // get relevant SurveyTab, and toggle it as checked
         tabModel.tabList
-            .firstWhere((e) => e.code == survey.linkId)
+            .firstWhere((e) => e.code == group.linkId)
             .isChecked
             .value = true;
         return true;
       } else {
         tabModel.tabList
-            .firstWhere((e) => e.code == survey.linkId)
+            .firstWhere((e) => e.code == group.linkId)
             .isChecked
             .value = false;
         return false;
@@ -90,8 +89,9 @@ class SurveyController extends GetxController
   void _mapAllSurveyValidators() {
     _questionnaireController
         .getQuestionnaire()
-        .surveys
-        .forEach((s) => _rxMappedValidatedTabs.add(s.code, false.obs));
+        .survey
+        .surveyItems
+        .forEach((s) => _rxMappedValidatedTabs.add(s.linkId, false.obs));
   }
 
   @override

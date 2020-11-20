@@ -16,11 +16,8 @@ class UserResponsesController extends GetxController {
   }
 
   Rx<UserResponse> findRxUserResponse(
-          {@required String surveyLinkId,
-          @required String questionLinkId,
-          @required String answerCode}) =>
+          {@required String questionLinkId, @required String answerCode}) =>
       _rxResponses.toList().firstWhere((e) =>
-          e.value.surveyLinkId == surveyLinkId &&
           e.value.questionLinkId == questionLinkId &&
           e.value.answers[0].value == answerCode);
 

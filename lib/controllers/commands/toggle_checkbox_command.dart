@@ -18,6 +18,7 @@ class ToggleCheckboxCommand extends AbstractCommand {
         .setCheckboxActiveBooleanByAnswers(newResponse.questionLinkId);
 
     // check validator to see if survey is complete
-    surveyController.validateIfSurveyIsCompleted(newResponse.surveyLinkId);
+    //ToDo: not sure how to change this method
+    surveyController.validateIfSurveyIsCompleted(newResponse.questionLinkId);
   }
 }

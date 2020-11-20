@@ -5,11 +5,11 @@ import 'package:prapare/controllers/theme_controller.dart';
 import 'package:prapare/ui/styled_components/styled_components.dart';
 import 'package:prapare/ui/themes.dart';
 import 'package:prapare/ui/views/settings/settings_dialog.dart';
-import 'package:prapare/ui/views/survey/survey_detail.dart';
+import 'package:prapare/ui/views/survey/group_detail.dart';
 import 'package:prapare/ui/views/survey/header/survey_header_flexible.dart';
-import 'package:prapare/ui/views/survey/survey_controller.dart';
+import 'package:prapare/ui/views/survey/group_controller.dart';
 
-class SurveyView extends StatelessWidget {
+class GroupView extends StatelessWidget {
   final double _collapsedHeight = 68.0;
   final double _expandedHeight = 200.0;
 
@@ -18,7 +18,7 @@ class SurveyView extends StatelessWidget {
     final AppTheme appTheme = Get.find<ThemeController>()
         .getAppThemeFromBrightness(context.theme.brightness);
     final QuestionnaireController dataController = Get.find();
-    final SurveyController controller = Get.find();
+    final GroupController controller = Get.find();
     final tabList = controller.tabModel.tabList;
 
     /// GestureDetector used to handle tap events to remove focus from keyboard
@@ -87,9 +87,9 @@ class SurveyView extends StatelessWidget {
                                 sliver: SliverList(
                                   delegate: SliverChildListDelegate(
                                     [
-                                      SurveyDetail(
-                                        survey: dataController
-                                            .getSurveyFromCode(e.code),
+                                      GroupDetail(
+                                        group: dataController
+                                            .getGroupFromCode(e.code),
                                       ),
                                     ],
                                   ),

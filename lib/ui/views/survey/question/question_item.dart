@@ -7,10 +7,10 @@ import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/ui/views/survey/answer/answer_item.dart';
 
 class QuestionItem extends StatelessWidget {
-  const QuestionItem({Key key, @required this.survey, @required this.question})
+  const QuestionItem({Key key, @required this.group, @required this.question})
       : super(key: key);
 
-  final Survey survey;
+  final ItemGroup group;
   final Question question;
 
   @override
@@ -39,7 +39,7 @@ class QuestionItem extends StatelessWidget {
         /// asMap().entries.map() are used to pass index w/ values
         ...question.answers.toList().map(
               (entry) => AnswerItem(
-                survey: survey,
+                group: group,
                 question: question,
                 answer: entry,
               ),
