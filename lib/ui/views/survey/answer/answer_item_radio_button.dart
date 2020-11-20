@@ -19,7 +19,7 @@ class AnswerItemRadioButton extends StatelessWidget {
     return GetX<UserResponsesController>(
       builder: (responsesController) {
         final rxActiveResponse = responsesController
-            .findActiveResponse(rxUserResponse.value.questionCode);
+            .findActiveResponse(rxUserResponse.value.questionLinkId);
 
         return RadioListTile<UserResponse>(
           title: AnswerTitle(answer: answer),

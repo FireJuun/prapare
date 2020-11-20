@@ -26,12 +26,12 @@ class AnswerItem extends StatelessWidget {
     final PrapareCodesUtil codesUtil = PrapareCodesUtil();
     final UserResponsesController controller = Get.find();
     final Rx<UserResponse> userResponse = controller.findRxUserResponse(
-        surveyCode: survey.code,
-        questionCode: question.code,
+        surveyLinkId: survey.linkId,
+        questionLinkId: question.linkId,
         answerCode: answer.code);
 
     try {
-      switch (codesUtil.getAnswerTypeFromQuestionCode(question.code)) {
+      switch (codesUtil.getAnswerTypeFromQuestionCode(question.linkId)) {
         // **** Checkbox Answer ***
         case answerType.checkbox:
           return AnswerItemCheckbox(
