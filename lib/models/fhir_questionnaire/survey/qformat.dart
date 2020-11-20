@@ -19,5 +19,6 @@ enum QFormat {
   slider,
   spinner,
   text_box,
+  unknown,
   none,
 }
