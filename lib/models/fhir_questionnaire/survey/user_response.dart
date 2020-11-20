@@ -1,37 +1,33 @@
+import 'package:fhir/r4.dart';
 import 'package:flutter/foundation.dart';
 
-import 'response_type.dart';
+part 'answer_response.dart';
 
 /// represents the class that is passed back from the user
 class RxUserResponse {}
 
 class UserResponse {
   UserResponse({
-    @required this.surveyCode,
-    @required this.questionCode,
-    @required this.answerCode,
-    @required this.responseType,
+    @required this.surveyLinkId,
+    @required this.questionLinkId,
+    @required this.answers,
   });
 
   // not ideal, but used during first instance of reactive variables
   factory UserResponse.defaultNull() {
     return UserResponse(
-      answerCode: null,
-      questionCode: null,
-      responseType: null,
-      surveyCode: null,
+      surveyLinkId: null,
+      questionLinkId: null,
+      answers: null,
     );
   }
 
   /// specifies the survey
-  String surveyCode;
+  String surveyLinkId;
 
   /// specifies the question
-  String questionCode;
-
-  /// specifies the answer
-  String answerCode;
+  String questionLinkId;
 
   /// union class of the type of responses allowed
-  ResponseType responseType;
+  List<AnswerResponse> answers;
 }

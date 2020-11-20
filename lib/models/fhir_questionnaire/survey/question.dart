@@ -2,7 +2,6 @@ import 'package:fhir/r4.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/survey_item.dart';
 
 import 'answer.dart';
-import 'item_type.dart';
 import 'qformat.dart';
 
 /// this class will represent a single question for a survey
@@ -10,9 +9,11 @@ class Question extends SurveyItem {
   Question({
     this.linkId,
     this.text,
-    this.answers,
     this.itemType,
     this.format,
+    this.answers,
+    this.mandatory,
+    this.multiAnswer,
     this.subQuestions,
   });
 
@@ -23,13 +24,19 @@ class Question extends SurveyItem {
   String text;
 
   /// this will be the list of possible answers to the question
-  Set<Answer> answers;
-
-  /// this will be the list of possible answers to the question
-  ItemType itemType;
+  QuestionnaireItemType itemType;
 
   /// this will be the format of the question
   QFormat format;
+
+  /// this will be the list of possible answers to the question
+  Set<Answer> answers;
+
+  /// if this is a required question
+  bool mandatory;
+
+  /// if more than one answer is allowed
+  bool multiAnswer;
 
   /// if there are sub-questions, they will be listed here
   List<Question> subQuestions;
