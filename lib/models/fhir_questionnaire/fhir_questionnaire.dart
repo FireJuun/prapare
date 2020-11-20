@@ -6,9 +6,8 @@ class FhirQuestionnaire {
   FhirQuestionnaire({
     this.questionnaire,
     this.response,
-    this.surveys,
+    this.survey,
     this.title,
-    this.groups,
     this.userResponses,
   }) {
     userResponses ??= <UserResponse>[];
@@ -17,17 +16,14 @@ class FhirQuestionnaire {
   /// fhir resource questionnaire
   Questionnaire questionnaire;
 
-  /// generated response to questionnaire
+  /// fhir generated response to questionnaire
   QuestionnaireResponse response;
 
-  /// local formatted survey from questionnaire
-  List<Survey> surveys;
+  /// local formatted survey from questionnaire, passed to the front-end
+  Survey survey;
 
   /// Formal Title of the Entire Questionnaire
   String title;
-
-  /// internal list
-  List<String> groups;
 
   /// list of answers passed back from user
   List<UserResponse> userResponses;
