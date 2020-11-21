@@ -21,16 +21,24 @@ class GroupDetail extends StatelessWidget {
           // standard path for creating a question
           if (entry is Question) {
             return Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 // first, build question title
-                QuestionTitle(question: entry),
+                QuestionTitle(questionLinkId: entry.linkId),
                 QuestionItem(group: group, question: entry),
               ],
             );
           }
           // used for recursive questions, such as in Q14: '/93041-2/93031-3' in the past year...
           else if (entry is ItemGroup) {
-            return GroupDetail(group: entry);
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                // first, build question title
+                QuestionTitle(questionLinkId: entry.linkId),
+                GroupDetail(group: entry),
+              ],
+            );
           }
         }).toList(),
       ),

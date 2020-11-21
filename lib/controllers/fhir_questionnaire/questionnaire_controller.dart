@@ -29,8 +29,8 @@ class QuestionnaireController extends GetxController {
 
   FhirQuestionnaire getQuestionnaire() => _model.data;
 
-  int getTotalIndexFromQuestion(Question question) =>
-      _allQuestions.indexOf(question);
+  int getTotalIndexFromQuestion(String questionLinkId) =>
+      _allQuestions.indexWhere((e) => e.linkId == questionLinkId);
 
   void _mapAllQuestions() {
     _allQuestions = _model.data.survey.surveyItems
