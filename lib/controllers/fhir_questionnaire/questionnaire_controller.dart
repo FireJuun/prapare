@@ -1,3 +1,4 @@
+import 'package:fhir/r4.dart';
 import 'package:get/get.dart';
 import 'package:prapare/_internal/constants/prapare_survey.dart';
 import 'package:prapare/controllers/controllers.dart';
@@ -38,49 +39,70 @@ class QuestionnaireController extends GetxController {
         .toList();
   }
 
-  void _mapAllUserResponses() {
-    _model.data.survey.surveyItems.forEach(
-      (s) => (s as ItemGroup).surveyItems.forEach(
-            (q) => (q as Question).answers.forEach(
-                  (ans) => _responsesController.rxResponses.add(
-                    // if AnswerType.choice ==> use booleans, otherwise strings
-                    // todo: update with various additional response types
-                    (ans.code == 'decimal' || ans.code == 'string')
-                        ? UserResponse(
-                            questionLinkId: q.linkId,
-                            answers: [AnswerCode(ans.code)]).obs
-                        : UserResponse(
-                            questionLinkId: q.linkId,
-                            answers: [AnswerBoolean(false)]).obs,
-                  ),
-                ),
-          ),
-    );
+  void _mapAllUserResponses() => _model.data.survey.surveyItems.forEach(
+      (s) => s.runtimeType == ItemGroup ? _mapGroup(s) : _mapQuestion(s));
+
+  void _mapGroup(ItemGroup itemGroup) => itemGroup.surveyItems.forEach((item) =>
+      item.runtimeType == ItemGroup ? _mapGroup(item) : _mapQuestion(item));
+
+  void _mapQuestion(Question question) {
+    switch (question.itemType) {
+      case QuestionnaireItemType.choice:
+        question.answers.forEach(
+            (answer) => _addQuestion(question.linkId, AnswerCode(answer.code)));
+        break;
+      case QuestionnaireItemType.open_choice:
+        question.answers.forEach(
+            (answer) => _addQuestion(question.linkId, AnswerCode(answer.code)));
+        break;
+      case QuestionnaireItemType.boolean:
+        _addQuestion(question.linkId, AnswerBoolean(false));
+        break;
+      case QuestionnaireItemType.decimal:
+        _addQuestion(question.linkId, AnswerDecimal(0));
+        break;
+      case QuestionnaireItemType.integer:
+        _addQuestion(question.linkId, AnswerInteger(0));
+        break;
+      case QuestionnaireItemType.string:
+        _addQuestion(question.linkId, AnswerString(''));
+        break;
+      case QuestionnaireItemType.text:
+        _addQuestion(question.linkId, AnswerText(''));
+        break;
+      default:
+        _addQuestion(question.linkId, AnswerText(''));
+        break;
+    }
   }
 
-  void _mapAllActiveResponses() {
-    /// defaults to blank answer on first load
-    /// afterwards, the new UserResponse will be updated to reflect the selected item
-    /// then ResponseBoolean will be selected to true for that item
-    /// todo: ignore question types that aren't radio-buttons
-    _model.data.survey.surveyItems.forEach(
-      (s) => (s as ItemGroup).surveyItems.forEach(
-            (q) => _responsesController.rxMappedActiveResponses.add(
-              (q as Question).linkId,
-              UserResponse(
-                  questionLinkId: q.linkId,
-                  answers: [AnswerBoolean(false)]).obs,
-            ),
-          ),
-    );
-  }
+  void _addQuestion(String linkId, AnswerResponse answer) =>
+      _responsesController.rxResponses
+          .add(UserResponse(questionLinkId: linkId, answers: [answer]).obs);
+
+  // void _mapAllActiveResponses() {
+  //   /// defaults to blank answer on first load
+  //   /// afterwards, the new UserResponse will be updated to reflect the selected item
+  //   /// then ResponseBoolean will be selected to true for that item
+  //   /// todo: ignore question types that aren't radio-buttons
+  //   _model.data.survey.surveyItems.forEach(
+  //     (s) => (s as ItemGroup).surveyItems.forEach(
+  //           (q) => _responsesController.rxMappedActiveResponses.add(
+  //             (q as Question).linkId,
+  //             UserResponse(
+  //                 questionLinkId: q.linkId,
+  //                 answers: [AnswerBoolean(false)]).obs,
+  //           ),
+  //         ),
+  //   );
+  // }
 
   @override
   void onInit() {
     _model.loadAndCreateSurvey();
     _mapAllQuestions();
     _mapAllUserResponses();
-    _mapAllActiveResponses();
+    // _mapAllActiveResponses();
     super.onInit();
   }
 }
