@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 
 import 'question/question_item.dart';
+import 'question/question_title.dart';
 
 class GroupDetail extends StatelessWidget {
   const GroupDetail({Key key, @required this.group})
@@ -16,14 +17,19 @@ class GroupDetail extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-
-        /// asMap().entries.map()...toList() used to pass index w/ map
-        /// This is used to build each Question as its own QuestionItem widget
         children: group.surveyItems.map((entry) {
+          // standard path for creating a question
           if (entry is Question) {
-            return QuestionItem(group: group, question: entry);
-          } else if (entry is ItemGroup) {
-            // used for recursive questions, such as in Q14: '/93041-2/93031-3' in the past year...
+            return Column(
+              children: [
+                // first, build question title
+                QuestionTitle(question: entry),
+                QuestionItem(group: group, question: entry),
+              ],
+            );
+          }
+          // used for recursive questions, such as in Q14: '/93041-2/93031-3' in the past year...
+          else if (entry is ItemGroup) {
             return GroupDetail(group: entry);
           }
         }).toList(),
