@@ -40,6 +40,8 @@ class _AppColors {
   //not currently being used
   static const Color grey = Color(0xFF636463);
   //this is the light mode "optional measures" banner
+  static const Color greyDisabled = Color(0xFFB5B5B5);
+  // disabled grey for bottom nav bar
   static const Color greyDarkMode = Color(0xFF868686);
   //this is the dark mode "optional measures" banner
   static const Color blackSurface = Color(0xff050505);
@@ -48,7 +50,7 @@ class _AppColors {
   //not currently being used
   static const Color blackBackground = Color(0xff181818);
   //this is the dark mode color used for the home view background and the settings menu
-  static const Color textDark = Colors.white;
+  static const Color textDark = Colors.black;
   //this is the text color for the dark mode banners (personal characteristics, family and home, etc)
   static const Color textLight = Color(0xFFf7f7f7);
   //this is the text color for the light mode banners (personal characteristics, family and home, etc)
@@ -107,6 +109,7 @@ class AppTheme {
           ..heading3 = _AppColors.red
           ..heading4 = _AppColors.blueGreen
           ..heading5 = _AppColors.grey
+          ..disabled = _AppColors.greyDisabled
           ..grey = _AppColors.grey
           ..error = Colors.red.shade900
           ..focus = _AppColors.grey;
@@ -116,15 +119,16 @@ class AppTheme {
           ..bg1 = _AppColors.blackBackground
           ..bg2 = _AppColors.greenSurfaceDark
           ..surface = _AppColors.blackSurface
-          ..primary = _AppColors.greenDark
-          ..primaryVariant = _AppColors.green
-          ..secondary = _AppColors.orangeDark
-          ..secondaryVariant = _AppColors.orange
+          ..primary = _AppColors.orangeDark
+          ..primaryVariant = _AppColors.orange
+          ..secondary = _AppColors.greenDark
+          ..secondaryVariant = _AppColors.green
           ..heading1 = _AppColors.orangeRedDarkMode
           ..heading2 = _AppColors.blueDarkMode
           ..heading3 = _AppColors.redDarkMode
           ..heading4 = _AppColors.blueGreenDarkMode
           ..heading5 = _AppColors.greyDarkMode
+          ..disabled = _AppColors.greyDisabled
           ..grey = _AppColors.grey
           ..error = _AppColors.redDarkMode
           ..focus = _AppColors.grey;
@@ -147,6 +151,7 @@ class AppTheme {
   Color heading3;
   Color heading4;
   Color heading5;
+  Color disabled;
   Color grey;
   Color error;
   Color focus;

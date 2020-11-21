@@ -19,6 +19,7 @@ class SurveyView extends StatelessWidget {
     final labels = AppLocalizations.of(context);
     final AppTheme appTheme = Get.find<ThemeController>()
         .getAppThemeFromBrightness(context.theme.brightness);
+    final TextTheme textTheme = context.theme.textTheme;
     final QuestionnaireController dataController = Get.find();
     final SurveyController controller = Get.find();
     final tabList = controller.tabModel.tabList;
@@ -110,19 +111,74 @@ class SurveyView extends StatelessWidget {
               ? StyledSubmitFab()
               : Container(),
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          items: [
-            BottomNavigationBarItem(
-              icon: const Icon(Icons.navigate_before),
-              label: labels.navigation.previous,
+        bottomNavigationBar: BottomAppBar(
+          color: appTheme.bg1,
+          child: Container(
+            height: 60,
+            child: Obx(
+              () => Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  // Previous
+                  Expanded(
+                    child: ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(elevation: 0.0),
+                      onPressed: controller.isTabIndexAtStart()
+                          ? null
+                          : () => controller.tabController.index--,
+                      icon: const Icon(Icons.navigate_before),
+                      label: Text(labels.navigation.previous),
+                    ),
+                  ),
+                  const VerticalDivider(
+                    thickness: 2.0,
+                    width: 2.0,
+                    color: Colors.black,
+                  ),
+                  // Next
+                  Expanded(
+                    child: ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(elevation: 0.0),
+                      onPressed: controller.isTabIndexAtEnd()
+                          ? null
+                          : () => controller.tabController.index++,
+                      icon: const Icon(Icons.navigate_next),
+                      label: Text(labels.navigation.next),
+                    ),
+                  ),
+                ],
+              ),
             ),
-            BottomNavigationBarItem(
-              icon: const Icon(Icons.navigate_next),
-              label: labels.navigation.next,
-            ),
-          ],
+          ),
         ),
       ),
     );
   }
 }
+
+// BottomNavigationBar(
+//   /// regardless of RTL or LTR locale...
+//   /// index 0 = previous, index 1 = next
+//   currentIndex: 0,
+//   type: BottomNavigationBarType.shifting,
+//   selectedFontSize: textTheme.bodyText1.fontSize,
+//   selectedItemColor: appTheme.accentTxt,
+//   unselectedFontSize: textTheme.bodyText1.fontSize,
+//   unselectedItemColor: appTheme.accentTxt,
+//   items: [
+//     // 0: previous, defaults to selected
+//     BottomNavigationBarItem(
+//       backgroundColor: (false) ? appTheme.grey : appTheme.primary,
+//       icon: const Icon(Icons.navigate_before),
+//       label: labels.navigation.previous,
+//     ),
+//     // 2: next, defaults to unselected
+//     BottomNavigationBarItem(
+//       backgroundColor: (false) ? appTheme.primary : appTheme.grey,
+//       icon: const Icon(Icons.navigate_next),
+//       label: labels.navigation.next,
+//     ),
+//   ],
+// ),
