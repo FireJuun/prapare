@@ -21,6 +21,7 @@ class UserResponsesController extends GetxController {
           e.value.questionLinkId == questionLinkId &&
           e.value.answers[0].value == answerCode);
 
+  //todo: handle null or error where questionLinkId has no mapped response
   Rx<UserResponse> findActiveResponse(String questionLinkId) =>
       _rxMappedActiveResponses[questionLinkId];
 

@@ -19,9 +19,14 @@ class GroupDetail extends StatelessWidget {
 
         /// asMap().entries.map()...toList() used to pass index w/ map
         /// This is used to build each Question as its own QuestionItem widget
-        children: group.surveyItems
-            .map((entry) => QuestionItem(group: group, question: entry))
-            .toList(),
+        children: group.surveyItems.map((entry) {
+          if (entry is Question) {
+            return QuestionItem(group: group, question: entry);
+          } else if (entry is ItemGroup) {
+            // used for recursive questions, such as in Q14: '/93041-2/93031-3' in the past year...
+            return GroupDetail(group: entry);
+          }
+        }).toList(),
       ),
     );
   }

@@ -24,11 +24,13 @@ class AnswerItemRadioButton extends StatelessWidget {
         return RadioListTile<UserResponse>(
           title: AnswerTitle(answer: answer),
           value: rxUserResponse.value,
-          groupValue: rxActiveResponse.value,
+          groupValue: rxUserResponse.value,
+          // value: rxUserResponse.value,
+          // groupValue: rxActiveResponse.value,
           toggleable: true,
           onChanged: (newResponse) async {
-            await ToggleRadioButtonCommand()
-                .execute(oldResponse: rxUserResponse, newResponse: newResponse);
+            // await ToggleRadioButtonCommand()
+            //     .execute(oldResponse: rxUserResponse, newResponse: newResponse);
           },
         );
       },

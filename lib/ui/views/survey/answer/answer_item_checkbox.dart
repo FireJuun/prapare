@@ -15,10 +15,12 @@ class AnswerItemCheckbox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() => CheckboxListTile(
+    //todo: wrap in obx
+    return CheckboxListTile(
         title: AnswerTitle(answer: answer),
-        value: rxUserResponse.value.answers[0].value,
+        value: false,
+        // value: rxUserResponse.value.answers[1].value ?? '',
         onChanged: (newValue) async =>
-            ToggleCheckboxCommand().execute(rxUserResponse: rxUserResponse)));
+            ToggleCheckboxCommand().execute(rxUserResponse: rxUserResponse));
   }
 }
