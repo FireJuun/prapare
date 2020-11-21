@@ -1,7 +1,7 @@
 // This is a generated file; do not edit or check into version control.
 FLUTTER_ROOT=/usr/local/bin/flutter
-FLUTTER_APPLICATION_PATH=/Users/juun/Workspace/prapare
-FLUTTER_TARGET=/Users/juun/Workspace/prapare/lib/main.dart
+FLUTTER_APPLICATION_PATH=/Users/juun/dev/prapare
+FLUTTER_TARGET=/Users/juun/dev/prapare/lib/main.dart
 FLUTTER_BUILD_DIR=build
 SYMROOT=${SOURCE_ROOT}/../build/ios
 OTHER_LDFLAGS=$(inherited) -framework Flutter
