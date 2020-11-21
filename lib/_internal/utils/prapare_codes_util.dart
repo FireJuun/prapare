@@ -32,8 +32,6 @@ class PrapareCodesUtil {
           return answerType.decimal;
         // labels.prapare.moneyAndResources.without;
         case '/93041-2/93031-3':
-          // todo: this is a check multiple...which swaps yes/no
-          // radio for now, need to swap
           return answerType.radio;
 
         default:
@@ -87,38 +85,27 @@ class PrapareCodesUtil {
 
         // *** FAMILY AND HOME ***
         case '/93042-0/63512-8':
-          // todo: this accepts a decimal response
-          //? FYI: worded differently in FHIR resource
           return labels.prapare.familyAndHome.household;
         case '/93042-0/71802-3':
-          //? FYI: worded differently in FHIR resource
           return labels.prapare.familyAndHome.housing;
         case '/93042-0/93033-9':
           return labels.prapare.familyAndHome.losingHousing;
         case '/93042-0/56799-0':
-          //? FYI: worded differently in FHIR resource
           return labels.prapare.familyAndHome.address;
 
         // *** MONEY AND RESOURCES ***
         case '/93041-2/82589-3':
-          //? FYI: worded differently in FHIR resource
           return labels.prapare.moneyAndResources.school;
         case '/93041-2/67875-5':
-          //? FYI: worded differently in FHIR resource
           return labels.prapare.moneyAndResources.work;
         case '/93041-2/76437-3':
-          //? FYI: worded differently in FHIR resource
           return labels.prapare.moneyAndResources.insurance;
         case '/93041-2/63586-2':
-          //? FYI: worded differently in FHIR resource
           // todo: this accepts decimal + choose not to respond
           return labels.prapare.moneyAndResources.income;
         case '/93041-2/93031-3':
-          //? FYI: worded differently in FHIR resource
-          // todo: this is a check multiple...which swaps yes/no
           return labels.prapare.moneyAndResources.without;
         case '/93041-2/93030-5':
-          //? FYI: worded differently in FHIR resource
           return labels.prapare.moneyAndResources.transportation;
 
         // *** SOCIAL AND EMOTIONAL HEALTH ***
@@ -268,8 +255,7 @@ class PrapareCodesUtil {
         case 'LA13914-9':
           return labels.prapare.answers.howMuch.veryMuch;
 
-        // todo: this answer choice needs a valueCoding code
-        case 'XXXX':
+        case 'LA4720-4':
           return labels.prapare.answers.partner.noPartnerInLastYear;
 
         default:
