@@ -26,7 +26,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   cupertino_icons: ^1.0.0
-  fhir: ^0.0.9
+  fhir: ^0.0.11
   flutter_sheet_localization: ^2.0.0
   flutter_svg: ^0.19.0
   get: ^3.15.0

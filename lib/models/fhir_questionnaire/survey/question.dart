@@ -20,8 +20,8 @@ class Question extends SurveyItem {
         text: item.text,
         itemType: item.type,
         answers: <Answer>{},
-        mandatory: item.required_ == null ? false : item.required_.result(),
-        multiAnswer: item.repeats == null ? false : item.repeats.result(),
+        mandatory: item.required_ == null ? false : item.required_.toJson(),
+        multiAnswer: item.repeats == null ? false : item.repeats.toJson(),
         subQuestions: <Question>[]);
 
     /// if the question is a choice or open-choice, it means that there will be
@@ -30,6 +30,7 @@ class Question extends SurveyItem {
         item.type == QuestionnaireItemType.open_choice) {
       /// the type is listed under the extension with the url
       /// http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl
+      print(item.linkId);
       final ext = item.extension_.firstWhere(
           (searchExt) =>
               searchExt.url ==
@@ -55,7 +56,7 @@ class Question extends SurveyItem {
 
         /// generate list of allowed answers
         item.answerOption
-            ?.forEach((e) => answers.add(Answer.fromAnswerOption(e)));
+            ?.forEach((e) => question.answers.add(Answer.fromAnswerOption(e)));
       }
     }
 

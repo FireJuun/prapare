@@ -12,7 +12,7 @@ class QuestionnaireController extends GetxController {
   final QuestionnaireModel _model = QuestionnaireModel();
 
   final UserResponsesController _responsesController = Get.find();
-  List<Question> _allQuestions;
+  List<SurveyItem> _allQuestions;
 
   //todo: implement error handling / orElse
   ItemGroup getGroupFromCode(String code) => _model.data.survey.surveyItems
