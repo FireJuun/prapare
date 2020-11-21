@@ -157,28 +157,3 @@ class SurveyView extends StatelessWidget {
     );
   }
 }
-
-// BottomNavigationBar(
-//   /// regardless of RTL or LTR locale...
-//   /// index 0 = previous, index 1 = next
-//   currentIndex: 0,
-//   type: BottomNavigationBarType.shifting,
-//   selectedFontSize: textTheme.bodyText1.fontSize,
-//   selectedItemColor: appTheme.accentTxt,
-//   unselectedFontSize: textTheme.bodyText1.fontSize,
-//   unselectedItemColor: appTheme.accentTxt,
-//   items: [
-//     // 0: previous, defaults to selected
-//     BottomNavigationBarItem(
-//       backgroundColor: (false) ? appTheme.grey : appTheme.primary,
-//       icon: const Icon(Icons.navigate_before),
-//       label: labels.navigation.previous,
-//     ),
-//     // 2: next, defaults to unselected
-//     BottomNavigationBarItem(
-//       backgroundColor: (false) ? appTheme.primary : appTheme.grey,
-//       icon: const Icon(Icons.navigate_next),
-//       label: labels.navigation.next,
-//     ),
-//   ],
-// ),
