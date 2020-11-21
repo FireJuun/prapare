@@ -62,6 +62,10 @@ class SurveyController extends GetxController
       .take(tabModel.tabList.length - 1)
       .every((e) => e.isChecked.value);
 
+  bool isTabIndexAtStart() => (_rxTabIndex.value == 0) ? true : false;
+  bool isTabIndexAtEnd() =>
+      (_rxTabIndex.value == _tabController.length - 1) ? true : false;
+
   String getTabIconFromIndex(int index, int ctrlIndex) {
     final SurveyTab obj = tabModel.tabList[index];
     if (index == ctrlIndex) {
