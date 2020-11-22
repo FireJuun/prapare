@@ -117,6 +117,12 @@ class AppLocalizations {
         vaccine: "Vaccine",
         vaccines: "Vaccines",
       ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "Cancel",
+        next: "Next",
+        previous: "Previous",
+        submit: "Submit",
+      ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "Protocol for Responding to and Assessing Patients' Assets, Risks, and Experiences [PRAPARE]",
@@ -365,6 +371,12 @@ class AppLocalizations {
         immunizations: "inmunizaciones",
         vaccine: "Vacuna",
         vaccines: "Vacunas",
+      ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "Cancelar",
+        next: "próximo",
+        previous: "Anterior",
+        submit: "Enviar",
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -615,6 +627,12 @@ class AppLocalizations {
         vaccine: "لقاح",
         vaccines: "اللقاحات",
       ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "إلغاء",
+        next: "التالى",
+        previous: "السابق",
+        submit: "إرسال",
+      ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "بروتوكول للاستجابة للوتقييم الأصول المرضى، والمخاطر، والخبرات [PRAPARE]",
@@ -860,6 +878,12 @@ class AppLocalizations {
         immunizations: "टीकाकरण",
         vaccine: "टीका",
         vaccines: "टीके",
+      ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "रद्द करना",
+        next: "आगे",
+        previous: "पिछला",
+        submit: "प्रस्तुत",
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -1108,6 +1132,12 @@ class AppLocalizations {
         immunizations: "Иммунизация",
         vaccine: "вакцина",
         vaccines: "Вакцина",
+      ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "Отмена",
+        next: "следующий",
+        previous: "предыдущий",
+        submit: "представить",
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -1361,6 +1391,12 @@ class AppLocalizations {
         vaccine: "টীকা",
         vaccines: "টিকা",
       ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "বাতিল",
+        next: "পরবর্তী",
+        previous: "আগে",
+        submit: "জমা দিন",
+      ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "জবাবে এবং রোগীদের 'সম্পদ দ্বায়িত্বপ্রাপ্ত জন্য প্রোটোকল ঝুঁকি, এবং অভিজ্ঞতা [PRAPARE]",
@@ -1607,6 +1643,12 @@ class AppLocalizations {
         immunizations: "ကာကွယ်ဆေးထိုးပေးခြင်း",
         vaccine: "ကာကွယ်ဆေး",
         vaccines: "ကာကွယ်ဆေးများ",
+      ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "Cancel",
+        next: "နောက်တစ်ခု",
+        previous: "လွန်ခဲ့သော",
+        submit: "Submit",
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -1858,6 +1900,12 @@ class AppLocalizations {
         vaccine: "疫苗",
         vaccines: "疫苗",
       ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "取消",
+        next: "下一个",
+        previous: "以前",
+        submit: "提交",
+      ),
       prapare: AppLocalizations_Labels_Prapare(
         title: "用于响应和评估患者的资产，风险协议，与经验[PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
@@ -2091,6 +2139,12 @@ class AppLocalizations {
         vaccine: "疫苗",
         vaccines: "疫苗",
       ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "取消",
+        next: "下一個",
+        previous: "以前",
+        submit: "提交",
+      ),
       prapare: AppLocalizations_Labels_Prapare(
         title: "用於響應和評估患者的資產，風險協議，與經驗[PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
@@ -2323,6 +2377,12 @@ class AppLocalizations {
         immunizations: "ایمن سازی",
         vaccine: "واکسن",
         vaccines: "واکسن ها",
+      ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "لغو کردن",
+        next: "بعد",
+        previous: "قبلی",
+        submit: "ارسال",
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -2571,6 +2631,12 @@ class AppLocalizations {
         immunizations: "immunisations",
         vaccine: "Vaccin",
         vaccines: "Vaccins",
+      ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "Annuler",
+        next: "Suivant",
+        previous: "précédent",
+        submit: "Soumettre",
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -2824,6 +2890,12 @@ class AppLocalizations {
         vaccine: "Impfstoff",
         vaccines: "Impfungen",
       ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "Stornieren",
+        next: "Nächster",
+        previous: "Bisherige",
+        submit: "einreichen",
+      ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "Protokoll zu reagieren und Beurteilung der Patienten Vermögenswerte, Risiken und Erfahrungen [PRAPARE]",
@@ -3073,6 +3145,12 @@ class AppLocalizations {
         immunizations: "imunisasi",
         vaccine: "Vaksin",
         vaccines: "Vaksin",
+      ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "Membatalkan",
+        next: "Lanjut",
+        previous: "Sebelumnya",
+        submit: "Kirimkan",
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -3326,6 +3404,12 @@ class AppLocalizations {
         vaccine: "ワクチン",
         vaccines: "ワクチン",
       ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "キャンセル",
+        next: "次",
+        previous: "前",
+        submit: "参加する",
+      ),
       prapare: AppLocalizations_Labels_Prapare(
         title: "対応や患者の資産を評価するための議定書、リスク、および経験[PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
@@ -3565,6 +3649,12 @@ class AppLocalizations {
         immunizations: "ចាក់ថ្នាំបង្ការរោគ",
         vaccine: "ថ្នាំបង្ការ",
         vaccines: "វ៉ាក់សាំង",
+      ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "បោះបង់",
+        next: "បន្ទាប់",
+        previous: "មុន",
+        submit: "ដាក់ស្នើ",
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -3816,6 +3906,12 @@ class AppLocalizations {
         vaccine: "백신",
         vaccines: "백신",
       ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "취소",
+        next: "다음",
+        previous: "이전",
+        submit: "제출",
+      ),
       prapare: AppLocalizations_Labels_Prapare(
         title: "에 응답하는 환자의 자산을 평가하기위한 프로토콜 위험 경험 [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
@@ -4055,6 +4151,12 @@ class AppLocalizations {
         immunizations: "ພູມຕ້ານທານ",
         vaccine: "ສັກຢາວັກຊີນ",
         vaccines: "ວັກ​ຊີນ​ປ້ອງ​ກັນ",
+      ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "ຍົກເລີກການ",
+        next: "ຖັດໄປ",
+        previous: "ທີ່ຜ່ານມາ",
+        submit: "ຍື່ນສະເຫນີ",
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -4306,6 +4408,12 @@ class AppLocalizations {
         vaccine: "लस",
         vaccines: "लसीकरण",
       ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "रद्द करा",
+        next: "पुढे",
+        previous: "मागील",
+        submit: "प्रस्तुत करणे",
+      ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "प्रतिसाद आणि रुग्णांना 'मालमत्तेचे मुल्यांकन, प्रोटोकॉल जोखीम, आणि अनुभव [PRAPARE]",
@@ -4551,6 +4659,12 @@ class AppLocalizations {
         immunizations: "प्रतिरक्षक",
         vaccine: "टीका",
         vaccines: "औषधी",
+      ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "रद्द",
+        next: "अर्को",
+        previous: "अघिल्लो",
+        submit: "पेश",
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -4799,6 +4913,12 @@ class AppLocalizations {
         immunizations: "imunizações",
         vaccine: "Vacina",
         vaccines: "Vacinas",
+      ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "Cancelar",
+        next: "Próximo",
+        previous: "Anterior",
+        submit: "Enviar",
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -5050,6 +5170,12 @@ class AppLocalizations {
         vaccine: "ਵੈਕਸੀਨ",
         vaccines: "ਟੀਕੇ",
       ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "ਰੱਦ ਕਰੋ",
+        next: "ਅਗਲਾ",
+        previous: "ਪਿਛਲਾ",
+        submit: "ਜਮ੍ਹਾਂ ਕਰੋ",
+      ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "ਦੇ ਜਵਾਬ ਅਤੇ ਮਰੀਜ਼ ਨੂੰ 'ਸੰਪਤੀ ਦਾ ਿਨਰਧਾਰਨ ਲਈ ਪਰੋਟੋਕਾਲ ਖ਼ਤਰੇ, ਅਤੇ ਅਨੁਭਵ [PRAPARE]",
@@ -5297,6 +5423,12 @@ class AppLocalizations {
         immunizations: "tallaalada",
         vaccine: "tallaalka",
         vaccines: "Talaalo",
+      ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "Jooji",
+        next: "Next",
+        previous: "Hore",
+        submit: "Gudbi",
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -5550,6 +5682,12 @@ class AppLocalizations {
         vaccine: "chanjo",
         vaccines: "Chanjo",
       ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "kufuta",
+        next: "next",
+        previous: "Kabla",
+        submit: "wasilisha",
+      ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "Itifaki ya Akijibu na Tathmini ya Wagonjwa Mali, UN, na Uzoefu [PRAPARE]",
@@ -5797,6 +5935,12 @@ class AppLocalizations {
         immunizations: "Imunisasyon",
         vaccine: "bakuna",
         vaccines: "Mga bakuna",
+      ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "kanselahin",
+        next: "susunod",
+        previous: "nakaraan",
+        submit: "Ipasa",
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -6052,6 +6196,12 @@ class AppLocalizations {
         vaccine: "วัคซีน",
         vaccines: "วัคซีน",
       ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "ยกเลิก",
+        next: "ต่อไป",
+        previous: "ก่อน",
+        submit: "เสนอ",
+      ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "Protocol สำหรับการตอบสนองและการประเมินผู้ป่วยสินทรัพย์เสี่ยงและประสบการณ์ [PRAPARE]",
@@ -6300,6 +6450,12 @@ class AppLocalizations {
         vaccine: "vaktsina",
         vaccines: "Vaksinalar",
       ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "Bekor qilish",
+        next: "Keyingi",
+        previous: "avvalgi",
+        submit: "Submit",
+      ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
             ", Javob berish va bemor aktivlari baholash uchun Protokol tavakkalchiliklarni, va tajriba [PRAPARE]",
@@ -6546,6 +6702,12 @@ class AppLocalizations {
         immunizations: "chích ngừa",
         vaccine: "vắc-xin",
         vaccines: "Vắc-xin",
+      ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "hủy bỏ",
+        next: "Kế tiếp",
+        previous: "Trước",
+        submit: "Gửi đi",
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -7215,6 +7377,34 @@ class AppLocalizations_Labels_Medical {
         return vaccine;
       case 'vaccines':
         return vaccines;
+      default:
+        return '';
+    }
+  }
+}
+
+class AppLocalizations_Labels_Navigation {
+  const AppLocalizations_Labels_Navigation(
+      {this.cancel, this.next, this.previous, this.submit});
+
+  final String cancel;
+
+  final String next;
+
+  final String previous;
+
+  final String submit;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'cancel':
+        return cancel;
+      case 'next':
+        return next;
+      case 'previous':
+        return previous;
+      case 'submit':
+        return submit;
       default:
         return '';
     }
@@ -7929,6 +8119,7 @@ class AppLocalizations_Labels {
       this.general,
       this.language,
       this.medical,
+      this.navigation,
       this.prapare,
       this.registration,
       this.settings});
@@ -7944,6 +8135,8 @@ class AppLocalizations_Labels {
   final AppLocalizations_Labels_Language language;
 
   final AppLocalizations_Labels_Medical medical;
+
+  final AppLocalizations_Labels_Navigation navigation;
 
   final AppLocalizations_Labels_Prapare prapare;
 

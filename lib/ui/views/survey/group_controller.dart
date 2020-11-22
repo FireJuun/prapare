@@ -40,6 +40,10 @@ class GroupController extends GetxController with SingleGetTickerProviderMixin {
     }
   }
 
+  bool isTabIndexAtStart() => (_rxTabIndex.value == 0) ? true : false;
+  bool isTabIndexAtEnd() =>
+      (_rxTabIndex.value == _tabController.length - 1) ? true : false;
+
   @override
   void onInit() {
     _tabController = TabController(

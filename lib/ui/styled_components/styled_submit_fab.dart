@@ -15,7 +15,7 @@ class StyledSubmitFab extends StatelessWidget {
       child: FloatingActionButton.extended(
         label: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: Text(labels.auth.submit, style: textTheme.headline5),
+          child: Text(labels.navigation.submit, style: textTheme.headline5),
         ),
         onPressed: () async => await SubmitQuestionnaireCommand().execute(),
       ),
