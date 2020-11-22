@@ -2,21 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/controllers/commands/commands.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
+import 'package:prapare/models/fhir_questionnaire/survey/item_type.dart';
 
 class AnswerItemDecimal extends StatefulWidget {
   const AnswerItemDecimal({
     Key key,
     @required this.answer,
     @required this.rxUserResponse,
-    bool isInteger,
-  })  : _isInteger = isInteger ?? false,
-        assert(answer != null),
+  })  : assert(answer != null),
         assert(rxUserResponse != null),
         super(key: key);
 
   final Answer answer;
   final Rx<UserResponse> rxUserResponse;
-  final bool _isInteger;
 
   @override
   _AnswerItemDecimalState createState() => _AnswerItemDecimalState();
@@ -24,21 +22,21 @@ class AnswerItemDecimal extends StatefulWidget {
 
 class _AnswerItemDecimalState extends State<AnswerItemDecimal> {
   TextEditingController _textEditingController;
-  final RxString _obj = ''.obs;
+  final RxString _rxString = ''.obs;
 
   @override
   Widget build(BuildContext context) {
-    // todo: handle item entry + debounce
+    final bool _isInteger = widget.answer.answerItemType == ItemType.integer;
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 16.0),
       child: TextField(
         controller: _textEditingController,
-        onChanged: (newValue) => _obj.value = newValue,
-        keyboardType:
-            TextInputType.numberWithOptions(decimal: !widget._isInteger),
+        onChanged: (newValue) => _rxString.value = newValue.toString(),
+        keyboardType: TextInputType.numberWithOptions(decimal: !_isInteger),
         decoration: InputDecoration(
           border: const OutlineInputBorder(),
-          labelText: 'answer: ${widget._isInteger ? "integer" : "decimal"}',
+          labelText: 'answer: ${_isInteger ? "integer" : "decimal"}',
         ),
       ),
     );
@@ -46,10 +44,13 @@ class _AnswerItemDecimalState extends State<AnswerItemDecimal> {
 
   @override
   void initState() {
+    // initial value set to blank if you type in 0 or 0.0
+
     _textEditingController = TextEditingController(
-        text: widget.rxUserResponse.value.responseType.value);
+        // ToDo: works only for answer
+        text: widget.rxUserResponse.value.answers[0].value?.toString() ?? '');
     DebounceAndSaveResponseCommand()
-        .execute(rxString: _obj, response: widget.rxUserResponse);
+        .execute(rxString: _rxString, response: widget.rxUserResponse);
     super.initState();
   }
 

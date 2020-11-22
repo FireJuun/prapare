@@ -9,7 +9,7 @@ import 'package:prapare/controllers/theme_controller.dart';
 import 'package:prapare/localization.dart';
 import 'package:prapare/ui/styled_components/app_logo.dart';
 import 'package:prapare/ui/themes.dart';
-import 'package:prapare/ui/views/survey/survey_controller.dart';
+import 'package:prapare/ui/views/survey/group_controller.dart';
 
 // spec: https://stackoverflow.com/questions/63231817/custom-flexiblespacebar-widget
 
@@ -20,8 +20,8 @@ class SurveyHeaderFlexible extends StatelessWidget {
   Widget build(BuildContext context) {
     final AppTheme appTheme = Get.find<ThemeController>()
         .getAppThemeFromBrightness(context.theme.brightness);
-    final SurveyController surveyController = Get.find();
-    final tabList = surveyController.tabModel.tabList;
+    final GroupController groupController = Get.find();
+    final tabList = groupController.tabModel.tabList;
     final codesUtil = PrapareCodesUtil();
     final labels = AppLocalizations.of(context);
 
@@ -49,7 +49,7 @@ class SurveyHeaderFlexible extends StatelessWidget {
               child: TabBar(
                 labelPadding:
                     const EdgeInsets.symmetric(horizontal: 2.0, vertical: 0.0),
-                controller: surveyController.tabController,
+                controller: groupController.tabController,
                 unselectedLabelColor: appTheme.grey,
                 labelColor: Colors.black,
                 tabs: [
@@ -64,8 +64,8 @@ class SurveyHeaderFlexible extends StatelessWidget {
                       // issue: https://github.com/flutter/flutter/issues/13322
                       icon: Obx(
                         () => SvgPicture.asset(
-                            surveyController.getTabIconFromIndex(
-                                index, surveyController.rxTabIndex),
+                            groupController.getTabIconFromIndex(
+                                index, groupController.rxTabIndex),
                             height: _tabHeight),
                       ),
                     ),
@@ -77,13 +77,13 @@ class SurveyHeaderFlexible extends StatelessWidget {
               child: Obx(
                 () => Container(
                   height: 70,
-                  color: surveyController.getTabBackgroundColorFromIndex(
-                      surveyController.rxTabIndex, appTheme),
+                  color: groupController.getTabBackgroundColorFromIndex(
+                      groupController.rxTabIndex, appTheme),
                   padding: const EdgeInsets.symmetric(horizontal: 2.0),
                   child: Center(
                     child: Text(
                       codesUtil.getTitleFromLinkIdAndLocale(
-                          tabList[surveyController.rxTabIndex].code, labels),
+                          tabList[groupController.rxTabIndex].code, labels),
                       style: isExpanded
                           ? context.theme.accentTextTheme.headline5
                           : context.theme.accentTextTheme.headline6,
@@ -109,9 +109,8 @@ class SurveyHeaderFlexible extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 40),
               child: Row(children: [
                 Obx(() => SvgPicture.asset(
-                    surveyController.getTabIconFromIndex(
-                        surveyController.rxTabIndex,
-                        surveyController.rxTabIndex),
+                    groupController.getTabIconFromIndex(
+                        groupController.rxTabIndex, groupController.rxTabIndex),
                     height: _tabHeight)),
                 _subHeader(),
               ]),

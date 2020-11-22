@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 
 import 'package:fhir/r4.dart';
+import 'package:get/get.dart';
 import 'package:prapare/_internal/constants/prapare_survey.dart';
+import 'package:prapare/services/db_interface.dart';
 
 import 'fhir_questionnaire.dart';
 import 'survey/export.dart';
@@ -83,8 +85,8 @@ class QuestionnaireModel {
       if (subItem.type == QuestionnaireItemType.choice) {
         final List<UserResponse> responsesForThisItem =
             _data.userResponses.toList();
-        responsesForThisItem
-            .retainWhere((response) => response.questionCode == subItem.linkId);
+        responsesForThisItem.retainWhere(
+            (response) => response.questionLinkId == subItem.linkId);
         if (responsesForThisItem.isNotEmpty) {
           response.add(
             QuestionnaireResponseItem(
@@ -120,11 +122,19 @@ class QuestionnaireModel {
     final responseAnswer = <QuestionnaireResponseAnswer>[];
     for (var answer in responsesForThisItem) {
       final QuestionnaireAnswerOption thisAnswer = item.answerOption.firstWhere(
-          (option) => option.valueCoding.code == Code(answer.answerCode),
+          (option) => option.valueCoding.code == Code(answer.questionLinkId),
           orElse: () => null);
       responseAnswer.add(
           QuestionnaireResponseAnswer(valueCoding: thisAnswer?.valueCoding));
     }
     return responseAnswer;
+  }
+
+  Future saveResponses() async {
+    final saveResult = await DbInterface().save(_data.response);
+    saveResult.fold(
+      (l) => Get.snackbar('Error: ', l.errorMessage),
+      (r) => Get.snackbar('Saved', 'Survey Successfully Saved'),
+    );
   }
 }

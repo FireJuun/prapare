@@ -28,7 +28,7 @@ class HomeView extends StatelessWidget {
                     AppLogo(),
                     StyledButtonLarge(
                         title: labels.general.newSurvey,
-                        onPressed: () => Get.toNamed(Routes.SURVEY)),
+                        onPressed: () => Get.toNamed(Routes.GROUP)),
                     StyledButtonLarge(title: labels.general.editSurvey
                         // onPressed: () => print(labels.general.birthDate),
                         ),

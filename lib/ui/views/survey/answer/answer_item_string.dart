@@ -47,7 +47,7 @@ class _AnswerItemStringState extends State<AnswerItemString> {
   @override
   void initState() {
     _textEditingController = TextEditingController(
-        text: widget.rxUserResponse.value.responseType.value);
+        text: widget.rxUserResponse.value.answers[0].value);
     DebounceAndSaveResponseCommand()
         .execute(rxString: _obj, response: widget.rxUserResponse);
     super.initState();

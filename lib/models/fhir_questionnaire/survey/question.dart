@@ -15,52 +15,86 @@ class Question extends SurveyItem {
   }) : super(linkId, text);
 
   factory Question.fromItem(QuestionnaireItem item) {
-    var question = Question(
+    final Question question = Question(
         linkId: item.linkId,
         text: item.text,
         itemType: item.type,
         answers: <Answer>{},
-        mandatory: item.required_ == null ? false : item.required_.result(),
-        multiAnswer: item.repeats == null ? false : item.repeats.result(),
+        mandatory: item.required_ == null ? false : item.required_.toJson(),
+        multiAnswer: item.repeats == null ? false : item.repeats.toJson(),
         subQuestions: <Question>[]);
 
-    /// if the question is a choice or open-choice, it means that there will be
-    /// a pre-defined list of allowable answers to be displayed to the user
-    if (item.type == QuestionnaireItemType.choice ||
-        item.type == QuestionnaireItemType.open_choice) {
-      /// the type is listed under the extension with the url
-      /// http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl
-      final ext = item.extension_.firstWhere(
-          (searchExt) =>
-              searchExt.url ==
-              FhirUri(
-                  'http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl'),
-          orElse: () => null);
+    switch (item.type) {
 
-      /// under that extension is a valueCodeableConcept, containing a coding,
-      /// with the system: http://hl7.org/fhir/questionnaire-item-control
-      if (ext != null) {
-        final coding = ext.valueCodeableConcept.coding.firstWhere(
-            (searchCoding) =>
-                searchCoding.system ==
-                FhirUri('http://hl7.org/fhir/questionnaire-item-control'));
+      /// if the question is a choice or open-choice, it means that there will be
+      /// a pre-defined list of allowable answers to be displayed to the user
+      case QuestionnaireItemType.choice:
+      case QuestionnaireItemType.open_choice:
+        {
+          /// the type is listed under the extension with the url
+          /// http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl
+          print(item.linkId);
+          final ext = item.extension_.firstWhere(
+              (searchExt) =>
+                  searchExt.url ==
+                  FhirUri(
+                      'http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl'),
+              orElse: () => null);
 
-        /// we map the format to one of the allowed choices
-        question.format = choiceType[coding.code];
+          /// under that extension is a valueCodeableConcept, containing a coding,
+          /// with the system: http://hl7.org/fhir/questionnaire-item-control
+          if (ext != null) {
+            final coding = ext.valueCodeableConcept.coding.firstWhere(
+                (searchCoding) =>
+                    searchCoding.system ==
+                    FhirUri('http://hl7.org/fhir/questionnaire-item-control'));
 
-        /// if we can't find it in that list, we state that it is an unknown
-        /// format to differentiate it from those questions without a list
-        /// of pre-defined choices
-        question.format ??= QFormat.unknown;
+            /// we map the format to one of the allowed choices
+            question.format = choiceType[coding.code];
 
-        /// generate list of allowed answers
-        item.answerOption
-            ?.forEach((e) => answers.add(Answer.fromAnswerOption(e)));
-      }
+            /// if we can't find it in that list, we state that it is an unknown
+            /// format to differentiate it from those questions without a list
+            /// of pre-defined choices
+            question.format ??= QFormat.unknown;
+
+            _generateListOfAllowedAnswers(item, question);
+          }
+          break;
+        }
+
+      /// These formats require direct input of user data.
+      /// in FHIR, they are listed as their original item type
+      // todo: figure out if we need to add text_box to FHIR...or if we should make the QFormat field also accept ItemTypes (which the FHIR survey is currently allowing)
+      case QuestionnaireItemType.text:
+        {
+          question.format = QFormat.text_box;
+          _createAnswerByQuestionAndItemType(question, ItemType.text);
+          break;
+        }
+      case QuestionnaireItemType.string:
+        {
+          question.format = QFormat.text_box;
+          _createAnswerByQuestionAndItemType(question, ItemType.string);
+          break;
+        }
+      case QuestionnaireItemType.decimal:
+        {
+          question.format = QFormat.text_box;
+          _createAnswerByQuestionAndItemType(question, ItemType.decimal);
+          break;
+        }
+      case QuestionnaireItemType.integer:
+        {
+          question.format = QFormat.text_box;
+          _createAnswerByQuestionAndItemType(question, ItemType.integer);
+          break;
+        }
+
+      // todo: handle other QuestionnaireItemTypes (e.g. time, bool)
+      /// if we didn't assign a format above, then it will be none.
+      default:
+        question.format ??= QFormat.none;
     }
-
-    /// if we didn't assign a format above, then it will be none.
-    question.format ??= QFormat.none;
 
     /// checks if there are nested subItems for this question, if there are,
     /// it will add each of them in turn
@@ -113,4 +147,25 @@ class Question extends SurveyItem {
 
   /// if there are sub-questions, they will be listed here
   List<Question> subQuestions;
+}
+
+void _generateListOfAllowedAnswers(QuestionnaireItem item, Question question) =>
+    item.answerOption?.forEach(
+      (e) => question.answers.add(
+        Answer.fromAnswerOption(
+          answer: e,
+          // set itemType based on questionnaire data
+          answerItemType: ItemTypeUtil()
+              .getItemTypeFromQuestionnaireItemType(question.itemType),
+        ),
+      ),
+    );
+
+void _createAnswerByQuestionAndItemType(Question question, ItemType itemType) {
+  /// ItemType and QuestionnaireItemType need to be parsed
+  /// to remove the 'ItemType.___' and return '___'
+  final String itemTypeCode = ItemTypeUtil().getCodeFromItemType(itemType);
+  question.answers.add(
+    Answer(answerItemType: itemType, code: itemTypeCode, text: ''),
+  );
 }
