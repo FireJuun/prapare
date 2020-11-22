@@ -324,7 +324,21 @@ const prapareSurvey = {
               ],
               "required": false,
               "linkId": "/93043-8/54899-0",
-              "text": "What language are you most comfortable speaking?"
+              "text": "What language are you most comfortable speaking?",
+              "item": [
+                {
+                  "type": "boolean",
+                  "linkId": "/93042-0/63512-8/LA30122-8",
+                  "code": [
+                    {
+                      "code": "LA30122-8",
+                      "display": "I choose not to answer this question",
+                      "system": "http://loinc.org"
+                    }
+                  ],
+                  "text": "I choose not to answer this question"
+                }
+              ]
             }
           ]
         },
@@ -496,7 +510,21 @@ const prapareSurvey = {
               ],
               "required": false,
               "linkId": "/93042-0/56799-0",
-              "text": "What address do you live at?"
+              "text": "What address do you live at?",
+              "item": [
+                {
+                  "type": "boolean",
+                  "linkId": "/93042-0/63512-8/LA30122-8",
+                  "code": [
+                    {
+                      "code": "LA30122-8",
+                      "display": "I choose not to answer this question",
+                      "system": "http://loinc.org"
+                    }
+                  ],
+                  "text": "I choose not to answer this question"
+                }
+              ]
             }
           ]
         },
