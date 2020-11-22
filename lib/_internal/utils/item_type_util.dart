@@ -2,6 +2,12 @@ import 'package:fhir/r4.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/item_type.dart';
 
 class ItemTypeUtil {
+  String getCodeFromItemType(ItemType itemType) =>
+      itemType.toString().split('.').last;
+
+  String getCodeFromQuestionnaireItemType(QuestionnaireItemType itemType) =>
+      itemType.toString().split('.').last;
+
   /// convert r4 QuestionnaireItemType to ItemType
   /// ItemType is used extensively by AnswerResponses
   ItemType getItemTypeFromQuestionnaireItemType(QuestionnaireItemType q) {

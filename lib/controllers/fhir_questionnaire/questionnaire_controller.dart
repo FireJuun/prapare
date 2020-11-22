@@ -59,11 +59,14 @@ class QuestionnaireController extends GetxController {
       case QuestionnaireItemType.boolean:
         _addQuestion(question.linkId, AnswerBoolean(false));
         break;
+
+      // NOTE Decimals and Integers can have a null value if no data are set
+      // otherwise a textediting controller will default to 0 or 0.0 in the data field
       case QuestionnaireItemType.decimal:
-        _addQuestion(question.linkId, AnswerDecimal(0));
+        _addQuestion(question.linkId, AnswerDecimal(null));
         break;
       case QuestionnaireItemType.integer:
-        _addQuestion(question.linkId, AnswerInteger(0));
+        _addQuestion(question.linkId, AnswerInteger(null));
         break;
       case QuestionnaireItemType.string:
         _addQuestion(question.linkId, AnswerString(''));

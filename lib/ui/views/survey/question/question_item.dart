@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:prapare/_internal/utils/item_type_util.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
-import 'package:prapare/models/fhir_questionnaire/survey/item_type.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/qformat.dart';
 import 'package:prapare/ui/views/survey/answer/answer_item.dart';
 
@@ -13,45 +13,56 @@ class QuestionItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> _buildAnswerItemList() {
-      final List<Widget> answerItemList = <Widget>[];
-      switch (question.format) {
-        case QFormat.radio_button:
-        case QFormat.check_box:
-          {
-            question.answers.toList().map(
-                  (entry) => answerItemList.add(
-                    AnswerItem(
-                      group: group,
-                      question: question,
-                      answer: entry,
-                    ),
-                  ),
-                );
-            break;
-          }
-        case QFormat.text_box:
-          {
-            final Answer _answer = question.answers
-                .firstWhere((element) => element.code == 'string');
-            // answerItemList.add(const Text('text'));
-            answerItemList.add(AnswerItem(
-              group: group,
-              question: question,
-              // todo: handle more than just string values
-              answer: _answer,
-            ));
-            break;
-          }
-        default:
-      }
-      answerItemList.add(const SizedBox(height: 16));
-      return answerItemList;
-    }
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: _buildAnswerItemList(),
+      children: _buildAnswerItemList(group, question),
     );
   }
+}
+
+List<Widget> _buildAnswerItemList(ItemGroup group, Question question) {
+  /// Since one question may have multiple item options (e.g. list, text box, etc),
+  /// The method to create AnswerItems was extracted
+  /// Each AnswerItem is self-aware, so it should still show its own layout correctly
+  final List<Widget> answerItemList = [];
+  switch (question.format) {
+    case QFormat.radio_button:
+    case QFormat.check_box:
+      {
+        final List<Answer> _newAnswers = question.answers.toList();
+        _newAnswers.forEach(
+          (entry) {
+            answerItemList.add(
+              AnswerItem(
+                group: group,
+                question: question,
+                answer: entry,
+              ),
+            );
+          },
+        );
+        break;
+      }
+
+    /// For now, text_box items assume no Answer exists, so it creates a new AnswerItem based on its type
+    /// todo: add ability for these items to search for their own subquestions
+    case QFormat.text_box:
+      {
+        /// ItemType and QuestionnaireItemType need to be parsed
+        /// to remove the 'QuestionnaireItemType.___' and return '___'
+        final String _qItemType =
+            ItemTypeUtil().getCodeFromQuestionnaireItemType(question.itemType);
+        final Answer _answer = question.answers
+            .firstWhere((element) => element.code == _qItemType);
+        answerItemList.add(AnswerItem(
+          group: group,
+          question: question,
+          answer: _answer,
+        ));
+        break;
+      }
+    default:
+  }
+  answerItemList.add(const SizedBox(height: 16));
+  return answerItemList;
 }

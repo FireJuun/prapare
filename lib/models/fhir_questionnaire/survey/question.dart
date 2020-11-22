@@ -64,17 +64,29 @@ class Question extends SurveyItem {
 
       /// These formats require direct input of user data.
       /// in FHIR, they are listed as their original item type
+      // todo: figure out if we need to add text_box to FHIR...or if we should make the QFormat field also accept ItemTypes (which the FHIR survey is currently allowing)
       case QuestionnaireItemType.text:
+        {
+          question.format = QFormat.text_box;
+          _createAnswerByQuestionAndItemType(question, ItemType.text);
+          break;
+        }
       case QuestionnaireItemType.string:
+        {
+          question.format = QFormat.text_box;
+          _createAnswerByQuestionAndItemType(question, ItemType.string);
+          break;
+        }
       case QuestionnaireItemType.decimal:
+        {
+          question.format = QFormat.text_box;
+          _createAnswerByQuestionAndItemType(question, ItemType.decimal);
+          break;
+        }
       case QuestionnaireItemType.integer:
         {
-          // todo: figure out if we need to add text_box to FHIR
-          // todo: handle other answer types above
           question.format = QFormat.text_box;
-          question.answers.add(
-            Answer(answerItemType: ItemType.string, code: 'string', text: ''),
-          );
+          _createAnswerByQuestionAndItemType(question, ItemType.integer);
           break;
         }
 
@@ -148,3 +160,12 @@ void _generateListOfAllowedAnswers(QuestionnaireItem item, Question question) =>
         ),
       ),
     );
+
+void _createAnswerByQuestionAndItemType(Question question, ItemType itemType) {
+  /// ItemType and QuestionnaireItemType need to be parsed
+  /// to remove the 'ItemType.___' and return '___'
+  final String itemTypeCode = ItemTypeUtil().getCodeFromItemType(itemType);
+  question.answers.add(
+    Answer(answerItemType: itemType, code: itemTypeCode, text: ''),
+  );
+}

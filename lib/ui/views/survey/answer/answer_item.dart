@@ -3,7 +3,9 @@ import 'package:get/get.dart';
 import 'package:prapare/controllers/controllers.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/item_type.dart';
+import 'package:prapare/models/fhir_questionnaire/survey/qformat.dart';
 
+import 'answer_item_checkbox.dart';
 import 'answer_item_decimal.dart';
 import 'answer_item_radio_button.dart';
 import 'answer_item_string.dart';
@@ -28,34 +30,41 @@ class AnswerItem extends StatelessWidget {
 
     try {
       switch (answer.answerItemType) {
-        // **** Checkbox Answer ***
-        //todo: fix checkbox handling...
-        // case ItemType.choice:
-        //   return AnswerItemCheckbox(
-        //       answer: answer, rxUserResponse: userResponse);
+        // **** Radio Buttons + Checkbox Answers ***
+        case ItemType.choice:
+        // todo: separate handling of open-choice
+        case ItemType.open_choice:
+          {
+            if (question.format == QFormat.radio_button) {
+              return AnswerItemRadioButton(
+                answer: answer,
+                rxUserResponse: userResponse,
+              );
+            } else if (question.format == QFormat.check_box) {
+              return AnswerItemCheckbox(
+                  answer: answer, rxUserResponse: userResponse);
+            }
+            // otherwise, return error
+            return Container(
+              child: Text(
+                  'error: ${answer.answerItemType} does not know how to handle ${question.format}'),
+            );
+          }
 
-        // **** Decimal Answers ***
+        // **** Number Answers ***
         case ItemType.decimal:
-          return AnswerItemDecimal(
-              answer: answer, rxUserResponse: userResponse);
         case ItemType.integer:
           return AnswerItemDecimal(
-              answer: answer, rxUserResponse: userResponse, isInteger: true);
+              answer: answer, rxUserResponse: userResponse);
 
         // **** String Answers ***
         case ItemType.string:
-          return AnswerItemString(answer: answer, rxUserResponse: userResponse);
         case ItemType.text:
-          // todo: handle answerText values
-          return AnswerItemString(
-              answer: answer, rxUserResponse: userResponse, isMultiLine: true);
+          return AnswerItemString(answer: answer, rxUserResponse: userResponse);
 
         // **** DEFAULT: Radio Button Answer ***
         default:
-          return AnswerItemRadioButton(
-            answer: answer,
-            rxUserResponse: userResponse,
-          );
+          return Container();
       }
     } catch (error) {
       return Container(child: Text(error.message));
