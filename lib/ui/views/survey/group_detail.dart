@@ -26,6 +26,7 @@ class GroupDetail extends StatelessWidget {
                 // first, build question title
                 QuestionTitle(questionLinkId: entry.linkId),
                 QuestionItem(group: group, question: entry),
+                const SizedBox(height: 16),
               ],
             );
           }

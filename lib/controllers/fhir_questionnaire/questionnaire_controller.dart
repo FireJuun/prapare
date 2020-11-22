@@ -13,6 +13,10 @@ class QuestionnaireController extends GetxController {
   final QuestionnaireModel _model = QuestionnaireModel();
 
   final UserResponsesController _responsesController = Get.find();
+
+  // *******************************************************************
+  // ******************* GETTERS AND SETTERS ***************************
+  // *******************************************************************
   List<SurveyItem> _allQuestions;
 
   FhirQuestionnaire getQuestionnaire() => _model.data;
@@ -29,6 +33,9 @@ class QuestionnaireController extends GetxController {
   int getTotalIndexFromQuestion(String questionLinkId) =>
       _allQuestions.indexWhere((e) => e.linkId == questionLinkId);
 
+  // *******************************************************************
+  // ******** MAPPING FUNCTIONS, ON FIRST LOAD OF QUESTIONNAIRE ********
+  // *******************************************************************
   void _mapAllQuestions() {
     _allQuestions = _model.data.survey.surveyItems
         .map((e) => (e as ItemGroup).surveyItems)
@@ -88,8 +95,8 @@ class QuestionnaireController extends GetxController {
   }
 
   void _addQuestion(String linkId, AnswerResponse answer) =>
-      _responsesController.rxResponses
-          .add(UserResponse(questionLinkId: linkId, answers: [answer]).obs);
+      _responsesController.rxUserResponsesMap.add(
+          linkId, UserResponse(questionLinkId: linkId, answers: [answer]).obs);
 
   void _mapAllActiveResponses() {
     /// defaults to blank answer on first load
@@ -104,7 +111,7 @@ class QuestionnaireController extends GetxController {
           itemGroup.surveyItems.forEach(
             (q) {
               if (q is Question) {
-                _responsesController.rxMappedActiveResponses.add(
+                _responsesController.rxUserResponsesMap.add(
                   q.linkId,
                   // create a blank User Response, which will have the active answers mapped into it
                   _handleBlankUserResponseByQuestionType(q),

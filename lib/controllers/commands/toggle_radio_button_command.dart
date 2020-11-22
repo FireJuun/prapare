@@ -5,40 +5,29 @@ import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 
 class ToggleRadioButtonCommand extends AbstractCommand {
   Future<void> execute({
-    @required Rx<UserResponse> oldResponse,
-    @required UserResponse newResponse,
+    @required Rx<UserResponse> userResponse,
+    @required String newResponse,
   }) async {
     // if toggled to off state
     if (newResponse == null) {
-      // set this boolean to false
-      // oldResponse.value.answers[0].value = false;
-
-      // final UserResponse _blankAnswerResponse = UserResponse(
-      //   questionLinkId: oldResponse.value.questionLinkId,
-      //   answers: [AnswerBoolean(false)],
-      // );
-
-      // reset the mapped userResponse (so that the button toggles off)
-      // responsesController
-      //     .rxMappedActiveResponses[oldResponse.value.questionLinkId]
-      //     .value = _blankAnswerResponse;
+      /// clear all UserResponses
+      /// note that if we want to still keep previously written items
+      /// we'll need to extract this into a separate method to handle different answer types
+      userResponse.value.answers.clear();
     } else {
-      // find all responses in the set and turn off their booleans
-      // responsesController
-      //     .setAllQuestionBooleansToFalse(oldResponse.value.questionLinkId);
-
-      // then toggle this boolean
-      // newResponse.answers[0].value = true;
-
-      // set active response field
-      responsesController
-          .rxMappedActiveResponses[oldResponse.value.questionLinkId]
-          .value = newResponse;
+      if (userResponse.value.answers.isEmpty) {
+        // create new response if one doesn't exist
+        userResponse.value.answers.add(AnswerCode(newResponse));
+      } else {
+        // otherwise, replace first value with this new code
+        userResponse.value.answers[0] = AnswerCode(newResponse);
+      }
     }
+    // responsesController.update();
 
     // check validator to see if survey is complete
     // ToDo: not sure how to change this method
-    validationController
-        .validateIfGroupIsCompleted(oldResponse.value.questionLinkId);
+    // validationController
+    // .validateIfGroupIsCompleted(userResponse.value.questionLinkId);
   }
 }

@@ -15,12 +15,14 @@ class AnswerItem extends StatelessWidget {
       {Key key,
       @required this.group,
       @required this.question,
-      @required this.answer})
+      @required this.answer,
+      this.activeCode})
       : super(key: key);
 
   final ItemGroup group;
   final Question question;
   final Answer answer;
+  final RxString activeCode;
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +41,7 @@ class AnswerItem extends StatelessWidget {
               return AnswerItemRadioButton(
                 answer: answer,
                 rxUserResponse: userResponse,
+                activeCode: activeCode ?? ''.obs,
               );
             } else if (question.format == QFormat.check_box) {
               return AnswerItemCheckbox(

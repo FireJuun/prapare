@@ -23,7 +23,7 @@ class ValidationController extends GetxController {
       // checkboxes will have true values, ?? in active response
       // todo: implement means to verify at least one checkbox is active
       final activeResponses =
-          _responsesController.rxMappedActiveResponses[q.linkId];
+          _responsesController.rxUserResponsesMap[q.linkId];
 
       // since ResponseType varies, for now we are handling strings / bool
       final test = activeResponses.value.answers[0].value;
