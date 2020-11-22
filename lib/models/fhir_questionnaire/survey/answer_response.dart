@@ -8,6 +8,7 @@ abstract class AnswerResponse {
   dynamic value;
   ItemType responseItemType;
 
+  // defaults to invalid until responseItemType is explicity set
   void _setResponseItemType() => responseItemType = ItemType.invalid;
 }
 

@@ -1,39 +1,6 @@
 import 'package:prapare/localization.dart';
-import 'package:prapare/models/fhir_questionnaire/survey/item_type.dart';
 
 class PrapareCodesUtil {
-  /// hard-coded for now
-  /// todo: use FHIR resource to determine answer type
-  ItemType getAnswerItemTypeFromQuestionCode(String linkId) {
-    try {
-      switch (linkId) {
-        // labels.prapare.personalCharacteristics.race
-        case '/93043-8/32624-9':
-          // todo: change this to check-box
-          return ItemType.choice;
-        // labels.prapare.familyAndHome.household
-        case '/93042-0/63512-8':
-          return ItemType.decimal;
-        // labels.prapare.familyAndHome.address
-        case '/93042-0/56799-0':
-          return ItemType.text;
-
-        // labels.prapare.moneyAndResources.income
-        case '/93041-2/63586-2':
-          // todo: this accepts decimal + choose not to respond
-          return ItemType.decimal;
-        // labels.prapare.moneyAndResources.without;
-        case '/93041-2/93031-3':
-          return ItemType.choice;
-
-        default:
-          return ItemType.choice;
-      }
-    } catch (error) {
-      return error.message;
-    }
-  }
-
   String getTitleFromLinkIdAndLocale(
       String linkId, AppLocalizations_Labels labels) {
     try {
