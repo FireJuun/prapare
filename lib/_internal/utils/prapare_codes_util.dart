@@ -1,49 +1,6 @@
 import 'package:prapare/localization.dart';
 
-enum answerType {
-  boolean,
-  checkbox,
-  decimal,
-  decimal_int,
-  radio,
-  string,
-  string_long,
-}
-
 class PrapareCodesUtil {
-  /// hard-coded for now
-  /// todo: use FHIR resource to determine answer type
-  answerType getAnswerTypeFromQuestionCode(String linkId) {
-    try {
-      switch (linkId) {
-        // labels.prapare.personalCharacteristics.race
-        case '/93043-8/32624-9':
-          return answerType.checkbox;
-        // labels.prapare.familyAndHome.household
-        case '/93042-0/63512-8':
-          return answerType.decimal_int;
-        // labels.prapare.familyAndHome.address
-        case '/93042-0/56799-0':
-          return answerType.string_long;
-
-        // labels.prapare.moneyAndResources.income
-        case '/93041-2/63586-2':
-          // todo: this accepts decimal + choose not to respond
-          return answerType.decimal;
-        // labels.prapare.moneyAndResources.without;
-        case '/93041-2/93031-3':
-          // todo: this is a check multiple...which swaps yes/no
-          // radio for now, need to swap
-          return answerType.radio;
-
-        default:
-          return answerType.radio;
-      }
-    } catch (error) {
-      return error.message;
-    }
-  }
-
   String getTitleFromLinkIdAndLocale(
       String linkId, AppLocalizations_Labels labels) {
     try {
@@ -87,38 +44,27 @@ class PrapareCodesUtil {
 
         // *** FAMILY AND HOME ***
         case '/93042-0/63512-8':
-          // todo: this accepts a decimal response
-          //? FYI: worded differently in FHIR resource
           return labels.prapare.familyAndHome.household;
         case '/93042-0/71802-3':
-          //? FYI: worded differently in FHIR resource
           return labels.prapare.familyAndHome.housing;
         case '/93042-0/93033-9':
           return labels.prapare.familyAndHome.losingHousing;
         case '/93042-0/56799-0':
-          //? FYI: worded differently in FHIR resource
           return labels.prapare.familyAndHome.address;
 
         // *** MONEY AND RESOURCES ***
         case '/93041-2/82589-3':
-          //? FYI: worded differently in FHIR resource
           return labels.prapare.moneyAndResources.school;
         case '/93041-2/67875-5':
-          //? FYI: worded differently in FHIR resource
           return labels.prapare.moneyAndResources.work;
         case '/93041-2/76437-3':
-          //? FYI: worded differently in FHIR resource
           return labels.prapare.moneyAndResources.insurance;
         case '/93041-2/63586-2':
-          //? FYI: worded differently in FHIR resource
           // todo: this accepts decimal + choose not to respond
           return labels.prapare.moneyAndResources.income;
         case '/93041-2/93031-3':
-          //? FYI: worded differently in FHIR resource
-          // todo: this is a check multiple...which swaps yes/no
           return labels.prapare.moneyAndResources.without;
         case '/93041-2/93030-5':
-          //? FYI: worded differently in FHIR resource
           return labels.prapare.moneyAndResources.transportation;
 
         // *** SOCIAL AND EMOTIONAL HEALTH ***
@@ -268,8 +214,7 @@ class PrapareCodesUtil {
         case 'LA13914-9':
           return labels.prapare.answers.howMuch.veryMuch;
 
-        // todo: this answer choice needs a valueCoding code
-        case 'XXXX':
+        case 'LA4720-4':
           return labels.prapare.answers.partner.noPartnerInLastYear;
 
         default:

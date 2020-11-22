@@ -8,6 +8,7 @@ class AnswerItemString extends StatefulWidget {
       {Key key,
       @required this.answer,
       @required this.rxUserResponse,
+      //todo: handle multiLine automatically by questionType
       bool isMultiLine})
       : _isMultiLine = isMultiLine ?? false,
         assert(answer != null),
@@ -47,7 +48,7 @@ class _AnswerItemStringState extends State<AnswerItemString> {
   @override
   void initState() {
     _textEditingController = TextEditingController(
-        text: widget.rxUserResponse.value.responseType.value);
+        text: widget.rxUserResponse.value.answers[0].value);
     DebounceAndSaveResponseCommand()
         .execute(rxString: _obj, response: widget.rxUserResponse);
     super.initState();

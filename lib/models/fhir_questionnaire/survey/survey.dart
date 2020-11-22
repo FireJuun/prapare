@@ -1,20 +1,17 @@
-import 'question.dart';
+import 'survey_item.dart';
 
 /// this will be the class that is actually passed to the controller to use
 /// it may be a survey, or it may just be a group of questions, but it is the
 /// group of questions that should be displayed together
 class Survey {
-  Survey({this.code, this.title, this.text, this.questions});
+  Survey({this.linkId, this.text, this.surveyItems});
 
-  /// the code that is used to designate the particular questionnaire
-  final String code;
-
-  /// this is the title of the overall survey, not just this group of questions
-  final String title;
+  /// the unique code for this particular questionnaire
+  final String linkId;
 
   /// the name of the questionnaire as it will be displayed
   final String text;
 
-  /// the list of questions to display
-  List<Question> questions;
+  /// the list sub-items
+  List<SurveyItem> surveyItems;
 }

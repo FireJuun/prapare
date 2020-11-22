@@ -8,19 +8,21 @@ class DebounceAndSaveResponseCommand extends AbstractCommand {
       {@required RxString rxString,
       @required Rx<UserResponse> response}) async {
     debounce(rxString, (String debouncedValue) {
+      // response.value.answers.firstWhere((element) => element is Answer)
       final UserResponse newResponse = response.value;
 
-      // todo: place in new location, when Answers() architecture changes
-      newResponse.responseType.value = debouncedValue;
+      // todo: replace with find-answer method, to better handle nested answers
+      newResponse.answers[0].value = debouncedValue;
 
       // set rxUserResponse and ActiveResponse values
       response.value = newResponse;
       responsesController
-          .findActiveResponse(response.value.questionCode)
+          .findActiveResponse(newResponse.answers[0].value.questionCode)
           .value = newResponse;
 
       // check validator to see if survey is complete
-      surveyController.validateIfSurveyIsCompleted(newResponse.surveyCode);
+      validationController
+          .validateIfGroupIsCompleted(newResponse.answers[0].value.surveyCode);
     },
         // time to debounce (wait) before saving
         time: const Duration(seconds: 1));

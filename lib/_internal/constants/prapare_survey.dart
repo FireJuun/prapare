@@ -2,17 +2,9 @@
 const prapareSurvey = {
   "subjectType": ["Patient"],
   "status": "draft",
-  "name": "SDOHCC_Questionnaire_PRAPARE_1",
-  "title": "SDOHCC Questionnaire PRAPARE 1",
+  "id": "PRAPARE-1.0",
+  "name": "SDOHCC_Questionnaire_PRAPARE",
   "resourceType": "Questionnaire",
-  "extension": [
-    {
-      "url":
-          "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-targetStructureMap",
-      "valueCanonical":
-          "http://hl7.org/fhir/us/sdoh-cc/StructureMap/SDOHCC-StructureMap-HungerVitalSignMapper-1"
-    }
-  ],
   "meta": {
     "profile": [
       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire|2.7"
@@ -26,10 +18,10 @@ const prapareSurvey = {
       "type": "group",
       "code": [
         {
-          "code": "Modified_93025-5",
+          "code": "93025-5",
           "display":
               "Protocol for Responding to and Assessing Patients' Assets, Risks, and Experiences [PRAPARE]",
-          "system": "http://loinc.org/modified"
+          "system": "http://loinc.org"
         }
       ],
       "required": false,
@@ -41,9 +33,9 @@ const prapareSurvey = {
           "type": "group",
           "code": [
             {
-              "code": "Modified_93043-8",
-              "display": "Personal characteristics",
-              "system": "http://loinc.org/modified"
+              "code": "93043-8",
+              "display": "Personal characteristics [PRAPARE]",
+              "system": "http://loinc.org"
             }
           ],
           "required": false,
@@ -55,7 +47,7 @@ const prapareSurvey = {
               "code": [
                 {
                   "code": "56051-6",
-                  "display": "Do you consider yourself Hispanic/Latino?",
+                  "display": "Hispanic or Latino",
                   "system": "http://loinc.org"
                 }
               ],
@@ -68,26 +60,19 @@ const prapareSurvey = {
                       {
                         "system":
                             "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "drop-down",
-                        "display": "Drop down"
+                        "code": "radio-button",
+                        "display": "Radio button"
                       }
                     ],
-                    "text": "Drop down"
+                    "text": "Radio button"
                   }
                 }
               ],
               "required": false,
               "linkId": "/93043-8/56051-6",
-              "text": "Do you consider yourself Hispanic/Latino?",
+              "text": "Are you Hispanic or Latino?",
               "answerOption": [
                 {
-                  "extension": [
-                    {
-                      "url":
-                          "http://hl7.org/fhir/StructureDefinition/questionnaire-optionPrefix",
-                      "valueString": "1"
-                    }
-                  ],
                   "valueCoding": {
                     "code": "LA33-6",
                     "display": "Yes",
@@ -95,26 +80,17 @@ const prapareSurvey = {
                   }
                 },
                 {
-                  "extension": [
-                    {
-                      "url":
-                          "http://hl7.org/fhir/StructureDefinition/questionnaire-optionPrefix",
-                      "valueString": "2"
-                    }
-                  ],
-                  "valueCoding": {"code": "LA32-8", "display": "No"}
+                  "valueCoding": {
+                    "code": "LA32-8",
+                    "display": "No",
+                    "system": "http://loinc.org"
+                  }
                 },
                 {
-                  "extension": [
-                    {
-                      "url":
-                          "http://hl7.org/fhir/StructureDefinition/questionnaire-optionPrefix",
-                      "valueString": "3"
-                    }
-                  ],
                   "valueCoding": {
                     "code": "LA30122-8",
-                    "display": "I choose not to answer this question"
+                    "display": "I choose not to answer this question",
+                    "system": "http://loinc.org"
                   }
                 }
               ]
@@ -123,9 +99,9 @@ const prapareSurvey = {
               "type": "choice",
               "code": [
                 {
-                  "code": "Modified_32624-9",
-                  "display": "Which race(s) are you?",
-                  "system": "http://loinc.org/modified"
+                  "code": "32624-9",
+                  "display": "Race",
+                  "system": "http://loinc.org"
                 }
               ],
               "extension": [
@@ -137,57 +113,94 @@ const prapareSurvey = {
                       {
                         "system":
                             "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "drop-down",
-                        "display": "Drop down"
+                        "code": "check-box",
+                        "display": "Check-box"
                       }
                     ],
-                    "text": "Drop down"
+                    "text": "Check box"
                   }
                 }
               ],
               "required": false,
               "repeats": true,
               "linkId": "/93043-8/32624-9",
-              "text": "Which race(s) are you?",
+              "text": "Which race(s) are you? Check all that apply.",
               "answerOption": [
                 {
-                  "valueCoding": {"code": "LA6156-9", "display": "Asian"}
+                  "valueCoding": {
+                    "code": "LA6156-9",
+                    "display": "Asian",
+                    "system": "http://loinc.org"
+                  }
                 },
                 {
                   "valueCoding": {
                     "code": "LA14045-1",
-                    "display": "Native Hawaiian"
+                    "display": "Native Hawaiian",
+                    "system": "http://loinc.org"
                   }
                 },
                 {
                   "valueCoding": {
                     "code": "LA30187-1",
-                    "display": "Pacific Islander"
+                    "display": "Pacific Islander",
+                    "system": "http://loinc.org"
                   }
                 },
                 {
                   "valueCoding": {
                     "code": "LA14042-8",
-                    "display": "Black/African American"
+                    "display": "Black/African American",
+                    "system": "http://loinc.org"
                   }
                 },
                 {
-                  "valueCoding": {"code": "LA4457-3", "display": "White"}
+                  "valueCoding": {
+                    "code": "LA4457-3",
+                    "display": "White",
+                    "system": "http://loinc.org"
+                  }
                 },
                 {
                   "valueCoding": {
                     "code": "LA4-4",
-                    "display": "American Indian/Alaskan Native"
+                    "display": "American Indian/Alaskan Native",
+                    "system": "http://loinc.org"
                   }
                 },
                 {
-                  "valueCoding": {"code": "LA46-8", "display": "Other"}
+                  "valueCoding": {
+                    "code": "LA46-8",
+                    "display": "Other",
+                    "system": "http://loinc.org"
+                  }
                 },
                 {
                   "valueCoding": {
                     "code": "LA30122-8",
-                    "display": "I choose not to answer this question"
+                    "display": "I choose not to answer this question",
+                    "system": "http://loinc.org"
                   }
+                }
+              ],
+              "item": [
+                {
+                  "type": "string",
+                  "required": false,
+                  "linkId": "/93043-8/32624-9/LA46-8",
+                  "text": "Please write",
+                  "enableWhen": [
+                    {
+                      "answerCoding": {
+                        "code": "LA46-8",
+                        "display": "Other",
+                        "system": "http://loinc.org"
+                      },
+                      "question": "/93043-8/32624-9",
+                      "operator": "="
+                    }
+                  ],
+                  "enableBehavior": "all"
                 }
               ]
             },
@@ -197,7 +210,7 @@ const prapareSurvey = {
                 {
                   "code": "93035-4",
                   "display":
-                      "At any point in the past 2 years, has season or migrant farm work been your or your family's main source of income?",
+                      "Has season or migrant farm work been your or your family's main source of income at any point in past 2 years [PRAPARE]",
                   "system": "http://loinc.org"
                 }
               ],
@@ -210,11 +223,11 @@ const prapareSurvey = {
                       {
                         "system":
                             "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "drop-down",
-                        "display": "Drop down"
+                        "code": "radio-button",
+                        "display": "Radio button"
                       }
                     ],
-                    "text": "Drop down"
+                    "text": "Radio button"
                   }
                 }
               ],
@@ -224,15 +237,24 @@ const prapareSurvey = {
                   "At any point in the past 2 years, has season or migrant farm work been your or your family's main source of income?",
               "answerOption": [
                 {
-                  "valueCoding": {"code": "LA33-6", "display": "Yes"}
+                  "valueCoding": {
+                    "code": "LA33-6",
+                    "display": "Yes",
+                    "system": "http://loinc.org"
+                  }
                 },
                 {
-                  "valueCoding": {"code": "LA32-8", "display": "No"}
+                  "valueCoding": {
+                    "code": "LA32-8",
+                    "display": "No",
+                    "system": "http://loinc.org"
+                  }
                 },
                 {
                   "valueCoding": {
                     "code": "LA30122-8",
-                    "display": "I choose not to answer this question"
+                    "display": "I choose not to answer this question",
+                    "system": "http://loinc.org"
                   }
                 }
               ]
@@ -242,8 +264,7 @@ const prapareSurvey = {
               "code": [
                 {
                   "code": "93034-7",
-                  "display":
-                      "Have you been discharged from the armed forces of the United States?",
+                  "display": "Discharged from the U.S. Armed Forces",
                   "system": "http://loinc.org"
                 }
               ],
@@ -256,11 +277,11 @@ const prapareSurvey = {
                       {
                         "system":
                             "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "drop-down",
-                        "display": "Drop down"
+                        "code": "radio-button",
+                        "display": "Radio button"
                       }
                     ],
-                    "text": "Drop down"
+                    "text": "Radio button"
                   }
                 }
               ],
@@ -270,21 +291,30 @@ const prapareSurvey = {
                   "Have you been discharged from the armed forces of the United States?",
               "answerOption": [
                 {
-                  "valueCoding": {"code": "LA33-6", "display": "Yes"}
+                  "valueCoding": {
+                    "code": "LA33-6",
+                    "display": "Yes",
+                    "system": "http://loinc.org"
+                  }
                 },
                 {
-                  "valueCoding": {"code": "LA32-8", "display": "No"}
+                  "valueCoding": {
+                    "code": "LA32-8",
+                    "display": "No",
+                    "system": "http://loinc.org"
+                  }
                 },
                 {
                   "valueCoding": {
                     "code": "LA30122-8",
-                    "display": "I choose not to answer this question"
+                    "display": "I choose not to answer this question",
+                    "system": "http://loinc.org"
                   }
                 }
               ]
             },
             {
-              "type": "choice",
+              "type": "text",
               "code": [
                 {
                   "code": "54899-0",
@@ -292,41 +322,21 @@ const prapareSurvey = {
                   "system": "http://loinc.org"
                 }
               ],
-              "extension": [
-                {
-                  "url":
-                      "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "system":
-                            "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "drop-down",
-                        "display": "Drop down"
-                      }
-                    ],
-                    "text": "Drop down"
-                  }
-                }
-              ],
               "required": false,
               "linkId": "/93043-8/54899-0",
-              "text": "Preferred language",
-              "answerOption": [
+              "text": "What language are you most comfortable speaking?",
+              "item": [
                 {
-                  "valueCoding": {"code": "LA43-5", "display": "English"}
-                },
-                {
-                  "valueCoding": {
-                    "code": "LA30188-9",
-                    "display": "Language other than English"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "code": "LA30122-8",
-                    "display": "I choose not to answer this question"
-                  }
+                  "type": "boolean",
+                  "linkId": "/93042-0/63512-8/LA30122-8",
+                  "code": [
+                    {
+                      "code": "LA30122-8",
+                      "display": "I choose not to answer this question",
+                      "system": "http://loinc.org"
+                    }
+                  ],
+                  "text": "I choose not to answer this question"
                 }
               ]
             }
@@ -337,7 +347,7 @@ const prapareSurvey = {
           "code": [
             {
               "code": "93042-0",
-              "display": "Family and home",
+              "display": "Family and home [PRAPARE]",
               "system": "http://loinc.org"
             }
           ],
@@ -346,12 +356,12 @@ const prapareSurvey = {
           "text": "Family and home",
           "item": [
             {
-              "type": "decimal",
+              "type": "integer",
               "code": [
                 {
                   "code": "63512-8",
                   "display":
-                      "How many people are living or staying at this address?",
+                      "How many people are living or staying at this address [#]",
                   "system": "http://loinc.org"
                 }
               ],
@@ -364,7 +374,22 @@ const prapareSurvey = {
               ],
               "required": false,
               "linkId": "/93042-0/63512-8",
-              "text": "How many people are living or staying at this address?"
+              "text":
+                  "How many family members, including yourself, do you currently live with?",
+              "item": [
+                {
+                  "type": "boolean",
+                  "linkId": "/93042-0/63512-8/LA30122-8",
+                  "code": [
+                    {
+                      "code": "LA30122-8",
+                      "display": "I choose not to answer this question",
+                      "system": "http://loinc.org"
+                    }
+                  ],
+                  "text": "I choose not to answer this question"
+                }
+              ]
             },
             {
               "type": "choice",
@@ -384,60 +409,39 @@ const prapareSurvey = {
                       {
                         "system":
                             "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "drop-down",
-                        "display": "Drop down"
+                        "code": "radio-button",
+                        "display": "Radio button"
                       }
                     ],
-                    "text": "Drop down"
+                    "text": "Radio button"
                   }
                 }
               ],
               "required": false,
               "linkId": "/93042-0/71802-3",
-              "text": "Housing status",
+              "text": "What is your housing situation today?",
               "answerOption": [
                 {
                   "valueCoding": {
                     "code": "LA30189-7",
-                    "display": "I have housing"
+                    "display": "I have housing",
+                    "system": "http://loinc.org"
                   }
                 },
                 {
                   "valueCoding": {
                     "code": "LA30190-5",
                     "display":
-                        "I do not have housing (staying with others, in a hotel, in a shelter, living outside on the street, on a beach, in a car, or in a park)"
+                        "I do not have housing (staying with others, in a hotel, in a shelter, living outside on the street, on a beach, in a car, or in a park)",
+                    "system": "http://loinc.org"
                   }
                 },
                 {
                   "valueCoding": {
                     "code": "LA30122-8",
-                    "display": "I choose not to answer this question"
+                    "display": "I choose not to answer this question",
+                    "system": "http://loinc.org"
                   }
-                }
-              ],
-              "item": [
-                {
-                  "text": "Describes patients living arrangement",
-                  "type": "display",
-                  "linkId": "/93042-0/71802-3-help",
-                  "extension": [
-                    {
-                      "url":
-                          "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "text": "Help-Button",
-                        "coding": [
-                          {
-                            "code": "help",
-                            "display": "Help-Button",
-                            "system":
-                                "http://hl7.org/fhir/questionnaire-item-control"
-                          }
-                        ]
-                      }
-                    }
-                  ]
                 }
               ]
             },
@@ -446,7 +450,8 @@ const prapareSurvey = {
               "code": [
                 {
                   "code": "93033-9",
-                  "display": "Are you worried about losing your housing?",
+                  "display":
+                      "Are you worried about losing your housing [PRAPARE]",
                   "system": "http://loinc.org"
                 }
               ],
@@ -459,11 +464,11 @@ const prapareSurvey = {
                       {
                         "system":
                             "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "drop-down",
-                        "display": "Drop down"
+                        "code": "radio-button",
+                        "display": "Radio button"
                       }
                     ],
-                    "text": "Drop down"
+                    "text": "Radio button"
                   }
                 }
               ],
@@ -472,15 +477,24 @@ const prapareSurvey = {
               "text": "Are you worried about losing your housing?",
               "answerOption": [
                 {
-                  "valueCoding": {"code": "LA33-6", "display": "Yes"}
+                  "valueCoding": {
+                    "code": "LA33-6",
+                    "display": "Yes",
+                    "system": "http://loinc.org"
+                  }
                 },
                 {
-                  "valueCoding": {"code": "LA32-8", "display": "No"}
+                  "valueCoding": {
+                    "code": "LA32-8",
+                    "display": "No",
+                    "system": "http://loinc.org"
+                  }
                 },
                 {
                   "valueCoding": {
                     "code": "LA30122-8",
-                    "display": "I choose not to answer this question"
+                    "display": "I choose not to answer this question",
+                    "system": "http://loinc.org"
                   }
                 }
               ]
@@ -496,7 +510,21 @@ const prapareSurvey = {
               ],
               "required": false,
               "linkId": "/93042-0/56799-0",
-              "text": "Address"
+              "text": "What address do you live at?",
+              "item": [
+                {
+                  "type": "boolean",
+                  "linkId": "/93042-0/63512-8/LA30122-8",
+                  "code": [
+                    {
+                      "code": "LA30122-8",
+                      "display": "I choose not to answer this question",
+                      "system": "http://loinc.org"
+                    }
+                  ],
+                  "text": "I choose not to answer this question"
+                }
+              ]
             }
           ]
         },
@@ -505,7 +533,7 @@ const prapareSurvey = {
           "code": [
             {
               "code": "93041-2",
-              "display": "Money and resources",
+              "display": "Money and resources [PRAPARE]",
               "system": "http://loinc.org"
             }
           ],
@@ -518,7 +546,7 @@ const prapareSurvey = {
               "code": [
                 {
                   "code": "82589-3",
-                  "display": "Highest level of educ",
+                  "display": "Highest level of education",
                   "system": "http://loinc.org"
                 }
               ],
@@ -531,40 +559,45 @@ const prapareSurvey = {
                       {
                         "system":
                             "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "drop-down",
-                        "display": "Drop down"
+                        "code": "radio-button",
+                        "display": "Radio button"
                       }
                     ],
-                    "text": "Drop down"
+                    "text": "Radio button"
                   }
                 }
               ],
               "required": false,
               "linkId": "/93041-2/82589-3",
-              "text": "Highest level of educ",
+              "text":
+                  "What is the highest level of school that you have finished?",
               "answerOption": [
                 {
                   "valueCoding": {
                     "code": "LA30191-3",
-                    "display": "Less than high school degree"
+                    "display": "Less than high school degree",
+                    "system": "http://loinc.org"
                   }
                 },
                 {
                   "valueCoding": {
                     "code": "LA30192-1",
-                    "display": "High school diploma or GED"
+                    "display": "High school diploma or GED",
+                    "system": "http://loinc.org"
                   }
                 },
                 {
                   "valueCoding": {
                     "code": "LA30193-9",
-                    "display": "More than high school"
+                    "display": "More than high school",
+                    "system": "http://loinc.org"
                   }
                 },
                 {
                   "valueCoding": {
                     "code": "LA30122-8",
-                    "display": "I choose not to answer this question"
+                    "display": "I choose not to answer this question",
+                    "system": "http://loinc.org"
                   }
                 }
               ]
@@ -574,7 +607,7 @@ const prapareSurvey = {
               "code": [
                 {
                   "code": "67875-5",
-                  "display": "Employment status current",
+                  "display": "Employment status - current",
                   "system": "http://loinc.org"
                 }
               ],
@@ -587,45 +620,74 @@ const prapareSurvey = {
                       {
                         "system":
                             "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "drop-down",
-                        "display": "Drop down"
+                        "code": "radio-button",
+                        "display": "Radio button"
                       }
                     ],
-                    "text": "Drop down"
+                    "text": "Radio button"
                   }
                 }
               ],
               "required": false,
               "linkId": "/93041-2/67875-5",
-              "text": "Employment status current",
+              "text": "What is your current work situation?",
               "answerOption": [
                 {
-                  "valueCoding": {"code": "LA17956-6", "display": "Unemployed"}
+                  "valueCoding": {
+                    "code": "LA17956-6",
+                    "display": "Unemployed",
+                    "system": "http://loinc.org"
+                  }
                 },
                 {
                   "valueCoding": {
                     "code": "LA30138-4",
-                    "display": "Part-time or temporary work"
+                    "display": "Part-time or temporary work",
+                    "system": "http://loinc.org"
                   }
                 },
                 {
                   "valueCoding": {
                     "code": "LA30136-8",
-                    "display": "Full-time work"
+                    "display": "Full-time work",
+                    "system": "http://loinc.org"
                   }
                 },
                 {
                   "valueCoding": {
                     "code": "LA30137-6",
                     "display":
-                        "Otherwise unemployed but not seeking work (ex: student, retired, disabled, unpaid primary care giver)"
+                        "Otherwise unemployed but not seeking work (ex: student, retired, disabled, unpaid primary care giver)",
+                    "system": "http://loinc.org"
                   }
                 },
                 {
                   "valueCoding": {
                     "code": "LA30122-8",
-                    "display": "I choose not to answer this question"
+                    "display": "I choose not to answer this question",
+                    "system": "http://loinc.org"
                   }
+                }
+              ],
+              "item": [
+                {
+                  "type": "string",
+                  "required": false,
+                  "linkId": "/93041-2/67875-5/LA30137-6",
+                  "text": "Please write:",
+                  "enableWhen": [
+                    {
+                      "answerCoding": {
+                        "code": "LA30137-6",
+                        "display":
+                            "Otherwise unemployed but not seeking work (ex: student, retired, disabled, unpaid primary care giver)",
+                        "system": "http://loinc.org"
+                      },
+                      "question": "/93041-2/67875-5",
+                      "operator": "="
+                    }
+                  ],
+                  "enableBehavior": "all"
                 }
               ]
             },
@@ -647,52 +709,65 @@ const prapareSurvey = {
                       {
                         "system":
                             "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "drop-down",
-                        "display": "Drop down"
+                        "code": "radio-button",
+                        "display": "Radio button"
                       }
                     ],
-                    "text": "Drop down"
+                    "text": "Radio button"
                   }
                 }
               ],
               "required": false,
               "linkId": "/93041-2/76437-3",
-              "text": "Primary insurance",
+              "text": "What is your main insurance?",
               "answerOption": [
                 {
                   "valueCoding": {
                     "code": "LA30194-7",
-                    "display": "None/uninsured"
+                    "display": "None/uninsured",
+                    "system": "http://loinc.org"
                   }
                 },
                 {
-                  "valueCoding": {"code": "LA17849-3", "display": "Medicaid"}
+                  "valueCoding": {
+                    "code": "LA17849-3",
+                    "display": "Medicaid",
+                    "system": "http://loinc.org"
+                  }
                 },
                 {
                   "valueCoding": {
                     "code": "LA30195-4",
-                    "display": "CHIP Medicaid"
+                    "display": "CHIP Medicaid",
+                    "system": "http://loinc.org"
                   }
                 },
                 {
-                  "valueCoding": {"code": "LA15652-3", "display": "Medicare"}
+                  "valueCoding": {
+                    "code": "LA15652-3",
+                    "display": "Medicare",
+                    "system": "http://loinc.org"
+                  }
                 },
                 {
                   "valueCoding": {
                     "code": "LA30196-2",
-                    "display": "Other public insurance (not CHIP)"
+                    "display": "Other public insurance (not CHIP)",
+                    "system": "http://loinc.org"
                   }
                 },
                 {
                   "valueCoding": {
                     "code": "LA30197-0",
-                    "display": "Other public insurance (CHIP)"
+                    "display": "Other public insurance (CHIP)",
+                    "system": "http://loinc.org"
                   }
                 },
                 {
                   "valueCoding": {
                     "code": "LA6350-8",
-                    "display": "Private insurance"
+                    "display": "Private insurance",
+                    "system": "http://loinc.org"
                   }
                 }
               ]
@@ -703,7 +778,7 @@ const prapareSurvey = {
                 {
                   "code": "63586-2",
                   "display":
-                      "What was your best estimate of the total income of all family members from all sources, before taxes, in last year?",
+                      "What was your best estimate of the total income of all family members from all sources, before taxes, in last year [PhenX]",
                   "system": "http://loinc.org"
                 }
               ],
@@ -717,71 +792,393 @@ const prapareSurvey = {
               "required": false,
               "linkId": "/93041-2/63586-2",
               "text":
-                  "What was your best estimate of the total income of all family members from all sources, before taxes, in last year?"
+                  "During the past year, what was the total combined income for you and the family members you live with? This information will help us determine if you are eligible for any benefits.",
+              "item": [
+                {
+                  "type": "boolean",
+                  "linkId": "/93041-2/63586-2/LA30122-8",
+                  "text": "I choose not to answer this question",
+                  "code": [
+                    {
+                      "code": "LA30122-8",
+                      "display": "I choose not to answer this question",
+                      "system": "http://loinc.org"
+                    }
+                  ]
+                }
+              ]
             },
             {
-              "type": "choice",
+              "type": "group",
               "code": [
                 {
                   "code": "93031-3",
                   "display":
-                      "In the past year, have you or any family members you live with been unable to get any of the following when it was really needed?",
+                      "Have you or any family members you live with been unable to get any of the following when it was really needed in past 1 year [PRAPARE]",
                   "system": "http://loinc.org"
                 }
               ],
-              "extension": [
-                {
-                  "url":
-                      "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "system":
-                            "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "drop-down",
-                        "display": "Drop down"
-                      }
-                    ],
-                    "text": "Drop down"
-                  }
-                }
-              ],
               "required": false,
-              "repeats": true,
               "linkId": "/93041-2/93031-3",
               "text":
                   "In the past year, have you or any family members you live with been unable to get any of the following when it was really needed?",
-              "answerOption": [
+              "item": [
                 {
-                  "valueCoding": {"code": "LA30125-1", "display": "Food"}
+                  "type": "choice",
+                  "code": [
+                    {
+                      "code": "LA30125-1",
+                      "display": "Food",
+                      "system": "http://loinc.org"
+                    }
+                  ],
+                  "extension": [
+                    {
+                      "url":
+                          "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system":
+                                "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "radio-button",
+                            "display": "Radio button"
+                          }
+                        ],
+                        "text": "Radio button"
+                      }
+                    }
+                  ],
+                  "required": false,
+                  "linkId": "/93041-2/93031-3/LA30125-1",
+                  "text": "Food",
+                  "answerOption": [
+                    {
+                      "valueCoding": {
+                        "code": "LA33-6",
+                        "display": "Yes",
+                        "system": "http://loinc.org"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "LA32-8",
+                        "display": "No",
+                        "system": "http://loinc.org"
+                      }
+                    }
+                  ]
                 },
                 {
-                  "valueCoding": {"code": "LA30126-9", "display": "Clothing"}
+                  "type": "choice",
+                  "code": [
+                    {
+                      "code": "LA30126-9",
+                      "display": "Clothing",
+                      "system": "http://loinc.org"
+                    }
+                  ],
+                  "extension": [
+                    {
+                      "url":
+                          "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system":
+                                "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "radio-button",
+                            "display": "Radio button"
+                          }
+                        ],
+                        "text": "Radio button"
+                      }
+                    }
+                  ],
+                  "required": false,
+                  "linkId": "/93041-2/93031-3/LA30126-9",
+                  "text": "Clothing",
+                  "answerOption": [
+                    {
+                      "valueCoding": {
+                        "code": "LA33-6",
+                        "display": "Yes",
+                        "system": "http://loinc.org"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "LA32-8",
+                        "display": "No",
+                        "system": "http://loinc.org"
+                      }
+                    }
+                  ]
                 },
                 {
-                  "valueCoding": {"code": "LA30124-4", "display": "Utilities"}
+                  "type": "choice",
+                  "code": [
+                    {
+                      "code": "LA30124-4",
+                      "display": "Utilities",
+                      "system": "http://loinc.org"
+                    }
+                  ],
+                  "extension": [
+                    {
+                      "url":
+                          "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system":
+                                "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "radio-button",
+                            "display": "Radio button"
+                          }
+                        ],
+                        "text": "Radio button"
+                      }
+                    }
+                  ],
+                  "required": false,
+                  "linkId": "/93041-2/93031-3/LA30124-4",
+                  "text": "Utilities",
+                  "answerOption": [
+                    {
+                      "valueCoding": {
+                        "code": "LA33-6",
+                        "display": "Yes",
+                        "system": "http://loinc.org"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "LA32-8",
+                        "display": "No",
+                        "system": "http://loinc.org"
+                      }
+                    }
+                  ]
                 },
                 {
-                  "valueCoding": {"code": "LA30127-7", "display": "Child care"}
+                  "type": "choice",
+                  "code": [
+                    {
+                      "code": "LA30127-7",
+                      "display": "Child care",
+                      "system": "http://loinc.org"
+                    }
+                  ],
+                  "extension": [
+                    {
+                      "url":
+                          "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system":
+                                "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "radio-button",
+                            "display": "Radio button"
+                          }
+                        ],
+                        "text": "Radio button"
+                      }
+                    }
+                  ],
+                  "required": false,
+                  "linkId": "/93041-2/93031-3/LA30127-7",
+                  "text": "Child care",
+                  "answerOption": [
+                    {
+                      "valueCoding": {
+                        "code": "LA33-6",
+                        "display": "Yes",
+                        "system": "http://loinc.org"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "LA32-8",
+                        "display": "No",
+                        "system": "http://loinc.org"
+                      }
+                    }
+                  ]
                 },
                 {
-                  "valueCoding": {
-                    "code": "LA30128-5",
-                    "display":
-                        "Medicine or Any Health Care (Medical, Dental, Mental Health, Vision)"
-                  }
+                  "type": "choice",
+                  "code": [
+                    {
+                      "code": "LA30128-5",
+                      "display":
+                          "Medicine or Any Health Care (Medical, Dental, Mental Health, Vision)",
+                      "system": "http://loinc.org"
+                    }
+                  ],
+                  "extension": [
+                    {
+                      "url":
+                          "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system":
+                                "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "radio-button",
+                            "display": "Radio button"
+                          }
+                        ],
+                        "text": "Radio button"
+                      }
+                    }
+                  ],
+                  "required": false,
+                  "linkId": "/93041-2/93031-3/LA30128-5",
+                  "text":
+                      "Medicine or Any Health Care (Medical, Dental, Mental Health, Vision)",
+                  "answerOption": [
+                    {
+                      "valueCoding": {
+                        "code": "LA33-6",
+                        "display": "Yes",
+                        "system": "http://loinc.org"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "LA32-8",
+                        "display": "No",
+                        "system": "http://loinc.org"
+                      }
+                    }
+                  ]
                 },
                 {
-                  "valueCoding": {"code": "LA30129-3", "display": "Phone"}
+                  "type": "choice",
+                  "code": [
+                    {
+                      "code": "LA30129-3",
+                      "display": "Phone",
+                      "system": "http://loinc.org"
+                    }
+                  ],
+                  "extension": [
+                    {
+                      "url":
+                          "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system":
+                                "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "radio-button",
+                            "display": "Radio button"
+                          }
+                        ],
+                        "text": "Radio button"
+                      }
+                    }
+                  ],
+                  "required": false,
+                  "linkId": "/93041-2/93031-3/LA30129-3",
+                  "text": "Phone",
+                  "answerOption": [
+                    {
+                      "valueCoding": {
+                        "code": "LA33-6",
+                        "display": "Yes",
+                        "system": "http://loinc.org"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "LA32-8",
+                        "display": "No",
+                        "system": "http://loinc.org"
+                      }
+                    }
+                  ]
                 },
                 {
-                  "valueCoding": {"code": "LA46-8", "display": "Other"}
+                  "type": "choice",
+                  "code": [
+                    {
+                      "code": "LA46-8",
+                      "display": "Other",
+                      "system": "http://loinc.org"
+                    }
+                  ],
+                  "extension": [
+                    {
+                      "url":
+                          "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system":
+                                "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "radio-button",
+                            "display": "Radio button"
+                          }
+                        ],
+                        "text": "Radio button"
+                      }
+                    }
+                  ],
+                  "required": false,
+                  "linkId": "/93041-2/93031-3/LA46-8",
+                  "text": "Other",
+                  "answerOption": [
+                    {
+                      "valueCoding": {
+                        "code": "LA33-6",
+                        "display": "Yes",
+                        "system": "http://loinc.org"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "LA32-8",
+                        "display": "No",
+                        "system": "http://loinc.org"
+                      }
+                    }
+                  ],
+                  "item": [
+                    {
+                      "type": "string",
+                      "required": false,
+                      "linkId": "/93041-2/93031-3/LA46-8/LA33-6",
+                      "text": "Please write",
+                      "enableWhen": [
+                        {
+                          "answerCoding": {
+                            "code": "LA33-6",
+                            "display": "Yes",
+                            "system": "http://loinc.org"
+                          },
+                          "question": "/93041-2/93031-3/LA46-8",
+                          "operator": "="
+                        }
+                      ],
+                      "enableBehavior": "all"
+                    }
+                  ]
                 },
                 {
-                  "valueCoding": {
-                    "code": "LA30122-8",
-                    "display": "I choose not to answer this question"
-                  }
+                  "type": "boolean",
+                  "code": [
+                    {
+                      "code": "LA30122-8",
+                      "display": "I choose not to answer this question",
+                      "system": "http://loinc.org"
+                    }
+                  ],
+                  "required": false,
+                  "linkId": "/93041-2/93031-3/LA30122-8",
+                  "text": "I choose not to answer this question"
                 }
               ]
             },
@@ -791,7 +1188,7 @@ const prapareSurvey = {
                 {
                   "code": "93030-5",
                   "display":
-                      "Has lack of transportation kept you from medical appointments, meetings, work, or from getting things needed for daily living?",
+                      "Has lack of transportation kept you from medical appointments, meetings, work, or from getting things needed for daily living [PRAPARE]",
                   "system": "http://loinc.org"
                 }
               ],
@@ -804,68 +1201,47 @@ const prapareSurvey = {
                       {
                         "system":
                             "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "drop-down",
-                        "display": "Drop down"
+                        "code": "check-box",
+                        "display": "Check-box"
                       }
                     ],
-                    "text": "Drop down"
+                    "text": "Check box"
                   }
                 }
               ],
               "required": false,
               "linkId": "/93041-2/93030-5",
               "text":
-                  "Has lack of transportation kept you from medical appointments, meetings, work, or from getting things needed for daily living?",
+                  "Has lack of transportation kept you from medical appointments, meetings, work, or from getting things needed for daily living? Check all that apply.",
               "answerOption": [
                 {
-                  "extension": [
-                    {
-                      "url":
-                          "http://hl7.org/fhir/StructureDefinition/questionnaire-optionPrefix",
-                      "valueString": "A"
-                    }
-                  ],
                   "valueCoding": {
                     "code": "LA30133-5",
                     "display":
-                        "Yes, it has kept me from medical appointments or from getting my medications"
+                        "Yes, it has kept me from medical appointments or from getting my medications",
+                    "system": "http://loinc.org"
                   }
                 },
                 {
-                  "extension": [
-                    {
-                      "url":
-                          "http://hl7.org/fhir/StructureDefinition/questionnaire-optionPrefix",
-                      "valueString": "B"
-                    }
-                  ],
                   "valueCoding": {
                     "code": "LA30134-3",
                     "display":
-                        "Yes, it has kept me from non-medical meetings, appointments, work, or from getting things that I need"
+                        "Yes, it has kept me from non-medical meetings, appointments, work, or from getting things that I need",
+                    "system": "http://loinc.org"
                   }
                 },
                 {
-                  "extension": [
-                    {
-                      "url":
-                          "http://hl7.org/fhir/StructureDefinition/questionnaire-optionPrefix",
-                      "valueString": "C"
-                    }
-                  ],
-                  "valueCoding": {"code": "LA32-8", "display": "No"}
+                  "valueCoding": {
+                    "code": "LA32-8",
+                    "display": "No",
+                    "system": "http://loinc.org"
+                  }
                 },
                 {
-                  "extension": [
-                    {
-                      "url":
-                          "http://hl7.org/fhir/StructureDefinition/questionnaire-optionPrefix",
-                      "valueString": "X"
-                    }
-                  ],
                   "valueCoding": {
-                    "code": "LA30257-2",
-                    "display": "Patient unable to respond"
+                    "code": "LA30122-8",
+                    "display": "I choose not to answer this question",
+                    "system": "http://loinc.org"
                   }
                 }
               ]
@@ -877,7 +1253,7 @@ const prapareSurvey = {
           "code": [
             {
               "code": "93040-4",
-              "display": "Social and emotional health",
+              "display": "Social and emotional health [PRAPARE]",
               "system": "http://loinc.org"
             }
           ],
@@ -891,7 +1267,7 @@ const prapareSurvey = {
                 {
                   "code": "93029-7",
                   "display":
-                      "How often do you see or talk to people that you care about and feel close to (For example: talking to friends on the phone, visiting friends or family, going to church or club meetings)?",
+                      "How often do you see or talk to people that you care about and feel close to [PRAPARE]",
                   "system": "http://loinc.org"
                 }
               ],
@@ -904,11 +1280,11 @@ const prapareSurvey = {
                       {
                         "system":
                             "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "drop-down",
-                        "display": "Drop down"
+                        "code": "radio-button",
+                        "display": "Radio button"
                       }
                     ],
-                    "text": "Drop down"
+                    "text": "Radio button"
                   }
                 }
               ],
@@ -920,31 +1296,36 @@ const prapareSurvey = {
                 {
                   "valueCoding": {
                     "code": "LA27722-0",
-                    "display": "Less than once a week"
+                    "display": "Less than once a week",
+                    "system": "http://loinc.org"
                   }
                 },
                 {
                   "valueCoding": {
                     "code": "LA30130-1",
-                    "display": "1 or 2 times a week"
+                    "display": "1 or 2 times a week",
+                    "system": "http://loinc.org"
                   }
                 },
                 {
                   "valueCoding": {
                     "code": "LA30131-9",
-                    "display": "3 to 5 times a week"
+                    "display": "3 to 5 times a week",
+                    "system": "http://loinc.org"
                   }
                 },
                 {
                   "valueCoding": {
                     "code": "LA30132-7",
-                    "display": "5 or more times a week"
+                    "display": "5 or more times a week",
+                    "system": "http://loinc.org"
                   }
                 },
                 {
                   "valueCoding": {
                     "code": "LA30122-8",
-                    "display": "I choose not to answer this question"
+                    "display": "I choose not to answer this question",
+                    "system": "http://loinc.org"
                   }
                 }
               ]
@@ -955,7 +1336,7 @@ const prapareSurvey = {
                 {
                   "code": "93038-8",
                   "display":
-                      "Stress is when someone feels tense, nervous, anxious or can't sleep at night because their mind is troubled. How stressed are you?",
+                      "Stress is when someone feels tense, nervous, anxious or can't sleep at night because their mind is troubled - how stressed are you [PRAPARE]",
                   "system": "http://loinc.org"
                 }
               ],
@@ -968,11 +1349,11 @@ const prapareSurvey = {
                       {
                         "system":
                             "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "drop-down",
-                        "display": "Drop down"
+                        "code": "radio-button",
+                        "display": "Radio button"
                       }
                     ],
-                    "text": "Drop down"
+                    "text": "Radio button"
                   }
                 }
               ],
@@ -982,27 +1363,45 @@ const prapareSurvey = {
                   "Stress is when someone feels tense, nervous, anxious or can't sleep at night because their mind is troubled. How stressed are you?",
               "answerOption": [
                 {
-                  "valueCoding": {"code": "LA6568-5", "display": "Not at all"}
+                  "valueCoding": {
+                    "code": "LA6568-5",
+                    "display": "Not at all",
+                    "system": "http://loinc.org"
+                  }
                 },
                 {
                   "valueCoding": {
                     "code": "LA13863-8",
-                    "display": "A little bit"
+                    "display": "A little bit",
+                    "system": "http://loinc.org"
                   }
                 },
                 {
-                  "valueCoding": {"code": "LA13909-9", "display": "Somewhat"}
+                  "valueCoding": {
+                    "code": "LA13909-9",
+                    "display": "Somewhat",
+                    "system": "http://loinc.org"
+                  }
                 },
                 {
-                  "valueCoding": {"code": "LA13902-4", "display": "Quite a bit"}
+                  "valueCoding": {
+                    "code": "LA13902-4",
+                    "display": "Quite a bit",
+                    "system": "http://loinc.org"
+                  }
                 },
                 {
-                  "valueCoding": {"code": "LA13914-9", "display": "Very much"}
+                  "valueCoding": {
+                    "code": "LA13914-9",
+                    "display": "Very much",
+                    "system": "http://loinc.org"
+                  }
                 },
                 {
                   "valueCoding": {
                     "code": "LA30122-8",
-                    "display": "I choose not to answer this question"
+                    "display": "I choose not to answer this question",
+                    "system": "http://loinc.org"
                   }
                 }
               ]
@@ -1014,7 +1413,7 @@ const prapareSurvey = {
           "code": [
             {
               "code": "93039-6",
-              "display": "Optional additional questions",
+              "display": "Optional additional questions [PRAPARE]",
               "system": "http://loinc.org"
             }
           ],
@@ -1028,7 +1427,7 @@ const prapareSurvey = {
                 {
                   "code": "93028-9",
                   "display":
-                      "In the past year, have you spent more than 2 nights in a row in a jail, prison, detention center, or juvenile correctional facility?",
+                      "Have you spent more than 2 nights in a row in a jail, prison, detention center, or juvenile correctional facility in past 1 year [PRAPARE]",
                   "system": "http://loinc.org"
                 }
               ],
@@ -1041,11 +1440,11 @@ const prapareSurvey = {
                       {
                         "system":
                             "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "drop-down",
-                        "display": "Drop down"
+                        "code": "radio-button",
+                        "display": "Radio button"
                       }
                     ],
-                    "text": "Drop down"
+                    "text": "Radio button"
                   }
                 }
               ],
@@ -1055,15 +1454,24 @@ const prapareSurvey = {
                   "In the past year, have you spent more than 2 nights in a row in a jail, prison, detention center, or juvenile correctional facility?",
               "answerOption": [
                 {
-                  "valueCoding": {"code": "LA33-6", "display": "Yes"}
+                  "valueCoding": {
+                    "code": "LA33-6",
+                    "display": "Yes",
+                    "system": "http://loinc.org"
+                  }
                 },
                 {
-                  "valueCoding": {"code": "LA32-8", "display": "No"}
+                  "valueCoding": {
+                    "code": "LA32-8",
+                    "display": "No",
+                    "system": "http://loinc.org"
+                  }
                 },
                 {
                   "valueCoding": {
                     "code": "LA30122-8",
-                    "display": "I choose not to answer this question"
+                    "display": "I choose not to answer this question",
+                    "system": "http://loinc.org"
                   }
                 }
               ]
@@ -1073,7 +1481,7 @@ const prapareSurvey = {
               "code": [
                 {
                   "code": "93027-1",
-                  "display": "Are you a refugee?",
+                  "display": "Are you a refugee",
                   "system": "http://loinc.org"
                 }
               ],
@@ -1086,11 +1494,11 @@ const prapareSurvey = {
                       {
                         "system":
                             "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "drop-down",
-                        "display": "Drop down"
+                        "code": "radio-button",
+                        "display": "Radio button"
                       }
                     ],
-                    "text": "Drop down"
+                    "text": "Radio button"
                   }
                 }
               ],
@@ -1099,15 +1507,24 @@ const prapareSurvey = {
               "text": "Are you a refugee?",
               "answerOption": [
                 {
-                  "valueCoding": {"code": "LA33-6", "display": "Yes"}
+                  "valueCoding": {
+                    "code": "LA33-6",
+                    "display": "Yes",
+                    "system": "http://loinc.org"
+                  }
                 },
                 {
-                  "valueCoding": {"code": "LA32-8", "display": "No"}
+                  "valueCoding": {
+                    "code": "LA32-8",
+                    "display": "No",
+                    "system": "http://loinc.org"
+                  }
                 },
                 {
                   "valueCoding": {
                     "code": "LA30122-8",
-                    "display": "I choose not to answer this question"
+                    "display": "I choose not to answer this question",
+                    "system": "http://loinc.org"
                   }
                 }
               ]
@@ -1118,7 +1535,7 @@ const prapareSurvey = {
                 {
                   "code": "93026-3",
                   "display":
-                      "Do you feel physically and emotionally safe where you currently live?",
+                      "Do you feel physically and emotionally safe where you currently live [PRAPARE]",
                   "system": "http://loinc.org"
                 }
               ],
@@ -1131,11 +1548,11 @@ const prapareSurvey = {
                       {
                         "system":
                             "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "drop-down",
-                        "display": "Drop down"
+                        "code": "radio-button",
+                        "display": "Radio button"
                       }
                     ],
-                    "text": "Drop down"
+                    "text": "Radio button"
                   }
                 }
               ],
@@ -1145,18 +1562,31 @@ const prapareSurvey = {
                   "Do you feel physically and emotionally safe where you currently live?",
               "answerOption": [
                 {
-                  "valueCoding": {"code": "LA33-6", "display": "Yes"}
+                  "valueCoding": {
+                    "code": "LA33-6",
+                    "display": "Yes",
+                    "system": "http://loinc.org"
+                  }
                 },
                 {
-                  "valueCoding": {"code": "LA32-8", "display": "No"}
+                  "valueCoding": {
+                    "code": "LA32-8",
+                    "display": "No",
+                    "system": "http://loinc.org"
+                  }
                 },
                 {
-                  "valueCoding": {"code": "LA14072-5", "display": "Unsure"}
+                  "valueCoding": {
+                    "code": "LA14072-5",
+                    "display": "Unsure",
+                    "system": "http://loinc.org"
+                  }
                 },
                 {
                   "valueCoding": {
                     "code": "LA30122-8",
-                    "display": "I choose not to answer this question"
+                    "display": "I choose not to answer this question",
+                    "system": "http://loinc.org"
                   }
                 }
               ]
@@ -1167,7 +1597,7 @@ const prapareSurvey = {
                 {
                   "code": "76501-6",
                   "display":
-                      "Within the last year, have you been afraid of your partner or ex-partner?",
+                      "Within the last year, have you been afraid of your partner or ex-partner [HARK]",
                   "system": "http://loinc.org"
                 }
               ],
@@ -1180,11 +1610,11 @@ const prapareSurvey = {
                       {
                         "system":
                             "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "drop-down",
-                        "display": "Drop down"
+                        "code": "radio-button",
+                        "display": "Radio button"
                       }
                     ],
-                    "text": "Drop down"
+                    "text": "Radio button"
                   }
                 }
               ],
@@ -1194,59 +1624,34 @@ const prapareSurvey = {
                   "Within the last year, have you been afraid of your partner or ex-partner?",
               "answerOption": [
                 {
-                  "extension": [
-                    {
-                      "url":
-                          "http://hl7.org/fhir/StructureDefinition/questionnaire-optionPrefix",
-                      "valueString": "1"
-                    },
-                    {
-                      "url":
-                          "http://hl7.org/fhir/StructureDefinition/ordinalValue",
-                      "valueDecimal": 1
-                    }
-                  ],
-                  "valueCoding": {"code": "LA33-6", "display": "Yes"}
-                },
-                {
-                  "extension": [
-                    {
-                      "url":
-                          "http://hl7.org/fhir/StructureDefinition/questionnaire-optionPrefix",
-                      "valueString": "0"
-                    },
-                    {
-                      "url":
-                          "http://hl7.org/fhir/StructureDefinition/ordinalValue",
-                      "valueDecimal": 0
-                    }
-                  ],
-                  "valueCoding": {"code": "LA32-8", "display": "No"}
-                },
-                {
-                  "extension": [
-                    {
-                      "url":
-                          "http://hl7.org/fhir/StructureDefinition/questionnaire-optionPrefix",
-                      "valueString": "2"
-                    }
-                  ],
                   "valueCoding": {
-                    "code": "XXXX",
-                    "display": "I have not had a partner in the past year"
+                    "code": "LA33-6",
+                    "display": "Yes",
+                    "system": "http://loinc.org"
                   }
                 },
                 {
-                  "extension": [
-                    {
-                      "url":
-                          "http://hl7.org/fhir/StructureDefinition/questionnaire-optionPrefix",
-                      "valueString": "3"
-                    }
-                  ],
+                  "valueCoding": {
+                    "code": "LA32-8",
+                    "display": "No",
+                    "system": "http://loinc.org"
+                  }
+                },
+                {
+                  "valueCoding": {"code": "LA14072-5", "display": "Unsure"}
+                },
+                {
+                  "valueCoding": {
+                    "code": "LA4720-4",
+                    "display": "I have not had a partner in the past year",
+                    "system": "http://loinc.org"
+                  }
+                },
+                {
                   "valueCoding": {
                     "code": "LA30122-8",
-                    "display": "I choose not to answer this question"
+                    "display": "I choose not to answer this question",
+                    "system": "http://loinc.org"
                   }
                 }
               ]

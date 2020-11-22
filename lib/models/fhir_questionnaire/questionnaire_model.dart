@@ -1,8 +1,13 @@
+// ignore_for_file: prefer_typing_uninitialized_variables
+
 import 'package:fhir/r4.dart';
+import 'package:get/get.dart';
 import 'package:prapare/_internal/constants/prapare_survey.dart';
+import 'package:prapare/services/db_interface.dart';
 
 import 'fhir_questionnaire.dart';
 import 'survey/export.dart';
+import 'survey/survey_item.dart';
 
 class QuestionnaireModel {
   final FhirQuestionnaire _data = FhirQuestionnaire();
@@ -15,44 +20,42 @@ class QuestionnaireModel {
     _data.title =
         _data.questionnaire?.title ?? _data.questionnaire?.name ?? 'New Survey';
     if (_data.questionnaire != null) {
-      _data.surveys = <Survey>[];
-      for (var item in _data.questionnaire.item) {
-        if (item.type == QuestionnaireItemType.group) {
-          /// creates a "Survey" from each group of questions that should be
-          /// displayed together
-          _surveyFromGroup(item);
+      if (_data.questionnaire.item != null) {
+        if (_data.questionnaire.item[0].type == QuestionnaireItemType.group) {
+          /// creates a Survey from the initial group
+          /// ToDo: generalize for cases where there is only one group
+          /// encasing everything else as is currently true in PRAPARE
+
+          _data.survey = Survey(
+            linkId: _data.questionnaire.item[0].linkId,
+            text: _data.questionnaire.item[0].text,
+            surveyItems: <SurveyItem>[],
+          );
+          for (var item in _data.questionnaire.item[0].item) {
+            _data.survey.surveyItems.add(_itemFromItem(item));
+          }
         }
       }
     }
   }
 
-  /// creates the survey from the group of questions that should be displayed
-  /// together
-  void _surveyFromGroup(QuestionnaireItem item) {
-    final stillGroup = item.item
-        .indexWhere((subItem) => subItem.type == QuestionnaireItemType.group);
-    if (stillGroup == -1) {
-      final Survey newSurvey = Survey(
-        code: item.linkId,
-        title: _data.title,
-        text: item.text,
-        questions: <Question>[],
-      );
+  /// creates a new surveyItem from the fhir item that is passed
+  SurveyItem _itemFromItem(QuestionnaireItem item) {
+    var surveyItem;
 
-      // todo: verify QuestionnaireItemType is being called correctly
-      item.item.forEach((q) {
-        if (q.type != QuestionnaireItemType.group &&
-            q.type != QuestionnaireItemType.display) {
-          /// if the questions are single questions, it creates new question objects
-          newSurvey.questions.add(Question.fromChoiceItem(q));
-        }
-      });
-
-      _data.surveys.add(newSurvey);
+    /// first checks if the item is a group, if so, recursively calls this
+    /// function to add surveyItems to the groups subitems
+    if (item.type == QuestionnaireItemType.group) {
+      surveyItem = ItemGroup.fromItem(item);
+      for (var subItem in item.item) {
+        surveyItem.surveyItems.add(_itemFromItem(subItem));
+      }
     } else {
-      /// if the subItem is also a group, then it will recursively call this fxn
-      item.item.forEach((g) => _surveyFromGroup(g));
+      /// if the item is not a group it is a question
+      /// ToDo: display - not a question or group
+      surveyItem = Question.fromItem(item);
     }
+    return surveyItem;
   }
 
   /// adds userResponses, can do it iterativelly or all at once
@@ -82,8 +85,8 @@ class QuestionnaireModel {
       if (subItem.type == QuestionnaireItemType.choice) {
         final List<UserResponse> responsesForThisItem =
             _data.userResponses.toList();
-        responsesForThisItem
-            .retainWhere((response) => response.questionCode == subItem.linkId);
+        responsesForThisItem.retainWhere(
+            (response) => response.questionLinkId == subItem.linkId);
         if (responsesForThisItem.isNotEmpty) {
           response.add(
             QuestionnaireResponseItem(
@@ -119,11 +122,19 @@ class QuestionnaireModel {
     final responseAnswer = <QuestionnaireResponseAnswer>[];
     for (var answer in responsesForThisItem) {
       final QuestionnaireAnswerOption thisAnswer = item.answerOption.firstWhere(
-          (option) => option.valueCoding.code == Code(answer.answerCode),
+          (option) => option.valueCoding.code == Code(answer.questionLinkId),
           orElse: () => null);
       responseAnswer.add(
           QuestionnaireResponseAnswer(valueCoding: thisAnswer?.valueCoding));
     }
     return responseAnswer;
+  }
+
+  Future saveResponses() async {
+    final saveResult = await DbInterface().save(_data.response);
+    saveResult.fold(
+      (l) => Get.snackbar('Error: ', l.errorMessage),
+      (r) => Get.snackbar('Saved', 'Survey Successfully Saved'),
+    );
   }
 }
