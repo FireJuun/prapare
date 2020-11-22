@@ -1,0 +1,39 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:prapare/controllers/commands/commands.dart';
+import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
+
+import 'answer_title.dart';
+
+class AnswerItemCheckbox extends StatefulWidget {
+  const AnswerItemCheckbox(
+      {Key key, @required this.answer, @required this.rxUserResponse})
+      : super(key: key);
+
+  final Answer answer;
+  final Rx<UserResponse> rxUserResponse;
+
+  @override
+  _AnswerItemCheckboxState createState() => _AnswerItemCheckboxState();
+}
+
+class _AnswerItemCheckboxState extends State<AnswerItemCheckbox> {
+  @override
+  Widget build(BuildContext context) {
+    final RxBool activeValue = false.obs;
+
+    return Obx(
+      () => CheckboxListTile(
+        title: AnswerTitle(answer: widget.answer),
+        value: activeValue.value,
+        onChanged: (newValue) async {
+          ToggleCheckboxCommand().execute(
+              userResponse: widget.rxUserResponse,
+              answer: widget.answer,
+              newValue: newValue);
+          activeValue.value = newValue;
+        },
+      ),
+    );
+  }
+}
