@@ -41,15 +41,15 @@ class UserResponsesController extends GetxController {
   }
 
   void setAllQuestionBooleansToFalse(String questionLinkId) {
-    _rxResponses.forEach(
-      (e) {
-        if (e.value.questionLinkId == questionLinkId) {
-          // calls update to trigger Rx redraws, if applicable
-          e.update((val) {
-            val.answers[0].value = false;
-          });
-        }
-      },
-    );
+    //   _rxResponses.forEach(
+    //     (e) {
+    //       if (e.value.questionLinkId == questionLinkId) {
+    //         // calls update to trigger Rx redraws, if applicable
+    //         e.update((val) {
+    //           val.answers[0].value = false;
+    //         });
+    //       }
+    //     },
+    //   );
   }
 }
