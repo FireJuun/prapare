@@ -20,7 +20,7 @@ class DebounceAndSaveResponseCommand extends AbstractCommand {
           .value = newResponse;
 
       // check validator to see if survey is complete
-      groupController
+      validationController
           .validateIfSurveyIsCompleted(newResponse.answers[0].value.surveyCode);
     },
         // time to debounce (wait) before saving

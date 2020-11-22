@@ -20,6 +20,7 @@ class GroupView extends StatelessWidget {
     final QuestionnaireController dataController = Get.find();
     final GroupController controller = Get.find();
     final tabList = controller.tabModel.tabList;
+    final ValidationController validationController = Get.find();
 
     /// GestureDetector used to handle tap events to remove focus from keyboard
     /// spec: https://flutterigniter.com/dismiss-keyboard-form-lose-focus/
@@ -105,7 +106,7 @@ class GroupView extends StatelessWidget {
             ),
           ),
           floatingActionButton: Obx(() =>
-              (controller.validateIfRequiredSurveysComplete())
+              (validationController.validateIfRequiredSurveysComplete())
                   ? StyledSubmitFab()
                   : Container())),
     );

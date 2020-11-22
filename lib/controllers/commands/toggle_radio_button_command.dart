@@ -38,7 +38,7 @@ class ToggleRadioButtonCommand extends AbstractCommand {
 
     // check validator to see if survey is complete
     // ToDo: not sure how to change this method
-    groupController
+    validationController
         .validateIfSurveyIsCompleted(oldResponse.value.questionLinkId);
   }
 }
