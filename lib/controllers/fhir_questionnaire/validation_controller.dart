@@ -12,9 +12,10 @@ class ValidationController extends GetxController {
   final RxMap<String, RxBool> _rxMappedValidatedGroups = <String, RxBool>{}.obs;
   RxMap<String, RxBool> get rxMappedValidatedTabs => _rxMappedValidatedGroups;
 
-  bool validateIfGroupIsCompleted(String surveyCode) {
+  bool validateIfGroupIsCompleted(String groupCode) {
     final ItemGroup group =
-        _questionnaireController.getGroupFromCode(surveyCode);
+        _questionnaireController.getGroupFromCode(groupCode);
+
     // for each question in this survey...
     return group.surveyItems.every((q) {
       // check to see if the mapped active response has a boolean of true
@@ -22,8 +23,7 @@ class ValidationController extends GetxController {
       // blank radiobuttons have '' answer codes and false values
       // checkboxes will have true values, ?? in active response
       // todo: implement means to verify at least one checkbox is active
-      final activeResponses =
-          _responsesController.rxUserResponsesMap[q.linkId];
+      final activeResponses = _responsesController.rxUserResponsesMap[q.linkId];
 
       // since ResponseType varies, for now we are handling strings / bool
       final test = activeResponses.value.answers[0].value;

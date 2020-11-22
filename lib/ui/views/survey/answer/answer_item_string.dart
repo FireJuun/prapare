@@ -8,6 +8,7 @@ class AnswerItemString extends StatefulWidget {
       {Key key,
       @required this.answer,
       @required this.rxUserResponse,
+      //todo: handle multiLine automatically by questionType
       bool isMultiLine})
       : _isMultiLine = isMultiLine ?? false,
         assert(answer != null),

@@ -8,6 +8,7 @@ class DebounceAndSaveResponseCommand extends AbstractCommand {
       {@required RxString rxString,
       @required Rx<UserResponse> response}) async {
     debounce(rxString, (String debouncedValue) {
+      // response.value.answers.firstWhere((element) => element is Answer)
       final UserResponse newResponse = response.value;
 
       // todo: replace with find-answer method, to better handle nested answers
