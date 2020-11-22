@@ -55,8 +55,16 @@ class Question extends SurveyItem {
         question.format ??= QFormat.unknown;
 
         /// generate list of allowed answers
-        item.answerOption
-            ?.forEach((e) => question.answers.add(Answer.fromAnswerOption(e)));
+        item.answerOption?.forEach(
+          (e) => question.answers.add(
+            Answer.fromAnswerOption(
+              answer: e,
+              // set itemType based on questionnaire data
+              answerItemType: ItemTypeUtil()
+                  .getItemTypeFromQuestionnaireItemType(question.itemType),
+            ),
+          ),
+        );
       }
     }
 

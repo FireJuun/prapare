@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:prapare/_internal/utils/prapare_codes_util.dart';
+import 'package:prapare/_internal/utils/item_type_util.dart';
 import 'package:prapare/controllers/controllers.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
+import 'package:prapare/models/fhir_questionnaire/survey/item_type.dart';
 
-import 'answer_item_checkbox.dart';
 import 'answer_item_decimal.dart';
 import 'answer_item_radio_button.dart';
 import 'answer_item_string.dart';
@@ -23,42 +23,49 @@ class AnswerItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final PrapareCodesUtil codesUtil = PrapareCodesUtil();
+    final ItemTypeUtil itemTypeUtil = ItemTypeUtil();
     final UserResponsesController controller = Get.find();
     final Rx<UserResponse> userResponse = controller.findRxUserResponse(
         questionLinkId: question.linkId, answerCode: answer.code);
 
-    try {
-      switch (codesUtil.getAnswerTypeFromQuestionCode(question.linkId)) {
-        // **** Checkbox Answer ***
-        case answerType.checkbox:
-          return AnswerItemCheckbox(
-              answer: answer, rxUserResponse: userResponse);
+    return AnswerItemRadioButton(
+      answer: answer,
+      rxUserResponse: userResponse,
+    );
 
-        // **** Decimal Answers ***
-        case answerType.decimal:
-          return AnswerItemDecimal(
-              answer: answer, rxUserResponse: userResponse);
-        case answerType.decimal_int:
-          return AnswerItemDecimal(
-              answer: answer, rxUserResponse: userResponse, isInteger: true);
+    //   try {
+    //     switch (itemTypeUtil.getAnswerResponseType(answer)) {
+    //       // **** Checkbox Answer ***
+    //       //todo: fix checkbox handling...
+    //       // case ItemType.choice:
+    //       //   return AnswerItemCheckbox(
+    //       //       answer: answer, rxUserResponse: userResponse);
 
-        // **** String Answers ***
-        case answerType.string:
-          return AnswerItemString(answer: answer, rxUserResponse: userResponse);
-        case answerType.string_long:
-          return AnswerItemString(
-              answer: answer, rxUserResponse: userResponse, isMultiLine: true);
+    //       // **** Decimal Answers ***
+    //       case ItemType.decimal:
+    //         return AnswerItemDecimal(
+    //             answer: answer, rxUserResponse: userResponse);
+    //       case ItemType.integer:
+    //         return AnswerItemDecimal(
+    //             answer: answer, rxUserResponse: userResponse, isInteger: true);
 
-        // **** DEFAULT: Radio Button Answer ***
-        default:
-          return AnswerItemRadioButton(
-            answer: answer,
-            rxUserResponse: userResponse,
-          );
-      }
-    } catch (error) {
-      return Container(child: Text(error.message));
-    }
+    //       // **** String Answers ***
+    //       case ItemType.string:
+    //         return AnswerItemString(answer: answer, rxUserResponse: userResponse);
+    //       case ItemType.text:
+    //         // todo: handle answerText values
+    //         return AnswerItemString(
+    //             answer: answer, rxUserResponse: userResponse, isMultiLine: true);
+
+    //       // **** DEFAULT: Radio Button Answer ***
+    //       default:
+    //         return AnswerItemRadioButton(
+    //           answer: answer,
+    //           rxUserResponse: userResponse,
+    //         );
+    //     }
+    //   } catch (error) {
+    //     return Container(child: Text(error.message));
+    //   }
   }
 }
