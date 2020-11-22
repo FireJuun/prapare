@@ -46,6 +46,4 @@ class ItemTypeUtil {
         return ItemType.invalid;
     }
   }
-  // ItemType getAnswerResponseType(Answer answer) =>
-  //     answer.responseItemType ?? ItemType.invalid;
 }
