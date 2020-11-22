@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 
-import 'question/question_item.dart';
+import 'question/question_items.dart';
 import 'question/question_title.dart';
 
 class GroupDetail extends StatelessWidget {
@@ -25,7 +25,7 @@ class GroupDetail extends StatelessWidget {
               children: [
                 // first, build question title
                 QuestionTitle(questionLinkId: entry.linkId),
-                QuestionItem(group: group, question: entry),
+                QuestionItems(group: group, question: entry),
                 const SizedBox(height: 16),
               ],
             );

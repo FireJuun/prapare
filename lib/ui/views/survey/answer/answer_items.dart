@@ -10,8 +10,8 @@ import 'answer_item_decimal.dart';
 import 'answer_item_radio_button.dart';
 import 'answer_item_string.dart';
 
-class AnswerItem extends StatelessWidget {
-  const AnswerItem(
+class AnswerItems extends StatelessWidget {
+  const AnswerItems(
       {Key key,
       @required this.group,
       @required this.question,

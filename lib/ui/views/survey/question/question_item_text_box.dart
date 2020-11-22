@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:prapare/_internal/utils/item_type_util.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
-import 'package:prapare/ui/views/survey/answer/answer_item.dart';
+import 'package:prapare/ui/views/survey/answer/answer_items.dart';
 
 class QuestionItemTextBox extends StatelessWidget {
   const QuestionItemTextBox(
@@ -19,7 +19,7 @@ class QuestionItemTextBox extends StatelessWidget {
         ItemTypeUtil().getCodeFromQuestionnaireItemType(question.itemType);
     final Answer _answer =
         question.answers.firstWhere((element) => element.code == _qItemType);
-    return AnswerItem(
+    return AnswerItems(
       group: group,
       question: question,
       answer: _answer,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
-import 'package:prapare/ui/views/survey/answer/answer_item.dart';
+import 'package:prapare/ui/views/survey/answer/answer_items.dart';
 
 class QuestionItemRadioButton extends StatefulWidget {
   const QuestionItemRadioButton({Key key, this.group, this.question})
@@ -25,7 +25,7 @@ class _QuestionItemRadioButtonState extends State<QuestionItemRadioButton> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ...answerList.map(
-          (answer) => AnswerItem(
+          (answer) => AnswerItems(
             group: widget.group,
             question: widget.question,
             answer: answer,
