@@ -1201,11 +1201,11 @@ const prapareSurvey = {
                       {
                         "system":
                             "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "check-box",
-                        "display": "Check-box"
+                        "code": "radio-button",
+                        "display": "Radio button"
                       }
                     ],
-                    "text": "Check box"
+                    "text": "Radio button"
                   }
                 }
               ],

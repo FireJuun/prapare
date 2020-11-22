@@ -292,7 +292,7 @@ item:
         linkId: "/93041-2/93031-3/LA30122-8"
         text: I choose not to answer this question
     - type: choice
-      code: check-box
+      code: radio-button
       required: false
       linkId: "/93041-2/93030-5"
       text: Has lack of transportation kept you from medical appointments, meetings,
