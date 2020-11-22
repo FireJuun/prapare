@@ -36,7 +36,8 @@ class GroupDetail extends StatelessWidget {
               children: [
                 // first, build question title
                 QuestionTitle(questionLinkId: entry.linkId),
-                GroupDetail(group: entry),
+                // todo: create separate layout for sub-questions
+                // GroupDetail(group: entry),
               ],
             );
           }

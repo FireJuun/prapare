@@ -4,7 +4,7 @@ import 'package:prapare/models/fhir_questionnaire/survey/item_type.dart';
 
 /// store the answers to your survey or questionnaire in this class
 class Answer {
-  Answer({this.code, this.text, @required answerItemType})
+  Answer({this.code, this.text, @required ItemType answerItemType})
       // answerItemType defaults to invalid, if no value set
       : answerItemType = answerItemType ?? ItemType.invalid;
 

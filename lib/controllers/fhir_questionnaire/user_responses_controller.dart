@@ -17,9 +17,7 @@ class UserResponsesController extends GetxController {
 
   Rx<UserResponse> findRxUserResponse(
           {@required String questionLinkId, @required String answerCode}) =>
-      _rxResponses.toList().firstWhere((e) =>
-          e.value.questionLinkId == questionLinkId &&
-          e.value.answers[0].value == answerCode);
+      _rxResponses.firstWhere((e) => e.value.questionLinkId == questionLinkId);
 
   //todo: handle null or error where questionLinkId has no mapped response
   Rx<UserResponse> findActiveResponse(String questionLinkId) =>

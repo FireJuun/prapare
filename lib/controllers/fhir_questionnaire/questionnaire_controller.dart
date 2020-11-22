@@ -40,7 +40,8 @@ class QuestionnaireController extends GetxController {
   }
 
   void _mapAllUserResponses() => _model.data.survey.surveyItems.forEach(
-      (s) => s.runtimeType == ItemGroup ? _mapGroup(s) : _mapQuestion(s));
+        (s) => s.runtimeType == ItemGroup ? _mapGroup(s) : _mapQuestion(s),
+      );
 
   void _mapGroup(ItemGroup itemGroup) => itemGroup.surveyItems.forEach((item) =>
       item.runtimeType == ItemGroup ? _mapGroup(item) : _mapQuestion(item));
