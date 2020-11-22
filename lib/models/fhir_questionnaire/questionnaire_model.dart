@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 
 import 'package:fhir/r4.dart';
+import 'package:get/get.dart';
 import 'package:prapare/_internal/constants/prapare_survey.dart';
+import 'package:prapare/services/db_interface.dart';
 
 import 'fhir_questionnaire.dart';
 import 'survey/export.dart';
@@ -126,5 +128,13 @@ class QuestionnaireModel {
           QuestionnaireResponseAnswer(valueCoding: thisAnswer?.valueCoding));
     }
     return responseAnswer;
+  }
+
+  Future saveResponses() async {
+    final saveResult = await DbInterface().save(_data.response);
+    saveResult.fold(
+      (l) => Get.snackbar('Error: ', l.errorMessage),
+      (r) => Get.snackbar('Saved', 'Survey Successfully Saved'),
+    );
   }
 }
