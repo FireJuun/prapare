@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:prapare/controllers/controllers.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/ui/views/survey/answer/answer_items.dart';
 
@@ -16,10 +17,13 @@ class QuestionItemRadioButton extends StatefulWidget {
 }
 
 class _QuestionItemRadioButtonState extends State<QuestionItemRadioButton> {
+  final UserResponsesController controller = Get.find();
+  final RxString activeCode = ''.obs;
+
   @override
   Widget build(BuildContext context) {
     final List<Answer> answerList = widget.question.answers.toList();
-    final RxString activeCode = ''.obs;
+    // final RxString activeCode = ''.obs;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,5 +38,13 @@ class _QuestionItemRadioButtonState extends State<QuestionItemRadioButton> {
         ),
       ],
     );
+  }
+
+  @override
+  void initState() {
+    // returns most recent value, otherwise the default '' remains
+    activeCode.value = controller.getActiveRadioButtonValue(
+        controller.findActiveResponse(widget.question.linkId));
+    super.initState();
   }
 }

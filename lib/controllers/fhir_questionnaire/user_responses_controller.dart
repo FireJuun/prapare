@@ -38,35 +38,29 @@ class UserResponsesController extends GetxController {
     }
   }
 
-  void setCheckboxActiveBooleanByAnswers(String questionLinkId) {
-    // todo: fix
-    // bool validator = false;
-
-    // // get all responses for a question, then see if a response set as true
-    // _rxResponses
-    //     .toList()
-    //     .where((e) => e.value.questionLinkId == questionLinkId)
-    //     .forEach((ans) {
-    //   if (ans.value.answers[0].value == true) {
-    //     validator = true;
-    //   }
-    // });
-
-    // // active response value determined by above validation steps
-    // _rxUserResponsesMap[questionLinkId].value.answers[0].value = validator;
+  bool getCheckboxValueFromUserResponseAndAnswer(
+      {@required Answer answer, @required Rx<UserResponse> userResponse}) {
+    /// empty lists are always false
+    if (userResponse.value.answers.isEmpty) {
+      return false;
+    } else {
+      /// lists with values return the value that matches the code
+      /// but if no match can be found, it also returns false
+      final hasData = userResponse.value.answers.firstWhere(
+          (element) => getAnswerResponseCode(element) == answer.code,
+          orElse: () => null);
+      return hasData != null;
+    }
   }
 
-  void setAllQuestionBooleansToFalse(String questionLinkId) {
-    // todo: fix
-    //   _rxResponses.forEach(
-    //     (e) {
-    //       if (e.value.questionLinkId == questionLinkId) {
-    //         // calls update to trigger Rx redraws, if applicable
-    //         e.update((val) {
-    //           val.answers[0].value = false;
-    //         });
-    //       }
-    //     },
-    //   );
+  String getAnswerResponseCode(AnswerResponse answerResponse) {
+    // AnswerCodes store their answer code in 'value', but AnswerOther stores it in 'code'
+    if (answerResponse is AnswerCode) {
+      return answerResponse.value;
+    } else if (answerResponse is AnswerOther) {
+      return answerResponse.code;
+    } else
+      // todo: use null instead of ''?
+      return '';
   }
 }
