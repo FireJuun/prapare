@@ -85,34 +85,26 @@ class QuestionnaireController extends GetxController {
     /// afterwards, the new UserResponse will be updated to reflect the selected item
     /// then ResponseBoolean will be selected to true for that item
     /// todo: ignore question types that aren't radio-buttons
-    _model.data.survey.surveyItems.forEach((e) {
-      if (e is ItemGroup) {
-        // If surveyItem (abstract) is of type ItemGroup, map each of the itemGroup's surveyItems
-        final ItemGroup itemGroup = e;
-        itemGroup.surveyItems.forEach(
-          (q) {
-            if (q is Question) {
-              _responsesController.rxMappedActiveResponses.add(
-                q.linkId,
-                UserResponse(
-                    questionLinkId: q.linkId,
-                    answers: [AnswerBoolean(false)]).obs,
-              );
-            }
-          },
-        );
-      }
-    }
-
-        // .surveyItems.forEach(
-        //       (q) => _responsesController.rxMappedActiveResponses.add(
-        //         (q as Question).linkId,
-        //         UserResponse(
-        //             questionLinkId: q.linkId,
-        //             answers: [AnswerBoolean(false)]).obs,
-        //       ),
-        //     ),
-        );
+    _model.data.survey.surveyItems.forEach(
+      (e) {
+        if (e is ItemGroup) {
+          // If surveyItem (abstract) is of type ItemGroup, map each of the itemGroup's surveyItems
+          final ItemGroup itemGroup = e;
+          itemGroup.surveyItems.forEach(
+            (q) {
+              if (q is Question) {
+                _responsesController.rxMappedActiveResponses.add(
+                  q.linkId,
+                  UserResponse(
+                      questionLinkId: q.linkId,
+                      answers: [AnswerBoolean(false)]).obs,
+                );
+              }
+            },
+          );
+        }
+      },
+    );
   }
 
   @override

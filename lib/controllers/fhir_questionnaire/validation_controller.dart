@@ -9,10 +9,10 @@ class ValidationController extends GetxController {
   final GroupController _groupController = Get.find();
 
   // holds state of which tabs are checked, mapped by survey code
-  final RxMap<String, RxBool> _rxMappedValidatedTabs = <String, RxBool>{}.obs;
-  RxMap<String, RxBool> get rxMappedValidatedTabs => _rxMappedValidatedTabs;
+  final RxMap<String, RxBool> _rxMappedValidatedGroups = <String, RxBool>{}.obs;
+  RxMap<String, RxBool> get rxMappedValidatedTabs => _rxMappedValidatedGroups;
 
-  bool validateIfSurveyIsCompleted(String surveyCode) {
+  bool validateIfGroupIsCompleted(String surveyCode) {
     final ItemGroup group =
         _questionnaireController.getGroupFromCode(surveyCode);
     // for each question in this survey...
@@ -45,20 +45,23 @@ class ValidationController extends GetxController {
   }
 
   // skip the last tab item (optional), then see if all are checked
-  bool validateIfRequiredSurveysComplete() => _groupController.tabModel.tabList
-      .take(_groupController.tabModel.tabList.length - 1)
-      .every((e) => e.isChecked.value);
-  void _mapAllSurveyValidators() {
+  bool validateIfRequiredGroupsAreComplete() =>
+      _groupController.tabModel.tabList
+          .take(_groupController.tabModel.tabList.length - 1)
+          .every((e) => e.isChecked.value);
+
+  // create empty validators with false as default
+  void _mapAllGroupValidators() {
     _questionnaireController
         .getQuestionnaire()
         .survey
         .surveyItems
-        .forEach((s) => _rxMappedValidatedTabs.add(s.linkId, false.obs));
+        .forEach((s) => _rxMappedValidatedGroups.add(s.linkId, false.obs));
   }
 
   @override
   void onInit() {
-    _mapAllSurveyValidators();
+    _mapAllGroupValidators();
     super.onInit();
   }
 }

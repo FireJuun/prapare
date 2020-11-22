@@ -106,7 +106,7 @@ class GroupView extends StatelessWidget {
             ),
           ),
           floatingActionButton: Obx(() =>
-              (validationController.validateIfRequiredSurveysComplete())
+              (validationController.validateIfRequiredGroupsAreComplete())
                   ? StyledSubmitFab()
                   : Container())),
     );

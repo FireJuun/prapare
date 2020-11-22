@@ -21,7 +21,7 @@ class DebounceAndSaveResponseCommand extends AbstractCommand {
 
       // check validator to see if survey is complete
       validationController
-          .validateIfSurveyIsCompleted(newResponse.answers[0].value.surveyCode);
+          .validateIfGroupIsCompleted(newResponse.answers[0].value.surveyCode);
     },
         // time to debounce (wait) before saving
         time: const Duration(seconds: 1));
