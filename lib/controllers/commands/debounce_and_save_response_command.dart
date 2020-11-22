@@ -10,7 +10,7 @@ class DebounceAndSaveResponseCommand extends AbstractCommand {
     debounce(rxString, (String debouncedValue) {
       final UserResponse newResponse = response.value;
 
-      // todo: place in new location, when Answers() architecture changes
+      // todo: replace with find-answer method, to better handle nested answers
       newResponse.answers[0].value = debouncedValue;
 
       // set rxUserResponse and ActiveResponse values
