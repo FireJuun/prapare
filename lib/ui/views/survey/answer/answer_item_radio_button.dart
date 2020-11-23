@@ -26,7 +26,9 @@ class AnswerItemRadioButton extends StatelessWidget {
           toggleable: true,
           onChanged: (newResponse) async {
             await ToggleRadioButtonCommand().execute(
-                userResponse: rxUserResponse, newResponse: newResponse);
+                userResponse: rxUserResponse,
+                answer: answer,
+                newResponse: newResponse);
             activeCode.value = newResponse;
           },
         ));

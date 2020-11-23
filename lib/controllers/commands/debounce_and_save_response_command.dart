@@ -2,27 +2,40 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/controllers/commands/abstract_command.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
+import 'package:prapare/models/fhir_questionnaire/survey/item_type.dart';
 
 class DebounceAndSaveResponseCommand extends AbstractCommand {
   Future<void> execute(
       {@required RxString rxString,
-      @required Rx<UserResponse> response}) async {
+      @required Answer answer,
+      @required Rx<UserResponse> userResponse}) async {
     debounce(rxString, (String debouncedValue) {
-      // response.value.answers.firstWhere((element) => element is Answer)
-      final UserResponse newResponse = response.value;
+      // find fist instance of a value, then set it as defined below
+      void _setUserResponseValue(dynamic newValue) {
+        userResponse.value.answers
+            .firstWhere(
+                (element) => element.responseItemType == answer.answerItemType)
+            .value = newValue;
+      }
 
-      // todo: replace with find-answer method, to better handle nested answers
-      newResponse.answers[0].value = debouncedValue;
-
-      // set rxUserResponse and ActiveResponse values
-      response.value = newResponse;
-      responsesController
-          .findActiveResponse(newResponse.answers[0].value.questionCode)
-          .value = newResponse;
+      if (debouncedValue == null || debouncedValue == '') {
+        // first, set bool / decimal / integer values to null
+        switch (answer.answerItemType) {
+          case ItemType.boolean:
+          case ItemType.decimal:
+          case ItemType.integer:
+            _setUserResponseValue(null);
+            break;
+          default:
+            break;
+        }
+      } else {
+        _setUserResponseValue(debouncedValue);
+      }
 
       // check validator to see if survey is complete
       validationController
-          .validateIfGroupIsCompleted(newResponse.answers[0].value.surveyCode);
+          .validateIfGroupIsCompleted(userResponse.value.questionLinkId);
     },
         // time to debounce (wait) before saving
         time: const Duration(seconds: 1));
