@@ -10,12 +10,13 @@ class ToggleRadioButtonCommand extends AbstractCommand {
     @required Answer answer,
     @required String newResponse,
   }) async {
+    final answerResponseList = userResponse.value.answers;
     // if toggled to off state
     if (newResponse == null) {
       /// clear all UserResponses
       /// note that if we want to still keep previously written items
       /// we'll need to extract this into a separate method to handle different answer types
-      userResponse.value.answers.clear();
+      answerResponseList.clear();
     } else {
       // decide if this will have an optional 'other' write-in option
       // First, handle ItemType.choice
@@ -28,12 +29,12 @@ class ToggleRadioButtonCommand extends AbstractCommand {
               // should this also have error handlng?
               : AnswerString('');
 
-      if (userResponse.value.answers.isEmpty) {
+      if (answerResponseList.isEmpty) {
         // create new response if one doesn't exist
-        userResponse.value.answers.add(newAnswer);
+        answerResponseList.add(newAnswer);
       } else {
         // otherwise, replace first available value with this new code
-        userResponse.value.answers
+        answerResponseList
             .firstWhere(
                 (element) => element is AnswerCode || element is AnswerOther)
             .value = newAnswer;

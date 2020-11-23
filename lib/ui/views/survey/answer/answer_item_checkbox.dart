@@ -30,6 +30,9 @@ class _AnswerItemCheckboxState extends State<AnswerItemCheckbox> {
         title: AnswerTitle(answer: widget.answer),
         value: activeBool.value,
         onChanged: (newValue) async {
+          // close keyboard if previously open:
+          FocusScope.of(context).unfocus();
+          // then toggle checkbox
           ToggleCheckboxCommand().execute(
               userResponse: widget.rxUserResponse,
               answer: widget.answer,
