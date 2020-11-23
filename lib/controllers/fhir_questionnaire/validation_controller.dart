@@ -18,6 +18,7 @@ class ValidationController extends GetxController {
 
     // create temporary map of all user responses for a given group
     final Map<String, Rx<UserResponse>> groupResponses = {};
+
     _responsesController.rxUserResponsesMap.forEach(
       (questId, usrResp) {
         final String grpId = LinkIdUtil().getGroupId(questId);
@@ -29,18 +30,40 @@ class ValidationController extends GetxController {
       },
     );
 
-    bool validator = false;
-    final List<bool> responseGroupValidators = [];
-
-    // todo: handle validation of nested questions
+    // Sort the groupResponses map into a new map of unique questionIds
+    final Map<String, Map<String, Rx<UserResponse>>> questionResponses = {};
     groupResponses.forEach(
-      (questId, usrResp) => responseGroupValidators.add(
-        validateAnswerResponseListHasData(usrResp.value.answers),
-      ),
+      (questId, usrResp) {
+        final String qIdParsed = LinkIdUtil().getQuestionId(questId);
+        // create outer map (for each question) if not present
+        questionResponses.putIfAbsent(qIdParsed, () => {});
+        // add inner sub-question items
+        questionResponses[qIdParsed].putIfAbsent(questId, () => usrResp);
+      },
     );
 
-    // if every responseGroupValidator is true, set the initial validator to true, otherwise it remains false
-    validator = responseGroupValidators.every((e) => e);
+    bool validator = false;
+    final List<bool> questionValidators = [];
+
+    questionResponses.forEach(
+      (qIdParsed, nestedResp) {
+        final List<bool> nestedValidators = [];
+
+        // first, add all nested questions to an internal validator
+        nestedResp.forEach(
+          (questId, usrResp) => nestedValidators.add(
+            validateAnswerResponseListHasData(usrResp.value.answers),
+          ),
+        );
+
+        // then, if at least one response is considered valid, return true
+        questionValidators.add(nestedValidators.any((e) => e));
+      },
+    );
+
+    /// finally, if eveyr question has a true response
+    /// set the primary validator to true
+    validator = questionValidators.every((e) => e);
 
     // then update the tab list, so that checkmarks are shown/hidden
     _updateTabListWithValidator(groupCode, validator);
