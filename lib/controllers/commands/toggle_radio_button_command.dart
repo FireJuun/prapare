@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:prapare/_internal/utils/utils.dart';
 import 'package:prapare/controllers/commands/abstract_command.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/item_type.dart';
@@ -20,24 +21,23 @@ class ToggleRadioButtonCommand extends AbstractCommand {
     } else {
       // decide if this will have an optional 'other' write-in option
       // First, handle ItemType.choice
-      final newAnswer = (answer.answerItemType == ItemType.choice)
-          ? AnswerCode(newResponse)
-          // then, handle ItemType.openchoice
-          : (answer.answerItemType == ItemType.open_choice)
-              ? AnswerOther(newResponse, '')
-              // if neither option available, place an empty string
-              // should this also have error handlng?
-              : AnswerString('');
+      final AnswerResponse newAnswer = AnswerResponseUtil()
+          .newAnswerResponseFromAnswerAndValue(
+              answer: answer, newValue: newResponse);
 
       if (answerResponseList.isEmpty) {
         // create new response if one doesn't exist
         answerResponseList.add(newAnswer);
       } else {
-        // otherwise, replace first available value with this new code
-        answerResponseList
-            .firstWhere(
-                (element) => element is AnswerCode || element is AnswerOther)
-            .value = newAnswer;
+        if (answerResponseList is AnswerCode ||
+            answerResponseList is AnswerOther) {
+          // otherwise, replace first available value with this new code
+          // todo
+          final AnswerResponse oldAnswer = answerResponseList.firstWhere(
+              (element) => element is AnswerCode || element is AnswerOther);
+          answerResponseList.remove(oldAnswer);
+          answerResponseList.add(newAnswer);
+        }
       }
     }
     // responsesController.update();
