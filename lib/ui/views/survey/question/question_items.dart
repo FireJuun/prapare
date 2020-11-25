@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
-import 'package:prapare/models/fhir_questionnaire/survey/qformat.dart';
+import 'package:prapare/models/fhir_questionnaire/survey/enums/qformat.dart';
 import 'package:prapare/ui/views/survey/question/question_item_radio_button.dart';
 
 import 'question_item_checkbox.dart';

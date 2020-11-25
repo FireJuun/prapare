@@ -1,6 +1,6 @@
 import 'package:fhir/r4.dart';
 import 'package:flutter/material.dart';
-import 'package:prapare/models/fhir_questionnaire/survey/item_type.dart';
+import 'package:prapare/models/fhir_questionnaire/survey/enums/item_type.dart';
 
 /// store the answers to your survey or questionnaire in this class
 class Answer {

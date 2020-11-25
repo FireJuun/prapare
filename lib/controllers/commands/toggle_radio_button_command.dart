@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:prapare/_internal/utils/utils.dart';
 import 'package:prapare/controllers/commands/abstract_command.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
-import 'package:prapare/models/fhir_questionnaire/survey/item_type.dart';
+import 'package:prapare/models/fhir_questionnaire/survey/enums/item_type.dart';
 
 class ToggleRadioButtonCommand extends AbstractCommand {
   Future<void> execute({

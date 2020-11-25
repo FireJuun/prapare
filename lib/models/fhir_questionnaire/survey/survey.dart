@@ -1,4 +1,4 @@
-import 'survey_item.dart';
+import 'survey_item/survey_item.dart';
 
 /// this will be the class that is actually passed to the controller to use
 /// it may be a survey, or it may just be a group of questions, but it is the

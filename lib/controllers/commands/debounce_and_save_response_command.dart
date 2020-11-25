@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/controllers/commands/abstract_command.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
-import 'package:prapare/models/fhir_questionnaire/survey/item_type.dart';
+import 'package:prapare/models/fhir_questionnaire/survey/enums/item_type.dart';
 
 class DebounceAndSaveResponseCommand extends AbstractCommand {
   Future<void> execute(

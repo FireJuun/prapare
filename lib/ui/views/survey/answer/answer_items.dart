@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/controllers/controllers.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
-import 'package:prapare/models/fhir_questionnaire/survey/item_type.dart';
-import 'package:prapare/models/fhir_questionnaire/survey/qformat.dart';
+import 'package:prapare/models/fhir_questionnaire/survey/enums/item_type.dart';
+import 'package:prapare/models/fhir_questionnaire/survey/enums/qformat.dart';
 
 import 'answer_item_checkbox.dart';
 import 'answer_item_decimal.dart';

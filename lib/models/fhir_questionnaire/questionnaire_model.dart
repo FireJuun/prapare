@@ -7,7 +7,7 @@ import 'package:prapare/services/db_interface.dart';
 
 import 'fhir_questionnaire.dart';
 import 'survey/export.dart';
-import 'survey/survey_item.dart';
+import 'survey/survey_item/survey_item.dart';
 
 class QuestionnaireModel {
   final FhirQuestionnaire _data = FhirQuestionnaire();

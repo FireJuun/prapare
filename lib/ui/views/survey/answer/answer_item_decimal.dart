@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/controllers/commands/commands.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
-import 'package:prapare/models/fhir_questionnaire/survey/item_type.dart';
+import 'package:prapare/models/fhir_questionnaire/survey/enums/item_type.dart';
 
 class AnswerItemDecimal extends StatefulWidget {
   const AnswerItemDecimal({
