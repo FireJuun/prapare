@@ -32,7 +32,7 @@ class _AnswerItemDecimalState extends State<AnswerItemDecimal>
   Rx<UserResponse> get rxUserResponse => widget.rxUserResponse;
 
   @override
-  Widget buildItem(BuildContext context) {
+  Widget buildAnswer(BuildContext context) {
     final bool _isInteger = answer.answerItemType == ItemType.integer;
 
     return Padding(
@@ -50,7 +50,7 @@ class _AnswerItemDecimalState extends State<AnswerItemDecimal>
   }
 
   @override
-  Widget build(BuildContext context) => buildItem(context);
+  Widget build(BuildContext context) => buildAnswer(context);
 
   @override
   void initState() {

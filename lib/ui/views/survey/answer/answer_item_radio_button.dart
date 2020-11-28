@@ -23,7 +23,7 @@ class AnswerItemRadioButton extends StatelessWidget implements AnswerItem {
   final RxString activeCode;
 
   @override
-  Widget buildItem(BuildContext context) => Obx(
+  Widget buildAnswer(BuildContext context) => Obx(
         () => RadioListTile<String>(
           title: AnswerTitle(answer: answer),
           value: answer.code,
@@ -43,5 +43,5 @@ class AnswerItemRadioButton extends StatelessWidget implements AnswerItem {
       );
 
   @override
-  Widget build(BuildContext context) => buildItem(context);
+  Widget build(BuildContext context) => buildAnswer(context);
 }

@@ -33,7 +33,7 @@ class _AnswerItemStringState extends State<AnswerItemString>
   Rx<UserResponse> get rxUserResponse => widget.rxUserResponse;
 
   @override
-  Widget buildItem(BuildContext context) {
+  Widget buildAnswer(BuildContext context) {
     // [AnswerText] accepts multi-line, whereas [AnswerString] prefers single
     final bool _isMultiLine = answer.answerItemType == ItemType.text;
 
@@ -53,7 +53,7 @@ class _AnswerItemStringState extends State<AnswerItemString>
   }
 
   @override
-  Widget build(BuildContext context) => buildItem(context);
+  Widget build(BuildContext context) => buildAnswer(context);
 
   @override
   void initState() {

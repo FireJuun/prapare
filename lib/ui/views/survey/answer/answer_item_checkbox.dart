@@ -31,7 +31,7 @@ class _AnswerItemCheckboxState extends State<AnswerItemCheckbox>
   Rx<UserResponse> get rxUserResponse => widget.rxUserResponse;
 
   @override
-  Widget buildItem(BuildContext context) => Obx(
+  Widget buildAnswer(BuildContext context) => Obx(
         () => CheckboxListTile(
           title: AnswerTitle(answer: answer),
           value: activeBool.value,
@@ -49,7 +49,7 @@ class _AnswerItemCheckboxState extends State<AnswerItemCheckbox>
       );
 
   @override
-  Widget build(BuildContext context) => buildItem(context);
+  Widget build(BuildContext context) => buildAnswer(context);
 
   @override
   void initState() {

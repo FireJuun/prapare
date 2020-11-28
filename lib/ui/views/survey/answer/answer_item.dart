@@ -9,5 +9,5 @@ abstract class AnswerItem {
   final Answer answer;
   final Rx<UserResponse> rxUserResponse;
 
-  Widget buildItem(BuildContext context) => throw UnimplementedError();
+  Widget buildAnswer(BuildContext context) => throw UnimplementedError();
 }

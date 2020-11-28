@@ -3,16 +3,20 @@ import 'package:prapare/_internal/utils/item_type_util.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/ui/views/survey/answer/answer_items.dart';
 
-class QuestionItemTextBox extends StatelessWidget {
+import 'question_item.dart';
+
+class QuestionItemTextBox extends StatelessWidget implements QuestionItem {
   const QuestionItemTextBox(
       {Key key, @required this.group, @required this.question})
       : super(key: key);
 
+  @override
   final ItemGroup group;
+  @override
   final Question question;
 
   @override
-  Widget build(BuildContext context) {
+  Widget buildQuestion(BuildContext context) {
     /// ItemType and QuestionnaireItemType need to be parsed
     /// to remove the 'QuestionnaireItemType.___' and return '___'
     final String _qItemType =
@@ -25,4 +29,7 @@ class QuestionItemTextBox extends StatelessWidget {
       answer: _answer,
     );
   }
+
+  @override
+  Widget build(BuildContext context) => buildQuestion(context);
 }
