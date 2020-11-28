@@ -89,6 +89,13 @@ class Question extends SurveyItem {
           _createAnswerByQuestionAndItemType(question, ItemType.integer);
           break;
         }
+      case QuestionnaireItemType.boolean:
+        {
+          // todo: @dokotela which Question format should ItemType.boolean represent??
+          question.format = QFormat.unknown;
+          _createAnswerByQuestionAndItemType(question, ItemType.boolean);
+          break;
+        }
 
       // todo: handle other QuestionnaireItemTypes (e.g. time, bool)
       /// if we didn't assign a format above, then it will be none.
