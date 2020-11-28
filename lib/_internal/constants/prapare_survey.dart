@@ -314,7 +314,7 @@ const prapareSurvey = {
               ]
             },
             {
-              "type": "text",
+              "type": "string",
               "code": [
                 {
                   "code": "54899-0",
@@ -500,7 +500,7 @@ const prapareSurvey = {
               ]
             },
             {
-              "type": "string",
+              "type": "text",
               "code": [
                 {
                   "code": "56799-0",

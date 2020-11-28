@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:prapare/controllers/commands/commands.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/enums/item_type.dart';
+import 'package:prapare/ui/views/survey/answer/answer_item.dart';
 
 class AnswerItemDecimal extends StatefulWidget {
   const AnswerItemDecimal({
@@ -20,13 +21,19 @@ class AnswerItemDecimal extends StatefulWidget {
   _AnswerItemDecimalState createState() => _AnswerItemDecimalState();
 }
 
-class _AnswerItemDecimalState extends State<AnswerItemDecimal> {
+class _AnswerItemDecimalState extends State<AnswerItemDecimal>
+    implements AnswerItem {
   TextEditingController _textEditingController;
   final RxString _rxString = ''.obs;
 
   @override
-  Widget build(BuildContext context) {
-    final bool _isInteger = widget.answer.answerItemType == ItemType.integer;
+  Answer get answer => widget.answer;
+  @override
+  Rx<UserResponse> get rxUserResponse => widget.rxUserResponse;
+
+  @override
+  Widget buildItem(BuildContext context) {
+    final bool _isInteger = answer.answerItemType == ItemType.integer;
 
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 16.0),
@@ -36,11 +43,14 @@ class _AnswerItemDecimalState extends State<AnswerItemDecimal> {
         keyboardType: TextInputType.numberWithOptions(decimal: !_isInteger),
         decoration: InputDecoration(
           border: const OutlineInputBorder(),
-          labelText: 'answer: ${_isInteger ? "integer" : "decimal"}',
+          labelText: 'answer: ' + (_isInteger ? 'integer' : 'decimal'),
         ),
       ),
     );
   }
+
+  @override
+  Widget build(BuildContext context) => buildItem(context);
 
   @override
   void initState() {
@@ -48,11 +58,9 @@ class _AnswerItemDecimalState extends State<AnswerItemDecimal> {
 
     _textEditingController = TextEditingController(
         // ToDo: works only for answer
-        text: widget.rxUserResponse.value.answers[0].value?.toString() ?? '');
+        text: rxUserResponse.value.answers[0].value?.toString() ?? '');
     DebounceAndSaveResponseCommand().execute(
-        rxString: _rxString,
-        answer: widget.answer,
-        userResponse: widget.rxUserResponse);
+        rxString: _rxString, answer: answer, userResponse: rxUserResponse);
     super.initState();
   }
 
