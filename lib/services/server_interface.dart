@@ -55,6 +55,7 @@ class ServerInterface {
         auth.fold((left) => print(left.errorMessage()), (right) async {
           var uploadBundle = Bundle(type: BundleType.transaction, entry: []);
           for (var resource in r) {
+            print(resource.toJson());
             uploadBundle.entry.add(
               BundleEntry(
                 resource: resource,
