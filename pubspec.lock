@@ -225,6 +225,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.0.11"
+  fhir_at_rest:
+    dependency: "direct main"
+    description:
+      name: fhir_at_rest
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.6"
   fhir_db:
     dependency: "direct main"
     description:
@@ -614,7 +621,7 @@ packages:
     description:
       path: "."
       ref: prapare
-      resolved-ref: "03d602bca274a960bc4c882edb4b2c4ad23faed1"
+      resolved-ref: d185b52ed7471d40d1f9e2d57311031b8944c4cb
       url: "https://github.com/fhir-fli/smart_on_fhir.git"
     source: git
     version: "0.0.1"
