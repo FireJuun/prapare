@@ -34,7 +34,7 @@ dependencies:
   http: ^0.12.2
   translator: ^0.1.5
   fhir_db: ^0.0.2
-  fhir_at_rest: ^0.0.7
+  fhir_at_rest: ^0.0.8
   smart_on_fhir:
     git:
       url: https://github.com/fhir-fli/smart_on_fhir.git

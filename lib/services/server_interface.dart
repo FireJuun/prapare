@@ -10,6 +10,9 @@ class ServerInterface {
   ServerInterface();
 
   Future uploadAllToAidbox() async {
+    final patient = Patient();
+    await DbInterface().save(patient);
+
     /// retrieve a list of all resources that are stored locally
     final allResources = await DbInterface().allResources();
     allResources.fold(
@@ -74,6 +77,8 @@ class ServerInterface {
               HttpHeaders.authorizationHeader: 'Bearer ${right.accessToken}'
             },
           );
+          print(transactionReq.fold((lefting) => lefting.errorMessage(),
+              (righting) => righting.toJson()));
         });
       },
     );
