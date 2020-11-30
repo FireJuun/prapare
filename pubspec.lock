@@ -251,11 +251,32 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_appauth:
+    dependency: transitive
+    description:
+      name: flutter_appauth
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.9.2+6"
+  flutter_appauth_platform_interface:
+    dependency: transitive
+    description:
+      name: flutter_appauth_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
   flutter_localizations:
     dependency: "direct main"
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_secure_storage:
+    dependency: transitive
+    description:
+      name: flutter_secure_storage
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.3.5"
   flutter_sheet_localization:
     dependency: "direct main"
     description:
@@ -588,6 +609,15 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  smart_on_fhir:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: prapare
+      resolved-ref: "03d602bca274a960bc4c882edb4b2c4ad23faed1"
+      url: "https://github.com/fhir-fli/smart_on_fhir.git"
+    source: git
+    version: "0.0.1"
   source_gen:
     dependency: transitive
     description:

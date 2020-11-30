@@ -34,6 +34,10 @@ dependencies:
   http: ^0.12.2
   translator: ^0.1.5
   fhir_db: ^0.0.2
+  smart_on_fhir:
+    git:
+      url: https://github.com/fhir-fli/smart_on_fhir.git
+      ref: prapare
 
 dev_dependencies:
   flutter_test:
