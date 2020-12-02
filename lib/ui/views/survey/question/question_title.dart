@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/_internal/utils/prapare_codes_util.dart';
+import 'package:prapare/_internal/utils/utils.dart';
 import 'package:prapare/controllers/controllers.dart';
 import 'package:prapare/localization.dart';
 
@@ -27,15 +28,21 @@ class QuestionTitle extends StatelessWidget {
     if (qTotalIndex == -1) {
       /// first, parse the last element of the question for display
       /// for now, we are assuming this is a coded answer
-      final String parsedAnswerLinkId = questionLinkId.split('/').last;
+      final String parsedAnswerLinkId = LinkIdUtil().getLastId(questionLinkId);
       final String answerTitle =
           codesUtil.getAnswerFromLinkIdAndLocale(parsedAnswerLinkId, labels) ??
               '';
 
       return Padding(
         padding: const EdgeInsets.only(top: 16.0),
-        child: Text(answerTitle,
-            style: textTheme.bodyText1, textAlign: TextAlign.start),
+
+        /// SubQuestions with a DeclineToAnswer (LA30122-8) toggle
+        /// are handled differently, since the Question Title
+        /// would be the same as the Answer Title
+        child: (parsedAnswerLinkId == 'LA30122-8')
+            ? Container()
+            : Text(answerTitle,
+                style: textTheme.bodyText1, textAlign: TextAlign.start),
       );
     } else {
       final String questionTitle =

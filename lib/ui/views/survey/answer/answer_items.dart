@@ -44,7 +44,9 @@ class AnswerItems extends StatelessWidget {
         // LA30122-8: I choose not to answer this question
         case 'LA30122-8':
           return AnswerItemDeclineToAnswer(
-              answer: answer, rxUserResponse: userResponse, activeBool: activeBool ?? false.obs);
+              answer: answer,
+              rxUserResponse: userResponse,
+              activeBool: activeBool ?? false.obs);
         //  LA46-8:  labels.prapare.answers.other;
         case 'LA46-8':
           return const Text('other');
