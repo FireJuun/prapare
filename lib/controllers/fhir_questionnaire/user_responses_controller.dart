@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 
 class UserResponsesController extends GetxController {
+  // format: <QuestionLinkId, UserResponse>
   final RxMap<String, Rx<UserResponse>> _rxUserResponsesMap =
       <String, Rx<UserResponse>>{}.obs;
   RxMap<String, Rx<UserResponse>> get rxUserResponsesMap => _rxUserResponsesMap;
@@ -10,11 +11,6 @@ class UserResponsesController extends GetxController {
   void updateUserResponse(Rx<UserResponse> oldItem, UserResponse newItem) {
     oldItem.update((e) => e = newItem ?? UserResponse.defaultNull());
   }
-
-  // todo: handle if no response
-  Rx<UserResponse> findRxUserResponse(
-          {@required String questionLinkId, @required String answerCode}) =>
-      _rxUserResponsesMap[questionLinkId];
 
   // todo: handle if no response
   Rx<UserResponse> findActiveResponse(String questionLinkId) =>

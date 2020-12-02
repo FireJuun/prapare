@@ -4,8 +4,8 @@ import 'package:prapare/ui/views/survey/answer/answer_items.dart';
 
 import 'question_item.dart';
 
-class QuestionItemCheckbox extends StatelessWidget implements QuestionItem {
-  const QuestionItemCheckbox({Key key, this.group, this.question})
+class QuestionItemDefault extends StatelessWidget implements QuestionItem {
+  const QuestionItemDefault({Key key, this.group, this.question})
       : super(key: key);
 
   @override

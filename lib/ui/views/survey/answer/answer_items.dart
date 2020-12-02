@@ -31,8 +31,8 @@ class AnswerItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final UserResponsesController controller = Get.find();
-    final Rx<UserResponse> userResponse = controller.findRxUserResponse(
-        questionLinkId: question.linkId, answerCode: answer.code);
+    final Rx<UserResponse> userResponse =
+        controller.findActiveResponse(question.linkId);
 
     try {
       final lastAnswerCode = LinkIdUtil().getLastId(answer.code);
