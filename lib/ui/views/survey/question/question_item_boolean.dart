@@ -20,7 +20,7 @@ class QuestionItemBoolean extends StatefulWidget {
 class _QuestionItemBooleanState extends State<QuestionItemBoolean>
     implements QuestionItem {
   final UserResponsesController controller = Get.find();
-  final RxString activeCode = ''.obs;
+  final RxBool activeBool = false.obs;
 
   @override
   ItemGroup get group => widget.group;
@@ -39,7 +39,7 @@ class _QuestionItemBooleanState extends State<QuestionItemBoolean>
             group: widget.group,
             question: widget.question,
             answer: answer,
-            activeCode: activeCode,
+            activeBool: activeBool,
           ),
         ),
         ...QuestionItem.buildSubQuestions(group, question),
@@ -55,8 +55,8 @@ class _QuestionItemBooleanState extends State<QuestionItemBoolean>
     final Rx<UserResponse> activeResponse =
         controller.findActiveResponse(widget.question.linkId);
     // returns most recent value, otherwise the default '' remains
-    activeCode.value =
-        controller.getActiveRadioButtonValue(activeResponse) ?? '';
+    // activeBool.value =
+    //     controller.getActiveBooleanValue(activeResponse) ?? false;
     super.initState();
   }
 }

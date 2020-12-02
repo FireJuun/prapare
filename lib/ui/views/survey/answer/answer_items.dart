@@ -5,6 +5,7 @@ import 'package:prapare/controllers/controllers.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/enums/item_type.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/enums/qformat.dart';
+import 'package:prapare/ui/views/survey/answer/answer_item_decline_to_answer.dart';
 
 import 'answer_item_checkbox.dart';
 import 'answer_item_decimal.dart';
@@ -12,18 +13,20 @@ import 'answer_item_radio_button.dart';
 import 'answer_item_string.dart';
 
 class AnswerItems extends StatelessWidget {
-  const AnswerItems(
-      {Key key,
-      @required this.group,
-      @required this.question,
-      @required this.answer,
-      this.activeCode})
-      : super(key: key);
+  const AnswerItems({
+    Key key,
+    @required this.group,
+    @required this.question,
+    @required this.answer,
+    this.activeCode,
+    this.activeBool,
+  }) : super(key: key);
 
   final ItemGroup group;
   final Question question;
   final Answer answer;
   final RxString activeCode;
+  final RxBool activeBool;
 
   @override
   Widget build(BuildContext context) {
@@ -33,9 +36,6 @@ class AnswerItems extends StatelessWidget {
 
     try {
       final lastAnswerCode = LinkIdUtil().getLastId(answer.code);
-      // print('question: ' + question.text);
-      // print('answer: ' + answer.text);
-      print('answer code: ' + lastAnswerCode);
 
       /// First, check to see if answer code has unique/custom view
       /// These answers have their views determined programmatically,
@@ -43,7 +43,8 @@ class AnswerItems extends StatelessWidget {
       switch (lastAnswerCode) {
         // LA30122-8: I choose not to answer this question
         case 'LA30122-8':
-          return const Text('choose not to answer');
+          return AnswerItemDeclineToAnswer(
+              answer: answer, rxUserResponse: userResponse, activeBool: activeBool ?? false.obs);
         //  LA46-8:  labels.prapare.answers.other;
         case 'LA46-8':
           return const Text('other');
