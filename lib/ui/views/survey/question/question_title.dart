@@ -28,20 +28,22 @@ class QuestionTitle extends StatelessWidget {
       /// first, parse the last element of the question for display
       /// for now, we are assuming this is a coded answer
       final String parsedAnswerLinkId = questionLinkId.split('/').last;
+      final String answerTitle =
+          codesUtil.getAnswerFromLinkIdAndLocale(parsedAnswerLinkId, labels) ??
+              '';
 
       return Padding(
         padding: const EdgeInsets.only(top: 16.0),
-        child: Text(
-            '${codesUtil.getAnswerFromLinkIdAndLocale(parsedAnswerLinkId, labels)}',
-            style: textTheme.bodyText1,
-            textAlign: TextAlign.start),
+        child: Text(answerTitle,
+            style: textTheme.bodyText1, textAlign: TextAlign.start),
       );
     } else {
+      final String questionTitle =
+          codesUtil.getQuestionFromLinkIdAndLocale(questionLinkId, labels) ??
+              '';
       return // Question title
-          Text(
-              '${qTotalIndex + 1}: ${codesUtil.getQuestionFromLinkIdAndLocale(questionLinkId, labels)}',
-              style: textTheme.headline6,
-              textAlign: TextAlign.start);
+          Text('${qTotalIndex + 1}: $questionTitle',
+              style: textTheme.headline6, textAlign: TextAlign.start);
     }
   }
 }

@@ -14,6 +14,7 @@ class AnswerItemRadioButton extends StatelessWidget implements AnswerItem {
       @required this.activeCode})
       : assert(answer != null),
         assert(rxUserResponse != null),
+        assert(activeCode != null),
         super(key: key);
 
   @override
