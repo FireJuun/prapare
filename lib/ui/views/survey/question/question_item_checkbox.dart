@@ -27,6 +27,7 @@ class QuestionItemCheckbox extends StatelessWidget implements QuestionItem {
             answer: answer,
           ),
         ),
+        ...QuestionItem.buildSubQuestions(group, question),
       ],
     );
   }

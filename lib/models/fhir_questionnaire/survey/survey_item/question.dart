@@ -92,7 +92,7 @@ class Question extends SurveyItem {
       case QuestionnaireItemType.boolean:
         {
           // todo: @dokotela which Question format should ItemType.boolean represent??
-          question.format = QFormat.unknown;
+          question.format = QFormat.slider;
           _createAnswerByQuestionAndItemType(question, ItemType.boolean);
           break;
         }

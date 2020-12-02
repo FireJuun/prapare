@@ -11,6 +11,7 @@ class UserResponsesController extends GetxController {
     oldItem.update((e) => e = newItem ?? UserResponse.defaultNull());
   }
 
+  // todo: handle if no response
   Rx<UserResponse> findRxUserResponse(
           {@required String questionLinkId, @required String answerCode}) =>
       _rxUserResponsesMap[questionLinkId];

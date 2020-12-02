@@ -92,7 +92,12 @@ class QuestionnaireController extends GetxController {
         _addQuestion(question.linkId, AnswerText(''));
         break;
     }
+    if (question.subQuestions.isNotEmpty) {
+      question.subQuestions.forEach((e) => _mapSubQuestion(e));
+    }
   }
+
+  void _mapSubQuestion(Question subQuestion) => _mapQuestion(subQuestion);
 
   void _addQuestion(String linkId, AnswerResponse answer) =>
       _responsesController.rxUserResponsesMap.add(

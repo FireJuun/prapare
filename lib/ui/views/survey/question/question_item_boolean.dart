@@ -6,19 +6,18 @@ import 'package:prapare/ui/views/survey/answer/answer_items.dart';
 
 import 'question_item.dart';
 
-class QuestionItemRadioButton extends StatefulWidget {
-  const QuestionItemRadioButton({Key key, this.group, this.question})
+class QuestionItemBoolean extends StatefulWidget {
+  const QuestionItemBoolean({Key key, this.group, this.question})
       : super(key: key);
 
   final ItemGroup group;
   final Question question;
 
   @override
-  _QuestionItemRadioButtonState createState() =>
-      _QuestionItemRadioButtonState();
+  _QuestionItemBooleanState createState() => _QuestionItemBooleanState();
 }
 
-class _QuestionItemRadioButtonState extends State<QuestionItemRadioButton>
+class _QuestionItemBooleanState extends State<QuestionItemBoolean>
     implements QuestionItem {
   final UserResponsesController controller = Get.find();
   final RxString activeCode = ''.obs;

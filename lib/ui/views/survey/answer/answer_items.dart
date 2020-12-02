@@ -31,6 +31,22 @@ class AnswerItems extends StatelessWidget {
         questionLinkId: question.linkId, answerCode: answer.code);
 
     try {
+      /// First, check to see if answer code has unique/custom view
+      /// These answers have their views determined programmatically,
+      /// regardless of overall question type
+      switch (answer.code) {
+        // LA30122-8: I choose not to answer this question
+        case 'LA30122-8':
+          return const Text('choose not to answer');
+        //  LA46-8:  labels.prapare.answers.other;
+        case 'LA46-8':
+          return const Text('other');
+        //  'LA30137-6':  labels.prapare.answers.work.otherwiseUnemployedButNotSeekingWork;
+        case 'LA30137-6':
+          return const Text('Otherwise Unemployed But Not Seeking Work');
+      }
+
+      // Otherwise, build view based on answerItemType
       switch (answer.answerItemType) {
         // **** Radio Buttons + Checkbox Answers ***
         case ItemType.choice:
@@ -57,13 +73,20 @@ class AnswerItems extends StatelessWidget {
         // **** Number Answers ***
         case ItemType.decimal:
         case ItemType.integer:
+          // return Text('decimal');
           return AnswerItemDecimal(
               answer: answer, rxUserResponse: userResponse);
 
         // **** String Answers ***
         case ItemType.string:
+          // todo: re-enable AnswerItemString to handle 'other' answer types
+          return Text('string');
         case ItemType.text:
           return AnswerItemString(answer: answer, rxUserResponse: userResponse);
+
+        case ItemType.boolean:
+          // todo: implement answer_boolean
+          return Text('boolean');
 
         // **** DEFAULT: Radio Button Answer ***
         default:

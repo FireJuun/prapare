@@ -20,13 +20,20 @@ class QuestionItemTextBox extends StatelessWidget implements QuestionItem {
     /// ItemType and QuestionnaireItemType need to be parsed
     /// to remove the 'QuestionnaireItemType.___' and return '___'
     final String _qItemType =
-        ItemTypeUtil().getCodeFromQuestionnaireItemType(question.itemType);
+        ItemTypeUtil().getCodeFromQuestionnaireItemType(question.itemType) ??
+            '';
     final Answer _answer =
         question.answers.firstWhere((element) => element.code == _qItemType);
-    return AnswerItems(
-      group: group,
-      question: question,
-      answer: _answer,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        AnswerItems(
+          group: group,
+          question: question,
+          answer: _answer,
+        ),
+        ...QuestionItem.buildSubQuestions(group, question),
+      ],
     );
   }
 
