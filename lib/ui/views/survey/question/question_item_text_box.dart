@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prapare/_internal/utils/item_type_util.dart';
+import 'package:prapare/models/fhir_questionnaire/survey/enums/item_type.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/ui/views/survey/answer/answer_items.dart';
 
@@ -19,11 +20,10 @@ class QuestionItemTextBox extends StatelessWidget implements QuestionItem {
   Widget buildQuestion(BuildContext context) {
     /// ItemType and QuestionnaireItemType need to be parsed
     /// to remove the 'QuestionnaireItemType.___' and return '___'
-    final String _qItemType =
-        ItemTypeUtil().getCodeFromQuestionnaireItemType(question.itemType) ??
-            '';
-    final Answer _answer =
-        question.answers.firstWhere((element) => element.code == _qItemType);
+    final ItemType qItemType =
+        ItemTypeUtil().getItemTypeFromQuestionnaireItemType(question.itemType);
+    final Answer _answer = question.answers
+        .firstWhere((element) => element.answerItemType == qItemType);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

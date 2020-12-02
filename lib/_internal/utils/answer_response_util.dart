@@ -22,11 +22,11 @@ class AnswerResponseUtil {
       case ItemType.boolean:
         {
           if (newValue == 'true') {
-            return AnswerBoolean(true);
+            return AnswerBoolean(answer.code, true);
           } else if (newValue == 'false') {
-            return AnswerBoolean(false);
+            return AnswerBoolean(answer.code, false);
           }
-          return AnswerBoolean(null);
+          return AnswerBoolean(answer.code, null);
         }
       case ItemType.decimal:
         {

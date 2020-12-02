@@ -171,8 +171,9 @@ void _generateListOfAllowedAnswers(QuestionnaireItem item, Question question) =>
 void _createAnswerByQuestionAndItemType(Question question, ItemType itemType) {
   /// ItemType and QuestionnaireItemType need to be parsed
   /// to remove the 'ItemType.___' and return '___'
-  final String itemTypeCode = ItemTypeUtil().getCodeFromItemType(itemType);
+  final String code = question.linkId;
+
   question.answers.add(
-    Answer(answerItemType: itemType, code: itemTypeCode, text: ''),
+    Answer(answerItemType: itemType, code: code, text: ''),
   );
 }

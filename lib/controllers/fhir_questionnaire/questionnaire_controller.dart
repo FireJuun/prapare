@@ -67,7 +67,7 @@ class QuestionnaireController extends GetxController {
       /// For now, I'm setting the default boolean UserResponse to null
       /// It is possible to have 3-phase boolean responses (true / false / null), which we want to handle
       case QuestionnaireItemType.boolean:
-        _addQuestion(question.linkId, AnswerBoolean(null));
+        _addQuestion(question.linkId, AnswerBoolean(question.linkId, null));
         break;
 
       /// NOTE Decimals and Integers can have a null value if no data are set
@@ -143,7 +143,8 @@ class QuestionnaireController extends GetxController {
       /// It is possible to have 3-phase boolean responses (true / false / null), which we want to handle
       case QuestionnaireItemType.boolean:
         return UserResponse(
-            questionLinkId: q.linkId, answers: [AnswerBoolean(null)]).obs;
+            questionLinkId: q.linkId,
+            answers: [AnswerBoolean(q.linkId, null)]).obs;
 
       /// Decimals / Integers handled similarly to Question Mapping above, w/ default nulls
       case QuestionnaireItemType.decimal:

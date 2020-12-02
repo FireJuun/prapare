@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:prapare/_internal/utils/utils.dart';
 import 'package:prapare/controllers/controllers.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/enums/item_type.dart';
@@ -31,10 +32,15 @@ class AnswerItems extends StatelessWidget {
         questionLinkId: question.linkId, answerCode: answer.code);
 
     try {
+      final lastAnswerCode = LinkIdUtil().getLastId(answer.code);
+      // print('question: ' + question.text);
+      // print('answer: ' + answer.text);
+      print('answer code: ' + lastAnswerCode);
+
       /// First, check to see if answer code has unique/custom view
       /// These answers have their views determined programmatically,
       /// regardless of overall question type
-      switch (answer.code) {
+      switch (lastAnswerCode) {
         // LA30122-8: I choose not to answer this question
         case 'LA30122-8':
           return const Text('choose not to answer');
@@ -79,8 +85,6 @@ class AnswerItems extends StatelessWidget {
 
         // **** String Answers ***
         case ItemType.string:
-          // todo: re-enable AnswerItemString to handle 'other' answer types
-          return Text('string');
         case ItemType.text:
           return AnswerItemString(answer: answer, rxUserResponse: userResponse);
 

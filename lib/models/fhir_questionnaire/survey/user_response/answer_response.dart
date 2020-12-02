@@ -32,7 +32,8 @@ class AnswerOther extends AnswerResponse {
 
 /// In some cases, boolean answers are accepted
 class AnswerBoolean extends AnswerResponse {
-  AnswerBoolean(bool value) : super(value);
+  AnswerBoolean(this.code, bool value) : super(value);
+  String code;
   @override
   void _setResponseItemType() => responseItemType = ItemType.boolean;
 }
