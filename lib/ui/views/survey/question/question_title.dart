@@ -4,6 +4,7 @@ import 'package:prapare/_internal/utils/prapare_codes_util.dart';
 import 'package:prapare/_internal/utils/utils.dart';
 import 'package:prapare/controllers/controllers.dart';
 import 'package:prapare/localization.dart';
+import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 
 class QuestionTitle extends StatelessWidget {
   const QuestionTitle({Key key, @required this.questionLinkId})
@@ -45,14 +46,28 @@ class QuestionTitle extends StatelessWidget {
                 style: textTheme.bodyText1, textAlign: TextAlign.start),
       );
     } else {
+      // Default path: Question Title
       final String questionTitle =
           codesUtil.getQuestionFromLinkIdAndLocale(questionLinkId, labels) ??
               '';
-      return // Question title
-          Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-        child: Text('${qTotalIndex + 1}: $questionTitle',
-            style: textTheme.headline6, textAlign: TextAlign.start),
+      final ValidationController validationController = Get.find();
+      final String groupAndQuestionId =
+          LinkIdUtil().getGroupAndQuestionId(questionLinkId);
+      final QuestionValidators qValidators =
+          validationController.rxQuestionValidatorsMap[groupAndQuestionId];
+
+      return Obx(
+        () => Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+          child: Text('${qTotalIndex + 1}: $questionTitle',
+              style: textTheme.headline6.apply(
+                  color:
+                      qValidators.isQuestionAnswered.value ? Colors.blue : null,
+                  decoration: qValidators.isDeclineToAnswerSelected.value
+                      ? TextDecoration.lineThrough
+                      : null),
+              textAlign: TextAlign.start),
+        ),
       );
     }
   }

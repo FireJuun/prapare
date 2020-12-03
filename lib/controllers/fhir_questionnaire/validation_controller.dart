@@ -19,6 +19,27 @@ class ValidationController extends GetxController {
   RxMap<String, QuestionValidators> get rxQuestionValidatorsMap =>
       _rxQuestionValidatorsMap;
 
+  bool validateIfQuestionIsCompleted(Rx<UserResponse> userResponse) {
+    final String groupAndQuestionId =
+        LinkIdUtil().getGroupAndQuestionId(userResponse.value.questionLinkId);
+    final QuestionValidators qValidators =
+        _rxQuestionValidatorsMap[groupAndQuestionId];
+
+    if (userResponse.value.questionLinkId != groupAndQuestionId) {
+      //subquestion
+      // todo: handle subquestion data
+    } else {
+      // question
+      if (userResponse.value.answers.isEmpty) {
+        // todo: for now, this only handles checkbox answers...
+        return qValidators.isQuestionAnswered.value = false;
+      } else {
+        return qValidators.isQuestionAnswered.value = true;
+      }
+    }
+    return false;
+  }
+
   bool validateIfGroupIsCompleted(String questionCode) {
     final String groupCode = LinkIdUtil().getGroupId(questionCode);
 

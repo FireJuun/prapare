@@ -27,6 +27,8 @@ class ToggleCheckboxCommand extends AbstractCommand {
 
     // check validator to see if survey is complete
     validationController
+        .validateIfQuestionIsCompleted(userResponse);
+    validationController
         .validateIfGroupIsCompleted(userResponse.value.questionLinkId);
   }
 }
