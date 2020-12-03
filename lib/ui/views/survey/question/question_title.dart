@@ -61,8 +61,12 @@ class QuestionTitle extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
           child: Text('${qTotalIndex + 1}: $questionTitle',
               style: textTheme.headline6.apply(
-                  color:
-                      qValidators.isQuestionAnswered.value ? Colors.blue : null,
+                  color: qValidators.isQuestionAnswered.value
+                      ? Colors.blue
+                      : null, // todo: extract from theme
+                  fontStyle: qValidators.isDeclineToAnswerSelected.value
+                      ? FontStyle.italic
+                      : null,
                   decoration: qValidators.isDeclineToAnswerSelected.value
                       ? TextDecoration.lineThrough
                       : null),
