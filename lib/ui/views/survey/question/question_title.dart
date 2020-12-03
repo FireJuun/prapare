@@ -49,8 +49,11 @@ class QuestionTitle extends StatelessWidget {
           codesUtil.getQuestionFromLinkIdAndLocale(questionLinkId, labels) ??
               '';
       return // Question title
-          Text('${qTotalIndex + 1}: $questionTitle',
-              style: textTheme.headline6, textAlign: TextAlign.start);
+          Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+        child: Text('${qTotalIndex + 1}: $questionTitle',
+            style: textTheme.headline6, textAlign: TextAlign.start),
+      );
     }
   }
 }
