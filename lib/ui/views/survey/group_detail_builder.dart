@@ -27,8 +27,8 @@ Widget _parseSurveyItem(
   if (entry is ItemGroup) {
     /// Put new group in a temporary list that has 'wrapped' items
     /// wrapped items display differently on horiz vs vertical layouts
-    return groupDetailExpansionPanel(
-        entry, _buildSubItemWrappedList(entry, widgetList));
+    return GroupDetailExpansionPanel(
+        entry: entry, children: _buildSubItemWrappedList(entry, widgetList));
   } else {
     /// most items follow this path
     return _addItem(group, entry);
@@ -58,9 +58,9 @@ List<Widget> _buildSubItemWrappedList(
 Widget _addItem(ItemGroup group, SurveyItem entry) {
   // standard path for creating a question
   if (entry is Question) {
-    return groupDetailExpansionPanel(
-      entry,
-      [
+    return GroupDetailExpansionPanel(
+      entry: entry,
+      children: [
         QuestionItems(group: group, question: entry),
         const SizedBox(height: 16),
       ],
