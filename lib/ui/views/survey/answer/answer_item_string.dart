@@ -57,6 +57,7 @@ class _AnswerItemStringState extends State<AnswerItemString>
 
   @override
   void initState() {
+    // todo: change answers[0] to 'first where itemtype is =='
     _textEditingController =
         TextEditingController(text: rxUserResponse.value.answers[0].value);
     DebounceAndSaveResponseCommand()

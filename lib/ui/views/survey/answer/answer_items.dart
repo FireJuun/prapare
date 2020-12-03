@@ -19,14 +19,12 @@ class AnswerItems extends StatelessWidget {
     @required this.question,
     @required this.answer,
     this.activeCode,
-    this.activeBool,
   }) : super(key: key);
 
   final ItemGroup group;
   final Question question;
   final Answer answer;
   final RxString activeCode;
-  final RxBool activeBool;
 
   @override
   Widget build(BuildContext context) {
@@ -44,9 +42,7 @@ class AnswerItems extends StatelessWidget {
         // LA30122-8: I choose not to answer this question
         case 'LA30122-8':
           return AnswerItemDeclineToAnswer(
-              answer: answer,
-              rxUserResponse: userResponse,
-              activeBool: activeBool ?? false.obs);
+              answer: answer, rxUserResponse: userResponse);
         //  LA46-8:  labels.prapare.answers.other;
         case 'LA46-8':
           return const Text('other');
@@ -64,10 +60,7 @@ class AnswerItems extends StatelessWidget {
           {
             if (question.format == QFormat.radio_button) {
               return AnswerItemRadioButton(
-                answer: answer,
-                rxUserResponse: userResponse,
-                activeCode: activeCode ?? ''.obs,
-              );
+                  answer: answer, rxUserResponse: userResponse, activeCode: activeCode);
             } else if (question.format == QFormat.check_box) {
               return AnswerItemCheckbox(
                   answer: answer, rxUserResponse: userResponse);

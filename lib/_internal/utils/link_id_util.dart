@@ -10,4 +10,6 @@ class LinkIdUtil {
   /// this should handle codes both with and without a trailing '/'
   String getLastId(String code) =>
       code.split('/').lastWhere((e) => e != '') ?? '';
+  String getGroupAndQuestionId(String code) =>
+      '/${getGroupId(code)}/${getQuestionId(code)}';
 }

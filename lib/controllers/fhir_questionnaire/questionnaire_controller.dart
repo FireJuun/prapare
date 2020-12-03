@@ -39,7 +39,20 @@ class QuestionnaireController extends GetxController {
         .map((e) => (e as ItemGroup).surveyItems)
         .expand((x) => x)
         .toList();
+
+    _mapAllQuestionValidators(_allQuestions);
   }
+
+  /// Each Question or ItemGroup, as numbered from the original
+  /// survey.surveyItem list, will keep state of its own validator
+  /// Its overall linkId is defined as '/groupId/questionId'
+  // todo: if loading a old / partially completed survey, will need to determine QuestionValidators() data as well
+  void _mapAllQuestionValidators(List<SurveyItem> allQuestions) =>
+      allQuestions.forEach((e) => _addQuestionValidator(e.linkId));
+
+  void _addQuestionValidator(String linkId) =>
+      _validationController.rxQuestionValidatorsMap
+          .add(linkId, QuestionValidators());
 
   void _mapAllUserResponses() => _model.data.survey.surveyItems.forEach(
         (s) => s.runtimeType == ItemGroup ? _mapGroup(s) : _mapQuestion(s),
@@ -48,11 +61,7 @@ class QuestionnaireController extends GetxController {
   void _mapGroup(ItemGroup itemGroup) => itemGroup.surveyItems.forEach((item) =>
       item.runtimeType == ItemGroup ? _mapGroup(item) : _mapQuestion(item));
 
-  void _mapQuestion(Question question, [bool isSubQuestion = false]) {
-    // only Questions keep state of question validators
-    if (!isSubQuestion) {
-      _addQuestionValidator(question.linkId);
-    }
+  void _mapQuestion(Question question) {
     switch (question.itemType) {
       // If present in a UserResponse list, the Choice is true. If absent, it is false
       case QuestionnaireItemType.choice:
@@ -99,15 +108,11 @@ class QuestionnaireController extends GetxController {
     }
   }
 
-  void _mapSubQuestion(Question subQuestion) => _mapQuestion(subQuestion, true);
+  void _mapSubQuestion(Question subQuestion) => _mapQuestion(subQuestion);
 
   void _addQuestion(String linkId, AnswerResponse answer) =>
       _responsesController.rxUserResponsesMap.add(
           linkId, UserResponse(questionLinkId: linkId, answers: [answer]).obs);
-
-  void _addQuestionValidator(String linkId) =>
-      _validationController.rxQuestionValidatorsMap
-          .add(linkId, QuestionValidators());
 
   void _mapAllActiveResponses() {
     /// defaults to blank answer on first load
