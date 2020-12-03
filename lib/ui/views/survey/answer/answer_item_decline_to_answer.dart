@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/_internal/utils/utils.dart';
+import 'package:prapare/controllers/commands/commands.dart';
 import 'package:prapare/controllers/controllers.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/user_response/user_response.dart';
@@ -31,20 +32,16 @@ class AnswerItemDeclineToAnswer extends StatelessWidget implements AnswerItem {
     // this is used in case the user response is a nested value
     final String groupAndQuestionId =
         LinkIdUtil().getGroupAndQuestionId(rxUserResponse.value.questionLinkId);
-    final QuestionValidators validators =
+    final QuestionValidators qValidators =
         controller.rxQuestionValidatorsMap[groupAndQuestionId];
 
-    final RxBool activeBool = validators?.isDeclineToAnswerSelected;
+    final RxBool activeBool = qValidators?.isDeclineToAnswerSelected;
 
     return Obx(() => SwitchListTile(
           title: AnswerTitle(answer: answer),
           value: activeBool.value,
-          onChanged: (bool value) {
-            activeBool.value = value;
-            // todo: set up decline to answer command
-            // this will need to change based on user response type
-            // bool vs choice, open_choice, check_box are handled differently
-          },
+          onChanged: (bool newValue) => ToggleDeclineToRespondCommand()
+              .execute(qValidators: qValidators, newValue: newValue),
         ));
   }
 

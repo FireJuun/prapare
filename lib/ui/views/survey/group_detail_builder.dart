@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 
-import 'group_detail_expansion_tile.dart';
+import 'group_detail_expansion_panel.dart';
 import 'question/question_items.dart';
 
 List<Widget> groupDetailBuilder({@required ItemGroup group}) {
@@ -27,7 +27,7 @@ Widget _parseSurveyItem(
   if (entry is ItemGroup) {
     /// Put new group in a temporary list that has 'wrapped' items
     /// wrapped items display differently on horiz vs vertical layouts
-    return groupDetailExpansionTile(
+    return groupDetailExpansionPanel(
         entry, _buildSubItemWrappedList(entry, widgetList));
   } else {
     /// most items follow this path
@@ -58,7 +58,7 @@ List<Widget> _buildSubItemWrappedList(
 Widget _addItem(ItemGroup group, SurveyItem entry) {
   // standard path for creating a question
   if (entry is Question) {
-    return groupDetailExpansionTile(
+    return groupDetailExpansionPanel(
       entry,
       [
         QuestionItems(group: group, question: entry),
