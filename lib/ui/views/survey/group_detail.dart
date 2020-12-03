@@ -11,12 +11,9 @@ class GroupDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: groupDetailBuilder(group: group),
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: groupDetailBuilder(group: group),
     );
   }
 }

@@ -36,7 +36,7 @@ class _AnswerItemDecimalState extends State<AnswerItemDecimal>
     final bool _isInteger = answer.answerItemType == ItemType.integer;
 
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16.0),
+      padding: const EdgeInsets.all(16.0),
       child: TextField(
         controller: _textEditingController,
         onChanged: (newValue) => _rxString.value = newValue.toString(),

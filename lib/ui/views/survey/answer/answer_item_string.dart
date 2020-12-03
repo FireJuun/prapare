@@ -38,7 +38,7 @@ class _AnswerItemStringState extends State<AnswerItemString>
     final bool _isMultiLine = answer.answerItemType == ItemType.text;
 
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16.0),
+      padding: const EdgeInsets.all(16.0),
       child: TextField(
         controller: _textEditingController,
         onChanged: (newValue) => _obj.value = newValue,
