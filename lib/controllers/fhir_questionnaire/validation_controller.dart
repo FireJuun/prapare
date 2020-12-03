@@ -5,13 +5,19 @@ import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/ui/views/survey/group_controller.dart';
 
 class ValidationController extends GetxController {
-  final QuestionnaireController _questionnaireController = Get.find();
   final UserResponsesController _responsesController = Get.find();
-  final GroupController _groupController = Get.find();
 
   // holds state of which tabs are checked, mapped by survey code
-  final RxMap<String, RxBool> _rxMappedValidatedGroups = <String, RxBool>{}.obs;
-  RxMap<String, RxBool> get rxMappedValidatedTabs => _rxMappedValidatedGroups;
+  final RxMap<String, RxBool> _rxGroupValidatorsMap = <String, RxBool>{}.obs;
+  RxMap<String, RxBool> get rxGroupValidatorsMap => _rxGroupValidatorsMap;
+
+  /// holds state of each question's validators, specifically
+  /// 1) has a question been answered? or 2) declined to answer?
+  /// 3) if a radio button is present, what is currently selected?
+  final RxMap<String, QuestionValidators> _rxQuestionValidatorsMap =
+      <String, QuestionValidators>{}.obs;
+  RxMap<String, QuestionValidators> get rxQuestionValidatorsMap =>
+      _rxQuestionValidatorsMap;
 
   bool validateIfGroupIsCompleted(String questionCode) {
     final String groupCode = LinkIdUtil().getGroupId(questionCode);
@@ -121,6 +127,8 @@ class ValidationController extends GetxController {
   }
 
   void _updateTabListWithValidator(String groupCode, bool validator) {
+    final GroupController _groupController = Get.find();
+
     /// get relevant SurveyTab, and toggle it as checked
     /// since we used parse util for groupCode, which removed the '/'
     /// we will parse these values as well for consistency
@@ -132,23 +140,10 @@ class ValidationController extends GetxController {
   }
 
   // skip the last tab item (optional), then see if all are checked
-  bool validateIfRequiredGroupsAreComplete() =>
-      _groupController.tabModel.tabList
-          .take(_groupController.tabModel.tabList.length - 1)
-          .every((e) => e.isChecked.value);
-
-  // create empty validators with false as default
-  void _mapAllGroupValidators() {
-    _questionnaireController
-        .getQuestionnaire()
-        .survey
-        .surveyItems
-        .forEach((s) => _rxMappedValidatedGroups.add(s.linkId, false.obs));
-  }
-
-  @override
-  void onInit() {
-    _mapAllGroupValidators();
-    super.onInit();
+  bool validateIfRequiredGroupsAreComplete() {
+    final GroupController _groupController = Get.find();
+    return _groupController.tabModel.tabList
+        .take(_groupController.tabModel.tabList.length - 1)
+        .every((e) => e.isChecked.value);
   }
 }

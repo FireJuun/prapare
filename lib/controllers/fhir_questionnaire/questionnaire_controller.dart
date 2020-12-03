@@ -2,7 +2,6 @@ import 'package:fhir/r4.dart';
 import 'package:get/get.dart';
 import 'package:prapare/_internal/constants/prapare_survey.dart';
 import 'package:prapare/controllers/controllers.dart';
-import 'package:prapare/models/fhir_questionnaire/fhir_questionnaire.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/models/fhir_questionnaire/questionnaire_model.dart';
 
@@ -13,13 +12,12 @@ class QuestionnaireController extends GetxController {
   final QuestionnaireModel _model = QuestionnaireModel();
 
   final UserResponsesController _responsesController = Get.find();
+  final ValidationController _validationController = Get.find();
 
   // *******************************************************************
   // ******************* GETTERS AND SETTERS ***************************
   // *******************************************************************
   List<SurveyItem> _allQuestions;
-
-  FhirQuestionnaire getQuestionnaire() => _model.data;
 
   ItemGroup getGroupFromCode(String code) => _model.data.survey.surveyItems
       .firstWhere((e) => e.linkId == code, orElse: () => ItemGroup());
@@ -50,7 +48,11 @@ class QuestionnaireController extends GetxController {
   void _mapGroup(ItemGroup itemGroup) => itemGroup.surveyItems.forEach((item) =>
       item.runtimeType == ItemGroup ? _mapGroup(item) : _mapQuestion(item));
 
-  void _mapQuestion(Question question) {
+  void _mapQuestion(Question question, [bool isSubQuestion = false]) {
+    // only Questions keep state of question validators
+    if (!isSubQuestion) {
+      _addQuestionValidator(question.linkId);
+    }
     switch (question.itemType) {
       // If present in a UserResponse list, the Choice is true. If absent, it is false
       case QuestionnaireItemType.choice:
@@ -97,11 +99,15 @@ class QuestionnaireController extends GetxController {
     }
   }
 
-  void _mapSubQuestion(Question subQuestion) => _mapQuestion(subQuestion);
+  void _mapSubQuestion(Question subQuestion) => _mapQuestion(subQuestion, true);
 
   void _addQuestion(String linkId, AnswerResponse answer) =>
       _responsesController.rxUserResponsesMap.add(
           linkId, UserResponse(questionLinkId: linkId, answers: [answer]).obs);
+
+  void _addQuestionValidator(String linkId) =>
+      _validationController.rxQuestionValidatorsMap
+          .add(linkId, QuestionValidators());
 
   void _mapAllActiveResponses() {
     /// defaults to blank answer on first load
@@ -169,12 +175,19 @@ class QuestionnaireController extends GetxController {
     }
   }
 
+  // create empty validators with false as default
+  void _mapAllGroupValidators() {
+    _model.data.survey.surveyItems.forEach((s) =>
+        _validationController.rxGroupValidatorsMap.add(s.linkId, false.obs));
+  }
+
   @override
   void onInit() {
     _model.loadAndCreateSurvey();
     _mapAllQuestions();
     _mapAllUserResponses();
     _mapAllActiveResponses();
+    _mapAllGroupValidators();
     super.onInit();
   }
 }

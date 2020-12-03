@@ -6,8 +6,8 @@ class GroupBinding implements Bindings {
   @override
   void dependencies() {
     Get.put<UserResponsesController>(UserResponsesController());
+    Get.put<ValidationController>(ValidationController());
     Get.put<QuestionnaireController>(QuestionnaireController());
-    Get.put<GroupController>(GroupController());
-    Get.lazyPut<ValidationController>(() => ValidationController());
+    Get.lazyPut<GroupController>(() => GroupController());
   }
 }
