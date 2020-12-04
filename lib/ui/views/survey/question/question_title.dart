@@ -57,7 +57,7 @@ class QuestionTitle extends StatelessWidget {
       final String groupAndQuestionId =
           LinkIdUtil().getGroupAndQuestionId(questionLinkId);
       final QuestionValidators qValidators =
-          validationController.rxQuestionValidatorsMap[groupAndQuestionId];
+          validationController.questionValidatorsMap[groupAndQuestionId];
 
       return Obx(
         () => Padding(

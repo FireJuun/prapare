@@ -8,22 +8,22 @@ class ValidationController extends GetxController {
   final UserResponsesController _responsesController = Get.find();
 
   // holds state of which tabs are checked, mapped by survey code
-  final RxMap<String, RxBool> _rxGroupValidatorsMap = <String, RxBool>{}.obs;
-  RxMap<String, RxBool> get rxGroupValidatorsMap => _rxGroupValidatorsMap;
+  final Map<String, RxBool> _groupValidatorsMap = <String, RxBool>{};
+  Map<String, RxBool> get groupValidatorsMap => _groupValidatorsMap;
 
   /// holds state of each question's validators, specifically
   /// 1) has a question been answered? or 2) declined to answer?
   /// 3) if a radio button is present, what is currently selected?
-  final RxMap<String, QuestionValidators> _rxQuestionValidatorsMap =
-      <String, QuestionValidators>{}.obs;
-  RxMap<String, QuestionValidators> get rxQuestionValidatorsMap =>
-      _rxQuestionValidatorsMap;
+  final Map<String, QuestionValidators> _questionValidatorsMap =
+      <String, QuestionValidators>{};
+  Map<String, QuestionValidators> get questionValidatorsMap =>
+      _questionValidatorsMap;
 
   bool validateIfQuestionIsCompleted(Rx<UserResponse> userResponse) {
     final String groupAndQuestionId =
         LinkIdUtil().getGroupAndQuestionId(userResponse.value.questionLinkId);
     final QuestionValidators qValidators =
-        _rxQuestionValidatorsMap[groupAndQuestionId];
+        _questionValidatorsMap[groupAndQuestionId];
 
     if (userResponse.value.questionLinkId != groupAndQuestionId) {
       //subquestion
@@ -46,7 +46,7 @@ class ValidationController extends GetxController {
     // create temporary map of all user responses for a given group
     final Map<String, Rx<UserResponse>> groupResponses = {};
 
-    _responsesController.rxUserResponsesMap.forEach(
+    _responsesController.userResponsesMap.forEach(
       (questId, usrResp) {
         final String grpId = LinkIdUtil().getGroupId(questId);
         if (grpId == groupCode) {

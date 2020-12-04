@@ -14,7 +14,7 @@ class ToggleRadioButtonCommand extends AbstractCommand {
     final String groupAndQuestionId =
         LinkIdUtil().getGroupAndQuestionId(userResponse.value.questionLinkId);
     final QuestionValidators qValidators =
-        validationController.rxQuestionValidatorsMap[groupAndQuestionId];
+        validationController.questionValidatorsMap[groupAndQuestionId];
 
     // if toggled to off state
     if (newResponse == null) {

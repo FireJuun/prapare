@@ -6,7 +6,6 @@ import 'package:prapare/controllers/controllers.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/user_response/user_response.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/answer.dart';
-import 'package:get/get_rx/src/rx_core/rx_impl.dart';
 import 'package:prapare/ui/views/survey/answer/answer_item.dart';
 
 import 'answer_title.dart';
@@ -33,7 +32,7 @@ class AnswerItemDeclineToAnswer extends StatelessWidget implements AnswerItem {
     final String groupAndQuestionId =
         LinkIdUtil().getGroupAndQuestionId(rxUserResponse.value.questionLinkId);
     final QuestionValidators qValidators =
-        controller.rxQuestionValidatorsMap[groupAndQuestionId];
+        controller.questionValidatorsMap[groupAndQuestionId];
 
     final RxBool activeBool = qValidators?.isDeclineToAnswerSelected;
 

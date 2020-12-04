@@ -51,8 +51,8 @@ class QuestionnaireController extends GetxController {
       allQuestions.forEach((e) => _addQuestionValidator(e.linkId));
 
   void _addQuestionValidator(String linkId) =>
-      _validationController.rxQuestionValidatorsMap
-          .add(linkId, QuestionValidators());
+      _validationController.questionValidatorsMap[linkId] =
+          QuestionValidators();
 
   void _mapAllUserResponses() => _model.data.survey.surveyItems.forEach(
         (s) => s.runtimeType == ItemGroup ? _mapGroup(s) : _mapQuestion(s),
@@ -111,8 +111,8 @@ class QuestionnaireController extends GetxController {
   void _mapSubQuestion(Question subQuestion) => _mapQuestion(subQuestion);
 
   void _addQuestion(String linkId, AnswerResponse answer) =>
-      _responsesController.rxUserResponsesMap.add(
-          linkId, UserResponse(questionLinkId: linkId, answers: [answer]).obs);
+      _responsesController.userResponsesMap[linkId] =
+          UserResponse(questionLinkId: linkId, answers: [answer]).obs;
 
   void _mapAllActiveResponses() {
     /// defaults to blank answer on first load
@@ -127,11 +127,9 @@ class QuestionnaireController extends GetxController {
           itemGroup.surveyItems.forEach(
             (q) {
               if (q is Question) {
-                _responsesController.rxUserResponsesMap.add(
-                  q.linkId,
-                  // create a blank User Response, which will have the active answers mapped into it
-                  _handleBlankUserResponseByQuestionType(q),
-                );
+                // create a blank User Response, which will have the active answers mapped into it
+                _responsesController.userResponsesMap[q.linkId] =
+                    _handleBlankUserResponseByQuestionType(q);
               }
             },
           );
@@ -182,8 +180,8 @@ class QuestionnaireController extends GetxController {
 
   // create empty validators with false as default
   void _mapAllGroupValidators() {
-    _model.data.survey.surveyItems.forEach((s) =>
-        _validationController.rxGroupValidatorsMap.add(s.linkId, false.obs));
+    _model.data.survey.surveyItems.forEach(
+        (s) => _validationController.groupValidatorsMap[s.linkId] = false.obs);
   }
 
   @override

@@ -22,7 +22,7 @@ class GroupDetailExpansionPanel extends StatelessWidget {
     final String groupAndQuestionId =
         LinkIdUtil().getGroupAndQuestionId(entry.linkId);
     final RxBool qIsExpanded =
-        controller.rxQuestionValidatorsMap[groupAndQuestionId].isExpanded;
+        controller.questionValidatorsMap[groupAndQuestionId].isExpanded;
 
     // Only questions are wrapped in an expansion panel
     return (groupAndQuestionId == entry.linkId)
