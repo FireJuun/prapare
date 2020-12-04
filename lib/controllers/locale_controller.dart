@@ -11,8 +11,8 @@ import 'package:prapare/models/menu_options/menu_options_model.dart';
 class LocaleController extends GetxController {
   static LocaleController get to => Get.find();
 
-  final language = ''.obs;
-  final store = GetStorage();
+  final RxString language = ''.obs;
+  final GetStorage store = GetStorage();
   final List<MenuOption> languageOptions = MenuOptionsModel.languageOptions;
 
   String get currentLanguage => language.value;

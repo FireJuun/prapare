@@ -11,35 +11,37 @@ class SettingsController extends GetxController {
 
   // _rxThemeMode necessary for dynamic loading of various themes
   // defaults to system on first load, then changes theme based on preferences
-  Rx<ThemeMode> _rxThemeMode;
-  ThemeMode get rxThemeMode => _rxThemeMode.value;
-  set rxThemeMode(ThemeMode value) => _rxThemeMode.value = value;
+  final Rx<ThemeMode> _rxThemeMode = ThemeMode.system.obs;
+  Rx<ThemeMode> get rxThemeMode => _rxThemeMode;
+  set rxThemeMode(Rx<ThemeMode> newValue) =>
+      _rxThemeMode.value = newValue.value;
 
   Future<void> setThemeMode(ThemeMode obj) async {
     await _themeController.setThemeMode(obj);
     _rxThemeMode.value = obj;
-    update();
+    // Get.forceAppUpdate();
+    // update();
   }
 
   // _rxLanguage necessary for dynamic loading of locale checkbox
   // defaults to system on first load, then changes based on preferences
-  RxString _rxLanguage;
-  String get rxLanguage => _rxLanguage.value;
-  set rxLanguage(value) => _rxLanguage.value = value;
+  final RxString _rxLanguage = 'en'.obs;
+  RxString get rxLanguage => _rxLanguage;
+  set rxLanguage(RxString newValue) => _rxLanguage.value = newValue.value;
 
   Future<void> setLocale(String obj) async {
     await _localeController.updateLanguage(obj);
     _rxLanguage.value = obj;
-    Get.forceAppUpdate();
-    update();
+    // Get.forceAppUpdate();
+    // update();
   }
 
   List<MenuOption> getlanguageOptions() => _localeController.languageOptions;
 
   @override
   void onInit() {
-    _rxThemeMode = _themeController.themeMode.obs;
-    _rxLanguage = _localeController.currentLanguage.obs;
+    _rxThemeMode.value = _themeController.themeMode;
+    _rxLanguage.value = _localeController.currentLanguage;
     super.onInit();
   }
 }

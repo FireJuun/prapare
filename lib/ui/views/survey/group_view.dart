@@ -56,7 +56,7 @@ class GroupView extends StatelessWidget {
                   actions: [
                     IconButton(
                         icon: const Icon(Icons.settings),
-                        onPressed: () => settingsDialog())
+                        onPressed: () => settingsDialog(context))
                   ],
                   expandedHeight: _expandedHeight,
                   collapsedHeight: _collapsedHeight,
