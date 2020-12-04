@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:prapare/_internal/utils/utils.dart';
 import 'package:prapare/controllers/commands/abstract_command.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/item_type.dart';
@@ -10,33 +11,33 @@ class ToggleRadioButtonCommand extends AbstractCommand {
     @required Answer answer,
     @required String newResponse,
   }) async {
+    final answerResponseList = userResponse.value.answers;
     // if toggled to off state
     if (newResponse == null) {
       /// clear all UserResponses
       /// note that if we want to still keep previously written items
       /// we'll need to extract this into a separate method to handle different answer types
-      userResponse.value.answers.clear();
+      answerResponseList.clear();
     } else {
       // decide if this will have an optional 'other' write-in option
       // First, handle ItemType.choice
-      final newAnswer = (answer.answerItemType == ItemType.choice)
-          ? AnswerCode(newResponse)
-          // then, handle ItemType.openchoice
-          : (answer.answerItemType == ItemType.open_choice)
-              ? AnswerOther(newResponse, '')
-              // if neither option available, place an empty string
-              // should this also have error handlng?
-              : AnswerString('');
+      final AnswerResponse newAnswer = AnswerResponseUtil()
+          .newAnswerResponseFromAnswerAndValue(
+              answer: answer, newValue: newResponse);
 
-      if (userResponse.value.answers.isEmpty) {
+      if (answerResponseList.isEmpty) {
         // create new response if one doesn't exist
-        userResponse.value.answers.add(newAnswer);
+        answerResponseList.add(newAnswer);
       } else {
-        // otherwise, replace first available value with this new code
-        userResponse.value.answers
-            .firstWhere(
-                (element) => element is AnswerCode || element is AnswerOther)
-            .value = newAnswer;
+        if (answerResponseList is AnswerCode ||
+            answerResponseList is AnswerOther) {
+          // otherwise, replace first available value with this new code
+          // todo
+          final AnswerResponse oldAnswer = answerResponseList.firstWhere(
+              (element) => element is AnswerCode || element is AnswerOther);
+          answerResponseList.remove(oldAnswer);
+          answerResponseList.add(newAnswer);
+        }
       }
     }
     // responsesController.update();

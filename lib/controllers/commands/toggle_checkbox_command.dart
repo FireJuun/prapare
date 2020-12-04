@@ -8,19 +8,20 @@ class ToggleCheckboxCommand extends AbstractCommand {
       {@required Rx<UserResponse> userResponse,
       @required Answer answer,
       @required bool newValue}) async {
-    if (userResponse.value.answers.isEmpty) {
+    final List<AnswerResponse> answerResponseList = userResponse.value.answers;
+
+    if (answerResponseList.isEmpty) {
       // if the list is empty, add this response
       // todo: this will need to add answer Other, if free text is available
-      userResponse.value.answers.add(AnswerCode(answer.code));
+      answerResponseList.add(AnswerCode(answer.code));
     } else {
       /// Remove the old value, if it is present in the list
       /// This will toggle false booleans off, and prevent duplicate true entry (if possible)
-      userResponse.value.answers
-          .removeWhere((element) => element.value == answer.code);
+      answerResponseList.removeWhere((element) => element.value == answer.code);
 
       // If true entry, add this response
       if (newValue) {
-        userResponse.value.answers.add(AnswerCode(answer.code));
+        answerResponseList.add(AnswerCode(answer.code));
       }
     }
 

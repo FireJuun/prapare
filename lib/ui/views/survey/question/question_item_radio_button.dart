@@ -23,7 +23,6 @@ class _QuestionItemRadioButtonState extends State<QuestionItemRadioButton> {
   @override
   Widget build(BuildContext context) {
     final List<Answer> answerList = widget.question.answers.toList();
-    // final RxString activeCode = ''.obs;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,9 +41,11 @@ class _QuestionItemRadioButtonState extends State<QuestionItemRadioButton> {
 
   @override
   void initState() {
+    final Rx<UserResponse> activeResponse =
+        controller.findActiveResponse(widget.question.linkId);
     // returns most recent value, otherwise the default '' remains
-    activeCode.value = controller.getActiveRadioButtonValue(
-        controller.findActiveResponse(widget.question.linkId));
+    activeCode.value =
+        controller.getActiveRadioButtonValue(activeResponse) ?? '';
     super.initState();
   }
 }

@@ -25,6 +25,9 @@ class AnswerItemRadioButton extends StatelessWidget {
           groupValue: activeCode.value,
           toggleable: true,
           onChanged: (newResponse) async {
+            // close keyboard if previously open:
+            FocusScope.of(context).unfocus();
+            // then toggle radio button
             await ToggleRadioButtonCommand().execute(
                 userResponse: rxUserResponse,
                 answer: answer,
