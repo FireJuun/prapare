@@ -21,8 +21,8 @@ class MenuOptionsModel {
     // For Chinese, multiple options exist based on languageCode, scriptCode, and countryCode
     MenuOption(
       key: 'zh',
-      englishValue: 'Chinese, generic',
-      value: '中国，一般',
+      englishValue: 'Chinese',
+      value: '中文',
     ),
     // todo: re-implement Chinese locale variations
     // MenuOption(

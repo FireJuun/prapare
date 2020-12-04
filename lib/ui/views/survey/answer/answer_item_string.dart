@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/controllers/commands/commands.dart';
+import 'package:prapare/localization.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/enums/item_type.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 
@@ -34,6 +35,7 @@ class _AnswerItemStringState extends State<AnswerItemString>
 
   @override
   Widget buildAnswer(BuildContext context) {
+    final labels = AppLocalizations.of(context);
     // [AnswerText] accepts multi-line, whereas [AnswerString] prefers single
     final bool _isMultiLine = answer.answerItemType == ItemType.text;
 
@@ -46,7 +48,7 @@ class _AnswerItemStringState extends State<AnswerItemString>
         maxLines: _isMultiLine ? 6 : 1,
         decoration: InputDecoration(
           border: const OutlineInputBorder(),
-          labelText: 'answer: ' + (_isMultiLine ? 'text' : 'string'),
+          labelText: labels.prapare.instructions.value,
         ),
       ),
     );

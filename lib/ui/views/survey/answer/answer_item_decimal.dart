@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/controllers/commands/commands.dart';
+import 'package:prapare/localization.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/enums/item_type.dart';
 import 'package:prapare/ui/views/survey/answer/answer_item.dart';
@@ -33,6 +34,7 @@ class _AnswerItemDecimalState extends State<AnswerItemDecimal>
 
   @override
   Widget buildAnswer(BuildContext context) {
+    final labels = AppLocalizations.of(context);
     final bool _isInteger = answer.answerItemType == ItemType.integer;
 
     return Padding(
@@ -43,7 +45,7 @@ class _AnswerItemDecimalState extends State<AnswerItemDecimal>
         keyboardType: TextInputType.numberWithOptions(decimal: !_isInteger),
         decoration: InputDecoration(
           border: const OutlineInputBorder(),
-          labelText: 'answer: ' + (_isInteger ? 'integer' : 'decimal'),
+          labelText: labels.prapare.instructions.number,
         ),
       ),
     );

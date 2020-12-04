@@ -216,6 +216,10 @@ class AppLocalizations {
           losingHousing: "Are you worried about losing your housing?",
           title: "Family and Home",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "Type a number",
+          value: "Type a value",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "During the past year, what was the total combined income for you and the family members you live with? This information will help us determine if you are eligible for any benefits.",
@@ -377,7 +381,7 @@ class AppLocalizations {
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "Cancelar",
         next: "Siguiente",
-        previous: "anterior",
+        previous: "Anterior",
         submit: "Enviar",
       ),
       prapare: AppLocalizations_Labels_Prapare(
@@ -470,6 +474,10 @@ class AppLocalizations {
           housing: "¿Cuál es su situación de vivienda hoy en día?",
           losingHousing: "¿Está preocupado por la pérdida de su vivienda?",
           title: "Familia y Hogar",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "Escriba un número",
+          value: "Escriba un valor",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
@@ -725,6 +733,10 @@ class AppLocalizations {
           losingHousing: "هل أنت قلق حول فقدان السكن الخاص؟",
           title: "الأسرة المنزل و",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "اكتب رقما",
+          value: "اكتب قيمة",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "وخلال العام الماضي، ما كان إجمالي الدخل المشترك لك ولأفراد الأسرة التي تعيش معها؟ هذه المعلومات سوف تساعدنا على تحديد ما إذا كنت مؤهلا للحصول على أي فوائد.",
@@ -977,6 +989,10 @@ class AppLocalizations {
           housing: "आज अपने आवास स्थिति क्या है?",
           losingHousing: "आप अपने आवास खोने के बारे में चिंतित हैं?",
           title: "परिवार और घर",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "कोई नंबर लिखें",
+          value: "एक मूल्य के प्रकार",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
@@ -1235,6 +1251,10 @@ class AppLocalizations {
           losingHousing: "Вы беспокоитесь о потере жилья?",
           title: "Семья и дом",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "Введите число",
+          value: "Введите значение",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "В течение прошлого года, что было общее совокупный доход для вас и членов семьи, вы живете с? Эта информация поможет нам определить, если вы имеете право на любые льготы.",
@@ -1490,6 +1510,10 @@ class AppLocalizations {
           losingHousing: "আপনি আপনার হাউজিং হারিয়ে যাওয়ার বিষয়ে চিন্তিত?",
           title: "বাড়ি ও পরিবারের",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "একটি নম্বর টাইপ করুন",
+          value: "একটি মান লিখুন",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "গত বছর সময়, আপনি এবং পরিবারের সদস্যদের আপনার সাথে বসবাস মোট সম্মিলিত আয় কি ছিল? এই তথ্যটি আমাদের সাহায্য করবে তা নির্ধারণ যদি আপনার কোন বেনিফিট জন্য যোগ্য।",
@@ -1744,6 +1768,10 @@ class AppLocalizations {
               "သင်သည်သင်၏အိုးအိမ်ဆုံးရှုံးအကြောင်းကိုစိုးရိမ်နေကြသနည်း",
           title: "မိသားစုနှင့်နေအိမ်",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "နံပါတ်ရိုက်ထည့်ပါ",
+          value: "တန်ဖိုးရိုက်ထည့်ပါ",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "လွန်ခဲ့သောနှစ်အတွင်းသင်နှင့်သင်နှင့်အတူအသက်ရှင်နေထိုင်မိသားစုအဖွဲ့ဝင်များစုစုပေါင်းစုစုပေါင်းဝင်ငွေအဘယျသို့ရခဲ့သလဲ ဤအချက်အလက်သည်သင်မည်သည့်အကျိုးခံစားခွင့်များအတွက်အရည်အချင်းပြည့်မီလျှင်ဆုံးဖြတ်ရန်ကျွန်တော်တို့ကိုကူညီလိမ့်မယ်။",
@@ -1892,8 +1920,8 @@ class AppLocalizations {
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        inEnglish: "Chinese, generic",
-        title: "中国，一般",
+        inEnglish: "Chinese",
+        title: "中文",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "发展",
@@ -1992,6 +2020,10 @@ class AppLocalizations {
           housing: "今天是你的住房情况吗？",
           losingHousing: "您是否担心失去你的房？",
           title: "家庭和家庭",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "键入一个数字",
+          value: "键入一个值",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income: "在过去的一年中，什么对你和你住在一起的家庭成员合计总收入？这些信息将帮助我们确定您是否有资格获得任何好处。",
@@ -2106,7 +2138,7 @@ class AppLocalizations {
           district: "区",
           neighborhood: "邻里",
           postalCode: "邮政编码",
-          state: "州",
+          state: "状态",
           title: "地址",
         ),
         relation: AppLocalizations_Labels_General_Relation(
@@ -2231,6 +2263,10 @@ class AppLocalizations {
           housing: "今天是你的住房情况吗？",
           losingHousing: "您是否担心失去你的房？",
           title: "家庭和家庭",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "键入一个数字",
+          value: "键入一个值",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income: "在过去的一年中，什么对你和你住在一起的家庭成员合计总收入？这些信息将帮助我们确定您是否有资格获得任何好处。",
@@ -2471,6 +2507,10 @@ class AppLocalizations {
           losingHousing: "您是否擔心失去你的房？",
           title: "家庭和家庭",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "鍵入一個數字",
+          value: "鍵入一個值",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income: "在過去的一年中，什麼對你和你住在一起的家庭成員合計總收入？這些信息將幫助我們確定您是否有資格獲得任何好處。",
           insurance: "你的主要保險是什麼？",
@@ -2709,6 +2749,10 @@ class AppLocalizations {
           housing: "今天是你的住房情况吗？",
           losingHousing: "您是否担心失去你的房？",
           title: "家庭和家庭",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "键入一个数字",
+          value: "键入一个值",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income: "在过去的一年中，什么对你和你住在一起的家庭成员合计总收入？这些信息将帮助我们确定您是否有资格获得任何好处。",
@@ -2949,6 +2993,10 @@ class AppLocalizations {
           losingHousing: "您是否擔心失去你的房？",
           title: "家庭和家庭",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "鍵入一個數字",
+          value: "鍵入一個值",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income: "在過去的一年中，什麼對你和你住在一起的家庭成員合計總收入？這些信息將幫助我們確定您是否有資格獲得任何好處。",
           insurance: "你的主要保險是什麼？",
@@ -3187,6 +3235,10 @@ class AppLocalizations {
           housing: "今天是你的住房情況嗎？",
           losingHousing: "您是否擔心失去你的房？",
           title: "家庭和家庭",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "鍵入一個數字",
+          value: "鍵入一個值",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income: "在過去的一年中，什麼對你和你住在一起的家庭成員合計總收入？這些信息將幫助我們確定您是否有資格獲得任何好處。",
@@ -3432,6 +3484,10 @@ class AppLocalizations {
           housing: "وضعیت مسکن خود را امروز چیست؟",
           losingHousing: "آیا شما در مورد دست دادن مسکن خود را نگران است؟",
           title: "خانواده و خانه",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "عدد تایپ کنید",
+          value: "نوع ارزش",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
@@ -3690,6 +3746,10 @@ class AppLocalizations {
           losingHousing: "Etes-vous inquiet de perdre votre logement?",
           title: "Famille et accueil",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "Tapez un nombre",
+          value: "Tapez une valeur",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "Au cours de l'année écoulée, quel était le revenu total combiné pour vous et les membres de la famille qui vivent avec vous? Ces informations nous aideront à déterminer si vous êtes admissible à des prestations.",
@@ -3945,6 +4005,10 @@ class AppLocalizations {
           housing: "Was ist Ihr heute Wohnsituation?",
           losingHousing: "Sind Sie besorgt, über Ihr Gehäuse zu verlieren?",
           title: "Familie und Zuhause",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "Geben Sie eine Zahl",
+          value: "Geben Sie einen Wert",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
@@ -4204,6 +4268,10 @@ class AppLocalizations {
               "Apakah Anda khawatir tentang kehilangan perumahan Anda?",
           title: "Keluarga dan Rumah",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "Ketik nomor",
+          value: "Ketik nilai",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "Selama tahun lalu, apa yang pendapatan gabungan total untuk Anda dan anggota keluarga Anda hidup dengan? Informasi ini akan membantu kami menentukan apakah Anda memenuhi syarat untuk manfaat.",
@@ -4455,6 +4523,10 @@ class AppLocalizations {
           losingHousing: "あなたの住宅を失うことを心配していますか？",
           title: "家族とホーム",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "番号を入力",
+          value: "値を入力",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "昨年中は、あなたとあなたが一緒に暮らす家族のための合わせた合計収入は何でしたか？この情報は、任意の給付の資格がある場合は、私たちが判断するのに役立ちます。",
@@ -4571,7 +4643,7 @@ class AppLocalizations {
           country: "ប្រទេស",
           county: "ខោនធី",
           district: "ស្រុក",
-          neighborhood: "#VALUE!",
+          neighborhood: "អ្នកជិតខាង",
           postalCode: "លេខ​កូដ​ប្រៃ​ស​ណី​យ",
           state: "រដ្ឋ",
           title: "អាសយដ្ឋាន",
@@ -4705,6 +4777,10 @@ class AppLocalizations {
           housing: "នេះគឺជាស្ថានភាពផ្ទះរបស់អ្នកថ្ងៃអ្វី?",
           losingHousing: "តើអ្នកមានការព្រួយបារម្ភពីការបាត់បង់ផ្ទះរបស់អ្នក?",
           title: "គ្រួសារនិងទំព័រដើម",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "វាយចំនួនមួយ",
+          value: "វាយតម្លៃ",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
@@ -4957,6 +5033,10 @@ class AppLocalizations {
           losingHousing: "당신은 당신의 주택을 잃어 버릴까 걱정하고 있습니까?",
           title: "가족과 집",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "숫자를 입력",
+          value: "값을 입력",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "지난 한 해 동안, 당신과 당신이 살고있는 가족 구성원의 총 결합 된 소득은 무엇 이었습니까? 이 정보는 어떤 혜택을받을 수 있는지 우리가 결정하는 데 도움이됩니다.",
@@ -5207,6 +5287,10 @@ class AppLocalizations {
           housing: "ແມ່ນຫຍັງສະຖານະການທີ່ຢູ່ອາໄສຂອງທ່ານໃນມື້ນີ້?",
           losingHousing: "ທ່ານກໍາລັງກັງວົນກ່ຽວກັບການສູນເສຍທີ່ຢູ່ອາໄສຂອງທ່ານ?",
           title: "ຄອບຄົວແລະບ້ານ",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "ພິມຕົວເລກ",
+          value: "ພິມມູນຄ່າ",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
@@ -5462,6 +5546,10 @@ class AppLocalizations {
           losingHousing: "आपण आपल्या गृहनिर्माण तोट्याचा काळजी का करता?",
           title: "कुटुंब आणि मुख्यपृष्ठ",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "एक नंबर टाईप करा",
+          value: "एक मूल्य टाइप करा",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "गेल्या वर्षी दरम्यान, आपण आणि आपण जगू कुटुंबातील सदस्य एकूण एकत्रित उत्पन्न काय होते? ही माहिती आपण कोणत्याही पात्र तर आपल्याला निर्धारित करण्यात मदत करेल.",
@@ -5715,6 +5803,10 @@ class AppLocalizations {
           losingHousing: "तपाईं आफ्नो आवास गुमाउने चिन्तित हुनुहुन्छ?",
           title: "परिवार र घर",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "एक नम्बर टाइप",
+          value: "मान टाइप",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "गत वर्ष समयमा, तपाईं र तपाईंसँग जीवन बिताउन परिवार सदस्यहरूको लागि कुल संयुक्त आय के थियो? यो जानकारी तपाईं कुनै पनि लाभ को लागि योग्य हुनुहुन्छ भने हामीलाई निर्धारण गर्न मद्दत गर्नेछ।",
@@ -5820,7 +5912,7 @@ class AppLocalizations {
         birthDate: "Data de nascimento",
         dateofBirth: "Data de nascimento",
         editSurvey: "Editar questionário",
-        familyName: "Sobrenome",
+        familyName: "#VALUE!",
         female: "Fêmea",
         givenNames: "Nomes dados",
         male: "Masculino",
@@ -5970,6 +6062,10 @@ class AppLocalizations {
           losingHousing: "Você está preocupado em perder o seu habitação?",
           title: "Família e Home",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "Digite um número",
+          value: "Digite um valor",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "Durante o ano passado, o que foi o rendimento combinado total para você e os membros da família que vivem com? Esta informação nos ajudará a determinar se você é elegível para todos os benefícios.",
@@ -6107,7 +6203,7 @@ class AppLocalizations {
           nephew: "ਭਤੀਜੇ",
           niece: "ਭਤੀਜੀ",
           sister: "ਭੈਣ",
-          son: "ਪੁੱਤਰ ਨੂੰ",
+          son: "ਪੁੱਤਰ",
           title: "ਸਬੰਧ",
           uncle: "ਅੰਕਲ",
         ),
@@ -6224,6 +6320,10 @@ class AppLocalizations {
           housing: "ਅੱਜ ਆਪਣੇ ਹਾਊਸਿੰਗ ਸਥਿਤੀ ਦਾ ਕੀ ਹੁੰਦਾ ਹੈ?",
           losingHousing: "ਤੁਹਾਨੂੰ ਆਪਣੇ ਹਾਊਸਿੰਗ ਗੁਆਉਣ ਬਾਰੇ ਚਿੰਤਾ ਕਰ ਰਹੇ ਹੋ?",
           title: "ਪਰਿਵਾਰ ਅਤੇ ਘਰ",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "ਇੱਕ ਨੰਬਰ ਟਾਈਪ ਕਰੋ",
+          value: "ਦਾ ਮੁੱਲ ਟਾਈਪ ਕਰੋ",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
@@ -6482,6 +6582,10 @@ class AppLocalizations {
               "Ma waxaad ka walwalsan ah oo ku saabsan badiyay guryaha?",
           title: "Qoyska iyo Home",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "Ku qor tiro",
+          value: "Ku qor qiimaha a",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "Intii lagu guda jiray sanadkii la soo dhaafay, waxa uu ahaa dakhliga guud ee la isu geeyey adiga iyo xubnaha qoyska ee aad la nooshahay ee? Macluumaadkan waxaa naga caawin doonaa go'aan ka gaadho haddii aad u qalanto gargaarka kasta.",
@@ -6736,6 +6840,10 @@ class AppLocalizations {
           housing: "Ni nini nyumba yako hali leo?",
           losingHousing: "Je, wasiwasi wa kupoteza makazi yako?",
           title: "Familia na Nyumbani",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "andika namba",
+          value: "Aina thamani",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
@@ -6996,6 +7104,10 @@ class AppLocalizations {
               "Sigurado ka nag-aalala tungkol sa pagkawala ng iyong mga pabahay?",
           title: "Pamilya at Tahanan",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "Mag-type ng numero ng",
+          value: "Mag-type ng halaga",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "Sa panahon ng nakalipas na taon, ano ang kabuuang pinagsamang kita para sa iyo at sa mga miyembro ng pamilya mo sa bahay? Ang impormasyon na ito ay makakatulong sa amin na matukoy kung ikaw ay karapat-dapat para sa anumang mga benepisyo.",
@@ -7250,6 +7362,10 @@ class AppLocalizations {
           housing: "อะไรคือสถานการณ์ที่อยู่อาศัยของคุณวันนี้?",
           losingHousing: "คุณกังวลเกี่ยวกับการสูญเสียที่อยู่อาศัยของคุณหรือไม่",
           title: "ครอบครัวและบ้าน",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "พิมพ์ตัวเลข",
+          value: "พิมพ์ค่า",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
@@ -7506,6 +7622,10 @@ class AppLocalizations {
           losingHousing: "Agar uy-joy yo'qotib haqida tashvishli?",
           title: "Oila va uy",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "bir qator kiriting",
+          value: "Agar qiymat kiriting",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "O'tgan yil mobaynida siz va siz bilan birga yashayotgan oila a'zolari uchun umumiy kombinatsiyalangan daromad nima edi? Bu ma'lumotlar sizga har qanday foyda uchun ma'qul bo'lsa, bizga aniqlashga yordam beradi.",
@@ -7757,6 +7877,10 @@ class AppLocalizations {
           housing: "tình hình nhà ở của bạn là gì hôm nay?",
           losingHousing: "Bạn đang lo lắng về việc mất nhà ở của bạn?",
           title: "Gia đình và Trang chủ",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "Nhập số",
+          value: "Nhập giá trị",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
@@ -8819,6 +8943,25 @@ class AppLocalizations_Labels_Prapare_FamilyAndHome {
   }
 }
 
+class AppLocalizations_Labels_Prapare_Instructions {
+  const AppLocalizations_Labels_Prapare_Instructions({this.number, this.value});
+
+  final String number;
+
+  final String value;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'number':
+        return number;
+      case 'value':
+        return value;
+      default:
+        return '';
+    }
+  }
+}
+
 class AppLocalizations_Labels_Prapare_MoneyAndResources {
   const AppLocalizations_Labels_Prapare_MoneyAndResources(
       {this.income,
@@ -8967,6 +9110,7 @@ class AppLocalizations_Labels_Prapare {
       {this.title,
       this.answers,
       this.familyAndHome,
+      this.instructions,
       this.moneyAndResources,
       this.optionalMeasures,
       this.personalCharacteristics,
@@ -8977,6 +9121,8 @@ class AppLocalizations_Labels_Prapare {
   final AppLocalizations_Labels_Prapare_Answers answers;
 
   final AppLocalizations_Labels_Prapare_FamilyAndHome familyAndHome;
+
+  final AppLocalizations_Labels_Prapare_Instructions instructions;
 
   final AppLocalizations_Labels_Prapare_MoneyAndResources moneyAndResources;
 
