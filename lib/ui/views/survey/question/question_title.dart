@@ -5,6 +5,7 @@ import 'package:prapare/_internal/utils/utils.dart';
 import 'package:prapare/controllers/controllers.dart';
 import 'package:prapare/localization.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
+import 'package:prapare/ui/themes.dart';
 
 class QuestionTitle extends StatelessWidget {
   const QuestionTitle({Key key, @required this.questionLinkId})
@@ -15,6 +16,8 @@ class QuestionTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final AppTheme appTheme = Get.find<ThemeController>()
+        .getAppThemeFromBrightness(context.theme.brightness);
     final TextTheme textTheme = context.textTheme;
     final QuestionnaireController controller = Get.find();
     final PrapareCodesUtil codesUtil = PrapareCodesUtil();
@@ -61,9 +64,12 @@ class QuestionTitle extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
           child: Text('${qTotalIndex + 1}: $questionTitle',
               style: textTheme.headline6.apply(
+                  // question is answered: bold, color change
                   color: qValidators.isQuestionAnswered.value
-                      ? Colors.blue
-                      : null, // todo: extract from theme
+                      ? appTheme.textComplete
+                      : null,
+                  fontWeightDelta: qValidators.isQuestionAnswered.value ? 2 : 0,
+                  // question is declined: italic, linethrough
                   fontStyle: qValidators.isDeclineToAnswerSelected.value
                       ? FontStyle.italic
                       : null,
