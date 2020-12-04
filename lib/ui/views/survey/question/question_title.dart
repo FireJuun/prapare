@@ -62,7 +62,10 @@ class QuestionTitle extends StatelessWidget {
       return Obx(
         () => Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-          child: Text('${qTotalIndex + 1}: $questionTitle',
+          child: Text(
+              (qValidators.isQuestionAnswered.value ? '✓ ' : '') +
+                  '${qTotalIndex + 1}: ' +
+                  questionTitle,
               style: textTheme.headline6.apply(
                   // question is answered: bold, color change
                   color: qValidators.isQuestionAnswered.value
