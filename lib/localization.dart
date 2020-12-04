@@ -10,10 +10,11 @@ import 'package:prapare/api_keys.dart';
 // ignore_for_file: camel_case_types
 // ignore_for_file: prefer_single_quotes
 // ignore_for_file: prefer_const_constructors
+// ignore_for_file: unnecessary_this
 
 part 'localization.g.dart';
 
-@SheetLocalization(ApiKeys.localeSpreadsheetId, ApiKeys.localeSheetId, 12)
+@SheetLocalization(ApiKeys.localeSpreadsheetId, ApiKeys.localeSheetId, 14)
 // <- See 1. to get DOCID and SHEETID
 // the `1` is the generated version. You must increment it each time you want to regenerate
 // a new version of the labels.

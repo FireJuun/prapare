@@ -16,10 +16,40 @@ class MenuOptionsModel {
     MenuOption(key: 'ar', englishValue: 'Arabic', value: 'عربى'),
     MenuOption(key: 'bn', englishValue: 'Bengali', value: 'বাংলা'),
     MenuOption(key: 'my', englishValue: 'Burmese', value: 'မြန်မာ'),
+
+    // spec: https://flutter.dev/docs/development/accessibility-and-localization/internationalization#advanced-locale-definition
+    // For Chinese, multiple options exist based on languageCode, scriptCode, and countryCode
     MenuOption(
-        key: 'zh_CN', englishValue: 'Chinese (Simplified)', value: '简体中文'),
-    MenuOption(
-        key: 'zh_TW', englishValue: 'Chinese (Traditional)', value: '中國傳統的'),
+      key: 'zh',
+      englishValue: 'Chinese, generic',
+      value: '中国，一般',
+    ),
+    // todo: re-implement Chinese locale variations
+    // MenuOption(
+    //   key: 'zh_Hans',
+    //   englishValue: 'Chinese, generic simplified',
+    //   value: '中国，通用简化',
+    // ),
+    // MenuOption(
+    //   key: 'zh_Hant',
+    //   englishValue: 'Chinese, generic traditional',
+    //   value: '中國，通用的傳統',
+    // ),
+    // MenuOption(
+    //   key: 'zh_Hans_CN',
+    //   englishValue: 'Chinese (China)',
+    //   value: '中文（中国）',
+    // ),
+    // MenuOption(
+    //   key: 'zh_Hant_TW',
+    //   englishValue: 'Chinese (Taiwan)',
+    //   value: '中國（台灣）',
+    // ),
+    // MenuOption(
+    //   key: 'zh_Hant_HK',
+    //   englishValue: 'Chinese (Hong Kong)',
+    //   value: '中國（香港）',
+    // ),
     MenuOption(key: 'fa', englishValue: 'Farsi', value: 'فارسی'),
     MenuOption(key: 'fr', englishValue: 'French', value: 'Français'),
     MenuOption(key: 'de', englishValue: 'German', value: 'Deutsche'),
