@@ -4,6 +4,7 @@ import 'package:prapare/controllers/commands/abstract_command.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 
 class ToggleCheckboxCommand extends AbstractCommand {
+  @override
   Future<void> execute(
       {@required Rx<UserResponse> userResponse,
       @required Answer answer,
@@ -26,8 +27,7 @@ class ToggleCheckboxCommand extends AbstractCommand {
     }
 
     // check validator to see if survey is complete
-    validationController
-        .validateIfQuestionIsCompleted(userResponse);
+    validationController.validateIfQuestionIsCompleted(userResponse);
     validationController
         .validateIfGroupIsCompleted(userResponse.value.questionLinkId);
   }

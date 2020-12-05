@@ -3,6 +3,7 @@ import 'package:prapare/controllers/commands/abstract_command.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 
 class ToggleDeclineToRespondCommand extends AbstractCommand {
+  @override
   Future<void> execute(
       {@required QuestionValidators qValidators,
       @required bool newValue}) async {

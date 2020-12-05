@@ -5,6 +5,7 @@ import 'package:prapare/controllers/commands/abstract_command.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 
 class ToggleRadioButtonCommand extends AbstractCommand {
+  @override
   Future<void> execute({
     @required Rx<UserResponse> userResponse,
     @required Answer answer,
