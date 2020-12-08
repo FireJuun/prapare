@@ -22,10 +22,10 @@ class QuestionnaireController extends GetxController {
   ItemGroup getGroupFromCode(String code) => _model.data.survey.surveyItems
       .firstWhere((e) => e.linkId == code, orElse: () => ItemGroup());
 
-  ItemGroup getSurveyFromIndex(int sIndex) =>
+  ItemGroup getGroupFromIndex(int sIndex) =>
       _model.data.survey.surveyItems[sIndex];
 
-  int getSurveyIndexFromSurvey(ItemGroup itemGroup) =>
+  int getGroupIndexFromGroup(ItemGroup itemGroup) =>
       _model.data.survey.surveyItems.indexWhere((e) => e == itemGroup);
 
   int getTotalIndexFromQuestion(String questionLinkId) =>
