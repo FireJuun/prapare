@@ -39,6 +39,16 @@ class DbInterface {
     }
     return right(resultList);
   }
+
+  Future<Either<DbFailure, List<Resource>>> allResources() async {
+    List<Resource> resultList;
+    try {
+      resultList = await resourceDao.getAllResources(null);
+    } catch (error) {
+      return left(DbFailure(error.toString()));
+    }
+    return right(resultList);
+  }
 }
 
 class DbFailure {

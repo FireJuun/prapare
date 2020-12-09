@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/localization.dart';
 import 'package:prapare/routes/routes.dart';
+import 'package:prapare/services/server_interface.dart';
 import 'package:prapare/ui/styled_components/styled_components.dart';
 import 'package:prapare/ui/views/settings/settings_dialog.dart';
 
@@ -32,7 +33,9 @@ class HomeView extends StatelessWidget {
                     StyledButtonLarge(title: labels.general.editSurvey
                         // onPressed: () => print(labels.general.birthDate),
                         ),
-                    StyledButtonLarge(title: labels.general.submitShare),
+                    StyledButtonLarge(
+                        title: labels.general.submitShare,
+                        onPressed: () => ServerInterface().uploadAllToAidbox()),
                     Align(
                         alignment: const FractionalOffset(0.8, 0),
                         child: IconButton(
