@@ -31,6 +31,9 @@ class QuestionnaireController extends GetxController {
   int getTotalIndexFromQuestion(String questionLinkId) =>
       _allQuestions.indexWhere((e) => e.linkId == questionLinkId);
 
+  Future saveResponse(List<UserResponse> responses) async =>
+      await _model.saveResponses(responses);
+
   // *******************************************************************
   // ******** MAPPING FUNCTIONS, ON FIRST LOAD OF QUESTIONNAIRE ********
   // *******************************************************************

@@ -58,21 +58,23 @@ class QuestionnaireModel {
     return surveyItem;
   }
 
-  /// adds userResponses, can do it iterativelly or all at once
-  void getUserResponses(List<UserResponse> newResponses) =>
-      _data.userResponses.addAll(newResponses);
-
-  /// to be run to create the QuestionnaireResponse resource after all questions
-  /// have been answered
-  void createResponse() {
+  /// saves the Questionnaire locally
+  Future saveResponses(List<UserResponse> responses) async {
+    _data.userResponses.retainWhere((r) => false);
+    _data.userResponses.addAll(responses);
     _data.response = QuestionnaireResponse(
       resourceType: 'QuestionnaireResponse',
       meta: _data.questionnaire.meta,
       status: QuestionnaireResponseStatus.completed,
       authored: FhirDateTime(DateTime.now()),
-
-      /// uses original questionnaire for formatting purposes
+      // uses original questionnaire for formatting purposes
       item: _getResponse(_data.questionnaire.item),
+    );
+    final saveResult = await DbInterface().save(_data.response);
+
+    saveResult.fold(
+      (l) => Get.snackbar('Error: ', l.errorMessage),
+      (r) => Get.snackbar('Saved', 'Survey Successfully Saved'),
     );
   }
 
@@ -128,13 +130,5 @@ class QuestionnaireModel {
           QuestionnaireResponseAnswer(valueCoding: thisAnswer?.valueCoding));
     }
     return responseAnswer;
-  }
-
-  Future saveResponses() async {
-    final saveResult = await DbInterface().save(_data.response);
-    saveResult.fold(
-      (l) => Get.snackbar('Error: ', l.errorMessage),
-      (r) => Get.snackbar('Saved', 'Survey Successfully Saved'),
-    );
   }
 }
