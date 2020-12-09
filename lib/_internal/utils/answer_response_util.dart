@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
-import 'package:prapare/models/fhir_questionnaire/survey/item_type.dart';
+import 'package:prapare/models/fhir_questionnaire/survey/enums/item_type.dart';
 import 'package:validators/validators.dart' as validate;
 import 'package:validators/sanitizers.dart' as sanitize;
 
@@ -22,11 +22,11 @@ class AnswerResponseUtil {
       case ItemType.boolean:
         {
           if (newValue == 'true') {
-            return AnswerBoolean(true);
+            return AnswerBoolean(answer.code, true);
           } else if (newValue == 'false') {
-            return AnswerBoolean(false);
+            return AnswerBoolean(answer.code, false);
           }
-          return AnswerBoolean(null);
+          return AnswerBoolean(answer.code, null);
         }
       case ItemType.decimal:
         {

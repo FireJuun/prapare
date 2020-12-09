@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:prapare/_internal/utils/utils.dart';
 import 'package:prapare/controllers/commands/abstract_command.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
-import 'package:prapare/models/fhir_questionnaire/survey/item_type.dart';
+import 'package:prapare/models/fhir_questionnaire/survey/enums/item_type.dart';
 
 class DebounceAndSaveResponseCommand extends AbstractCommand {
+  @override
   Future<void> execute(
       {@required RxString rxString,
       @required Answer answer,
@@ -18,9 +20,12 @@ class DebounceAndSaveResponseCommand extends AbstractCommand {
             .value = newValue;
       }
 
-      if (debouncedValue == null || debouncedValue == '') {
-        // first, set bool / decimal / integer values to null
+      if (ValidatorsUtil().isNotEmpty(debouncedValue)) {
         switch (answer.answerItemType) {
+          // todo. handle open_choice
+          case ItemType.open_choice:
+
+          // first, set bool / decimal / integer values to null
           case ItemType.boolean:
           case ItemType.decimal:
           case ItemType.integer:
@@ -32,6 +37,9 @@ class DebounceAndSaveResponseCommand extends AbstractCommand {
       } else {
         _setUserResponseValue(debouncedValue);
       }
+
+      // check to see if all TextFormFields are valid
+      validationController.formKey.currentState.validate();
 
       // check validator to see if survey is complete
       validationController

@@ -2,7 +2,6 @@ import 'package:fhir/r4.dart';
 import 'package:get/get.dart';
 import 'package:prapare/_internal/constants/prapare_survey.dart';
 import 'package:prapare/controllers/controllers.dart';
-import 'package:prapare/models/fhir_questionnaire/fhir_questionnaire.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/models/fhir_questionnaire/questionnaire_model.dart';
 
@@ -13,25 +12,27 @@ class QuestionnaireController extends GetxController {
   final QuestionnaireModel _model = QuestionnaireModel();
 
   final UserResponsesController _responsesController = Get.find();
+  final ValidationController _validationController = Get.find();
 
   // *******************************************************************
   // ******************* GETTERS AND SETTERS ***************************
   // *******************************************************************
   List<SurveyItem> _allQuestions;
 
-  FhirQuestionnaire getQuestionnaire() => _model.data;
-
   ItemGroup getGroupFromCode(String code) => _model.data.survey.surveyItems
       .firstWhere((e) => e.linkId == code, orElse: () => ItemGroup());
 
-  ItemGroup getSurveyFromIndex(int sIndex) =>
+  ItemGroup getGroupFromIndex(int sIndex) =>
       _model.data.survey.surveyItems[sIndex];
 
-  int getSurveyIndexFromSurvey(ItemGroup itemGroup) =>
+  int getGroupIndexFromGroup(ItemGroup itemGroup) =>
       _model.data.survey.surveyItems.indexWhere((e) => e == itemGroup);
 
   int getTotalIndexFromQuestion(String questionLinkId) =>
       _allQuestions.indexWhere((e) => e.linkId == questionLinkId);
+
+  Future saveResponse(List<UserResponse> responses) async =>
+      await _model.saveResponses(responses);
 
   // *******************************************************************
   // ******** MAPPING FUNCTIONS, ON FIRST LOAD OF QUESTIONNAIRE ********
@@ -41,7 +42,20 @@ class QuestionnaireController extends GetxController {
         .map((e) => (e as ItemGroup).surveyItems)
         .expand((x) => x)
         .toList();
+
+    _mapAllQuestionValidators(_allQuestions);
   }
+
+  /// Each Question or ItemGroup, as numbered from the original
+  /// survey.surveyItem list, will keep state of its own validator
+  /// Its overall linkId is defined as '/groupId/questionId'
+  // todo: if loading a old / partially completed survey, will need to determine QuestionValidators() data as well
+  void _mapAllQuestionValidators(List<SurveyItem> allQuestions) =>
+      allQuestions.forEach((e) => _addQuestionValidator(e.linkId));
+
+  void _addQuestionValidator(String linkId) =>
+      _validationController.questionValidatorsMap[linkId] =
+          QuestionValidators();
 
   void _mapAllUserResponses() => _model.data.survey.surveyItems.forEach(
         (s) => s.runtimeType == ItemGroup ? _mapGroup(s) : _mapQuestion(s),
@@ -67,7 +81,7 @@ class QuestionnaireController extends GetxController {
       /// For now, I'm setting the default boolean UserResponse to null
       /// It is possible to have 3-phase boolean responses (true / false / null), which we want to handle
       case QuestionnaireItemType.boolean:
-        _addQuestion(question.linkId, AnswerBoolean(null));
+        _addQuestion(question.linkId, AnswerBoolean(question.linkId, null));
         break;
 
       /// NOTE Decimals and Integers can have a null value if no data are set
@@ -92,11 +106,16 @@ class QuestionnaireController extends GetxController {
         _addQuestion(question.linkId, AnswerText(''));
         break;
     }
+    if (question.subQuestions.isNotEmpty) {
+      question.subQuestions.forEach((e) => _mapSubQuestion(e));
+    }
   }
 
+  void _mapSubQuestion(Question subQuestion) => _mapQuestion(subQuestion);
+
   void _addQuestion(String linkId, AnswerResponse answer) =>
-      _responsesController.rxUserResponsesMap.add(
-          linkId, UserResponse(questionLinkId: linkId, answers: [answer]).obs);
+      _responsesController.userResponsesMap[linkId] =
+          UserResponse(questionLinkId: linkId, answers: [answer]).obs;
 
   void _mapAllActiveResponses() {
     /// defaults to blank answer on first load
@@ -111,11 +130,9 @@ class QuestionnaireController extends GetxController {
           itemGroup.surveyItems.forEach(
             (q) {
               if (q is Question) {
-                _responsesController.rxUserResponsesMap.add(
-                  q.linkId,
-                  // create a blank User Response, which will have the active answers mapped into it
-                  _handleBlankUserResponseByQuestionType(q),
-                );
+                // create a blank User Response, which will have the active answers mapped into it
+                _responsesController.userResponsesMap[q.linkId] =
+                    _handleBlankUserResponseByQuestionType(q);
               }
             },
           );
@@ -138,7 +155,8 @@ class QuestionnaireController extends GetxController {
       /// It is possible to have 3-phase boolean responses (true / false / null), which we want to handle
       case QuestionnaireItemType.boolean:
         return UserResponse(
-            questionLinkId: q.linkId, answers: [AnswerBoolean(null)]).obs;
+            questionLinkId: q.linkId,
+            answers: [AnswerBoolean(q.linkId, null)]).obs;
 
       /// Decimals / Integers handled similarly to Question Mapping above, w/ default nulls
       case QuestionnaireItemType.decimal:
@@ -163,12 +181,19 @@ class QuestionnaireController extends GetxController {
     }
   }
 
+  // create empty validators with false as default
+  void _mapAllGroupValidators() {
+    _model.data.survey.surveyItems.forEach(
+        (s) => _validationController.groupValidatorsMap[s.linkId] = false.obs);
+  }
+
   @override
   void onInit() {
     _model.loadAndCreateSurvey();
     _mapAllQuestions();
     _mapAllUserResponses();
     _mapAllActiveResponses();
+    _mapAllGroupValidators();
     super.onInit();
   }
 }

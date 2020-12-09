@@ -2,9 +2,11 @@
 
 part of 'localization.dart';
 
+// Putting this in generated file removes warnings
 // ignore_for_file: camel_case_types
 // ignore_for_file: prefer_single_quotes
 // ignore_for_file: prefer_const_constructors
+// ignore_for_file: unnecessary_this
 
 // **************************************************************************
 // SheetLocalizationGenerator
@@ -214,6 +216,10 @@ class AppLocalizations {
           losingHousing: "Are you worried about losing your housing?",
           title: "Family and Home",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "Type a number",
+          value: "Type a value",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "During the past year, what was the total combined income for you and the family members you live with? This information will help us determine if you are eligible for any benefits.",
@@ -282,7 +288,7 @@ class AppLocalizations {
       auth: AppLocalizations_Labels_Auth(
         cancel: "Cancelar",
         changePassword: "Cambia la contraseña",
-        email: "Correo electrónico",
+        email: "Email",
         password: "Contraseña",
         resetPassword: "Restablecer la contraseña",
         signIn: "Registrarse",
@@ -374,7 +380,7 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "Cancelar",
-        next: "próximo",
+        next: "Siguiente",
         previous: "Anterior",
         submit: "Enviar",
       ),
@@ -468,6 +474,10 @@ class AppLocalizations {
           housing: "¿Cuál es su situación de vivienda hoy en día?",
           losingHousing: "¿Está preocupado por la pérdida de su vivienda?",
           title: "Familia y Hogar",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "Escriba un número",
+          value: "Escriba un valor",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
@@ -723,10 +733,14 @@ class AppLocalizations {
           losingHousing: "هل أنت قلق حول فقدان السكن الخاص؟",
           title: "الأسرة المنزل و",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "اكتب رقما",
+          value: "اكتب قيمة",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "وخلال العام الماضي، ما كان إجمالي الدخل المشترك لك ولأفراد الأسرة التي تعيش معها؟ هذه المعلومات سوف تساعدنا على تحديد ما إذا كنت مؤهلا للحصول على أي فوائد.",
-          insurance: "ما هو التأمين الرئيسي الخاص بك؟",
+          insurance: "ما هو التأمين الرئيسي لديك؟",
           school: "ما هو أعلى مستوى من المدرسة التي كنت قد انتهى؟",
           title: "المال والموارد",
           transportation:
@@ -975,6 +989,10 @@ class AppLocalizations {
           housing: "आज अपने आवास स्थिति क्या है?",
           losingHousing: "आप अपने आवास खोने के बारे में चिंतित हैं?",
           title: "परिवार और घर",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "कोई नंबर लिखें",
+          value: "एक मूल्य के प्रकार",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
@@ -1233,6 +1251,10 @@ class AppLocalizations {
           losingHousing: "Вы беспокоитесь о потере жилья?",
           title: "Семья и дом",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "Введите число",
+          value: "Введите значение",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "В течение прошлого года, что было общее совокупный доход для вас и членов семьи, вы живете с? Эта информация поможет нам определить, если вы имеете право на любые льготы.",
@@ -1488,6 +1510,10 @@ class AppLocalizations {
           losingHousing: "আপনি আপনার হাউজিং হারিয়ে যাওয়ার বিষয়ে চিন্তিত?",
           title: "বাড়ি ও পরিবারের",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "একটি নম্বর টাইপ করুন",
+          value: "একটি মান লিখুন",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "গত বছর সময়, আপনি এবং পরিবারের সদস্যদের আপনার সাথে বসবাস মোট সম্মিলিত আয় কি ছিল? এই তথ্যটি আমাদের সাহায্য করবে তা নির্ধারণ যদি আপনার কোন বেনিফিট জন্য যোগ্য।",
@@ -1742,6 +1768,10 @@ class AppLocalizations {
               "သင်သည်သင်၏အိုးအိမ်ဆုံးရှုံးအကြောင်းကိုစိုးရိမ်နေကြသနည်း",
           title: "မိသားစုနှင့်နေအိမ်",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "နံပါတ်ရိုက်ထည့်ပါ",
+          value: "တန်ဖိုးရိုက်ထည့်ပါ",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "လွန်ခဲ့သောနှစ်အတွင်းသင်နှင့်သင်နှင့်အတူအသက်ရှင်နေထိုင်မိသားစုအဖွဲ့ဝင်များစုစုပေါင်းစုစုပေါင်းဝင်ငွေအဘယျသို့ရခဲ့သလဲ ဤအချက်အလက်သည်သင်မည်သည့်အကျိုးခံစားခွင့်များအတွက်အရည်အချင်းပြည့်မီလျှင်ဆုံးဖြတ်ရန်ကျွန်တော်တို့ကိုကူညီလိမ့်မယ်။",
@@ -1799,7 +1829,7 @@ class AppLocalizations {
         updateProfile: "Update ကိုကိုယ်ရေးဖိုင်",
       ),
     ),
-    Locale.fromSubtags(languageCode: "zh_CN"): AppLocalizations_Labels(
+    Locale.fromSubtags(languageCode: "zh"): AppLocalizations_Labels(
       app: AppLocalizations_Labels_App(
         chooseLanguage: "选择语言",
         chooseTheme: "选择主题",
@@ -1890,8 +1920,8 @@ class AppLocalizations {
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        inEnglish: "Chinese (Simplified)",
-        title: "简体中文）",
+        inEnglish: "Chinese",
+        title: "中文",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "发展",
@@ -1991,6 +2021,10 @@ class AppLocalizations {
           losingHousing: "您是否担心失去你的房？",
           title: "家庭和家庭",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "键入一个数字",
+          value: "键入一个值",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income: "在过去的一年中，什么对你和你住在一起的家庭成员合计总收入？这些信息将帮助我们确定您是否有资格获得任何好处。",
           insurance: "你的主要保险是什么？",
@@ -2038,7 +2072,250 @@ class AppLocalizations {
         updateProfile: "更新配置文件",
       ),
     ),
-    Locale.fromSubtags(languageCode: "zh_TW"): AppLocalizations_Labels(
+    Locale.fromSubtags(languageCode: "zh_Hans"): AppLocalizations_Labels(
+      app: AppLocalizations_Labels_App(
+        chooseLanguage: "选择语言",
+        chooseTheme: "选择主题",
+        settings: "应用程序设置",
+        system: "系统",
+        title: "Prapare",
+      ),
+      auth: AppLocalizations_Labels_Auth(
+        cancel: "取消",
+        changePassword: "更改密码",
+        email: "电子邮件",
+        password: "密码",
+        resetPassword: "重设密码",
+        signIn: "登入",
+        signUp: "注册",
+        submit: "提交",
+        userName: "用户名",
+      ),
+      dates: AppLocalizations_Labels_Dates(
+        month: AppLocalizations_Labels_Dates_Month(
+          april: "四月",
+          august: "八月",
+          december: "十二月",
+          february: "二月",
+          january: "一月",
+          july: "七月",
+          june: "六月",
+          march: "游行",
+          may: "可能",
+          november: "十一月",
+          october: "十月",
+          september: "九月",
+        ),
+        weekday: AppLocalizations_Labels_Dates_Weekday(
+          friday: "星期五",
+          monday: "星期一",
+          saturday: "星期六",
+          sunday: "星期日",
+          thursday: "星期四",
+          tuesday: "星期二",
+          wednesday: "星期三",
+        ),
+      ),
+      general: AppLocalizations_Labels_General(
+        allPatients: "所有患者",
+        birthDate: "生日",
+        dateofBirth: "出生日期",
+        editSurvey: "编辑调查",
+        familyName: "姓",
+        female: "女",
+        givenNames: "姓",
+        male: "男",
+        mySchedule: "我的日程表",
+        newPatient: "新患者",
+        newSurvey: "新调查",
+        relationship: "关系",
+        search: "搜索",
+        submitShare: "提交/股",
+        address: AppLocalizations_Labels_General_Address(
+          city: "市",
+          country: "国家",
+          county: "县",
+          district: "区",
+          neighborhood: "邻里",
+          postalCode: "邮政编码",
+          state: "状态",
+          title: "地址",
+        ),
+        relation: AppLocalizations_Labels_General_Relation(
+          aunt: "姑妈",
+          brother: "哥哥",
+          daughter: "女儿",
+          father: "父亲",
+          grandfather: "祖父",
+          grandmother: "祖母",
+          mother: "母亲",
+          nephew: "外甥",
+          niece: "侄女",
+          sister: "妹妹",
+          son: "儿子",
+          title: "关系",
+          uncle: "叔叔",
+        ),
+        sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
+          female: "女",
+          male: "男",
+          title: "性别出生",
+        ),
+      ),
+      language: AppLocalizations_Labels_Language(
+        inEnglish: "Chinese, generic simplified",
+        title: "中国，通用简化",
+      ),
+      medical: AppLocalizations_Labels_Medical(
+        growth: "发展",
+        immunization: "免疫接种",
+        immunizations: "预防接种",
+        vaccine: "疫苗",
+        vaccines: "疫苗",
+      ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "取消",
+        next: "下一个",
+        previous: "以前",
+        submit: "提交",
+      ),
+      prapare: AppLocalizations_Labels_Prapare(
+        title: "用于响应和评估患者的资产，风险协议，与经验[PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "其他",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer: "我选择不回答这个问题",
+            no: "没有",
+            unsure: "不确定",
+            yes: "是",
+          ),
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing: "我没有住房（保持与他人在酒店里，在庇护所，流落街头外，在海滩上，在汽车，或在公园）",
+            iHaveHousing: "我有住房",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "一点点",
+            notAtAll: "一点也不",
+            quiteABit: "颇有几分",
+            somewhat: "有些",
+            veryMuch: "非常",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "每周5次以上",
+            lessThanOnceAWeek: "不到一个星期不到一次",
+            oneOrTwoTimesAWeek: "一周1〜2次",
+            threeToFiveTimesAWeek: "每周3〜5倍",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "CHIP医疗补助",
+            medicaid: "医疗补助",
+            medicare: "医保",
+            noneOrUninsured: "无/无保险",
+            otherPublicInsuranceChip: "其他公共保险（CHIP）",
+            otherPublicInsuranceNotChip: "其他公共保险（不CHIP）",
+            privateInsurance: "私人保险",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "英语",
+            languageOtherThanEnglish: "语言英语以外",
+          ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear: "我没有在过去一年的合作伙伴",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "美国印第安人/阿拉斯加原住民",
+            asian: "亚洲",
+            blackAfricanAmerican: "黑人/非洲裔美国人",
+            nativeHawaiian: "夏威夷原住民",
+            pacificIslander: "太平洋岛民",
+            white: "白色",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "高中文凭或GED",
+            lessThanHighSchoolDegree: "高中以上学历减",
+            moreThanHighSchool: "比高中更",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "病人无法响应",
+            yesKeptFromMedical: "是的，它使我从医疗预约或让我的药",
+            yesKeptFromNonMedical: "是的，它使我从非医学会议，约会，工作，或收拾东西，我需要",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "保育",
+            clothing: "服装",
+            food: "餐饮",
+            medicineOrAnyHealthCare: "医学或任何医疗（医疗，牙科，心理健康，视力）",
+            phone: "电话",
+            utilities: "公用事业",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "全职工作",
+            otherwiseUnemployedButNotSeekingWork:
+                "否则失业但不找工作（例如：学生，退休，残疾人，无偿主要照顾者）",
+            partTimeOrTemporaryWork: "兼职或临时工作",
+            unemployed: "失业的",
+          ),
+        ),
+        familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
+          address: "你住在什么地址多少？",
+          household: "有多少家庭成员，包括你自己，你现在住在一起？",
+          housing: "今天是你的住房情况吗？",
+          losingHousing: "您是否担心失去你的房？",
+          title: "家庭和家庭",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "键入一个数字",
+          value: "键入一个值",
+        ),
+        moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
+          income: "在过去的一年中，什么对你和你住在一起的家庭成员合计总收入？这些信息将帮助我们确定您是否有资格获得任何好处。",
+          insurance: "你的主要保险是什么？",
+          school: "什么是你已经完成了学校的最高水平？",
+          title: "金钱和资源",
+          transportation: "已经缺乏交通工具让你从医疗约会，会议，工作，或需要得到日常生活的东西呢？",
+          without: "在过去的一年里，有你或你住在一起一直无法得到任何以下的时候，确实需要它的家庭成员中？",
+          work: "什么是您目前的工作情况如何？",
+        ),
+        optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
+          afraid: "在过去的一年里，你一直害怕你的伴侣或前伴侣？",
+          prison: "在过去的一年里，有你的行中的监狱，监狱，看守所，或少年教养所花费超过2晚？",
+          refugee: "你是难民？",
+          safe: "你觉得身体和情感安全您目前的居住？",
+          title: "择措施",
+        ),
+        personalCharacteristics:
+            AppLocalizations_Labels_Prapare_PersonalCharacteristics(
+          language: "你是什​​么语言最舒服的说话？",
+          latino: "你认为自己是西班牙/拉丁美洲？",
+          military: "您是否曾经被美国的武装力量释放？",
+          race: "哪个种族（S）是吗？",
+          seasonalWork: "在过去的两年中任何点都具有季节或外来农民工是你或你的家庭的主要收入来源？",
+          title: "人物的特征",
+        ),
+        socialAndEmotionalHealth:
+            AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
+          stress: "压力是当有人感到紧张，紧张，焦虑或因为他们的心是困扰无法入睡。你怎么调都？",
+          talk: "你经常看到或谈话，你关心和感到亲近的人（例如：在电话上交谈的朋友，来访的朋友或家人，去教堂或俱乐部会议）？",
+          title: "社会和情感健康",
+        ),
+      ),
+      registration: AppLocalizations_Labels_Registration(
+        registerPatient: "注册病人",
+      ),
+      settings: AppLocalizations_Labels_Settings(
+        dark: "黑暗",
+        language: "语言",
+        light: "光",
+        ok: "好",
+        signOut: "登出",
+        system: "系统",
+        theme: "主题",
+        title: "设置",
+        updateProfile: "更新配置文件",
+      ),
+    ),
+    Locale.fromSubtags(languageCode: "zh_Hant"): AppLocalizations_Labels(
       app: AppLocalizations_Labels_App(
         chooseLanguage: "選擇語言",
         chooseTheme: "選擇主題",
@@ -2129,8 +2406,8 @@ class AppLocalizations {
         ),
       ),
       language: AppLocalizations_Labels_Language(
-        inEnglish: "Chinese (Traditional)",
-        title: "中國傳統的）",
+        inEnglish: "Chinese, generic traditional",
+        title: "中國，通用的傳統",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "發展",
@@ -2229,6 +2506,739 @@ class AppLocalizations {
           housing: "今天是你的住房情況嗎？",
           losingHousing: "您是否擔心失去你的房？",
           title: "家庭和家庭",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "鍵入一個數字",
+          value: "鍵入一個值",
+        ),
+        moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
+          income: "在過去的一年中，什麼對你和你住在一起的家庭成員合計總收入？這些信息將幫助我們確定您是否有資格獲得任何好處。",
+          insurance: "你的主要保險是什麼？",
+          school: "什麼是你已經完成了學校的最高水平？",
+          title: "金錢和資源",
+          transportation: "已經缺乏交通工具讓你從醫療約會，會議，工作，或需要得到日常生活的東西呢？",
+          without: "在過去的一年裡，有你或你住在一起一直無法得到任何以下的時候，確實需要它的家庭成員中？",
+          work: "什麼是您目前的工作情況如何？",
+        ),
+        optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
+          afraid: "在過去的一年裡，你一直害怕你的伴侶或前伴侶？",
+          prison: "在過去的一年裡，有你的行中的監獄，監獄，看守所，或少年教養所花費超過2晚？",
+          refugee: "你是難民？",
+          safe: "你覺得身體和情感安全您目前的居住？",
+          title: "擇措施",
+        ),
+        personalCharacteristics:
+            AppLocalizations_Labels_Prapare_PersonalCharacteristics(
+          language: "你是什​​麼語言最舒服的說話？",
+          latino: "你認為自己是西班牙/拉丁美洲？",
+          military: "您是否曾經被美國的武裝力量釋放？",
+          race: "哪個種族（S）是嗎？",
+          seasonalWork: "在過去的兩年中任何點都具有季節或外來農民工是你或你的家庭的主要收入來源？",
+          title: "人物的特徵",
+        ),
+        socialAndEmotionalHealth:
+            AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
+          stress: "壓力是當有人感到緊張，緊張，焦慮或因為他們的心是困擾無法入睡。你怎麼調都？",
+          talk: "你經常看到或談話，你關心和感到親近的人（例如：在電話上交談的朋友，來訪的朋友或家人，去教堂或俱樂部會議）？",
+          title: "社會和情感健康",
+        ),
+      ),
+      registration: AppLocalizations_Labels_Registration(
+        registerPatient: "註冊病人",
+      ),
+      settings: AppLocalizations_Labels_Settings(
+        dark: "黑暗",
+        language: "語言",
+        light: "光",
+        ok: "好",
+        signOut: "登出",
+        system: "系統",
+        theme: "主題",
+        title: "設置",
+        updateProfile: "更新配置文件",
+      ),
+    ),
+    Locale.fromSubtags(languageCode: "zh_Hans_CN"): AppLocalizations_Labels(
+      app: AppLocalizations_Labels_App(
+        chooseLanguage: "选择语言",
+        chooseTheme: "选择主题",
+        settings: "应用程序设置",
+        system: "系统",
+        title: "Prapare",
+      ),
+      auth: AppLocalizations_Labels_Auth(
+        cancel: "取消",
+        changePassword: "更改密码",
+        email: "电子邮件",
+        password: "密码",
+        resetPassword: "重设密码",
+        signIn: "登入",
+        signUp: "注册",
+        submit: "提交",
+        userName: "用户名",
+      ),
+      dates: AppLocalizations_Labels_Dates(
+        month: AppLocalizations_Labels_Dates_Month(
+          april: "四月",
+          august: "八月",
+          december: "十二月",
+          february: "二月",
+          january: "一月",
+          july: "七月",
+          june: "六月",
+          march: "游行",
+          may: "可能",
+          november: "十一月",
+          october: "十月",
+          september: "九月",
+        ),
+        weekday: AppLocalizations_Labels_Dates_Weekday(
+          friday: "星期五",
+          monday: "星期一",
+          saturday: "星期六",
+          sunday: "星期日",
+          thursday: "星期四",
+          tuesday: "星期二",
+          wednesday: "星期三",
+        ),
+      ),
+      general: AppLocalizations_Labels_General(
+        allPatients: "所有患者",
+        birthDate: "生日",
+        dateofBirth: "出生日期",
+        editSurvey: "编辑调查",
+        familyName: "姓",
+        female: "女",
+        givenNames: "姓",
+        male: "男",
+        mySchedule: "我的日程表",
+        newPatient: "新患者",
+        newSurvey: "新调查",
+        relationship: "关系",
+        search: "搜索",
+        submitShare: "提交/股",
+        address: AppLocalizations_Labels_General_Address(
+          city: "市",
+          country: "国家",
+          county: "县",
+          district: "区",
+          neighborhood: "邻里",
+          postalCode: "邮政编码",
+          state: "州",
+          title: "地址",
+        ),
+        relation: AppLocalizations_Labels_General_Relation(
+          aunt: "姑妈",
+          brother: "哥哥",
+          daughter: "女儿",
+          father: "父亲",
+          grandfather: "祖父",
+          grandmother: "祖母",
+          mother: "母亲",
+          nephew: "外甥",
+          niece: "侄女",
+          sister: "妹妹",
+          son: "儿子",
+          title: "关系",
+          uncle: "叔叔",
+        ),
+        sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
+          female: "女",
+          male: "男",
+          title: "性别出生",
+        ),
+      ),
+      language: AppLocalizations_Labels_Language(
+        inEnglish: "Chinese (China)",
+        title: "中文（中国）",
+      ),
+      medical: AppLocalizations_Labels_Medical(
+        growth: "发展",
+        immunization: "免疫接种",
+        immunizations: "预防接种",
+        vaccine: "疫苗",
+        vaccines: "疫苗",
+      ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "取消",
+        next: "下一个",
+        previous: "以前",
+        submit: "提交",
+      ),
+      prapare: AppLocalizations_Labels_Prapare(
+        title: "用于响应和评估患者的资产，风险协议，与经验[PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "其他",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer: "我选择不回答这个问题",
+            no: "没有",
+            unsure: "不确定",
+            yes: "是",
+          ),
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing: "我没有住房（保持与他人在酒店里，在庇护所，流落街头外，在海滩上，在汽车，或在公园）",
+            iHaveHousing: "我有住房",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "一点点",
+            notAtAll: "一点也不",
+            quiteABit: "颇有几分",
+            somewhat: "有些",
+            veryMuch: "非常",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "每周5次以上",
+            lessThanOnceAWeek: "不到一个星期不到一次",
+            oneOrTwoTimesAWeek: "一周1〜2次",
+            threeToFiveTimesAWeek: "每周3〜5倍",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "CHIP医疗补助",
+            medicaid: "医疗补助",
+            medicare: "医保",
+            noneOrUninsured: "无/无保险",
+            otherPublicInsuranceChip: "其他公共保险（CHIP）",
+            otherPublicInsuranceNotChip: "其他公共保险（不CHIP）",
+            privateInsurance: "私人保险",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "英语",
+            languageOtherThanEnglish: "语言英语以外",
+          ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear: "我没有在过去一年的合作伙伴",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "美国印第安人/阿拉斯加原住民",
+            asian: "亚洲",
+            blackAfricanAmerican: "黑人/非洲裔美国人",
+            nativeHawaiian: "夏威夷原住民",
+            pacificIslander: "太平洋岛民",
+            white: "白色",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "高中文凭或GED",
+            lessThanHighSchoolDegree: "高中以上学历减",
+            moreThanHighSchool: "比高中更",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "病人无法响应",
+            yesKeptFromMedical: "是的，它使我从医疗预约或让我的药",
+            yesKeptFromNonMedical: "是的，它使我从非医学会议，约会，工作，或收拾东西，我需要",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "保育",
+            clothing: "服装",
+            food: "餐饮",
+            medicineOrAnyHealthCare: "医学或任何医疗（医疗，牙科，心理健康，视力）",
+            phone: "电话",
+            utilities: "公用事业",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "全职工作",
+            otherwiseUnemployedButNotSeekingWork:
+                "否则失业但不找工作（例如：学生，退休，残疾人，无偿主要照顾者）",
+            partTimeOrTemporaryWork: "兼职或临时工作",
+            unemployed: "失业的",
+          ),
+        ),
+        familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
+          address: "你住在什么地址多少？",
+          household: "有多少家庭成员，包括你自己，你现在住在一起？",
+          housing: "今天是你的住房情况吗？",
+          losingHousing: "您是否担心失去你的房？",
+          title: "家庭和家庭",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "键入一个数字",
+          value: "键入一个值",
+        ),
+        moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
+          income: "在过去的一年中，什么对你和你住在一起的家庭成员合计总收入？这些信息将帮助我们确定您是否有资格获得任何好处。",
+          insurance: "你的主要保险是什么？",
+          school: "什么是你已经完成了学校的最高水平？",
+          title: "金钱和资源",
+          transportation: "已经缺乏交通工具让你从医疗约会，会议，工作，或需要得到日常生活的东西呢？",
+          without: "在过去的一年里，有你或你住在一起一直无法得到任何以下的时候，确实需要它的家庭成员中？",
+          work: "什么是您目前的工作情况如何？",
+        ),
+        optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
+          afraid: "在过去的一年里，你一直害怕你的伴侣或前伴侣？",
+          prison: "在过去的一年里，有你的行中的监狱，监狱，看守所，或少年教养所花费超过2晚？",
+          refugee: "你是难民？",
+          safe: "你觉得身体和情感安全您目前的居住？",
+          title: "择措施",
+        ),
+        personalCharacteristics:
+            AppLocalizations_Labels_Prapare_PersonalCharacteristics(
+          language: "你是什​​么语言最舒服的说话？",
+          latino: "你认为自己是西班牙/拉丁美洲？",
+          military: "您是否曾经被美国的武装力量释放？",
+          race: "哪个种族（S）是吗？",
+          seasonalWork: "在过去的两年中任何点都具有季节或外来农民工是你或你的家庭的主要收入来源？",
+          title: "人物的特征",
+        ),
+        socialAndEmotionalHealth:
+            AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
+          stress: "压力是当有人感到紧张，紧张，焦虑或因为他们的心是困扰无法入睡。你怎么调都？",
+          talk: "你经常看到或谈话，你关心和感到亲近的人（例如：在电话上交谈的朋友，来访的朋友或家人，去教堂或俱乐部会议）？",
+          title: "社会和情感健康",
+        ),
+      ),
+      registration: AppLocalizations_Labels_Registration(
+        registerPatient: "注册病人",
+      ),
+      settings: AppLocalizations_Labels_Settings(
+        dark: "黑暗",
+        language: "语言",
+        light: "光",
+        ok: "好",
+        signOut: "登出",
+        system: "系统",
+        theme: "主题",
+        title: "设置",
+        updateProfile: "更新配置文件",
+      ),
+    ),
+    Locale.fromSubtags(languageCode: "zh_Hant_TW"): AppLocalizations_Labels(
+      app: AppLocalizations_Labels_App(
+        chooseLanguage: "選擇語言",
+        chooseTheme: "選擇主題",
+        settings: "應用程序設置",
+        system: "系統",
+        title: "Prapare",
+      ),
+      auth: AppLocalizations_Labels_Auth(
+        cancel: "取消",
+        changePassword: "更改密碼",
+        email: "電子郵件",
+        password: "密碼",
+        resetPassword: "重設密碼",
+        signIn: "登入",
+        signUp: "註冊",
+        submit: "提交",
+        userName: "用戶名",
+      ),
+      dates: AppLocalizations_Labels_Dates(
+        month: AppLocalizations_Labels_Dates_Month(
+          april: "四月",
+          august: "八月",
+          december: "十二月",
+          february: "二月",
+          january: "一月",
+          july: "七月",
+          june: "六月",
+          march: "遊行",
+          may: "可能",
+          november: "十一月",
+          october: "十月",
+          september: "九月",
+        ),
+        weekday: AppLocalizations_Labels_Dates_Weekday(
+          friday: "星期五",
+          monday: "星期一",
+          saturday: "星期六",
+          sunday: "星期日",
+          thursday: "星期四",
+          tuesday: "星期二",
+          wednesday: "星期三",
+        ),
+      ),
+      general: AppLocalizations_Labels_General(
+        allPatients: "所有患者",
+        birthDate: "生日",
+        dateofBirth: "出生日期",
+        editSurvey: "編輯調查",
+        familyName: "姓",
+        female: "女",
+        givenNames: "姓",
+        male: "男",
+        mySchedule: "我的日程表",
+        newPatient: "新患者",
+        newSurvey: "新調查",
+        relationship: "關係",
+        search: "搜索",
+        submitShare: "提交/股",
+        address: AppLocalizations_Labels_General_Address(
+          city: "市",
+          country: "國家",
+          county: "縣",
+          district: "區",
+          neighborhood: "鄰里",
+          postalCode: "郵政編碼",
+          state: "州",
+          title: "地址",
+        ),
+        relation: AppLocalizations_Labels_General_Relation(
+          aunt: "姑媽",
+          brother: "哥哥",
+          daughter: "女兒",
+          father: "父親",
+          grandfather: "祖父",
+          grandmother: "祖母",
+          mother: "母親",
+          nephew: "外甥",
+          niece: "侄女",
+          sister: "妹妹",
+          son: "兒子",
+          title: "關係",
+          uncle: "叔叔",
+        ),
+        sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
+          female: "女",
+          male: "男",
+          title: "性別出生",
+        ),
+      ),
+      language: AppLocalizations_Labels_Language(
+        inEnglish: "Chinese (Taiwan)",
+        title: "中國（台灣）",
+      ),
+      medical: AppLocalizations_Labels_Medical(
+        growth: "發展",
+        immunization: "免疫接種",
+        immunizations: "預防接種",
+        vaccine: "疫苗",
+        vaccines: "疫苗",
+      ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "取消",
+        next: "下一個",
+        previous: "以前",
+        submit: "提交",
+      ),
+      prapare: AppLocalizations_Labels_Prapare(
+        title: "用於響應和評估患者的資產，風險協議，與經驗[PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "其他",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer: "我選擇不回答這個問題",
+            no: "沒有",
+            unsure: "不確定",
+            yes: "是",
+          ),
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing: "我沒有住房（保持與他人在酒店裡，在庇護所，流落街頭外，在海灘上，在汽車，或在公園）",
+            iHaveHousing: "我有住房",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "一點點",
+            notAtAll: "一點也不",
+            quiteABit: "頗有幾分",
+            somewhat: "有些",
+            veryMuch: "非常",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "每週5次以上",
+            lessThanOnceAWeek: "不到一個星期不到一次",
+            oneOrTwoTimesAWeek: "一周1〜2次",
+            threeToFiveTimesAWeek: "每週3〜5倍",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "CHIP醫療補助",
+            medicaid: "醫療補助",
+            medicare: "醫保",
+            noneOrUninsured: "無/無保險",
+            otherPublicInsuranceChip: "其他公共保險（CHIP）",
+            otherPublicInsuranceNotChip: "其他公共保險（不CHIP）",
+            privateInsurance: "私人保險",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "英語",
+            languageOtherThanEnglish: "語言英語以外",
+          ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear: "我沒有在過去一年的合作夥伴",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "美國印第安人/阿拉斯加原住民",
+            asian: "亞洲",
+            blackAfricanAmerican: "黑人/非洲裔美國人",
+            nativeHawaiian: "夏威夷原住民",
+            pacificIslander: "太平洋島民",
+            white: "白色",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "高中文憑或GED",
+            lessThanHighSchoolDegree: "高中以上學歷減",
+            moreThanHighSchool: "比高中更",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "病人無法響應",
+            yesKeptFromMedical: "是的，它使我從醫療預約或讓我的藥",
+            yesKeptFromNonMedical: "是的，它使我從非醫學會議，約會，工作，或收拾東西，我需要",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "保育",
+            clothing: "服裝",
+            food: "餐飲",
+            medicineOrAnyHealthCare: "醫學或任何醫療（醫療，牙科，心理健康，視力）",
+            phone: "電話",
+            utilities: "公用事業",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "全職工作",
+            otherwiseUnemployedButNotSeekingWork:
+                "否則失業但不找工作（例如：學生，退休，殘疾人，無償主要照顧者）",
+            partTimeOrTemporaryWork: "兼職或臨時工作",
+            unemployed: "失業的",
+          ),
+        ),
+        familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
+          address: "你住在什麼地址多少？",
+          household: "有多少家庭成員，包括你自己，你現在住在一起？",
+          housing: "今天是你的住房情況嗎？",
+          losingHousing: "您是否擔心失去你的房？",
+          title: "家庭和家庭",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "鍵入一個數字",
+          value: "鍵入一個值",
+        ),
+        moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
+          income: "在過去的一年中，什麼對你和你住在一起的家庭成員合計總收入？這些信息將幫助我們確定您是否有資格獲得任何好處。",
+          insurance: "你的主要保險是什麼？",
+          school: "什麼是你已經完成了學校的最高水平？",
+          title: "金錢和資源",
+          transportation: "已經缺乏交通工具讓你從醫療約會，會議，工作，或需要得到日常生活的東西呢？",
+          without: "在過去的一年裡，有你或你住在一起一直無法得到任何以下的時候，確實需要它的家庭成員中？",
+          work: "什麼是您目前的工作情況如何？",
+        ),
+        optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
+          afraid: "在過去的一年裡，你一直害怕你的伴侶或前伴侶？",
+          prison: "在過去的一年裡，有你的行中的監獄，監獄，看守所，或少年教養所花費超過2晚？",
+          refugee: "你是難民？",
+          safe: "你覺得身體和情感安全您目前的居住？",
+          title: "擇措施",
+        ),
+        personalCharacteristics:
+            AppLocalizations_Labels_Prapare_PersonalCharacteristics(
+          language: "你是什​​麼語言最舒服的說話？",
+          latino: "你認為自己是西班牙/拉丁美洲？",
+          military: "您是否曾經被美國的武裝力量釋放？",
+          race: "哪個種族（S）是嗎？",
+          seasonalWork: "在過去的兩年中任何點都具有季節或外來農民工是你或你的家庭的主要收入來源？",
+          title: "人物的特徵",
+        ),
+        socialAndEmotionalHealth:
+            AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
+          stress: "壓力是當有人感到緊張，緊張，焦慮或因為他們的心是困擾無法入睡。你怎麼調都？",
+          talk: "你經常看到或談話，你關心和感到親近的人（例如：在電話上交談的朋友，來訪的朋友或家人，去教堂或俱樂部會議）？",
+          title: "社會和情感健康",
+        ),
+      ),
+      registration: AppLocalizations_Labels_Registration(
+        registerPatient: "註冊病人",
+      ),
+      settings: AppLocalizations_Labels_Settings(
+        dark: "黑暗",
+        language: "語言",
+        light: "光",
+        ok: "好",
+        signOut: "登出",
+        system: "系統",
+        theme: "主題",
+        title: "設置",
+        updateProfile: "更新配置文件",
+      ),
+    ),
+    Locale.fromSubtags(languageCode: "zh_Hant_HK"): AppLocalizations_Labels(
+      app: AppLocalizations_Labels_App(
+        chooseLanguage: "選擇語言",
+        chooseTheme: "選擇主題",
+        settings: "應用程序設置",
+        system: "系統",
+        title: "Prapare",
+      ),
+      auth: AppLocalizations_Labels_Auth(
+        cancel: "取消",
+        changePassword: "更改密碼",
+        email: "電子郵件",
+        password: "密碼",
+        resetPassword: "重設密碼",
+        signIn: "登入",
+        signUp: "註冊",
+        submit: "提交",
+        userName: "用戶名",
+      ),
+      dates: AppLocalizations_Labels_Dates(
+        month: AppLocalizations_Labels_Dates_Month(
+          april: "四月",
+          august: "八月",
+          december: "十二月",
+          february: "二月",
+          january: "一月",
+          july: "七月",
+          june: "六月",
+          march: "遊行",
+          may: "可能",
+          november: "十一月",
+          october: "十月",
+          september: "九月",
+        ),
+        weekday: AppLocalizations_Labels_Dates_Weekday(
+          friday: "星期五",
+          monday: "星期一",
+          saturday: "星期六",
+          sunday: "星期日",
+          thursday: "星期四",
+          tuesday: "星期二",
+          wednesday: "星期三",
+        ),
+      ),
+      general: AppLocalizations_Labels_General(
+        allPatients: "所有患者",
+        birthDate: "生日",
+        dateofBirth: "出生日期",
+        editSurvey: "編輯調查",
+        familyName: "姓",
+        female: "女",
+        givenNames: "姓",
+        male: "男",
+        mySchedule: "我的日程表",
+        newPatient: "新患者",
+        newSurvey: "新調查",
+        relationship: "關係",
+        search: "搜索",
+        submitShare: "提交/股",
+        address: AppLocalizations_Labels_General_Address(
+          city: "市",
+          country: "國家",
+          county: "縣",
+          district: "區",
+          neighborhood: "鄰里",
+          postalCode: "郵政編碼",
+          state: "州",
+          title: "地址",
+        ),
+        relation: AppLocalizations_Labels_General_Relation(
+          aunt: "姑媽",
+          brother: "哥哥",
+          daughter: "女兒",
+          father: "父親",
+          grandfather: "祖父",
+          grandmother: "祖母",
+          mother: "母親",
+          nephew: "外甥",
+          niece: "侄女",
+          sister: "妹妹",
+          son: "兒子",
+          title: "關係",
+          uncle: "叔叔",
+        ),
+        sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
+          female: "女",
+          male: "男",
+          title: "性別出生",
+        ),
+      ),
+      language: AppLocalizations_Labels_Language(
+        inEnglish: "Chinese (Hong Kong)",
+        title: "中國（香港）",
+      ),
+      medical: AppLocalizations_Labels_Medical(
+        growth: "發展",
+        immunization: "免疫接種",
+        immunizations: "預防接種",
+        vaccine: "疫苗",
+        vaccines: "疫苗",
+      ),
+      navigation: AppLocalizations_Labels_Navigation(
+        cancel: "取消",
+        next: "下一個",
+        previous: "以前",
+        submit: "提交",
+      ),
+      prapare: AppLocalizations_Labels_Prapare(
+        title: "用於響應和評估患者的資產，風險協議，與經驗[PRAPARE]",
+        answers: AppLocalizations_Labels_Prapare_Answers(
+          other: "其他",
+          basic: AppLocalizations_Labels_Prapare_Answers_Basic(
+            chooseNotToAnswer: "我選擇不回答這個問題",
+            no: "沒有",
+            unsure: "不確定",
+            yes: "是",
+          ),
+          housing: AppLocalizations_Labels_Prapare_Answers_Housing(
+            iDoNotHaveHousing: "我沒有住房（保持與他人在酒店裡，在庇護所，流落街頭外，在海灘上，在汽車，或在公園）",
+            iHaveHousing: "我有住房",
+          ),
+          howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
+            aLittleBit: "一點點",
+            notAtAll: "一點也不",
+            quiteABit: "頗有幾分",
+            somewhat: "有些",
+            veryMuch: "非常",
+          ),
+          howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
+            fiftyOrMoreTimesAWeek: "每週5次以上",
+            lessThanOnceAWeek: "不到一個星期不到一次",
+            oneOrTwoTimesAWeek: "一周1〜2次",
+            threeToFiveTimesAWeek: "每週3〜5倍",
+          ),
+          insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
+            chipMedicaid: "CHIP醫療補助",
+            medicaid: "醫療補助",
+            medicare: "醫保",
+            noneOrUninsured: "無/無保險",
+            otherPublicInsuranceChip: "其他公共保險（CHIP）",
+            otherPublicInsuranceNotChip: "其他公共保險（不CHIP）",
+            privateInsurance: "私人保險",
+          ),
+          language: AppLocalizations_Labels_Prapare_Answers_Language(
+            english: "英語",
+            languageOtherThanEnglish: "語言英語以外",
+          ),
+          partner: AppLocalizations_Labels_Prapare_Answers_Partner(
+            noPartnerInLastYear: "我沒有在過去一年的合作夥伴",
+          ),
+          race: AppLocalizations_Labels_Prapare_Answers_Race(
+            americanIndianAlaskanNative: "美國印第安人/阿拉斯加原住民",
+            asian: "亞洲",
+            blackAfricanAmerican: "黑人/非洲裔美國人",
+            nativeHawaiian: "夏威夷原住民",
+            pacificIslander: "太平洋島民",
+            white: "白色",
+          ),
+          school: AppLocalizations_Labels_Prapare_Answers_School(
+            highSchoolDiplomaOrGed: "高中文憑或GED",
+            lessThanHighSchoolDegree: "高中以上學歷減",
+            moreThanHighSchool: "比高中更",
+          ),
+          transportation:
+              AppLocalizations_Labels_Prapare_Answers_Transportation(
+            unableToRespond: "病人無法響應",
+            yesKeptFromMedical: "是的，它使我從醫療預約或讓我的藥",
+            yesKeptFromNonMedical: "是的，它使我從非醫學會議，約會，工作，或收拾東西，我需要",
+          ),
+          without: AppLocalizations_Labels_Prapare_Answers_Without(
+            childCare: "保育",
+            clothing: "服裝",
+            food: "餐飲",
+            medicineOrAnyHealthCare: "醫學或任何醫療（醫療，牙科，心理健康，視力）",
+            phone: "電話",
+            utilities: "公用事業",
+          ),
+          work: AppLocalizations_Labels_Prapare_Answers_Work(
+            fullTimeWork: "全職工作",
+            otherwiseUnemployedButNotSeekingWork:
+                "否則失業但不找工作（例如：學生，退休，殘疾人，無償主要照顧者）",
+            partTimeOrTemporaryWork: "兼職或臨時工作",
+            unemployed: "失業的",
+          ),
+        ),
+        familyAndHome: AppLocalizations_Labels_Prapare_FamilyAndHome(
+          address: "你住在什麼地址多少？",
+          household: "有多少家庭成員，包括你自己，你現在住在一起？",
+          housing: "今天是你的住房情況嗎？",
+          losingHousing: "您是否擔心失去你的房？",
+          title: "家庭和家庭",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "鍵入一個數字",
+          value: "鍵入一個值",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income: "在過去的一年中，什麼對你和你住在一起的家庭成員合計總收入？這些信息將幫助我們確定您是否有資格獲得任何好處。",
@@ -2475,6 +3485,10 @@ class AppLocalizations {
           losingHousing: "آیا شما در مورد دست دادن مسکن خود را نگران است؟",
           title: "خانواده و خانه",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "عدد تایپ کنید",
+          value: "نوع ارزش",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "در طول سال گذشته، چه کل درآمد ترکیبی را برای شما و اعضای خانواده شما با زندگی می کنند؟ این اطلاعات به ما کمک می تعیین اگر شما واجد شرایط برای هر گونه مزایای هستند.",
@@ -2560,7 +3574,7 @@ class AppLocalizations {
           july: "juillet",
           june: "juin",
           march: "Mars",
-          may: "Mai",
+          may: "Peut",
           november: "novembre",
           october: "octobre",
           september: "septembre",
@@ -2581,7 +3595,7 @@ class AppLocalizations {
         dateofBirth: "Date de naissance",
         editSurvey: "Modifier enquête",
         familyName: "Nom de famille",
-        female: "Femelle",
+        female: "Femme",
         givenNames: "Prénoms",
         male: "Masculin",
         mySchedule: "Mon emploi du temps",
@@ -2616,7 +3630,7 @@ class AppLocalizations {
           uncle: "Oncle",
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
-          female: "Femelle",
+          female: "Femme",
           male: "Masculin",
           title: "Sexe à la naissance",
         ),
@@ -2634,7 +3648,7 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "Annuler",
-        next: "Suivant",
+        next: "Prochain",
         previous: "précédent",
         submit: "Soumettre",
       ),
@@ -2731,6 +3745,10 @@ class AppLocalizations {
           housing: "Quelle est votre situation de logement aujourd'hui?",
           losingHousing: "Etes-vous inquiet de perdre votre logement?",
           title: "Famille et accueil",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "Tapez un nombre",
+          value: "Tapez une valeur",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
@@ -2987,6 +4005,10 @@ class AppLocalizations {
           housing: "Was ist Ihr heute Wohnsituation?",
           losingHousing: "Sind Sie besorgt, über Ihr Gehäuse zu verlieren?",
           title: "Familie und Zuhause",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "Geben Sie eine Zahl",
+          value: "Geben Sie einen Wert",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
@@ -3246,6 +4268,10 @@ class AppLocalizations {
               "Apakah Anda khawatir tentang kehilangan perumahan Anda?",
           title: "Keluarga dan Rumah",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "Ketik nomor",
+          value: "Ketik nilai",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "Selama tahun lalu, apa yang pendapatan gabungan total untuk Anda dan anggota keluarga Anda hidup dengan? Informasi ini akan membantu kami menentukan apakah Anda memenuhi syarat untuk manfaat.",
@@ -3496,6 +4522,10 @@ class AppLocalizations {
           housing: "あなたの住宅事情は、今日は何ですか？",
           losingHousing: "あなたの住宅を失うことを心配していますか？",
           title: "家族とホーム",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "番号を入力",
+          value: "値を入力",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
@@ -3748,6 +4778,10 @@ class AppLocalizations {
           losingHousing: "តើអ្នកមានការព្រួយបារម្ភពីការបាត់បង់ផ្ទះរបស់អ្នក?",
           title: "គ្រួសារនិងទំព័រដើម",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "វាយចំនួនមួយ",
+          value: "វាយតម្លៃ",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "ក្នុងអំឡុងឆ្នាំកន្លងទៅនេះអ្វីដែលជាប្រាក់ចំណូលសរុបសម្រាប់អ្នកនិងសមាជិកក្រុមគ្រួសាររបស់អ្នករស់នៅជាមួយ? ពនេះនឹងជួយឱ្យយើងកំណត់ថាតើអ្នកមានសិទ្ធិទទួលបានផលប្រយោជន៍ណាមួយឡើយ។",
@@ -3998,6 +5032,10 @@ class AppLocalizations {
           housing: "귀하의 주택 상황은 오늘 무엇입니까?",
           losingHousing: "당신은 당신의 주택을 잃어 버릴까 걱정하고 있습니까?",
           title: "가족과 집",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "숫자를 입력",
+          value: "값을 입력",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
@@ -4250,6 +5288,10 @@ class AppLocalizations {
           losingHousing: "ທ່ານກໍາລັງກັງວົນກ່ຽວກັບການສູນເສຍທີ່ຢູ່ອາໄສຂອງທ່ານ?",
           title: "ຄອບຄົວແລະບ້ານ",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "ພິມຕົວເລກ",
+          value: "ພິມມູນຄ່າ",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "ໃນລະຫວ່າງປີທີ່ຜ່ານມາ, ສິ່ງທີ່ເປັນລາຍຮັບລວມທັງຫມົດສໍາລັບທ່ານແລະສະມາຊິກໃນຄອບຄົວທີ່ທ່ານດໍາລົງຊີວິດທີ່ມີ? ຂໍ້ມູນຂ່າວສານນີ້ຈະຊ່ວຍໃຫ້ພວກເຮົາກໍານົດຖ້າຫາກວ່າທ່ານມີສິດໄດ້ຮັບສໍາລັບຜົນປະໂຫຍດໃດໆ.",
@@ -4321,7 +5363,7 @@ class AppLocalizations {
         email: "ईमेल",
         password: "पासवर्ड",
         resetPassword: "पासवर्ड रीसेट करा",
-        signIn: "साइन इन करा",
+        signIn: "मध्ये साइन इन करा",
         signUp: "साइन अप करा",
         submit: "प्रस्तुत करणे",
         userName: "वापरकर्तानाव",
@@ -4503,6 +5545,10 @@ class AppLocalizations {
           housing: "आज आपल्या गृहनिर्माण परिस्थिती काय आहे?",
           losingHousing: "आपण आपल्या गृहनिर्माण तोट्याचा काळजी का करता?",
           title: "कुटुंब आणि मुख्यपृष्ठ",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "एक नंबर टाईप करा",
+          value: "एक मूल्य टाइप करा",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
@@ -4757,6 +5803,10 @@ class AppLocalizations {
           losingHousing: "तपाईं आफ्नो आवास गुमाउने चिन्तित हुनुहुन्छ?",
           title: "परिवार र घर",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "एक नम्बर टाइप",
+          value: "मान टाइप",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "गत वर्ष समयमा, तपाईं र तपाईंसँग जीवन बिताउन परिवार सदस्यहरूको लागि कुल संयुक्त आय के थियो? यो जानकारी तपाईं कुनै पनि लाभ को लागि योग्य हुनुहुन्छ भने हामीलाई निर्धारण गर्न मद्दत गर्नेछ।",
@@ -4766,7 +5816,7 @@ class AppLocalizations {
           transportation:
               "यातायातका कमी तपाईं चिकित्सा देखि राखिएको छ भेटघाट, सभा, काम, या दैनिक आवश्यक कुराहरू प्राप्त बाट?",
           without:
-              "गत वर्ष मा, छ तपाईं वा तपाईं यसलाई साँच्चै आवश्यक थियो निम्न कुनै पनि प्राप्त गर्न असमर्थ भएको बस्न कुनै पनि परिवारका सदस्यहरूले?",
+              "गत वर्ष मा, छ तपाईं वा तपाईं यसलाई साँच्चै आवश्यक थियो निम्न को कुनै पनि मिल सकेका बस्न कुनै पनि परिवारका सदस्यहरू?",
           work: "आफ्नो वर्तमान काम अवस्था के छ?",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
@@ -4862,7 +5912,7 @@ class AppLocalizations {
         birthDate: "Data de nascimento",
         dateofBirth: "Data de nascimento",
         editSurvey: "Editar questionário",
-        familyName: "Sobrenome",
+        familyName: "#VALUE!",
         female: "Fêmea",
         givenNames: "Nomes dados",
         male: "Masculino",
@@ -5012,6 +6062,10 @@ class AppLocalizations {
           losingHousing: "Você está preocupado em perder o seu habitação?",
           title: "Família e Home",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "Digite um número",
+          value: "Digite um valor",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "Durante o ano passado, o que foi o rendimento combinado total para você e os membros da família que vivem com? Esta informação nos ajudará a determinar se você é elegível para todos os benefícios.",
@@ -5156,7 +6210,7 @@ class AppLocalizations {
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
           female: "ਔਰਤ",
           male: "ਮਰਦ",
-          title: "ਜਨਮ ਤੇ ਲਿੰਗ",
+          title: "ਜਨਮ ਤੇ ਸੈਕਸ",
         ),
       ),
       language: AppLocalizations_Labels_Language(
@@ -5266,6 +6320,10 @@ class AppLocalizations {
           housing: "ਅੱਜ ਆਪਣੇ ਹਾਊਸਿੰਗ ਸਥਿਤੀ ਦਾ ਕੀ ਹੁੰਦਾ ਹੈ?",
           losingHousing: "ਤੁਹਾਨੂੰ ਆਪਣੇ ਹਾਊਸਿੰਗ ਗੁਆਉਣ ਬਾਰੇ ਚਿੰਤਾ ਕਰ ਰਹੇ ਹੋ?",
           title: "ਪਰਿਵਾਰ ਅਤੇ ਘਰ",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "ਇੱਕ ਨੰਬਰ ਟਾਈਪ ਕਰੋ",
+          value: "ਦਾ ਮੁੱਲ ਟਾਈਪ ਕਰੋ",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
@@ -5524,6 +6582,10 @@ class AppLocalizations {
               "Ma waxaad ka walwalsan ah oo ku saabsan badiyay guryaha?",
           title: "Qoyska iyo Home",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "Ku qor tiro",
+          value: "Ku qor qiimaha a",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "Intii lagu guda jiray sanadkii la soo dhaafay, waxa uu ahaa dakhliga guud ee la isu geeyey adiga iyo xubnaha qoyska ee aad la nooshahay ee? Macluumaadkan waxaa naga caawin doonaa go'aan ka gaadho haddii aad u qalanto gargaarka kasta.",
@@ -5540,7 +6602,7 @@ class AppLocalizations {
           afraid:
               "Sanadkii la soo dhaafay, waxa aad ka cabsanayn aad isqabtaan ama lammaane hore?",
           prison:
-              "Sanadkii la soo dhaafay, in aad qarashgareeyay in ka badan 2 habeen oo isku xiga oo jeel ah, xabsi, xarunta dadka lagu haayo, ama xarunta dhallinta asluubta?",
+              "Sanadkii la soo dhaafay, in aad ku qaatay in ka badan 2 habeen oo isku xiga oo jeel ah, xabsi, xarunta dadka lagu haayo, ama xarunta dhallinta asluubta?",
           refugee: "aad tahay qaxooti?",
           safe:
               "Ma dareensan tahay in aad jidh ahaan iyo maskax ahaan ammaan ah meesha aad hadda ku nool?",
@@ -5778,6 +6840,10 @@ class AppLocalizations {
           housing: "Ni nini nyumba yako hali leo?",
           losingHousing: "Je, wasiwasi wa kupoteza makazi yako?",
           title: "Familia na Nyumbani",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "andika namba",
+          value: "Aina thamani",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
@@ -6038,6 +7104,10 @@ class AppLocalizations {
               "Sigurado ka nag-aalala tungkol sa pagkawala ng iyong mga pabahay?",
           title: "Pamilya at Tahanan",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "Mag-type ng numero ng",
+          value: "Mag-type ng halaga",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "Sa panahon ng nakalipas na taon, ano ang kabuuang pinagsamang kita para sa iyo at sa mga miyembro ng pamilya mo sa bahay? Ang impormasyon na ito ay makakatulong sa amin na matukoy kung ikaw ay karapat-dapat para sa anumang mga benepisyo.",
@@ -6063,7 +7133,7 @@ class AppLocalizations {
         personalCharacteristics:
             AppLocalizations_Labels_Prapare_PersonalCharacteristics(
           language: "Anong wika ang ikaw ay pinaka-kumportable sa pagsasalita?",
-          latino: "Huwag isaalang-alang mo ang iyong sarili Hispanic / Latino?",
+          latino: "Ang itinuturing mong sarili na Hispaniko / Latino?",
           military:
               "Nakarating na nangaligtas sa armadong pwersa ng Estados Unidos?",
           race: "Aling lahi (s) ka?",
@@ -6292,6 +7362,10 @@ class AppLocalizations {
           housing: "อะไรคือสถานการณ์ที่อยู่อาศัยของคุณวันนี้?",
           losingHousing: "คุณกังวลเกี่ยวกับการสูญเสียที่อยู่อาศัยของคุณหรือไม่",
           title: "ครอบครัวและบ้าน",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "พิมพ์ตัวเลข",
+          value: "พิมพ์ค่า",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
@@ -6548,6 +7622,10 @@ class AppLocalizations {
           losingHousing: "Agar uy-joy yo'qotib haqida tashvishli?",
           title: "Oila va uy",
         ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "bir qator kiriting",
+          value: "Agar qiymat kiriting",
+        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "O'tgan yil mobaynida siz va siz bilan birga yashayotgan oila a'zolari uchun umumiy kombinatsiyalangan daromad nima edi? Bu ma'lumotlar sizga har qanday foyda uchun ma'qul bo'lsa, bizga aniqlashga yordam beradi.",
@@ -6799,6 +7877,10 @@ class AppLocalizations {
           housing: "tình hình nhà ở của bạn là gì hôm nay?",
           losingHousing: "Bạn đang lo lắng về việc mất nhà ở của bạn?",
           title: "Gia đình và Trang chủ",
+        ),
+        instructions: AppLocalizations_Labels_Prapare_Instructions(
+          number: "Nhập số",
+          value: "Nhập giá trị",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
@@ -7861,6 +8943,25 @@ class AppLocalizations_Labels_Prapare_FamilyAndHome {
   }
 }
 
+class AppLocalizations_Labels_Prapare_Instructions {
+  const AppLocalizations_Labels_Prapare_Instructions({this.number, this.value});
+
+  final String number;
+
+  final String value;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'number':
+        return number;
+      case 'value':
+        return value;
+      default:
+        return '';
+    }
+  }
+}
+
 class AppLocalizations_Labels_Prapare_MoneyAndResources {
   const AppLocalizations_Labels_Prapare_MoneyAndResources(
       {this.income,
@@ -8009,6 +9110,7 @@ class AppLocalizations_Labels_Prapare {
       {this.title,
       this.answers,
       this.familyAndHome,
+      this.instructions,
       this.moneyAndResources,
       this.optionalMeasures,
       this.personalCharacteristics,
@@ -8019,6 +9121,8 @@ class AppLocalizations_Labels_Prapare {
   final AppLocalizations_Labels_Prapare_Answers answers;
 
   final AppLocalizations_Labels_Prapare_FamilyAndHome familyAndHome;
+
+  final AppLocalizations_Labels_Prapare_Instructions instructions;
 
   final AppLocalizations_Labels_Prapare_MoneyAndResources moneyAndResources;
 

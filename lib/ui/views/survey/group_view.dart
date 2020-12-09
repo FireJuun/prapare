@@ -38,72 +38,76 @@ class GroupView extends StatelessWidget {
       },
       child: Scaffold(
         backgroundColor: appTheme.bg2,
-        body: NestedScrollView(
-          floatHeaderSlivers: true,
-          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-            // print('scrolled? $innerBoxIsScrolled');
-            // These are the slivers that show up in the "outer" scroll view.
-            return <Widget>[
-              SliverOverlapAbsorber(
-                handle:
-                    NestedScrollView.sliverOverlapAbsorberHandleFor(context),
-                sliver: SliverAppBar(
-                  excludeHeaderSemantics: true,
-                  forceElevated: innerBoxIsScrolled,
-                  pinned: true,
-                  floating: true,
-                  snap: true,
-                  actions: [
-                    IconButton(
-                        icon: const Icon(Icons.settings),
-                        onPressed: () => settingsDialog())
-                  ],
-                  expandedHeight: _expandedHeight,
-                  collapsedHeight: _collapsedHeight,
-                  flexibleSpace: SurveyHeaderFlexible(),
+        body: Form(
+          key: validationController.formKey,
+          child: NestedScrollView(
+            floatHeaderSlivers: true,
+            headerSliverBuilder:
+                (BuildContext context, bool innerBoxIsScrolled) {
+              // print('scrolled? $innerBoxIsScrolled');
+              // These are the slivers that show up in the "outer" scroll view.
+              return <Widget>[
+                SliverOverlapAbsorber(
+                  handle:
+                      NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+                  sliver: SliverAppBar(
+                    excludeHeaderSemantics: true,
+                    forceElevated: innerBoxIsScrolled,
+                    pinned: true,
+                    floating: true,
+                    snap: true,
+                    actions: [
+                      IconButton(
+                          icon: const Icon(Icons.settings),
+                          onPressed: () => settingsDialog(context))
+                    ],
+                    expandedHeight: _expandedHeight,
+                    collapsedHeight: _collapsedHeight,
+                    flexibleSpace: SurveyHeaderFlexible(),
+                  ),
                 ),
-              ),
-            ];
-          },
-          body: TabBarView(
-            controller: controller.tabController,
+              ];
+            },
+            body: TabBarView(
+              controller: controller.tabController,
 
-            /// asMap().map()...values.toList() used to pass index w/ map
-            /// spec: https://fireship.io/snippets/dart-how-to-get-the-index-on-array-loop-map/
-            children: tabList
-                .map(
-                  (e) => SafeArea(
-                    top: false,
-                    bottom: false,
-                    child: Builder(
-                      builder: (BuildContext context) {
-                        return CustomScrollView(
-                          key: PageStorageKey<String>(e.id.toString()),
-                          slivers: <Widget>[
-                            SliverOverlapInjector(
-                              handle: NestedScrollView
-                                  .sliverOverlapAbsorberHandleFor(context),
-                            ),
-                            SliverPadding(
-                              padding: const EdgeInsets.all(8.0),
-                              sliver: SliverList(
-                                delegate: SliverChildListDelegate(
-                                  [
-                                    GroupDetail(
-                                      group: dataController
-                                          .getGroupFromCode(e.code),
-                                    ),
-                                  ],
+              /// asMap().map()...values.toList() used to pass index w/ map
+              /// spec: https://fireship.io/snippets/dart-how-to-get-the-index-on-array-loop-map/
+              children: tabList
+                  .map(
+                    (e) => SafeArea(
+                      top: false,
+                      bottom: false,
+                      child: Builder(
+                        builder: (BuildContext context) {
+                          return CustomScrollView(
+                            key: PageStorageKey<String>(e.id.toString()),
+                            slivers: <Widget>[
+                              SliverOverlapInjector(
+                                handle: NestedScrollView
+                                    .sliverOverlapAbsorberHandleFor(context),
+                              ),
+                              SliverPadding(
+                                padding: const EdgeInsets.all(8.0),
+                                sliver: SliverList(
+                                  delegate: SliverChildListDelegate(
+                                    [
+                                      GroupDetail(
+                                        group: dataController
+                                            .getGroupFromCode(e.code),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
-                        );
-                      },
+                            ],
+                          );
+                        },
+                      ),
                     ),
-                  ),
-                )
-                .toList(),
+                  )
+                  .toList(),
+            ),
           ),
         ),
         floatingActionButton: Obx(

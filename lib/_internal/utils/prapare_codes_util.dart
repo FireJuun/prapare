@@ -1,6 +1,12 @@
 import 'package:prapare/localization.dart';
 
 class PrapareCodesUtil {
+  /// These answers have their views determined programmatically,
+  /// regardless of overall question type
+  ///  'LA30122-8':  labels.prapare.answers.basic.chooseNotToAnswer;
+  ///  'LA46-8':  labels.prapare.answers.other;
+  ///  'LA30137-6':  labels.prapare.answers.work.otherwiseUnemployedButNotSeekingWork;
+
   String getTitleFromLinkIdAndLocale(
       String linkId, AppLocalizations_Labels labels) {
     try {
@@ -60,7 +66,6 @@ class PrapareCodesUtil {
         case '/93041-2/76437-3':
           return labels.prapare.moneyAndResources.insurance;
         case '/93041-2/63586-2':
-          // todo: this accepts decimal + choose not to respond
           return labels.prapare.moneyAndResources.income;
         case '/93041-2/93031-3':
           return labels.prapare.moneyAndResources.without;
@@ -107,8 +112,6 @@ class PrapareCodesUtil {
           return labels.prapare.answers.basic.chooseNotToAnswer;
 
         case 'LA46-8':
-          // todo: allow for user entry responses
-          //todo: does this value needs to accept write-in + boolean?
           return labels.prapare.answers.other;
 
         case 'LA6156-9':
@@ -148,8 +151,6 @@ class PrapareCodesUtil {
         case 'LA30136-8':
           return labels.prapare.answers.work.fullTimeWork;
         case 'LA30137-6':
-          // todo: allow for user entry responses
-          // todo: add 'please write'
           return labels
               .prapare.answers.work.otherwiseUnemployedButNotSeekingWork;
 
@@ -168,7 +169,6 @@ class PrapareCodesUtil {
         case 'LA6350-8':
           return labels.prapare.answers.insurance.privateInsurance;
 
-        //todo: these values need to accept boolean
         case 'LA30125-1':
           return labels.prapare.answers.without.food;
         case 'LA30126-9':
@@ -182,11 +182,6 @@ class PrapareCodesUtil {
         case 'LA30129-3':
           return labels.prapare.answers.without.phone;
 
-        // case 'LA46-8':
-        //todo: this value needs to accept write-in + boolean
-        // return labels.prapare.answers.without.other;
-
-        //todo: these also have valueStrings + one extra answer:
         case 'LA30133-5':
           return labels.prapare.answers.transportation.yesKeptFromMedical;
         case 'LA30134-3':

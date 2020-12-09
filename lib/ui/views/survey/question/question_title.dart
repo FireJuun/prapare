@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/_internal/utils/prapare_codes_util.dart';
+import 'package:prapare/_internal/utils/utils.dart';
 import 'package:prapare/controllers/controllers.dart';
 import 'package:prapare/localization.dart';
+import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
+import 'package:prapare/ui/themes.dart';
 
 class QuestionTitle extends StatelessWidget {
   const QuestionTitle({Key key, @required this.questionLinkId})
@@ -13,6 +16,8 @@ class QuestionTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final AppTheme appTheme = Get.find<ThemeController>()
+        .getAppThemeFromBrightness(context.theme.brightness);
     final TextTheme textTheme = context.textTheme;
     final QuestionnaireController controller = Get.find();
     final PrapareCodesUtil codesUtil = PrapareCodesUtil();
@@ -27,21 +32,56 @@ class QuestionTitle extends StatelessWidget {
     if (qTotalIndex == -1) {
       /// first, parse the last element of the question for display
       /// for now, we are assuming this is a coded answer
-      final String parsedAnswerLinkId = questionLinkId.split('/').last;
+      final String parsedAnswerLinkId = LinkIdUtil().getLastId(questionLinkId);
+      final String answerTitle =
+          codesUtil.getAnswerFromLinkIdAndLocale(parsedAnswerLinkId, labels) ??
+              '';
 
       return Padding(
         padding: const EdgeInsets.only(top: 16.0),
-        child: Text(
-            '${codesUtil.getAnswerFromLinkIdAndLocale(parsedAnswerLinkId, labels)}',
-            style: textTheme.bodyText1,
-            textAlign: TextAlign.start),
+
+        /// SubQuestions with a DeclineToAnswer (LA30122-8) toggle
+        /// are handled differently, since the Question Title
+        /// would be the same as the Answer Title
+        child: (parsedAnswerLinkId == 'LA30122-8')
+            ? Container()
+            : Text(answerTitle,
+                style: textTheme.bodyText1, textAlign: TextAlign.start),
       );
     } else {
-      return // Question title
-          Text(
-              '${qTotalIndex + 1}: ${codesUtil.getQuestionFromLinkIdAndLocale(questionLinkId, labels)}',
-              style: textTheme.headline6,
-              textAlign: TextAlign.start);
+      // Default path: Question Title
+      final String questionTitle =
+          codesUtil.getQuestionFromLinkIdAndLocale(questionLinkId, labels) ??
+              '';
+      final ValidationController validationController = Get.find();
+      final String groupAndQuestionId =
+          LinkIdUtil().getGroupAndQuestionId(questionLinkId);
+      final QuestionValidators qValidators =
+          validationController.questionValidatorsMap[groupAndQuestionId];
+
+      return Obx(
+        () => Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+          child: Text(
+              (qValidators.isQuestionAnswered.value ? '✓ ' : '') +
+                  '${qTotalIndex + 1}: ' +
+                  questionTitle,
+              style: textTheme.headline6.apply(
+                  // question is answered: bold, color change
+                  color: qValidators.isQuestionAnswered.value
+                      ? appTheme.textComplete
+                      : null,
+                  fontWeightDelta: qValidators.isQuestionAnswered.value ? 2 : 0,
+                  // question is declined: italic, linethrough
+                  fontStyle: qValidators.isDeclineToAnswerSelected.value
+                      ? FontStyle.italic
+                      : null,
+                  decoration: qValidators.isDeclineToAnswerSelected.value
+                      ? TextDecoration.lineThrough
+                      : null),
+              textAlign: TextAlign.start),
+        ),
+      );
     }
   }
 }

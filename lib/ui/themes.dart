@@ -6,7 +6,7 @@ import 'package:flutter/cupertino.dart';
 class _AppColors {
   static const Color greenSurface = Color(0xFFDAE7DB);
   //this is the pale faded green color of the background of the survey in light theme
-  static const Color greenSurfaceDark = Color(0xFF202021);
+  static const Color greenSurfaceDark = Color(0xFF417B5B);
   static const Color green = Color(0xFF689E80);
   //this is the medium green color used for the PRAPARE banner and the button on the home screen
   static const Color greenDark = Color(0xFF32494e);
@@ -27,6 +27,8 @@ class _AppColors {
   static const Color redDarkMode = Color(0xFF984F46);
   //this is the dark mode "money and resources" banner
   static const Color blue = Color(0xFF567599);
+  //this is the blue 'prapare' logo color and text when completed in light mode
+  static const Color blueTextComplete = Color(0xFF004270);
   //this is the light mode "family and home" banner color
   static const Color blueDarkMode = Color(0xFF5087AC);
   //this is the dark mode "family and home" banner - FF002F4E
@@ -109,6 +111,7 @@ class AppTheme {
           ..heading3 = _AppColors.red
           ..heading4 = _AppColors.blueGreen
           ..heading5 = _AppColors.grey
+          ..textComplete = _AppColors.greenSurfaceDark
           ..disabled = _AppColors.greyDisabled
           ..grey = _AppColors.grey
           ..error = Colors.red.shade900
@@ -128,6 +131,7 @@ class AppTheme {
           ..heading3 = _AppColors.redDarkMode
           ..heading4 = _AppColors.blueGreenDarkMode
           ..heading5 = _AppColors.greyDarkMode
+          ..textComplete = _AppColors.orangeDark
           ..disabled = _AppColors.greyDisabled
           ..grey = _AppColors.grey
           ..error = _AppColors.redDarkMode
@@ -151,6 +155,7 @@ class AppTheme {
   Color heading3;
   Color heading4;
   Color heading5;
+  Color textComplete;
   Color disabled;
   Color grey;
   Color error;

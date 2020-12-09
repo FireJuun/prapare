@@ -5,14 +5,14 @@ const prapareSurvey = {
   "id": "PRAPARE-1.0",
   "name": "SDOHCC_Questionnaire_PRAPARE",
   "resourceType": "Questionnaire",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire|2.7"
-    ],
-    "tag": [
-      {"code": "lformsVersion: 25.1.3"}
-    ]
-  },
+  // "meta": {
+  //   "profile": [
+  //     "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire|2.7"
+  //   ],
+  //   "tag": [
+  //     {"code": "lformsVersion: 25.1.3"}
+  //   ]
+  // },
   "item": [
     {
       "type": "group",
@@ -314,7 +314,7 @@ const prapareSurvey = {
               ]
             },
             {
-              "type": "text",
+              "type": "string",
               "code": [
                 {
                   "code": "54899-0",
@@ -500,7 +500,7 @@ const prapareSurvey = {
               ]
             },
             {
-              "type": "string",
+              "type": "text",
               "code": [
                 {
                   "code": "56799-0",

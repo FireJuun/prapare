@@ -3,21 +3,18 @@ import 'package:get/get.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 
 class UserResponsesController extends GetxController {
-  final RxMap<String, Rx<UserResponse>> _rxUserResponsesMap =
-      <String, Rx<UserResponse>>{}.obs;
-  RxMap<String, Rx<UserResponse>> get rxUserResponsesMap => _rxUserResponsesMap;
+  // format: <QuestionLinkId, UserResponse>
+  final Map<String, Rx<UserResponse>> _userResponsesMap =
+      <String, Rx<UserResponse>>{};
+  Map<String, Rx<UserResponse>> get userResponsesMap => _userResponsesMap;
 
   void updateUserResponse(Rx<UserResponse> oldItem, UserResponse newItem) {
     oldItem.update((e) => e = newItem ?? UserResponse.defaultNull());
   }
 
-  Rx<UserResponse> findRxUserResponse(
-          {@required String questionLinkId, @required String answerCode}) =>
-      _rxUserResponsesMap[questionLinkId];
-
   // todo: handle if no response
   Rx<UserResponse> findActiveResponse(String questionLinkId) =>
-      _rxUserResponsesMap[questionLinkId];
+      _userResponsesMap[questionLinkId];
 
   // Get the first answer in the list, or default to '' if no answer is set
   String getActiveRadioButtonValue(Rx<UserResponse> userResponse) {

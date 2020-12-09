@@ -80,7 +80,7 @@ item:
         display: 'No'
       - code: LA30122-8
         display: I choose not to answer this question
-    - type: text
+    - type: string
       required: false
       linkId: "/93043-8/54899-0"
       text: What language are you most comfortable speaking?
@@ -126,7 +126,7 @@ item:
         display: 'No'
       - code: LA30122-8
         display: I choose not to answer this question
-    - type: string
+    - type: text
       required: false
       linkId: "/93042-0/56799-0"
       text: What address do you live at?

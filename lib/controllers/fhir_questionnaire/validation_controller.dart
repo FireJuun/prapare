@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/_internal/utils/utils.dart';
 import 'package:prapare/controllers/controllers.dart';
@@ -5,13 +6,44 @@ import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/ui/views/survey/group_controller.dart';
 
 class ValidationController extends GetxController {
-  final QuestionnaireController _questionnaireController = Get.find();
   final UserResponsesController _responsesController = Get.find();
-  final GroupController _groupController = Get.find();
+
+  /// A global key that holds the state of a form
+  /// is used by nested TextFormField widgets for validation
+  final formKey = GlobalKey<FormState>();
 
   // holds state of which tabs are checked, mapped by survey code
-  final RxMap<String, RxBool> _rxMappedValidatedGroups = <String, RxBool>{}.obs;
-  RxMap<String, RxBool> get rxMappedValidatedTabs => _rxMappedValidatedGroups;
+  final Map<String, RxBool> _groupValidatorsMap = <String, RxBool>{};
+  Map<String, RxBool> get groupValidatorsMap => _groupValidatorsMap;
+
+  /// holds state of each question's validators, specifically
+  /// 1) has a question been answered? or 2) declined to answer?
+  /// 3) if a radio button is present, what is currently selected?
+  final Map<String, QuestionValidators> _questionValidatorsMap =
+      <String, QuestionValidators>{};
+  Map<String, QuestionValidators> get questionValidatorsMap =>
+      _questionValidatorsMap;
+
+  bool validateIfQuestionIsCompleted(Rx<UserResponse> userResponse) {
+    final String groupAndQuestionId =
+        LinkIdUtil().getGroupAndQuestionId(userResponse.value.questionLinkId);
+    final QuestionValidators qValidators =
+        _questionValidatorsMap[groupAndQuestionId];
+
+    if (userResponse.value.questionLinkId != groupAndQuestionId) {
+      //subquestion
+      // todo: handle subquestion data
+    } else {
+      // question
+      if (userResponse.value.answers.isEmpty) {
+        // todo: for now, this only handles checkbox answers...
+        return qValidators.isQuestionAnswered.value = false;
+      } else {
+        return qValidators.isQuestionAnswered.value = true;
+      }
+    }
+    return false;
+  }
 
   bool validateIfGroupIsCompleted(String questionCode) {
     final String groupCode = LinkIdUtil().getGroupId(questionCode);
@@ -19,7 +51,7 @@ class ValidationController extends GetxController {
     // create temporary map of all user responses for a given group
     final Map<String, Rx<UserResponse>> groupResponses = {};
 
-    _responsesController.rxUserResponsesMap.forEach(
+    _responsesController.userResponsesMap.forEach(
       (questId, usrResp) {
         final String grpId = LinkIdUtil().getGroupId(questId);
         if (grpId == groupCode) {
@@ -121,6 +153,8 @@ class ValidationController extends GetxController {
   }
 
   void _updateTabListWithValidator(String groupCode, bool validator) {
+    final GroupController _groupController = Get.find();
+
     /// get relevant SurveyTab, and toggle it as checked
     /// since we used parse util for groupCode, which removed the '/'
     /// we will parse these values as well for consistency
@@ -132,23 +166,10 @@ class ValidationController extends GetxController {
   }
 
   // skip the last tab item (optional), then see if all are checked
-  bool validateIfRequiredGroupsAreComplete() =>
-      _groupController.tabModel.tabList
-          .take(_groupController.tabModel.tabList.length - 1)
-          .every((e) => e.isChecked.value);
-
-  // create empty validators with false as default
-  void _mapAllGroupValidators() {
-    _questionnaireController
-        .getQuestionnaire()
-        .survey
-        .surveyItems
-        .forEach((s) => _rxMappedValidatedGroups.add(s.linkId, false.obs));
-  }
-
-  @override
-  void onInit() {
-    _mapAllGroupValidators();
-    super.onInit();
+  bool validateIfRequiredGroupsAreComplete() {
+    final GroupController _groupController = Get.find();
+    return _groupController.tabModel.tabList
+        .take(_groupController.tabModel.tabList.length - 1)
+        .every((e) => e.isChecked.value);
   }
 }

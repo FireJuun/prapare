@@ -3,22 +3,37 @@ import 'package:get/get.dart';
 import 'package:prapare/_internal/utils/utils.dart';
 import 'package:prapare/controllers/commands/abstract_command.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
-import 'package:prapare/models/fhir_questionnaire/survey/item_type.dart';
 
 class ToggleRadioButtonCommand extends AbstractCommand {
+  @override
   Future<void> execute({
     @required Rx<UserResponse> userResponse,
     @required Answer answer,
     @required String newResponse,
   }) async {
     final answerResponseList = userResponse.value.answers;
+    final String groupAndQuestionId =
+        LinkIdUtil().getGroupAndQuestionId(userResponse.value.questionLinkId);
+    final QuestionValidators qValidators =
+        validationController.questionValidatorsMap[groupAndQuestionId];
+
     // if toggled to off state
     if (newResponse == null) {
       /// clear all UserResponses
       /// note that if we want to still keep previously written items
       /// we'll need to extract this into a separate method to handle different answer types
       answerResponseList.clear();
+      // For questions (not subquestions), set item no longer answered
+      if (userResponse.value.questionLinkId == groupAndQuestionId) {
+        qValidators.isQuestionAnswered.value = false;
+      }
     } else {
+      // For questions (not subquestions), close if selected
+      if (userResponse.value.questionLinkId == groupAndQuestionId) {
+        qValidators.isQuestionAnswered.value = true;
+        qValidators.isExpanded.value = false;
+      }
+
       // decide if this will have an optional 'other' write-in option
       // First, handle ItemType.choice
       final AnswerResponse newAnswer = AnswerResponseUtil()
@@ -43,7 +58,6 @@ class ToggleRadioButtonCommand extends AbstractCommand {
     // responsesController.update();
 
     // check validator to see if survey is complete
-    // ToDo: not sure how to change this method
     validationController
         .validateIfGroupIsCompleted(userResponse.value.questionLinkId);
   }
