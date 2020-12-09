@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:prapare/_internal/utils/utils.dart';
 import 'package:prapare/controllers/commands/commands.dart';
 import 'package:prapare/localization.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
@@ -35,19 +36,21 @@ class _AnswerItemDecimalState extends State<AnswerItemDecimal>
   @override
   Widget buildAnswer(BuildContext context) {
     final labels = AppLocalizations.of(context);
-    final bool _isInteger = answer.answerItemType == ItemType.integer;
+    final bool _isAnswerAnInteger = answer.answerItemType == ItemType.integer;
 
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: TextField(
-        controller: _textEditingController,
-        onChanged: (newValue) => _rxString.value = newValue.toString(),
-        keyboardType: TextInputType.numberWithOptions(decimal: !_isInteger),
-        decoration: InputDecoration(
-          border: const OutlineInputBorder(),
-          labelText: labels.prapare.instructions.number,
-        ),
-      ),
+      child: TextFormField(
+          controller: _textEditingController,
+          onChanged: (newValue) => _rxString.value = newValue.toString(),
+          keyboardType:
+              TextInputType.numberWithOptions(decimal: !_isAnswerAnInteger),
+          decoration: InputDecoration(
+            border: const OutlineInputBorder(),
+            labelText: labels.prapare.instructions.number,
+          ),
+          validator: (String newValue) =>
+              ValidatorsUtil().validateNewAnswerValue(newValue, answer)),
     );
   }
 
@@ -62,7 +65,10 @@ class _AnswerItemDecimalState extends State<AnswerItemDecimal>
         // ToDo: works only for answer
         text: rxUserResponse.value.answers[0].value?.toString() ?? '');
     DebounceAndSaveResponseCommand().execute(
-        rxString: _rxString, answer: answer, userResponse: rxUserResponse);
+      rxString: _rxString,
+      answer: answer,
+      userResponse: rxUserResponse,
+    );
     super.initState();
   }
 

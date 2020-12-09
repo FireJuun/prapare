@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/_internal/utils/utils.dart';
 import 'package:prapare/controllers/controllers.dart';
@@ -6,6 +7,10 @@ import 'package:prapare/ui/views/survey/group_controller.dart';
 
 class ValidationController extends GetxController {
   final UserResponsesController _responsesController = Get.find();
+
+  /// A global key that holds the state of a form
+  /// is used by nested TextFormField widgets for validation
+  final formKey = GlobalKey<FormState>();
 
   // holds state of which tabs are checked, mapped by survey code
   final Map<String, RxBool> _groupValidatorsMap = <String, RxBool>{};

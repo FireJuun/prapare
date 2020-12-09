@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:prapare/_internal/utils/utils.dart';
 import 'package:prapare/controllers/commands/commands.dart';
 import 'package:prapare/localization.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/enums/item_type.dart';
@@ -37,20 +38,21 @@ class _AnswerItemStringState extends State<AnswerItemString>
   Widget buildAnswer(BuildContext context) {
     final labels = AppLocalizations.of(context);
     // [AnswerText] accepts multi-line, whereas [AnswerString] prefers single
-    final bool _isMultiLine = answer.answerItemType == ItemType.text;
+    final bool _isAnswerMultiLine = answer.answerItemType == ItemType.text;
 
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: TextField(
-        controller: _textEditingController,
-        onChanged: (newValue) => _obj.value = newValue,
-        minLines: _isMultiLine ? 3 : 1,
-        maxLines: _isMultiLine ? 6 : 1,
-        decoration: InputDecoration(
-          border: const OutlineInputBorder(),
-          labelText: labels.prapare.instructions.value,
-        ),
-      ),
+      child: TextFormField(
+          controller: _textEditingController,
+          onChanged: (newValue) => _obj.value = newValue,
+          minLines: _isAnswerMultiLine ? 3 : 1,
+          maxLines: _isAnswerMultiLine ? 6 : 1,
+          decoration: InputDecoration(
+            border: const OutlineInputBorder(),
+            labelText: labels.prapare.instructions.value,
+          ),
+          validator: (String newValue) =>
+              ValidatorsUtil().validateNewAnswerValue(newValue, answer)),
     );
   }
 
@@ -62,8 +64,11 @@ class _AnswerItemStringState extends State<AnswerItemString>
     // todo: change answers[0] to 'first where itemtype is =='
     _textEditingController =
         TextEditingController(text: rxUserResponse.value.answers[0].value);
-    DebounceAndSaveResponseCommand()
-        .execute(rxString: _obj, answer: answer, userResponse: rxUserResponse);
+    DebounceAndSaveResponseCommand().execute(
+      rxString: _obj,
+      answer: answer,
+      userResponse: rxUserResponse,
+    );
     super.initState();
   }
 
