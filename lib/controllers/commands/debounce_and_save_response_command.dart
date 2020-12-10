@@ -12,12 +12,12 @@ class DebounceAndSaveResponseCommand extends AbstractCommand {
       @required Answer answer,
       @required Rx<UserResponse> userResponse}) async {
     debounce(rxString, (String debouncedValue) {
-      // find fist instance of a value, then set it as defined below
       void _setUserResponseValue(dynamic newValue) {
-        userResponse.value.answers
-            .firstWhere(
-                (element) => element.responseItemType == answer.answerItemType)
-            .value = newValue;
+        // first, find the appropriate response by itemtype
+        final _response = AnswerResponseUtil()
+            .getAnswerResponseFromItemType(userResponse, answer);
+        // then, set the new value as desired
+        AnswerResponseUtil().setAnswerResponseValue(_response, newValue);
       }
 
       if (ValidatorsUtil().isEmpty(debouncedValue)) {

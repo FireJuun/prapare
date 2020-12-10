@@ -24,11 +24,18 @@ class ValidationController extends GetxController {
   Map<String, QuestionValidators> get questionValidatorsMap =>
       _questionValidatorsMap;
 
+  QuestionValidators getQuestionValidatorByUserResponse(
+      Rx<UserResponse> userResponse) {
+    final String groupAndQuestionId =
+        LinkIdUtil().getGroupAndQuestionId(userResponse.value.questionLinkId);
+    return _questionValidatorsMap[groupAndQuestionId];
+  }
+
   bool validateIfQuestionIsCompleted(Rx<UserResponse> userResponse) {
     final String groupAndQuestionId =
         LinkIdUtil().getGroupAndQuestionId(userResponse.value.questionLinkId);
     final QuestionValidators qValidators =
-        _questionValidatorsMap[groupAndQuestionId];
+        getQuestionValidatorByUserResponse(userResponse);
 
     bool _isQuestionAnswered = false;
 

@@ -37,6 +37,12 @@ class ToggleRadioButtonCommand extends AbstractCommand {
           answerResponseList.add(newAnswer);
         }
       }
+      // finally, collapse the 'completed survey' to
+      // todo: add a check to see if subquestion, so that isn't auto-toggled
+      validationController
+          .getQuestionValidatorByUserResponse(userResponse)
+          .isExpanded
+          .value = false;
     }
 
     // check validator to see if survey is complete
