@@ -20,10 +20,13 @@ class DebounceAndSaveResponseCommand extends AbstractCommand {
             .value = newValue;
       }
 
-      if (ValidatorsUtil().isNotEmpty(debouncedValue)) {
+      if (ValidatorsUtil().isEmpty(debouncedValue)) {
         switch (answer.answerItemType) {
-          // todo. handle open_choice
           case ItemType.open_choice:
+          case ItemType.text:
+          case ItemType.string:
+            _setUserResponseValue('');
+            break;
 
           // first, set bool / decimal / integer values to null
           case ItemType.boolean:
@@ -40,6 +43,9 @@ class DebounceAndSaveResponseCommand extends AbstractCommand {
 
       // check to see if all TextFormFields are valid
       validationController.formKey.currentState.validate();
+
+      // check to see if question has answers
+      validationController.validateIfQuestionIsCompleted(userResponse);
 
       // check validator to see if survey is complete
       validationController

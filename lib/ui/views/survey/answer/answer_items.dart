@@ -36,8 +36,7 @@ class AnswerItems extends StatelessWidget {
       final lastAnswerCode = LinkIdUtil().getLastId(answer.code);
 
       /// First, check to see if answer code has unique/custom view
-      /// These answers have their views determined programmatically,
-      /// regardless of overall question type
+      /// These answers have their views determined programmatically, regardless of overall question type
       switch (lastAnswerCode) {
         // LA30122-8: I choose not to answer this question
         case 'LA30122-8':
@@ -78,7 +77,6 @@ class AnswerItems extends StatelessWidget {
         // **** Number Answers ***
         case ItemType.decimal:
         case ItemType.integer:
-          // return Text('decimal');
           return AnswerItemDecimal(
               answer: answer, rxUserResponse: userResponse);
 
@@ -89,7 +87,7 @@ class AnswerItems extends StatelessWidget {
 
         case ItemType.boolean:
           // todo: implement answer_boolean
-          return Text('boolean');
+          return const Text('boolean');
 
         // **** DEFAULT: Radio Button Answer ***
         default:

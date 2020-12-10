@@ -6,6 +6,7 @@ class ValidatorsUtil {
   bool isValidDecimal(String str) => validate.isFloat(str);
   bool isValidInteger(String str) => validate.isInt(str);
 
+  bool isEmpty(String str) => str == null || str == '';
   bool isNotEmpty(String str) => str != null && str != '';
 
   bool isAnswerValidByItemType(String value, ItemType itemType) {

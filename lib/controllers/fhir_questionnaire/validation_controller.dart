@@ -33,17 +33,18 @@ class ValidationController extends GetxController {
     if (userResponse.value.questionLinkId != groupAndQuestionId) {
       //subquestion
       // todo: handle subquestion data
+      return _validateSubQuestion();
     } else {
-      // question
-      if (userResponse.value.answers.isEmpty) {
-        // todo: for now, this only handles checkbox answers...
-        return qValidators.isQuestionAnswered.value = false;
-      } else {
-        return qValidators.isQuestionAnswered.value = true;
-      }
+      // validate based on question type
+      qValidators.isQuestionAnswered.value =
+          validateAnswerResponseListHasData(userResponse.value.answers);
+      print('');
+      // return _validateCheckboxQuestion(userResponse, qValidators);
     }
     return false;
   }
+
+  bool _validateSubQuestion() => false;
 
   bool validateIfGroupIsCompleted(String questionCode) {
     final String groupCode = LinkIdUtil().getGroupId(questionCode);
