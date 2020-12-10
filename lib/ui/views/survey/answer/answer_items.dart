@@ -44,23 +44,26 @@ class AnswerItems extends StatelessWidget {
           return AnswerItemDeclineToAnswer(
               answer: answer, rxUserResponse: userResponse);
         //  LA46-8:  labels.prapare.answers.other;
-        case 'LA46-8':
-          return const Text('other');
+        // case 'LA46-8':
+        //   return const Text('other');
         //  'LA30137-6':  labels.prapare.answers.work.otherwiseUnemployedButNotSeekingWork;
-        case 'LA30137-6':
-          return const Text('Otherwise Unemployed But Not Seeking Work');
+        // case 'LA30137-6':
+        //   return const Text('Otherwise Unemployed But Not Seeking Work');
       }
 
       // Otherwise, build view based on answerItemType
       switch (answer.answerItemType) {
         // **** Radio Buttons + Checkbox Answers ***
-        case ItemType.choice:
-        // todo: separate handling of open-choice
         case ItemType.open_choice:
+        // todo: separate handling of open-choice?
+        // the 'enableWhen' flag may satisfy some of this
+        case ItemType.choice:
           {
             if (question.format == QFormat.radio_button) {
               return AnswerItemRadioButton(
-                  answer: answer, rxUserResponse: userResponse, activeCode: activeCode);
+                  answer: answer,
+                  rxUserResponse: userResponse,
+                  activeCode: activeCode);
             } else if (question.format == QFormat.check_box) {
               return AnswerItemCheckbox(
                   answer: answer, rxUserResponse: userResponse);

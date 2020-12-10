@@ -12,17 +12,20 @@ class Question extends SurveyItem {
     this.mandatory,
     this.multiAnswer,
     this.subQuestions,
+    this.questionEnableWhen,
   }) : super(linkId, text);
 
   factory Question.fromItem(QuestionnaireItem item) {
     final Question question = Question(
-        linkId: item.linkId,
-        text: item.text,
-        itemType: item.type,
-        answers: <Answer>{},
-        mandatory: item.required_ == null ? false : item.required_.toJson(),
-        multiAnswer: item.repeats == null ? false : item.repeats.toJson(),
-        subQuestions: <Question>[]);
+      linkId: item.linkId,
+      text: item.text,
+      itemType: item.type,
+      answers: <Answer>{},
+      mandatory: item.required_ == null ? false : item.required_.toJson(),
+      multiAnswer: item.repeats == null ? false : item.repeats.toJson(),
+      subQuestions: <Question>[],
+      questionEnableWhen: <QuestionEnableWhen>[],
+    );
 
     switch (item.type) {
 
@@ -113,6 +116,15 @@ class Question extends SurveyItem {
       }
     }
 
+    /// checks if there are enableWhen options for this question/subquestion
+    /// if so, it will add the relevant question, operator, and code links
+    if (item.enableWhen != null) {
+      for (var listItem in item.enableWhen) {
+        question.questionEnableWhen
+            .add(QuestionEnableWhen.fromEnableWhenList(listItem: listItem));
+      }
+    }
+
     return question;
   }
 
@@ -154,6 +166,10 @@ class Question extends SurveyItem {
 
   /// if there are sub-questions, they will be listed here
   List<Question> subQuestions;
+
+  /// some items are optionally shown (such as 'other' write-in responses)
+  /// if available, the question, operator (=), and code will be in this list
+  List<QuestionEnableWhen> questionEnableWhen;
 }
 
 void _generateListOfAllowedAnswers(QuestionnaireItem item, Question question) =>
