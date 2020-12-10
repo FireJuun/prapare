@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
+import 'package:prapare/controllers/fhir_questionnaire/validation_controller.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
+import 'package:prapare/ui/views/survey/question/question_item_radio_button_controller.dart';
 
 class UserResponsesController extends GetxController {
   // format: <QuestionLinkId, UserResponse>
@@ -32,6 +34,23 @@ class UserResponsesController extends GetxController {
         return firstAnswer.code;
       } else
         return '';
+    }
+  }
+
+  /// placeholder method, in case we want to still keep
+  /// previously written items (e.g. 'other' responses)
+  void clearAllUserResponses(Rx<UserResponse> userResponse) {
+    // clearing these values will change based on user response type
+    // bool vs choice, open_choice, check_box may be handled differently
+    userResponse.value.answers.clear();
+    Get.find<ValidationController>()
+        .validateIfQuestionIsCompleted(userResponse);
+
+    // if the question keeps state via radio button, reset the default back to blank
+    final _qRadioButtonController = Get.find<QuestionItemRadioButtonController>(
+        tag: userResponse.value.questionLinkId);
+    if (_qRadioButtonController != null) {
+      _qRadioButtonController.activeCode.value = '';
     }
   }
 

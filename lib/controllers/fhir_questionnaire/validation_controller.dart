@@ -30,18 +30,25 @@ class ValidationController extends GetxController {
     final QuestionValidators qValidators =
         _questionValidatorsMap[groupAndQuestionId];
 
+    bool _isQuestionAnswered = false;
+
     if (userResponse.value.questionLinkId != groupAndQuestionId) {
       //subquestion
       // todo: handle subquestion data
-      return _validateSubQuestion();
+      _isQuestionAnswered = _validateSubQuestion();
     } else {
       // validate based on question type
-      qValidators.isQuestionAnswered.value =
-          validateAnswerResponseListHasData(userResponse.value.answers);
-      print('');
-      // return _validateCheckboxQuestion(userResponse, qValidators);
+      _isQuestionAnswered =
+          _validateAnswerResponseListHasData(userResponse.value.answers);
     }
-    return false;
+
+    if (qValidators.isDeclineToAnswerSelected.value) {
+      qValidators.isDeclineToAnswerSelected.value = !_isQuestionAnswered;
+      qValidators.isQuestionAnswered.value = _isQuestionAnswered;
+      return true;
+    } else {
+      return qValidators.isQuestionAnswered.value = _isQuestionAnswered;
+    }
   }
 
   bool _validateSubQuestion() => false;
@@ -85,7 +92,7 @@ class ValidationController extends GetxController {
         // first, add all nested questions to an internal validator
         nestedResp.forEach(
           (questId, usrResp) => nestedValidators.add(
-            validateAnswerResponseListHasData(usrResp.value.answers),
+            _validateAnswerResponseListHasData(usrResp.value.answers),
           ),
         );
 
@@ -104,7 +111,7 @@ class ValidationController extends GetxController {
     return validator;
   }
 
-  bool validateAnswerResponseListHasData(List<AnswerResponse> answerList) {
+  bool _validateAnswerResponseListHasData(List<AnswerResponse> answerList) {
     bool validator = false;
     if (answerList.isEmpty) {
       validator = false;

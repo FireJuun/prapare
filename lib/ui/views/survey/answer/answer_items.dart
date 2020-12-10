@@ -18,13 +18,11 @@ class AnswerItems extends StatelessWidget {
     @required this.group,
     @required this.question,
     @required this.answer,
-    this.activeCode,
   }) : super(key: key);
 
   final ItemGroup group;
   final Question question;
   final Answer answer;
-  final RxString activeCode;
 
   @override
   Widget build(BuildContext context) {
@@ -60,9 +58,7 @@ class AnswerItems extends StatelessWidget {
           {
             if (question.format == QFormat.radio_button) {
               return AnswerItemRadioButton(
-                  answer: answer,
-                  rxUserResponse: userResponse,
-                  activeCode: activeCode);
+                  answer: answer, rxUserResponse: userResponse);
             } else if (question.format == QFormat.check_box) {
               return AnswerItemCheckbox(
                   answer: answer, rxUserResponse: userResponse);

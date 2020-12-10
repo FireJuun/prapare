@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:prapare/controllers/commands/abstract_command.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 
 class ToggleDeclineToRespondCommand extends AbstractCommand {
   @override
-  Future<void> execute(
-      {@required QuestionValidators qValidators,
-      @required bool newValue}) async {
+  Future<void> execute({
+    @required QuestionValidators qValidators,
+    @required Rx<UserResponse> userResponse,
+    @required bool newValue,
+  }) async {
     qValidators.isDeclineToAnswerSelected.value = newValue;
 
-    // close
+    // if on, set isExpanded to false, which closes the item
     if (newValue && qValidators.isExpanded.value) {
       qValidators.isExpanded.value = false;
     }
-    // todo: clear answered values from Rx<UserResponse>
-    // clearing these values will change based on user response type
-    // bool vs choice, open_choice, check_box are handled differently
+
+    // when toggled on, remove other/prior question responses
+    if (newValue) {
+      responsesController.clearAllUserResponses(userResponse);
+    }
   }
 }

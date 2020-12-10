@@ -39,8 +39,10 @@ class AnswerItemDeclineToAnswer extends StatelessWidget implements AnswerItem {
     return Obx(() => SwitchListTile(
           title: AnswerTitle(answer: answer),
           value: activeBool.value,
-          onChanged: (bool newValue) => ToggleDeclineToRespondCommand()
-              .execute(qValidators: qValidators, newValue: newValue),
+          onChanged: (bool newValue) => ToggleDeclineToRespondCommand().execute(
+              qValidators: qValidators,
+              userResponse: rxUserResponse,
+              newValue: newValue),
         ));
   }
 
