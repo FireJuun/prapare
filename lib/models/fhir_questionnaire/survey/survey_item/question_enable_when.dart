@@ -18,8 +18,6 @@ class QuestionEnableWhen {
     /// https://stackoverflow.com/questions/58734044/how-to-extract-left-or-right-easily-from-either-type-in-dart-dartz
     final _code = listItem?.answerCoding?.code ?? Code('');
     answerCode = (_code.value.isRight()) ? _code.value.getOrElse(() => '') : '';
-
-    print('quest, ans, enable');
   }
 
   /// specifies the question that
