@@ -1,8 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
+import 'package:prapare/_internal/utils/utils.dart';
+import 'package:prapare/controllers/controllers.dart';
 import 'package:prapare/controllers/fhir_questionnaire/validation_controller.dart';
+import 'package:prapare/models/fhir_questionnaire/survey/enums/qformat.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
-import 'package:prapare/ui/views/survey/question/question_item_radio_button_controller.dart';
+import 'package:prapare/ui/views/survey/answer/answer_item_decimal_or_string_controller.dart';
 
 class UserResponsesController extends GetxController {
   // format: <QuestionLinkId, UserResponse>
@@ -40,18 +43,46 @@ class UserResponsesController extends GetxController {
   /// placeholder method, in case we want to still keep
   /// previously written items (e.g. 'other' responses)
   void clearAllUserResponses(Rx<UserResponse> userResponse) {
-    // clearing these values will change based on user response type
-    // bool vs choice, open_choice, check_box may be handled differently
-    userResponse.value.answers.clear();
+    /// remove subquestion and/or answer codes from linkId
+    final groupAndQuestionId =
+        LinkIdUtil().getGroupAndQuestionId(userResponse.value.questionLinkId);
+
+    /// use the userResponse ID to find the original question ID
+    final QuestionnaireController questionnaireController = Get.find();
+    final question =
+        questionnaireController.getQuestionFromLinkId(groupAndQuestionId);
+
+    /// different data types (e.g. bool, choice, open_choice, check_box) are stored differently
+    /// as such, their data must be cleared differently
+    /// the AnswerResponse utility class handles this
+    question.answers.forEach((answer) {
+      AnswerResponseUtil().clearUserResponse(
+          answer: answer, userResponse: userResponse, qFormat: question.format);
+    });
+
+    if (question.format == QFormat.radio_button) {
+      AnswerResponseUtil()
+          .findAndResetQuestionItemRadioButtonController(userResponse);
+    }
+
+    if (question?.answers != null) {
+      /// search each of the original question's answers
+      question.answers.forEach(
+        (e) {
+          /// if an answer option has a TextEditingController, clear its data
+          final AnswerItemDecimalOrStringController _ctrl =
+              Get.find(tag: e.code);
+          if (_ctrl != null) {
+            _ctrl.obj.value = '';
+          }
+        },
+      );
+    }
+
+    /// finally, validate if the question is completed
+    /// as defined by data entered or data
     Get.find<ValidationController>()
         .validateIfQuestionIsCompleted(userResponse);
-
-    // if the question keeps state via radio button, reset the default back to blank
-    final _qRadioButtonController = Get.find<QuestionItemRadioButtonController>(
-        tag: userResponse.value.questionLinkId);
-    if (_qRadioButtonController != null) {
-      _qRadioButtonController.activeCode.value = '';
-    }
   }
 
   bool getCheckboxValueFromUserResponseAndAnswer(

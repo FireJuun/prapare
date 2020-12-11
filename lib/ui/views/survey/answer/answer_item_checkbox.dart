@@ -1,40 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/controllers/commands/commands.dart';
-import 'package:prapare/controllers/controllers.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/ui/views/survey/answer/answer_item.dart';
 
+import 'answer_item_checkbox_controller.dart';
 import 'answer_title.dart';
 
-class AnswerItemCheckbox extends StatefulWidget {
+class AnswerItemCheckbox extends StatelessWidget implements AnswerItem {
   const AnswerItemCheckbox(
       {Key key, @required this.answer, @required this.rxUserResponse})
       : super(key: key);
 
+  @override
   final Answer answer;
+  @override
   final Rx<UserResponse> rxUserResponse;
 
   @override
-  _AnswerItemCheckboxState createState() => _AnswerItemCheckboxState();
-}
-
-class _AnswerItemCheckboxState extends State<AnswerItemCheckbox>
-    implements AnswerItem {
-  final UserResponsesController controller = Get.find();
-
-  final RxBool activeBool = false.obs;
-
-  @override
-  Answer get answer => widget.answer;
-  @override
-  Rx<UserResponse> get rxUserResponse => widget.rxUserResponse;
-
-  @override
-  Widget buildAnswer(BuildContext context) => Obx(
-        () => CheckboxListTile(
+  Widget buildAnswer(BuildContext context) {
+    return GetX<AnswerItemCheckboxController>(
+      init: AnswerItemCheckboxController(
+          answer: answer, userResponse: rxUserResponse),
+      tag: answer.code,
+      initState: (_) {},
+      builder: (controller) {
+        return CheckboxListTile(
           title: AnswerTitle(answer: answer),
-          value: activeBool.value,
+          value: controller.isSelected.value,
           onChanged: (newValue) async {
             // close keyboard if previously open:
             FocusScope.of(context).unfocus();
@@ -43,19 +36,13 @@ class _AnswerItemCheckboxState extends State<AnswerItemCheckbox>
                 userResponse: rxUserResponse,
                 answer: answer,
                 newValue: newValue);
-            activeBool.value = newValue;
+            controller.isSelected.value = newValue;
           },
-        ),
-      );
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) => buildAnswer(context);
-
-  @override
-  void initState() {
-    // returns most recent value, otherwise the default '' remains
-    activeBool.value = controller.getCheckboxValueFromUserResponseAndAnswer(
-        answer: widget.answer, userResponse: widget.rxUserResponse);
-    super.initState();
-  }
 }

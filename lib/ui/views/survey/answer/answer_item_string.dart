@@ -32,7 +32,7 @@ class AnswerItemString extends StatelessWidget implements AnswerItem {
       init: AnswerItemDecimalOrStringController(
           answer: answer, userResponse: rxUserResponse),
       // unique tag for this specific item
-      tag: rxUserResponse.value.questionLinkId + answer.code,
+      tag: answer.code,
       initState: (_) {},
       builder: (controller) {
         return Padding(

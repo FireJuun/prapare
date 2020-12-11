@@ -17,8 +17,9 @@ class ToggleDeclineToRespondCommand extends AbstractCommand {
       qValidators.isExpanded.value = false;
     }
 
-    // when toggled on, remove other/prior question responses
+    // when toggled on...
     if (newValue) {
+      // remove other/prior responses for this question
       responsesController.clearAllUserResponses(userResponse);
     }
   }

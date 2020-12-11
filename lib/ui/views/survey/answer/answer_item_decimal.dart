@@ -30,7 +30,7 @@ class AnswerItemDecimal extends StatelessWidget implements AnswerItem {
     return GetX<AnswerItemDecimalOrStringController>(
       init: AnswerItemDecimalOrStringController(
           answer: answer, userResponse: rxUserResponse),
-      tag: rxUserResponse.value.questionLinkId + answer.code,
+      tag: answer.code,
       initState: (_) {},
       builder: (controller) {
         return Padding(

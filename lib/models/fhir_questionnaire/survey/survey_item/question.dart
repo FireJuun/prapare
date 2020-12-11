@@ -176,10 +176,11 @@ void _generateListOfAllowedAnswers(QuestionnaireItem item, Question question) =>
     item.answerOption?.forEach(
       (e) => question.answers.add(
         Answer.fromAnswerOption(
+          questionnaireItem: item,
           answer: e,
           // set itemType based on questionnaire data
-          answerItemType: ItemTypeUtil()
-              .getItemTypeFromQuestionnaireItemType(question.itemType),
+          answerItemType:
+              ItemTypeUtil().getItemTypeFromQuestionnaireItemType(item.type),
         ),
       ),
     );
@@ -187,9 +188,9 @@ void _generateListOfAllowedAnswers(QuestionnaireItem item, Question question) =>
 void _createAnswerByQuestionAndItemType(Question question, ItemType itemType) {
   /// ItemType and QuestionnaireItemType need to be parsed
   /// to remove the 'ItemType.___' and return '___'
-  final String code = question.linkId;
 
   question.answers.add(
-    Answer(answerItemType: itemType, code: code, text: ''),
+    Answer(
+        answerItemType: itemType, code: question.linkId, text: question.text),
   );
 }

@@ -28,6 +28,10 @@ class QuestionnaireController extends GetxController {
   int getGroupIndexFromGroup(ItemGroup itemGroup) =>
       _model.data.survey.surveyItems.indexWhere((e) => e == itemGroup);
 
+  /// This is a convenience method to quickly retrieve question info from _allQuestions
+  Question getQuestionFromLinkId(String questionLinkId) =>
+      _allQuestions.firstWhere((e) => e.linkId == questionLinkId);
+
   int getTotalIndexFromQuestion(String questionLinkId) =>
       _allQuestions.indexWhere((e) => e.linkId == questionLinkId);
 

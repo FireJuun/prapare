@@ -30,5 +30,7 @@ class ToggleCheckboxCommand extends AbstractCommand {
     validationController.validateIfQuestionIsCompleted(userResponse);
     validationController
         .validateIfGroupIsCompleted(userResponse.value.questionLinkId);
+
+    responsesController.update();
   }
 }
