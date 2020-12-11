@@ -18,8 +18,7 @@ class AnswerItemDecimalOrStringController extends GetxController {
   QuestionValidators _getQuestionValidator() => Get.find<ValidationController>()
       .getQuestionValidatorByUserResponse(userResponse);
 
-  RxBool isQuestionDeclined() =>
-      _getQuestionValidator().isDeclineToAnswerSelected;
+  RxBool isQuestionDeclined() => _getQuestionValidator().isQuestionDeclined;
 
   @override
   void onInit() {

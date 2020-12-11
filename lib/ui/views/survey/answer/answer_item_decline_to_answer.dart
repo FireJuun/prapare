@@ -34,7 +34,7 @@ class AnswerItemDeclineToAnswer extends StatelessWidget implements AnswerItem {
     final QuestionValidators qValidators =
         controller.questionValidatorsMap[groupAndQuestionId];
 
-    final RxBool activeBool = qValidators?.isDeclineToAnswerSelected;
+    final RxBool activeBool = qValidators?.isQuestionDeclined;
 
     return Obx(() => SwitchListTile(
           title: AnswerTitle(answer: answer),

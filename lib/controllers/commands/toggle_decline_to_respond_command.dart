@@ -12,7 +12,7 @@ class ToggleDeclineToRespondCommand extends AbstractCommand {
     @required bool newValue,
   }) async {
     // set question value
-    qValidators.isDeclineToAnswerSelected.value = newValue;
+    qValidators.isQuestionDeclined.value = newValue;
 
     /// if on, set isExpanded to false, which closes the item
     /// note that this command ignores subquestion data

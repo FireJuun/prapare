@@ -38,7 +38,7 @@ class ValidationController extends GetxController {
 
   void setQuestionDeclined(String questionLinkId, bool newValue) =>
       questionValidatorsMap[LinkIdUtil().getGroupAndQuestionId(questionLinkId)]
-          .isDeclineToAnswerSelected
+          .isQuestionDeclined
           .value = newValue;
 
   bool validateIfQuestionAndGroupAreCompleted(Rx<UserResponse> userResponse) {
@@ -63,9 +63,8 @@ class ValidationController extends GetxController {
       _isQuestionAnswered =
           _validateAnswerResponseListHasData(userResponse.value.answers);
       // note that a declined question takes priority counts as answered
-      _isQuestionDeclined = questionValidatorsMap[groupAndQuestionId]
-          .isDeclineToAnswerSelected
-          .value;
+      _isQuestionDeclined =
+          questionValidatorsMap[groupAndQuestionId].isQuestionDeclined.value;
 
       qValidators.isQuestionAnswered.value = _isQuestionAnswered;
     }
@@ -73,14 +72,6 @@ class ValidationController extends GetxController {
     _validateIfGroupIsCompleted(userResponse.value.questionLinkId);
 
     return _isQuestionAnswered || _isQuestionDeclined;
-
-    // if (qValidators.isDeclineToAnswerSelected.value) {
-    //   qValidators.isDeclineToAnswerSelected.value = !_isQuestionAnswered;
-    //   qValidators.isQuestionAnswered.value = _isQuestionAnswered;
-    //   return true;
-    // } else {
-    //   return qValidators.isQuestionAnswered.value = _isQuestionAnswered;
-    // }
   }
 
   bool _validateSubQuestion() => false;
@@ -126,7 +117,7 @@ class ValidationController extends GetxController {
         final qValidator = questionValidatorsMap[
             LinkIdUtil().combineGroupAndQuestionId(groupCode, qIdParsed)];
         if (qValidator != null) {
-          nestedValidators.add(qValidator.isDeclineToAnswerSelected.value);
+          nestedValidators.add(qValidator.isQuestionDeclined.value);
         }
 
         // add all nested questions to an internal validator
