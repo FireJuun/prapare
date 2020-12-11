@@ -26,11 +26,11 @@ class ToggleCheckboxCommand extends AbstractCommand {
       }
     }
 
-    // check validator to see if survey is complete
-    validationController.validateIfQuestionIsCompleted(userResponse);
-    validationController
-        .validateIfGroupIsCompleted(userResponse.value.questionLinkId);
+    // answering questions resets the 'decline to response' toggle
+    validationController.setQuestionDeclined(
+        userResponse.value.questionLinkId, false);
 
-    responsesController.update();
+    // check validator to see if survey is complete
+    validationController.validateIfQuestionAndGroupAreCompleted(userResponse);
   }
 }

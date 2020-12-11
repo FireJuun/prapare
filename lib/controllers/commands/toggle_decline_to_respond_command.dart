@@ -6,13 +6,16 @@ import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 class ToggleDeclineToRespondCommand extends AbstractCommand {
   @override
   Future<void> execute({
+    /// w/ this command, qValidators always links to the question, never a subquestion
     @required QuestionValidators qValidators,
     @required Rx<UserResponse> userResponse,
     @required bool newValue,
   }) async {
+    // set question value
     qValidators.isDeclineToAnswerSelected.value = newValue;
 
-    // if on, set isExpanded to false, which closes the item
+    /// if on, set isExpanded to false, which closes the item
+    /// note that this command ignores subquestion data
     if (newValue && qValidators.isExpanded.value) {
       qValidators.isExpanded.value = false;
     }
@@ -22,5 +25,7 @@ class ToggleDeclineToRespondCommand extends AbstractCommand {
       // remove other/prior responses for this question
       responsesController.clearAllUserResponses(userResponse);
     }
+
+    validationController.validateIfQuestionAndGroupAreCompleted(userResponse);
   }
 }

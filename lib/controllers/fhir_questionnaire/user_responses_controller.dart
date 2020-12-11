@@ -67,7 +67,7 @@ class UserResponsesController extends GetxController {
     /// finally, validate if the question is completed
     /// as defined by data entered or data
     Get.find<ValidationController>()
-        .validateIfQuestionIsCompleted(userResponse);
+        .validateIfQuestionAndGroupAreCompleted(userResponse);
   }
 
   bool getCheckboxValueFromUserResponseAndAnswer(

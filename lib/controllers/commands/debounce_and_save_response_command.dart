@@ -38,12 +38,12 @@ class DebounceAndSaveResponseCommand extends AbstractCommand {
       // check to see if all TextFormFields are valid
       validationController.formKey.currentState.validate();
 
-      // check to see if question has answers
-      validationController.validateIfQuestionIsCompleted(userResponse);
+      // answering questions resets the 'decline to response' toggle
+      validationController.setQuestionDeclined(
+          userResponse.value.questionLinkId, false);
 
-      // check validator to see if survey is complete
-      validationController
-          .validateIfGroupIsCompleted(userResponse.value.questionLinkId);
+      // check to see if question and group have answers
+      validationController.validateIfQuestionAndGroupAreCompleted(userResponse);
     },
         // time to debounce (wait) before saving
         time: const Duration(seconds: 1));

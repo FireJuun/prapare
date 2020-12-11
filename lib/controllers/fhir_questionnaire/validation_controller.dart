@@ -31,15 +31,30 @@ class ValidationController extends GetxController {
     return _questionValidatorsMap[groupAndQuestionId];
   }
 
-  bool validateIfQuestionIsCompleted(Rx<UserResponse> userResponse) {
+  void setQuestionAnswered(String questionLinkId, bool newValue) =>
+      questionValidatorsMap[LinkIdUtil().getGroupAndQuestionId(questionLinkId)]
+          .isQuestionAnswered
+          .value = newValue;
+
+  void setQuestionDeclined(String questionLinkId, bool newValue) =>
+      questionValidatorsMap[LinkIdUtil().getGroupAndQuestionId(questionLinkId)]
+          .isDeclineToAnswerSelected
+          .value = newValue;
+
+  bool validateIfQuestionAndGroupAreCompleted(Rx<UserResponse> userResponse) {
     final String groupAndQuestionId =
         LinkIdUtil().getGroupAndQuestionId(userResponse.value.questionLinkId);
     final QuestionValidators qValidators =
         getQuestionValidatorByUserResponse(userResponse);
 
     bool _isQuestionAnswered = false;
+    bool _isQuestionDeclined = false;
 
-    if (userResponse.value.questionLinkId != groupAndQuestionId) {
+    // check for subquestion
+    if (userResponse.value.questionLinkId != groupAndQuestionId &&
+        // nested 'choose not to respond' items handled separately
+        LinkIdUtil().getLastId(userResponse.value.questionLinkId) !=
+            'LA30122-8') {
       //subquestion
       // todo: handle subquestion data
       _isQuestionAnswered = _validateSubQuestion();
@@ -47,20 +62,30 @@ class ValidationController extends GetxController {
       // validate based on question type
       _isQuestionAnswered =
           _validateAnswerResponseListHasData(userResponse.value.answers);
+      // note that a declined question takes priority counts as answered
+      _isQuestionDeclined = questionValidatorsMap[groupAndQuestionId]
+          .isDeclineToAnswerSelected
+          .value;
+
+      qValidators.isQuestionAnswered.value = _isQuestionAnswered;
     }
 
-    if (qValidators.isDeclineToAnswerSelected.value) {
-      qValidators.isDeclineToAnswerSelected.value = !_isQuestionAnswered;
-      qValidators.isQuestionAnswered.value = _isQuestionAnswered;
-      return true;
-    } else {
-      return qValidators.isQuestionAnswered.value = _isQuestionAnswered;
-    }
+    _validateIfGroupIsCompleted(userResponse.value.questionLinkId);
+
+    return _isQuestionAnswered || _isQuestionDeclined;
+
+    // if (qValidators.isDeclineToAnswerSelected.value) {
+    //   qValidators.isDeclineToAnswerSelected.value = !_isQuestionAnswered;
+    //   qValidators.isQuestionAnswered.value = _isQuestionAnswered;
+    //   return true;
+    // } else {
+    //   return qValidators.isQuestionAnswered.value = _isQuestionAnswered;
+    // }
   }
 
   bool _validateSubQuestion() => false;
 
-  bool validateIfGroupIsCompleted(String questionCode) {
+  bool _validateIfGroupIsCompleted(String questionCode) {
     final String groupCode = LinkIdUtil().getGroupId(questionCode);
 
     // create temporary map of all user responses for a given group
@@ -96,16 +121,19 @@ class ValidationController extends GetxController {
       (qIdParsed, nestedResp) {
         final List<bool> nestedValidators = [];
 
-        // first, add all nested questions to an internal validator
+        // add a single validator for this question, to see if it has been declined
+
+        final qValidator = questionValidatorsMap[
+            LinkIdUtil().combineGroupAndQuestionId(groupCode, qIdParsed)];
+        if (qValidator != null) {
+          nestedValidators.add(qValidator.isDeclineToAnswerSelected.value);
+        }
+
+        // add all nested questions to an internal validator
         nestedResp.forEach(
           (questId, usrResp) => nestedValidators.add(
-            // check each question to see if data are stored
-            _validateAnswerResponseListHasData(usrResp.value.answers) ||
-                // note that a declined question also counts as answered
-                questionValidatorsMap[questionCode]
-                    .isDeclineToAnswerSelected
-                    .value,
-          ),
+              // check each question to see if data are stored
+              _validateAnswerResponseListHasData(usrResp.value.answers)),
         );
 
         // then, if at least one response is considered valid, return true

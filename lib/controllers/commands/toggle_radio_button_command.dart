@@ -45,9 +45,11 @@ class ToggleRadioButtonCommand extends AbstractCommand {
           .value = false;
     }
 
+    // answering questions resets the 'decline to response' toggle
+    validationController.setQuestionDeclined(
+        userResponse.value.questionLinkId, false);
+
     // check validator to see if survey is complete
-    validationController.validateIfQuestionIsCompleted(userResponse);
-    validationController
-        .validateIfGroupIsCompleted(userResponse.value.questionLinkId);
+    validationController.validateIfQuestionAndGroupAreCompleted(userResponse);
   }
 }

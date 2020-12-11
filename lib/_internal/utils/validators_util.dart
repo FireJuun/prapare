@@ -1,4 +1,3 @@
-import 'package:prapare/_internal/utils/utils.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/enums/item_type.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:validators/validators.dart' as validate;
