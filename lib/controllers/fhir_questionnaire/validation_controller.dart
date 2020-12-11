@@ -99,7 +99,12 @@ class ValidationController extends GetxController {
         // first, add all nested questions to an internal validator
         nestedResp.forEach(
           (questId, usrResp) => nestedValidators.add(
-            _validateAnswerResponseListHasData(usrResp.value.answers),
+            // check each question to see if data are stored
+            _validateAnswerResponseListHasData(usrResp.value.answers) ||
+                // note that a declined question also counts as answered
+                questionValidatorsMap[questionCode]
+                    .isDeclineToAnswerSelected
+                    .value,
           ),
         );
 

@@ -5,7 +5,6 @@ import 'package:prapare/controllers/controllers.dart';
 import 'package:prapare/controllers/fhir_questionnaire/validation_controller.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/enums/qformat.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
-import 'package:prapare/ui/views/survey/answer/answer_item_decimal_or_string_controller.dart';
 
 class UserResponsesController extends GetxController {
   // format: <QuestionLinkId, UserResponse>

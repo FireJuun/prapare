@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:prapare/_internal/utils/utils.dart';
 import 'package:prapare/controllers/commands/abstract_command.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
-import 'package:prapare/models/fhir_questionnaire/survey/enums/item_type.dart';
 
 class DebounceAndSaveResponseCommand extends AbstractCommand {
   @override
@@ -12,33 +11,28 @@ class DebounceAndSaveResponseCommand extends AbstractCommand {
       @required Answer answer,
       @required Rx<UserResponse> userResponse}) async {
     debounce(rxString, (String debouncedValue) {
-      void _setUserResponseValue(dynamic newValue) {
-        // first, find the appropriate response by itemtype
-        final _response = AnswerResponseUtil()
-            .getAnswerResponseFromItemType(userResponse, answer);
-        // then, set the new value as desired
-        AnswerResponseUtil().setAnswerResponseValue(_response, newValue);
-      }
+      final _question = questionnaireController
+          .getQuestionFromLinkId(userResponse.value.questionLinkId);
+
+      void _clearResponse() => AnswerResponseUtil().clearUserResponse(
+          answer: answer,
+          userResponse: userResponse,
+          qFormat: _question.format,
+          resetDecimalOrStringController: false);
+
+      void _saveResponse() => AnswerResponseUtil().setAnswerResponseValue(
+          AnswerResponseUtil()
+              .getAnswerResponseFromItemType(userResponse, answer),
+          debouncedValue);
 
       if (ValidatorsUtil().isEmpty(debouncedValue)) {
-        switch (answer.answerItemType) {
-          case ItemType.open_choice:
-          case ItemType.text:
-          case ItemType.string:
-            _setUserResponseValue('');
-            break;
-
-          // first, set bool / decimal / integer values to null
-          case ItemType.boolean:
-          case ItemType.decimal:
-          case ItemType.integer:
-            _setUserResponseValue(null);
-            break;
-          default:
-            break;
-        }
+        _clearResponse();
       } else {
-        _setUserResponseValue(debouncedValue);
+        // if valid answer, store it, otherwise clear what's stored
+        (ValidatorsUtil()
+                .isAnswerValidByItemType(debouncedValue, answer.answerItemType))
+            ? _saveResponse()
+            : _clearResponse();
       }
 
       // check to see if all TextFormFields are valid

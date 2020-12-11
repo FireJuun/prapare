@@ -97,7 +97,8 @@ class AnswerResponseUtil {
   void clearUserResponse(
       {@required Answer answer,
       @required Rx<UserResponse> userResponse,
-      @required QFormat qFormat}) {
+      @required QFormat qFormat,
+      bool resetDecimalOrStringController = true}) {
     if (userResponse.value.answers != null) {
       switch (answer.answerItemType) {
         // checkboxes and radio buttons remove relevant item
@@ -145,7 +146,9 @@ class AnswerResponseUtil {
             );
             // reset values
             _ansResp.value = null;
-            _findAndResetAnswerItemDecimalOrStringController(answer.code);
+            if (resetDecimalOrStringController) {
+              _findAndResetAnswerItemDecimalOrStringController(answer.code);
+            }
             return;
           }
         case ItemType.integer:
@@ -157,7 +160,9 @@ class AnswerResponseUtil {
             );
             // reset values
             _ansResp.value = null;
-            _findAndResetAnswerItemDecimalOrStringController(answer.code);
+            if (resetDecimalOrStringController) {
+              _findAndResetAnswerItemDecimalOrStringController(answer.code);
+            }
             return;
           }
 
@@ -172,7 +177,9 @@ class AnswerResponseUtil {
             );
             // reset values
             _ansResp.value = '';
-            _findAndResetAnswerItemDecimalOrStringController(answer.code);
+            if (resetDecimalOrStringController) {
+              _findAndResetAnswerItemDecimalOrStringController(answer.code);
+            }
             return;
           }
         case ItemType.text:
@@ -184,7 +191,9 @@ class AnswerResponseUtil {
             );
             // reset values
             _ansResp.value = '';
-            _findAndResetAnswerItemDecimalOrStringController(answer.code);
+            if (resetDecimalOrStringController) {
+              _findAndResetAnswerItemDecimalOrStringController(answer.code);
+            }
             return;
           }
 
