@@ -20,10 +20,17 @@ class DebounceAndSaveResponseCommand extends AbstractCommand {
           qFormat: _question.format,
           resetDecimalOrStringController: false);
 
-      void _saveResponse() => AnswerResponseUtil().setAnswerResponseValue(
-          AnswerResponseUtil()
-              .getAnswerResponseFromItemType(userResponse, answer),
-          debouncedValue);
+      void _saveResponse() {
+        // saving a response will reset the 'decline to response' toggle
+        // otherwise, clear response will continue to 'debounce' itself
+        validationController.setQuestionDeclined(
+            userResponse.value.questionLinkId, false);
+
+        AnswerResponseUtil().setAnswerResponseValue(
+            AnswerResponseUtil()
+                .getAnswerResponseFromItemType(userResponse, answer),
+            debouncedValue);
+      }
 
       if (ValidatorsUtil().isEmpty(debouncedValue)) {
         _clearResponse();
@@ -37,10 +44,6 @@ class DebounceAndSaveResponseCommand extends AbstractCommand {
 
       // check to see if all TextFormFields are valid
       validationController.formKey.currentState.validate();
-
-      // answering questions resets the 'decline to response' toggle
-      validationController.setQuestionDeclined(
-          userResponse.value.questionLinkId, false);
 
       // check to see if question and group have answers
       validationController.validateIfQuestionAndGroupAreCompleted(userResponse);
