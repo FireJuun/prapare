@@ -65,20 +65,6 @@ class UserResponsesController extends GetxController {
           .findAndResetQuestionItemRadioButtonController(userResponse);
     }
 
-    if (question?.answers != null) {
-      /// search each of the original question's answers
-      question.answers.forEach(
-        (e) {
-          /// if an answer option has a TextEditingController, clear its data
-          final AnswerItemDecimalOrStringController _ctrl =
-              Get.find(tag: e.code);
-          if (_ctrl != null) {
-            _ctrl.obj.value = '';
-          }
-        },
-      );
-    }
-
     /// finally, validate if the question is completed
     /// as defined by data entered or data
     Get.find<ValidationController>()
