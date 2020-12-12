@@ -8,6 +8,7 @@ class ToggleRadioButtonCommand extends AbstractCommand {
   @override
   Future<void> execute({
     @required Rx<UserResponse> userResponse,
+    @required Question question,
     @required Answer answer,
     @required String newResponse,
   }) async {
@@ -37,12 +38,25 @@ class ToggleRadioButtonCommand extends AbstractCommand {
           answerResponseList.add(newAnswer);
         }
       }
-      // finally, collapse the 'completed survey' to
-      // todo: add a check to see if subquestion, so that isn't auto-toggled
-      validationController
-          .getQuestionValidatorByUserResponse(userResponse)
-          .isExpanded
-          .value = false;
+
+      /// finally, collapse the 'completed survey'
+      /// SubQuestions don't implement this feature
+      if (validationController.isQuestionAtRoot(question) &&
+          // enableWhen options also don't implement this feature
+          !validationController.isAnswerAnEnableWhenOption(question, answer)) {
+        validationController
+            .getQuestionValidatorByUserResponse(userResponse)
+            .isExpanded
+            .value = false;
+      }
+    }
+
+    // set enableWhen trigger, if applicable
+    if (validationController.isAnswerAnEnableWhenOption(question, answer)) {
+      final _bool = validationController.getEnableWhenBool(question, answer);
+      if (_bool != null) {
+        _bool.value = newResponse != null;
+      }
     }
 
     // answering questions resets the 'decline to response' toggle

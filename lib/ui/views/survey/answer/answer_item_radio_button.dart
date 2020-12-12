@@ -41,6 +41,7 @@ class AnswerItemRadioButton extends StatelessWidget implements AnswerItem {
           // then toggle radio button
           await ToggleRadioButtonCommand().execute(
               userResponse: userResponse,
+              question: question,
               answer: answer,
               newResponse: newResponse);
           _controller.activeCode.value = newResponse;

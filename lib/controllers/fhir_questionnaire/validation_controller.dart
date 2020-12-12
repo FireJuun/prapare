@@ -24,7 +24,9 @@ class ValidationController extends GetxController {
   Map<String, QuestionValidators> get questionValidatorsMap =>
       _questionValidatorsMap;
 
-  // holds state of which questions have enableWhen booleans
+  /// holds state of which questions have enableWhen booleans
+  /// first key: questionId
+  /// second key: answerCode (note that this is the lastAnswerCode)
   final Map<QuestionEnableWhen, RxBool> _questionEnableWhenValidatorsMap =
       <QuestionEnableWhen, RxBool>{};
   Map<QuestionEnableWhen, RxBool> get questionEnableWhenValidatorsMap =>
@@ -33,6 +35,20 @@ class ValidationController extends GetxController {
   // *******************************************************************
   // *************** CUSTOM GETTERS AND SETTERS ************************
   // *******************************************************************
+
+  RxBool getEnableWhenBool(Question question, Answer answer) {
+    final lastAnswerCode = LinkIdUtil().getLastId(answer.code);
+    RxBool _bool;
+    _questionEnableWhenValidatorsMap.forEach(
+      (key, value) {
+        if (key.questionLinkId == question.linkId &&
+            key.answerCode == lastAnswerCode) {
+          _bool = value;
+        }
+      },
+    );
+    return _bool;
+  }
 
   QuestionValidators getQuestionValidatorByUserResponse(
       Rx<UserResponse> userResponse) {
@@ -54,6 +70,14 @@ class ValidationController extends GetxController {
   // *******************************************************************
   // ******** VALIDATORS TO SEE IF A QUESTION SHOULD BE ENABLED ********
   // *******************************************************************
+
+  /// 'root questions' are ones that directly stem off of a survey group
+  bool isQuestionAtRoot(Question question) =>
+      question.linkId == LinkIdUtil().getGroupAndQuestionId(question.linkId);
+
+  /// 'nested questions' are basically subquestions
+  bool isQuestionNested(Question question) =>
+      question.linkId != LinkIdUtil().getGroupAndQuestionId(question.linkId);
 
   bool isAnswerAnEnableWhenOption(Question question, Answer answer) {
     final lastAnswerCode = LinkIdUtil().getLastId(answer.code);

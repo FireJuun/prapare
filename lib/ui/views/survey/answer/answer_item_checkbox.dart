@@ -41,7 +41,10 @@ class AnswerItemCheckbox extends StatelessWidget implements AnswerItem {
             FocusScope.of(context).unfocus();
             // then toggle checkbox
             ToggleCheckboxCommand().execute(
-                userResponse: userResponse, answer: answer, newValue: newValue);
+                question: question,
+                userResponse: userResponse,
+                answer: answer,
+                newValue: newValue);
             controller.isSelected.value = newValue;
           },
         );
