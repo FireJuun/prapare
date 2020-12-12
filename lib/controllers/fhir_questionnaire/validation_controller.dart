@@ -24,6 +24,16 @@ class ValidationController extends GetxController {
   Map<String, QuestionValidators> get questionValidatorsMap =>
       _questionValidatorsMap;
 
+  // holds state of which questions have enableWhen booleans
+  final Map<QuestionEnableWhen, RxBool> _questionEnableWhenValidatorsMap =
+      <QuestionEnableWhen, RxBool>{};
+  Map<QuestionEnableWhen, RxBool> get questionEnableWhenValidatorsMap =>
+      _questionEnableWhenValidatorsMap;
+
+  // *******************************************************************
+  // *************** CUSTOM GETTERS AND SETTERS ************************
+  // *******************************************************************
+
   QuestionValidators getQuestionValidatorByUserResponse(
       Rx<UserResponse> userResponse) {
     final String groupAndQuestionId =
@@ -40,6 +50,51 @@ class ValidationController extends GetxController {
       questionValidatorsMap[LinkIdUtil().getGroupAndQuestionId(questionLinkId)]
           .isQuestionDeclined
           .value = newValue;
+
+  // *******************************************************************
+  // ******** VALIDATORS TO SEE IF A QUESTION SHOULD BE ENABLED ********
+  // *******************************************************************
+
+  bool isAnswerAnEnableWhenOption(Question question, Answer answer) {
+    final lastAnswerCode = LinkIdUtil().getLastId(answer.code);
+    bool validator = false;
+
+    if (question.questionEnableWhen != null) {
+      _questionEnableWhenValidatorsMap.forEach(
+        (key, value) {
+          /// questions with enableWhen operator have matching questionLinkIds & answerCodes
+          /// ...but their answer codes are not included in the questionLinkId
+          if (question.linkId == key.questionLinkId) {
+            if (lastAnswerCode == key.answerCode) {
+              validator = true;
+            }
+          }
+        },
+      );
+    }
+    return validator;
+  }
+
+  bool isAnswerAnEnableWhenTarget(Question question, Answer answer) {
+    bool validator = false;
+    if (question.questionEnableWhen != null) {
+      _questionEnableWhenValidatorsMap.forEach(
+        (key, value) {
+          /// questions with enableWhen target have matching answerCodes
+          /// but their questionLinkIds don't match (target questionLinkId also contains the lastAnswerCode)
+          if (answer.code == '${key.questionLinkId}/${key.answerCode}' &&
+              question.linkId != key.questionLinkId) {
+            validator = true;
+          }
+        },
+      );
+    }
+    return validator;
+  }
+
+  // *******************************************************************
+  // ******** VALIDATORS TO SEE IF QUESTION + GROUP HAVE DATA   ********
+  // *******************************************************************
 
   bool validateIfQuestionAndGroupAreCompleted(Rx<UserResponse> userResponse) {
     final String groupAndQuestionId =

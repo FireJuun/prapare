@@ -61,6 +61,20 @@ class QuestionnaireController extends GetxController {
       _validationController.questionValidatorsMap[linkId] =
           QuestionValidators();
 
+  void _mapQuestionEnableWhenValidators(SurveyItem surveyItem) {
+    if (surveyItem is Question) {
+      if (surveyItem.questionEnableWhen != null) {
+        surveyItem.questionEnableWhen.forEach(
+          (qEnableWhen) => _addQuestionEnableWhenValidator(qEnableWhen),
+        );
+      }
+    }
+  }
+
+  void _addQuestionEnableWhenValidator(QuestionEnableWhen qEnableWhen) =>
+      _validationController.questionEnableWhenValidatorsMap[qEnableWhen] =
+          false.obs;
+
   void _mapAllUserResponses() => _model.data.survey.surveyItems.forEach(
         (s) => s.runtimeType == ItemGroup ? _mapGroup(s) : _mapQuestion(s),
       );
@@ -69,6 +83,8 @@ class QuestionnaireController extends GetxController {
       item.runtimeType == ItemGroup ? _mapGroup(item) : _mapQuestion(item));
 
   void _mapQuestion(Question question) {
+    _mapQuestionEnableWhenValidators(question);
+
     switch (question.itemType) {
       // If present in a UserResponse list, the Choice is true. If absent, it is false
       case QuestionnaireItemType.choice:

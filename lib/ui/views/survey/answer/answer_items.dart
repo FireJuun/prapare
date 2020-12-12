@@ -29,6 +29,7 @@ class AnswerItems extends StatelessWidget {
     final UserResponsesController controller = Get.find();
     final Rx<UserResponse> userResponse =
         controller.findActiveResponse(question.linkId);
+    final ValidationController validationController = Get.find();
 
     try {
       final lastAnswerCode = LinkIdUtil().getLastId(answer.code);
@@ -39,6 +40,11 @@ class AnswerItems extends StatelessWidget {
         // LA30122-8: I choose not to answer this question
         return AnswerItemDeclineToAnswer(
             question: question, answer: answer, userResponse: userResponse);
+      }
+
+      // enableWhen targets are displayed inside the relevant enableWhen Answer, not in a nested column
+      if (validationController.isAnswerAnEnableWhenTarget(question, answer)) {
+        return Container();
       }
 
       // Otherwise, build view based on answerItemType

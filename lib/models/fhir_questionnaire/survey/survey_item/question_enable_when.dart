@@ -20,7 +20,7 @@ class QuestionEnableWhen {
     answerCode = (_code.value.isRight()) ? _code.value.getOrElse(() => '') : '';
   }
 
-  /// specifies the question that
+  /// specifies the question that has optional enableWhen values
   String questionLinkId;
 
   /// this is answer code that should be displayed
