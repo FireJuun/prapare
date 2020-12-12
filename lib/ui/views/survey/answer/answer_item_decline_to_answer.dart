@@ -9,6 +9,7 @@ import 'package:prapare/models/fhir_questionnaire/survey/answer.dart';
 import 'package:prapare/ui/views/survey/answer/answer_item.dart';
 
 import 'answer_title.dart';
+import 'enable_when_option.dart';
 
 class AnswerItemDeclineToAnswer extends StatelessWidget implements AnswerItem {
   const AnswerItemDeclineToAnswer(
@@ -27,15 +28,16 @@ class AnswerItemDeclineToAnswer extends StatelessWidget implements AnswerItem {
   final Answer answer;
   @override
   final Rx<UserResponse> userResponse;
+
   @override
   Widget buildAnswer(BuildContext context) {
-    final ValidationController controller = Get.find();
+    final ValidationController validationController = Get.find();
 
     // this is used in case the user response is a nested value
     final String groupAndQuestionId =
         LinkIdUtil().getGroupAndQuestionId(userResponse.value.questionLinkId);
     final QuestionValidators qValidators =
-        controller.questionValidatorsMap[groupAndQuestionId];
+        validationController.questionValidatorsMap[groupAndQuestionId];
 
     final RxBool activeBool = qValidators?.isQuestionDeclined;
 
@@ -50,5 +52,14 @@ class AnswerItemDeclineToAnswer extends StatelessWidget implements AnswerItem {
   }
 
   @override
-  Widget build(BuildContext context) => buildAnswer(context);
+  Widget buildAnswerAndEnableWhenOption(BuildContext context) =>
+      EnableWhenOption(
+        question: question,
+        answer: answer,
+        userResponse: userResponse,
+        answerItemWidget: buildAnswer(context),
+      );
+
+  @override
+  Widget build(BuildContext context) => buildAnswerAndEnableWhenOption(context);
 }

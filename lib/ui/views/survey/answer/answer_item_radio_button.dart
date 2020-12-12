@@ -6,6 +6,7 @@ import 'package:prapare/ui/views/survey/question/question_item_radio_button_cont
 
 import 'answer_item.dart';
 import 'answer_title.dart';
+import 'enable_when_option.dart';
 
 class AnswerItemRadioButton extends StatelessWidget implements AnswerItem {
   const AnswerItemRadioButton(
@@ -51,5 +52,14 @@ class AnswerItemRadioButton extends StatelessWidget implements AnswerItem {
   }
 
   @override
-  Widget build(BuildContext context) => buildAnswer(context);
+  Widget buildAnswerAndEnableWhenOption(BuildContext context) =>
+      EnableWhenOption(
+        question: question,
+        answer: answer,
+        userResponse: userResponse,
+        answerItemWidget: buildAnswer(context),
+      );
+
+  @override
+  Widget build(BuildContext context) => buildAnswerAndEnableWhenOption(context);
 }

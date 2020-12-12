@@ -6,6 +6,7 @@ import 'package:prapare/ui/views/survey/answer/answer_item.dart';
 
 import 'answer_item_checkbox_controller.dart';
 import 'answer_title.dart';
+import 'enable_when_option.dart';
 
 class AnswerItemCheckbox extends StatelessWidget implements AnswerItem {
   const AnswerItemCheckbox(
@@ -53,5 +54,14 @@ class AnswerItemCheckbox extends StatelessWidget implements AnswerItem {
   }
 
   @override
-  Widget build(BuildContext context) => buildAnswer(context);
+  Widget buildAnswerAndEnableWhenOption(BuildContext context) =>
+      EnableWhenOption(
+        question: question,
+        answer: answer,
+        userResponse: userResponse,
+        answerItemWidget: buildAnswer(context),
+      );
+
+  @override
+  Widget build(BuildContext context) => buildAnswerAndEnableWhenOption(context);
 }

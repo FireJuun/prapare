@@ -7,6 +7,7 @@ import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 
 import 'answer_item.dart';
 import 'answer_item_decimal_or_string_controller.dart';
+import 'enable_when_option.dart';
 
 class AnswerItemString extends StatelessWidget implements AnswerItem {
   const AnswerItemString(
@@ -62,5 +63,14 @@ class AnswerItemString extends StatelessWidget implements AnswerItem {
   }
 
   @override
-  Widget build(BuildContext context) => buildAnswer(context);
+  Widget buildAnswerAndEnableWhenOption(BuildContext context) =>
+      EnableWhenOption(
+        question: question,
+        answer: answer,
+        userResponse: userResponse,
+        answerItemWidget: buildAnswer(context),
+      );
+
+  @override
+  Widget build(BuildContext context) => buildAnswerAndEnableWhenOption(context);
 }

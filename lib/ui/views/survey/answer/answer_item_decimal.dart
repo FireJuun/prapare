@@ -7,6 +7,7 @@ import 'package:prapare/models/fhir_questionnaire/survey/enums/item_type.dart';
 import 'package:prapare/ui/views/survey/answer/answer_item.dart';
 
 import 'answer_item_decimal_or_string_controller.dart';
+import 'enable_when_option.dart';
 
 class AnswerItemDecimal extends StatelessWidget implements AnswerItem {
   const AnswerItemDecimal(
@@ -60,5 +61,14 @@ class AnswerItemDecimal extends StatelessWidget implements AnswerItem {
   }
 
   @override
-  Widget build(BuildContext context) => buildAnswer(context);
+  Widget buildAnswerAndEnableWhenOption(BuildContext context) =>
+      EnableWhenOption(
+        question: question,
+        answer: answer,
+        userResponse: userResponse,
+        answerItemWidget: buildAnswer(context),
+      );
+
+  @override
+  Widget build(BuildContext context) => buildAnswerAndEnableWhenOption(context);
 }
