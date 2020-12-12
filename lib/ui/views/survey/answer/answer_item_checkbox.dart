@@ -9,19 +9,27 @@ import 'answer_title.dart';
 
 class AnswerItemCheckbox extends StatelessWidget implements AnswerItem {
   const AnswerItemCheckbox(
-      {Key key, @required this.answer, @required this.rxUserResponse})
-      : super(key: key);
+      {Key key,
+      @required this.question,
+      @required this.answer,
+      @required this.userResponse})
+      : assert(question != null),
+        assert(answer != null),
+        assert(userResponse != null),
+        super(key: key);
 
+  @override
+  final Question question;
   @override
   final Answer answer;
   @override
-  final Rx<UserResponse> rxUserResponse;
+  final Rx<UserResponse> userResponse;
 
   @override
   Widget buildAnswer(BuildContext context) {
     return GetX<AnswerItemCheckboxController>(
       init: AnswerItemCheckboxController(
-          answer: answer, userResponse: rxUserResponse),
+          answer: answer, userResponse: userResponse),
       tag: answer.code,
       initState: (_) {},
       builder: (controller) {
@@ -33,9 +41,7 @@ class AnswerItemCheckbox extends StatelessWidget implements AnswerItem {
             FocusScope.of(context).unfocus();
             // then toggle checkbox
             ToggleCheckboxCommand().execute(
-                userResponse: rxUserResponse,
-                answer: answer,
-                newValue: newValue);
+                userResponse: userResponse, answer: answer, newValue: newValue);
             controller.isSelected.value = newValue;
           },
         );

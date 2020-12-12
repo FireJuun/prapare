@@ -9,18 +9,22 @@ import 'answer_item.dart';
 import 'answer_item_decimal_or_string_controller.dart';
 
 class AnswerItemString extends StatelessWidget implements AnswerItem {
-  const AnswerItemString({
-    Key key,
-    @required this.answer,
-    @required this.rxUserResponse,
-  })  : assert(answer != null),
-        assert(rxUserResponse != null),
+  const AnswerItemString(
+      {Key key,
+      @required this.question,
+      @required this.answer,
+      @required this.userResponse})
+      : assert(question != null),
+        assert(answer != null),
+        assert(userResponse != null),
         super(key: key);
 
   @override
+  final Question question;
+  @override
   final Answer answer;
   @override
-  final Rx<UserResponse> rxUserResponse;
+  final Rx<UserResponse> userResponse;
 
   @override
   Widget buildAnswer(BuildContext context) {
@@ -30,7 +34,7 @@ class AnswerItemString extends StatelessWidget implements AnswerItem {
 
     return GetX<AnswerItemDecimalOrStringController>(
       init: AnswerItemDecimalOrStringController(
-          answer: answer, userResponse: rxUserResponse),
+          answer: answer, userResponse: userResponse),
       // unique tag for this specific item
       tag: answer.code,
       initState: (_) {},

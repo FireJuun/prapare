@@ -8,23 +8,27 @@ import 'answer_item.dart';
 import 'answer_title.dart';
 
 class AnswerItemRadioButton extends StatelessWidget implements AnswerItem {
-  const AnswerItemRadioButton({
-    Key key,
-    @required this.answer,
-    @required this.rxUserResponse,
-  })  : assert(answer != null),
-        assert(rxUserResponse != null),
+  const AnswerItemRadioButton(
+      {Key key,
+      @required this.question,
+      @required this.answer,
+      @required this.userResponse})
+      : assert(question != null),
+        assert(answer != null),
+        assert(userResponse != null),
         super(key: key);
 
   @override
+  final Question question;
+  @override
   final Answer answer;
   @override
-  final Rx<UserResponse> rxUserResponse;
+  final Rx<UserResponse> userResponse;
 
   @override
   Widget buildAnswer(BuildContext context) {
     final QuestionItemRadioButtonController _controller =
-        Get.find(tag: rxUserResponse.value.questionLinkId);
+        Get.find(tag: userResponse.value.questionLinkId);
     return Obx(
       () => RadioListTile<String>(
         title: AnswerTitle(answer: answer),
@@ -36,7 +40,7 @@ class AnswerItemRadioButton extends StatelessWidget implements AnswerItem {
           FocusScope.of(context).unfocus();
           // then toggle radio button
           await ToggleRadioButtonCommand().execute(
-              userResponse: rxUserResponse,
+              userResponse: userResponse,
               answer: answer,
               newResponse: newResponse);
           _controller.activeCode.value = newResponse;

@@ -9,18 +9,22 @@ import 'package:prapare/ui/views/survey/answer/answer_item.dart';
 import 'answer_item_decimal_or_string_controller.dart';
 
 class AnswerItemDecimal extends StatelessWidget implements AnswerItem {
-  const AnswerItemDecimal({
-    Key key,
-    @required this.answer,
-    @required this.rxUserResponse,
-  })  : assert(answer != null),
-        assert(rxUserResponse != null),
+  const AnswerItemDecimal(
+      {Key key,
+      @required this.question,
+      @required this.answer,
+      @required this.userResponse})
+      : assert(question != null),
+        assert(answer != null),
+        assert(userResponse != null),
         super(key: key);
 
   @override
+  final Question question;
+  @override
   final Answer answer;
   @override
-  final Rx<UserResponse> rxUserResponse;
+  final Rx<UserResponse> userResponse;
 
   @override
   Widget buildAnswer(BuildContext context) {
@@ -29,7 +33,7 @@ class AnswerItemDecimal extends StatelessWidget implements AnswerItem {
 
     return GetX<AnswerItemDecimalOrStringController>(
       init: AnswerItemDecimalOrStringController(
-          answer: answer, userResponse: rxUserResponse),
+          answer: answer, userResponse: userResponse),
       tag: answer.code,
       initState: (_) {},
       builder: (controller) {

@@ -11,26 +11,29 @@ import 'package:prapare/ui/views/survey/answer/answer_item.dart';
 import 'answer_title.dart';
 
 class AnswerItemDeclineToAnswer extends StatelessWidget implements AnswerItem {
-  const AnswerItemDeclineToAnswer({
-    Key key,
-    @required this.answer,
-    @required this.rxUserResponse,
-  })  : assert(answer != null),
-        assert(rxUserResponse != null),
+  const AnswerItemDeclineToAnswer(
+      {Key key,
+      @required this.question,
+      @required this.answer,
+      @required this.userResponse})
+      : assert(question != null),
+        assert(answer != null),
+        assert(userResponse != null),
         super(key: key);
 
   @override
+  final Question question;
+  @override
   final Answer answer;
   @override
-  final Rx<UserResponse> rxUserResponse;
-
+  final Rx<UserResponse> userResponse;
   @override
   Widget buildAnswer(BuildContext context) {
     final ValidationController controller = Get.find();
 
     // this is used in case the user response is a nested value
     final String groupAndQuestionId =
-        LinkIdUtil().getGroupAndQuestionId(rxUserResponse.value.questionLinkId);
+        LinkIdUtil().getGroupAndQuestionId(userResponse.value.questionLinkId);
     final QuestionValidators qValidators =
         controller.questionValidatorsMap[groupAndQuestionId];
 
@@ -41,7 +44,7 @@ class AnswerItemDeclineToAnswer extends StatelessWidget implements AnswerItem {
           value: activeBool.value,
           onChanged: (bool newValue) => ToggleDeclineToRespondCommand().execute(
               qValidators: qValidators,
-              userResponse: rxUserResponse,
+              userResponse: userResponse,
               newValue: newValue),
         ));
   }

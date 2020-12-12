@@ -35,17 +35,10 @@ class AnswerItems extends StatelessWidget {
 
       /// First, check to see if answer code has unique/custom view
       /// These answers have their views determined programmatically, regardless of overall question type
-      switch (lastAnswerCode) {
+      if (lastAnswerCode == 'LA30122-8') {
         // LA30122-8: I choose not to answer this question
-        case 'LA30122-8':
-          return AnswerItemDeclineToAnswer(
-              answer: answer, rxUserResponse: userResponse);
-        //  LA46-8:  labels.prapare.answers.other;
-        // case 'LA46-8':
-        //   return const Text('other');
-        //  'LA30137-6':  labels.prapare.answers.work.otherwiseUnemployedButNotSeekingWork;
-        // case 'LA30137-6':
-        //   return const Text('Otherwise Unemployed But Not Seeking Work');
+        return AnswerItemDeclineToAnswer(
+            question: question, answer: answer, userResponse: userResponse);
       }
 
       // Otherwise, build view based on answerItemType
@@ -58,10 +51,14 @@ class AnswerItems extends StatelessWidget {
           {
             if (question.format == QFormat.radio_button) {
               return AnswerItemRadioButton(
-                  answer: answer, rxUserResponse: userResponse);
+                  question: question,
+                  answer: answer,
+                  userResponse: userResponse);
             } else if (question.format == QFormat.check_box) {
               return AnswerItemCheckbox(
-                  answer: answer, rxUserResponse: userResponse);
+                  question: question,
+                  answer: answer,
+                  userResponse: userResponse);
             }
             // otherwise, return error
             return Container(
@@ -74,12 +71,13 @@ class AnswerItems extends StatelessWidget {
         case ItemType.decimal:
         case ItemType.integer:
           return AnswerItemDecimal(
-              answer: answer, rxUserResponse: userResponse);
+              question: question, answer: answer, userResponse: userResponse);
 
         // **** String Answers ***
         case ItemType.string:
         case ItemType.text:
-          return AnswerItemString(answer: answer, rxUserResponse: userResponse);
+          return AnswerItemString(
+              question: question, answer: answer, userResponse: userResponse);
 
         case ItemType.boolean:
           // todo: implement answer_boolean
