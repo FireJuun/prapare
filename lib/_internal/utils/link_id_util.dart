@@ -12,4 +12,5 @@ class LinkIdUtil {
       code.split('/').lastWhere((e) => e != '') ?? '';
   String getGroupAndQuestionId(String code) =>
       '/${getGroupId(code)}/${getQuestionId(code)}';
+  String combineGroupAndQuestionId(String grp, String quest) => '/$grp/$quest';
 }

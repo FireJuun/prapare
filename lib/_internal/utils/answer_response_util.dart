@@ -1,10 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/enums/item_type.dart';
 import 'package:validators/validators.dart' as validate;
 import 'package:validators/sanitizers.dart' as sanitize;
 
 class AnswerResponseUtil {
+  AnswerResponse getAnswerResponseFromItemType(
+          Rx<UserResponse> userResponse, Answer answer) =>
+      userResponse.value.answers.firstWhere(
+          (element) => element.responseItemType == answer.answerItemType,
+          orElse: () => newAnswerResponseFromAnswerAndValue(
+              answer: answer, newValue: ''));
+
+  void setAnswerResponseValue(
+          AnswerResponse answerResponse, dynamic newValue) =>
+      answerResponse.value = newValue;
+
   AnswerResponse newAnswerResponseFromAnswerAndValue(
       {@required Answer answer, @required String newValue}) {
     switch (answer.answerItemType) {

@@ -7,6 +7,7 @@ class ToggleCheckboxCommand extends AbstractCommand {
   @override
   Future<void> execute(
       {@required Rx<UserResponse> userResponse,
+      @required Question question,
       @required Answer answer,
       @required bool newValue}) async {
     final List<AnswerResponse> answerResponseList = userResponse.value.answers;
@@ -26,9 +27,20 @@ class ToggleCheckboxCommand extends AbstractCommand {
       }
     }
 
+    // set enableWhen trigger, if applicable
+    if (validationController.isAnswerAnEnableWhenOption(question, answer)) {
+      final _bool = validationController.getEnableWhenBool(question, answer);
+      if (_bool != null) {
+        _bool.value = newValue;
+        print('enable when option triggered: $newValue');
+      }
+    }
+
+    // answering questions resets the 'decline to response' toggle
+    validationController.setQuestionDeclined(
+        userResponse.value.questionLinkId, false);
+
     // check validator to see if survey is complete
-    validationController.validateIfQuestionIsCompleted(userResponse);
-    validationController
-        .validateIfGroupIsCompleted(userResponse.value.questionLinkId);
+    validationController.validateIfQuestionAndGroupAreCompleted(userResponse);
   }
 }

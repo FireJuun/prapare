@@ -73,10 +73,10 @@ class QuestionTitle extends StatelessWidget {
                       : null,
                   fontWeightDelta: qValidators.isQuestionAnswered.value ? 2 : 0,
                   // question is declined: italic, linethrough
-                  fontStyle: qValidators.isDeclineToAnswerSelected.value
+                  fontStyle: qValidators.isQuestionDeclined.value
                       ? FontStyle.italic
                       : null,
-                  decoration: qValidators.isDeclineToAnswerSelected.value
+                  decoration: qValidators.isQuestionDeclined.value
                       ? TextDecoration.lineThrough
                       : null),
               textAlign: TextAlign.start),

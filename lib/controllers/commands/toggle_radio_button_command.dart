@@ -8,32 +8,16 @@ class ToggleRadioButtonCommand extends AbstractCommand {
   @override
   Future<void> execute({
     @required Rx<UserResponse> userResponse,
+    @required Question question,
     @required Answer answer,
     @required String newResponse,
   }) async {
     final answerResponseList = userResponse.value.answers;
-    final String groupAndQuestionId =
-        LinkIdUtil().getGroupAndQuestionId(userResponse.value.questionLinkId);
-    final QuestionValidators qValidators =
-        validationController.questionValidatorsMap[groupAndQuestionId];
 
     // if toggled to off state
     if (newResponse == null) {
-      /// clear all UserResponses
-      /// note that if we want to still keep previously written items
-      /// we'll need to extract this into a separate method to handle different answer types
-      answerResponseList.clear();
-      // For questions (not subquestions), set item no longer answered
-      if (userResponse.value.questionLinkId == groupAndQuestionId) {
-        qValidators.isQuestionAnswered.value = false;
-      }
+      responsesController.clearAllUserResponses(userResponse);
     } else {
-      // For questions (not subquestions), close if selected
-      if (userResponse.value.questionLinkId == groupAndQuestionId) {
-        qValidators.isQuestionAnswered.value = true;
-        qValidators.isExpanded.value = false;
-      }
-
       // decide if this will have an optional 'other' write-in option
       // First, handle ItemType.choice
       final AnswerResponse newAnswer = AnswerResponseUtil()
@@ -54,11 +38,32 @@ class ToggleRadioButtonCommand extends AbstractCommand {
           answerResponseList.add(newAnswer);
         }
       }
+
+      /// finally, collapse the 'completed survey'
+      /// SubQuestions don't implement this feature
+      if (validationController.isQuestionAtRoot(question) &&
+          // enableWhen options also don't implement this feature
+          !validationController.isAnswerAnEnableWhenOption(question, answer)) {
+        validationController
+            .getQuestionValidatorByUserResponse(userResponse)
+            .isExpanded
+            .value = false;
+      }
     }
-    // responsesController.update();
+
+    // set enableWhen trigger, if applicable
+    if (validationController.isAnswerAnEnableWhenOption(question, answer)) {
+      final _bool = validationController.getEnableWhenBool(question, answer);
+      if (_bool != null) {
+        _bool.value = newResponse != null;
+      }
+    }
+
+    // answering questions resets the 'decline to response' toggle
+    validationController.setQuestionDeclined(
+        userResponse.value.questionLinkId, false);
 
     // check validator to see if survey is complete
-    validationController
-        .validateIfGroupIsCompleted(userResponse.value.questionLinkId);
+    validationController.validateIfQuestionAndGroupAreCompleted(userResponse);
   }
 }

@@ -328,7 +328,7 @@ const prapareSurvey = {
               "item": [
                 {
                   "type": "boolean",
-                  "linkId": "/93042-0/63512-8/LA30122-8",
+                  "linkId": "/93043-8/54899-0/LA30122-8",
                   "code": [
                     {
                       "code": "LA30122-8",
@@ -514,7 +514,7 @@ const prapareSurvey = {
               "item": [
                 {
                   "type": "boolean",
-                  "linkId": "/93042-0/63512-8/LA30122-8",
+                  "linkId": "/93042-0/56799-0/LA30122-8",
                   "code": [
                     {
                       "code": "LA30122-8",

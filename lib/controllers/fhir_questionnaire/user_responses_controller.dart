@@ -1,5 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
+import 'package:prapare/_internal/utils/utils.dart';
+import 'package:prapare/controllers/controllers.dart';
+import 'package:prapare/controllers/fhir_questionnaire/validation_controller.dart';
+import 'package:prapare/models/fhir_questionnaire/survey/enums/qformat.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 
 class UserResponsesController extends GetxController {
@@ -33,6 +37,33 @@ class UserResponsesController extends GetxController {
       } else
         return '';
     }
+  }
+
+  /// placeholder method, in case we want to still keep
+  /// previously written items (e.g. 'other' responses)
+  void clearAllUserResponses(Rx<UserResponse> userResponse) {
+    /// use the userResponse ID to find the original question ID
+    final QuestionnaireController questionnaireController = Get.find();
+    final question =
+        questionnaireController.getQuestionFromUserResponse(userResponse);
+
+    /// different data types (e.g. bool, choice, open_choice, check_box) are stored differently
+    /// as such, their data must be cleared differently
+    /// the AnswerResponse utility class handles this
+    question.answers.forEach((answer) {
+      UserResponseUtil().clearUserResponse(
+          answer: answer, userResponse: userResponse, qFormat: question.format);
+    });
+
+    if (question.format == QFormat.radio_button) {
+      UserResponseUtil()
+          .findAndResetQuestionItemRadioButtonController(userResponse);
+    }
+
+    /// finally, validate if the question is completed
+    /// as defined by data entered or data
+    Get.find<ValidationController>()
+        .validateIfQuestionAndGroupAreCompleted(userResponse);
   }
 
   bool getCheckboxValueFromUserResponseAndAnswer(

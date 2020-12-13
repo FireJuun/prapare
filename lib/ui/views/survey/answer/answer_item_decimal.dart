@@ -1,80 +1,74 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/_internal/utils/utils.dart';
-import 'package:prapare/controllers/commands/commands.dart';
 import 'package:prapare/localization.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/enums/item_type.dart';
 import 'package:prapare/ui/views/survey/answer/answer_item.dart';
 
-class AnswerItemDecimal extends StatefulWidget {
-  const AnswerItemDecimal({
-    Key key,
-    @required this.answer,
-    @required this.rxUserResponse,
-  })  : assert(answer != null),
-        assert(rxUserResponse != null),
+import 'answer_item_decimal_or_string_controller.dart';
+import 'enable_when_option.dart';
+
+class AnswerItemDecimal extends StatelessWidget implements AnswerItem {
+  const AnswerItemDecimal(
+      {Key key,
+      @required this.question,
+      @required this.answer,
+      @required this.userResponse})
+      : assert(question != null),
+        assert(answer != null),
+        assert(userResponse != null),
         super(key: key);
 
+  @override
+  final Question question;
+  @override
   final Answer answer;
-  final Rx<UserResponse> rxUserResponse;
-
   @override
-  _AnswerItemDecimalState createState() => _AnswerItemDecimalState();
-}
-
-class _AnswerItemDecimalState extends State<AnswerItemDecimal>
-    implements AnswerItem {
-  TextEditingController _textEditingController;
-  final RxString _rxString = ''.obs;
-
-  @override
-  Answer get answer => widget.answer;
-  @override
-  Rx<UserResponse> get rxUserResponse => widget.rxUserResponse;
+  final Rx<UserResponse> userResponse;
 
   @override
   Widget buildAnswer(BuildContext context) {
     final labels = AppLocalizations.of(context);
     final bool _isAnswerAnInteger = answer.answerItemType == ItemType.integer;
 
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: TextFormField(
-          controller: _textEditingController,
-          onChanged: (newValue) => _rxString.value = newValue.toString(),
-          keyboardType:
-              TextInputType.numberWithOptions(decimal: !_isAnswerAnInteger),
-          decoration: InputDecoration(
-            border: const OutlineInputBorder(),
-            labelText: labels.prapare.instructions.number,
-          ),
-          validator: (String newValue) =>
-              ValidatorsUtil().validateNewAnswerValue(newValue, answer)),
+    return GetX<AnswerItemDecimalOrStringController>(
+      init: AnswerItemDecimalOrStringController(
+          answer: answer, userResponse: userResponse),
+      tag: answer.code,
+      initState: (_) {},
+      builder: (controller) {
+        return Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: TextFormField(
+              controller: controller.textEditingController,
+              onChanged: (newValue) => controller.obj.value = newValue,
+              keyboardType:
+                  TextInputType.numberWithOptions(decimal: !_isAnswerAnInteger),
+              style: context.textTheme.bodyText2.apply(
+                  decoration: controller.isQuestionDeclined().value
+                      ? TextDecoration.lineThrough
+                      : null),
+              decoration: InputDecoration(
+                border: const OutlineInputBorder(),
+                labelText: labels.prapare.instructions.number,
+              ),
+              validator: (String newValue) =>
+                  ValidatorsUtil().validateNewAnswerValue(newValue, answer)),
+        );
+      },
     );
   }
 
   @override
-  Widget build(BuildContext context) => buildAnswer(context);
+  Widget buildAnswerAndEnableWhenOption(BuildContext context) =>
+      EnableWhenOption(
+        question: question,
+        answer: answer,
+        userResponse: userResponse,
+        answerItemWidget: buildAnswer(context),
+      );
 
   @override
-  void initState() {
-    // initial value set to blank if you type in 0 or 0.0
-
-    _textEditingController = TextEditingController(
-        // ToDo: works only for answer
-        text: rxUserResponse.value.answers[0].value?.toString() ?? '');
-    DebounceAndSaveResponseCommand().execute(
-      rxString: _rxString,
-      answer: answer,
-      userResponse: rxUserResponse,
-    );
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    _textEditingController.dispose();
-    super.dispose();
-  }
+  Widget build(BuildContext context) => buildAnswerAndEnableWhenOption(context);
 }

@@ -10,9 +10,14 @@ class Answer {
 
   /// creates an answer object from the FHIR QuestionnaireAnswerOption
   Answer.fromAnswerOption(
-      {@required QuestionnaireAnswerOption answer,
+      {@required QuestionnaireItem questionnaireItem,
+      @required QuestionnaireAnswerOption answer,
       @required this.answerItemType}) {
-    code = answer?.valueCoding?.code?.toString();
+    /// typically as: /group/question/answer
+    /// or as: /group/question/subquestion/answer
+    code = questionnaireItem?.linkId.toString() +
+        '/' +
+        answer?.valueCoding?.code?.toString();
     text = answer?.valueCoding?.display?.toString();
   }
 

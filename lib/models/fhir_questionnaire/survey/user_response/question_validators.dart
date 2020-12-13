@@ -3,13 +3,13 @@ import 'package:get/get.dart';
 class QuestionValidators {
   QuestionValidators({
     RxBool isQuestionAnswered,
-    RxBool isDeclineToAnswerSelected,
+    RxBool isQuestionDeclined,
     RxBool isExpanded,
   })  : isQuestionAnswered = isQuestionAnswered ?? false.obs,
-        isDeclineToAnswerSelected = isDeclineToAnswerSelected ?? false.obs,
+        isQuestionDeclined = isQuestionDeclined ?? false.obs,
         isExpanded = isExpanded ?? true.obs;
 
   final RxBool isQuestionAnswered;
-  final RxBool isDeclineToAnswerSelected;
+  final RxBool isQuestionDeclined;
   final RxBool isExpanded;
 }
