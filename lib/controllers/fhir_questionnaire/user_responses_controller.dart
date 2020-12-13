@@ -51,12 +51,12 @@ class UserResponsesController extends GetxController {
     /// as such, their data must be cleared differently
     /// the AnswerResponse utility class handles this
     question.answers.forEach((answer) {
-      AnswerResponseUtil().clearUserResponse(
+      UserResponseUtil().clearUserResponse(
           answer: answer, userResponse: userResponse, qFormat: question.format);
     });
 
     if (question.format == QFormat.radio_button) {
-      AnswerResponseUtil()
+      UserResponseUtil()
           .findAndResetQuestionItemRadioButtonController(userResponse);
     }
 
