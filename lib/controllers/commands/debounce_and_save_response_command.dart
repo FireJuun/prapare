@@ -14,7 +14,7 @@ class DebounceAndSaveResponseCommand extends AbstractCommand {
       final _question =
           questionnaireController.getQuestionFromUserResponse(userResponse);
 
-      void _clearResponse() => UserResponseUtil().clearUserResponse(
+      void _clearResponse() => UserResponseUtil().clearUserResponseByAnswer(
           answer: answer,
           userResponse: userResponse,
           qFormat: _question.format,

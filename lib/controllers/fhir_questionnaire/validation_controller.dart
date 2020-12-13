@@ -131,29 +131,40 @@ class ValidationController extends GetxController {
 
     // check for subquestion
     if (userResponse.value.questionLinkId != groupAndQuestionId &&
-        // nested 'choose not to respond' items handled separately
+        // nested 'choose not to respond' items are handled separately
         LinkIdUtil().getLastId(userResponse.value.questionLinkId) !=
             'LA30122-8') {
       //subquestion
-      // todo: handle subquestion data
-      _isQuestionAnswered = _validateSubQuestion();
+      _isQuestionAnswered = _validateSubQuestion(groupAndQuestionId);
     } else {
       // validate based on question type
       _isQuestionAnswered =
           _validateAnswerResponseListHasData(userResponse.value.answers);
-      // note that a declined question takes priority counts as answered
-      _isQuestionDeclined =
-          questionValidatorsMap[groupAndQuestionId].isQuestionDeclined.value;
-
-      qValidators.isQuestionAnswered.value = _isQuestionAnswered;
     }
+    // note that a declined question takes priority counts as answered
+    _isQuestionDeclined =
+        questionValidatorsMap[groupAndQuestionId].isQuestionDeclined.value;
+
+    qValidators.isQuestionAnswered.value = _isQuestionAnswered;
 
     _validateIfGroupIsCompleted(userResponse.value.questionLinkId);
 
     return _isQuestionAnswered || _isQuestionDeclined;
   }
 
-  bool _validateSubQuestion() => false;
+  bool _validateSubQuestion(String groupAndQuestionId) {
+    bool _isSubQuestionAnswered = false;
+
+    _responsesController.userResponsesMap.forEach((qLinkId, usrResp) {
+      if (qLinkId.contains(groupAndQuestionId)) {
+        if (_validateAnswerResponseListHasData(usrResp.value.answers)) {
+          _isSubQuestionAnswered = true;
+        }
+      }
+    });
+
+    return _isSubQuestionAnswered;
+  }
 
   bool _validateIfGroupIsCompleted(String questionCode) {
     final String groupCode = LinkIdUtil().getGroupId(questionCode);
