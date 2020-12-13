@@ -13,7 +13,9 @@ class AnswerResponseUtil {
   AnswerResponse getAnswerResponseFromItemType(
           Rx<UserResponse> userResponse, Answer answer) =>
       userResponse.value.answers.firstWhere(
-          (element) => element.responseItemType == answer.answerItemType);
+          (element) => element.responseItemType == answer.answerItemType,
+          orElse: () => newAnswerResponseFromAnswerAndValue(
+              answer: answer, newValue: ''));
 
   void setAnswerResponseValue(
           AnswerResponse answerResponse, dynamic newValue) =>

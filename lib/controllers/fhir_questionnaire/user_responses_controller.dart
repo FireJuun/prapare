@@ -42,14 +42,10 @@ class UserResponsesController extends GetxController {
   /// placeholder method, in case we want to still keep
   /// previously written items (e.g. 'other' responses)
   void clearAllUserResponses(Rx<UserResponse> userResponse) {
-    /// remove subquestion and/or answer codes from linkId
-    final groupAndQuestionId =
-        LinkIdUtil().getGroupAndQuestionId(userResponse.value.questionLinkId);
-
     /// use the userResponse ID to find the original question ID
     final QuestionnaireController questionnaireController = Get.find();
     final question =
-        questionnaireController.getQuestionFromLinkId(groupAndQuestionId);
+        questionnaireController.getQuestionFromUserResponse(userResponse);
 
     /// different data types (e.g. bool, choice, open_choice, check_box) are stored differently
     /// as such, their data must be cleared differently

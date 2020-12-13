@@ -11,8 +11,8 @@ class DebounceAndSaveResponseCommand extends AbstractCommand {
       @required Answer answer,
       @required Rx<UserResponse> userResponse}) async {
     debounce(rxString, (String debouncedValue) {
-      final _question = questionnaireController
-          .getQuestionFromLinkId(userResponse.value.questionLinkId);
+      final _question =
+          questionnaireController.getQuestionFromUserResponse(userResponse);
 
       void _clearResponse() => AnswerResponseUtil().clearUserResponse(
           answer: answer,
