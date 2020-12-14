@@ -56,6 +56,7 @@ class GroupView extends StatelessWidget {
                     pinned: true,
                     floating: true,
                     snap: true,
+                    toolbarHeight: _collapsedHeight - 1,
                     actions: [
                       IconButton(
                           icon: const Icon(Icons.settings),
