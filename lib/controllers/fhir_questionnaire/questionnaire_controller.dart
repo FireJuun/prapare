@@ -197,9 +197,9 @@ class QuestionnaireController extends GetxController {
   @override
   void onInit() {
     _model.loadAndCreateSurvey();
-    _mapAllActiveResponses();
     _mapAllQuestions();
     _mapAllUserResponses();
+    _mapAllActiveResponses();
     _mapAllGroupValidators();
     super.onInit();
   }
