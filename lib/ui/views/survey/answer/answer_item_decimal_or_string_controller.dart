@@ -11,17 +11,26 @@ class AnswerItemDecimalOrStringController extends GetxController {
 
   final Answer answer;
   final Rx<UserResponse> userResponse;
+  final ValidationController _validationController = Get.find();
+  QuestionValidators _questionValidators;
 
   TextEditingController textEditingController;
   final RxString obj = ''.obs;
 
-  QuestionValidators _getQuestionValidator() => Get.find<ValidationController>()
-      .getQuestionValidatorByUserResponse(userResponse);
+  RxBool isQuestionDeclined() => _questionValidators.isQuestionDeclined;
 
-  RxBool isQuestionDeclined() => _getQuestionValidator().isQuestionDeclined;
+  void changeFocus(bool newValue) {
+    // set question expanded value only if question has been answered/declined
+    if (_questionValidators.isQuestionAnswered.value ||
+        _questionValidators.isQuestionDeclined.value) {
+      _questionValidators.isExpanded.value = newValue;
+    }
+  }
 
   @override
   void onInit() {
+    _questionValidators =
+        _validationController.getQuestionValidatorByUserResponse(userResponse);
     textEditingController = TextEditingController(
         text: AnswerResponseUtil()
             .getAnswerResponseFromItemType(userResponse, answer)

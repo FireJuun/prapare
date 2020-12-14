@@ -26,16 +26,14 @@ class ValidatorsUtil {
     }
   }
 
-  String validateNewAnswerValue(String newValue, Answer answer) {
-    if (isNotEmpty(newValue)) {
-      if (isAnswerValidByItemType(newValue, answer.answerItemType)) {
-        // Items are valid, no
-        return null;
-      }
-      // todo: create locale labels for this error message
-      return 'Error: Invalid data type for ' +
-          answer.answerItemType.toString().split('.').last;
+  bool isNewAnswerValueValid(String newValue, Answer answer) {
+    bool validator = true;
+
+    /// empty choices count as valid, as do those w/ data that match their ItemType
+    if (isNotEmpty(newValue) &&
+        !isAnswerValidByItemType(newValue, answer.answerItemType)) {
+      validator = false;
     }
-    return null;
+    return validator;
   }
 }

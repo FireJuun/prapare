@@ -46,7 +46,9 @@ class AnswerItemString extends StatelessWidget implements AnswerItem {
             mainAxisSize: MainAxisSize.min,
             children: [
               Expanded(
-                child: TextFormField(
+                child: FocusableActionDetector(
+                  onFocusChange: (newValue) => controller.changeFocus(newValue),
+                  child: TextFormField(
                     controller: controller.textEditingController,
                     onChanged: (newValue) => controller.obj.value = newValue,
                     minLines: _isAnswerMultiLine ? 3 : 1,
@@ -57,20 +59,34 @@ class AnswerItemString extends StatelessWidget implements AnswerItem {
                             : null),
                     decoration: InputDecoration(
                       border: const OutlineInputBorder(),
-                      labelText: labels.prapare.instructions.value,
+                      labelText: labels.validation.instructions.value,
                     ),
-                    validator: (String newValue) => ValidatorsUtil()
-                        .validateNewAnswerValue(newValue, answer)),
+                    validator: (String newValue) =>
+                        ValidatorsUtil().isNewAnswerValueValid(newValue, answer)
+                            ? null
+                            : labels.validation.error,
+                  ),
+                ),
               ),
-              (question.linkId == '/93043-8/54899-0')
-                  ? IconButton(
-                      icon: const Icon(Icons.refresh),
-                      onPressed: () {
-                        controller.textEditingController.text =
-                            labels.language.title;
-                        controller.obj.value = labels.language.title;
-                      })
-                  : Container(),
+              // refresh icon for Q5, what language are you most comfortable speaking
+              // (question.linkId == '/93043-8/54899-0')
+              //     ? Padding(
+              //         padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              //         child: Column(
+              //           children: [
+              //             Text(labels.language.update + ':'),
+              //             IconButton(
+              //                 icon: const Icon(Icons.refresh),
+              //                 tooltip: labels.language.setPreferred,
+              //                 onPressed: () {
+              //                   controller.textEditingController.text =
+              //                       labels.language.title;
+              //                   controller.obj.value = labels.language.title;
+              //                 }),
+              //           ],
+              //         ),
+              //       )
+              //     : Container(),
             ],
           ),
         );

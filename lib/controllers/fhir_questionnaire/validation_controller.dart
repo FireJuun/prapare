@@ -67,6 +67,11 @@ class ValidationController extends GetxController {
           .isQuestionDeclined
           .value = newValue;
 
+  void setQuestionExpanded(String questionLinkId, bool newValue) =>
+      questionValidatorsMap[LinkIdUtil().getGroupAndQuestionId(questionLinkId)]
+          .isExpanded
+          .value = newValue;
+
   // *******************************************************************
   // ******** VALIDATORS TO SEE IF A QUESTION SHOULD BE ENABLED ********
   // *******************************************************************

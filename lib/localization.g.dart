@@ -110,7 +110,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "English",
+        setPreferred: "Set preferred language: English",
+        setPreferredEnglish: "Set preferred language: English",
         title: "English",
+        update: "Update",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "Growth",
@@ -216,10 +219,6 @@ class AppLocalizations {
           losingHousing: "Are you worried about losing your housing?",
           title: "Family and Home",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "Type a number",
-          value: "Type a value",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "During the past year, what was the total combined income for you and the family members you live with? This information will help us determine if you are eligible for any benefits.",
@@ -260,6 +259,13 @@ class AppLocalizations {
           talk:
               "How often do you see or talk to people that you care about and feel close to (For example: talking to friends on the phone, visiting friends or family, going to church or club meetings)?",
           title: "Social and Emotional Health",
+        ),
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "Error: Wrong Data Type",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "Type a number",
+          value: "Type a value",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -369,7 +375,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Spanish",
+        setPreferred: "Set preferred language: Spanish",
+        setPreferredEnglish: "Establecer idioma preferido: Español",
         title: "Español",
+        update: "Actualizar",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "Crecimiento",
@@ -380,7 +389,7 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "Cancelar",
-        next: "Siguiente",
+        next: "próximo",
         previous: "Anterior",
         submit: "Enviar",
       ),
@@ -475,10 +484,6 @@ class AppLocalizations {
           losingHousing: "¿Está preocupado por la pérdida de su vivienda?",
           title: "Familia y Hogar",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "Escriba un número",
-          value: "Escriba un valor",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "Durante el año pasado, ¿cuál fue el ingreso total combinado para usted y los miembros de la familia que viven con usted? Esta información nos ayudará a determinar si usted es elegible para ningún beneficio.",
@@ -519,6 +524,13 @@ class AppLocalizations {
           talk:
               "¿Con qué frecuencia ve o habla con la gente que se preocupa y se siente cerca (Por ejemplo: hablar con amigos por teléfono, visitas a amigos o familiares, ir a reuniones de la iglesia o del club)?",
           title: "Salud Emocional y Social",
+        ),
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "ERROR: Tipo de datos",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "Escriba un número",
+          value: "Escriba un valor",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -572,7 +584,7 @@ class AppLocalizations {
         ),
         weekday: AppLocalizations_Labels_Dates_Weekday(
           friday: "يوم الجمعة",
-          monday: "يوم الاثنين",
+          monday: "الإثنين",
           saturday: "يوم السبت",
           sunday: "الأحد",
           thursday: "الخميس",
@@ -601,7 +613,7 @@ class AppLocalizations {
           county: "مقاطعة",
           district: "منطقة",
           neighborhood: "حي",
-          postalCode: "رمز بريدي",
+          postalCode: "الرمز البريدي",
           state: "حالة",
           title: "عنوان",
         ),
@@ -613,7 +625,7 @@ class AppLocalizations {
           grandfather: "جد",
           grandmother: "جدة",
           mother: "أم",
-          nephew: "ابن أخ",
+          nephew: "ابن شقيق",
           niece: "ابنة الاخ",
           sister: "أخت",
           son: "ابن",
@@ -628,7 +640,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Arabic",
+        setPreferred: "Set preferred language: Arabic",
+        setPreferredEnglish: "تعيين اللغة المفضلة: العربية",
         title: "عربى",
+        update: "تحديث",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "نمو",
@@ -661,7 +676,7 @@ class AppLocalizations {
           ),
           howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
             aLittleBit: "قليلا",
-            notAtAll: "لا على الاطلاق",
+            notAtAll: "على الاطلاق",
             quiteABit: "اهدا قليلا",
             somewhat: "قليلا",
             veryMuch: "كثيرا جدا",
@@ -733,14 +748,10 @@ class AppLocalizations {
           losingHousing: "هل أنت قلق حول فقدان السكن الخاص؟",
           title: "الأسرة المنزل و",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "اكتب رقما",
-          value: "اكتب قيمة",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "وخلال العام الماضي، ما كان إجمالي الدخل المشترك لك ولأفراد الأسرة التي تعيش معها؟ هذه المعلومات سوف تساعدنا على تحديد ما إذا كنت مؤهلا للحصول على أي فوائد.",
-          insurance: "ما هو التأمين الرئيسي لديك؟",
+          insurance: "ما هو التأمين الرئيسي الخاص بك؟",
           school: "ما هو أعلى مستوى من المدرسة التي كنت قد انتهى؟",
           title: "المال والموارد",
           transportation:
@@ -775,6 +786,13 @@ class AppLocalizations {
           talk:
               "كيف وغالبا ما تشاهد أو التحدث الى الناس أنك تهتم وتشعر بالقرب من (على سبيل المثال: التحدث مع الأصدقاء على الهاتف، وزيارة الأصدقاء أو العائلة، والذهاب إلى الكنيسة أو ناد الاجتماعات)؟",
           title: "الصحة النفسية الاجتماعية و",
+        ),
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "الخطأ: خطأ نوع البيانات",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "اكتب رقما",
+          value: "اكتب قيمة",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -816,11 +834,11 @@ class AppLocalizations {
           april: "अप्रैल",
           august: "अगस्त",
           december: "दिसंबर",
-          february: "फरवरी",
+          february: "फ़रवरी",
           january: "जनवरी",
           july: "जुलाई",
           june: "जून",
-          march: "मार्च",
+          march: "जुलूस",
           may: "मई",
           november: "नवंबर",
           october: "अक्टूबर",
@@ -844,7 +862,7 @@ class AppLocalizations {
         familyName: "परिवार का नाम",
         female: "महिला",
         givenNames: "दिए गए नाम",
-        male: "नर",
+        male: "पुरुष",
         mySchedule: "मेरे अनुसूची",
         newPatient: "नए रोगी",
         newSurvey: "नए सर्वेक्षण",
@@ -865,7 +883,7 @@ class AppLocalizations {
           aunt: "चाची",
           brother: "भाई",
           daughter: "बेटी",
-          father: "पिता जी",
+          father: "पिता",
           grandfather: "दादा",
           grandmother: "दादी मा",
           mother: "मां",
@@ -878,13 +896,16 @@ class AppLocalizations {
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
           female: "महिला",
-          male: "नर",
+          male: "पुरुष",
           title: "जन्म के समय लिंग",
         ),
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Hindi",
+        setPreferred: "Set preferred language: Hindi",
+        setPreferredEnglish: "सेट पसंद की भाषा: हिन्दी",
         title: "हिंदी",
+        update: "अपडेट करें",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "विकास",
@@ -930,7 +951,7 @@ class AppLocalizations {
           ),
           insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
             chipMedicaid: "चिप मेडिकेड",
-            medicaid: "मेडिकेड",
+            medicaid: "Medicaid",
             medicare: "चिकित्सा",
             noneOrUninsured: "कोई नहीं / बिना बीमा",
             otherPublicInsuranceChip: "अन्य सार्वजनिक बीमा (चिप)",
@@ -972,7 +993,7 @@ class AppLocalizations {
             medicineOrAnyHealthCare:
                 "चिकित्सा या किसी भी स्वास्थ्य देखभाल (मेडिकल, डेंटल, मानसिक स्वास्थ्य, विजन)",
             phone: "फ़ोन",
-            utilities: "उपयोगिताएँ",
+            utilities: "उपयोगिताओं",
           ),
           work: AppLocalizations_Labels_Prapare_Answers_Work(
             fullTimeWork: "पूरा समय काम करना",
@@ -989,10 +1010,6 @@ class AppLocalizations {
           housing: "आज अपने आवास स्थिति क्या है?",
           losingHousing: "आप अपने आवास खोने के बारे में चिंतित हैं?",
           title: "परिवार और घर",
-        ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "कोई नंबर लिखें",
-          value: "एक मूल्य के प्रकार",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
@@ -1035,6 +1052,13 @@ class AppLocalizations {
           title: "सामाजिक और भावनात्मक स्वास्थ्य",
         ),
       ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "त्रुटि: गलत डेटा प्रकार",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "कोई नंबर लिखें",
+          value: "एक मूल्य के प्रकार",
+        ),
+      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "रजिस्टर रोगी",
       ),
@@ -1059,14 +1083,14 @@ class AppLocalizations {
         title: "Prapare",
       ),
       auth: AppLocalizations_Labels_Auth(
-        cancel: "Отмена",
-        changePassword: "Сменить пароль",
-        email: "Электронное письмо",
+        cancel: "отменить",
+        changePassword: "Измени пароль",
+        email: "Эл. адрес",
         password: "пароль",
         resetPassword: "Сброс пароля",
         signIn: "Войти в систему",
         signUp: "Подписаться",
-        submit: "представить",
+        submit: "Разместить",
         userName: "имя пользователя",
       ),
       dates: AppLocalizations_Labels_Dates(
@@ -1078,7 +1102,7 @@ class AppLocalizations {
           january: "январь",
           july: "июль",
           june: "июнь",
-          march: "Март",
+          march: "марш",
           may: "май",
           november: "ноябрь",
           october: "октября",
@@ -1096,7 +1120,7 @@ class AppLocalizations {
       ),
       general: AppLocalizations_Labels_General(
         allPatients: "Все пациенты",
-        birthDate: "Дата рождения",
+        birthDate: "День рождения",
         dateofBirth: "Дата рождения",
         editSurvey: "Изменить опрос",
         familyName: "Фамилия",
@@ -1124,7 +1148,7 @@ class AppLocalizations {
           brother: "Родной брат",
           daughter: "Дочь",
           father: "Отец",
-          grandfather: "Дедушка",
+          grandfather: "Дед",
           grandmother: "Бабушка",
           mother: "Мать",
           nephew: "Племянник",
@@ -1142,7 +1166,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Russian",
+        setPreferred: "Set preferred language: Russian",
+        setPreferredEnglish: "Установить предпочтительный язык: Русский",
         title: "русский",
+        update: "Обновить",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "рост",
@@ -1152,16 +1179,16 @@ class AppLocalizations {
         vaccines: "Вакцина",
       ),
       navigation: AppLocalizations_Labels_Navigation(
-        cancel: "Отмена",
+        cancel: "отменить",
         next: "следующий",
         previous: "предыдущий",
-        submit: "представить",
+        submit: "Разместить",
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
             "Протокол ответов и оценка активов пациентов, риски и опыт [PRAPARE]",
         answers: AppLocalizations_Labels_Prapare_Answers(
-          other: "Другие",
+          other: "разное",
           basic: AppLocalizations_Labels_Prapare_Answers_Basic(
             chooseNotToAnswer: "Я не отвечать на этот вопрос",
             no: "нет",
@@ -1174,11 +1201,11 @@ class AppLocalizations {
             iHaveHousing: "У меня есть жилье",
           ),
           howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
-            aLittleBit: "Совсем немного",
+            aLittleBit: "Немного",
             notAtAll: "Не за что",
             quiteABit: "Немного",
             somewhat: "В некотором роде",
-            veryMuch: "Очень сильно",
+            veryMuch: "Очень много",
           ),
           howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
             fiftyOrMoreTimesAWeek: "5 или более раз в неделю",
@@ -1251,10 +1278,6 @@ class AppLocalizations {
           losingHousing: "Вы беспокоитесь о потере жилья?",
           title: "Семья и дом",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "Введите число",
-          value: "Введите значение",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "В течение прошлого года, что было общее совокупный доход для вас и членов семьи, вы живете с? Эта информация поможет нам определить, если вы имеете право на любые льготы.",
@@ -1265,7 +1288,7 @@ class AppLocalizations {
           transportation:
               "Имеет отсутствие транспорта держали вас от медицинского назначения, встречи, работа, или от получения вещи, необходимой для повседневной жизни?",
           without:
-              "В прошлом году у вас или членов семьи, с которыми вы живете не в состоянии получить одно из следующих действий, когда это было действительно необходимо?",
+              "В прошлом году у вас или членов семьи, с которыми вы живете не смогли получить любое следующее, когда это было действительно необходимо?",
           work: "Какова текущая ситуация работы?",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
@@ -1297,14 +1320,21 @@ class AppLocalizations {
           title: "Социальное и эмоциональное здоровье",
         ),
       ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "Ошибка: Неправильный тип данных",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "Введите число",
+          value: "Введите значение",
+        ),
+      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "Регистрация пациентов",
       ),
       settings: AppLocalizations_Labels_Settings(
-        dark: "Темно",
+        dark: "Тьма",
         language: "язык",
-        light: "Легкий",
-        ok: "ОК",
+        light: "Свет",
+        ok: "Хорошо",
         signOut: "Выход",
         system: "система",
         theme: "тема",
@@ -1404,7 +1434,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Bengali",
+        setPreferred: "Set preferred language: Bengali",
+        setPreferredEnglish: "সেট পছন্দের ভাষা: বাংলা",
         title: "বাংলা",
+        update: "হালনাগাদ",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "উন্নতি",
@@ -1436,7 +1469,7 @@ class AppLocalizations {
             iHaveHousing: "আমি হাউজিং আছে",
           ),
           howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
-            aLittleBit: "একটু খানি",
+            aLittleBit: "অল্প একটু",
             notAtAll: "একদমই না",
             quiteABit: "খুব সামান্য",
             somewhat: "কিছুটা",
@@ -1491,7 +1524,7 @@ class AppLocalizations {
             food: "খাদ্য",
             medicineOrAnyHealthCare:
                 "মেডিসিন বা অন্য কোন স্বাস্থ্য সেবা (চিকিৎসা, ডেন্টাল মেন্টাল হেলথ ভিশন)",
-            phone: "ফোন",
+            phone: "ফোনের",
             utilities: "উপযোগিতা",
           ),
           work: AppLocalizations_Labels_Prapare_Answers_Work(
@@ -1509,10 +1542,6 @@ class AppLocalizations {
           housing: "আজ আপনার হাউজিং পরিস্থিতি কি?",
           losingHousing: "আপনি আপনার হাউজিং হারিয়ে যাওয়ার বিষয়ে চিন্তিত?",
           title: "বাড়ি ও পরিবারের",
-        ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "একটি নম্বর টাইপ করুন",
-          value: "একটি মান লিখুন",
         ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
@@ -1552,6 +1581,13 @@ class AppLocalizations {
           talk:
               "আপনি বা মানুষ যে আপনার পছন্দের এবং পাসে মনে আলাপ কিভাবে প্রায়ই দেখতে পাচ্ছ (উদাহরণস্বরূপ: ফোনে বন্ধুদের সঙ্গে আলাপকালে বন্ধু বা পরিবারের পরিদর্শন, গির্জা বা ক্লাব মিটিং যাচ্ছে)?",
           title: "সামাজিক ও সংবেদনগত স্বাস্থ্য",
+        ),
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "ত্রুটি: ভুল ডাটা টাইপ",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "একটি নম্বর টাইপ করুন",
+          value: "একটি মান লিখুন",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -1661,7 +1697,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Burmese",
+        setPreferred: "Set preferred language: Burmese",
+        setPreferredEnglish: "set နှစ်သက်သောဘာသာစကား: ဗမာ",
         title: "မြန်မာ",
+        update: "Update ကို",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "တိုးတက်မှုနှုန်း",
@@ -1768,10 +1807,6 @@ class AppLocalizations {
               "သင်သည်သင်၏အိုးအိမ်ဆုံးရှုံးအကြောင်းကိုစိုးရိမ်နေကြသနည်း",
           title: "မိသားစုနှင့်နေအိမ်",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "နံပါတ်ရိုက်ထည့်ပါ",
-          value: "တန်ဖိုးရိုက်ထည့်ပါ",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "လွန်ခဲ့သောနှစ်အတွင်းသင်နှင့်သင်နှင့်အတူအသက်ရှင်နေထိုင်မိသားစုအဖွဲ့ဝင်များစုစုပေါင်းစုစုပေါင်းဝင်ငွေအဘယျသို့ရခဲ့သလဲ ဤအချက်အလက်သည်သင်မည်သည့်အကျိုးခံစားခွင့်များအတွက်အရည်အချင်းပြည့်မီလျှင်ဆုံးဖြတ်ရန်ကျွန်တော်တို့ကိုကူညီလိမ့်မယ်။",
@@ -1812,6 +1847,13 @@ class AppLocalizations {
           talk:
               "(: ဖုန်းတွင်မိတ်ဆွေများစကားပြောသူငယ်ချင်းများသို့မဟုတ်မိသားစုသွားရောက်လည်ပတ်, ခရစ်ယာန်ဘုရားကျောင်းသို့မဟုတ်ကလပ်အစည်းအဝေးများသွားဥပမာ) မကြာခဏဘယ်လိုသင်ဂရုစိုက်ခြင်းနှင့်နီးကပ်မှခံစားမိကြောင်းလူမျိုးကိုတွေ့မြင်သို့မဟုတ်ဆွေးနွေးချက်သလဲ?",
           title: "လူမှုရေးနှင့်စိတ်ခံစားမှုကျန်းမာရေး",
+        ),
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "အမှား: မှားဒေတာအမျိုးအစား",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "နံပါတ်ရိုက်ထည့်ပါ",
+          value: "တန်ဖိုးရိုက်ထည့်ပါ",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -1899,7 +1941,7 @@ class AppLocalizations {
           title: "地址",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          aunt: "姑妈",
+          aunt: "姨",
           brother: "哥哥",
           daughter: "女儿",
           father: "父亲",
@@ -1921,7 +1963,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Chinese",
+        setPreferred: "Set preferred language: Chinese",
+        setPreferredEnglish: "设置首选语言：中国",
         title: "中文",
+        update: "更新",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "发展",
@@ -2021,10 +2066,6 @@ class AppLocalizations {
           losingHousing: "您是否担心失去你的房？",
           title: "家庭和家庭",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "键入一个数字",
-          value: "键入一个值",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income: "在过去的一年中，什么对你和你住在一起的家庭成员合计总收入？这些信息将帮助我们确定您是否有资格获得任何好处。",
           insurance: "你的主要保险是什么？",
@@ -2055,6 +2096,13 @@ class AppLocalizations {
           stress: "压力是当有人感到紧张，紧张，焦虑或因为他们的心是困扰无法入睡。你怎么调都？",
           talk: "你经常看到或谈话，你关心和感到亲近的人（例如：在电话上交谈的朋友，来访的朋友或家人，去教堂或俱乐部会议）？",
           title: "社会和情感健康",
+        ),
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "错误：错误的数据类型",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "键入一个数字",
+          value: "键入一个值",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -2138,11 +2186,11 @@ class AppLocalizations {
           district: "区",
           neighborhood: "邻里",
           postalCode: "邮政编码",
-          state: "状态",
+          state: "州",
           title: "地址",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          aunt: "姑妈",
+          aunt: "姨",
           brother: "哥哥",
           daughter: "女儿",
           father: "父亲",
@@ -2164,7 +2212,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Chinese, generic simplified",
+        setPreferred: "Set preferred language: Chinese, generic simplified",
+        setPreferredEnglish: "设置首选语言：中国，通用简化",
         title: "中国，通用简化",
+        update: "更新",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "发展",
@@ -2264,10 +2315,6 @@ class AppLocalizations {
           losingHousing: "您是否担心失去你的房？",
           title: "家庭和家庭",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "键入一个数字",
-          value: "键入一个值",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income: "在过去的一年中，什么对你和你住在一起的家庭成员合计总收入？这些信息将帮助我们确定您是否有资格获得任何好处。",
           insurance: "你的主要保险是什么？",
@@ -2298,6 +2345,13 @@ class AppLocalizations {
           stress: "压力是当有人感到紧张，紧张，焦虑或因为他们的心是困扰无法入睡。你怎么调都？",
           talk: "你经常看到或谈话，你关心和感到亲近的人（例如：在电话上交谈的朋友，来访的朋友或家人，去教堂或俱乐部会议）？",
           title: "社会和情感健康",
+        ),
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "错误：错误的数据类型",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "键入一个数字",
+          value: "键入一个值",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -2385,7 +2439,7 @@ class AppLocalizations {
           title: "地址",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          aunt: "姑媽",
+          aunt: "姨",
           brother: "哥哥",
           daughter: "女兒",
           father: "父親",
@@ -2407,7 +2461,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Chinese, generic traditional",
+        setPreferred: "Set preferred language: Chinese, generic traditional",
+        setPreferredEnglish: "設置首選語言：中國，通用的傳統",
         title: "中國，通用的傳統",
+        update: "更新",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "發展",
@@ -2451,7 +2508,7 @@ class AppLocalizations {
           ),
           insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
             chipMedicaid: "CHIP醫療補助",
-            medicaid: "醫療補助",
+            medicaid: "醫療",
             medicare: "醫保",
             noneOrUninsured: "無/無保險",
             otherPublicInsuranceChip: "其他公共保險（CHIP）",
@@ -2507,10 +2564,6 @@ class AppLocalizations {
           losingHousing: "您是否擔心失去你的房？",
           title: "家庭和家庭",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "鍵入一個數字",
-          value: "鍵入一個值",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income: "在過去的一年中，什麼對你和你住在一起的家庭成員合計總收入？這些信息將幫助我們確定您是否有資格獲得任何好處。",
           insurance: "你的主要保險是什麼？",
@@ -2541,6 +2594,13 @@ class AppLocalizations {
           stress: "壓力是當有人感到緊張，緊張，焦慮或因為他們的心是困擾無法入睡。你怎麼調都？",
           talk: "你經常看到或談話，你關心和感到親近的人（例如：在電話上交談的朋友，來訪的朋友或家人，去教堂或俱樂部會議）？",
           title: "社會和情感健康",
+        ),
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "錯誤：錯誤的數據類型",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "鍵入一個數字",
+          value: "鍵入一個值",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -2628,7 +2688,7 @@ class AppLocalizations {
           title: "地址",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          aunt: "姑妈",
+          aunt: "姨",
           brother: "哥哥",
           daughter: "女儿",
           father: "父亲",
@@ -2650,7 +2710,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Chinese (China)",
+        setPreferred: "Set preferred language: Chinese (China)",
+        setPreferredEnglish: "设置首选语言：中文（中国）",
         title: "中文（中国）",
+        update: "更新",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "发展",
@@ -2750,10 +2813,6 @@ class AppLocalizations {
           losingHousing: "您是否担心失去你的房？",
           title: "家庭和家庭",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "键入一个数字",
-          value: "键入一个值",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income: "在过去的一年中，什么对你和你住在一起的家庭成员合计总收入？这些信息将帮助我们确定您是否有资格获得任何好处。",
           insurance: "你的主要保险是什么？",
@@ -2784,6 +2843,13 @@ class AppLocalizations {
           stress: "压力是当有人感到紧张，紧张，焦虑或因为他们的心是困扰无法入睡。你怎么调都？",
           talk: "你经常看到或谈话，你关心和感到亲近的人（例如：在电话上交谈的朋友，来访的朋友或家人，去教堂或俱乐部会议）？",
           title: "社会和情感健康",
+        ),
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "错误：错误的数据类型",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "键入一个数字",
+          value: "键入一个值",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -2871,7 +2937,7 @@ class AppLocalizations {
           title: "地址",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          aunt: "姑媽",
+          aunt: "姨",
           brother: "哥哥",
           daughter: "女兒",
           father: "父親",
@@ -2893,7 +2959,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Chinese (Taiwan)",
+        setPreferred: "Set preferred language: Chinese (Taiwan)",
+        setPreferredEnglish: "設置首選語言：中文（中國台灣）",
         title: "中國（台灣）",
+        update: "更新",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "發展",
@@ -2937,7 +3006,7 @@ class AppLocalizations {
           ),
           insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
             chipMedicaid: "CHIP醫療補助",
-            medicaid: "醫療補助",
+            medicaid: "醫療",
             medicare: "醫保",
             noneOrUninsured: "無/無保險",
             otherPublicInsuranceChip: "其他公共保險（CHIP）",
@@ -2993,10 +3062,6 @@ class AppLocalizations {
           losingHousing: "您是否擔心失去你的房？",
           title: "家庭和家庭",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "鍵入一個數字",
-          value: "鍵入一個值",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income: "在過去的一年中，什麼對你和你住在一起的家庭成員合計總收入？這些信息將幫助我們確定您是否有資格獲得任何好處。",
           insurance: "你的主要保險是什麼？",
@@ -3027,6 +3092,13 @@ class AppLocalizations {
           stress: "壓力是當有人感到緊張，緊張，焦慮或因為他們的心是困擾無法入睡。你怎麼調都？",
           talk: "你經常看到或談話，你關心和感到親近的人（例如：在電話上交談的朋友，來訪的朋友或家人，去教堂或俱樂部會議）？",
           title: "社會和情感健康",
+        ),
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "錯誤：錯誤的數據類型",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "鍵入一個數字",
+          value: "鍵入一個值",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -3114,7 +3186,7 @@ class AppLocalizations {
           title: "地址",
         ),
         relation: AppLocalizations_Labels_General_Relation(
-          aunt: "姑媽",
+          aunt: "姨",
           brother: "哥哥",
           daughter: "女兒",
           father: "父親",
@@ -3136,7 +3208,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Chinese (Hong Kong)",
+        setPreferred: "Set preferred language: Chinese (Hong Kong)",
+        setPreferredEnglish: "設置首選語言：中國（香港）",
         title: "中國（香港）",
+        update: "更新",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "發展",
@@ -3180,7 +3255,7 @@ class AppLocalizations {
           ),
           insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
             chipMedicaid: "CHIP醫療補助",
-            medicaid: "醫療補助",
+            medicaid: "醫療",
             medicare: "醫保",
             noneOrUninsured: "無/無保險",
             otherPublicInsuranceChip: "其他公共保險（CHIP）",
@@ -3236,10 +3311,6 @@ class AppLocalizations {
           losingHousing: "您是否擔心失去你的房？",
           title: "家庭和家庭",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "鍵入一個數字",
-          value: "鍵入一個值",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income: "在過去的一年中，什麼對你和你住在一起的家庭成員合計總收入？這些信息將幫助我們確定您是否有資格獲得任何好處。",
           insurance: "你的主要保險是什麼？",
@@ -3270,6 +3341,13 @@ class AppLocalizations {
           stress: "壓力是當有人感到緊張，緊張，焦慮或因為他們的心是困擾無法入睡。你怎麼調都？",
           talk: "你經常看到或談話，你關心和感到親近的人（例如：在電話上交談的朋友，來訪的朋友或家人，去教堂或俱樂部會議）？",
           title: "社會和情感健康",
+        ),
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "錯誤：錯誤的數據類型",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "鍵入一個數字",
+          value: "鍵入一個值",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -3361,7 +3439,7 @@ class AppLocalizations {
           brother: "برادر",
           daughter: "فرزند دختر",
           father: "پدر",
-          grandfather: "پدر بزرگ",
+          grandfather: "بابا بزرگ",
           grandmother: "مادر بزرگ",
           mother: "مادر",
           nephew: "پسر خواهر یا برادر",
@@ -3369,7 +3447,7 @@ class AppLocalizations {
           sister: "خواهر",
           son: "فرزند پسر",
           title: "رابطه",
-          uncle: "عمو یا دایی",
+          uncle: "دایی",
         ),
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
           female: "زن",
@@ -3379,7 +3457,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Farsi",
+        setPreferred: "Set preferred language: Farsi",
+        setPreferredEnglish: "تنظیم زبان مورد نظر: فارسی",
         title: "فارسی",
+        update: "به روز رسانی",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "رشد",
@@ -3485,10 +3566,6 @@ class AppLocalizations {
           losingHousing: "آیا شما در مورد دست دادن مسکن خود را نگران است؟",
           title: "خانواده و خانه",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "عدد تایپ کنید",
-          value: "نوع ارزش",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "در طول سال گذشته، چه کل درآمد ترکیبی را برای شما و اعضای خانواده شما با زندگی می کنند؟ این اطلاعات به ما کمک می تعیین اگر شما واجد شرایط برای هر گونه مزایای هستند.",
@@ -3519,7 +3596,7 @@ class AppLocalizations {
           race: "که (بازدید کنندگان) مسابقه شما هستند؟",
           seasonalWork:
               "در هر نقطه ای در 2 سال گذشته، فصل و یا کار در مزرعه مهاجر شده منبع اصلی خانواده شما و یا خود را از درآمد؟",
-          title: "خصوصیات فردی",
+          title: "ویژگی های فردی",
         ),
         socialAndEmotionalHealth:
             AppLocalizations_Labels_Prapare_SocialAndEmotionalHealth(
@@ -3528,6 +3605,13 @@ class AppLocalizations {
           talk:
               "هر چند وقت یا صحبت کردن با افرادی که شما را در مورد مراقبت و احساس نزدیکی به شما را ببینید (به عنوان مثال: صحبت کردن به دوستان بر روی گوشی، بازدید از دوستان و یا خانواده، رفتن به کلیسا و یا باشگاه جلسات).",
           title: "اجتماعی و سلامت عاطفی",
+        ),
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "خطا: اشتباه نوع داده",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "عدد تایپ کنید",
+          value: "نوع ارزش",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -3574,7 +3658,7 @@ class AppLocalizations {
           july: "juillet",
           june: "juin",
           march: "Mars",
-          may: "Peut",
+          may: "Mai",
           november: "novembre",
           october: "octobre",
           september: "septembre",
@@ -3637,7 +3721,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "French",
+        setPreferred: "Set preferred language: French",
+        setPreferredEnglish: "Réglage de la langue préférée: Français",
         title: "français",
+        update: "Mettre à jour",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "Croissance",
@@ -3746,10 +3833,6 @@ class AppLocalizations {
           losingHousing: "Etes-vous inquiet de perdre votre logement?",
           title: "Famille et accueil",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "Tapez un nombre",
-          value: "Tapez une valeur",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "Au cours de l'année écoulée, quel était le revenu total combiné pour vous et les membres de la famille qui vivent avec vous? Ces informations nous aideront à déterminer si vous êtes admissible à des prestations.",
@@ -3792,11 +3875,18 @@ class AppLocalizations {
           title: "Santé sociale et émotionnelle",
         ),
       ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "Erreur: Mauvais type de données",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "Tapez un nombre",
+          value: "Tapez une valeur",
+        ),
+      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "registre des patients",
       ),
       settings: AppLocalizations_Labels_Settings(
-        dark: "Sombre",
+        dark: "Foncé",
         language: "Langue",
         light: "Lumière",
         ok: "D'accord",
@@ -3821,7 +3911,7 @@ class AppLocalizations {
         email: "Email",
         password: "Passwort",
         resetPassword: "Passwort zurücksetzen",
-        signIn: "Einloggen",
+        signIn: "Anmelden",
         signUp: "Anmelden",
         submit: "einreichen",
         userName: "Nutzername",
@@ -3871,7 +3961,7 @@ class AppLocalizations {
           country: "Land",
           county: "Bezirk",
           district: "Kreis",
-          neighborhood: "Gegend",
+          neighborhood: "Nachbarschaft",
           postalCode: "Postleitzahl",
           state: "Zustand",
           title: "Adresse",
@@ -3899,7 +3989,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "German",
+        setPreferred: "Set preferred language: German",
+        setPreferredEnglish: "Set bevorzugte Sprache: Deutsch",
         title: "Deutsche",
+        update: "Aktualisieren",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "Wachstum",
@@ -3931,7 +4024,7 @@ class AppLocalizations {
             iHaveHousing: "Ich habe Gehäuse",
           ),
           howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
-            aLittleBit: "Ein bisschen",
+            aLittleBit: "Ein kleines Bisschen",
             notAtAll: "Überhaupt nicht",
             quiteABit: "Ganz ein bisschen",
             somewhat: "Etwas",
@@ -4006,10 +4099,6 @@ class AppLocalizations {
           losingHousing: "Sind Sie besorgt, über Ihr Gehäuse zu verlieren?",
           title: "Familie und Zuhause",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "Geben Sie eine Zahl",
-          value: "Geben Sie einen Wert",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "Im vergangenen Jahr, was war das gesamte kombinierte Einkommen für Sie und die Familienmitglieder mit denen Sie leben? Diese Informationen helfen uns festzustellen, ob Sie für alle Leistungen qualifizieren.",
@@ -4052,6 +4141,13 @@ class AppLocalizations {
           title: "Soziale und emotionale Gesundheit",
         ),
       ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "Fehler: Falscher Datentyp",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "Geben Sie eine Zahl",
+          value: "Geben Sie einen Wert",
+        ),
+      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "Register Patienten",
       ),
@@ -4059,7 +4155,7 @@ class AppLocalizations {
         dark: "Dunkel",
         language: "Sprache",
         light: "Licht",
-        ok: "OK",
+        ok: "In Ordnung",
         signOut: "Ausloggen",
         system: "System",
         theme: "Thema",
@@ -4159,7 +4255,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Indonesian",
+        setPreferred: "Set preferred language: Indonesian",
+        setPreferredEnglish: "Set bahasa pilihan: Indonesia",
         title: "bahasa Indonesia",
+        update: "Memperbarui",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "Pertumbuhan",
@@ -4268,10 +4367,6 @@ class AppLocalizations {
               "Apakah Anda khawatir tentang kehilangan perumahan Anda?",
           title: "Keluarga dan Rumah",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "Ketik nomor",
-          value: "Ketik nilai",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "Selama tahun lalu, apa yang pendapatan gabungan total untuk Anda dan anggota keluarga Anda hidup dengan? Informasi ini akan membantu kami menentukan apakah Anda memenuhi syarat untuk manfaat.",
@@ -4312,6 +4407,13 @@ class AppLocalizations {
           talk:
               "Seberapa sering Anda melihat atau berbicara dengan orang-orang bahwa Anda peduli dan merasa dekat dengan (Misalnya: berbicara dengan teman di telepon, mengunjungi teman atau keluarga, pergi ke pertemuan gereja atau klub)?",
           title: "Sosial dan Kesehatan Emosional",
+        ),
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "Kesalahan: Salah Data Type",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "Ketik nomor",
+          value: "Ketik nilai",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -4421,7 +4523,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Japanese",
-        title: "日本語",
+        setPreferred: "Set preferred language: Japanese",
+        setPreferredEnglish: "セット優先する言語：日本語",
+        title: "日本人",
+        update: "更新",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "成長",
@@ -4523,10 +4628,6 @@ class AppLocalizations {
           losingHousing: "あなたの住宅を失うことを心配していますか？",
           title: "家族とホーム",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "番号を入力",
-          value: "値を入力",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "昨年中は、あなたとあなたが一緒に暮らす家族のための合わせた合計収入は何でしたか？この情報は、任意の給付の資格がある場合は、私たちが判断するのに役立ちます。",
@@ -4562,6 +4663,13 @@ class AppLocalizations {
           talk:
               "どのくらいの頻度であなたが気にして近くに感じることを人に話すかを参照してください（例：、友人や家族を訪問し、電話で友人に話し、教会やクラブの会合に行きますか）？",
           title: "社会的、感情的な健康",
+        ),
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "エラー：間違ったデータタイプ",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "番号を入力",
+          value: "値を入力",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -4671,7 +4779,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Khmer",
+        setPreferred: "Set preferred language: Khmer",
+        setPreferredEnglish: "កំណត់ភាសា: ខ្មែរ",
         title: "ភាសាខ្មែរ",
+        update: "ធ្វើឱ្យទាន់សម័យ",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "កំណើន",
@@ -4778,10 +4889,6 @@ class AppLocalizations {
           losingHousing: "តើអ្នកមានការព្រួយបារម្ភពីការបាត់បង់ផ្ទះរបស់អ្នក?",
           title: "គ្រួសារនិងទំព័រដើម",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "វាយចំនួនមួយ",
-          value: "វាយតម្លៃ",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "ក្នុងអំឡុងឆ្នាំកន្លងទៅនេះអ្វីដែលជាប្រាក់ចំណូលសរុបសម្រាប់អ្នកនិងសមាជិកក្រុមគ្រួសាររបស់អ្នករស់នៅជាមួយ? ពនេះនឹងជួយឱ្យយើងកំណត់ថាតើអ្នកមានសិទ្ធិទទួលបានផលប្រយោជន៍ណាមួយឡើយ។",
@@ -4822,6 +4929,13 @@ class AppLocalizations {
           talk:
               "តើធ្វើដូចម្តេចជាញឹកញាប់តើអ្នកឃើញឬនិយាយទៅកាន់មនុស្សដែលអ្នកយកចិត្តទុកដាក់និងមានអារម្មណ៍ជិតស្និទ្ធនឹង (ឧទាហរណ៍: ការនិយាយទៅកាន់មិត្តភក្តិនៅលើទូរស័ព្ទ, ទស្សនាមិត្តភក្តិឬក្រុមគ្រួសារនឹងកិច្ចប្រជុំក្នុងសាសនាចក្រឬក្លឹប)?",
           title: "សង្គមនិងសុខភាពផ្លូវចិត្ដ",
+        ),
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "កំហុស: ប្រភេទទិន្នន័យខុស",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "វាយចំនួនមួយ",
+          value: "វាយតម្លៃ",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -4931,7 +5045,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Korean",
+        setPreferred: "Set preferred language: Korean",
+        setPreferredEnglish: "설정 원하는 언어 : 한국어",
         title: "한국어",
+        update: "최신 정보",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "성장",
@@ -5033,10 +5150,6 @@ class AppLocalizations {
           losingHousing: "당신은 당신의 주택을 잃어 버릴까 걱정하고 있습니까?",
           title: "가족과 집",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "숫자를 입력",
-          value: "값을 입력",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "지난 한 해 동안, 당신과 당신이 살고있는 가족 구성원의 총 결합 된 소득은 무엇 이었습니까? 이 정보는 어떤 혜택을받을 수 있는지 우리가 결정하는 데 도움이됩니다.",
@@ -5072,6 +5185,13 @@ class AppLocalizations {
           talk:
               "얼마나 자주 당신은 당신이 관심을 종료 느끼는 사람들에게 이야기 나 보이나요 (예를 들어, 친구 나 가족을 방문, 전화로 친구에게 얘기 교회 나 클럽 모임에가는)?",
           title: "사회 및 정서적 건강",
+        ),
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "오류 : 잘못된 데이터 형식",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "숫자를 입력",
+          value: "값을 입력",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -5181,7 +5301,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Lao",
+        setPreferred: "Set preferred language: Lao",
+        setPreferredEnglish: "ກໍານົດພາສາທີ່ຕ້ອງການ: ລາວ",
         title: "ລາວ",
+        update: "ການປັບປຸງ",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "ການຂະຫຍາຍຕົວ",
@@ -5288,10 +5411,6 @@ class AppLocalizations {
           losingHousing: "ທ່ານກໍາລັງກັງວົນກ່ຽວກັບການສູນເສຍທີ່ຢູ່ອາໄສຂອງທ່ານ?",
           title: "ຄອບຄົວແລະບ້ານ",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "ພິມຕົວເລກ",
-          value: "ພິມມູນຄ່າ",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "ໃນລະຫວ່າງປີທີ່ຜ່ານມາ, ສິ່ງທີ່ເປັນລາຍຮັບລວມທັງຫມົດສໍາລັບທ່ານແລະສະມາຊິກໃນຄອບຄົວທີ່ທ່ານດໍາລົງຊີວິດທີ່ມີ? ຂໍ້ມູນຂ່າວສານນີ້ຈະຊ່ວຍໃຫ້ພວກເຮົາກໍານົດຖ້າຫາກວ່າທ່ານມີສິດໄດ້ຮັບສໍາລັບຜົນປະໂຫຍດໃດໆ.",
@@ -5334,6 +5453,13 @@ class AppLocalizations {
           title: "ເພື່ອສັງຄົມແລະສຸຂະພາບທາງດ້ານຈິດໃຈ",
         ),
       ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "Error: ທີ່ບໍ່ຖືກຕ້ອງປະເພດຂໍ້ມູນ",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "ພິມຕົວເລກ",
+          value: "ພິມມູນຄ່າ",
+        ),
+      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "ອົດທົນຫມັກສະມາຊິກ",
       ),
@@ -5363,7 +5489,7 @@ class AppLocalizations {
         email: "ईमेल",
         password: "पासवर्ड",
         resetPassword: "पासवर्ड रीसेट करा",
-        signIn: "मध्ये साइन इन करा",
+        signIn: "साइन इन करा",
         signUp: "साइन अप करा",
         submit: "प्रस्तुत करणे",
         userName: "वापरकर्तानाव",
@@ -5405,7 +5531,7 @@ class AppLocalizations {
         mySchedule: "माझे वेळापत्रक",
         newPatient: "नवीन रुग्णांच्या",
         newSurvey: "नवीन सर्वेक्षण",
-        relationship: "संबंध",
+        relationship: "नाते",
         search: "शोधा",
         submitShare: "सबमिट करा / शेअर",
         address: AppLocalizations_Labels_General_Address(
@@ -5441,7 +5567,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Marathi",
+        setPreferred: "Set preferred language: Marathi",
+        setPreferredEnglish: "प्राधान्यकृत भाषा सेट करा: मराठी",
         title: "मराठी",
+        update: "अद्यतनित करा",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "वाढ",
@@ -5546,10 +5675,6 @@ class AppLocalizations {
           losingHousing: "आपण आपल्या गृहनिर्माण तोट्याचा काळजी का करता?",
           title: "कुटुंब आणि मुख्यपृष्ठ",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "एक नंबर टाईप करा",
-          value: "एक मूल्य टाइप करा",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "गेल्या वर्षी दरम्यान, आपण आणि आपण जगू कुटुंबातील सदस्य एकूण एकत्रित उत्पन्न काय होते? ही माहिती आपण कोणत्याही पात्र तर आपल्याला निर्धारित करण्यात मदत करेल.",
@@ -5588,6 +5713,13 @@ class AppLocalizations {
           talk:
               "किती वेळा आपण किंवा आपण काळजी आणि बंद वाटत की लोक चर्चा पाहू नका (उदाहरणार्थ:,, चर्च किंवा क्लब सभा होणार फोनवर मित्र बोलत मित्र किंवा कुटुंब भेट)?",
           title: "सामाजिक आणि भावनिक आरोग्य",
+        ),
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "त्रुटी: चुकीचा डेटा प्रकार",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "एक नंबर टाईप करा",
+          value: "एक मूल्य टाइप करा",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -5697,7 +5829,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Nepali",
+        setPreferred: "Set preferred language: Nepali",
+        setPreferredEnglish: "रुचि भाषा सेट: नेपाली",
         title: "नेपाली",
+        update: "अद्यावधिक",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "वृद्धि",
@@ -5803,10 +5938,6 @@ class AppLocalizations {
           losingHousing: "तपाईं आफ्नो आवास गुमाउने चिन्तित हुनुहुन्छ?",
           title: "परिवार र घर",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "एक नम्बर टाइप",
-          value: "मान टाइप",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "गत वर्ष समयमा, तपाईं र तपाईंसँग जीवन बिताउन परिवार सदस्यहरूको लागि कुल संयुक्त आय के थियो? यो जानकारी तपाईं कुनै पनि लाभ को लागि योग्य हुनुहुन्छ भने हामीलाई निर्धारण गर्न मद्दत गर्नेछ।",
@@ -5816,7 +5947,7 @@ class AppLocalizations {
           transportation:
               "यातायातका कमी तपाईं चिकित्सा देखि राखिएको छ भेटघाट, सभा, काम, या दैनिक आवश्यक कुराहरू प्राप्त बाट?",
           without:
-              "गत वर्ष मा, छ तपाईं वा तपाईं यसलाई साँच्चै आवश्यक थियो निम्न को कुनै पनि मिल सकेका बस्न कुनै पनि परिवारका सदस्यहरू?",
+              "गत वर्ष मा, छ तपाईं वा तपाईं यसलाई साँच्चै आवश्यक थियो निम्न कुनै पनि प्राप्त गर्न असमर्थ भएको बस्न कुनै पनि परिवारका सदस्यहरूले?",
           work: "आफ्नो वर्तमान काम अवस्था के छ?",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
@@ -5846,6 +5977,13 @@ class AppLocalizations {
           talk:
               "तपाईं ख्याल र बन्द गर्न महसुस कि मान्छे कुरा वा तपाईं कति देख्नुहुन्छ (उदाहरणका लागि: फोन साथीहरूको कुरा, साथी वा परिवार भ्रमण, चर्च वा क्लब बैठकहरूमा जाँदै)?",
           title: "सामाजिक र भावनात्मक स्वास्थ्य",
+        ),
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "त्रुटि: गलत डाटा प्रकार",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "एक नम्बर टाइप",
+          value: "मान टाइप",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -5891,7 +6029,7 @@ class AppLocalizations {
           january: "janeiro",
           july: "Julho",
           june: "Junho",
-          march: "Março",
+          march: "marcha",
           may: "Maio",
           november: "novembro",
           october: "Outubro",
@@ -5912,7 +6050,7 @@ class AppLocalizations {
         birthDate: "Data de nascimento",
         dateofBirth: "Data de nascimento",
         editSurvey: "Editar questionário",
-        familyName: "#VALUE!",
+        familyName: "Sobrenome",
         female: "Fêmea",
         givenNames: "Nomes dados",
         male: "Masculino",
@@ -5955,7 +6093,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Portuguese",
+        setPreferred: "Set preferred language: Portuguese",
+        setPreferredEnglish: "Definir idioma preferido: Português",
         title: "Português",
+        update: "Atualizar",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "Crescimento",
@@ -5991,7 +6132,7 @@ class AppLocalizations {
             notAtAll: "De modo nenhum",
             quiteABit: "Bastante",
             somewhat: "Um pouco",
-            veryMuch: "Muitíssimo",
+            veryMuch: "Muito",
           ),
           howOften: AppLocalizations_Labels_Prapare_Answers_HowOften(
             fiftyOrMoreTimesAWeek: "5 ou mais vezes por semana",
@@ -6062,10 +6203,6 @@ class AppLocalizations {
           losingHousing: "Você está preocupado em perder o seu habitação?",
           title: "Família e Home",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "Digite um número",
-          value: "Digite um valor",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "Durante o ano passado, o que foi o rendimento combinado total para você e os membros da família que vivem com? Esta informação nos ajudará a determinar se você é elegível para todos os benefícios.",
@@ -6108,18 +6245,25 @@ class AppLocalizations {
           title: "Social e Saúde Emocional",
         ),
       ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "Erro: tipo errado de dados",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "Digite um número",
+          value: "Digite um valor",
+        ),
+      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "Register paciente",
       ),
       settings: AppLocalizations_Labels_Settings(
         dark: "Sombrio",
         language: "Língua",
-        light: "Luz",
+        light: "Leve",
         ok: "Está bem",
         signOut: "Sair",
         system: "Sistema",
         theme: "Tema",
-        title: "Definições",
+        title: "Configurações",
         updateProfile: "Atualizar perfil",
       ),
     ),
@@ -6210,12 +6354,15 @@ class AppLocalizations {
         sexAtBirth: AppLocalizations_Labels_General_SexAtBirth(
           female: "ਔਰਤ",
           male: "ਮਰਦ",
-          title: "ਜਨਮ ਤੇ ਸੈਕਸ",
+          title: "ਜਨਮ ਤੇ ਲਿੰਗ",
         ),
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Punjabi",
+        setPreferred: "Set preferred language: Punjabi",
+        setPreferredEnglish: "ਸੈੱਟ ਕਰੋ ਤਰਜੀਹੀ ਭਾਸ਼ਾ: ਪੰਜਾਬੀ",
         title: "ਪੰਜਾਬੀ ਦੇ",
+        update: "ਅੱਪਡੇਟ",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "ਵਿਕਾਸ",
@@ -6321,10 +6468,6 @@ class AppLocalizations {
           losingHousing: "ਤੁਹਾਨੂੰ ਆਪਣੇ ਹਾਊਸਿੰਗ ਗੁਆਉਣ ਬਾਰੇ ਚਿੰਤਾ ਕਰ ਰਹੇ ਹੋ?",
           title: "ਪਰਿਵਾਰ ਅਤੇ ਘਰ",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "ਇੱਕ ਨੰਬਰ ਟਾਈਪ ਕਰੋ",
-          value: "ਦਾ ਮੁੱਲ ਟਾਈਪ ਕਰੋ",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "ਪਿਛਲੇ ਸਾਲ ਦੇ ਦੌਰਾਨ, ਤੁਹਾਨੂੰ ਅਤੇ ਪਰਿਵਾਰ ਤੁਹਾਡੇ ਨਾਲ ਰਹਿਣ ਲਈ ਕੁੱਲ ਆਮਦਨ ਦਾ ਕੀ ਸੀ? ਇਹ ਜਾਣਕਾਰੀ ਸਾਡੀ ਮਦਦ ਕਰੇਗਾ ਜੇ ਤੁਹਾਨੂੰ ਇਹ ਪਤਾ ਕਿਸੇ ਵੀ ਲਾਭ ਦੇ ਲਈ ਯੋਗ ਹਨ.",
@@ -6364,6 +6507,13 @@ class AppLocalizations {
           talk:
               "ਤੁਹਾਨੂੰ ਜ ਲੋਕ ਹੈ, ਜੋ ਕਿ ਤੁਹਾਨੂੰ ਇਸ ਬਾਰੇ ਪਰਵਾਹ ਹੈ ਅਤੇ ਨੇੜੇ ਮਹਿਸੂਸ ਕਰਨ ਬਾਤ ਕਰਨਾ ਅਕਸਰ ਵੇਖਦੇ ਹੋ (ਉਦਾਹਰਨ ਲਈ: ਫ਼ੋਨ 'ਤੇ ਦੋਸਤ ਨਾਲ ਗੱਲ, ਦੋਸਤ ਜ ਪਰਿਵਾਰ ਨੂੰ ਮਿਲਣ, ਚਰਚ ਜ ਕਲੱਬ ਮੀਟਿੰਗ ਕਰਨ ਜਾ ਰਹੇ)?",
           title: "ਸਮਾਜਕ ਅਤੇ ਭਾਵਾਤਮਕ ਸਿਹਤ",
+        ),
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "ਗਲਤੀ: ਗਲਤ ਡਾਟਾ ਕਿਸਮ",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "ਇੱਕ ਨੰਬਰ ਟਾਈਪ ਕਰੋ",
+          value: "ਦਾ ਮੁੱਲ ਟਾਈਪ ਕਰੋ",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -6473,7 +6623,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Somali",
+        setPreferred: "Set preferred language: Somali",
+        setPreferredEnglish: "luqadda doorbidayso dhigay: Soomaali",
         title: "Soomaali",
+        update: "update",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "Kobaca",
@@ -6582,10 +6735,6 @@ class AppLocalizations {
               "Ma waxaad ka walwalsan ah oo ku saabsan badiyay guryaha?",
           title: "Qoyska iyo Home",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "Ku qor tiro",
-          value: "Ku qor qiimaha a",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "Intii lagu guda jiray sanadkii la soo dhaafay, waxa uu ahaa dakhliga guud ee la isu geeyey adiga iyo xubnaha qoyska ee aad la nooshahay ee? Macluumaadkan waxaa naga caawin doonaa go'aan ka gaadho haddii aad u qalanto gargaarka kasta.",
@@ -6602,7 +6751,7 @@ class AppLocalizations {
           afraid:
               "Sanadkii la soo dhaafay, waxa aad ka cabsanayn aad isqabtaan ama lammaane hore?",
           prison:
-              "Sanadkii la soo dhaafay, in aad ku qaatay in ka badan 2 habeen oo isku xiga oo jeel ah, xabsi, xarunta dadka lagu haayo, ama xarunta dhallinta asluubta?",
+              "Sanadkii la soo dhaafay, in aad qarashgareeyay in ka badan 2 habeen oo isku xiga oo jeel ah, xabsi, xarunta dadka lagu haayo, ama xarunta dhallinta asluubta?",
           refugee: "aad tahay qaxooti?",
           safe:
               "Ma dareensan tahay in aad jidh ahaan iyo maskax ahaan ammaan ah meesha aad hadda ku nool?",
@@ -6626,6 +6775,13 @@ class AppLocalizations {
           talk:
               "Intee jeer aad aragto ama la hadal dadka aad ka naxeyso iyo dareemayaa u dhow (Tusaale: la hadalka saaxiibada on telefoonka, saaxiibada ama qoyska booqanaya, socday kaniisadda ama kooxda kulamada)?",
           title: "Caafimaadka iyo Bulshada Qiirada",
+        ),
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "Qalad: Wrong Data Type",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "Ku qor tiro",
+          value: "Ku qor qiimaha a",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -6735,7 +6891,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Swahili",
+        setPreferred: "Set preferred language: Swahili",
+        setPreferredEnglish: "Weka lugha unayopendelea: Kiswahili",
         title: "Kiswahili",
+        update: "Mwisho",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "ukuaji",
@@ -6841,10 +7000,6 @@ class AppLocalizations {
           losingHousing: "Je, wasiwasi wa kupoteza makazi yako?",
           title: "Familia na Nyumbani",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "andika namba",
-          value: "Aina thamani",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "Katika kipindi cha mwaka uliopita, yaliyokuwa jumla ya mapato pamoja kwa ajili yako na familia kuishi na? Habari hii itatusaidia kujua kama wewe ni haki kwa ajili ya faida yoyote.",
@@ -6884,6 +7039,13 @@ class AppLocalizations {
           talk:
               "Ni mara ngapi wewe kuona au kuzungumza kwa watu unaowajali na kuhisi karibu na (Kwa mfano: kuzungumza na marafiki kwenye simu, kutembelea marafiki au familia, kuhudhuria mikutano kanisa au klabu)?",
           title: "Jamii na Afya Emotional",
+        ),
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "Hitilafu: Wrong Data Aina",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "andika namba",
+          value: "Aina thamani",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -6993,7 +7155,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Tagalog",
+        setPreferred: "Set preferred language: Tagalog",
+        setPreferredEnglish: "Itakda ang ginustong wika: Tagalog",
         title: "Tagalog",
+        update: "I-update",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "paglaki",
@@ -7004,7 +7169,7 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "kanselahin",
-        next: "susunod",
+        next: "Next",
         previous: "nakaraan",
         submit: "Ipasa",
       ),
@@ -7026,7 +7191,7 @@ class AppLocalizations {
             iHaveHousing: "Mayroon akong pabahay",
           ),
           howMuch: AppLocalizations_Labels_Prapare_Answers_HowMuch(
-            aLittleBit: "Konti lang",
+            aLittleBit: "Kaunti lamang",
             notAtAll: "Hindi talaga",
             quiteABit: "Medyo isang bit",
             somewhat: "medyo",
@@ -7104,10 +7269,6 @@ class AppLocalizations {
               "Sigurado ka nag-aalala tungkol sa pagkawala ng iyong mga pabahay?",
           title: "Pamilya at Tahanan",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "Mag-type ng numero ng",
-          value: "Mag-type ng halaga",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "Sa panahon ng nakalipas na taon, ano ang kabuuang pinagsamang kita para sa iyo at sa mga miyembro ng pamilya mo sa bahay? Ang impormasyon na ito ay makakatulong sa amin na matukoy kung ikaw ay karapat-dapat para sa anumang mga benepisyo.",
@@ -7133,7 +7294,7 @@ class AppLocalizations {
         personalCharacteristics:
             AppLocalizations_Labels_Prapare_PersonalCharacteristics(
           language: "Anong wika ang ikaw ay pinaka-kumportable sa pagsasalita?",
-          latino: "Ang itinuturing mong sarili na Hispaniko / Latino?",
+          latino: "Huwag isaalang-alang mo ang iyong sarili Hispanic / Latino?",
           military:
               "Nakarating na nangaligtas sa armadong pwersa ng Estados Unidos?",
           race: "Aling lahi (s) ka?",
@@ -7148,6 +7309,13 @@ class AppLocalizations {
           talk:
               "Gaano kadalas nakikita mo o talk sa mga tao na mahalaga sa iyo at huwag mag-malapit sa (Halimbawa: pakikipag-usap sa mga kaibigan sa telepono, pagbisita sa mga kaibigan o pamilya, pagsisimba o club pulong)?",
           title: "Social at emosyonal Kalusugan",
+        ),
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "Error: Maling Uri ng Data",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "Mag-type ng numero ng",
+          value: "Mag-type ng halaga",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -7257,7 +7425,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Thai",
+        setPreferred: "Set preferred language: Thai",
+        setPreferredEnglish: "ตั้งค่าภาษาที่ต้องการ: ไทย",
         title: "ไทย",
+        update: "ปรับปรุง",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "การเจริญเติบโต",
@@ -7363,10 +7534,6 @@ class AppLocalizations {
           losingHousing: "คุณกังวลเกี่ยวกับการสูญเสียที่อยู่อาศัยของคุณหรือไม่",
           title: "ครอบครัวและบ้าน",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "พิมพ์ตัวเลข",
-          value: "พิมพ์ค่า",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "ในช่วงปีที่ผ่านมาสิ่งที่เป็นรายได้รวมทั้งหมดสำหรับคุณและสมาชิกในครอบครัวที่คุณอาศัยอยู่ด้วย? ข้อมูลนี้จะช่วยให้เราตรวจสอบว่าคุณมีสิทธิ์ได้รับผลประโยชน์ใด ๆ",
@@ -7406,6 +7573,13 @@ class AppLocalizations {
           talk:
               "อย่างไรคุณมักจะเห็นหรือพูดคุยกับคนที่คุณสนใจและรู้สึกใกล้ชิดกับ (ตัวอย่างเช่นการพูดคุยกับเพื่อน ๆ ในโทรศัพท์ไปเยี่ยมเพื่อนหรือสมาชิกในครอบครัวจะไปโบสถ์หรือชมรมการประชุม)?",
           title: "สังคมและสุขภาพทางอารมณ์",
+        ),
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "ข้อผิดพลาด: ผิดชนิดข้อมูล",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "พิมพ์ตัวเลข",
+          value: "พิมพ์ค่า",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -7515,7 +7689,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Uzbek",
+        setPreferred: "Set preferred language: Uzbek",
+        setPreferredEnglish: "Afzal til: O'zbek",
         title: "O'zbekiston",
+        update: "yangilash",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "o'sish",
@@ -7622,10 +7799,6 @@ class AppLocalizations {
           losingHousing: "Agar uy-joy yo'qotib haqida tashvishli?",
           title: "Oila va uy",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "bir qator kiriting",
-          value: "Agar qiymat kiriting",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "O'tgan yil mobaynida siz va siz bilan birga yashayotgan oila a'zolari uchun umumiy kombinatsiyalangan daromad nima edi? Bu ma'lumotlar sizga har qanday foyda uchun ma'qul bo'lsa, bizga aniqlashga yordam beradi.",
@@ -7663,6 +7836,13 @@ class AppLocalizations {
           talk:
               "Qanday tez-tez haqida g'amxo'rlik va yaqin his odamlar bilan gaplashish yoki ko'rasanmi (Masalan:, do'stlar yoki oila ziyorat, telefon o'rtoq gapirganda, cherkov yoki klub uchrashuvlar ketadi)?",
           title: "Ijtimoiy va hissiy Sog'liqni saqlash",
+        ),
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "Xato: Noto'g'ri ma'lumotlar turi",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "bir qator kiriting",
+          value: "Agar qiymat kiriting",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -7704,7 +7884,7 @@ class AppLocalizations {
           april: "tháng tư",
           august: "tháng Tám",
           december: "tháng mười hai",
-          february: "Tháng hai",
+          february: "tháng 2",
           january: "tháng Giêng",
           july: "tháng bảy",
           june: "tháng sáu",
@@ -7772,7 +7952,10 @@ class AppLocalizations {
       ),
       language: AppLocalizations_Labels_Language(
         inEnglish: "Vietnamese",
+        setPreferred: "Set preferred language: Vietnamese",
+        setPreferredEnglish: "Set ngôn ngữ ưa thích: Tiếng Việt",
         title: "Tiếng Việt",
+        update: "cập nhật",
       ),
       medical: AppLocalizations_Labels_Medical(
         growth: "sự phát triển",
@@ -7878,10 +8061,6 @@ class AppLocalizations {
           losingHousing: "Bạn đang lo lắng về việc mất nhà ở của bạn?",
           title: "Gia đình và Trang chủ",
         ),
-        instructions: AppLocalizations_Labels_Prapare_Instructions(
-          number: "Nhập số",
-          value: "Nhập giá trị",
-        ),
         moneyAndResources: AppLocalizations_Labels_Prapare_MoneyAndResources(
           income:
               "Trong năm qua, tổng thu nhập kết hợp cho bạn và các thành viên gia đình bạn sống với là gì? Những thông tin này sẽ giúp chúng ta xác định xem bạn có đủ điều kiện cho bất kỳ lợi ích.",
@@ -7920,6 +8099,13 @@ class AppLocalizations {
           talk:
               "Bao lâu thì bạn nhìn thấy hoặc nói chuyện với những người mà bạn quan tâm và cảm thấy gần gũi đến (Ví dụ: nói chuyện với bạn bè trên điện thoại, thăm bạn bè hoặc gia đình, đi đến các cuộc họp nhà thờ hoặc câu lạc bộ)?",
           title: "Xã hội và sức khỏe cảm xúc",
+        ),
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "Lỗi: Wrong Data Type",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "Nhập số",
+          value: "Nhập giá trị",
         ),
       ),
       registration: AppLocalizations_Labels_Registration(
@@ -8411,18 +8597,35 @@ class AppLocalizations_Labels_General {
 }
 
 class AppLocalizations_Labels_Language {
-  const AppLocalizations_Labels_Language({this.inEnglish, this.title});
+  const AppLocalizations_Labels_Language(
+      {this.inEnglish,
+      this.setPreferred,
+      this.setPreferredEnglish,
+      this.title,
+      this.update});
 
   final String inEnglish;
 
+  final String setPreferred;
+
+  final String setPreferredEnglish;
+
   final String title;
+
+  final String update;
 
   String getByKey(String key) {
     switch (key) {
       case 'inEnglish':
         return inEnglish;
+      case 'setPreferred':
+        return setPreferred;
+      case 'setPreferredEnglish':
+        return setPreferredEnglish;
       case 'title':
         return title;
+      case 'update':
+        return update;
       default:
         return '';
     }
@@ -8943,25 +9146,6 @@ class AppLocalizations_Labels_Prapare_FamilyAndHome {
   }
 }
 
-class AppLocalizations_Labels_Prapare_Instructions {
-  const AppLocalizations_Labels_Prapare_Instructions({this.number, this.value});
-
-  final String number;
-
-  final String value;
-
-  String getByKey(String key) {
-    switch (key) {
-      case 'number':
-        return number;
-      case 'value':
-        return value;
-      default:
-        return '';
-    }
-  }
-}
-
 class AppLocalizations_Labels_Prapare_MoneyAndResources {
   const AppLocalizations_Labels_Prapare_MoneyAndResources(
       {this.income,
@@ -9110,7 +9294,6 @@ class AppLocalizations_Labels_Prapare {
       {this.title,
       this.answers,
       this.familyAndHome,
-      this.instructions,
       this.moneyAndResources,
       this.optionalMeasures,
       this.personalCharacteristics,
@@ -9121,8 +9304,6 @@ class AppLocalizations_Labels_Prapare {
   final AppLocalizations_Labels_Prapare_Answers answers;
 
   final AppLocalizations_Labels_Prapare_FamilyAndHome familyAndHome;
-
-  final AppLocalizations_Labels_Prapare_Instructions instructions;
 
   final AppLocalizations_Labels_Prapare_MoneyAndResources moneyAndResources;
 
@@ -9138,6 +9319,43 @@ class AppLocalizations_Labels_Prapare {
     switch (key) {
       case 'title':
         return title;
+      default:
+        return '';
+    }
+  }
+}
+
+class AppLocalizations_Labels_Validation_Instructions {
+  const AppLocalizations_Labels_Validation_Instructions(
+      {this.number, this.value});
+
+  final String number;
+
+  final String value;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'number':
+        return number;
+      case 'value':
+        return value;
+      default:
+        return '';
+    }
+  }
+}
+
+class AppLocalizations_Labels_Validation {
+  const AppLocalizations_Labels_Validation({this.error, this.instructions});
+
+  final String error;
+
+  final AppLocalizations_Labels_Validation_Instructions instructions;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'error':
+        return error;
       default:
         return '';
     }
@@ -9225,6 +9443,7 @@ class AppLocalizations_Labels {
       this.medical,
       this.navigation,
       this.prapare,
+      this.validation,
       this.registration,
       this.settings});
 
@@ -9243,6 +9462,8 @@ class AppLocalizations_Labels {
   final AppLocalizations_Labels_Navigation navigation;
 
   final AppLocalizations_Labels_Prapare prapare;
+
+  final AppLocalizations_Labels_Validation validation;
 
   final AppLocalizations_Labels_Registration registration;
 

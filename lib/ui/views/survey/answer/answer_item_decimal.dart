@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:prapare/_internal/utils/utils.dart';
 import 'package:prapare/localization.dart';
@@ -40,7 +41,9 @@ class AnswerItemDecimal extends StatelessWidget implements AnswerItem {
       builder: (controller) {
         return Padding(
           padding: const EdgeInsets.all(16.0),
-          child: TextFormField(
+          child: FocusableActionDetector(
+            onFocusChange: (newValue) => controller.changeFocus(newValue),
+            child: TextFormField(
               controller: controller.textEditingController,
               onChanged: (newValue) => controller.obj.value = newValue,
               keyboardType:
@@ -51,10 +54,14 @@ class AnswerItemDecimal extends StatelessWidget implements AnswerItem {
                       : null),
               decoration: InputDecoration(
                 border: const OutlineInputBorder(),
-                labelText: labels.prapare.instructions.number,
+                labelText: labels.validation.instructions.number,
               ),
               validator: (String newValue) =>
-                  ValidatorsUtil().validateNewAnswerValue(newValue, answer)),
+                  ValidatorsUtil().isNewAnswerValueValid(newValue, answer)
+                      ? null
+                      : labels.validation.error,
+            ),
+          ),
         );
       },
     );
