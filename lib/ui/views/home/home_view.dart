@@ -12,6 +12,9 @@ class HomeView extends StatelessWidget {
     final labels = AppLocalizations.of(context);
 
     return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 0,
+      ),
       body: LayoutBuilder(
           builder: (BuildContext context, BoxConstraints viewportConstraints) {
         return SingleChildScrollView(

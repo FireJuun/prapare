@@ -7,7 +7,7 @@ import 'package:prapare/ui/views/settings/settings_controller.dart';
 
 Future<void> settingsDialog(BuildContext context) async => showDialog<void>(
       context: context,
-      barrierDismissible: false,
+      // barrierDismissible: false,
       builder: (BuildContext context) => _SettingsDialogContent(),
     );
 
