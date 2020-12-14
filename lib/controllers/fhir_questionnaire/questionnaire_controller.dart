@@ -158,7 +158,8 @@ class QuestionnaireController extends GetxController {
     final linkId = question.linkId;
     // convenience function for finding all questions
     _allQuestionsMap[linkId] = question;
-    // blank answerResponse added to UserResponse map
+    // blank answerResponse added to UserResponse map, if not already present
+    // todo: this appears to be duplicate to _mapAllActiveResponses
     _responsesController.userResponsesMap[linkId] ??=
         UserResponse(questionLinkId: linkId, answers: <AnswerResponse>[]).obs;
   }
@@ -177,7 +178,7 @@ class QuestionnaireController extends GetxController {
             (q) {
               if (q is Question) {
                 // create a blank User Response, which will have the active answers mapped into it
-                _responsesController.userResponsesMap[q.linkId] ??=
+                _responsesController.userResponsesMap[q.linkId] =
                     UserResponseUtil().createBlankUserResponseByQuestionType(q);
               }
             },
@@ -196,9 +197,9 @@ class QuestionnaireController extends GetxController {
   @override
   void onInit() {
     _model.loadAndCreateSurvey();
+    _mapAllActiveResponses();
     _mapAllQuestions();
     _mapAllUserResponses();
-    _mapAllActiveResponses();
     _mapAllGroupValidators();
     super.onInit();
   }
