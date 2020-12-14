@@ -42,21 +42,37 @@ class AnswerItemString extends StatelessWidget implements AnswerItem {
       builder: (controller) {
         return Padding(
           padding: const EdgeInsets.all(16.0),
-          child: TextFormField(
-              controller: controller.textEditingController,
-              onChanged: (newValue) => controller.obj.value = newValue,
-              minLines: _isAnswerMultiLine ? 3 : 1,
-              maxLines: _isAnswerMultiLine ? 6 : 1,
-              style: context.textTheme.bodyText2.apply(
-                  decoration: controller.isQuestionDeclined().value
-                      ? TextDecoration.lineThrough
-                      : null),
-              decoration: InputDecoration(
-                border: const OutlineInputBorder(),
-                labelText: labels.prapare.instructions.value,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Expanded(
+                child: TextFormField(
+                    controller: controller.textEditingController,
+                    onChanged: (newValue) => controller.obj.value = newValue,
+                    minLines: _isAnswerMultiLine ? 3 : 1,
+                    maxLines: _isAnswerMultiLine ? 6 : 1,
+                    style: context.textTheme.bodyText2.apply(
+                        decoration: controller.isQuestionDeclined().value
+                            ? TextDecoration.lineThrough
+                            : null),
+                    decoration: InputDecoration(
+                      border: const OutlineInputBorder(),
+                      labelText: labels.prapare.instructions.value,
+                    ),
+                    validator: (String newValue) => ValidatorsUtil()
+                        .validateNewAnswerValue(newValue, answer)),
               ),
-              validator: (String newValue) =>
-                  ValidatorsUtil().validateNewAnswerValue(newValue, answer)),
+              (question.linkId == '/93043-8/54899-0')
+                  ? IconButton(
+                      icon: const Icon(Icons.refresh),
+                      onPressed: () {
+                        controller.textEditingController.text =
+                            labels.language.title;
+                        controller.obj.value = labels.language.title;
+                      })
+                  : Container(),
+            ],
+          ),
         );
       },
     );

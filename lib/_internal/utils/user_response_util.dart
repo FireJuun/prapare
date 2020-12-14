@@ -1,6 +1,8 @@
 import 'package:fhir/r4.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:prapare/controllers/controllers.dart';
+import 'package:prapare/localization.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/enums/item_type.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/enums/qformat.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
@@ -38,8 +40,21 @@ class UserResponseUtil {
 
       /// Strings / text handled similarly to Question Mapping above, w/ default ''
       case QuestionnaireItemType.string:
-        return UserResponse(
-            questionLinkId: q.linkId, answers: [AnswerString('')]).obs;
+        {
+          Rx<UserResponse> response;
+          if (q.linkId == '/93043-8/54899-0') {
+            final labels = AppLocalizations.of(Get.context);
+            response = UserResponse(
+                questionLinkId: q.linkId,
+                answers: [AnswerString(labels.language.title)]).obs;
+            final ValidationController validationController = Get.find();
+            validationController.setQuestionAnswered(q.linkId, true);
+          } else {
+            response = UserResponse(
+                questionLinkId: q.linkId, answers: [AnswerString('')]).obs;
+          }
+          return response;
+        }
       case QuestionnaireItemType.text:
         return UserResponse(questionLinkId: q.linkId, answers: [AnswerText('')])
             .obs;

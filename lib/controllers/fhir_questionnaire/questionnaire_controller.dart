@@ -177,7 +177,7 @@ class QuestionnaireController extends GetxController {
             (q) {
               if (q is Question) {
                 // create a blank User Response, which will have the active answers mapped into it
-                _responsesController.userResponsesMap[q.linkId] =
+                _responsesController.userResponsesMap[q.linkId] ??=
                     UserResponseUtil().createBlankUserResponseByQuestionType(q);
               }
             },
