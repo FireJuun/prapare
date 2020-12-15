@@ -15,7 +15,7 @@ class QuestionnaireModel {
 
   /// loads the survey (currently saved locally, but could be queried from
   /// elswhere), then creates a list of Surveys from the questionnaire
-  void loadAndCreateSurvey() {
+  Future<bool> loadAndCreateSurvey() async {
     _data.questionnaire = Questionnaire.fromJson(prapareSurvey);
     _data.title =
         _data.questionnaire?.title ?? _data.questionnaire?.name ?? 'New Survey';
@@ -37,6 +37,7 @@ class QuestionnaireModel {
         }
       }
     }
+    return true;
   }
 
   /// creates a new surveyItem from the fhir item that is passed
@@ -59,7 +60,7 @@ class QuestionnaireModel {
   }
 
   /// saves the Questionnaire locally
-  Future saveResponses(List<UserResponse> responses) async {
+  Future<void> saveResponses(List<UserResponse> responses) async {
     _data.userResponses.retainWhere((r) => false);
     _data.userResponses.addAll(responses);
     _data.response = QuestionnaireResponse(

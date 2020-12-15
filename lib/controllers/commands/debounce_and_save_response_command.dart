@@ -49,6 +49,6 @@ class DebounceAndSaveResponseCommand extends AbstractCommand {
       validationController.validateIfQuestionAndGroupAreCompleted(userResponse);
     },
         // time to debounce (wait) before saving
-        time: const Duration(seconds: 1));
+        time: const Duration(milliseconds: 400));
   }
 }
