@@ -4,6 +4,9 @@ import 'package:prapare/_internal/utils/utils.dart';
 import 'package:prapare/controllers/controllers.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/ui/views/survey/answer/boolean/answer_item_decline_to_answer.dart';
+import 'package:prapare/ui/views/survey/answer/decimal_or_string/answer_item_language.dart';
+
+import 'decimal_or_string/answer_item_currency.dart';
 
 class AnswerItems extends StatelessWidget {
   const AnswerItems({
@@ -29,10 +32,25 @@ class AnswerItems extends StatelessWidget {
 
       /// First, check to see if answer code has unique/custom view
       /// These answers have their views determined programmatically, regardless of overall question type
-      if (lastAnswerCode == 'LA30122-8') {
-        // LA30122-8: I choose not to answer this question
-        return AnswerItemDeclineToAnswer(
-            question: question, answer: answer, userResponse: userResponse);
+      switch (lastAnswerCode) {
+
+        /// LA30122-8: Choose not to answer
+        /// type: boolean
+        case 'LA30122-8':
+          return AnswerItemDeclineToAnswer(
+              question: question, answer: answer, userResponse: userResponse);
+
+        /// 54899-0: Preferred Language
+        /// type: string -> string
+        case '54899-0':
+          return AnswerItemLanguage(
+              question: question, answer: answer, userResponse: userResponse);
+
+        /// 63586-2: Total Combined Income
+        /// type: decimal -> double
+        case '63586-2':
+          return AnswerItemCurrency(
+              question: question, answer: answer, userResponse: userResponse);
       }
 
       // enableWhen targets are displayed inside the relevant enableWhen Answer, not in a nested column

@@ -7,8 +7,8 @@ import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/enums/item_type.dart';
 import 'package:prapare/ui/views/survey/answer/answer_item.dart';
 
-import 'answer_item_decimal_or_string_controller.dart';
 import '../enable_when_option.dart';
+import 'answer_item_decimal_or_string_controller.dart';
 
 class AnswerItemDecimal extends StatelessWidget implements AnswerItem {
   const AnswerItemDecimal(
@@ -28,6 +28,9 @@ class AnswerItemDecimal extends StatelessWidget implements AnswerItem {
   @override
   final Rx<UserResponse> userResponse;
 
+  Widget buildLeading(BuildContext context) => Container();
+  Widget buildTrailing(BuildContext context) => Container();
+
   @override
   Widget buildAnswer(BuildContext context) {
     final labels = AppLocalizations.of(context);
@@ -41,26 +44,34 @@ class AnswerItemDecimal extends StatelessWidget implements AnswerItem {
       builder: (controller) {
         return Padding(
           padding: const EdgeInsets.all(16.0),
-          child: FocusableActionDetector(
-            onFocusChange: (newValue) => controller.changeFocus(newValue),
-            child: TextFormField(
-              controller: controller.textEditingController,
-              onChanged: (newValue) => controller.obj.value = newValue,
-              keyboardType:
-                  TextInputType.numberWithOptions(decimal: !_isAnswerAnInteger),
-              style: context.textTheme.bodyText2.apply(
-                  decoration: controller.isQuestionDeclined().value
-                      ? TextDecoration.lineThrough
-                      : null),
-              decoration: InputDecoration(
-                border: const OutlineInputBorder(),
-                labelText: labels.validation.instructions.number,
+          child: Row(
+            children: [
+              buildLeading(context),
+              Expanded(
+                child: FocusableActionDetector(
+                  onFocusChange: (newValue) => controller.changeFocus(newValue),
+                  child: TextFormField(
+                    controller: controller.textEditingController,
+                    onChanged: (newValue) => controller.obj.value = newValue,
+                    keyboardType: TextInputType.numberWithOptions(
+                        decimal: !_isAnswerAnInteger),
+                    style: context.textTheme.bodyText2.apply(
+                        decoration: controller.isQuestionDeclined().value
+                            ? TextDecoration.lineThrough
+                            : null),
+                    decoration: InputDecoration(
+                      border: const OutlineInputBorder(),
+                      labelText: labels.validation.instructions.number,
+                    ),
+                    validator: (String newValue) =>
+                        ValidatorsUtil().isNewAnswerValueValid(newValue, answer)
+                            ? null
+                            : labels.validation.error,
+                  ),
+                ),
               ),
-              validator: (String newValue) =>
-                  ValidatorsUtil().isNewAnswerValueValid(newValue, answer)
-                      ? null
-                      : labels.validation.error,
-            ),
+              buildTrailing(context),
+            ],
           ),
         );
       },

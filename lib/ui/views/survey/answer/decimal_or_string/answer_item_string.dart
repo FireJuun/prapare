@@ -6,8 +6,8 @@ import 'package:prapare/models/fhir_questionnaire/survey/enums/item_type.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 
 import '../answer_item.dart';
-import 'answer_item_decimal_or_string_controller.dart';
 import '../enable_when_option.dart';
+import 'answer_item_decimal_or_string_controller.dart';
 
 class AnswerItemString extends StatelessWidget implements AnswerItem {
   const AnswerItemString(
@@ -27,6 +27,9 @@ class AnswerItemString extends StatelessWidget implements AnswerItem {
   @override
   final Rx<UserResponse> userResponse;
 
+  Widget buildLeading(BuildContext context) => Container();
+  Widget buildTrailing(BuildContext context) => Container();
+
   @override
   Widget buildAnswer(BuildContext context) {
     final labels = AppLocalizations.of(context);
@@ -43,8 +46,8 @@ class AnswerItemString extends StatelessWidget implements AnswerItem {
         return Padding(
           padding: const EdgeInsets.all(16.0),
           child: Row(
-            mainAxisSize: MainAxisSize.min,
             children: [
+              buildLeading(context),
               Expanded(
                 child: FocusableActionDetector(
                   onFocusChange: (newValue) => controller.changeFocus(newValue),
@@ -68,25 +71,7 @@ class AnswerItemString extends StatelessWidget implements AnswerItem {
                   ),
                 ),
               ),
-              // refresh icon for Q5, what language are you most comfortable speaking
-              // (question.linkId == '/93043-8/54899-0')
-              //     ? Padding(
-              //         padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              //         child: Column(
-              //           children: [
-              //             Text(labels.language.update + ':'),
-              //             IconButton(
-              //                 icon: const Icon(Icons.refresh),
-              //                 tooltip: labels.language.setPreferred,
-              //                 onPressed: () {
-              //                   controller.textEditingController.text =
-              //                       labels.language.title;
-              //                   controller.obj.value = labels.language.title;
-              //                 }),
-              //           ],
-              //         ),
-              //       )
-              //     : Container(),
+              buildTrailing(context),
             ],
           ),
         );
