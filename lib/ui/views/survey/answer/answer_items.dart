@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:prapare/_internal/utils/utils.dart';
 import 'package:prapare/controllers/controllers.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
-import 'package:prapare/ui/views/survey/answer/answer_item_decline_to_answer.dart';
+import 'package:prapare/ui/views/survey/answer/boolean/answer_item_decline_to_answer.dart';
 
 class AnswerItems extends StatelessWidget {
   const AnswerItems({

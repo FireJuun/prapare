@@ -8,8 +8,8 @@ import 'package:prapare/models/fhir_questionnaire/survey/user_response/user_resp
 import 'package:prapare/models/fhir_questionnaire/survey/answer.dart';
 import 'package:prapare/ui/views/survey/answer/answer_item.dart';
 
-import 'answer_title.dart';
-import 'enable_when_option.dart';
+import '../answer_title.dart';
+import '../enable_when_option.dart';
 
 class AnswerItemDeclineToAnswer extends StatelessWidget implements AnswerItem {
   const AnswerItemDeclineToAnswer(

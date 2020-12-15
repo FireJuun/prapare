@@ -5,6 +5,7 @@ import 'package:prapare/_internal/utils/utils.dart';
 import 'package:prapare/controllers/controllers.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/models/fhir_questionnaire/questionnaire_model.dart';
+import 'package:prapare/models/fhir_questionnaire/survey/user_response/response_type.dart';
 
 class QuestionnaireController extends GetxController {
   /// A semi-temporary data model, which will be transitioned to harness [prapareSurvey]
@@ -208,7 +209,7 @@ class QuestionnaireController extends GetxController {
     return true;
   }
 
-  Future<void> createAndMapAllData() async {
+  Future<bool> createAndMapAllData() async {
     isDataLoaded.value = false;
     await _model.loadAndCreateSurvey();
     await _mapAllQuestions();
@@ -219,8 +220,8 @@ class QuestionnaireController extends GetxController {
   }
 
   @override
-  void onInit() {
-    createAndMapAllData();
+  Future<void> onInit() async {
+    await createAndMapAllData();
     super.onInit();
   }
 }
