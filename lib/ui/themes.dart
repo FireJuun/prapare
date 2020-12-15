@@ -30,7 +30,7 @@ class _AppColors {
   //this is the blue 'prapare' logo color and text when completed in light mode
   static const Color blueTextComplete = Color(0xFF004270);
   //this is the light mode "family and home" banner color
-  static const Color blueDarkMode = Color(0xFF5087AC);
+  static const Color blueDarkMode = Color(0xFF427699);
   //this is the dark mode "family and home" banner - FF002F4E
   static const Color blueGreen = Color(0xFF005A6C);
   //this is the light mode "social and emotional health" banner
@@ -44,7 +44,7 @@ class _AppColors {
   //this is the light mode "optional measures" banner
   static const Color greyDisabled = Color(0xFFB5B5B5);
   // disabled grey for bottom nav bar
-  static const Color greyDarkMode = Color(0xFF868686);
+  static const Color greyDarkMode = Color(0xFF4B4949);
   //this is the dark mode "optional measures" banner
   static const Color blackSurface = Color(0xff050505);
   //this is the dark mode "PRAPARE" banner color - 052505
@@ -112,6 +112,7 @@ class AppTheme {
           ..heading4 = _AppColors.blueGreen
           ..heading5 = _AppColors.grey
           ..textComplete = _AppColors.greenSurfaceDark
+          ..textLight = _AppColors.textLight
           ..disabled = _AppColors.greyDisabled
           ..grey = _AppColors.grey
           ..error = Colors.red.shade900
@@ -120,7 +121,7 @@ class AppTheme {
       case ThemeType.Prapare_Dark:
         return AppTheme(isDark: true)
           ..bg1 = _AppColors.blackBackground
-          ..bg2 = _AppColors.greenSurfaceDark
+          ..bg2 = _AppColors.greyDarkMode
           ..surface = _AppColors.blackSurface
           ..primary = _AppColors.orangeDark
           ..primaryVariant = _AppColors.orange
@@ -132,6 +133,7 @@ class AppTheme {
           ..heading4 = _AppColors.blueGreenDarkMode
           ..heading5 = _AppColors.greyDarkMode
           ..textComplete = _AppColors.orangeDark
+          ..textLight = _AppColors.textLight
           ..disabled = _AppColors.greyDisabled
           ..grey = _AppColors.grey
           ..error = _AppColors.redDarkMode
@@ -156,6 +158,7 @@ class AppTheme {
   Color heading4;
   Color heading5;
   Color textComplete;
+  Color textLight;
   Color disabled;
   Color grey;
   Color error;
