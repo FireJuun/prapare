@@ -5,7 +5,7 @@ import 'package:prapare/ui/views/survey/group_view.dart';
 
 part 'app_routes.dart';
 
-abstract class AppPages {
+mixin AppPages {
   static final pages = [
     GetPage(name: Routes.HOME, page: () => HomeView()),
     GetPage(

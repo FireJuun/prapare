@@ -4,9 +4,9 @@ import 'package:prapare/controllers/commands/commands.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/ui/views/survey/answer/answer_item.dart';
 
-import 'answer_item_checkbox_controller.dart';
 import '../answer_title.dart';
 import '../enable_when_option.dart';
+import 'answer_item_checkbox_controller.dart';
 
 class AnswerItemCheckbox extends StatelessWidget implements AnswerItem {
   const AnswerItemCheckbox(

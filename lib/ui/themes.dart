@@ -28,7 +28,7 @@ class _AppColors {
   //this is the dark mode "money and resources" banner
   static const Color blue = Color(0xFF567599);
   //this is the blue 'prapare' logo color and text when completed in light mode
-  static const Color blueTextComplete = Color(0xFF004270);
+  // static const Color blueTextComplete = Color(0xFF004270);
   //this is the light mode "family and home" banner color
   static const Color blueDarkMode = Color(0xFF427699);
   //this is the dark mode "family and home" banner - FF002F4E
@@ -38,7 +38,7 @@ class _AppColors {
   //this is the dark mode "social and emotional health" banner
   static const Color greySurface = Color(0xFFE4E4E3);
   //this is the light mode color used for the home view background and the settings menu background
-  static const Color greySurfaceDark = Color(0xff484847);
+  // static const Color greySurfaceDark = Color(0xff484847);
   //not currently being used
   static const Color grey = Color(0xFF636463);
   //this is the light mode "optional measures" banner
@@ -48,7 +48,7 @@ class _AppColors {
   //this is the dark mode "optional measures" banner
   static const Color blackSurface = Color(0xff050505);
   //this is the dark mode "PRAPARE" banner color - 052505
-  static const Color blackSurfaceDark = Color(0xFFE4E4E3);
+  // static const Color blackSurfaceDark = Color(0xFFE4E4E3);
   //not currently being used
   static const Color blackBackground = Color(0xff181818);
   //this is the dark mode color used for the home view background and the settings menu
