@@ -31,11 +31,34 @@ class AnswerItemDecimal extends StatelessWidget implements AnswerItem {
   Widget buildLeading(BuildContext context) => Container();
   Widget buildTrailing(BuildContext context) => Container();
 
-  @override
-  Widget buildAnswer(BuildContext context) {
+  Widget buildTextFormField(BuildContext context) {
+    final AnswerItemDecimalOrStringController controller =
+        Get.find(tag: answer.code);
     final labels = AppLocalizations.of(context);
     final bool _isAnswerAnInteger = answer.answerItemType == ItemType.integer;
 
+    return TextFormField(
+      controller: controller.textEditingController,
+      onChanged: (newValue) => controller.obj.value = newValue,
+      keyboardType:
+          TextInputType.numberWithOptions(decimal: !_isAnswerAnInteger),
+      style: context.textTheme.bodyText2.apply(
+          decoration: controller.isQuestionDeclined().value
+              ? TextDecoration.lineThrough
+              : null),
+      decoration: InputDecoration(
+        border: const OutlineInputBorder(),
+        labelText: labels.validation.instructions.number,
+      ),
+      validator: (String newValue) =>
+          ValidatorsUtil().isNewAnswerValueValid(newValue, answer)
+              ? null
+              : labels.validation.error,
+    );
+  }
+
+  @override
+  Widget buildAnswer(BuildContext context) {
     return GetX<AnswerItemDecimalOrStringController>(
       init: AnswerItemDecimalOrStringController(
           answer: answer, userResponse: userResponse),
@@ -50,24 +73,7 @@ class AnswerItemDecimal extends StatelessWidget implements AnswerItem {
               Expanded(
                 child: FocusableActionDetector(
                   onFocusChange: (newValue) => controller.changeFocus(newValue),
-                  child: TextFormField(
-                    controller: controller.textEditingController,
-                    onChanged: (newValue) => controller.obj.value = newValue,
-                    keyboardType: TextInputType.numberWithOptions(
-                        decimal: !_isAnswerAnInteger),
-                    style: context.textTheme.bodyText2.apply(
-                        decoration: controller.isQuestionDeclined().value
-                            ? TextDecoration.lineThrough
-                            : null),
-                    decoration: InputDecoration(
-                      border: const OutlineInputBorder(),
-                      labelText: labels.validation.instructions.number,
-                    ),
-                    validator: (String newValue) =>
-                        ValidatorsUtil().isNewAnswerValueValid(newValue, answer)
-                            ? null
-                            : labels.validation.error,
-                  ),
+                  child: buildTextFormField(context),
                 ),
               ),
               buildTrailing(context),

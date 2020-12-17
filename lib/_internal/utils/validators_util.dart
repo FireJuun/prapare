@@ -3,8 +3,8 @@ import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:validators/validators.dart' as validate;
 
 class ValidatorsUtil {
-  bool isValidDecimal(String str) => validate.isFloat(str);
-  bool isValidInteger(String str) => validate.isInt(str);
+  bool isValidDecimal(String str) => validate.isFloat(str) && str != '';
+  bool isValidInteger(String str) => validate.isInt(str) && str != '';
 
   bool isEmpty(String str) => str == null || str == '';
   bool isNotEmpty(String str) => str != null && str != '';

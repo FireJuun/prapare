@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_multi_formatter/utils/unfocuser.dart';
 import 'package:get/get.dart';
 import 'package:prapare/controllers/controllers.dart';
 import 'package:prapare/controllers/theme_controller.dart';
@@ -13,19 +14,9 @@ class GroupView extends StatelessWidget {
     final AppTheme appTheme = Get.find<ThemeController>()
         .getAppThemeFromBrightness(context.theme.brightness);
 
-    /// GestureDetector used to handle tap events to remove focus from keyboard
-    /// spec: https://flutterigniter.com/dismiss-keyboard-form-lose-focus/
-    /// NestedScrollView allows the header sliver + tabs to all use same scroll controller
-    /// spec: https://api.flutter.dev/flutter/widgets/NestedScrollView-class.html
+    /// GestureDetector workaround replace w/ Unfocuser
 
-    return GestureDetector(
-      onTap: () {
-        final FocusScopeNode currentFocus = FocusScope.of(context);
-
-        if (!currentFocus.hasPrimaryFocus) {
-          currentFocus.unfocus();
-        }
-      },
+    return Unfocuser(
       child: Obx(
         () => dataController.isDataLoaded.value
             ? GroupViewDataLoaded()

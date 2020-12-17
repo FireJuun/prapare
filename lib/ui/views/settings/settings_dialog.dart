@@ -40,7 +40,17 @@ class _SettingsDialogContent extends StatelessWidget {
 
     final TextTheme textTheme = context.textTheme;
     return AlertDialog(
-      title: Text(labels.app.settings, style: textTheme.headline5),
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(labels.app.settings, style: textTheme.headline5),
+          IconButton(
+            icon: const Icon(Icons.info),
+            //todo:
+            onPressed: () {},
+          ),
+        ],
+      ),
       content: GetX<SettingsController>(
         init: SettingsController(),
         builder: (controller) => SingleChildScrollView(

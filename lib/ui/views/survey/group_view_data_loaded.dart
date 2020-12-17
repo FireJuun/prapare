@@ -28,6 +28,9 @@ class GroupViewDataLoaded extends StatelessWidget {
       backgroundColor: appTheme.bg2,
       body: Form(
         key: validationController.formKey,
+
+        /// NestedScrollView allows the header sliver + tabs to all use same scroll controller
+        /// spec: https://api.flutter.dev/flutter/widgets/NestedScrollView-class.html
         child: NestedScrollView(
           floatHeaderSlivers: true,
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
