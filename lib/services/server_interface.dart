@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:fhir/r4.dart';
 import 'package:fhir_at_rest/fhir_at_rest.dart' as rest;
+import 'package:get/get.dart';
 import 'package:smart_on_fhir/smart_on_fhir.dart';
 
 import 'db_interface.dart';
@@ -10,9 +11,6 @@ class ServerInterface {
   ServerInterface();
 
   Future uploadAllToAidbox() async {
-    final patient = Patient();
-    await DbInterface().save(patient);
-
     /// retrieve a list of all resources that are stored locally
     final allResources = await DbInterface().allResources();
     allResources.fold(
@@ -55,31 +53,44 @@ class ServerInterface {
           fhirServer: FhirUri('https://prapare.aidbox.app/fhir'),
         );
         final auth = await smart.client(secret: 'verysecret');
-        auth.fold((left) => print(left.errorMessage()), (right) async {
-          var uploadBundle = Bundle(type: BundleType.transaction, entry: []);
-          for (var resource in r) {
-            print(resource.toJson());
-            uploadBundle.entry.add(
-              BundleEntry(
-                resource: resource,
-                request: BundleRequest(
-                  method: BundleRequestMethod.put,
-                  url: FhirUri(resource.resourceType),
+        auth.fold(
+          (left) => print(left.errorMessage()),
+          (right) async {
+            var uploadBundle = Bundle(type: BundleType.transaction, entry: []);
+            for (var resource in r) {
+              print(resource.toJson());
+              uploadBundle.entry.add(
+                BundleEntry(
+                  resource: resource,
+                  request: BundleRequest(
+                    method: BundleRequestMethod.put,
+                    url: FhirUri(resource.resourceType),
+                  ),
                 ),
-              ),
-            );
-          }
-          final transaction = rest.TransactionRequest.r4(
-              base: Uri.parse('https://prapare.aidbox.app/fhir'));
-          final transactionReq = await transaction.request(
-            uploadBundle,
-            headers: {
-              HttpHeaders.authorizationHeader: 'Bearer ${right.accessToken}'
-            },
-          );
-          print(transactionReq.fold((lefting) => lefting.errorMessage(),
-              (righting) => righting.toJson()));
-        });
+              );
+            }
+
+            try {
+              final transaction = rest.TransactionRequest.r4(
+                  base: Uri.parse('https://prapare.aidbox.app/fhir'));
+              final transactionReq = await transaction.request(
+                uploadBundle,
+                headers: {
+                  HttpHeaders.authorizationHeader: 'Bearer ${right.accessToken}'
+                },
+              );
+              print(transactionReq.toString());
+              print(
+                transactionReq.fold(
+                  (lefting) => lefting.errorMessage(),
+                  (righting) => righting.toJson(),
+                ),
+              );
+            } catch (e) {
+              Get.snackbar('Server Error', e.toString());
+            }
+          },
+        );
       },
     );
   }

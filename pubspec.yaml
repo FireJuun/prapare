@@ -30,8 +30,8 @@ dependencies:
       url: https://github.com/fhir-fli/smart_on_fhir.git
       ref: prapare
   cupertino_icons: ^1.0.0
-  fhir: ^0.0.11
-  fhir_at_rest: ^0.0.8
+  fhir: ^0.0.12
+  fhir_at_rest: ^0.0.9
   fhir_db: ^0.0.2
   flutter_sheet_localization: ^2.0.0
   flutter_svg: ^0.19.0
