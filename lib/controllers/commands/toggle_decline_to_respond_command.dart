@@ -23,7 +23,7 @@ class ToggleDeclineToRespondCommand extends AbstractCommand {
     // when toggled on...
     if (newValue) {
       // remove other/prior responses for this question
-      responsesController.clearAllUserResponses(userResponse);
+      responsesController.clearAllUserResponses(userResponse, true);
     }
 
     validationController.validateIfQuestionAndGroupAreCompleted(userResponse);

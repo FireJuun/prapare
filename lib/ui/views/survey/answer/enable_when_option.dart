@@ -41,7 +41,6 @@ class EnableWhenOption extends StatelessWidget {
             enabledQuestion.answers.firstWhere((e) => e.code == answer.code);
         final Rx<UserResponse> enabledUserResponse =
             userResponsesController.findActiveResponse(enabledQuestion.linkId);
-        print('');
 
         return Column(
           mainAxisSize: MainAxisSize.min,

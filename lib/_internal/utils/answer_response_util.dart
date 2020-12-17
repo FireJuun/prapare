@@ -13,6 +13,22 @@ class AnswerResponseUtil {
           orElse: () => newAnswerResponseFromAnswerAndValue(
               answer: answer, newValue: ''));
 
+  String getAnswerCodeFromAnswerResponse(
+      AnswerResponse answerResponse, Rx<UserResponse> userResponse) {
+    String answerCode;
+
+    if (answerResponse is AnswerCode) {
+      answerCode = answerResponse.value;
+    } else if (answerResponse is AnswerOther) {
+      answerCode = answerResponse.code;
+    } else if (answerResponse is AnswerBoolean) {
+      answerCode = answerResponse.code;
+    } else {
+      answerCode = userResponse.value.questionLinkId;
+    }
+    return answerCode;
+  }
+
   void setAnswerResponseValue(
           AnswerResponse answerResponse, dynamic newValue) =>
       answerResponse.value = newValue;
