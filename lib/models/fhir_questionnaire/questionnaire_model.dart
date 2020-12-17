@@ -74,7 +74,10 @@ class QuestionnaireModel {
 
     saveResult.fold(
       (l) => Get.snackbar('Error: ', l.errorMessage),
-      (r) => Get.snackbar('Saved', 'Survey Successfully Saved'),
+      (r) {
+        Get.snackbar('Saved', 'Survey Successfully Saved');
+        print(r.toJson());
+      },
     );
   }
 
@@ -123,11 +126,103 @@ class QuestionnaireModel {
       QuestionnaireItem item, List<UserResponse> responsesForThisItem) {
     final responseAnswer = <QuestionnaireResponseAnswer>[];
     for (var answer in responsesForThisItem) {
-      final QuestionnaireAnswerOption thisAnswer = item.answerOption.firstWhere(
-          (option) => option.valueCoding.code == Code(answer.questionLinkId),
-          orElse: () => null);
-      responseAnswer.add(
-          QuestionnaireResponseAnswer(valueCoding: thisAnswer?.valueCoding));
+      for (var response in answer.answers) {
+        QuestionnaireAnswerOption thisAnswer;
+        switch (response.runtimeType) {
+          case AnswerCode:
+            {
+              thisAnswer = item.answerOption.firstWhere(
+                  (option) =>
+                      option.valueCoding.code == Code(answer.questionLinkId),
+                  orElse: () => null);
+              if (thisAnswer != null) {
+                responseAnswer.add(QuestionnaireResponseAnswer(
+                    valueCoding: thisAnswer?.valueCoding));
+              }
+              break;
+            }
+          case AnswerOther:
+            {
+              break;
+            }
+          case AnswerBoolean:
+            {
+              responseAnswer.add(QuestionnaireResponseAnswer(
+                  valueBoolean: Boolean(response.value)));
+              break;
+            }
+          case AnswerDecimal:
+            {
+              responseAnswer.add(QuestionnaireResponseAnswer(
+                  valueDecimal: Decimal(response.value)));
+              break;
+            }
+          case AnswerInteger:
+            {
+              responseAnswer.add(QuestionnaireResponseAnswer(
+                  valueInteger: Integer(response.value)));
+              break;
+            }
+          case AnswerString:
+            {
+              responseAnswer.add(
+                  QuestionnaireResponseAnswer(valueString: response.value));
+              break;
+            }
+          case AnswerText:
+            {
+              responseAnswer.add(
+                  QuestionnaireResponseAnswer(valueString: response.value));
+              break;
+            }
+          case AnswerDate:
+            {
+              responseAnswer.add(
+                  QuestionnaireResponseAnswer(valueDate: Date(response.value)));
+              break;
+            }
+          case AnswerTime:
+            {
+              final DateTime dateTime = response.value;
+              final time = '${dateTime.hour.toString().padLeft(2, "0")}:'
+                  '${dateTime.minute.toString().padLeft(2, "0")}:'
+                  '${dateTime.second.toString().padLeft(2, "0")}';
+              responseAnswer
+                  .add(QuestionnaireResponseAnswer(valueTime: Time(time)));
+              break;
+            }
+          case AnswerDateTime:
+            {
+              responseAnswer.add(QuestionnaireResponseAnswer(
+                  valueDateTime: FhirDateTime(response.value)));
+              break;
+            }
+          case AnswerUrl:
+            {
+              responseAnswer.add(QuestionnaireResponseAnswer(
+                  valueUri: FhirUri(response.value)));
+              break;
+            }
+          case AnswerAttachment:
+            {
+              responseAnswer.add(
+                  QuestionnaireResponseAnswer(valueAttachment: response.value));
+              break;
+            }
+          case AnswerReference:
+            {
+              responseAnswer.add(
+                  QuestionnaireResponseAnswer(valueReference: response.value));
+              break;
+            }
+          case AnswerQuantity:
+            {
+              responseAnswer.add(
+                  QuestionnaireResponseAnswer(valueQuantity: response.value));
+              break;
+            }
+        }
+      }
     }
     return responseAnswer;
   }
