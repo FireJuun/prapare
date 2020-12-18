@@ -7,8 +7,10 @@ import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/models/fhir_questionnaire/questionnaire_model.dart';
 
 class QuestionnaireController extends GetxController {
-  /// A semi-temporary data model, which will be transitioned to harness [prapareSurvey]
-  /// For now, the data points have been created manually, and the codes don't quite correlate yet
+  /// A data model of [prapareSurvey] that persists in memory
+  /// This controller takes all data from the FHIR survey
+  /// and saves them to various [_allQuestions] formats based on use case
+  /// userResponse and validation options are also created on first load
 
   final QuestionnaireModel _model = QuestionnaireModel();
 
