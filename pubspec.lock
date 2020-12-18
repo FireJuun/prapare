@@ -42,7 +42,7 @@ packages:
       name: basic_utils
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.7.0-rc.1"
+    version: "2.7.0-rc.4"
   boolean_selector:
     dependency: transitive
     description:
@@ -231,14 +231,14 @@ packages:
       name: fhir
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.11"
+    version: "0.0.12"
   fhir_at_rest:
     dependency: "direct main"
     description:
       name: fhir_at_rest
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.8"
+    version: "0.0.9"
   fhir_db:
     dependency: "direct main"
     description:
@@ -414,7 +414,7 @@ packages:
       name: json_annotation
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.1.0"
+    version: "3.1.1"
   logging:
     dependency: transitive
     description:
