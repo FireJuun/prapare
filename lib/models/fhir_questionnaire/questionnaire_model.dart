@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 
+import 'dart:convert';
+
 import 'package:fhir/r4.dart';
 import 'package:get/get.dart';
 import 'package:prapare/_internal/constants/prapare_survey.dart';
@@ -59,7 +61,7 @@ class QuestionnaireModel {
   }
 
   /// saves the Questionnaire locally
-  Future saveResponses(List<UserResponse> responses) async {
+  Future<Resource> saveResponses(List<UserResponse> responses) async {
     _data.userResponses.retainWhere((r) => false);
     _data.userResponses.addAll(responses);
     _data.response = QuestionnaireResponse(
@@ -73,12 +75,12 @@ class QuestionnaireModel {
     final saveResult = await DbInterface().save(_data.response);
 
     saveResult.fold(
-      (l) => Get.snackbar('Error: ', l.errorMessage),
+      (l) => print(l.errorMessage),
       (r) {
-        Get.snackbar('Saved', 'Survey Successfully Saved');
-        print(r.toJson());
+        return r;
       },
     );
+    return null;
   }
 
   List<QuestionnaireResponseItem> _getResponse(List<QuestionnaireItem> item) {
@@ -133,7 +135,8 @@ class QuestionnaireModel {
             {
               thisAnswer = item.answerOption.firstWhere(
                   (option) =>
-                      option.valueCoding.code == Code(answer.questionLinkId),
+                      option.valueCoding.code ==
+                      Code(response.value.split('/').last),
                   orElse: () => null);
               if (thisAnswer != null) {
                 responseAnswer.add(QuestionnaireResponseAnswer(
@@ -143,6 +146,8 @@ class QuestionnaireModel {
             }
           case AnswerOther:
             {
+              responseAnswer.add(
+                  QuestionnaireResponseAnswer(valueString: response.value));
               break;
             }
           case AnswerBoolean:
