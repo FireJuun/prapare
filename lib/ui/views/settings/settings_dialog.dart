@@ -6,11 +6,14 @@ import 'package:prapare/models/menu_options/menu_option.dart';
 import 'package:prapare/routes/routes.dart';
 import 'package:prapare/ui/views/settings/settings_controller.dart';
 
-Future<void> settingsDialog(BuildContext context) async => showDialog<void>(
-      context: context,
-      // barrierDismissible: false,
-      builder: (BuildContext context) => _SettingsDialogContent(),
-    );
+// Future<void> settingsDialog(BuildContext context) async => showDialog<void>(
+//       context: context,
+//       // barrierDismissible: false,
+//       builder: (BuildContext context) => _SettingsDialogContent(),
+//     );
+
+Future<void> settingsDialog() async =>
+    await Get.dialog(_SettingsDialogContent());
 
 class _SettingsDialogContent extends StatelessWidget {
   @override
@@ -48,7 +51,7 @@ class _SettingsDialogContent extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.info),
             //todo:
-            onPressed: () => Get.toNamed(Routes.INFO),
+            onPressed: () => Get.offAndToNamed(Routes.INFO),
           ),
         ],
       ),

@@ -27,7 +27,8 @@ class HomeView extends StatelessWidget {
             ),
             child: SafeArea(
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 24.0),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 24.0, horizontal: 8.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   mainAxisSize: MainAxisSize.max,
@@ -36,9 +37,11 @@ class HomeView extends StatelessWidget {
                     StyledButtonLarge(
                         title: labels.general.newSurvey,
                         onPressed: () => Get.toNamed(Routes.GROUP)),
-                    StyledButtonLarge(title: labels.general.editSurvey
-                        // onPressed: () => print(labels.general.birthDate),
-                        ),
+                    StyledButtonLarge(
+                      title: labels.general.editSurvey,
+                      onPressed: () => Get.toNamed(Routes.INFO),
+                      // onPressed: () => print(labels.general.birthDate),
+                    ),
                     StyledButtonLarge(
                       title: labels.general.submitShare,
                       onPressed: () async {
@@ -48,7 +51,7 @@ class HomeView extends StatelessWidget {
                         responses.fold(
                           (l) => Get.snackbar('Error', l.errorMessage),
                           (r) async {
-                            var bundle = Bundle(
+                            final bundle = Bundle(
                               type: BundleType.transaction,
                               entry: [],
                             );
@@ -74,7 +77,7 @@ class HomeView extends StatelessWidget {
                         alignment: const FractionalOffset(0.8, 0),
                         child: IconButton(
                             icon: const Icon(Icons.settings, size: 36),
-                            onPressed: () => settingsDialog(context)))
+                            onPressed: () => settingsDialog()))
                   ],
                 ),
               ),

@@ -50,7 +50,7 @@ class GroupViewDataLoaded extends StatelessWidget {
                   actions: [
                     IconButton(
                         icon: const Icon(Icons.settings),
-                        onPressed: () => settingsDialog(context))
+                        onPressed: () => settingsDialog())
                   ],
                   expandedHeight: _expandedHeight,
                   collapsedHeight: _collapsedHeight,
