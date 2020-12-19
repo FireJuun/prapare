@@ -39,6 +39,17 @@ class AppIcons {
   static const String SOCIAL_ICON_INACTIVE =
       'assets/icons/survey_tab/social_icon_inactive.svg';
   static const String SOCIAL_ICON = 'assets/icons/survey_tab/social_icon.svg';
+
+  static const String INFO_CLINICAL_TRIAL_ICON =
+      'assets/icons/info/clinical-trial.svg';
+  static const String INFO_DATABASE_ICON =
+      'assets/icons/info/database-search.svg';
+  static const String INFO_FAMILY_ICON = 'assets/icons/info/family.svg';
+  static const String INFO_LICENSE_ICON = 'assets/icons/info/license.svg';
+  static const String INFO_LIFE_STAGE_ICON = 'assets/icons/info/life-stage.svg';
+  static const String INFO_STETHOSCOPE_ICON =
+      'assets/icons/info/stethoscope.svg';
+  static const String INFO_SURVEY_ICON = 'assets/icons/info/survey.svg';
 }
 
 class AppImages {
