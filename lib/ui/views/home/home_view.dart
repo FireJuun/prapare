@@ -77,7 +77,7 @@ class HomeView extends StatelessWidget {
                         alignment: const FractionalOffset(0.8, 0),
                         child: IconButton(
                             icon: const Icon(Icons.settings, size: 36),
-                            onPressed: () => settingsDialog()))
+                            onPressed: () => settingsDialog(context)))
                   ],
                 ),
               ),
