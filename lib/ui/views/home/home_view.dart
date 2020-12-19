@@ -18,73 +18,55 @@ class HomeView extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(toolbarHeight: 0),
-      body: LayoutBuilder(
-          builder: (BuildContext context, BoxConstraints viewportConstraints) {
-        return SingleChildScrollView(
-          child: ConstrainedBox(
-            constraints: BoxConstraints(
-              minHeight: viewportConstraints.maxHeight,
-            ),
-            child: SafeArea(
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 24.0, horizontal: 8.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    AppLogo(),
-                    StyledButtonLarge(
-                        title: labels.general.newSurvey,
-                        onPressed: () => Get.toNamed(Routes.GROUP)),
-                    StyledButtonLarge(
-                      title: labels.general.editSurvey,
-                      onPressed: () => Get.toNamed(Routes.INFO),
-                      // onPressed: () => print(labels.general.birthDate),
-                    ),
-                    StyledButtonLarge(
-                      title: labels.general.submitShare,
-                      onPressed: () async {
-                        final responses = await DbInterface()
-                            .returnListOfSingleResourceType(
-                                'QuestionnaireResponse');
-                        responses.fold(
-                          (l) => Get.snackbar('Error', l.errorMessage),
-                          (r) async {
-                            final bundle = Bundle(
-                              type: BundleType.transaction,
-                              entry: [],
-                            );
-                            for (var response in r) {
-                              bundle.entry.add(BundleEntry(
-                                  resource: response,
-                                  request: BundleRequest(
-                                      method: BundleRequestMethod.post,
-                                      url: FhirUri('QuestionnaireResponse'))));
-                            }
-                            const encoder = JsonEncoder.withIndent('  ');
-                            final saveBundle = encoder.convert(bundle.toJson());
-                            await saveLocally(saveBundle);
-                            await hapi(bundle);
-                            Get.dialog(Dialog(
-                                child: SingleChildScrollView(
-                                    child: Text(saveBundle))));
-                          },
-                        );
-                      },
-                    ),
-                    Align(
-                        alignment: const FractionalOffset(0.8, 0),
-                        child: IconButton(
-                            icon: const Icon(Icons.settings, size: 36),
-                            onPressed: () => settingsDialog(context)))
-                  ],
-                ),
-              ),
+      body: StyledScrollOnOverflow(
+        children: [
+          AppLogo(),
+          StyledButtonLarge(
+              title: labels.general.newSurvey,
+              onPressed: () => Get.toNamed(Routes.GROUP)),
+          StyledButtonLarge(
+            title: labels.general.editSurvey,
+            onPressed: () => Get.toNamed(Routes.INFO),
+            // onPressed: () => print(labels.general.birthDate),
+          ),
+          StyledButtonLarge(
+            title: labels.general.submitShare,
+            onPressed: () async {
+              final responses = await DbInterface()
+                  .returnListOfSingleResourceType('QuestionnaireResponse');
+              responses.fold(
+                (l) => Get.snackbar('Error', l.errorMessage),
+                (r) async {
+                  final bundle = Bundle(
+                    type: BundleType.transaction,
+                    entry: [],
+                  );
+                  for (var response in r) {
+                    bundle.entry.add(BundleEntry(
+                        resource: response,
+                        request: BundleRequest(
+                            method: BundleRequestMethod.post,
+                            url: FhirUri('QuestionnaireResponse'))));
+                  }
+                  const encoder = JsonEncoder.withIndent('  ');
+                  final saveBundle = encoder.convert(bundle.toJson());
+                  await saveLocally(saveBundle);
+                  await hapi(bundle);
+                  Get.dialog(Dialog(
+                      child: SingleChildScrollView(child: Text(saveBundle))));
+                },
+              );
+            },
+          ),
+          Align(
+            alignment: const FractionalOffset(0.8, 0),
+            child: IconButton(
+              icon: const Icon(Icons.settings, size: 36),
+              onPressed: () => settingsDialog(context),
             ),
           ),
-        );
-      }),
+        ],
+      ),
     );
   }
 }
