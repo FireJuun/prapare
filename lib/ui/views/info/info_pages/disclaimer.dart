@@ -31,7 +31,8 @@ class _DisclaimerText extends StatelessWidget {
           InfoText('If you are interested in'),
           InfoText('using this clinically, go to:'),
           // todo: add hyperlink
-          InfoText('mayjuun.com/portfolio/prapare-survey'),
+          InfoTextLink('mayjuun.com/portfolio/prapare-survey',
+              'https://mayjuun.com/portfolio/prapare-survey'),
           InfoSpacing(),
           InfoSpacing(),
           InfoText('We can chat.'),

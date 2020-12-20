@@ -21,12 +21,11 @@ class _LicensesText extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: const [
-          InfoText('This is an open-source app'),
-          InfoText('built under the MIT license.'),
+          InfoText('This is an open-source app\nbuilt under the MIT license.'),
           InfoSpacing(),
           InfoText('The code is available at:'),
-          // todo: add hyperlink
-          InfoText('github.com/firejuun/prapare'),
+          InfoTextLink('github.com/firejuun/prapare',
+              'https://github.com/firejuun/prapare'),
           InfoSpacing(),
           InfoSpacing(),
           InfoText('Open-source packages we harnessed:'),
@@ -42,7 +41,7 @@ translator // validators'''),
           InfoSpacing(),
           InfoSpacing(),
           InfoText('Icons in these info screens'),
-          InfoText('are available on Pixabay:'),
+          InfoText('are available on Pixabay.'),
           // todo: add hyperlink
           InfoText('user: mcmurryjulie'),
         ],

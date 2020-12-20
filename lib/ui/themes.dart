@@ -9,7 +9,7 @@ class _AppColors {
   static const Color greenSurfaceDark = Color(0xFF417B5B);
   static const Color green = Color(0xFF689E80);
   //this is the medium green color used for the PRAPARE banner and the button on the home screen
-  static const Color greenDark = Color(0xFF32494e);
+  static const Color greenDark = Color(0xFF357150);
   //in contrast, this is the color used just for the button shadow on the home screen, NOT for the PRAPARE banner
 //todo figure out why "green" is the color for both the button shadow
 //on the home view as well as the banner color behind the PRAPARE logo

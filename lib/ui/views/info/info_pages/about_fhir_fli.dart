@@ -27,19 +27,17 @@ class _AboutFhirFliText extends StatelessWidget {
           InfoSpacing(),
           InfoText(
               'FHIR-FLI seeks to enable interoperability for the info that impacts medical care:'),
-          // todo: add hyperlink
-          InfoText('fhirfli.dev'),
+          InfoTextLink('fhirfli.dev', 'https://fhirfli.dev'),
           InfoSpacing(),
           InfoSpacing(),
           InfoText('It builds heavily on HL7 International’s FHIR standard:'),
-          // todo: add hyperlink
-          InfoText('hl7.org/fhir/overview.html'),
+          InfoTextLink('hl7.org/fhir/overview.html',
+              'https://hl7.org/fhir/overview.html'),
           InfoSpacing(),
           InfoSpacing(),
-          InfoText('FHIR-enabled Flutter'),
-          InfoText('packages are available at:'),
-          // todo: add hyperlink
-          InfoText('pub.dev/publishers/fhirfli.dev'),
+          InfoText('FHIR-enabled Flutter\npackages are available at:'),
+          InfoTextLink('pub.dev/publishers/fhirfli.dev',
+              'https://pub.dev/publishers/fhirfli.dev'),
         ],
       ),
     );

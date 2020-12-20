@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:prapare/ui/icons.dart';
 import 'package:prapare/ui/views/info/info_pages/info_page.dart';
 
@@ -23,8 +22,8 @@ class _AboutPrapareText extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: const [
           InfoText('According to:'),
-          // todo: add hyperlink
-          InfoText('nachc.org/research-and-data/prapare'),
+          InfoTextLink('nachc.org/research-and-data/prapare',
+              'https://nachc.org/research-and-data/prapare'),
           InfoSpacing(),
           InfoTextItalics(
               '''“The Protocol for Responding to and Assessing Patients’ Assets, Risks, and Experiences (PRAPARE) is a national effort to help health centers and other providers collect the data needed to better understand and act on their patients’ social determinants of health”'''),
@@ -32,8 +31,8 @@ class _AboutPrapareText extends StatelessWidget {
           InfoSpacing(),
           InfoText(
               'The tool is available for non-commercial use, as defined in its End User License Agreement (EULA):'),
-          // todo: add hyperlink
-          InfoText('nachc.org/prapare-eula'),
+          InfoTextLink(
+              'nachc.org/prapare-eula', 'https://nachc.org/prapare-eula'),
           InfoSpacing(),
           InfoSpacing(),
           InfoText(
@@ -41,8 +40,7 @@ class _AboutPrapareText extends StatelessWidget {
           InfoSpacing(),
           InfoSpacing(),
           InfoText('We simply took the data available at:'),
-          // todo: add hyperlink
-          InfoText('loinc.org/93025-5'),
+          InfoTextLink('loinc.org/93025-5', 'https://loinc.org/93025-5'),
           InfoSpacing(),
           InfoText('...and built it into a Flutter app'),
         ],

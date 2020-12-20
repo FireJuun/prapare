@@ -47,7 +47,10 @@ class _SettingsDialogContent extends StatelessWidget {
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(labels.app.settings, style: textTheme.headline5),
+          Expanded(
+            child: Text(labels.app.settings,
+                style: textTheme.headline5, textAlign: TextAlign.center),
+          ),
           IconButton(
             icon: const Icon(Icons.info),
             //todo:
