@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:prapare/ui/icons.dart';
 import 'package:prapare/ui/views/info/info_pages/info_page.dart';
 
-import 'shared/export.dart';
+import 'shared/shared.dart';
 
 class Licenses extends InfoPage {
   Licenses({
@@ -21,7 +21,7 @@ class _LicensesText extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: const [
-          InfoText('This is an open-source app\nbuilt under the MIT license.'),
+          TextLicense(),
           InfoSpacing(),
           InfoText('The code is available at:'),
           InfoTextLink('github.com/firejuun/prapare',
@@ -29,21 +29,12 @@ class _LicensesText extends StatelessWidget {
           InfoSpacing(),
           InfoSpacing(),
           InfoText('Open-source packages we harnessed:'),
-          // todo: add links? implement wrap?
-          InfoText('''
-fhir  //  fhir_at_rest  
-fhir_db  //  smart_on_fhir
-flutter_sheet_localization
-flutter_svg
-get // get_storage
-http // url_launcher
-translator // validators'''),
+          TextOpenSource(),
           InfoSpacing(),
           InfoSpacing(),
-          InfoText('Icons in these info screens'),
-          InfoText('are available on Pixabay.'),
-          // todo: add hyperlink
-          InfoText('user: mcmurryjulie'),
+          InfoText(
+              'Icons used in these info screens\nare available on Pixabay.'),
+          TextPixabay(),
         ],
       ),
     );

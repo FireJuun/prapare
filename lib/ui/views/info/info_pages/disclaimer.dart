@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:prapare/ui/icons.dart';
 import 'package:prapare/ui/views/info/info_pages/info_page.dart';
 
-import 'shared/export.dart';
+import 'shared/shared.dart';
 
 class Disclaimer extends InfoPage {
   Disclaimer({
