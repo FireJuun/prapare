@@ -252,7 +252,7 @@ packages:
       name: fhir_db
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.2"
+    version: "0.0.4"
   file:
     dependency: transitive
     description:
@@ -349,7 +349,7 @@ packages:
       name: get
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.22.2"
+    version: "3.23.1"
   get_storage:
     dependency: "direct main"
     description:
