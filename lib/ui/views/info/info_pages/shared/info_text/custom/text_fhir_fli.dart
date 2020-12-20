@@ -31,7 +31,7 @@ class Ctrl extends GetxController {
     final int now = DateTime.now().millisecondsSinceEpoch;
     if (now - lastTap < 900) {
       consecutiveTaps++;
-      if (consecutiveTaps >= 7) {
+      if (consecutiveTaps >= 6) {
         Get.rawSnackbar(message: 'Well done!');
         Get.dialog(_Egg());
       } else if (consecutiveTaps >= 4 && consecutiveTaps <= 6) {

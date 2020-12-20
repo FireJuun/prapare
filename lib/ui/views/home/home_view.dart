@@ -5,9 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/localization.dart';
 import 'package:prapare/routes/routes.dart';
-import 'package:prapare/services/db_interface.dart';
-import 'package:prapare/services/hapi.dart';
-import 'package:prapare/services/save_locally.dart';
+import 'package:prapare/services/services.dart';
 import 'package:prapare/ui/styled_components/styled_components.dart';
 import 'package:prapare/ui/views/settings/settings_dialog.dart';
 
@@ -49,11 +47,11 @@ class HomeView extends StatelessWidget {
                             url: FhirUri('QuestionnaireResponse'))));
                   }
                   const encoder = JsonEncoder.withIndent('  ');
-                  final saveBundle = encoder.convert(bundle.toJson());
-                  await saveLocally(saveBundle);
-                  await hapi(bundle);
+                  final localBundle = encoder.convert(bundle.toJson());
+                  await LocalStorage().saveBundle(localBundle);
+                  await HapiStorage().saveBundle(bundle);
                   Get.dialog(Dialog(
-                      child: SingleChildScrollView(child: Text(saveBundle))));
+                      child: SingleChildScrollView(child: Text(localBundle))));
                 },
               );
             },
