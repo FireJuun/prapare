@@ -12,6 +12,7 @@ class Question extends SurveyItem {
     this.mandatory,
     this.multiAnswer,
     this.subQuestions,
+    this.userResponse,
     this.questionEnableWhen,
   }) : super(linkId, text);
 
@@ -163,6 +164,10 @@ class Question extends SurveyItem {
 
   /// if more than one answer is allowed
   bool multiAnswer;
+
+  /// if the survey has already been started, it may have answers to some of the
+  /// questions, these answers will be saved here
+  UserResponse userResponse;
 
   /// if there are sub-questions, they will be listed here
   List<Question> subQuestions;
