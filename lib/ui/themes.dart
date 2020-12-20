@@ -65,7 +65,7 @@ TextTheme _buildTextTheme() {
     headline3: _style(48.0, FontWeight.normal),
     headline4: _style(36.0, FontWeight.bold),
     headline5: _style(30.0, FontWeight.normal),
-    headline6: _style(20.0, FontWeight.w500),
+    headline6: _style(19.0, FontWeight.w500),
     bodyText1: _style(18.0, FontWeight.normal),
     bodyText2: _style(14.0, FontWeight.normal),
     subtitle1: _style(16.0, FontWeight.normal),

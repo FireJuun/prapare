@@ -3,11 +3,11 @@ import 'package:introduction_screen/introduction_screen.dart';
 
 abstract class InfoPage extends PageViewModel {
   InfoPage({
+    @required Widget image,
+    @required Widget titleWidget,
     @required Widget bodyWidget,
     String title,
-    Widget titleWidget,
     String body,
-    @required Widget image,
     Widget footer,
     PageDecoration decoration = const PageDecoration(),
   }) : super(
