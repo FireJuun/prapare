@@ -32,9 +32,13 @@ class _LicensesText extends StatelessWidget {
           TextOpenSource(),
           InfoSpacing(),
           InfoSpacing(),
-          InfoText(
-              'Icons used in these info screens\nare available on Pixabay.'),
+          InfoText('Icons on these screens\navailable from Pixabay'),
           TextPixabay(),
+          InfoSpacing(),
+          InfoSpacing(),
+          InfoText("Icons on the survey were\ncreated from PRAPARE's"),
+          InfoTextLink('Implementation and Action Toolkit',
+              'https://www.nachc.org/research-and-data/prapare/toolkit/'),
         ],
       ),
     );

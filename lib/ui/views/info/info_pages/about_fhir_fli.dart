@@ -21,8 +21,7 @@ class _AboutFhirFliText extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: const [
-          InfoText('Fast Healthcare Interoperability Resources (FHIR)'),
-          InfoText('...with Flutter Library Integration (FLI)'),
+          TextFhirFli(),
           InfoSpacing(),
           InfoSpacing(),
           InfoText(

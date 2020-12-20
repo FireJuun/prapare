@@ -55,6 +55,8 @@ class AppIcons {
 class AppImages {
   static const String LOGO_TAGLINE =
       'assets/images/PRAPARE-Logo-with-tagline.png';
+  static const String LOGO_TAGLINE_DARK =
+      'assets/images/PRAPARE-Logo-with-tagline-dark.png';
   static const String LOGO_NO_TAGLINE =
       'assets/images/PRAPARE-Logo-no-tagline.png';
   static const String LOGO_NO_TAGLINE_DARK =

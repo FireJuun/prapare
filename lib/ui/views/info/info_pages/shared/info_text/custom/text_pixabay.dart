@@ -9,7 +9,7 @@ class TextPixabay extends StatelessWidget {
   Widget build(BuildContext context) {
     return RichText(
       text: TextSpan(children: [
-        richSpanText('user: '),
+        richSpanText('under user: '),
         richSpanLink(
             'mcmurryjulie', 'https://pixabay.com/users/mcmurryjulie-2375405/'),
       ]),
