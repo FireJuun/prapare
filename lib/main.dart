@@ -18,6 +18,7 @@ Future<void> main() async {
 // Theme uses GetxService so that it isn't closed during app lifecycle
 Future<void> _initServices() async {
   await GetStorage.init();
+  Get.put<StorageController>(StorageController());
   Get.put<LocaleController>(LocaleController());
   Get.put<ThemeController>(ThemeController());
   await ThemeController.to.getThemeModeFromStore();

@@ -2,17 +2,19 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:prapare/localization.dart';
 import 'package:prapare/models/menu_options/menu_option.dart';
 import 'package:prapare/models/menu_options/menu_options_model.dart';
+
+import 'controllers.dart';
 
 // spec: https://github.com/delay/flutter_starter
 class LocaleController extends GetxController {
   static LocaleController get to => Get.find();
 
+  final StorageController _data = Get.find();
+
   final RxString language = ''.obs;
-  final GetStorage store = GetStorage();
   final List<MenuOption> languageOptions = MenuOptionsModel.languageOptions;
 
   String get currentLanguage => language.value;
@@ -37,7 +39,7 @@ class LocaleController extends GetxController {
 
 // Gets current language stored
   RxString get currentLanguageStore {
-    language.value = store.read('language');
+    language.value = _data.store.read('language');
     return language;
   }
 
@@ -63,7 +65,7 @@ class LocaleController extends GetxController {
 // updates the language stored
   Future<void> updateLanguage(String value) async {
     language.value = value;
-    await store.write('language', value);
+    await _data.store.write('language', value);
     Get.updateLocale(getLocale);
     update();
   }

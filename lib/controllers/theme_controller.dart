@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:prapare/_internal/utils/theme_mode_util.dart';
 import 'package:prapare/ui/themes.dart';
+
+import 'controllers.dart';
 
 // spec: https://github.com/delay/flutter_starter
 // https://gist.github.com/RodBr/37310335c6639f486bb3c8a628052405
@@ -11,8 +12,10 @@ import 'package:prapare/ui/themes.dart';
 class ThemeController extends GetxController {
   static ThemeController get to => Get.find();
 
+  final StorageController _data = Get.find();
+
   final themeString = ''.obs;
-  final store = GetStorage();
+
   ThemeMode _themeMode;
 
   ThemeMode get themeMode => _themeMode;
@@ -28,7 +31,7 @@ class ThemeController extends GetxController {
     themeString.value = ThemeModeUtil().convertThemeModeToString(obj);
     _themeMode = obj;
     Get.changeThemeMode(_themeMode);
-    await store.write('theme', themeString);
+    await _data.store.write('theme', themeString);
     update();
   }
 
@@ -45,7 +48,7 @@ class ThemeController extends GetxController {
   }
 
   Future<void> getThemeModeFromStore() async {
-    final String _themeString = await store.read('theme') ?? 'system';
+    final String _themeString = await _data.store.read('theme') ?? 'system';
     setThemeMode(getThemeModeFromString(_themeString));
   }
 
