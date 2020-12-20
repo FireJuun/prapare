@@ -31,7 +31,7 @@ class _AboutPrapareText extends StatelessWidget {
           InfoSpacing(),
           InfoSpacing(),
           InfoText(
-              'The tool is available for non-commercial use, as defined in its End User License Agreement:'),
+              'The tool is available for non-commercial use, as defined in its End User License Agreement (EULA):'),
           // todo: add hyperlink
           InfoText('nachc.org/prapare-eula'),
           InfoSpacing(),

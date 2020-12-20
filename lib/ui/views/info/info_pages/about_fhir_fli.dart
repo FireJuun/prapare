@@ -36,7 +36,8 @@ class _AboutFhirFliText extends StatelessWidget {
           InfoText('hl7.org/fhir/overview.html'),
           InfoSpacing(),
           InfoSpacing(),
-          InfoText('FHIR-enabled Flutter packages are available at:'),
+          InfoText('FHIR-enabled Flutter'),
+          InfoText('packages are available at:'),
           // todo: add hyperlink
           InfoText('pub.dev/publishers/fhirfli.dev'),
         ],

@@ -21,14 +21,15 @@ class _LicensesText extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: const [
-          InfoText('This is an open-source app built under the MIT license.'),
+          InfoText('This is an open-source app'),
+          InfoText('built under the MIT license.'),
           InfoSpacing(),
           InfoText('The code is available at:'),
           // todo: add hyperlink
           InfoText('github.com/firejuun/prapare'),
           InfoSpacing(),
           InfoSpacing(),
-          InfoText('Built via open-source Flutter packages:'),
+          InfoText('Open-source packages we harnessed:'),
           // todo: add links? implement wrap?
           InfoText('''
 fhir  //  fhir_at_rest  
@@ -40,9 +41,10 @@ http // url_launcher
 translator // validators'''),
           InfoSpacing(),
           InfoSpacing(),
-          InfoText('Icons from these info screens are available at:'),
+          InfoText('Icons in these info screens'),
+          InfoText('are available on Pixabay:'),
           // todo: add hyperlink
-          InfoText('mcmurryjulie’s pixabay site'),
+          InfoText('user: mcmurryjulie'),
         ],
       ),
     );

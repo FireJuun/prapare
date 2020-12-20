@@ -9,6 +9,6 @@ class InfoImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: SvgPicture.asset(svgAsset, width: Get.width / 1.5));
+    return Center(child: SvgPicture.asset(svgAsset, width: Get.width / 1.3));
   }
 }
