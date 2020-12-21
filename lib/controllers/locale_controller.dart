@@ -27,8 +27,8 @@ class LocaleController extends GetxController {
 
   // Retrieves and Sets language based on device settings
   Future<void> setInitialLocalLanguage() async {
-    if ((currentLanguageStore.value == '') ||
-        (currentLanguageStore.value == null)) {
+    final _currentLanguage = currentLanguageStore().value;
+    if ((_currentLanguage == '') || (_currentLanguage == null)) {
       String _deviceLanguage = ui.window.locale.toString();
       _deviceLanguage =
           _deviceLanguage.substring(0, 2); //only get 1st 2 characters
@@ -38,15 +38,15 @@ class LocaleController extends GetxController {
   }
 
 // Gets current language stored
-  RxString get currentLanguageStore {
+  RxString currentLanguageStore() {
     language.value = _data.store.read('language');
     return language;
   }
 
   // gets the language locale app is set to
-  Locale get getLocale {
-    if ((currentLanguageStore.value == '') ||
-        (currentLanguageStore.value == null)) {
+  Locale getLocale() {
+    final _currentLanguage = currentLanguageStore().value;
+    if ((_currentLanguage == '') || (_currentLanguage == null)) {
       language.value = MenuOptionsModel.defaultLanguage;
       updateLanguage(MenuOptionsModel.defaultLanguage);
     }
@@ -66,7 +66,7 @@ class LocaleController extends GetxController {
   Future<void> updateLanguage(String value) async {
     language.value = value;
     await _data.store.write('language', value);
-    Get.updateLocale(getLocale);
+    Get.updateLocale(getLocale());
     update();
   }
 }

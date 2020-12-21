@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:prapare/controllers/controllers.dart';
 
 import '../export.dart';
 
@@ -32,10 +33,12 @@ class Ctrl extends GetxController {
     if (now - lastTap < 900) {
       consecutiveTaps++;
       if (consecutiveTaps >= 6) {
+        final StorageController ctrl = Get.find();
+        ctrl.saveFirstLoadInfoToStore(true);
         Get.rawSnackbar(message: 'Well done!');
         Get.dialog(_Egg());
       } else if (consecutiveTaps >= 4 && consecutiveTaps <= 6) {
-        Get.rawSnackbar(message: '${7 - consecutiveTaps} taps to go...');
+        Get.rawSnackbar(message: '${7 - consecutiveTaps} tap(s) to go...');
       }
     } else {
       consecutiveTaps = 0;
