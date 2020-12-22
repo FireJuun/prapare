@@ -29,8 +29,10 @@ class TextOpenSource extends StatelessWidget {
             'https://pub.dev/packages/flutter_sheet_localization'),
       ],
       [
-        _separator,
         richSpanLink('flutter_svg', 'https://pub.dev/packages/flutter_svg'),
+        _separator,
+        richSpanLink('flutter_launcher_icons',
+            'https://pub.dev/packages/flutter_launcher_icons'),
       ],
       [_blank],
       [

@@ -33,6 +33,7 @@ dependencies:
   fhir: ^0.0.12
   fhir_at_rest: ^0.0.9
   fhir_db: ^0.0.4
+  flutter_launcher_icons: ^0.8.1
   flutter_multi_formatter: ^1.3.0
   flutter_sheet_localization: ^2.0.1
   flutter_svg: ^0.19.1
