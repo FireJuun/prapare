@@ -7,6 +7,7 @@ abstract class AbstractCommand {
   final UserResponsesController responsesController = Get.find();
   final GroupController groupController = Get.find();
   final ValidationController validationController = Get.find();
+  final SaveAndGetProgressController saveAndGetProgressController = Get.find();
 
   Future<void> execute();
 }

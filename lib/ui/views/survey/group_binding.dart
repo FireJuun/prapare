@@ -9,5 +9,7 @@ class GroupBinding implements Bindings {
     Get.lazyPut<ValidationController>(() => ValidationController());
     Get.lazyPut<QuestionnaireController>(() => QuestionnaireController());
     Get.lazyPut<GroupController>(() => GroupController());
+    Get.lazyPut<SaveAndGetProgressController>(
+        () => SaveAndGetProgressController());
   }
 }

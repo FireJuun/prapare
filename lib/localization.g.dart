@@ -124,9 +124,17 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "Cancel",
+        discard: "Discard",
         next: "Next",
         previous: "Previous",
+        save: "Save",
         submit: "Submit",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "Answers saved.",
+          onDiscarded: "Answers discarded.",
+          saveChanges: "Save changes?",
+          saveChangesDescription: "Answers may be saved locally for later use.",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -261,13 +269,6 @@ class AppLocalizations {
           title: "Social and Emotional Health",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "Error: Wrong Data Type",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "Type a number",
-          value: "Type a value",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "Register Patient",
       ),
@@ -281,6 +282,13 @@ class AppLocalizations {
         theme: "Theme",
         title: "Settings",
         updateProfile: "Update Profile",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "Error: Wrong Data Type",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "Type a number",
+          value: "Type a value",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "es"): AppLocalizations_Labels(
@@ -389,9 +397,18 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "Cancelar",
+        discard: "Descarte",
         next: "próximo",
         previous: "Anterior",
+        save: "Salvar",
         submit: "Enviar",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "Respuestas guardan.",
+          onDiscarded: "Respuestas descartados.",
+          saveChanges: "¿Guardar cambios?",
+          saveChangesDescription:
+              "Las respuestas pueden ser guardados localmente para su uso posterior.",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -526,13 +543,6 @@ class AppLocalizations {
           title: "Salud Emocional y Social",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "ERROR: Tipo de datos",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "Escriba un número",
-          value: "Escriba un valor",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "Registro de Pacientes",
       ),
@@ -546,6 +556,13 @@ class AppLocalizations {
         theme: "Tema",
         title: "ajustes",
         updateProfile: "Actualización del perfil",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "ERROR: Tipo de datos",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "Escriba un número",
+          value: "Escriba un valor",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "ar"): AppLocalizations_Labels(
@@ -654,9 +671,17 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "إلغاء",
+        discard: "تجاهل",
         next: "التالى",
         previous: "السابق",
+        save: "حفظ",
         submit: "إرسال",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "حفظ الأجوبة.",
+          onDiscarded: "التخلص منها إجابات.",
+          saveChanges: "حفظ التغييرات؟",
+          saveChangesDescription: "قد يتم حفظها إجابات محليا لاستخدامها لاحقا.",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -788,13 +813,6 @@ class AppLocalizations {
           title: "الصحة النفسية الاجتماعية و",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "الخطأ: خطأ نوع البيانات",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "اكتب رقما",
-          value: "اكتب قيمة",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "سجل المريض",
       ),
@@ -808,6 +826,13 @@ class AppLocalizations {
         theme: "موضوع",
         title: "إعدادات",
         updateProfile: "تحديث الملف",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "الخطأ: خطأ نوع البيانات",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "اكتب رقما",
+          value: "اكتب قيمة",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "hi"): AppLocalizations_Labels(
@@ -916,9 +941,18 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "रद्द करना",
+        discard: "रद्द करें",
         next: "आगे",
         previous: "पिछला",
+        save: "सहेजें",
         submit: "प्रस्तुत",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "जवाब बचा लिया।",
+          onDiscarded: "जवाब खारिज कर दिया।",
+          saveChanges: "परिवर्तनों को सुरक्षित करें?",
+          saveChangesDescription:
+              "जवाब बाद में उपयोग के लिए स्थानीय रूप से सहेजा जा सकता है।",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -1052,13 +1086,6 @@ class AppLocalizations {
           title: "सामाजिक और भावनात्मक स्वास्थ्य",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "त्रुटि: गलत डेटा प्रकार",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "कोई नंबर लिखें",
-          value: "एक मूल्य के प्रकार",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "रजिस्टर रोगी",
       ),
@@ -1072,6 +1099,13 @@ class AppLocalizations {
         theme: "विषय",
         title: "समायोजन",
         updateProfile: "प्रोफ़ाइल अपडेट करें",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "त्रुटि: गलत डेटा प्रकार",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "कोई नंबर लिखें",
+          value: "एक मूल्य के प्रकार",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "ru"): AppLocalizations_Labels(
@@ -1180,9 +1214,18 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "отменить",
+        discard: "Выбросьте",
         next: "следующий",
         previous: "предыдущий",
+        save: "Сохранить",
         submit: "Разместить",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "Ответы сохраняются.",
+          onDiscarded: "Ответы отбрасываются.",
+          saveChanges: "Сохранить изменения?",
+          saveChangesDescription:
+              "Ответы могут быть сохранены локально для последующего использования.",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -1288,7 +1331,7 @@ class AppLocalizations {
           transportation:
               "Имеет отсутствие транспорта держали вас от медицинского назначения, встречи, работа, или от получения вещи, необходимой для повседневной жизни?",
           without:
-              "В прошлом году у вас или членов семьи, с которыми вы живете не смогли получить любое следующее, когда это было действительно необходимо?",
+              "В прошлом году у вас или членов семьи, с которыми вы живете не в состоянии получить одно из следующих действий, когда это было действительно необходимо?",
           work: "Какова текущая ситуация работы?",
         ),
         optionalMeasures: AppLocalizations_Labels_Prapare_OptionalMeasures(
@@ -1320,13 +1363,6 @@ class AppLocalizations {
           title: "Социальное и эмоциональное здоровье",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "Ошибка: Неправильный тип данных",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "Введите число",
-          value: "Введите значение",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "Регистрация пациентов",
       ),
@@ -1340,6 +1376,13 @@ class AppLocalizations {
         theme: "тема",
         title: "настройки",
         updateProfile: "Обновить профиль",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "Ошибка: Неправильный тип данных",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "Введите число",
+          value: "Введите значение",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "bn"): AppLocalizations_Labels(
@@ -1448,9 +1491,18 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "বাতিল",
+        discard: "বাতিল করা",
         next: "পরবর্তী",
         previous: "আগে",
+        save: "সংরক্ষণ",
         submit: "জমা দিন",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "উত্তর সংরক্ষিত হয়েছে।",
+          onDiscarded: "উত্তর বাতিল করা হয়েছে।",
+          saveChanges: "পরিবর্তনগুলোর সংরক্ষন?",
+          saveChangesDescription:
+              "উত্তর পরে ব্যবহার করার জন্য স্থানীয়ভাবে সংরক্ষণ করা হতে পারে।",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -1524,7 +1576,7 @@ class AppLocalizations {
             food: "খাদ্য",
             medicineOrAnyHealthCare:
                 "মেডিসিন বা অন্য কোন স্বাস্থ্য সেবা (চিকিৎসা, ডেন্টাল মেন্টাল হেলথ ভিশন)",
-            phone: "ফোনের",
+            phone: "ফোন",
             utilities: "উপযোগিতা",
           ),
           work: AppLocalizations_Labels_Prapare_Answers_Work(
@@ -1583,13 +1635,6 @@ class AppLocalizations {
           title: "সামাজিক ও সংবেদনগত স্বাস্থ্য",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "ত্রুটি: ভুল ডাটা টাইপ",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "একটি নম্বর টাইপ করুন",
-          value: "একটি মান লিখুন",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "নিবন্ধন রোগীর",
       ),
@@ -1603,6 +1648,13 @@ class AppLocalizations {
         theme: "বিষয়",
         title: "সেটিংস",
         updateProfile: "হালনাগাদ প্রফাইল",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "ত্রুটি: ভুল ডাটা টাইপ",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "একটি নম্বর টাইপ করুন",
+          value: "একটি মান লিখুন",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "my"): AppLocalizations_Labels(
@@ -1711,9 +1763,18 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "Cancel",
+        discard: "စွန့်ပစ်",
         next: "နောက်တစ်ခု",
         previous: "လွန်ခဲ့သော",
+        save: "ကြော်ငြာကို Save လုပ်ရန်",
         submit: "Submit",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "အဖွမြေားကယ်တင်ခြင်းသို့ရောက်ရ၏။",
+          onDiscarded: "အဖွမြေားစွန့်ပစ်။",
+          saveChanges: "ကြော်ငြာကို Save လုပ်ရန်ပြောင်းလဲ?",
+          saveChangesDescription:
+              "အဖွမြေားအကြာတွင်အသုံးပြုရန်ပြည်တွင်းဖြစ်သည်ကယ်တင်ခြင်းသို့ရောက်လိမ့်မည်။",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -1849,13 +1910,6 @@ class AppLocalizations {
           title: "လူမှုရေးနှင့်စိတ်ခံစားမှုကျန်းမာရေး",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "အမှား: မှားဒေတာအမျိုးအစား",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "နံပါတ်ရိုက်ထည့်ပါ",
-          value: "တန်ဖိုးရိုက်ထည့်ပါ",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "မှတ်ပုံတင်မည်လူနာ",
       ),
@@ -1869,6 +1923,13 @@ class AppLocalizations {
         theme: "အကွောငျး",
         title: "Settings များ",
         updateProfile: "Update ကိုကိုယ်ရေးဖိုင်",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "အမှား: မှားဒေတာအမျိုးအစား",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "နံပါတ်ရိုက်ထည့်ပါ",
+          value: "တန်ဖိုးရိုက်ထည့်ပါ",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "zh"): AppLocalizations_Labels(
@@ -1977,9 +2038,17 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "取消",
+        discard: "丢弃",
         next: "下一个",
         previous: "以前",
+        save: "保存",
         submit: "提交",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "答案保存。",
+          onDiscarded: "答案丢弃。",
+          saveChanges: "保存更改？",
+          saveChangesDescription: "答案可以在本地供以后使用保存。",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title: "用于响应和评估患者的资产，风险协议，与经验[PRAPARE]",
@@ -2098,13 +2167,6 @@ class AppLocalizations {
           title: "社会和情感健康",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "错误：错误的数据类型",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "键入一个数字",
-          value: "键入一个值",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "注册病人",
       ),
@@ -2118,6 +2180,13 @@ class AppLocalizations {
         theme: "主题",
         title: "设置",
         updateProfile: "更新配置文件",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "错误：错误的数据类型",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "键入一个数字",
+          value: "键入一个值",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "zh_Hans"): AppLocalizations_Labels(
@@ -2226,9 +2295,17 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "取消",
+        discard: "丢弃",
         next: "下一个",
         previous: "以前",
+        save: "保存",
         submit: "提交",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "答案保存。",
+          onDiscarded: "答案丢弃。",
+          saveChanges: "保存更改？",
+          saveChangesDescription: "答案可以在本地供以后使用保存。",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title: "用于响应和评估患者的资产，风险协议，与经验[PRAPARE]",
@@ -2347,13 +2424,6 @@ class AppLocalizations {
           title: "社会和情感健康",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "错误：错误的数据类型",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "键入一个数字",
-          value: "键入一个值",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "注册病人",
       ),
@@ -2367,6 +2437,13 @@ class AppLocalizations {
         theme: "主题",
         title: "设置",
         updateProfile: "更新配置文件",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "错误：错误的数据类型",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "键入一个数字",
+          value: "键入一个值",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "zh_Hant"): AppLocalizations_Labels(
@@ -2475,9 +2552,17 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "取消",
+        discard: "丟棄",
         next: "下一個",
         previous: "以前",
+        save: "保存",
         submit: "提交",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "答案保存。",
+          onDiscarded: "答案丟棄。",
+          saveChanges: "保存更改？",
+          saveChangesDescription: "答案可以在本地供以後使用保存。",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title: "用於響應和評估患者的資產，風險協議，與經驗[PRAPARE]",
@@ -2508,7 +2593,7 @@ class AppLocalizations {
           ),
           insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
             chipMedicaid: "CHIP醫療補助",
-            medicaid: "醫療",
+            medicaid: "醫療補助",
             medicare: "醫保",
             noneOrUninsured: "無/無保險",
             otherPublicInsuranceChip: "其他公共保險（CHIP）",
@@ -2596,13 +2681,6 @@ class AppLocalizations {
           title: "社會和情感健康",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "錯誤：錯誤的數據類型",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "鍵入一個數字",
-          value: "鍵入一個值",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "註冊病人",
       ),
@@ -2616,6 +2694,13 @@ class AppLocalizations {
         theme: "主題",
         title: "設置",
         updateProfile: "更新配置文件",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "錯誤：錯誤的數據類型",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "鍵入一個數字",
+          value: "鍵入一個值",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "zh_Hans_CN"): AppLocalizations_Labels(
@@ -2724,9 +2809,17 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "取消",
+        discard: "丢弃",
         next: "下一个",
         previous: "以前",
+        save: "保存",
         submit: "提交",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "答案保存。",
+          onDiscarded: "答案丢弃。",
+          saveChanges: "保存更改？",
+          saveChangesDescription: "答案可以在本地供以后使用保存。",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title: "用于响应和评估患者的资产，风险协议，与经验[PRAPARE]",
@@ -2845,13 +2938,6 @@ class AppLocalizations {
           title: "社会和情感健康",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "错误：错误的数据类型",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "键入一个数字",
-          value: "键入一个值",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "注册病人",
       ),
@@ -2865,6 +2951,13 @@ class AppLocalizations {
         theme: "主题",
         title: "设置",
         updateProfile: "更新配置文件",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "错误：错误的数据类型",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "键入一个数字",
+          value: "键入一个值",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "zh_Hant_TW"): AppLocalizations_Labels(
@@ -2973,9 +3066,17 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "取消",
+        discard: "丟棄",
         next: "下一個",
         previous: "以前",
+        save: "保存",
         submit: "提交",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "答案保存。",
+          onDiscarded: "答案丟棄。",
+          saveChanges: "保存更改？",
+          saveChangesDescription: "答案可以在本地供以後使用保存。",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title: "用於響應和評估患者的資產，風險協議，與經驗[PRAPARE]",
@@ -3006,7 +3107,7 @@ class AppLocalizations {
           ),
           insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
             chipMedicaid: "CHIP醫療補助",
-            medicaid: "醫療",
+            medicaid: "醫療補助",
             medicare: "醫保",
             noneOrUninsured: "無/無保險",
             otherPublicInsuranceChip: "其他公共保險（CHIP）",
@@ -3094,13 +3195,6 @@ class AppLocalizations {
           title: "社會和情感健康",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "錯誤：錯誤的數據類型",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "鍵入一個數字",
-          value: "鍵入一個值",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "註冊病人",
       ),
@@ -3114,6 +3208,13 @@ class AppLocalizations {
         theme: "主題",
         title: "設置",
         updateProfile: "更新配置文件",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "錯誤：錯誤的數據類型",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "鍵入一個數字",
+          value: "鍵入一個值",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "zh_Hant_HK"): AppLocalizations_Labels(
@@ -3222,9 +3323,17 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "取消",
+        discard: "丟棄",
         next: "下一個",
         previous: "以前",
+        save: "保存",
         submit: "提交",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "答案保存。",
+          onDiscarded: "答案丟棄。",
+          saveChanges: "保存更改？",
+          saveChangesDescription: "答案可以在本地供以後使用保存。",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title: "用於響應和評估患者的資產，風險協議，與經驗[PRAPARE]",
@@ -3255,7 +3364,7 @@ class AppLocalizations {
           ),
           insurance: AppLocalizations_Labels_Prapare_Answers_Insurance(
             chipMedicaid: "CHIP醫療補助",
-            medicaid: "醫療",
+            medicaid: "醫療補助",
             medicare: "醫保",
             noneOrUninsured: "無/無保險",
             otherPublicInsuranceChip: "其他公共保險（CHIP）",
@@ -3343,13 +3452,6 @@ class AppLocalizations {
           title: "社會和情感健康",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "錯誤：錯誤的數據類型",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "鍵入一個數字",
-          value: "鍵入一個值",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "註冊病人",
       ),
@@ -3363,6 +3465,13 @@ class AppLocalizations {
         theme: "主題",
         title: "設置",
         updateProfile: "更新配置文件",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "錯誤：錯誤的數據類型",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "鍵入一個數字",
+          value: "鍵入一個值",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "fa"): AppLocalizations_Labels(
@@ -3471,9 +3580,18 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "لغو کردن",
+        discard: "اغماض",
         next: "بعد",
         previous: "قبلی",
+        save: "صرفه جویی",
         submit: "ارسال",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "پاسخ را نجات داد.",
+          onDiscarded: "پاسخ دور ریخته میشود.",
+          saveChanges: "ذخیره تغییرات؟",
+          saveChangesDescription:
+              "پاسخها ممکن است به صورت محلی برای استفاده های بعدی ذخیره می شود.",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -3607,13 +3725,6 @@ class AppLocalizations {
           title: "اجتماعی و سلامت عاطفی",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "خطا: اشتباه نوع داده",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "عدد تایپ کنید",
-          value: "نوع ارزش",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "ثبت نام بیمار",
       ),
@@ -3627,6 +3738,13 @@ class AppLocalizations {
         theme: "موضوع",
         title: "تنظیمات",
         updateProfile: "بروزرسانی پروفایل",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "خطا: اشتباه نوع داده",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "عدد تایپ کنید",
+          value: "نوع ارزش",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "fr"): AppLocalizations_Labels(
@@ -3735,9 +3853,18 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "Annuler",
+        discard: "Jeter",
         next: "Prochain",
         previous: "précédent",
+        save: "sauver",
         submit: "Soumettre",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "Les réponses enregistrées.",
+          onDiscarded: "Réponses mis au rebut.",
+          saveChanges: "Sauvegarder les modifications?",
+          saveChangesDescription:
+              "Les réponses peuvent être enregistrées localement pour une utilisation ultérieure.",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -3875,13 +4002,6 @@ class AppLocalizations {
           title: "Santé sociale et émotionnelle",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "Erreur: Mauvais type de données",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "Tapez un nombre",
-          value: "Tapez une valeur",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "registre des patients",
       ),
@@ -3895,6 +4015,13 @@ class AppLocalizations {
         theme: "Thème",
         title: "Réglages",
         updateProfile: "Mettre à jour le profil",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "Erreur: Mauvais type de données",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "Tapez un nombre",
+          value: "Tapez une valeur",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "de"): AppLocalizations_Labels(
@@ -4003,9 +4130,18 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "Stornieren",
+        discard: "Verwerfen",
         next: "Nächster",
         previous: "Bisherige",
+        save: "sparen",
         submit: "einreichen",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "Antworten gespeichert.",
+          onDiscarded: "Antworten verworfen.",
+          saveChanges: "Änderungen speichern?",
+          saveChangesDescription:
+              "Antworten können lokal für die spätere Verwendung gespeichert werden.",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -4141,13 +4277,6 @@ class AppLocalizations {
           title: "Soziale und emotionale Gesundheit",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "Fehler: Falscher Datentyp",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "Geben Sie eine Zahl",
-          value: "Geben Sie einen Wert",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "Register Patienten",
       ),
@@ -4161,6 +4290,13 @@ class AppLocalizations {
         theme: "Thema",
         title: "die Einstellungen",
         updateProfile: "Profil aktualisieren",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "Fehler: Falscher Datentyp",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "Geben Sie eine Zahl",
+          value: "Geben Sie einen Wert",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "id"): AppLocalizations_Labels(
@@ -4269,9 +4405,18 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "Membatalkan",
+        discard: "Membuang",
         next: "Lanjut",
         previous: "Sebelumnya",
+        save: "Menyimpan",
         submit: "Kirimkan",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "Jawaban disimpan.",
+          onDiscarded: "Jawaban dibuang.",
+          saveChanges: "Simpan perubahan?",
+          saveChangesDescription:
+              "Jawaban dapat disimpan secara lokal untuk digunakan nanti.",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -4409,13 +4554,6 @@ class AppLocalizations {
           title: "Sosial dan Kesehatan Emosional",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "Kesalahan: Salah Data Type",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "Ketik nomor",
-          value: "Ketik nilai",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "Pendaftaran Pasien",
       ),
@@ -4429,6 +4567,13 @@ class AppLocalizations {
         theme: "Tema",
         title: "pengaturan",
         updateProfile: "Memperbaharui profil",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "Kesalahan: Salah Data Type",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "Ketik nomor",
+          value: "Ketik nilai",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "ja"): AppLocalizations_Labels(
@@ -4537,9 +4682,17 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "キャンセル",
+        discard: "廃棄",
         next: "次",
         previous: "前",
+        save: "保存する",
         submit: "参加する",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "回答が保存さ。",
+          onDiscarded: "回答を捨てました。",
+          saveChanges: "変更内容を保存？",
+          saveChangesDescription: "回答は、後で使用するためにローカルに保存することができます。",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title: "対応や患者の資産を評価するための議定書、リスク、および経験[PRAPARE]",
@@ -4665,13 +4818,6 @@ class AppLocalizations {
           title: "社会的、感情的な健康",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "エラー：間違ったデータタイプ",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "番号を入力",
-          value: "値を入力",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "登録患者",
       ),
@@ -4685,6 +4831,13 @@ class AppLocalizations {
         theme: "テーマ",
         title: "設定",
         updateProfile: "プロフィールを更新",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "エラー：間違ったデータタイプ",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "番号を入力",
+          value: "値を入力",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "km"): AppLocalizations_Labels(
@@ -4793,9 +4946,18 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "បោះបង់",
+        discard: "បោះបង់",
         next: "បន្ទាប់",
         previous: "មុន",
+        save: "រក្សាទុក",
         submit: "ដាក់ស្នើ",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "ចម្លើយដែលបានរក្សាទុក។",
+          onDiscarded: "ចម្លើយបោះបង់។",
+          saveChanges: "រក្សាទុកការផ្លាស់ប្តូរ?",
+          saveChangesDescription:
+              "ចម្លើយអាចនឹងត្រូវបានរក្សាទុកជាមូលដ្ឋានសម្រាប់ប្រើពេលក្រោយ។",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -4931,13 +5093,6 @@ class AppLocalizations {
           title: "សង្គមនិងសុខភាពផ្លូវចិត្ដ",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "កំហុស: ប្រភេទទិន្នន័យខុស",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "វាយចំនួនមួយ",
-          value: "វាយតម្លៃ",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "ជម្ងឺចុះឈ្មោះ",
       ),
@@ -4951,6 +5106,13 @@ class AppLocalizations {
         theme: "ស្បែក",
         title: "ការកំណត់",
         updateProfile: "ទម្រង់ធ្វើឱ្យទាន់សម័យ",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "កំហុស: ប្រភេទទិន្នន័យខុស",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "វាយចំនួនមួយ",
+          value: "វាយតម្លៃ",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "ko"): AppLocalizations_Labels(
@@ -5059,9 +5221,17 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "취소",
+        discard: "포기",
         next: "다음",
         previous: "이전",
+        save: "저장",
         submit: "제출",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "답변이 저장.",
+          onDiscarded: "답변 삭제.",
+          saveChanges: "변경 사항을 저장하다?",
+          saveChangesDescription: "답변은 나중에 사용하기 위해 로컬에 저장 할 수있다.",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title: "에 응답하는 환자의 자산을 평가하기위한 프로토콜 위험 경험 [PRAPARE]",
@@ -5187,13 +5357,6 @@ class AppLocalizations {
           title: "사회 및 정서적 건강",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "오류 : 잘못된 데이터 형식",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "숫자를 입력",
-          value: "값을 입력",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "등록 환자",
       ),
@@ -5207,6 +5370,13 @@ class AppLocalizations {
         theme: "테마",
         title: "설정",
         updateProfile: "프로필 업데이트",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "오류 : 잘못된 데이터 형식",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "숫자를 입력",
+          value: "값을 입력",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "lo"): AppLocalizations_Labels(
@@ -5315,9 +5485,18 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "ຍົກເລີກການ",
+        discard: "ຍົກເລີກ",
         next: "ຖັດໄປ",
         previous: "ທີ່ຜ່ານມາ",
+        save: "ບັນທຶກ",
         submit: "ຍື່ນສະເຫນີ",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "ຄໍາຕອບບັນທືກ.",
+          onDiscarded: "ຄໍາຕອບຍົກເລີກ.",
+          saveChanges: "ບັນ​ທຶກ​ການ​ປ່ຽນ​ແປງ?",
+          saveChangesDescription:
+              "ຄໍາຕອບອາດຈະໄດ້ຮັບການບັນທຶກໄວ້ຢູ່ໃນທ້ອງຖິ່ນສໍາລັບການນໍາໃຊ້ຕໍ່ມາ.",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -5453,13 +5632,6 @@ class AppLocalizations {
           title: "ເພື່ອສັງຄົມແລະສຸຂະພາບທາງດ້ານຈິດໃຈ",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "Error: ທີ່ບໍ່ຖືກຕ້ອງປະເພດຂໍ້ມູນ",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "ພິມຕົວເລກ",
-          value: "ພິມມູນຄ່າ",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "ອົດທົນຫມັກສະມາຊິກ",
       ),
@@ -5473,6 +5645,13 @@ class AppLocalizations {
         theme: "Theme",
         title: "ການຕັ້ງຄ່າ",
         updateProfile: "ແຜງ",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "Error: ທີ່ບໍ່ຖືກຕ້ອງປະເພດຂໍ້ມູນ",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "ພິມຕົວເລກ",
+          value: "ພິມມູນຄ່າ",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "mr"): AppLocalizations_Labels(
@@ -5581,9 +5760,17 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "रद्द करा",
+        discard: "टाकून द्या",
         next: "पुढे",
         previous: "मागील",
+        save: "जतन करा",
         submit: "प्रस्तुत करणे",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "उत्तरे जतन.",
+          onDiscarded: "उत्तरे टाकून दिले.",
+          saveChanges: "बदल जतन करा?",
+          saveChangesDescription: "उत्तरे नंतर वापर स्थानिक जतन केले जाऊ शकते.",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -5715,13 +5902,6 @@ class AppLocalizations {
           title: "सामाजिक आणि भावनिक आरोग्य",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "त्रुटी: चुकीचा डेटा प्रकार",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "एक नंबर टाईप करा",
-          value: "एक मूल्य टाइप करा",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "नोंदणी रुग्णांच्या",
       ),
@@ -5735,6 +5915,13 @@ class AppLocalizations {
         theme: "थीम",
         title: "सेटिंग्ज",
         updateProfile: "प्रोफाइल अद्यतनित करा",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "त्रुटी: चुकीचा डेटा प्रकार",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "एक नंबर टाईप करा",
+          value: "एक मूल्य टाइप करा",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "ne"): AppLocalizations_Labels(
@@ -5843,9 +6030,18 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "रद्द",
+        discard: "रद्द गर्नुहोस्",
         next: "अर्को",
         previous: "अघिल्लो",
+        save: "सेव",
         submit: "पेश",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "उत्तर सुरक्षित गरियो।",
+          onDiscarded: "उत्तर खारेज गरियो।",
+          saveChanges: "परिवर्तनहरू सुरक्षित गर्नुहोस?",
+          saveChangesDescription:
+              "उत्तर पछि प्रयोगको लागि स्थानीय रूपमा सुरक्षित हुन सक्छ।",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -5979,13 +6175,6 @@ class AppLocalizations {
           title: "सामाजिक र भावनात्मक स्वास्थ्य",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "त्रुटि: गलत डाटा प्रकार",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "एक नम्बर टाइप",
-          value: "मान टाइप",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "रजिस्टर रोगी",
       ),
@@ -5999,6 +6188,13 @@ class AppLocalizations {
         theme: "विषय",
         title: "सेटिङहरू",
         updateProfile: "प्रोफाइल अद्यावधिक",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "त्रुटि: गलत डाटा प्रकार",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "एक नम्बर टाइप",
+          value: "मान टाइप",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "pt"): AppLocalizations_Labels(
@@ -6107,9 +6303,18 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "Cancelar",
+        discard: "Descartar",
         next: "Próximo",
         previous: "Anterior",
+        save: "Salve ",
         submit: "Enviar",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "Respostas salvo.",
+          onDiscarded: "Respostas descartado.",
+          saveChanges: "Salvar alterações?",
+          saveChangesDescription:
+              "As respostas podem ser salvos localmente para uso posterior.",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -6245,13 +6450,6 @@ class AppLocalizations {
           title: "Social e Saúde Emocional",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "Erro: tipo errado de dados",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "Digite um número",
-          value: "Digite um valor",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "Register paciente",
       ),
@@ -6265,6 +6463,13 @@ class AppLocalizations {
         theme: "Tema",
         title: "Configurações",
         updateProfile: "Atualizar perfil",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "Erro: tipo errado de dados",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "Digite um número",
+          value: "Digite um valor",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "pa"): AppLocalizations_Labels(
@@ -6373,9 +6578,18 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "ਰੱਦ ਕਰੋ",
+        discard: "ਬਰਖਾਸਤ ਕਰੋ",
         next: "ਅਗਲਾ",
         previous: "ਪਿਛਲਾ",
+        save: "ਸੰਭਾਲੋ",
         submit: "ਜਮ੍ਹਾਂ ਕਰੋ",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "ਜਵਾਬ ਬਚਾਇਆ.",
+          onDiscarded: "ਜਵਾਬ ਰੱਦ.",
+          saveChanges: "ਕੀਤੇ ਗਏ ਬਦਲਾਅ ਸੁਰੱਖਿਅਤ ਕਰੋ?",
+          saveChangesDescription:
+              "ਜਵਾਬ ਬਾਅਦ ਵਿੱਚ ਵਰਤਣ ਲਈ ਲੋਕਲ ਬਚਾਇਆ ਜਾ ਸਕਦਾ ਹੈ.",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -6509,13 +6723,6 @@ class AppLocalizations {
           title: "ਸਮਾਜਕ ਅਤੇ ਭਾਵਾਤਮਕ ਸਿਹਤ",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "ਗਲਤੀ: ਗਲਤ ਡਾਟਾ ਕਿਸਮ",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "ਇੱਕ ਨੰਬਰ ਟਾਈਪ ਕਰੋ",
-          value: "ਦਾ ਮੁੱਲ ਟਾਈਪ ਕਰੋ",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "ਰਜਿਸਟਰ ਮਰੀਜ਼",
       ),
@@ -6529,6 +6736,13 @@ class AppLocalizations {
         theme: "ਥੀਮ",
         title: "ਸੈਟਿੰਗ",
         updateProfile: "ਅੱਪਡੇਟ ਪ੍ਰੋਫ਼ਾਈਲ English",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "ਗਲਤੀ: ਗਲਤ ਡਾਟਾ ਕਿਸਮ",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "ਇੱਕ ਨੰਬਰ ਟਾਈਪ ਕਰੋ",
+          value: "ਦਾ ਮੁੱਲ ਟਾਈਪ ਕਰੋ",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "so"): AppLocalizations_Labels(
@@ -6637,9 +6851,18 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "Jooji",
+        discard: "Iska tuur",
         next: "Next",
         previous: "Hore",
+        save: "Save",
         submit: "Gudbi",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "Jawaabaha badbaadiyey.",
+          onDiscarded: "Jawaabaha tuuraa.",
+          saveChanges: "isbedel Save?",
+          saveChangesDescription:
+              "Jawaabaha degaanka badbaadi kartaa isticmaalka ka dib.",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -6777,13 +7000,6 @@ class AppLocalizations {
           title: "Caafimaadka iyo Bulshada Qiirada",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "Qalad: Wrong Data Type",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "Ku qor tiro",
-          value: "Ku qor qiimaha a",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "Register bukaanka",
       ),
@@ -6797,6 +7013,13 @@ class AppLocalizations {
         theme: "theme",
         title: "Settings",
         updateProfile: "update Profile",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "Qalad: Wrong Data Type",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "Ku qor tiro",
+          value: "Ku qor qiimaha a",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "sw"): AppLocalizations_Labels(
@@ -6905,9 +7128,18 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "kufuta",
+        discard: "Tupa",
         next: "next",
         previous: "Kabla",
+        save: "Save",
         submit: "wasilisha",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "Majibu kuokolewa.",
+          onDiscarded: "Majibu kutupwa.",
+          saveChanges: "Hifadhi mabadiliko?",
+          saveChangesDescription:
+              "Majibu inaweza kuhifadhiwa ndani ya nchi kwa ajili ya matumizi ya baadaye.",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -7041,13 +7273,6 @@ class AppLocalizations {
           title: "Jamii na Afya Emotional",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "Hitilafu: Wrong Data Aina",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "andika namba",
-          value: "Aina thamani",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "Daftari mgonjwa",
       ),
@@ -7061,6 +7286,13 @@ class AppLocalizations {
         theme: "Theme",
         title: "mipangilio",
         updateProfile: "Mwisho profile",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "Hitilafu: Wrong Data Aina",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "andika namba",
+          value: "Aina thamani",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "tl"): AppLocalizations_Labels(
@@ -7169,9 +7401,18 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "kanselahin",
-        next: "Next",
+        discard: "Itapon",
+        next: "susunod",
         previous: "nakaraan",
+        save: "I-save ang",
         submit: "Ipasa",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "Mga Sagot save.",
+          onDiscarded: "Mga Sagot tinapon.",
+          saveChanges: "I-save ang mga pagbabago?",
+          saveChangesDescription:
+              "Mga sagot ay maaaring i-save nang lokal para sa paggamit sa ibang pagkakataon.",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -7311,13 +7552,6 @@ class AppLocalizations {
           title: "Social at emosyonal Kalusugan",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "Error: Maling Uri ng Data",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "Mag-type ng numero ng",
-          value: "Mag-type ng halaga",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "Magrehistro Pasyente",
       ),
@@ -7331,6 +7565,13 @@ class AppLocalizations {
         theme: "tema",
         title: "Mga Setting",
         updateProfile: "I-update ang Profile",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "Error: Maling Uri ng Data",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "Mag-type ng numero ng",
+          value: "Mag-type ng halaga",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "th"): AppLocalizations_Labels(
@@ -7439,9 +7680,17 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "ยกเลิก",
+        discard: "ทิ้ง",
         next: "ต่อไป",
         previous: "ก่อน",
+        save: "บันทึก",
         submit: "เสนอ",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "คำตอบที่บันทึกไว้",
+          onDiscarded: "คำตอบที่ถูกทิ้ง",
+          saveChanges: "บันทึกการเปลี่ยนแปลง?",
+          saveChangesDescription: "คำตอบอาจจะบันทึกไว้เพื่อใช้ในภายหลัง",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -7575,13 +7824,6 @@ class AppLocalizations {
           title: "สังคมและสุขภาพทางอารมณ์",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "ข้อผิดพลาด: ผิดชนิดข้อมูล",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "พิมพ์ตัวเลข",
-          value: "พิมพ์ค่า",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "ผู้ป่วยที่ลงทะเบียน",
       ),
@@ -7595,6 +7837,13 @@ class AppLocalizations {
         theme: "กระทู้",
         title: "การตั้งค่า",
         updateProfile: "รายละเอียดการปรับปรุง",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "ข้อผิดพลาด: ผิดชนิดข้อมูล",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "พิมพ์ตัวเลข",
+          value: "พิมพ์ค่า",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "uz"): AppLocalizations_Labels(
@@ -7703,9 +7952,18 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "Bekor qilish",
+        discard: "Bekor",
         next: "Keyingi",
         previous: "avvalgi",
+        save: "saqlash",
         submit: "Submit",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "Javoblar najot berdik.",
+          onDiscarded: "Javoblar tashlanadi.",
+          saveChanges: "Saqlash o'zgarishlar?",
+          saveChangesDescription:
+              "Javoblar keyinchalik foydalanish uchun mahalliy saqlanishi mumkin.",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -7838,13 +8096,6 @@ class AppLocalizations {
           title: "Ijtimoiy va hissiy Sog'liqni saqlash",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "Xato: Noto'g'ri ma'lumotlar turi",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "bir qator kiriting",
-          value: "Agar qiymat kiriting",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "Ro'yxatdan o'tish Bemor",
       ),
@@ -7858,6 +8109,13 @@ class AppLocalizations {
         theme: "mavzu",
         title: "Sozlamalar",
         updateProfile: "yangilash Profil",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "Xato: Noto'g'ri ma'lumotlar turi",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "bir qator kiriting",
+          value: "Agar qiymat kiriting",
+        ),
       ),
     ),
     Locale.fromSubtags(languageCode: "vi"): AppLocalizations_Labels(
@@ -7966,9 +8224,18 @@ class AppLocalizations {
       ),
       navigation: AppLocalizations_Labels_Navigation(
         cancel: "hủy bỏ",
+        discard: "Huỷ",
         next: "Kế tiếp",
         previous: "Trước",
+        save: "Tiết kiệm",
         submit: "Gửi đi",
+        dialog: AppLocalizations_Labels_Navigation_Dialog(
+          onSaved: "Câu trả lời lưu.",
+          onDiscarded: "Câu trả lời bỏ đi.",
+          saveChanges: "Lưu thay đổi?",
+          saveChangesDescription:
+              "Câu trả lời có thể được lưu tại địa phương để sử dụng sau.",
+        ),
       ),
       prapare: AppLocalizations_Labels_Prapare(
         title:
@@ -8101,13 +8368,6 @@ class AppLocalizations {
           title: "Xã hội và sức khỏe cảm xúc",
         ),
       ),
-      validation: AppLocalizations_Labels_Validation(
-        error: "Lỗi: Wrong Data Type",
-        instructions: AppLocalizations_Labels_Validation_Instructions(
-          number: "Nhập số",
-          value: "Nhập giá trị",
-        ),
-      ),
       registration: AppLocalizations_Labels_Registration(
         registerPatient: "Đăng ký bệnh nhân",
       ),
@@ -8121,6 +8381,13 @@ class AppLocalizations {
         theme: "chủ đề",
         title: "Cài đặt",
         updateProfile: "Cập nhật hồ sơ",
+      ),
+      validation: AppLocalizations_Labels_Validation(
+        error: "Lỗi: Wrong Data Type",
+        instructions: AppLocalizations_Labels_Validation_Instructions(
+          number: "Nhập số",
+          value: "Nhập giá trị",
+        ),
       ),
     ),
   };
@@ -8668,26 +8935,73 @@ class AppLocalizations_Labels_Medical {
   }
 }
 
+class AppLocalizations_Labels_Navigation_Dialog {
+  const AppLocalizations_Labels_Navigation_Dialog(
+      {this.onSaved,
+      this.onDiscarded,
+      this.saveChanges,
+      this.saveChangesDescription});
+
+  final String onSaved;
+
+  final String onDiscarded;
+
+  final String saveChanges;
+
+  final String saveChangesDescription;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'onSaved':
+        return onSaved;
+      case 'onDiscarded':
+        return onDiscarded;
+      case 'saveChanges':
+        return saveChanges;
+      case 'saveChangesDescription':
+        return saveChangesDescription;
+      default:
+        return '';
+    }
+  }
+}
+
 class AppLocalizations_Labels_Navigation {
   const AppLocalizations_Labels_Navigation(
-      {this.cancel, this.next, this.previous, this.submit});
+      {this.cancel,
+      this.discard,
+      this.next,
+      this.previous,
+      this.save,
+      this.submit,
+      this.dialog});
 
   final String cancel;
+
+  final String discard;
 
   final String next;
 
   final String previous;
 
+  final String save;
+
   final String submit;
+
+  final AppLocalizations_Labels_Navigation_Dialog dialog;
 
   String getByKey(String key) {
     switch (key) {
       case 'cancel':
         return cancel;
+      case 'discard':
+        return discard;
       case 'next':
         return next;
       case 'previous':
         return previous;
+      case 'save':
+        return save;
       case 'submit':
         return submit;
       default:
@@ -9325,43 +9639,6 @@ class AppLocalizations_Labels_Prapare {
   }
 }
 
-class AppLocalizations_Labels_Validation_Instructions {
-  const AppLocalizations_Labels_Validation_Instructions(
-      {this.number, this.value});
-
-  final String number;
-
-  final String value;
-
-  String getByKey(String key) {
-    switch (key) {
-      case 'number':
-        return number;
-      case 'value':
-        return value;
-      default:
-        return '';
-    }
-  }
-}
-
-class AppLocalizations_Labels_Validation {
-  const AppLocalizations_Labels_Validation({this.error, this.instructions});
-
-  final String error;
-
-  final AppLocalizations_Labels_Validation_Instructions instructions;
-
-  String getByKey(String key) {
-    switch (key) {
-      case 'error':
-        return error;
-      default:
-        return '';
-    }
-  }
-}
-
 class AppLocalizations_Labels_Registration {
   const AppLocalizations_Labels_Registration({this.registerPatient});
 
@@ -9433,6 +9710,43 @@ class AppLocalizations_Labels_Settings {
   }
 }
 
+class AppLocalizations_Labels_Validation_Instructions {
+  const AppLocalizations_Labels_Validation_Instructions(
+      {this.number, this.value});
+
+  final String number;
+
+  final String value;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'number':
+        return number;
+      case 'value':
+        return value;
+      default:
+        return '';
+    }
+  }
+}
+
+class AppLocalizations_Labels_Validation {
+  const AppLocalizations_Labels_Validation({this.error, this.instructions});
+
+  final String error;
+
+  final AppLocalizations_Labels_Validation_Instructions instructions;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'error':
+        return error;
+      default:
+        return '';
+    }
+  }
+}
+
 class AppLocalizations_Labels {
   const AppLocalizations_Labels(
       {this.app,
@@ -9443,9 +9757,9 @@ class AppLocalizations_Labels {
       this.medical,
       this.navigation,
       this.prapare,
-      this.validation,
       this.registration,
-      this.settings});
+      this.settings,
+      this.validation});
 
   final AppLocalizations_Labels_App app;
 
@@ -9463,11 +9777,11 @@ class AppLocalizations_Labels {
 
   final AppLocalizations_Labels_Prapare prapare;
 
-  final AppLocalizations_Labels_Validation validation;
-
   final AppLocalizations_Labels_Registration registration;
 
   final AppLocalizations_Labels_Settings settings;
+
+  final AppLocalizations_Labels_Validation validation;
 
   String getByKey(String key) {
     switch (key) {
