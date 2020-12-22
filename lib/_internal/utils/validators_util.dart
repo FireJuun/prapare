@@ -1,3 +1,4 @@
+import 'package:money2/money2.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/enums/item_type.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:validators/validators.dart' as validate;
@@ -8,6 +9,19 @@ class ValidatorsUtil {
 
   bool isEmpty(String str) => str == null || str == '';
   bool isNotEmpty(String str) => str != null && str != '';
+
+  String removeCommas(String str) => str?.replaceAll(',', '');
+
+  bool isValidCurrency(String value, Currency currency) {
+    bool validator = false;
+    try {
+      currency.parse(value);
+      validator = true;
+    } catch (error) {
+      print(error);
+    }
+    return validator;
+  }
 
   bool isAnswerValidByItemType(String value, ItemType itemType) {
     // used for TextFormField validation

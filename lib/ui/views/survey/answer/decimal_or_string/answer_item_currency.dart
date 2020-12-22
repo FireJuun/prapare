@@ -72,53 +72,57 @@ class AnswerItemCurrency extends AnswerItemDecimal {
   Widget buildTextFormField(BuildContext context) {
     final AnswerItemDecimalOrStringController controller =
         Get.find(tag: answer.code);
+    // this controller would be useful if we plan to use different currency types
     final AnswerItemCurrencyController currencyController =
         Get.find(tag: answer.code);
     final labels = AppLocalizations.of(context);
     final bool _isAnswerAnInteger = answer.answerItemType == ItemType.integer;
 
     return TextFormField(
-        inputFormatters: [
-          MoneyInputFormatter(
-            // leadingSymbol: MoneySymbols.DOLLAR_SIGN,
-            mantissaLength: 0,
-            useSymbolPadding: true,
-          ),
-        ],
-        controller: controller.textEditingController,
-        onChanged: (newValue) {
-          controller.obj.value = newValue;
-        },
-        keyboardType:
-            TextInputType.numberWithOptions(decimal: !_isAnswerAnInteger),
-        style: context.textTheme.bodyText2.apply(
-            decoration: controller.isQuestionDeclined().value
-                ? TextDecoration.lineThrough
-                : null),
-        decoration: InputDecoration(
-          border: const OutlineInputBorder(),
-          labelText: labels.validation.instructions.number,
+      inputFormatters: [
+        MoneyInputFormatter(
+          // since cents aren't being used here, we will add them later to the USD validation step
+          mantissaLength: 0,
+          // leadingSymbol: MoneySymbols.DOLLAR_SIGN,
         ),
-        validator: (String newValue) {
-          // String message;
-          // Money money;
-          // if (newValue == '0') {
-          //   newValue = '';
-          //   controller.textEditingController.text = '';
-          // }
-          // print(newValue);
-          // try {
-          //   money = Money.parse(
-          //       newValue, currencyController.activeCurrency.value,
-          //       pattern: '0');
-          // } catch (error) {
-          //   message = error;
-          // }
-          // print('');
-          // return ValidatorsUtil().isNewAnswerValueValid(newValue, answer)
-          //     ? null
-          //     : labels.validation.error;
-          return null;
-        });
+      ],
+      controller: controller.textEditingController,
+      onChanged: (newValue) {
+        controller.obj.value = newValue;
+      },
+      keyboardType:
+          TextInputType.numberWithOptions(decimal: !_isAnswerAnInteger),
+      style: context.textTheme.bodyText2.apply(
+          decoration: controller.isQuestionDeclined().value
+              ? TextDecoration.lineThrough
+              : null),
+      decoration: InputDecoration(
+        border: const OutlineInputBorder(),
+        labelText: labels.validation.instructions.number,
+      ),
+      validator: (String newValue) {
+        // todo: make validatorMessage nullable, when feature is enabled
+        String validatorMessage;
+
+        /// On repeatedly pressing back, MoneyInputFormatter defaults to $0 instead of null
+        /// This changes the cursors location, which is a poor user experience
+        /// Our workaround: if a 0 is added to a blank line, it is cleared back to null
+        if (newValue == '0') {
+          newValue = '';
+          controller.textEditingController.text = '';
+          validatorMessage = null;
+        } else {
+          // temporary workaround, specific to USD and without .00 being stored
+          validatorMessage = ValidatorsUtil().isValidCurrency(
+                  r'$' + newValue + '.00',
+                  currencyController.activeCurrency.value)
+              ? null
+              : labels.validation.error;
+        }
+
+        print('newValue: $newValue');
+        return validatorMessage;
+      },
+    );
   }
 }
