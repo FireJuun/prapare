@@ -37,8 +37,8 @@ class Ctrl extends GetxController {
         ctrl.saveFirstLoadInfoToStore(true);
         Get.rawSnackbar(message: 'Well done!');
         Get.dialog(_Egg());
-      } else if (consecutiveTaps >= 4 && consecutiveTaps <= 6) {
-        Get.rawSnackbar(message: '${7 - consecutiveTaps} tap(s) to go...');
+      } else if (consecutiveTaps >= 3 && consecutiveTaps <= 5) {
+        Get.rawSnackbar(message: '${6 - consecutiveTaps} tap(s) to go...');
       }
     } else {
       consecutiveTaps = 0;

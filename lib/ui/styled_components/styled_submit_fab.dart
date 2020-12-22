@@ -17,7 +17,7 @@ class StyledSubmitFab extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Text(labels.navigation.submit, style: textTheme.headline5),
         ),
-        onPressed: () async => await SubmitQuestionnaireCommand().execute(),
+        onPressed: () async => await SaveResponsesCommand().execute(),
       ),
     );
   }

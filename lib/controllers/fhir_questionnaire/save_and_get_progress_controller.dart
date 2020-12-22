@@ -1,8 +1,10 @@
 import 'package:get/get.dart';
 import 'package:prapare/services/db_interface.dart';
 
-class InProgress extends GetxController {
-  static InProgress get to => Get.find();
+// todo: this will transition
+
+class SaveAndGetProgressController extends GetxController {
+  static SaveAndGetProgressController get to => Get.find();
 
   final dbInterface = DbInterface();
 
