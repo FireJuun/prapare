@@ -239,6 +239,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.0.9"
+  fhir_auth:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: e2d232504a2b44be844b1e0af468518a7b466462
+      url: "https://github.com/fhir-fli/fhir_auth.git"
+    source: git
+    version: "0.0.1"
   fhir_db:
     dependency: "direct main"
     description:
@@ -284,13 +293,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_secure_storage:
-    dependency: transitive
-    description:
-      name: flutter_secure_storage
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.3.5"
   flutter_sheet_localization:
     dependency: "direct main"
     description:
@@ -630,15 +632,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
-  smart_on_fhir:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: prapare
-      resolved-ref: d185b52ed7471d40d1f9e2d57311031b8944c4cb
-      url: "https://github.com/fhir-fli/smart_on_fhir.git"
-    source: git
-    version: "0.0.1"
   source_gen:
     dependency: transitive
     description:

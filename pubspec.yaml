@@ -25,10 +25,9 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  smart_on_fhir:
+  fhir_auth:
     git:
-      url: https://github.com/fhir-fli/smart_on_fhir.git
-      ref: prapare
+      url: https://github.com/fhir-fli/fhir_auth.git
   cupertino_icons: ^1.0.0
   fhir: ^0.0.12
   fhir_at_rest: ^0.0.9

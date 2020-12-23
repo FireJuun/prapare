@@ -1,9 +1,6 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 
-import 'dart:convert';
-
 import 'package:fhir/r4.dart';
-import 'package:get/get.dart';
 import 'package:prapare/_internal/constants/prapare_survey.dart';
 import 'package:prapare/services/db_interface.dart';
 
@@ -65,6 +62,7 @@ class QuestionnaireModel {
     _data.userResponses.retainWhere((r) => false);
     _data.userResponses.addAll(responses);
     _data.response = QuestionnaireResponse(
+      subject: Reference(reference: 'Patient/4890'),
       resourceType: 'QuestionnaireResponse',
       meta: _data.questionnaire.meta,
       status: QuestionnaireResponseStatus.completed,
