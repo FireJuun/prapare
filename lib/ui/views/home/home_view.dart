@@ -1,11 +1,8 @@
-import 'dart:convert';
-
-import 'package:fhir/r4.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/localization.dart';
 import 'package:prapare/routes/routes.dart';
-import 'package:prapare/services/db_interface.dart';
+import 'package:prapare/services/display_locally.dart';
 import 'package:prapare/services/hapi.dart';
 import 'package:prapare/services/mihin_interface.dart';
 import 'package:prapare/services/save_locally.dart';
@@ -42,35 +39,12 @@ class HomeView extends StatelessWidget {
                     StyledButtonLarge(
                       title: labels.general.submitShare,
                       onPressed: () async {
-                        final responses = await DbInterface()
-                            .returnListOfSingleResourceType(
-                                'QuestionnaireResponse');
-
-                        responses.fold(
-                          (l) => Get.snackbar('Error', l.errorMessage),
-                          (r) async {
-                            // await MihinInterface.uploadAllToMihin();
-                            var bundle = Bundle(
-                              type: BundleType.transaction,
-                              entry: [],
-                            );
-                            for (var response in r) {
-                              bundle.entry.add(BundleEntry(
-                                  resource: response,
-                                  request: BundleRequest(
-                                      method: BundleRequestMethod.post,
-                                      url: FhirUri('QuestionnaireResponse'))));
-                            }
-
-                            // const encoder = JsonEncoder.withIndent('  ');
-                            // final saveBundle = encoder.convert(bundle.toJson());
-                            // await saveLocally(saveBundle);
-                            await hapi(bundle);
-                            // Get.dialog(Dialog(
-                            //     child: SingleChildScrollView(
-                            //         child: Text(saveBundle))));
-                          },
-                        );
+                        await hapi();
+                        await saveLocally();
+                        await MihinInterface.uploadAllToMihin();
+                        Get.dialog(Dialog(
+                            child: SingleChildScrollView(
+                                child: Text(await displayLocally()))));
                       },
                     ),
                     Align(

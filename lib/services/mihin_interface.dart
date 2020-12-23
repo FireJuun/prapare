@@ -13,7 +13,10 @@ class MihinInterface {
 
   static Future uploadAllToMihin() async {
     /// retrieve a list of all resources that are stored locally
-    final allResources = await DbInterface().allResources();
+    // final allResources = await DbInterface().allResources();
+    final allResources = await DbInterface()
+        .returnListOfSingleResourceType('QuestionnaireResponse');
+
     allResources.fold(
       ///if there is an error, print it out here
       (l) => print(l.errorMessage),
@@ -55,9 +58,12 @@ class MihinInterface {
                 type: R4Types.observation,
                 interaction: Interaction.any,
               ),
+              ClinicalScope.r4(
+                role: Role.patient,
+                type: R4Types.bundle,
+                interaction: Interaction.any,
+              ),
             ],
-            encounterLaunch: true,
-            patientLaunch: true,
             openid: true,
             offlineAccess: true,
           ),
@@ -75,6 +81,25 @@ class MihinInterface {
             final uploadBundle =
                 Bundle(type: BundleType.transaction, entry: []);
             for (var resource in r) {
+              final upload = rest.CreateRequest.r4(
+                  base: Uri.parse(mihinUrl),
+                  type: rest.R4Types.questionnaireresponse);
+              try {
+                final transactionReq = await upload.request(
+                  resource: resource,
+                  headers: {
+                    HttpHeaders.authorizationHeader:
+                        'Bearer ${await client.accessToken()}'
+                  },
+                );
+                transactionReq.fold(
+                  (l) => print(l.errorMessage()),
+                  (r) => print(r.toJson()),
+                );
+              } catch (e) {
+                Get.snackbar('Server Error', e.toString());
+              }
+
               uploadBundle.entry.add(
                 BundleEntry(
                   resource: resource,
