@@ -36,17 +36,7 @@ class MihinInterface {
                 interaction: Interaction.any,
               ),
               ClinicalScope.r4(
-                role: Role.user,
-                type: R4Types.patient,
-                interaction: Interaction.any,
-              ),
-              ClinicalScope.r4(
                 role: Role.patient,
-                type: R4Types.questionnaire,
-                interaction: Interaction.any,
-              ),
-              ClinicalScope.r4(
-                role: Role.user,
                 type: R4Types.questionnaire,
                 interaction: Interaction.any,
               ),
@@ -56,27 +46,12 @@ class MihinInterface {
                 interaction: Interaction.any,
               ),
               ClinicalScope.r4(
-                role: Role.user,
-                type: R4Types.questionnaireresponse,
-                interaction: Interaction.any,
-              ),
-              ClinicalScope.r4(
                 role: Role.patient,
                 type: R4Types.condition,
                 interaction: Interaction.any,
               ),
               ClinicalScope.r4(
-                role: Role.user,
-                type: R4Types.condition,
-                interaction: Interaction.any,
-              ),
-              ClinicalScope.r4(
                 role: Role.patient,
-                type: R4Types.observation,
-                interaction: Interaction.any,
-              ),
-              ClinicalScope.r4(
-                role: Role.user,
                 type: R4Types.observation,
                 interaction: Interaction.any,
               ),
@@ -97,7 +72,6 @@ class MihinInterface {
         attempt.fold(
           (left) => print(left.errorMessage()),
           (right) async {
-            final token = await client.accessToken();
             final uploadBundle =
                 Bundle(type: BundleType.transaction, entry: []);
             for (var resource in r) {
@@ -111,13 +85,20 @@ class MihinInterface {
                 ),
               );
             }
-            final transaction = rest.TransactionRequest.r4(
-                base: Uri.parse(mihinUrl));
+            final transaction =
+                rest.TransactionRequest.r4(base: Uri.parse(mihinUrl));
 
             try {
               final transactionReq = await transaction.request(
                 uploadBundle,
-                headers: {HttpHeaders.authorizationHeader: 'Bearer $token'},
+                headers: {
+                  HttpHeaders.authorizationHeader:
+                      'Bearer ${await client.accessToken()}'
+                },
+              );
+              transactionReq.fold(
+                (l) => print(l.errorMessage()),
+                (r) => print(r.toJson()),
               );
             } catch (e) {
               Get.snackbar('Server Error', e.toString());
