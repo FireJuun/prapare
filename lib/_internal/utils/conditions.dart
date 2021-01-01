@@ -1,8 +1,8 @@
 import 'package:fhir/r4.dart';
 import 'package:prapare/_internal/constants/snomed_enum.dart';
 
-Condition snomedCode(SNOMED snomed, Id id) => Condition(
-      subject: Reference(reference: 'Patient$id'),
+Condition getCondition(SNOMED snomed, Id id) => Condition(
+      subject: Reference(reference: 'Patient/$id'),
       clinicalStatus: CodeableConcept(
         coding: [
           Coding(
@@ -34,11 +34,19 @@ Condition snomedCode(SNOMED snomed, Id id) => Condition(
         )
       ],
       code: sdohConcept[snomed],
-      onsetPeriod: Period(start: FhirDateTime(DateTime.now())),
+      onsetPeriod: Period(
+        start: FhirDateTime(
+          DateTime(
+            DateTime.now().year - 1,
+            DateTime.now().month,
+            DateTime.now().day,
+          ),
+        ),
+      ),
     );
 
 final sdohConcept = {
-  SNOMED.homless: CodeableConcept(
+  SNOMED.homeless: CodeableConcept(
     coding: [
       Coding(
         system: FhirUri('http://snomed.info/sct'),

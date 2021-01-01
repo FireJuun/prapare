@@ -28,17 +28,16 @@ class ThemeController extends GetxController {
     themeString.value = ThemeModeUtil().convertThemeModeToString(obj);
     _themeMode = obj;
     Get.changeThemeMode(_themeMode);
-    await store.write('theme', themeString);
+    await store.write('theme', themeString.value);
     update();
   }
 
-  ThemeMode getThemeModeFromString(String themeString) {
+  ThemeMode getThemeModeFromString(String theme) {
     ThemeMode _setThemeMode = ThemeMode.system;
-    // print(themeString);
-    if (themeString == 'light') {
+    if (theme == 'light') {
       _setThemeMode = ThemeMode.light;
     }
-    if (themeString == 'dark') {
+    if (theme == 'dark') {
       _setThemeMode = ThemeMode.dark;
     }
     return _setThemeMode;

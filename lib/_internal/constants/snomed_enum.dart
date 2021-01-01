@@ -1,5 +1,5 @@
 enum SNOMED {
-  homless,
+  homeless,
   unemployed,
   food_insecurity,
 }

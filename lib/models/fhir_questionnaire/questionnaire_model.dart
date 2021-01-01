@@ -2,6 +2,9 @@
 
 import 'package:fhir/r4.dart';
 import 'package:prapare/_internal/constants/prapare_survey.dart';
+import 'package:prapare/_internal/constants/snomed_enum.dart';
+import 'package:prapare/_internal/utils/conditions.dart';
+import 'package:prapare/_internal/utils/observations.dart';
 import 'package:prapare/services/db_interface.dart';
 
 import 'fhir_questionnaire.dart';
@@ -140,6 +143,8 @@ class QuestionnaireModel {
                 responseAnswer.add(QuestionnaireResponseAnswer(
                     valueCoding: thisAnswer?.valueCoding));
               }
+              condAndObs(
+                  item.linkId, thisAnswer?.valueCoding?.code?.toString());
               break;
             }
           case AnswerOther:
@@ -228,5 +233,40 @@ class QuestionnaireModel {
       }
     }
     return responseAnswer;
+  }
+
+  Future condAndObs(String linkId, String answer) async {
+    if ((linkId == '/93042-0/71802-3' && answer == 'LA30190-5') ||
+        (linkId == '/93042-0/93033-9' && answer == 'LA33-6')) {
+      await saveCondAndObs(
+        getCondition(SNOMED.homeless, Id('4890')),
+        getObservation(SNOMED.homeless, Id('4890')),
+      );
+    }
+    if (linkId == '/93041-2/67875-5' && answer == 'LA17956-6') {
+      await saveCondAndObs(
+        getCondition(SNOMED.unemployed, Id('4890')),
+        getObservation(SNOMED.unemployed, Id('4890')),
+      );
+    }
+    if (linkId == '/93041-2/93031-3/LA30125-1' && answer == 'LA33-6') {
+      await saveCondAndObs(
+        getCondition(SNOMED.food_insecurity, Id('4890')),
+        getObservation(SNOMED.food_insecurity, Id('4890')),
+      );
+    }
+  }
+
+  Future saveCondAndObs(Condition condition, Observation observation) async {
+    final saveCondition = await DbInterface().save(condition);
+    saveCondition.fold(
+      (l) => print(l.errorMessage),
+      (r) => print('Condition Saved: ${r.toJson()}'),
+    );
+    final saveObservation = await DbInterface().save(observation);
+    saveObservation.fold(
+      (l) => print(l.errorMessage),
+      (r) => print('Observation Saved: ${r.toJson()}'),
+    );
   }
 }

@@ -1,8 +1,8 @@
 import 'package:fhir/r4.dart';
 import 'package:prapare/_internal/constants/snomed_enum.dart';
 
-Observation snomedCode(SNOMED snomed, Id id) => Observation(
-      subject: Reference(reference: 'Patient$id'),
+Observation getObservation(SNOMED snomed, Id id) => Observation(
+      subject: Reference(reference: 'Patient/$id'),
       status: ObservationStatus.final_,
       category: [
         CodeableConcept(
@@ -27,13 +27,20 @@ Observation snomedCode(SNOMED snomed, Id id) => Observation(
         ),
       ],
       code: sdohCode[snomed],
-      effectivePeriod: Period(start: FhirDateTime(DateTime.now())),
-      issued: Instant(DateTime.now()),
+      effectivePeriod: Period(
+        start: FhirDateTime(
+          DateTime(
+            DateTime.now().year - 1,
+            DateTime.now().month,
+            DateTime.now().day,
+          ),
+        ),
+      ),
       valueCodeableConcept: sdohConcept[snomed],
     );
 
 final sdohConcept = {
-  SNOMED.homless: CodeableConcept(
+  SNOMED.homeless: CodeableConcept(
     coding: [
       Coding(
         system: FhirUri('http://loinc.org'),
@@ -70,7 +77,7 @@ final sdohConcept = {
 };
 
 final sdohCode = {
-  SNOMED.homless: CodeableConcept(
+  SNOMED.homeless: CodeableConcept(
     coding: [
       Coding(
         system: FhirUri('http://loinc.org'),

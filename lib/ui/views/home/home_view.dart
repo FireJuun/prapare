@@ -39,9 +39,9 @@ class HomeView extends StatelessWidget {
                     StyledButtonLarge(
                       title: labels.general.submitShare,
                       onPressed: () async {
-                        await hapi();
+                        // await hapi();
                         await saveLocally();
-                        await MihinInterface.uploadAllToMihin();
+                        // await MihinInterface.uploadAllToMihin();
                         Get.dialog(Dialog(
                             child: SingleChildScrollView(
                                 child: Text(await displayLocally()))));
