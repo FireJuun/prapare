@@ -14,6 +14,23 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     final labels = AppLocalizations.of(context);
 
+    Widget _option(String text, Function function) => AlertDialog(
+          title: Text(text),
+          actions: [
+            TextButton(
+              child: Text(labels.prapare.answers.basic.no),
+              onPressed: () => Get.back(),
+            ),
+            TextButton(
+              child: Text(labels.prapare.answers.basic.yes),
+              onPressed: () async {
+                await function();
+                Get.back();
+              },
+            ),
+          ],
+        );
+
     return Scaffold(
       body: LayoutBuilder(
           builder: (BuildContext context, BoxConstraints viewportConstraints) {
@@ -39,9 +56,12 @@ class HomeView extends StatelessWidget {
                     StyledButtonLarge(
                       title: labels.general.submitShare,
                       onPressed: () async {
-                        // await hapi();
-                        await saveLocally();
-                        // await MihinInterface.uploadAllToMihin();
+                        await Get.dialog(
+                            _option('Upload to public Hapi Server?', hapi));
+                        await Get.dialog(_option('Save locally?', saveLocally));
+                        await Get.dialog(_option('Upload to Mihin?',
+                            MihinInterface.uploadAllToMihin));
+
                         Get.dialog(Dialog(
                             child: SingleChildScrollView(
                                 child: Text(await displayLocally()))));

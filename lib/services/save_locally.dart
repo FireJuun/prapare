@@ -7,22 +7,24 @@ import 'package:get_storage/get_storage.dart';
 import 'db_interface.dart';
 
 Future saveLocally() async {
-  final responses = await DbInterface()
-      .returnListOfSingleResourceType('QuestionnaireResponse');
-
-  final conditions =
-      await DbInterface().returnListOfSingleResourceType('Condition');
-
-  final observations =
-      await DbInterface().returnListOfSingleResourceType('Observation');
-
   var bundle = Bundle(
     type: BundleType.transaction,
     entry: [],
   );
 
+  final responses = await DbInterface()
+      .returnListOfSingleResourceType('QuestionnaireResponse');
+
   bundle = addToBundle(responses, bundle);
+
+  final conditions =
+      await DbInterface().returnListOfSingleResourceType('Condition');
+
   bundle = addToBundle(conditions, bundle);
+
+  final observations =
+      await DbInterface().returnListOfSingleResourceType('Observation');
+
   bundle = addToBundle(observations, bundle);
 
   final path = (await getExternalStorageDirectory()).path;
