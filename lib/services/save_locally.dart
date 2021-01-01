@@ -28,7 +28,7 @@ Future saveLocally() async {
       final path = (await getExternalStorageDirectory()).path;
       final file = File('$path/questionnaireBundle.txt');
       const encoder = JsonEncoder.withIndent('  ');
-      final saveBundle = encoder.convert(bundle.toJson());
+      final saveBundle = encoder.convert(bundle.toYaml());
       file.writeAsString(saveBundle);
     },
   );

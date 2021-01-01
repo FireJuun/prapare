@@ -23,7 +23,7 @@ Future<String> displayLocally() async {
                 url: FhirUri('QuestionnaireResponse'))));
       }
       const encoder = JsonEncoder.withIndent('  ');
-      return encoder.convert(bundle.toJson());
+      return encoder.convert(bundle.toYaml());
     },
   );
 }
