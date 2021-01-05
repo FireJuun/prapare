@@ -1,3 +1,4 @@
+// ignore_for_file: missing_return
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
@@ -6,46 +7,57 @@ import 'package:get_storage/get_storage.dart';
 
 import 'db_interface.dart';
 
-Future saveLocally() async {
+Future<Either<DbFailure, Unit>> saveLocally() async {
+  final maybeBundle = await createBundle([
+    'QuestionnaireResponse',
+    'Condition',
+    'Observation',
+  ]);
+  return maybeBundle.fold(
+    (l) => left(l),
+    (r) async {
+      try {
+        final path = (await getExternalStorageDirectory()).path;
+        final file = File('$path/bundle.txt');
+        final saveBundle = r.toYaml();
+        file.writeAsString(saveBundle);
+      } catch (e) {
+        return left(DbFailure(e));
+      }
+      return right(unit);
+    },
+  );
+}
+
+Future<Either<DbFailure, Bundle>> createBundle(
+    List<String> resourceTypes) async {
   var bundle = Bundle(
     type: BundleType.transaction,
     entry: [],
   );
+  for (var type in resourceTypes) {
+    final responses = await DbInterface().returnListOfSingleResourceType(type);
 
-  final responses = await DbInterface()
-      .returnListOfSingleResourceType('QuestionnaireResponse');
-
-  bundle = addToBundle(responses, bundle);
-
-  final conditions =
-      await DbInterface().returnListOfSingleResourceType('Condition');
-
-  bundle = addToBundle(conditions, bundle);
-
-  final observations =
-      await DbInterface().returnListOfSingleResourceType('Observation');
-
-  bundle = addToBundle(observations, bundle);
-
-  final path = (await getExternalStorageDirectory()).path;
-  final file = File('$path/bundle.txt');
-  final saveBundle = bundle.toYaml();
-  file.writeAsString(saveBundle);
+    responses.fold(
+      (l) {
+        return left(l);
+      },
+      (r) {
+        bundle = addToBundle(r, bundle);
+      },
+    );
+  }
+  return right(bundle);
 }
 
-Bundle addToBundle(
-    Either<DbFailure, List<Resource>> dbResources, Bundle bundle) {
-  dbResources.fold(
-    (l) => print('Error: ${l.errorMessage}'),
-    (r) {
-      for (var res in r) {
-        bundle.entry.add(BundleEntry(
-            resource: res,
-            request: BundleRequest(
-                method: BundleRequestMethod.post,
-                url: FhirUri(res.resourceType))));
-      }
-    },
-  );
+Bundle addToBundle(List<Resource> dbResources, Bundle bundle) {
+  for (var resource in dbResources) {
+    bundle.entry.add(BundleEntry(
+        resource: resource,
+        request: BundleRequest(
+            method: BundleRequestMethod.post,
+            url: FhirUri(resource.resourceType))));
+  }
+
   return bundle;
 }

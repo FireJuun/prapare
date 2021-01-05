@@ -6,6 +6,7 @@ import 'package:prapare/services/display_locally.dart';
 import 'package:prapare/services/hapi.dart';
 import 'package:prapare/services/mihin_interface.dart';
 import 'package:prapare/services/save_locally.dart';
+import 'package:prapare/services/services_controller.dart';
 import 'package:prapare/ui/styled_components/styled_components.dart';
 import 'package:prapare/ui/views/settings/settings_dialog.dart';
 
@@ -13,6 +14,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final labels = AppLocalizations.of(context);
+    final servicesController = Get.put(ServicesController());
 
     Widget _option(String text, Function function) => AlertDialog(
           title: Text(text),
@@ -56,12 +58,13 @@ class HomeView extends StatelessWidget {
                     StyledButtonLarge(
                       title: labels.general.submitShare,
                       onPressed: () async {
-                        await Get.dialog(
-                            _option('Upload to public Hapi Server?', hapi));
-                        await Get.dialog(_option('Save locally?', saveLocally));
-                        await Get.dialog(_option('Upload to Mihin?',
+                        await Get.dialog(servicesController.popup(
+                            'Upload to public Hapi Server?', hapi));
+                        await Get.dialog(servicesController.popup(
+                            'Save locally?', saveLocally));
+                        await Get.dialog(servicesController.popup(
+                            'Upload to Mihin?',
                             MihinInterface.uploadAllToMihin));
-
                         Get.dialog(Dialog(
                             child: SingleChildScrollView(
                                 child: Text(await displayLocally()))));

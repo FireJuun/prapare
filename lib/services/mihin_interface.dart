@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:dartz/dartz.dart';
 import 'package:fhir/r4.dart';
 import 'package:fhir_at_rest/fhir_at_rest.dart' as rest;
 import 'package:fhir_auth/fhir_auth.dart';
@@ -10,7 +11,7 @@ import 'db_interface.dart';
 class MihinInterface {
   MihinInterface();
 
-  static Future uploadAllToMihin() async {
+  static Future<Either<dynamic, Unit>> uploadAllToMihin() async {
     /// create the smart on fhir client, must include baseUrl, clientId,
     /// redirectUrl (which we have set ahead of time in the Android
     /// build.gradle and iOS Info.plist files), includes the scopes we are
@@ -65,23 +66,31 @@ class MihinInterface {
       tokenUrl: mihinTokenUrl,
     );
 
-    attempt.fold(
-      (left) => print(left.errorMessage()),
-      (right) async {
-        await upload('QuestionnaireResponse',
+    return attempt.fold(
+      (l) => left(l),
+      (r) async {
+        var response = await upload('QuestionnaireResponse',
             rest.R4Types.questionnaireresponse, client);
-        await upload('Condition', rest.R4Types.condition, client);
-        await upload('Observation', rest.R4Types.observation, client);
+        if (response.isLeft()) {
+          return left(response.getOrElse(null));
+        }
+        response = await upload('Condition', rest.R4Types.condition, client);
+        if (response.isLeft()) {
+          return left(response.getOrElse(null));
+        }
+        response =
+            await upload('Observation', rest.R4Types.observation, client);
+        return response.fold((l) => left(l), (r) => right(unit));
       },
     );
   }
 
-  static Future upload(
+  static Future<Either<dynamic, Unit>> upload(
       String title, rest.R4Types type, FhirClient client) async {
     final responses = await DbInterface().returnListOfSingleResourceType(title);
 
-    responses.fold(
-      (l) => print(l.errorMessage),
+    return responses.fold(
+      (l) => left(l),
       (r) async {
         for (var resource in r) {
           final upload =
@@ -94,16 +103,14 @@ class MihinInterface {
                     'Bearer ${await client.accessToken()}'
               },
             );
-            transactionReq.fold(
-              (l) => print(l.errorMessage()),
-              (r) async {
-                print('Uploaded $title to Mihin');
-              },
-            );
+            if (transactionReq.isLeft()) {
+              return left(transactionReq.getOrElse(null));
+            }
           } catch (e) {
-            print('Error: ${e.toString()}');
+            return left(rest.RestfulFailure.unknownFailure(failedValue: e));
           }
         }
+        return right(unit);
       },
     );
   }
