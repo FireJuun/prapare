@@ -2,6 +2,9 @@
 
 import 'package:fhir/r4.dart';
 import 'package:prapare/_internal/constants/prapare_survey.dart';
+import 'package:prapare/_internal/constants/snomed_enum.dart';
+import 'package:prapare/_internal/utils/conditions.dart';
+import 'package:prapare/_internal/utils/observations.dart';
 import 'package:prapare/services/db_interface.dart';
 
 import 'fhir_questionnaire.dart';
@@ -11,6 +14,8 @@ import 'survey/survey_item/survey_item.dart';
 class QuestionnaireModel {
   final FhirQuestionnaire _data = FhirQuestionnaire();
   FhirQuestionnaire get data => _data;
+  Map<SNOMED, Condition> _conditions = {};
+  Map<SNOMED, Observation> _observations = {};
 
   /// loads the survey (currently saved locally, but could be queried from
   /// elswhere), then creates a list of Surveys from the questionnaire
@@ -59,10 +64,12 @@ class QuestionnaireModel {
   }
 
   /// saves the Questionnaire locally
-  Future<Resource> saveResponses(List<UserResponse> responses) async {
+  Future saveResponses(List<UserResponse> responses) async {
     _data.userResponses.retainWhere((r) => false);
     _data.userResponses.addAll(responses);
     _data.response = QuestionnaireResponse(
+      // todo: remove hardcoded (example) patient reference
+      subject: Reference(reference: 'Patient/4890'),
       resourceType: 'QuestionnaireResponse',
       meta: _data.questionnaire.meta,
       status: QuestionnaireResponseStatus.completed,
@@ -74,11 +81,24 @@ class QuestionnaireModel {
 
     saveResult.fold(
       (l) => print(l.errorMessage),
-      (r) {
-        return r;
-      },
+      (r) => print('saved QuestionnaireResponse'),
     );
-    return null;
+
+    _conditions.forEach((k, v) async {
+      final saveCondition = await DbInterface().save(v);
+      saveCondition.fold(
+        (l) => print(l.errorMessage),
+        (r) => print('saved Condition'),
+      );
+    });
+
+    _observations.forEach((k, v) async {
+      final saveObservation = await DbInterface().save(v);
+      saveObservation.fold(
+        (l) => print(l.errorMessage),
+        (r) => print('saved Condition'),
+      );
+    });
   }
 
   List<QuestionnaireResponseItem> _getResponse(List<QuestionnaireItem> item) {
@@ -140,6 +160,8 @@ class QuestionnaireModel {
                 responseAnswer.add(QuestionnaireResponseAnswer(
                     valueCoding: thisAnswer?.valueCoding));
               }
+              condAndObs(
+                  item.linkId, thisAnswer?.valueCoding?.code?.toString());
               break;
             }
           case AnswerOther:
@@ -228,5 +250,27 @@ class QuestionnaireModel {
       }
     }
     return responseAnswer;
+  }
+
+  void condAndObs(String linkId, String answer) {
+    if ((linkId == '/93042-0/71802-3' && answer == 'LA30190-5') ||
+        (linkId == '/93042-0/93033-9' && answer == 'LA33-6')) {
+      recordCondAndObs(SNOMED.homeless);
+    }
+    if (linkId == '/93041-2/67875-5' && answer == 'LA17956-6') {
+      recordCondAndObs(SNOMED.unemployed);
+    }
+    if (linkId == '/93041-2/93031-3/LA30125-1' && answer == 'LA33-6') {
+      recordCondAndObs(SNOMED.food_insecurity);
+    }
+  }
+
+  void recordCondAndObs(SNOMED snomed) {
+    if (!_conditions.keys.contains(snomed)) {
+      _conditions[snomed] = getCondition(snomed, Id('4890'));
+    }
+    if (!_conditions.keys.contains(snomed)) {
+      _observations[snomed] = getObservation(snomed, Id('4890'));
+    }
   }
 }

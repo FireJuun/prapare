@@ -2,13 +2,14 @@ import 'dart:io';
 
 import 'package:fhir/r4.dart';
 import 'package:fhir_at_rest/fhir_at_rest.dart' as rest;
+import 'package:fhir_auth/fhir_auth.dart';
 import 'package:get/get.dart';
-import 'package:smart_on_fhir/smart_on_fhir.dart';
+import 'package:prapare/api.dart';
 
 import 'db_interface.dart';
 
-class ServerInterface {
-  ServerInterface();
+class AidboxInterface {
+  AidboxInterface();
 
   Future uploadAllToAidbox() async {
     /// retrieve a list of all resources that are stored locally
@@ -23,10 +24,10 @@ class ServerInterface {
         /// interested in, launch types, if we need to use openid or have
         /// offline access. Most of this is detailed here:
         /// https://github.com/fhir-fli/fhir_at_rest
-        final smart = Smart(
-          baseUrl: FhirUri('https://prapare.aidbox.app/fhir'),
-          clientId: 'prapare',
-          redirectUri: FhirUri('com.fhirfli.prapare://'),
+        final client = FhirClient(
+          baseUrl: FhirUri(Api.aidboxUrl),
+          clientId: Api.aidboxClientId,
+          redirectUri: FhirUri(Api.prapareRedirectUrl),
           scopes: Scopes(
             clinicalScopes: [
               ClinicalScope.r4(
@@ -50,16 +51,21 @@ class ServerInterface {
             openid: true,
             offlineAccess: true,
           ),
-          fhirServer: FhirUri('https://prapare.aidbox.app/fhir'),
+          secret: Api.aidboxClientSecret,
         );
-        final auth = await smart.client(secret: 'verysecret');
-        auth.fold(
+
+        final attempt = await client.access(
+          authUrl: Api.aidboxAuthUrl,
+          tokenUrl: Api.aidboxTokenUrl,
+        );
+
+        attempt.fold(
           (left) => print(left.errorMessage()),
           (right) async {
+            final token = await client.accessToken();
             final uploadBundle =
                 Bundle(type: BundleType.transaction, entry: []);
             for (var resource in r) {
-              print(resource.toJson());
               uploadBundle.entry.add(
                 BundleEntry(
                   resource: resource,
@@ -70,22 +76,13 @@ class ServerInterface {
                 ),
               );
             }
+            final transaction = rest.TransactionRequest.r4(
+                base: Uri.parse('https://prapare.aidbox.app/fhir'));
 
             try {
-              final transaction = rest.TransactionRequest.r4(
-                  base: Uri.parse('https://prapare.aidbox.app/fhir'));
               final transactionReq = await transaction.request(
                 uploadBundle,
-                headers: {
-                  HttpHeaders.authorizationHeader: 'Bearer ${right.accessToken}'
-                },
-              );
-              print(transactionReq.toString());
-              print(
-                transactionReq.fold(
-                  (lefting) => lefting.errorMessage(),
-                  (righting) => righting.toJson(),
-                ),
+                headers: {HttpHeaders.authorizationHeader: 'Bearer $token'},
               );
             } catch (e) {
               Get.snackbar('Server Error', e.toString());

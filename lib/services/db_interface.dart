@@ -86,6 +86,7 @@ class DbInterface {
 }
 
 class DbFailure {
-  DbFailure(this.errorMessage);
-  String errorMessage;
+  DbFailure(this._errorMessage);
+  final String _errorMessage;
+  String errorMessage() => _errorMessage;
 }

@@ -35,13 +35,12 @@ class ThemeController extends GetxController {
     update();
   }
 
-  ThemeMode getThemeModeFromString(String themeString) {
+  ThemeMode getThemeModeFromString(String theme) {
     ThemeMode _setThemeMode = ThemeMode.system;
-    // print(themeString);
-    if (themeString == 'light') {
+    if (theme == 'light') {
       _setThemeMode = ThemeMode.light;
     }
-    if (themeString == 'dark') {
+    if (theme == 'dark') {
       _setThemeMode = ThemeMode.dark;
     }
     return _setThemeMode;
