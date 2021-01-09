@@ -1,0 +1,21 @@
+/// itemType as defined: https://www.hl7.org/fhir/valueset-item-type.html
+enum ItemType {
+  group,
+  display,
+  question,
+  boolean,
+  decimal,
+  integer,
+  date,
+  dateTime,
+  time,
+  string,
+  text,
+  url,
+  choice,
+  open_choice,
+  attachment,
+  reference,
+  quantity,
+  invalid,
+}

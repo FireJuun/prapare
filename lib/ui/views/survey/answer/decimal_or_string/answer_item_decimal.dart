@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:prapare/_internal/utils/utils.dart';
-import 'package:prapare/localization.dart';
+import 'package:prapare/ui/localization.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
-import 'package:prapare/models/fhir_questionnaire/survey/enums/item_type.dart';
+import 'package:prapare/_internal/enums/item_type_enum.dart';
 import 'package:prapare/ui/views/survey/answer/answer_item.dart';
 
 import '../enable_when_option.dart';

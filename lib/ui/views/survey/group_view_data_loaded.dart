@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/controllers/controllers.dart';
-import 'package:prapare/localization.dart';
+import 'package:prapare/ui/localization.dart';
 import 'package:prapare/ui/styled_components/styled_components.dart';
 import 'package:prapare/ui/themes.dart';
 import 'package:prapare/ui/views/settings/settings_dialog.dart';

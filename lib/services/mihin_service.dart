@@ -6,7 +6,7 @@ import 'package:fhir_at_rest/fhir_at_rest.dart' as rest;
 import 'package:fhir_auth/fhir_auth.dart';
 import 'package:prapare/api.dart';
 
-import 'db_interface.dart';
+import 'db_service.dart';
 
 class MihinInterface {
   MihinInterface();

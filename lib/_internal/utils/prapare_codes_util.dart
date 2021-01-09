@@ -1,4 +1,4 @@
-import 'package:prapare/localization.dart';
+import 'package:prapare/ui/localization.dart';
 
 class PrapareCodesUtil {
   /// These answers have their views determined programmatically,

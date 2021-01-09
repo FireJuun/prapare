@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:prapare/localization.dart';
+import 'package:prapare/ui/localization.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 
 import 'answer_item_decimal_or_string_controller.dart';

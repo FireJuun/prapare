@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import 'package:prapare/_internal/components/custom.dart' as custom;
 import 'package:prapare/_internal/utils/prapare_codes_util.dart';
 import 'package:prapare/controllers/theme_controller.dart';
-import 'package:prapare/localization.dart';
+import 'package:prapare/ui/localization.dart';
 import 'package:prapare/ui/styled_components/app_logo.dart';
 import 'package:prapare/ui/themes.dart';
 import 'package:prapare/ui/views/survey/group_controller.dart';

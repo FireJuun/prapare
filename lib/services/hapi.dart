@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:fhir/r4.dart';
 import 'package:fhir_at_rest/requests/transaction_request.dart';
 
-import 'db_interface.dart';
+import 'db_service.dart';
 
 Future<Either<dynamic, Unit>> hapi() async {
   final maybeBundle = await createBundle([

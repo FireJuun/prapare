@@ -1,5 +1,7 @@
+import 'package:prapare/_internal/enums/item_type_enum.dart';
+
 /// itemType as defined: https://www.hl7.org/fhir/valueset-item-type.html
-const itemTypeMap = {
+const stringToItemTypeMap = {
   'group': ItemType.group,
   'display': ItemType.display,
   'question': ItemType.question,
@@ -18,24 +20,3 @@ const itemTypeMap = {
   'reference': ItemType.reference,
   'quantity': ItemType.quantity,
 };
-
-enum ItemType {
-  group,
-  display,
-  question,
-  boolean,
-  decimal,
-  integer,
-  date,
-  dateTime,
-  time,
-  string,
-  text,
-  url,
-  choice,
-  open_choice,
-  attachment,
-  reference,
-  quantity,
-  invalid,
-}

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/_internal/utils/theme_mode_util.dart';
-import 'package:prapare/localization.dart';
+import 'package:prapare/ui/localization.dart';
 import 'package:prapare/models/menu_options/menu_option.dart';
 import 'package:prapare/routes/routes.dart';
 import 'package:prapare/ui/views/settings/settings_controller.dart';

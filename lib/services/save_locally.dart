@@ -5,7 +5,7 @@ import 'package:dartz/dartz.dart';
 import 'package:fhir/r4.dart';
 import 'package:get_storage/get_storage.dart';
 
-import 'db_interface.dart';
+import 'db_service.dart';
 
 Future<Either<DbFailure, Unit>> saveLocally() async {
   final maybeBundle = await createBundle([

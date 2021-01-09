@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:prapare/models/fhir_questionnaire/survey/enums/item_type.dart';
-import 'package:prapare/models/fhir_questionnaire/survey/enums/qformat.dart';
+import 'package:prapare/_internal/enums/item_type_enum.dart';
+import 'package:prapare/_internal/enums/qformat_enum.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/ui/views/survey/answer/choice_or_open_choice/answer_item_checkbox.dart';
 import 'package:prapare/ui/views/survey/answer/decimal_or_string/answer_item_decimal.dart';

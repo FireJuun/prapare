@@ -6,12 +6,12 @@ import 'package:fhir_auth/fhir_auth.dart';
 import 'package:get/get.dart';
 import 'package:prapare/api.dart';
 
-import 'db_interface.dart';
+import 'db_service.dart';
 
 class AidboxInterface {
   AidboxInterface();
 
-  Future uploadAllToAidbox() async {
+  Future upload() async {
     /// retrieve a list of all resources that are stored locally
     final allResources = await DbInterface().allResources();
     allResources.fold(

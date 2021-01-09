@@ -1,5 +1,5 @@
 import 'package:fhir/r4.dart';
-import 'package:prapare/models/fhir_questionnaire/survey/enums/item_type.dart';
+import 'package:prapare/_internal/enums/item_type_enum.dart';
 
 class ItemTypeUtil {
   /// convert r4 QuestionnaireItemType to ItemType

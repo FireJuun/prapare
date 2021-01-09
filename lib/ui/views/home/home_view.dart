@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:prapare/controllers/commands/commands.dart';
-import 'package:prapare/localization.dart';
+import 'package:prapare/controllers/commands/services_command.dart';
+import 'package:prapare/ui/localization.dart';
 import 'package:prapare/routes/routes.dart';
-import 'package:prapare/services/display_locally.dart';
+import 'package:prapare/services/display_service.dart';
 import 'package:prapare/services/hapi.dart';
-import 'package:prapare/services/mihin_interface.dart';
+import 'package:prapare/services/mihin_service.dart';
 import 'package:prapare/services/save_locally.dart';
-import 'package:prapare/services/services_controller.dart';
 import 'package:prapare/ui/styled_components/styled_components.dart';
 import 'package:prapare/ui/views/settings/settings_dialog.dart';
 

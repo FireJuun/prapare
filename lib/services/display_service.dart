@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:fhir/r4.dart';
 
-import 'db_interface.dart';
+import 'db_service.dart';
 
 Future<String> displayLocally() async {
   final responses = await DbInterface()

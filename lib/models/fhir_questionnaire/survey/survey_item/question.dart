@@ -54,7 +54,7 @@ class Question extends SurveyItem {
                     FhirUri('http://hl7.org/fhir/questionnaire-item-control'));
 
             /// we map the format to one of the allowed choices
-            question.format = choiceType[coding.code];
+            question.format = stringToQformatMap[coding.code];
 
             /// if we can't find it in that list, we state that it is an unknown
             /// format to differentiate it from those questions without a list

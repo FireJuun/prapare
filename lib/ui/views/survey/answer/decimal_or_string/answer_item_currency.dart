@@ -4,8 +4,8 @@ import 'package:flutter_multi_formatter/flutter_multi_formatter.dart';
 import 'package:get/get.dart';
 import 'package:money2/money2.dart';
 import 'package:prapare/_internal/utils/utils.dart';
-import 'package:prapare/localization.dart';
-import 'package:prapare/models/fhir_questionnaire/survey/enums/item_type.dart';
+import 'package:prapare/ui/localization.dart';
+import 'package:prapare/_internal/enums/item_type_enum.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 
 import 'answer_item_currency_controller.dart';
