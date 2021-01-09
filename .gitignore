@@ -85,4 +85,4 @@ app.*.map.json
 # Login API / credentials of all types are ignored
 lib/api*
 # ...but public API keys are not ignored
-!lib/api_keys.dart
+!lib/api/api_public.dart
