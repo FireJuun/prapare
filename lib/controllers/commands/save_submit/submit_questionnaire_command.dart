@@ -28,8 +28,9 @@ class SubmitQuestionnaireCommand extends AbstractCommand {
         }
         const encoder = JsonEncoder.withIndent('  ');
         final localBundle = encoder.convert(bundle.toJson());
-        await LocalStorage().saveBundle(localBundle);
-        await HapiStorage().saveBundle(bundle);
+        // ToDo: add these back in
+        // await LocalStorage().saveBundle(localBundle);
+        // await HapiStorage().saveBundle(bundle);
         Get.dialog(
           Dialog(child: SingleChildScrollView(child: Text(localBundle))),
         );

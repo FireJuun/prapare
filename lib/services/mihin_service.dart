@@ -1,91 +1,47 @@
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
-import 'package:fhir/r4.dart';
 import 'package:fhir_at_rest/fhir_at_rest.dart' as rest;
 import 'package:fhir_auth/fhir_auth.dart';
-import 'package:prapare/api.dart';
 
 import 'db_service.dart';
 
-class MihinInterface {
-  MihinInterface();
-
-  static Future<Either<dynamic, Unit>> uploadAllToMihin() async {
-    /// create the smart on fhir client, must include baseUrl, clientId,
-    /// redirectUrl (which we have set ahead of time in the Android
-    /// build.gradle and iOS Info.plist files), includes the scopes we are
-    /// interested in, launch types, if we need to use openid or have
-    /// offline access. Most of this is detailed here:
-    /// https://github.com/fhir-fli/fhir_at_rest
-    final client = FhirClient(
-      baseUrl: FhirUri(Api.mihinUrl),
-      clientId: Api.mihinClientId,
-      redirectUri: FhirUri(Api.prapareRedirectUrl),
-      scopes: Scopes(
-        clinicalScopes: [
-          ClinicalScope.r4(
-            role: Role.patient,
-            type: R4Types.patient,
-            interaction: Interaction.any,
-          ),
-          ClinicalScope.r4(
-            role: Role.patient,
-            type: R4Types.questionnaire,
-            interaction: Interaction.any,
-          ),
-          ClinicalScope.r4(
-            role: Role.patient,
-            type: R4Types.questionnaireresponse,
-            interaction: Interaction.any,
-          ),
-          ClinicalScope.r4(
-            role: Role.patient,
-            type: R4Types.condition,
-            interaction: Interaction.any,
-          ),
-          ClinicalScope.r4(
-            role: Role.patient,
-            type: R4Types.observation,
-            interaction: Interaction.any,
-          ),
-          ClinicalScope.r4(
-            role: Role.patient,
-            type: R4Types.bundle,
-            interaction: Interaction.any,
-          ),
-        ],
-        openid: true,
-        offlineAccess: true,
-      ),
-      secret: Api.mihinClientSecret,
-    );
-
+class MihinService {
+  Future<Either<SmartFailure, Unit>> call(
+    FhirClient client,
+    String authUrl,
+    String tokenUrl,
+  ) async {
     final attempt = await client.access(
-      authUrl: Api.mihinAuthUrl,
-      tokenUrl: Api.mihinTokenUrl,
+      authUrl: authUrl,
+      tokenUrl: tokenUrl,
     );
 
     return attempt.fold(
       (l) => left(l),
       (r) async {
-        var response = await upload('QuestionnaireResponse',
+        var response = await _upload('QuestionnaireResponse',
             rest.R4Types.questionnaireresponse, client);
-        if (response.isLeft()) {
-          return left(response.getOrElse(null));
-        }
-        response = await upload('Condition', rest.R4Types.condition, client);
-        if (response.isLeft()) {
-          return left(response.getOrElse(null));
-        }
-        response =
-            await upload('Observation', rest.R4Types.observation, client);
-        return response.fold((l) => left(l), (r) => right(unit));
+        return response.fold(
+          (l) => left(l),
+          (r) async {
+            response =
+                await _upload('Condition', rest.R4Types.condition, client);
+            return response.fold(
+              (l) => left(l),
+              (r) async {
+                response = await _upload(
+                    'Observation', rest.R4Types.observation, client);
+                return response.fold((l) => left(l), (r) => right(unit));
+              },
+            );
+          },
+        );
       },
     );
   }
 
-  static Future<Either<dynamic, Unit>> upload(
+  Future<Either<dynamic, Unit>> _upload(
       String title, rest.R4Types type, FhirClient client) async {
     final responses = await DbInterface().returnListOfSingleResourceType(title);
 
@@ -93,8 +49,8 @@ class MihinInterface {
       (l) => left(l),
       (r) async {
         for (var resource in r) {
-          final upload =
-              rest.CreateRequest.r4(base: Uri.parse(Api.mihinUrl), type: type);
+          final upload = rest.CreateRequest.r4(
+              base: Uri.parse('$client.baseUrl'), type: type);
           try {
             final transactionReq = await upload.request(
               resource: resource,

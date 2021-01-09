@@ -45,12 +45,14 @@ dependencies:
   url_launcher: ^5.7.10
   validators: ^2.0.1
   remote_state: ^1.5.0
+  freezed_annotation: ^0.12.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   build_runner: ^1.10.2
   flutter_sheet_localization_generator: ^2.0.0
+  freezed: ^0.12.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
