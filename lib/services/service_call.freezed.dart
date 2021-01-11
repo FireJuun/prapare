@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
-part of 'service.dart';
+part of 'service_call.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -10,8 +10,8 @@ part of 'service.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-class _$ServiceTearOff {
-  const _$ServiceTearOff();
+class _$ServiceCallTearOff {
+  const _$ServiceCallTearOff();
 
 // ignore: unused_element
   _Aidbox aidboxService(
@@ -32,8 +32,16 @@ class _$ServiceTearOff {
   }
 
 // ignore: unused_element
-  _Local localStorageService({Bundle bundle, Rx<RemoteState> state}) {
-    return _Local(
+  _LocalStorage localStorageService({Bundle bundle, Rx<RemoteState> state}) {
+    return _LocalStorage(
+      bundle: bundle,
+      state: state,
+    );
+  }
+
+// ignore: unused_element
+  _LocalDisplay localDisplayService({Bundle bundle, Rx<RemoteState> state}) {
+    return _LocalDisplay(
       bundle: bundle,
       state: state,
     );
@@ -50,10 +58,10 @@ class _$ServiceTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $Service = _$ServiceTearOff();
+const $ServiceCall = _$ServiceCallTearOff();
 
 /// @nodoc
-mixin _$Service {
+mixin _$ServiceCall {
   Rx<RemoteState> get state;
 
   @optionalTypeArgs
@@ -63,6 +71,7 @@ mixin _$Service {
             FhirClient client, Bundle bundle, Rx<RemoteState> state),
     @required Result hapiService(Bundle bundle, Rx<RemoteState> state),
     @required Result localStorageService(Bundle bundle, Rx<RemoteState> state),
+    @required Result localDisplayService(Bundle bundle, Rx<RemoteState> state),
     @required Result mihinService(FhirClient client, Rx<RemoteState> state),
   });
   @optionalTypeArgs
@@ -71,6 +80,7 @@ mixin _$Service {
         FhirClient client, Bundle bundle, Rx<RemoteState> state),
     Result hapiService(Bundle bundle, Rx<RemoteState> state),
     Result localStorageService(Bundle bundle, Rx<RemoteState> state),
+    Result localDisplayService(Bundle bundle, Rx<RemoteState> state),
     Result mihinService(FhirClient client, Rx<RemoteState> state),
     @required Result orElse(),
   });
@@ -78,35 +88,38 @@ mixin _$Service {
   Result map<Result extends Object>({
     @required Result aidboxService(_Aidbox value),
     @required Result hapiService(_Hapi value),
-    @required Result localStorageService(_Local value),
+    @required Result localStorageService(_LocalStorage value),
+    @required Result localDisplayService(_LocalDisplay value),
     @required Result mihinService(_Mihin value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result aidboxService(_Aidbox value),
     Result hapiService(_Hapi value),
-    Result localStorageService(_Local value),
+    Result localStorageService(_LocalStorage value),
+    Result localDisplayService(_LocalDisplay value),
     Result mihinService(_Mihin value),
     @required Result orElse(),
   });
 
-  $ServiceCopyWith<Service> get copyWith;
+  $ServiceCallCopyWith<ServiceCall> get copyWith;
 }
 
 /// @nodoc
-abstract class $ServiceCopyWith<$Res> {
-  factory $ServiceCopyWith(Service value, $Res Function(Service) then) =
-      _$ServiceCopyWithImpl<$Res>;
+abstract class $ServiceCallCopyWith<$Res> {
+  factory $ServiceCallCopyWith(
+          ServiceCall value, $Res Function(ServiceCall) then) =
+      _$ServiceCallCopyWithImpl<$Res>;
   $Res call({Rx<RemoteState> state});
 }
 
 /// @nodoc
-class _$ServiceCopyWithImpl<$Res> implements $ServiceCopyWith<$Res> {
-  _$ServiceCopyWithImpl(this._value, this._then);
+class _$ServiceCallCopyWithImpl<$Res> implements $ServiceCallCopyWith<$Res> {
+  _$ServiceCallCopyWithImpl(this._value, this._then);
 
-  final Service _value;
+  final ServiceCall _value;
   // ignore: unused_field
-  final $Res Function(Service) _then;
+  final $Res Function(ServiceCall) _then;
 
   @override
   $Res call({
@@ -119,7 +132,7 @@ class _$ServiceCopyWithImpl<$Res> implements $ServiceCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$AidboxCopyWith<$Res> implements $ServiceCopyWith<$Res> {
+abstract class _$AidboxCopyWith<$Res> implements $ServiceCallCopyWith<$Res> {
   factory _$AidboxCopyWith(_Aidbox value, $Res Function(_Aidbox) then) =
       __$AidboxCopyWithImpl<$Res>;
   @override
@@ -129,7 +142,7 @@ abstract class _$AidboxCopyWith<$Res> implements $ServiceCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$AidboxCopyWithImpl<$Res> extends _$ServiceCopyWithImpl<$Res>
+class __$AidboxCopyWithImpl<$Res> extends _$ServiceCallCopyWithImpl<$Res>
     implements _$AidboxCopyWith<$Res> {
   __$AidboxCopyWithImpl(_Aidbox _value, $Res Function(_Aidbox) _then)
       : super(_value, (v) => _then(v as _Aidbox));
@@ -174,7 +187,7 @@ class _$_Aidbox extends _Aidbox {
 
   @override
   String toString() {
-    return 'Service.aidboxService(client: $client, bundle: $bundle, state: $state)';
+    return 'ServiceCall.aidboxService(client: $client, bundle: $bundle, state: $state)';
   }
 
   @override
@@ -208,11 +221,13 @@ class _$_Aidbox extends _Aidbox {
             FhirClient client, Bundle bundle, Rx<RemoteState> state),
     @required Result hapiService(Bundle bundle, Rx<RemoteState> state),
     @required Result localStorageService(Bundle bundle, Rx<RemoteState> state),
+    @required Result localDisplayService(Bundle bundle, Rx<RemoteState> state),
     @required Result mihinService(FhirClient client, Rx<RemoteState> state),
   }) {
     assert(aidboxService != null);
     assert(hapiService != null);
     assert(localStorageService != null);
+    assert(localDisplayService != null);
     assert(mihinService != null);
     return aidboxService(client, bundle, state);
   }
@@ -224,6 +239,7 @@ class _$_Aidbox extends _Aidbox {
         FhirClient client, Bundle bundle, Rx<RemoteState> state),
     Result hapiService(Bundle bundle, Rx<RemoteState> state),
     Result localStorageService(Bundle bundle, Rx<RemoteState> state),
+    Result localDisplayService(Bundle bundle, Rx<RemoteState> state),
     Result mihinService(FhirClient client, Rx<RemoteState> state),
     @required Result orElse(),
   }) {
@@ -239,12 +255,14 @@ class _$_Aidbox extends _Aidbox {
   Result map<Result extends Object>({
     @required Result aidboxService(_Aidbox value),
     @required Result hapiService(_Hapi value),
-    @required Result localStorageService(_Local value),
+    @required Result localStorageService(_LocalStorage value),
+    @required Result localDisplayService(_LocalDisplay value),
     @required Result mihinService(_Mihin value),
   }) {
     assert(aidboxService != null);
     assert(hapiService != null);
     assert(localStorageService != null);
+    assert(localDisplayService != null);
     assert(mihinService != null);
     return aidboxService(this);
   }
@@ -254,7 +272,8 @@ class _$_Aidbox extends _Aidbox {
   Result maybeMap<Result extends Object>({
     Result aidboxService(_Aidbox value),
     Result hapiService(_Hapi value),
-    Result localStorageService(_Local value),
+    Result localStorageService(_LocalStorage value),
+    Result localDisplayService(_LocalDisplay value),
     Result mihinService(_Mihin value),
     @required Result orElse(),
   }) {
@@ -266,7 +285,7 @@ class _$_Aidbox extends _Aidbox {
   }
 }
 
-abstract class _Aidbox extends Service {
+abstract class _Aidbox extends ServiceCall {
   _Aidbox._() : super._();
   factory _Aidbox({FhirClient client, Bundle bundle, Rx<RemoteState> state}) =
       _$_Aidbox;
@@ -280,7 +299,7 @@ abstract class _Aidbox extends Service {
 }
 
 /// @nodoc
-abstract class _$HapiCopyWith<$Res> implements $ServiceCopyWith<$Res> {
+abstract class _$HapiCopyWith<$Res> implements $ServiceCallCopyWith<$Res> {
   factory _$HapiCopyWith(_Hapi value, $Res Function(_Hapi) then) =
       __$HapiCopyWithImpl<$Res>;
   @override
@@ -290,7 +309,7 @@ abstract class _$HapiCopyWith<$Res> implements $ServiceCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$HapiCopyWithImpl<$Res> extends _$ServiceCopyWithImpl<$Res>
+class __$HapiCopyWithImpl<$Res> extends _$ServiceCallCopyWithImpl<$Res>
     implements _$HapiCopyWith<$Res> {
   __$HapiCopyWithImpl(_Hapi _value, $Res Function(_Hapi) _then)
       : super(_value, (v) => _then(v as _Hapi));
@@ -331,7 +350,7 @@ class _$_Hapi extends _Hapi {
 
   @override
   String toString() {
-    return 'Service.hapiService(bundle: $bundle, state: $state)';
+    return 'ServiceCall.hapiService(bundle: $bundle, state: $state)';
   }
 
   @override
@@ -362,11 +381,13 @@ class _$_Hapi extends _Hapi {
             FhirClient client, Bundle bundle, Rx<RemoteState> state),
     @required Result hapiService(Bundle bundle, Rx<RemoteState> state),
     @required Result localStorageService(Bundle bundle, Rx<RemoteState> state),
+    @required Result localDisplayService(Bundle bundle, Rx<RemoteState> state),
     @required Result mihinService(FhirClient client, Rx<RemoteState> state),
   }) {
     assert(aidboxService != null);
     assert(hapiService != null);
     assert(localStorageService != null);
+    assert(localDisplayService != null);
     assert(mihinService != null);
     return hapiService(bundle, state);
   }
@@ -378,6 +399,7 @@ class _$_Hapi extends _Hapi {
         FhirClient client, Bundle bundle, Rx<RemoteState> state),
     Result hapiService(Bundle bundle, Rx<RemoteState> state),
     Result localStorageService(Bundle bundle, Rx<RemoteState> state),
+    Result localDisplayService(Bundle bundle, Rx<RemoteState> state),
     Result mihinService(FhirClient client, Rx<RemoteState> state),
     @required Result orElse(),
   }) {
@@ -393,12 +415,14 @@ class _$_Hapi extends _Hapi {
   Result map<Result extends Object>({
     @required Result aidboxService(_Aidbox value),
     @required Result hapiService(_Hapi value),
-    @required Result localStorageService(_Local value),
+    @required Result localStorageService(_LocalStorage value),
+    @required Result localDisplayService(_LocalDisplay value),
     @required Result mihinService(_Mihin value),
   }) {
     assert(aidboxService != null);
     assert(hapiService != null);
     assert(localStorageService != null);
+    assert(localDisplayService != null);
     assert(mihinService != null);
     return hapiService(this);
   }
@@ -408,7 +432,8 @@ class _$_Hapi extends _Hapi {
   Result maybeMap<Result extends Object>({
     Result aidboxService(_Aidbox value),
     Result hapiService(_Hapi value),
-    Result localStorageService(_Local value),
+    Result localStorageService(_LocalStorage value),
+    Result localDisplayService(_LocalDisplay value),
     Result mihinService(_Mihin value),
     @required Result orElse(),
   }) {
@@ -420,7 +445,7 @@ class _$_Hapi extends _Hapi {
   }
 }
 
-abstract class _Hapi extends Service {
+abstract class _Hapi extends ServiceCall {
   _Hapi._() : super._();
   factory _Hapi({Bundle bundle, Rx<RemoteState> state}) = _$_Hapi;
 
@@ -432,9 +457,11 @@ abstract class _Hapi extends Service {
 }
 
 /// @nodoc
-abstract class _$LocalCopyWith<$Res> implements $ServiceCopyWith<$Res> {
-  factory _$LocalCopyWith(_Local value, $Res Function(_Local) then) =
-      __$LocalCopyWithImpl<$Res>;
+abstract class _$LocalStorageCopyWith<$Res>
+    implements $ServiceCallCopyWith<$Res> {
+  factory _$LocalStorageCopyWith(
+          _LocalStorage value, $Res Function(_LocalStorage) then) =
+      __$LocalStorageCopyWithImpl<$Res>;
   @override
   $Res call({Bundle bundle, Rx<RemoteState> state});
 
@@ -442,20 +469,21 @@ abstract class _$LocalCopyWith<$Res> implements $ServiceCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$LocalCopyWithImpl<$Res> extends _$ServiceCopyWithImpl<$Res>
-    implements _$LocalCopyWith<$Res> {
-  __$LocalCopyWithImpl(_Local _value, $Res Function(_Local) _then)
-      : super(_value, (v) => _then(v as _Local));
+class __$LocalStorageCopyWithImpl<$Res> extends _$ServiceCallCopyWithImpl<$Res>
+    implements _$LocalStorageCopyWith<$Res> {
+  __$LocalStorageCopyWithImpl(
+      _LocalStorage _value, $Res Function(_LocalStorage) _then)
+      : super(_value, (v) => _then(v as _LocalStorage));
 
   @override
-  _Local get _value => super._value as _Local;
+  _LocalStorage get _value => super._value as _LocalStorage;
 
   @override
   $Res call({
     Object bundle = freezed,
     Object state = freezed,
   }) {
-    return _then(_Local(
+    return _then(_LocalStorage(
       bundle: bundle == freezed ? _value.bundle : bundle as Bundle,
       state: state == freezed ? _value.state : state as Rx<RemoteState>,
     ));
@@ -473,8 +501,8 @@ class __$LocalCopyWithImpl<$Res> extends _$ServiceCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$_Local extends _Local {
-  _$_Local({this.bundle, this.state}) : super._();
+class _$_LocalStorage extends _LocalStorage {
+  _$_LocalStorage({this.bundle, this.state}) : super._();
 
   @override
   final Bundle bundle;
@@ -483,13 +511,13 @@ class _$_Local extends _Local {
 
   @override
   String toString() {
-    return 'Service.localStorageService(bundle: $bundle, state: $state)';
+    return 'ServiceCall.localStorageService(bundle: $bundle, state: $state)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Local &&
+        (other is _LocalStorage &&
             (identical(other.bundle, bundle) ||
                 const DeepCollectionEquality().equals(other.bundle, bundle)) &&
             (identical(other.state, state) ||
@@ -503,8 +531,8 @@ class _$_Local extends _Local {
       const DeepCollectionEquality().hash(state);
 
   @override
-  _$LocalCopyWith<_Local> get copyWith =>
-      __$LocalCopyWithImpl<_Local>(this, _$identity);
+  _$LocalStorageCopyWith<_LocalStorage> get copyWith =>
+      __$LocalStorageCopyWithImpl<_LocalStorage>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -514,11 +542,13 @@ class _$_Local extends _Local {
             FhirClient client, Bundle bundle, Rx<RemoteState> state),
     @required Result hapiService(Bundle bundle, Rx<RemoteState> state),
     @required Result localStorageService(Bundle bundle, Rx<RemoteState> state),
+    @required Result localDisplayService(Bundle bundle, Rx<RemoteState> state),
     @required Result mihinService(FhirClient client, Rx<RemoteState> state),
   }) {
     assert(aidboxService != null);
     assert(hapiService != null);
     assert(localStorageService != null);
+    assert(localDisplayService != null);
     assert(mihinService != null);
     return localStorageService(bundle, state);
   }
@@ -530,6 +560,7 @@ class _$_Local extends _Local {
         FhirClient client, Bundle bundle, Rx<RemoteState> state),
     Result hapiService(Bundle bundle, Rx<RemoteState> state),
     Result localStorageService(Bundle bundle, Rx<RemoteState> state),
+    Result localDisplayService(Bundle bundle, Rx<RemoteState> state),
     Result mihinService(FhirClient client, Rx<RemoteState> state),
     @required Result orElse(),
   }) {
@@ -545,12 +576,14 @@ class _$_Local extends _Local {
   Result map<Result extends Object>({
     @required Result aidboxService(_Aidbox value),
     @required Result hapiService(_Hapi value),
-    @required Result localStorageService(_Local value),
+    @required Result localStorageService(_LocalStorage value),
+    @required Result localDisplayService(_LocalDisplay value),
     @required Result mihinService(_Mihin value),
   }) {
     assert(aidboxService != null);
     assert(hapiService != null);
     assert(localStorageService != null);
+    assert(localDisplayService != null);
     assert(mihinService != null);
     return localStorageService(this);
   }
@@ -560,7 +593,8 @@ class _$_Local extends _Local {
   Result maybeMap<Result extends Object>({
     Result aidboxService(_Aidbox value),
     Result hapiService(_Hapi value),
-    Result localStorageService(_Local value),
+    Result localStorageService(_LocalStorage value),
+    Result localDisplayService(_LocalDisplay value),
     Result mihinService(_Mihin value),
     @required Result orElse(),
   }) {
@@ -572,19 +606,182 @@ class _$_Local extends _Local {
   }
 }
 
-abstract class _Local extends Service {
-  _Local._() : super._();
-  factory _Local({Bundle bundle, Rx<RemoteState> state}) = _$_Local;
+abstract class _LocalStorage extends ServiceCall {
+  _LocalStorage._() : super._();
+  factory _LocalStorage({Bundle bundle, Rx<RemoteState> state}) =
+      _$_LocalStorage;
 
   Bundle get bundle;
   @override
   Rx<RemoteState> get state;
   @override
-  _$LocalCopyWith<_Local> get copyWith;
+  _$LocalStorageCopyWith<_LocalStorage> get copyWith;
 }
 
 /// @nodoc
-abstract class _$MihinCopyWith<$Res> implements $ServiceCopyWith<$Res> {
+abstract class _$LocalDisplayCopyWith<$Res>
+    implements $ServiceCallCopyWith<$Res> {
+  factory _$LocalDisplayCopyWith(
+          _LocalDisplay value, $Res Function(_LocalDisplay) then) =
+      __$LocalDisplayCopyWithImpl<$Res>;
+  @override
+  $Res call({Bundle bundle, Rx<RemoteState> state});
+
+  $BundleCopyWith<$Res> get bundle;
+}
+
+/// @nodoc
+class __$LocalDisplayCopyWithImpl<$Res> extends _$ServiceCallCopyWithImpl<$Res>
+    implements _$LocalDisplayCopyWith<$Res> {
+  __$LocalDisplayCopyWithImpl(
+      _LocalDisplay _value, $Res Function(_LocalDisplay) _then)
+      : super(_value, (v) => _then(v as _LocalDisplay));
+
+  @override
+  _LocalDisplay get _value => super._value as _LocalDisplay;
+
+  @override
+  $Res call({
+    Object bundle = freezed,
+    Object state = freezed,
+  }) {
+    return _then(_LocalDisplay(
+      bundle: bundle == freezed ? _value.bundle : bundle as Bundle,
+      state: state == freezed ? _value.state : state as Rx<RemoteState>,
+    ));
+  }
+
+  @override
+  $BundleCopyWith<$Res> get bundle {
+    if (_value.bundle == null) {
+      return null;
+    }
+    return $BundleCopyWith<$Res>(_value.bundle, (value) {
+      return _then(_value.copyWith(bundle: value));
+    });
+  }
+}
+
+/// @nodoc
+class _$_LocalDisplay extends _LocalDisplay {
+  _$_LocalDisplay({this.bundle, this.state}) : super._();
+
+  @override
+  final Bundle bundle;
+  @override
+  final Rx<RemoteState> state;
+
+  @override
+  String toString() {
+    return 'ServiceCall.localDisplayService(bundle: $bundle, state: $state)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _LocalDisplay &&
+            (identical(other.bundle, bundle) ||
+                const DeepCollectionEquality().equals(other.bundle, bundle)) &&
+            (identical(other.state, state) ||
+                const DeepCollectionEquality().equals(other.state, state)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(bundle) ^
+      const DeepCollectionEquality().hash(state);
+
+  @override
+  _$LocalDisplayCopyWith<_LocalDisplay> get copyWith =>
+      __$LocalDisplayCopyWithImpl<_LocalDisplay>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result aidboxService(
+            FhirClient client, Bundle bundle, Rx<RemoteState> state),
+    @required Result hapiService(Bundle bundle, Rx<RemoteState> state),
+    @required Result localStorageService(Bundle bundle, Rx<RemoteState> state),
+    @required Result localDisplayService(Bundle bundle, Rx<RemoteState> state),
+    @required Result mihinService(FhirClient client, Rx<RemoteState> state),
+  }) {
+    assert(aidboxService != null);
+    assert(hapiService != null);
+    assert(localStorageService != null);
+    assert(localDisplayService != null);
+    assert(mihinService != null);
+    return localDisplayService(bundle, state);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result aidboxService(
+        FhirClient client, Bundle bundle, Rx<RemoteState> state),
+    Result hapiService(Bundle bundle, Rx<RemoteState> state),
+    Result localStorageService(Bundle bundle, Rx<RemoteState> state),
+    Result localDisplayService(Bundle bundle, Rx<RemoteState> state),
+    Result mihinService(FhirClient client, Rx<RemoteState> state),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (localDisplayService != null) {
+      return localDisplayService(bundle, state);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result aidboxService(_Aidbox value),
+    @required Result hapiService(_Hapi value),
+    @required Result localStorageService(_LocalStorage value),
+    @required Result localDisplayService(_LocalDisplay value),
+    @required Result mihinService(_Mihin value),
+  }) {
+    assert(aidboxService != null);
+    assert(hapiService != null);
+    assert(localStorageService != null);
+    assert(localDisplayService != null);
+    assert(mihinService != null);
+    return localDisplayService(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result aidboxService(_Aidbox value),
+    Result hapiService(_Hapi value),
+    Result localStorageService(_LocalStorage value),
+    Result localDisplayService(_LocalDisplay value),
+    Result mihinService(_Mihin value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (localDisplayService != null) {
+      return localDisplayService(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LocalDisplay extends ServiceCall {
+  _LocalDisplay._() : super._();
+  factory _LocalDisplay({Bundle bundle, Rx<RemoteState> state}) =
+      _$_LocalDisplay;
+
+  Bundle get bundle;
+  @override
+  Rx<RemoteState> get state;
+  @override
+  _$LocalDisplayCopyWith<_LocalDisplay> get copyWith;
+}
+
+/// @nodoc
+abstract class _$MihinCopyWith<$Res> implements $ServiceCallCopyWith<$Res> {
   factory _$MihinCopyWith(_Mihin value, $Res Function(_Mihin) then) =
       __$MihinCopyWithImpl<$Res>;
   @override
@@ -592,7 +789,7 @@ abstract class _$MihinCopyWith<$Res> implements $ServiceCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$MihinCopyWithImpl<$Res> extends _$ServiceCopyWithImpl<$Res>
+class __$MihinCopyWithImpl<$Res> extends _$ServiceCallCopyWithImpl<$Res>
     implements _$MihinCopyWith<$Res> {
   __$MihinCopyWithImpl(_Mihin _value, $Res Function(_Mihin) _then)
       : super(_value, (v) => _then(v as _Mihin));
@@ -623,7 +820,7 @@ class _$_Mihin extends _Mihin {
 
   @override
   String toString() {
-    return 'Service.mihinService(client: $client, state: $state)';
+    return 'ServiceCall.mihinService(client: $client, state: $state)';
   }
 
   @override
@@ -654,11 +851,13 @@ class _$_Mihin extends _Mihin {
             FhirClient client, Bundle bundle, Rx<RemoteState> state),
     @required Result hapiService(Bundle bundle, Rx<RemoteState> state),
     @required Result localStorageService(Bundle bundle, Rx<RemoteState> state),
+    @required Result localDisplayService(Bundle bundle, Rx<RemoteState> state),
     @required Result mihinService(FhirClient client, Rx<RemoteState> state),
   }) {
     assert(aidboxService != null);
     assert(hapiService != null);
     assert(localStorageService != null);
+    assert(localDisplayService != null);
     assert(mihinService != null);
     return mihinService(client, state);
   }
@@ -670,6 +869,7 @@ class _$_Mihin extends _Mihin {
         FhirClient client, Bundle bundle, Rx<RemoteState> state),
     Result hapiService(Bundle bundle, Rx<RemoteState> state),
     Result localStorageService(Bundle bundle, Rx<RemoteState> state),
+    Result localDisplayService(Bundle bundle, Rx<RemoteState> state),
     Result mihinService(FhirClient client, Rx<RemoteState> state),
     @required Result orElse(),
   }) {
@@ -685,12 +885,14 @@ class _$_Mihin extends _Mihin {
   Result map<Result extends Object>({
     @required Result aidboxService(_Aidbox value),
     @required Result hapiService(_Hapi value),
-    @required Result localStorageService(_Local value),
+    @required Result localStorageService(_LocalStorage value),
+    @required Result localDisplayService(_LocalDisplay value),
     @required Result mihinService(_Mihin value),
   }) {
     assert(aidboxService != null);
     assert(hapiService != null);
     assert(localStorageService != null);
+    assert(localDisplayService != null);
     assert(mihinService != null);
     return mihinService(this);
   }
@@ -700,7 +902,8 @@ class _$_Mihin extends _Mihin {
   Result maybeMap<Result extends Object>({
     Result aidboxService(_Aidbox value),
     Result hapiService(_Hapi value),
-    Result localStorageService(_Local value),
+    Result localStorageService(_LocalStorage value),
+    Result localDisplayService(_LocalDisplay value),
     Result mihinService(_Mihin value),
     @required Result orElse(),
   }) {
@@ -712,7 +915,7 @@ class _$_Mihin extends _Mihin {
   }
 }
 
-abstract class _Mihin extends Service {
+abstract class _Mihin extends ServiceCall {
   _Mihin._() : super._();
   factory _Mihin({FhirClient client, Rx<RemoteState> state}) = _$_Mihin;
 

@@ -15,7 +15,6 @@ class HapiService {
     return response.fold(
       (l) => left(SmartFailure.unknownFailure(failedValue: l)),
       (r) {
-        print(r.toJson());
         return right(unit);
       },
     );

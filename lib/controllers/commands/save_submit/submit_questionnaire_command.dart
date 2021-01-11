@@ -13,7 +13,7 @@ class SubmitQuestionnaireCommand extends AbstractCommand {
     final responses = await DbInterface()
         .returnListOfSingleResourceType('QuestionnaireResponse');
     responses.fold(
-      (l) => Get.snackbar('Error', l.errorMessage()),
+      (l) => Get.snackbar('Error', l.toString()),
       (r) async {
         final bundle = Bundle(
           type: BundleType.transaction,

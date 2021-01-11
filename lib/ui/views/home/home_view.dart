@@ -11,9 +11,21 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     final labels = AppLocalizations.of(context);
 
-    Widget _option(String text, Service service) => AlertDialog(
-          title: Text(text),
-          content: Obx(() => Text(service.state.value.toString())),
+    Widget _option(String text, String title, ServiceCall service,
+            {int seconds}) =>
+        AlertDialog(
+          content: Obx(
+            () => SingleChildScrollView(
+              child: Text(
+                service.state.value.map(
+                  initial: (m) => text,
+                  loading: (m) => '$title is in process',
+                  success: (m) => m.value,
+                  error: (m) => 'Error: ${m.error}',
+                ),
+              ),
+            ),
+          ),
           actions: [
             TextButton(
               child: Text(labels.prapare.answers.basic.no),
@@ -23,6 +35,7 @@ class HomeView extends StatelessWidget {
               child: Text(labels.prapare.answers.basic.yes),
               onPressed: () async {
                 await service.call();
+                await Future.delayed(Duration(seconds: seconds ?? 0));
                 Get.back();
               },
             ),
@@ -43,22 +56,37 @@ class HomeView extends StatelessWidget {
             // onPressed: () => print(labels.general.birthDate),
           ),
           StyledButtonLarge(
-              title: labels.general.submitShare,
-              onPressed: () async {
-                // todo: extract into SubmitQuestionnaireCommand
-                await Get.dialog(
-                    _option('Upload to public Hapi Server?', Service.hapi()));
-                // await Get.dialog(
-                //     servicesController.popup('Save locally?', saveLocally));
-                // await Get.dialog(servicesController.popup(
-                //     'Upload to Mihin?', MihinInterface.uploadAllToMihin));
-                // Get.dialog(Dialog(
-                //     child: SingleChildScrollView(
-                //         child: Text(await displayLocally()))));
-
-                // todo: re-implement
-                // await SubmitQuestionnaireCommand().execute();
-              }),
+            title: labels.general.submitShare,
+            onPressed: () async {
+              // todo: extract into SubmitQuestionnaireCommand
+              await Get.dialog(_option(
+                'Upload to public Hapi Server?',
+                'Public Hapi Server',
+                ServiceCall.hapi(),
+                seconds: 5,
+              ));
+              await Get.dialog(_option(
+                'Save locally?',
+                'Saving Locally',
+                ServiceCall.localSave(),
+                seconds: 5,
+              ));
+              await Get.dialog(_option(
+                'Upload to Mihin?',
+                'Mihin server',
+                ServiceCall.mihin(),
+                seconds: 5,
+              ));
+              await Get.dialog(_option(
+                'Display Locally?',
+                'Display',
+                ServiceCall.localDisplay(),
+                seconds: 5,
+              ));
+              // todo: re-implement
+              // await SubmitQuestionnaireCommand().execute();
+            },
+          ),
           Align(
             alignment: const FractionalOffset(0.8, 0),
             child: IconButton(

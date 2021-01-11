@@ -80,14 +80,14 @@ class QuestionnaireModel {
     final saveResult = await DbInterface().save(_data.response);
 
     saveResult.fold(
-      (l) => print(l.errorMessage),
+      (l) => print(l.toString()),
       (r) => print('saved QuestionnaireResponse'),
     );
 
     _conditions.forEach((k, v) async {
       final saveCondition = await DbInterface().save(v);
       saveCondition.fold(
-        (l) => print(l.errorMessage),
+        (l) => print(l.toString()),
         (r) => print('saved Condition'),
       );
     });
@@ -95,7 +95,7 @@ class QuestionnaireModel {
     _observations.forEach((k, v) async {
       final saveObservation = await DbInterface().save(v);
       saveObservation.fold(
-        (l) => print(l.errorMessage),
+        (l) => print(l.toString()),
         (r) => print('saved Condition'),
       );
     });
