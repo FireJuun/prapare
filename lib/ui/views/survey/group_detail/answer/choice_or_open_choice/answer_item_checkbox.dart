@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/controllers/commands/commands.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
-import 'package:prapare/ui/views/survey/answer/answer_item.dart';
+import 'package:prapare/ui/views/survey/group_detail/answer/answer_item.dart';
 
 import '../answer_title.dart';
 import '../enable_when_option.dart';

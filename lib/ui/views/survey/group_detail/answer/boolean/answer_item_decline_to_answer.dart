@@ -6,7 +6,7 @@ import 'package:prapare/controllers/controllers.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/user_response/user_response.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/answer.dart';
-import 'package:prapare/ui/views/survey/answer/answer_item.dart';
+import 'package:prapare/ui/views/survey/group_detail/answer/answer_item.dart';
 
 import '../answer_title.dart';
 import '../enable_when_option.dart';

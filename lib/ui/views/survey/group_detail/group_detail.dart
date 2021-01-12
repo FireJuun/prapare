@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
-import 'package:prapare/ui/views/survey/group_detail_builder.dart';
+import 'package:prapare/ui/views/survey/group_detail/group_detail_builder.dart';
 
 class GroupDetail extends StatelessWidget {
   const GroupDetail({Key key, @required this.group})

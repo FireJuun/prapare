@@ -5,7 +5,7 @@ import 'package:prapare/_internal/utils/utils.dart';
 import 'package:prapare/ui/localization.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/_internal/enums/item_type_enum.dart';
-import 'package:prapare/ui/views/survey/answer/answer_item.dart';
+import 'package:prapare/ui/views/survey/group_detail/answer/answer_item.dart';
 
 import '../enable_when_option.dart';
 import 'answer_item_decimal_or_string_controller.dart';

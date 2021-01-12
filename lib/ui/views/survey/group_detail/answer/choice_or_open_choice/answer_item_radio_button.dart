@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/controllers/commands/commands.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
-import 'package:prapare/ui/views/survey/question/question_item_radio_button_controller.dart';
+import 'package:prapare/ui/views/survey/group_detail/question/question_item_radio_button_controller.dart';
 
 import '../answer_item.dart';
 import '../answer_title.dart';
