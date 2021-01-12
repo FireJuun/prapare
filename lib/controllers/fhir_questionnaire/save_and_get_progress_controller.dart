@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:prapare/services/db_service.dart';
+import 'package:prapare/services/services.dart';
 
 // todo: this will transition
 
