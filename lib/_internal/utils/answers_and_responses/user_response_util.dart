@@ -6,9 +6,9 @@ import 'package:prapare/ui/localization.dart';
 import 'package:prapare/_internal/enums/item_type_enum.dart';
 import 'package:prapare/_internal/enums/qformat_enum.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
-import 'package:prapare/ui/views/survey/answer/choice_or_open_choice/answer_item_checkbox_controller.dart';
-import 'package:prapare/ui/views/survey/answer/decimal_or_string/answer_item_decimal_or_string_controller.dart';
-import 'package:prapare/ui/views/survey/question/question_item_radio_button_controller.dart';
+import 'package:prapare/ui/views/survey/group_detail/answer/choice_or_open_choice/answer_item_checkbox_controller.dart';
+import 'package:prapare/ui/views/survey/group_detail/answer/decimal_or_string/answer_item_decimal_or_string_controller.dart';
+import 'package:prapare/ui/views/survey/group_detail/question/question_item_radio_button_controller.dart';
 
 import 'answer_response_util.dart';
 

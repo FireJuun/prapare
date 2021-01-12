@@ -4,7 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:prapare/_internal/components/custom.dart' as custom;
-import 'package:prapare/_internal/utils/prapare_codes_util.dart';
+import 'package:prapare/_internal/utils/utils.dart';
 import 'package:prapare/controllers/theme_controller.dart';
 import 'package:prapare/ui/localization.dart';
 import 'package:prapare/ui/styled_components/app_logo.dart';

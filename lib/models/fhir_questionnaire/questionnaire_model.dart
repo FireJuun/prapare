@@ -3,8 +3,7 @@
 import 'package:fhir/r4.dart';
 import 'package:prapare/_internal/constants/prapare_survey.dart';
 import 'package:prapare/_internal/enums/sdoh_factor_enum.dart';
-import 'package:prapare/_internal/utils/condition_util.dart';
-import 'package:prapare/_internal/utils/observation_util.dart';
+import 'package:prapare/_internal/utils/utils.dart';
 import 'package:prapare/services/services.dart';
 
 import 'fhir_questionnaire.dart';

@@ -3,10 +3,10 @@ import 'package:get/get.dart';
 import 'package:prapare/_internal/enums/item_type_enum.dart';
 import 'package:prapare/_internal/enums/qformat_enum.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
-import 'package:prapare/ui/views/survey/answer/choice_or_open_choice/answer_item_checkbox.dart';
-import 'package:prapare/ui/views/survey/answer/decimal_or_string/answer_item_decimal.dart';
-import 'package:prapare/ui/views/survey/answer/choice_or_open_choice/answer_item_radio_button.dart';
-import 'package:prapare/ui/views/survey/answer/decimal_or_string/answer_item_string.dart';
+import 'package:prapare/ui/views/survey/group_detail/answer/choice_or_open_choice/answer_item_checkbox.dart';
+import 'package:prapare/ui/views/survey/group_detail/answer/decimal_or_string/answer_item_decimal.dart';
+import 'package:prapare/ui/views/survey/group_detail/answer/choice_or_open_choice/answer_item_radio_button.dart';
+import 'package:prapare/ui/views/survey/group_detail/answer/decimal_or_string/answer_item_string.dart';
 
 class AnswerItemUtil {
   Widget buildAnswerWidgetByItemType(

@@ -2,7 +2,7 @@ import 'package:fhir/r4.dart';
 import 'package:fhir_auth/fhir_auth.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:get/get.dart';
-import 'package:prapare/_internal/utils/bundle_util.dart';
+import 'package:prapare/_internal/utils/utils.dart';
 import 'package:prapare/api/api.dart';
 import 'package:prapare/models/this_fhir_client.dart';
 import 'package:prapare/services/services.dart';
