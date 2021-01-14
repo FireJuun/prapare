@@ -29,39 +29,43 @@ Our take on MVC+S is as follows:
 
 The following is the folder structure under the `/lib` folder:
 
-| Folder       | Subfolder                            | Description                                                                                            |
-| ------------ | ------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| /_internal   |                                      | custom components/variations of existing Flutter widgets, utils, constants, and the like               |
-|              | /constants                           | local constants created for the app                                                                    |
-|              | /utils                               | local functions that do things like formatting                                                         |
-|              | /extended_widgets                    | custom variations on Flutter widgets                                                                   |
-| /controllers |                                      | manages state of the model and resultant data                                                          |
-|              | /commands                            | performs a specific global task (login, logout, change password)                                       |
-|              | ../<command_name>/                   |
-|              | ../../<command_name>_controller.dart |
-|              | ../../<command_name>_state.dart      |
-|              | ../../<command_name>_event.dart      |
-|              | /local                               | state management (TBD). see above for state management discussion                                      |
-| /models      |                                      | class/objects created specifically for this app                                                        |
-|              | /value_objects                       | objects with built-in validation                                                                       |
-|              | /failures                            |
-|              | /data                                | data models                                                                                            |
-| /services    |                                      | interaction with the outside world (REST, http, file storage)                                          |
-| /ui          |                                      | essentially all things a user sees in the app                                                          |
-|              | icons.dart                           | icons                                                                                                  |
-|              | themes.dart                          | custom themes and font sizes                                                                           |
-|              | /styled_components                   | shared widgets that use a common design system / theme so that the app seems consistent across screens |
-|              | ../<widget_name>.dart                |
-|              | /views                               | top level widgets that are loaded via a route                                                          |
-|              | ../<screen_name>/                    |                                                                                                        | contains all code specific to this screen that is not shared |
-|              | ../../<screen_name>.dart             | the screen widget, may optionally include 'page', 'card', or 'panel' at the end based on view type     |
-|              | ../../<screen_name>_binding.dart     | controllers/services that are loaded (or lazy-loaded) in a view                                        |
-|              | ../../<screen_name>_controller.dart  | the viewcontroller that only affects this screen  widget                                               |
-|              | ../../<screen_name>_test.dart        | any relevant tests for the screen widget or its viewcontroller                                         |
-| /routes      |                                      | maps route to screen widgets                                                                           |
-|              | app_pages.dart                       | the app                                                                                                |
-|              | app_routes.dart                      | string route names used in the app                                                                     |
-| strings.dart |                                      | translations                                                                                           |
+| **Folder**   | **Subfolder**                          | **Description**                                                                                        |
+| ------------ | -------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| /_internal   |                                        | custom modifications, constants / enums, utility classes                                               |
+|              | /components                            | custom components / variations on Flutter widgets                                                      |
+|              | /constants                             | local constants created for the app                                                                    |
+|              | /enums                                 | predefined, named constants                                                                            |
+|              | /utils                                 | local functions that do things like formatting                                                         |
+| /api         |                                        | optional API key location                                                                              |
+|              | &lt;custom>.dart                       | private API keys                                                                                       |
+|              | api_public.dart                        | public API keys (no gitignore)                                                                         |
+|              | api.dart                               | generic export file                                                                                    |
+| /controllers |                                        | manages state of the model and resultant data                                                          |
+|              | /commands                              | performs a specific global task (login, logout, change password)                                       |
+|              | ../&lt;custom>_command.dart            | custom command class                                                                                   |
+|              | ../abstract_command.dart               | abstract class for commonly used controllers, placeholder execute() method for commands                |
+|              | &lt;custom>_controller.dart            | custom controller, typically used for state management                                                 |
+| /models      |                                        | classes / objects created specifically for this app                                                    |
+|              | &lt;custom>_data.dart                  | custom data class                                                                                      |
+|              | &lt;custom>_model.dart                 | data model that typically modifies or shapes a data class                                              |
+| /routes      |                                        | maps route to screen widgets                                                                           |
+|              | app_pages.dart                         | the directory of each page within an app                                                               |
+|              | app_routes.dart                        | string route names used in the app                                                                     |
+| /services    |                                        | interaction with the outside world (REST, FHIR, http, file storage)                                    |
+| /ui          |                                        | essentially all things a user sees in the app                                                          |
+|              | /styled_components                     | shared widgets that use a common design system / theme so that the app seems consistent across screens |
+|              | ../styled_&lt;widget_name>.dart        |                                                                                                        |
+|              | /views                                 | top level widgets that are loaded via a route                                                          |
+|              | ../&lt;screen_name>/                   |                                                                                                        |
+|              | ../../&lt;screen_name>.dart            | the screen widget, may optionally include 'page', 'card', or 'panel' at the end based on view type     |
+|              | ../../&lt;screen_name>_binding.dart    | controllers/services that are loaded (or lazy-loaded) in a view                                        |
+|              | ../../&lt;screen_name>_controller.dart | the viewcontroller that only affects this screen widget                                                |
+|              | ../../&lt;screen_name>_test.dart       | any relevant tests for the screen widget or its viewcontroller                                         |
+|              | icons.dart                             | icon asset locations                                                                                   |
+|              | localization.dart                      | strings with multiple translations                                                                     |
+|              | strings.dart                           | strings used throughout an app                                                                         |
+|              | themes.dart                            | custom themes and font sizes                                                                           |
+| main.dart    |                                        | the first file a Dart app runs                                                                         |
 
 ## Questionnaire vs Survey
 
@@ -71,16 +75,22 @@ To differentiate between FHIR and our local data model, we have employed the ter
 - When it is part of the local model (including locally stored surveys/questionnaires) the term survey is used 
 
 ## To Use the Questionnaire Package
+
 You would create a new object:
-```
+
+```dart
 var questionnaire = FhirQuestionnaire();
 ```
+
 Load the survey (currently hardcoded into the app, but will soon have ability to download from url)
-```
+
+```dart
 questionnaire.loadAndCreateSurvey();
 ```
+
 Anytime that a user has answered questions that you would like to keep track of, you can pass them back like this:
-```
+
+```dart
 final responses = [
   UserResponse(
       surveyCode: '/93043-8',
@@ -94,16 +104,18 @@ final responses = [
 
 questionnaire.getUserResponses(responses);
 ```
+
 This can be done multiple times or once, the object will simply keep it as a list until you are finished. Then, when you're ready to create the final response, call the method:
-```
+
+```dart
 questionnaire.createResponse();
 ```
+
 Now you have a QuestionnaireResponse item that you can do with as you will. To print for instance:
-```
+
+```dart
 print(questionnaire.response.toJson());
 ```
-
-
 
 ## Style Guide
 
