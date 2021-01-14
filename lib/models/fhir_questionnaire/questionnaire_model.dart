@@ -2,10 +2,9 @@
 
 import 'package:fhir/r4.dart';
 import 'package:prapare/_internal/constants/prapare_survey.dart';
-import 'package:prapare/_internal/constants/snomed_enum.dart';
-import 'package:prapare/_internal/utils/conditions.dart';
-import 'package:prapare/_internal/utils/observations.dart';
-import 'package:prapare/services/db_interface.dart';
+import 'package:prapare/_internal/enums/sdoh_factor_enum.dart';
+import 'package:prapare/_internal/utils/utils.dart';
+import 'package:prapare/services/services.dart';
 
 import 'fhir_questionnaire.dart';
 import 'survey/export.dart';
@@ -14,8 +13,8 @@ import 'survey/survey_item/survey_item.dart';
 class QuestionnaireModel {
   final FhirQuestionnaire _data = FhirQuestionnaire();
   FhirQuestionnaire get data => _data;
-  Map<SNOMED, Condition> _conditions = {};
-  Map<SNOMED, Observation> _observations = {};
+  final Map<SDOH_FACTOR, Condition> _conditions = {};
+  final Map<SDOH_FACTOR, Observation> _observations = {};
 
   /// loads the survey (currently saved locally, but could be queried from
   /// elswhere), then creates a list of Surveys from the questionnaire
@@ -80,14 +79,14 @@ class QuestionnaireModel {
     final saveResult = await DbInterface().save(_data.response);
 
     saveResult.fold(
-      (l) => print(l.errorMessage),
+      (l) => print(l.toString()),
       (r) => print('saved QuestionnaireResponse'),
     );
 
     _conditions.forEach((k, v) async {
       final saveCondition = await DbInterface().save(v);
       saveCondition.fold(
-        (l) => print(l.errorMessage),
+        (l) => print(l.toString()),
         (r) => print('saved Condition'),
       );
     });
@@ -95,7 +94,7 @@ class QuestionnaireModel {
     _observations.forEach((k, v) async {
       final saveObservation = await DbInterface().save(v);
       saveObservation.fold(
-        (l) => print(l.errorMessage),
+        (l) => print(l.toString()),
         (r) => print('saved Condition'),
       );
     });
@@ -255,22 +254,23 @@ class QuestionnaireModel {
   void condAndObs(String linkId, String answer) {
     if ((linkId == '/93042-0/71802-3' && answer == 'LA30190-5') ||
         (linkId == '/93042-0/93033-9' && answer == 'LA33-6')) {
-      recordCondAndObs(SNOMED.homeless);
+      recordCondAndObs(SDOH_FACTOR.homeless);
     }
     if (linkId == '/93041-2/67875-5' && answer == 'LA17956-6') {
-      recordCondAndObs(SNOMED.unemployed);
+      recordCondAndObs(SDOH_FACTOR.unemployed);
     }
     if (linkId == '/93041-2/93031-3/LA30125-1' && answer == 'LA33-6') {
-      recordCondAndObs(SNOMED.food_insecurity);
+      recordCondAndObs(SDOH_FACTOR.food_insecurity);
     }
   }
 
-  void recordCondAndObs(SNOMED snomed) {
-    if (!_conditions.keys.contains(snomed)) {
-      _conditions[snomed] = getCondition(snomed, Id('4890'));
+  void recordCondAndObs(SDOH_FACTOR factor) {
+    if (!_conditions.keys.contains(factor)) {
+      _conditions[factor] = ConditionUtil().fhirCondition(factor, Id('4890'));
     }
-    if (!_conditions.keys.contains(snomed)) {
-      _observations[snomed] = getObservation(snomed, Id('4890'));
+    if (!_conditions.keys.contains(factor)) {
+      _observations[factor] =
+          ObservationUtil().fhirObservation(factor, Id('4890'));
     }
   }
 }

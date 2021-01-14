@@ -83,6 +83,6 @@ app.*.map.json
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 
 # Login API / credentials of all types are ignored
-lib/api*
+lib/api/*
 # ...but public API keys are not ignored
-!lib/api_keys.dart
+!lib/api/api_public.dart

@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:prapare/controllers/commands/commands.dart';
-import 'package:prapare/localization.dart';
+import 'package:prapare/services/services.dart';
+import 'package:prapare/ui/localization.dart';
 import 'package:prapare/routes/routes.dart';
-import 'package:prapare/services/display_locally.dart';
-import 'package:prapare/services/hapi.dart';
-import 'package:prapare/services/mihin_interface.dart';
-import 'package:prapare/services/save_locally.dart';
-import 'package:prapare/services/services_controller.dart';
 import 'package:prapare/ui/styled_components/styled_components.dart';
 import 'package:prapare/ui/views/settings/settings_dialog.dart';
 
@@ -15,10 +10,22 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final labels = AppLocalizations.of(context);
-    final servicesController = Get.put(ServicesController());
 
-    Widget _option(String text, Function function) => AlertDialog(
-          title: Text(text),
+    Widget _option(String text, String title, ServiceCall service,
+            {int seconds}) =>
+        AlertDialog(
+          content: Obx(
+            () => SingleChildScrollView(
+              child: Text(
+                service.state.value.map(
+                  initial: (m) => text,
+                  loading: (m) => '$title is in process',
+                  success: (m) => m.value,
+                  error: (m) => 'Error: ${m.error}',
+                ),
+              ),
+            ),
+          ),
           actions: [
             TextButton(
               child: Text(labels.prapare.answers.basic.no),
@@ -27,8 +34,9 @@ class HomeView extends StatelessWidget {
             TextButton(
               child: Text(labels.prapare.answers.basic.yes),
               onPressed: () async {
-                await function();
-                Get.back();
+                await service.call();
+                await Future.delayed(Duration(seconds: seconds ?? 0));
+                // Get.back();
               },
             ),
           ],
@@ -48,22 +56,37 @@ class HomeView extends StatelessWidget {
             // onPressed: () => print(labels.general.birthDate),
           ),
           StyledButtonLarge(
-              title: labels.general.submitShare,
-              onPressed: () async {
-                // todo: extract into SubmitQuestionnaireCommand
-                await Get.dialog(servicesController.popup(
-                    'Upload to public Hapi Server?', hapi));
-                await Get.dialog(
-                    servicesController.popup('Save locally?', saveLocally));
-                await Get.dialog(servicesController.popup(
-                    'Upload to Mihin?', MihinInterface.uploadAllToMihin));
-                Get.dialog(Dialog(
-                    child: SingleChildScrollView(
-                        child: Text(await displayLocally()))));
-
-                // todo: re-implement
-                // await SubmitQuestionnaireCommand().execute();
-              }),
+            title: labels.general.submitShare,
+            onPressed: () async {
+              // todo: extract into SubmitQuestionnaireCommand
+              await Get.dialog(_option(
+                'Upload to public Hapi Server?',
+                'Public Hapi Server',
+                ServiceCall.hapi(),
+                seconds: 5,
+              ));
+              await Get.dialog(_option(
+                'Save locally?',
+                'Saving Locally',
+                ServiceCall.localSave(),
+                seconds: 5,
+              ));
+              await Get.dialog(_option(
+                'Upload to Mihin?',
+                'Mihin server',
+                ServiceCall.mihin(),
+                seconds: 5,
+              ));
+              await Get.dialog(_option(
+                'Display Locally?',
+                'Display',
+                ServiceCall.localDisplay(),
+                seconds: 5,
+              ));
+              // todo: re-implement
+              // await SubmitQuestionnaireCommand().execute();
+            },
+          ),
           Align(
             alignment: const FractionalOffset(0.8, 0),
             child: IconButton(

@@ -13,7 +13,7 @@ class SubmitQuestionnaireCommand extends AbstractCommand {
     final responses = await DbInterface()
         .returnListOfSingleResourceType('QuestionnaireResponse');
     responses.fold(
-      (l) => Get.snackbar('Error', l.errorMessage()),
+      (l) => Get.snackbar('Error', l.toString()),
       (r) async {
         final bundle = Bundle(
           type: BundleType.transaction,
@@ -28,8 +28,9 @@ class SubmitQuestionnaireCommand extends AbstractCommand {
         }
         const encoder = JsonEncoder.withIndent('  ');
         final localBundle = encoder.convert(bundle.toJson());
-        await LocalStorage().saveBundle(localBundle);
-        await HapiStorage().saveBundle(bundle);
+        // ToDo: add these back in
+        // await LocalStorage().saveBundle(localBundle);
+        // await HapiStorage().saveBundle(bundle);
         Get.dialog(
           Dialog(child: SingleChildScrollView(child: Text(localBundle))),
         );
