@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/_internal/utils/theme_mode_util.dart';
-import 'package:prapare/localization.dart';
+import 'package:prapare/ui/localization.dart';
 import 'package:prapare/models/menu_options/menu_option.dart';
+import 'package:prapare/routes/routes.dart';
 import 'package:prapare/ui/views/settings/settings_controller.dart';
 
 Future<void> settingsDialog(BuildContext context) async => showDialog<void>(
       context: context,
-      barrierDismissible: false,
+      // barrierDismissible: false,
       builder: (BuildContext context) => _SettingsDialogContent(),
     );
+
+// Future<void> settingsDialog() async =>
+//     await Get.dialog(_SettingsDialogContent());
 
 class _SettingsDialogContent extends StatelessWidget {
   @override
@@ -40,7 +44,20 @@ class _SettingsDialogContent extends StatelessWidget {
 
     final TextTheme textTheme = context.textTheme;
     return AlertDialog(
-      title: Text(labels.app.settings, style: textTheme.headline5),
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Expanded(
+            child: Text(labels.app.settings,
+                style: textTheme.headline5, textAlign: TextAlign.center),
+          ),
+          IconButton(
+            icon: const Icon(Icons.info),
+            //todo:
+            onPressed: () => Get.offAndToNamed(Routes.INFO),
+          ),
+        ],
+      ),
       content: GetX<SettingsController>(
         init: SettingsController(),
         builder: (controller) => SingleChildScrollView(

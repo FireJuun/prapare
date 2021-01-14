@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prapare/controllers/commands/commands.dart';
-import 'package:prapare/localization.dart';
+import 'package:prapare/ui/localization.dart';
 
 class StyledSubmitFab extends StatelessWidget {
   @override

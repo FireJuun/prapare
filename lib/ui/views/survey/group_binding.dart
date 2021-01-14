@@ -5,9 +5,11 @@ import 'package:prapare/ui/views/survey/group_controller.dart';
 class GroupBinding implements Bindings {
   @override
   void dependencies() {
-    Get.put<UserResponsesController>(UserResponsesController());
-    Get.put<ValidationController>(ValidationController());
-    Get.put<QuestionnaireController>(QuestionnaireController());
+    Get.lazyPut<UserResponsesController>(() => UserResponsesController());
+    Get.lazyPut<ValidationController>(() => ValidationController());
+    Get.lazyPut<QuestionnaireController>(() => QuestionnaireController());
     Get.lazyPut<GroupController>(() => GroupController());
+    Get.lazyPut<SaveAndGetProgressController>(
+        () => SaveAndGetProgressController());
   }
 }

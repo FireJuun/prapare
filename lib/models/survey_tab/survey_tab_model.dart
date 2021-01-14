@@ -1,6 +1,6 @@
 import 'package:prapare/ui/icons.dart';
 import 'package:prapare/models/survey_tab/survey_tab_data.dart';
-import 'package:prapare/strings.dart';
+import 'package:prapare/ui/strings.dart';
 
 class SurveyTabModel {
   final List<SurveyTab> _tabList = [

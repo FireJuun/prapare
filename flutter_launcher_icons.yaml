@@ -1,0 +1,7 @@
+flutter_icons:
+  image_path_android: 'assets/icons/android_prapare_logo.png'
+  image_path_ios: 'assets/icons/ios_prapare_logo.png'
+  android: true
+  ios: true
+  adaptive_icon_foreground: 'assets/icons/android_prapare_logo.png'
+  adaptive_icon_background: '#E4E4E3'

@@ -7,13 +7,17 @@ import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 import 'package:prapare/models/fhir_questionnaire/questionnaire_model.dart';
 
 class QuestionnaireController extends GetxController {
-  /// A semi-temporary data model, which will be transitioned to harness [prapareSurvey]
-  /// For now, the data points have been created manually, and the codes don't quite correlate yet
+  /// A data model of [prapareSurvey] that persists in memory
+  /// This controller takes all data from the FHIR survey
+  /// and saves them to various [_allQuestions] formats based on use case
+  /// userResponse and validation options are also created on first load
 
   final QuestionnaireModel _model = QuestionnaireModel();
 
   final UserResponsesController _responsesController = Get.find();
   final ValidationController _validationController = Get.find();
+
+  RxBool isDataLoaded = false.obs;
 
   // *******************************************************************
   // ******************* GETTERS AND SETTERS ***************************
@@ -48,37 +52,43 @@ class QuestionnaireController extends GetxController {
   int getTotalIndexFromQuestion(String questionLinkId) =>
       _allQuestionsList.indexWhere((e) => e.linkId == questionLinkId);
 
-  Future saveResponse(List<UserResponse> responses) async =>
+  Future<void> saveResponse(List<UserResponse> responses) async =>
       await _model.saveResponses(responses);
 
   // *******************************************************************
   // ******** MAPPING FUNCTIONS, ON FIRST LOAD OF QUESTIONNAIRE ********
   // *******************************************************************
-  void _mapAllQuestions() {
+  Future<bool> _mapAllQuestions() async {
     // _allQuestionsMap handled separately, with userResponsesMap
-    _buildAllQuestionsList();
-    _buildAllQuestionsValidators();
+    await _buildAllQuestionsList();
+    await _buildAllQuestionsValidators();
+    return true;
   }
 
   // each index number denotes a new question, which will have its own collapsable title
-  void _buildAllQuestionsList() => _model.data.survey.surveyItems.forEach(
-        (e) => (e as ItemGroup).surveyItems.forEach(
-              (survItem) => _allQuestionsList.add(survItem),
-            ),
-      );
+  Future<bool> _buildAllQuestionsList() async {
+    _model.data.survey.surveyItems.forEach(
+      (e) => (e as ItemGroup).surveyItems.forEach(
+            (survItem) => _allQuestionsList.add(survItem),
+          ),
+    );
+    return true;
+  }
 
   /// Each Question or ItemGroup, as numbered from the original
   /// survey.surveyItem list, will keep state of its own validator
   /// Its overall linkId is defined as '/groupId/questionId'
   // todo: if loading a old / partially completed survey, will need to determine QuestionValidators() data as well
-  void _buildAllQuestionsValidators() =>
-      _allQuestionsList.forEach((e) => _addQuestionValidator(e.linkId));
+  Future<bool> _buildAllQuestionsValidators() async {
+    _allQuestionsList.forEach((e) => _addQuestionValidator(e.linkId));
+    return true;
+  }
 
   void _addQuestionValidator(String linkId) =>
       _validationController.questionValidatorsMap[linkId] =
           QuestionValidators();
 
-  void _mapQuestionEnableWhenValidators(SurveyItem surveyItem) {
+  Future<bool> _mapQuestionEnableWhenValidators(SurveyItem surveyItem) async {
     if (surveyItem is Question) {
       if (surveyItem.questionEnableWhen != null) {
         surveyItem.questionEnableWhen.forEach(
@@ -86,6 +96,7 @@ class QuestionnaireController extends GetxController {
         );
       }
     }
+    return true;
   }
 
   void _addQuestionEnableWhenValidator(QuestionEnableWhen qEnableWhen) =>
@@ -94,9 +105,12 @@ class QuestionnaireController extends GetxController {
 
   /// Maps based on: ItemGroup vs Question
 
-  void _mapAllUserResponses() => _model.data.survey.surveyItems.forEach(
-        (s) => s.runtimeType == ItemGroup ? _mapGroup(s) : _mapQuestion(s),
-      );
+  Future<bool> _mapAllUserResponses() async {
+    _model.data.survey.surveyItems.forEach(
+      (s) => s.runtimeType == ItemGroup ? _mapGroup(s) : _mapQuestion(s),
+    );
+    return true;
+  }
 
   void _mapGroup(ItemGroup itemGroup) => itemGroup.surveyItems.forEach((item) =>
       item.runtimeType == ItemGroup ? _mapGroup(item) : _mapQuestion(item));
@@ -158,12 +172,13 @@ class QuestionnaireController extends GetxController {
     final linkId = question.linkId;
     // convenience function for finding all questions
     _allQuestionsMap[linkId] = question;
-    // blank answerResponse added to UserResponse map
+    // blank answerResponse added to UserResponse map, if not already present
+    // todo: this appears to be duplicate to _mapAllActiveResponses
     _responsesController.userResponsesMap[linkId] ??=
         UserResponse(questionLinkId: linkId, answers: <AnswerResponse>[]).obs;
   }
 
-  void _mapAllActiveResponses() {
+  Future<bool> _mapAllActiveResponses() async {
     /// defaults to blank answer on first load
     /// afterwards, the new UserResponse will be updated to reflect the selected item
     /// then ResponseBoolean will be selected to true for that item
@@ -185,21 +200,29 @@ class QuestionnaireController extends GetxController {
         }
       },
     );
+    return true;
   }
 
   // create empty validators with false as default
-  void _mapAllGroupValidators() {
+  Future<bool> _mapAllGroupValidators() async {
     _model.data.survey.surveyItems.forEach(
         (s) => _validationController.groupValidatorsMap[s.linkId] = false.obs);
+    return true;
+  }
+
+  Future<bool> createAndMapAllData() async {
+    isDataLoaded.value = false;
+    await _model.loadAndCreateSurvey();
+    await _mapAllQuestions();
+    await _mapAllUserResponses();
+    await _mapAllActiveResponses();
+    await _mapAllGroupValidators();
+    return isDataLoaded.value = true;
   }
 
   @override
-  void onInit() {
-    _model.loadAndCreateSurvey();
-    _mapAllQuestions();
-    _mapAllUserResponses();
-    _mapAllActiveResponses();
-    _mapAllGroupValidators();
+  Future<void> onInit() async {
+    await createAndMapAllData();
     super.onInit();
   }
 }

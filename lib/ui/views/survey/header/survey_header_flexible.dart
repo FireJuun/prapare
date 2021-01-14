@@ -4,9 +4,9 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:prapare/_internal/components/custom.dart' as custom;
-import 'package:prapare/_internal/utils/prapare_codes_util.dart';
+import 'package:prapare/_internal/utils/utils.dart';
 import 'package:prapare/controllers/theme_controller.dart';
-import 'package:prapare/localization.dart';
+import 'package:prapare/ui/localization.dart';
 import 'package:prapare/ui/styled_components/app_logo.dart';
 import 'package:prapare/ui/themes.dart';
 import 'package:prapare/ui/views/survey/group_controller.dart';
@@ -50,8 +50,6 @@ class SurveyHeaderFlexible extends StatelessWidget {
                 labelPadding:
                     const EdgeInsets.symmetric(horizontal: 2.0, vertical: 0.0),
                 controller: groupController.tabController,
-                unselectedLabelColor: appTheme.grey,
-                labelColor: Colors.black,
                 tabs: [
                   /// spread operator used for more concise code
                   /// obx and rxTabIndex used to trigger redraw on data change
@@ -86,7 +84,9 @@ class SurveyHeaderFlexible extends StatelessWidget {
                           tabList[groupController.rxTabIndex].code, labels),
                       style: isExpanded
                           ? context.theme.accentTextTheme.headline5
-                          : context.theme.accentTextTheme.headline6,
+                              .apply(color: Colors.white)
+                          : context.theme.accentTextTheme.headline6
+                              .apply(color: Colors.white),
                       textAlign: TextAlign.center,
                     ),
                   ),

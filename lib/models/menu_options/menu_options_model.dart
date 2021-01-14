@@ -1,6 +1,6 @@
 import 'package:prapare/models/menu_options/menu_option.dart';
 
-class MenuOptionsModel {
+mixin MenuOptionsModel {
   static const String defaultLanguage = 'en';
 
   // spec: https://github.com/delay/flutter_starter
