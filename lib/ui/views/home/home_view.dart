@@ -36,7 +36,7 @@ class HomeView extends StatelessWidget {
               onPressed: () async {
                 await service.call();
                 await Future.delayed(Duration(seconds: seconds ?? 0));
-                Get.back();
+                // Get.back();
               },
             ),
           ],
