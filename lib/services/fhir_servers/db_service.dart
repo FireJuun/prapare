@@ -7,6 +7,15 @@ class DbInterface {
   final ResourceDao resourceDao = ResourceDao();
   final GeneralDao generalDao = GeneralDao();
 
+  Future<Either<Error, Unit>> deleteAll() async {
+    try {
+      await resourceDao.deleteAllResources(null);
+    } catch (error) {
+      return left(error);
+    }
+    return right(unit);
+  }
+
   Future<Either<Error, String>> saveGeneric(Map<String, dynamic> map) async {
     String returnKey;
     try {
