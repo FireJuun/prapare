@@ -69,6 +69,11 @@ class MihinService {
             if (transactionReq.isLeft()) {
               return left(transactionReq.getOrElse(null));
             }
+            // todo: remove after testing
+            else {
+              /// This prints MiHIN resource IDs
+              print('MiHIN: ${transactionReq.getOrElse(null).toYaml()}');
+            }
           } catch (e) {
             return left(e);
           }

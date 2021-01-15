@@ -26,14 +26,12 @@ class SubmitQuestionnaireCommand extends AbstractCommand {
                   method: BundleRequestMethod.post,
                   url: FhirUri('QuestionnaireResponse'))));
         }
-        const encoder = JsonEncoder.withIndent('  ');
-        final localBundle = encoder.convert(bundle.toJson());
-        // ToDo: add these back in
-        // await LocalStorage().saveBundle(localBundle);
-        // await HapiStorage().saveBundle(bundle);
-        Get.dialog(
-          Dialog(child: SingleChildScrollView(child: Text(localBundle))),
-        );
+
+        // todo - enable to show JSON data as a dialog
+        // const encoder = JsonEncoder.withIndent('  ');
+        // final localBundle = encoder.convert(bundle.toJson());
+        // Get.dialog(
+        //     Dialog(child: SingleChildScrollView(child: Text(localBundle))));
       },
     );
   }

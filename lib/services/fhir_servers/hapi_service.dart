@@ -15,7 +15,8 @@ class HapiService {
     return response.fold(
       (l) => left(SmartFailure.unknownFailure(failedValue: l)),
       (r) {
-        print(r.toYaml());
+        /// This prints HAPI resource IDs
+        print('HAPI Server Data: ${r.toYaml()}');
         return right(unit);
       },
     );

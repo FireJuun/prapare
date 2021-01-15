@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:prapare/controllers/commands/commands.dart';
 import 'package:prapare/services/services.dart';
 import 'package:prapare/ui/icons.dart';
 import 'package:prapare/ui/localization.dart';
@@ -36,9 +37,10 @@ class StyledSubmitBottomSheet extends StatelessWidget {
             TextButton(
               child: Text(labels.prapare.answers.basic.yes),
               onPressed: () async {
+                await SubmitQuestionnaireCommand().execute();
                 await service.call();
                 await Future.delayed(Duration(seconds: seconds ?? 0));
-                Get.back();
+                // Get.back();
               },
             ),
           ],
@@ -87,7 +89,7 @@ class StyledSubmitBottomSheet extends StatelessWidget {
                   }),
               _listItem(
                   image: _listIcon(Icons.view_carousel),
-                  title: const Text('Local: Show'),
+                  title: const Text('Local: YAML'),
                   onTap: () async {
                     await Get.dialog(_option(
                       'Display Locally?',
