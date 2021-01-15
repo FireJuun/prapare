@@ -15,6 +15,7 @@ class HapiService {
     return response.fold(
       (l) => left(SmartFailure.unknownFailure(failedValue: l)),
       (r) {
+        print('Hapi ID/code: ${r.id.toJson()}');
         return right(unit);
       },
     );

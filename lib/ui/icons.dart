@@ -50,6 +50,10 @@ class AppIcons {
   static const String INFO_STETHOSCOPE_ICON =
       'assets/icons/info/stethoscope.svg';
   static const String INFO_SURVEY_ICON = 'assets/icons/info/survey.svg';
+
+  static const String ICON_HAPI = 'assets/images/fhir_servers/logo-hapi.png';
+  static const String ICON_MIHIN =
+      'assets/images/fhir_servers/logo-interop-institute.png';
 }
 
 class AppImages {
