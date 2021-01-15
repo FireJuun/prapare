@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:prapare/controllers/commands/clear_local_db.dart';
 import 'package:prapare/ui/localization.dart';
 import 'package:prapare/routes/routes.dart';
 import 'package:prapare/ui/styled_components/styled_components.dart';
@@ -17,7 +18,12 @@ class HomeView extends StatelessWidget {
           AppLogo(),
           StyledButtonLarge(
               title: labels.general.newSurvey,
-              onPressed: () => Get.toNamed(Routes.GROUP)),
+              onPressed: () {
+                // todo: refactor into command
+                final clearDb = Get.put(ClearLocalDbController());
+                clearDb.deleteAll();
+                Get.toNamed(Routes.GROUP);
+              }),
           StyledButtonLarge(
             title: labels.general.editSurvey,
             onPressed: () => Get.toNamed(Routes.INFO),
