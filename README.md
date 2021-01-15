@@ -117,6 +117,43 @@ Now you have a QuestionnaireResponse item that you can do with as you will. To p
 print(questionnaire.response.toJson());
 ```
 
+## Fix Compile Time API Errors
+
+With the exception of `/api/api_public.dart`, all files and classes in the `/api` folder are ignored by Git. Unless you're intentionally planning for an API key to exist in the public domain, **DO NOT COMMIT YOUR API KEYS DIRECTLY INTO YOUR GITHUB REPOSITORY**. Deleting them from your Git cache does nothing if the key has already been committed. They can still be found. If you did this accidentally, just inactivate that key (so others can't use it) and register a new one for use. Also, be careful of where and how you share your keys, since that may also serve as a point of failure.
+
+Because our app connects to multiple FHIR servers, checking out this repository as is will give you compile time errors. To fix this, create the following files in the `/api` folder. Note that `YOUR_API_CLASS.dart` can be named whatever you want.
+
+```dart
+api.dart
+
+export 'api_public.dart';
+export 'YOUR_API_CLASS.dart';
+```
+
+```dart
+YOUR_API_CLASS.dart
+
+class ApiPrivate {
+  static const prapareRedirectUrl = 'com.fhirfli.prapare://callback';
+  static const aidboxUrl = 'YOUR_AIDBOX_URL';
+  static const aidboxClientId = 'YOUR_CLIENT_ID';
+  static const aidboxClientSecret = 'YOUR_SECRET';
+  static const aidboxAuthUrl = null;
+  static const aidboxTokenUrl = null;
+  static const mihinUrl = 'YOUR_MIHIN_URL';
+  static const mihinClientId =
+      'YOUR_MIHIN_CLIENT_ID';
+  static const mihinClientSecret =
+      'YOUR_MIHIN_CLIENT_SECRET';
+  static const mihinAuthUrl = null;
+  static const mihinTokenUrl = null;
+}
+```
+
+You can also use multiple classes, harness keys that are split into multiple strings/files, etc. We are intentionally including `api.dart` as part of our architecture to help you hide your private API class filename(s) from the rest of your code (assuming you only import this library at the top of your class). Keep in mind that class names are still discoverable.
+
+It is also possible to harness [encrypted secrets] in GitHub for added security during build. We also **strongly** suggest [obfuscating your Dart code] when it is time to build a release version of your app.
+
 ## Style Guide
 
 Follow the [Dart style guide].
@@ -143,7 +180,9 @@ We have a [Slack channel] and welcome new members/contributors.
 [format on save]: https://flutter.dev/docs/development/tools/formatting#automatically-formatting-code-in-vs-code
 [Get]: https://pub.dev/packages/get#the-three-pillars
 [Getx pattern]: https://github.com/kauemurakami/getx_pattern
+[encrypted secrets]: https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets
 [Model-View-Controller+Services]: https://blog.gskinner.com/archives/2020/09/flutter-state-management-with-mvcs.html
+[obfuscating your Dart code]: https://flutter.dev/docs/deployment/obfuscate
 [PRAPARE]: https://www.nachc.org/research-and-data/prapare/
 [production-level]: https://github.com/gskinnerTeam/flokk
 [prototype]: https://www.figma.com/proto/cWKc5iTzhoddhxMov05rWG/PRAPARE?node-id=5%3A2&scaling=scale-down
