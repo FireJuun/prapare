@@ -199,6 +199,8 @@ item:
         display: Other public insurance (CHIP)
       - code: LA6350-8
         display: Private insurance
+      - code: LA30122-8
+        display: I choose not to answer this question
     - type: decimal
       required: false
       linkId: "/93041-2/63586-2"
