@@ -9,7 +9,8 @@ class HapiService {
       base: Uri.parse('http://hapi.fhir.org/baseR4'),
     );
 
-    bundle = Bundle.fromYaml(bundle.toYaml().replaceAll('4890', '1274896'));
+    bundle =
+        Bundle.fromYaml(bundle.toYaml().replaceAll('SarahThompson', '1274896'));
     final response = await request.request(bundle);
 
     return response.fold(
