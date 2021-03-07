@@ -70,7 +70,7 @@ class QuestionnaireModel {
     _data.response = QuestionnaireResponse(
       // todo: remove hardcoded (example) patient reference
       subject: Reference(reference: 'Patient/$patientId'),
-      resourceType: 'QuestionnaireResponse',
+      resourceType: R4ResourceType.QuestionnaireResponse,
       meta: _data.questionnaire.meta,
       status: QuestionnaireResponseStatus.completed,
       authored: FhirDateTime(DateTime.now()),

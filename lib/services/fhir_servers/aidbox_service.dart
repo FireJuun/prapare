@@ -9,7 +9,7 @@ import 'package:fhir_auth/fhir_auth.dart';
 class AidboxService {
   Future<Either<Error, Unit>> call(
     Bundle bundle,
-    FhirClient client,
+    SmartClient client,
     String authUrl,
     String tokenUrl,
   ) async {

@@ -17,7 +17,7 @@ class QuestionEnableWhen {
     /// Since all of our enableWhen packages retrieve a Right(Code), I'm extracting the code via this method:
     /// https://stackoverflow.com/questions/58734044/how-to-extract-left-or-right-easily-from-either-type-in-dart-dartz
     final _code = listItem?.answerCoding?.code ?? Code('');
-    answerCode = (_code.value.isRight()) ? _code.value.getOrElse(() => '') : '';
+    answerCode = _code.value;
   }
 
   /// specifies the question that has optional enableWhen values

@@ -15,7 +15,7 @@ abstract class ServiceCall implements _$ServiceCall {
   ServiceCall._();
 
   factory ServiceCall.aidboxService({
-    FhirClient client,
+    SmartClient client,
     Bundle bundle,
     Rx<RemoteState> state,
   }) = _Aidbox;
@@ -36,12 +36,12 @@ abstract class ServiceCall implements _$ServiceCall {
   }) = _LocalDisplay;
 
   factory ServiceCall.mihinService({
-    FhirClient client,
+    SmartClient client,
     Rx<RemoteState> state,
   }) = _Mihin;
 
   factory ServiceCall.aidbox() => ServiceCall.aidboxService(
-        client: ThisFhirClient().client(
+        client: ThisSmartClient().client(
           ApiPrivate.aidboxUrl,
           ApiPrivate.aidboxClientId,
           ApiPrivate.prapareRedirectUrl,
@@ -67,7 +67,7 @@ abstract class ServiceCall implements _$ServiceCall {
       );
 
   factory ServiceCall.mihin() => ServiceCall.mihinService(
-        client: ThisFhirClient().client(
+        client: ThisSmartClient().client(
           ApiPrivate.mihinUrl,
           ApiPrivate.mihinClientId,
           ApiPrivate.prapareRedirectUrl,

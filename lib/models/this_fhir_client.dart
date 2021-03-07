@@ -1,14 +1,14 @@
 import 'package:fhir/r4.dart';
 import 'package:fhir_auth/fhir_auth.dart';
 
-class ThisFhirClient {
-  FhirClient client(
+class ThisSmartClient {
+  SmartClient client(
     String baseUrl,
     String clientId,
     String redirectUrl,
     String secret,
   ) =>
-      FhirClient(
+      SmartClient(
         baseUrl: FhirUri(baseUrl),
         clientId: clientId,
         redirectUri: FhirUri(redirectUrl),

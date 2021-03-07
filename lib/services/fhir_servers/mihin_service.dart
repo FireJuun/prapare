@@ -9,7 +9,7 @@ import 'db_service.dart';
 
 class MihinService {
   Future<Either<Error, Unit>> call(
-    FhirClient client,
+    SmartClient client,
     String authUrl,
     String tokenUrl,
   ) async {
@@ -49,7 +49,7 @@ class MihinService {
   }
 
   Future<Either<Error, Unit>> _upload(
-      String title, rest.R4Types type, FhirClient client) async {
+      String title, rest.R4Types type, SmartClient client) async {
     final responses = await DbInterface().returnListOfSingleResourceType(title);
 
     return responses.fold(
