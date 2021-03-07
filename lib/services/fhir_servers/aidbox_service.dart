@@ -20,9 +20,9 @@ class AidboxService {
         bundle: bundle,
       );
       await transaction.request(headers: await client.authHeaders);
-      return const Right(unit);
+      return right(unit);
     } catch (e) {
-      return Left(e);
+      return left(e);
     }
   }
 }

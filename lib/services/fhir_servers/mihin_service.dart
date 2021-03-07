@@ -1,9 +1,7 @@
-import 'dart:io';
-import 'dart:isolate';
-
 import 'package:dartz/dartz.dart';
-import 'package:fhir_at_rest/fhir_at_rest.dart' as rest;
-import 'package:fhir_auth/fhir_auth.dart';
+import 'package:fhir/r4.dart';
+import 'package:fhir_at_rest/r4.dart';
+import 'package:fhir_auth/r4/smart_client.dart';
 
 import 'db_service.dart';
 
@@ -13,73 +11,51 @@ class MihinService {
     String authUrl,
     String tokenUrl,
   ) async {
-    final attempt = await client.access(
-      authUrl: authUrl,
-      tokenUrl: tokenUrl,
-    );
+    client.authUrl = FhirUri(authUrl);
+    client.tokenUrl = FhirUri(tokenUrl);
+    await client.login();
 
-    return attempt.fold(
-      (l) => left(
-        RemoteError(
-          l.errorMessage(),
-          StackTrace.current.toString(),
-        ),
-      ),
-      (r) async {
-        var response = await _upload('QuestionnaireResponse',
-            rest.R4Types.questionnaireresponse, client);
-
-        return response.fold(
-          (l) => left(l),
-          (r) async {
-            response =
-                await _upload('Condition', rest.R4Types.condition, client);
-            return response.fold(
-              (l) => left(l),
-              (r) async {
-                response = await _upload(
-                    'Observation', rest.R4Types.observation, client);
-                return response.fold((l) => left(l), (r) => right(unit));
-              },
-            );
-          },
-        );
-      },
-    );
+    try {
+      var response = await _upload('QuestionnaireResponse',
+          R4ResourceType.QuestionnaireResponse, client);
+      if (response.isLeft()) {
+        return response;
+      }
+      response = await _upload('Condition', R4ResourceType.Condition, client);
+      if (response.isLeft()) {
+        return response;
+      }
+      response =
+          await _upload('Observation', R4ResourceType.Observation, client);
+      if (response.isLeft()) {
+        return response;
+      }
+    } catch (e) {
+      return left(e);
+    }
+    return right(unit);
   }
+}
 
-  Future<Either<Error, Unit>> _upload(
-      String title, rest.R4Types type, SmartClient client) async {
-    final responses = await DbInterface().returnListOfSingleResourceType(title);
-
-    return responses.fold(
-      (l) => left(l),
-      (r) async {
-        for (var resource in r) {
-          final upload = rest.CreateRequest.r4(
-              base: Uri.parse('${client.baseUrl}'), type: type);
-          try {
-            final transactionReq = await upload.request(
-              resource: resource,
-              headers: {
-                HttpHeaders.authorizationHeader:
-                    'Bearer ${await client.accessToken()}'
-              },
-            );
-            if (transactionReq.isLeft()) {
-              return left(transactionReq.getOrElse(null));
-            }
-            // todo: remove after testing
-            else {
-              /// This prints MiHIN resource IDs
-              print('MiHIN: ${transactionReq.getOrElse(null).toYaml()}');
-            }
-          } catch (e) {
-            return left(e);
-          }
+Future<Either<Error, Unit>> _upload(
+    String title, R4ResourceType type, SmartClient client) async {
+  final responses = await DbInterface().returnListOfSingleResourceType(title);
+  return responses.fold(
+    (l) => left(l),
+    (r) async {
+      for (var resource in r) {
+        final upload = FhirRequest.create(
+            base: Uri.parse('${client.baseUrl}'), resource: resource);
+        try {
+          final transactionReq = await upload.request(
+            headers: await client.authHeaders,
+          );
+          print('MiHIN: ${transactionReq.toYaml()}');
+        } catch (e) {
+          return left(e);
         }
-        return right(unit);
-      },
-    );
-  }
+      }
+      return right(unit);
+    },
+  );
 }
