@@ -55,7 +55,7 @@ dev_dependencies:
 # TODO: fix dependencies
 dependency_overrides:
   analyzer: 0.41.2
-  intl: ^0.16.1
+  intl: ^0.17.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

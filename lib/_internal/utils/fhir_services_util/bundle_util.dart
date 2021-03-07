@@ -25,7 +25,7 @@ class BundleUtil {
                 resource: resource,
                 request: BundleRequest(
                     method: BundleRequestMethod.post,
-                    url: FhirUri(resource.resourceType))));
+                    url: FhirUri(resource.resourceTypeString()))));
           }
         },
       );

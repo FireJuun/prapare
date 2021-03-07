@@ -10,8 +10,8 @@ class AidboxService {
     String authUrl,
     String tokenUrl,
   ) async {
-    client.authUrl = FhirUri(authUrl);
-    client.tokenUrl = FhirUri(tokenUrl);
+    client.authUrl = authUrl != null ? FhirUri(authUrl) : null;
+    client.tokenUrl = tokenUrl != null ? FhirUri(tokenUrl) : null;
     await client.login();
 
     try {
