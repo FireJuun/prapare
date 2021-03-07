@@ -1,5 +1,6 @@
 import 'package:fhir/r4.dart';
-import 'package:fhir_auth/fhir_auth.dart';
+import 'package:fhir_auth/r4.dart';
+import 'package:fhir_auth/r4/smart_client.dart';
 
 class ThisSmartClient {
   SmartClient client(
@@ -13,36 +14,36 @@ class ThisSmartClient {
         clientId: clientId,
         redirectUri: FhirUri(redirectUrl),
         scopes: Scopes(
-          clinicalScopes: [
-            ClinicalScope.r4(
-              role: Role.patient,
-              type: R4Types.patient,
-              interaction: Interaction.any,
+          clinicalScopes: const [
+            Tuple3(
+              Role.patient,
+              R4ResourceType.Patient,
+              Interaction.any,
             ),
-            ClinicalScope.r4(
-              role: Role.patient,
-              type: R4Types.questionnaire,
-              interaction: Interaction.any,
+            Tuple3(
+              Role.patient,
+              R4ResourceType.Questionnaire,
+              Interaction.any,
             ),
-            ClinicalScope.r4(
-              role: Role.patient,
-              type: R4Types.questionnaireresponse,
-              interaction: Interaction.any,
+            Tuple3(
+              Role.patient,
+              R4ResourceType.QuestionnaireResponse,
+              Interaction.any,
             ),
-            ClinicalScope.r4(
-              role: Role.patient,
-              type: R4Types.condition,
-              interaction: Interaction.any,
+            Tuple3(
+              Role.patient,
+              R4ResourceType.Condition,
+              Interaction.any,
             ),
-            ClinicalScope.r4(
-              role: Role.patient,
-              type: R4Types.observation,
-              interaction: Interaction.any,
+            Tuple3(
+              Role.patient,
+              R4ResourceType.Observation,
+              Interaction.any,
             ),
-            ClinicalScope.r4(
-              role: Role.patient,
-              type: R4Types.bundle,
-              interaction: Interaction.any,
+            Tuple3(
+              Role.patient,
+              R4ResourceType.Bundle,
+              Interaction.any,
             ),
           ],
           encounterLaunch: true,
