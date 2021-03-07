@@ -1,5 +1,5 @@
 import 'package:fhir/r4.dart';
-import 'package:fhir_auth/fhir_auth.dart';
+import 'package:fhir_auth/r4/smart_client.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:get/get.dart';
 import 'package:prapare/_internal/utils/utils.dart';
@@ -100,7 +100,7 @@ abstract class ServiceCall implements _$ServiceCall {
             c.bundle.entry.addAll(right);
             final result = await HapiService().call(c.bundle);
             state.value = result.fold(
-              (l) => RemoteState.error(l.errorMessage()),
+              (l) => RemoteState.error(l),
               (r) => RemoteState.success(
                   'Successful upload to Public Hapi Server'),
             );

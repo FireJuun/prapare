@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:prapare/_internal/utils/utils.dart';
-import 'package:prapare/_internal/utils/utils.dart';
 import 'package:prapare/ui/localization.dart';
 import 'package:prapare/models/fhir_questionnaire/survey/export.dart';
 
