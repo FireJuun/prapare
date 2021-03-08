@@ -769,6 +769,13 @@ const prapareSurvey = {
                     "display": "Private insurance",
                     "system": "http://loinc.org"
                   }
+                },
+                {
+                  "valueCoding": {
+                    "code": "LA30122-8",
+                    "display": "I choose not to answer this question",
+                    "system": "http://loinc.org"
+                  }
                 }
               ]
             },

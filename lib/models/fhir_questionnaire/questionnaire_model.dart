@@ -11,6 +11,7 @@ import 'survey/export.dart';
 import 'survey/survey_item/survey_item.dart';
 
 class QuestionnaireModel {
+  static const patientId = 'SarahThompson';
   final FhirQuestionnaire _data = FhirQuestionnaire();
   FhirQuestionnaire get data => _data;
   final Map<SDOH_FACTOR, Condition> _conditions = {};
@@ -68,8 +69,8 @@ class QuestionnaireModel {
     _data.userResponses.addAll(responses);
     _data.response = QuestionnaireResponse(
       // todo: remove hardcoded (example) patient reference
-      subject: Reference(reference: 'Patient/4890'),
-      resourceType: 'QuestionnaireResponse',
+      subject: Reference(reference: 'Patient/$patientId'),
+      resourceType: R4ResourceType.QuestionnaireResponse,
       meta: _data.questionnaire.meta,
       status: QuestionnaireResponseStatus.completed,
       authored: FhirDateTime(DateTime.now()),
@@ -266,11 +267,12 @@ class QuestionnaireModel {
 
   void recordCondAndObs(SDOH_FACTOR factor) {
     if (!_conditions.keys.contains(factor)) {
-      _conditions[factor] = ConditionUtil().fhirCondition(factor, Id('4890'));
+      _conditions[factor] =
+          ConditionUtil().fhirCondition(factor, Id('$patientId'));
     }
     if (!_conditions.keys.contains(factor)) {
       _observations[factor] =
-          ObservationUtil().fhirObservation(factor, Id('4890'));
+          ObservationUtil().fhirObservation(factor, Id('$patientId'));
     }
   }
 }

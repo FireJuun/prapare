@@ -15,7 +15,7 @@ class _$ServiceCallTearOff {
 
 // ignore: unused_element
   _Aidbox aidboxService(
-      {FhirClient client, Bundle bundle, Rx<RemoteState> state}) {
+      {SmartClient client, Bundle bundle, Rx<RemoteState> state}) {
     return _Aidbox(
       client: client,
       bundle: bundle,
@@ -48,7 +48,7 @@ class _$ServiceCallTearOff {
   }
 
 // ignore: unused_element
-  _Mihin mihinService({FhirClient client, Rx<RemoteState> state}) {
+  _Mihin mihinService({SmartClient client, Rx<RemoteState> state}) {
     return _Mihin(
       client: client,
       state: state,
@@ -68,20 +68,20 @@ mixin _$ServiceCall {
   Result when<Result extends Object>({
     @required
         Result aidboxService(
-            FhirClient client, Bundle bundle, Rx<RemoteState> state),
+            SmartClient client, Bundle bundle, Rx<RemoteState> state),
     @required Result hapiService(Bundle bundle, Rx<RemoteState> state),
     @required Result localStorageService(Bundle bundle, Rx<RemoteState> state),
     @required Result localDisplayService(Bundle bundle, Rx<RemoteState> state),
-    @required Result mihinService(FhirClient client, Rx<RemoteState> state),
+    @required Result mihinService(SmartClient client, Rx<RemoteState> state),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result aidboxService(
-        FhirClient client, Bundle bundle, Rx<RemoteState> state),
+        SmartClient client, Bundle bundle, Rx<RemoteState> state),
     Result hapiService(Bundle bundle, Rx<RemoteState> state),
     Result localStorageService(Bundle bundle, Rx<RemoteState> state),
     Result localDisplayService(Bundle bundle, Rx<RemoteState> state),
-    Result mihinService(FhirClient client, Rx<RemoteState> state),
+    Result mihinService(SmartClient client, Rx<RemoteState> state),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -136,7 +136,7 @@ abstract class _$AidboxCopyWith<$Res> implements $ServiceCallCopyWith<$Res> {
   factory _$AidboxCopyWith(_Aidbox value, $Res Function(_Aidbox) then) =
       __$AidboxCopyWithImpl<$Res>;
   @override
-  $Res call({FhirClient client, Bundle bundle, Rx<RemoteState> state});
+  $Res call({SmartClient client, Bundle bundle, Rx<RemoteState> state});
 
   $BundleCopyWith<$Res> get bundle;
 }
@@ -157,7 +157,7 @@ class __$AidboxCopyWithImpl<$Res> extends _$ServiceCallCopyWithImpl<$Res>
     Object state = freezed,
   }) {
     return _then(_Aidbox(
-      client: client == freezed ? _value.client : client as FhirClient,
+      client: client == freezed ? _value.client : client as SmartClient,
       bundle: bundle == freezed ? _value.bundle : bundle as Bundle,
       state: state == freezed ? _value.state : state as Rx<RemoteState>,
     ));
@@ -179,7 +179,7 @@ class _$_Aidbox extends _Aidbox {
   _$_Aidbox({this.client, this.bundle, this.state}) : super._();
 
   @override
-  final FhirClient client;
+  final SmartClient client;
   @override
   final Bundle bundle;
   @override
@@ -218,11 +218,11 @@ class _$_Aidbox extends _Aidbox {
   Result when<Result extends Object>({
     @required
         Result aidboxService(
-            FhirClient client, Bundle bundle, Rx<RemoteState> state),
+            SmartClient client, Bundle bundle, Rx<RemoteState> state),
     @required Result hapiService(Bundle bundle, Rx<RemoteState> state),
     @required Result localStorageService(Bundle bundle, Rx<RemoteState> state),
     @required Result localDisplayService(Bundle bundle, Rx<RemoteState> state),
-    @required Result mihinService(FhirClient client, Rx<RemoteState> state),
+    @required Result mihinService(SmartClient client, Rx<RemoteState> state),
   }) {
     assert(aidboxService != null);
     assert(hapiService != null);
@@ -236,11 +236,11 @@ class _$_Aidbox extends _Aidbox {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result aidboxService(
-        FhirClient client, Bundle bundle, Rx<RemoteState> state),
+        SmartClient client, Bundle bundle, Rx<RemoteState> state),
     Result hapiService(Bundle bundle, Rx<RemoteState> state),
     Result localStorageService(Bundle bundle, Rx<RemoteState> state),
     Result localDisplayService(Bundle bundle, Rx<RemoteState> state),
-    Result mihinService(FhirClient client, Rx<RemoteState> state),
+    Result mihinService(SmartClient client, Rx<RemoteState> state),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -287,10 +287,10 @@ class _$_Aidbox extends _Aidbox {
 
 abstract class _Aidbox extends ServiceCall {
   _Aidbox._() : super._();
-  factory _Aidbox({FhirClient client, Bundle bundle, Rx<RemoteState> state}) =
+  factory _Aidbox({SmartClient client, Bundle bundle, Rx<RemoteState> state}) =
       _$_Aidbox;
 
-  FhirClient get client;
+  SmartClient get client;
   Bundle get bundle;
   @override
   Rx<RemoteState> get state;
@@ -378,11 +378,11 @@ class _$_Hapi extends _Hapi {
   Result when<Result extends Object>({
     @required
         Result aidboxService(
-            FhirClient client, Bundle bundle, Rx<RemoteState> state),
+            SmartClient client, Bundle bundle, Rx<RemoteState> state),
     @required Result hapiService(Bundle bundle, Rx<RemoteState> state),
     @required Result localStorageService(Bundle bundle, Rx<RemoteState> state),
     @required Result localDisplayService(Bundle bundle, Rx<RemoteState> state),
-    @required Result mihinService(FhirClient client, Rx<RemoteState> state),
+    @required Result mihinService(SmartClient client, Rx<RemoteState> state),
   }) {
     assert(aidboxService != null);
     assert(hapiService != null);
@@ -396,11 +396,11 @@ class _$_Hapi extends _Hapi {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result aidboxService(
-        FhirClient client, Bundle bundle, Rx<RemoteState> state),
+        SmartClient client, Bundle bundle, Rx<RemoteState> state),
     Result hapiService(Bundle bundle, Rx<RemoteState> state),
     Result localStorageService(Bundle bundle, Rx<RemoteState> state),
     Result localDisplayService(Bundle bundle, Rx<RemoteState> state),
-    Result mihinService(FhirClient client, Rx<RemoteState> state),
+    Result mihinService(SmartClient client, Rx<RemoteState> state),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -539,11 +539,11 @@ class _$_LocalStorage extends _LocalStorage {
   Result when<Result extends Object>({
     @required
         Result aidboxService(
-            FhirClient client, Bundle bundle, Rx<RemoteState> state),
+            SmartClient client, Bundle bundle, Rx<RemoteState> state),
     @required Result hapiService(Bundle bundle, Rx<RemoteState> state),
     @required Result localStorageService(Bundle bundle, Rx<RemoteState> state),
     @required Result localDisplayService(Bundle bundle, Rx<RemoteState> state),
-    @required Result mihinService(FhirClient client, Rx<RemoteState> state),
+    @required Result mihinService(SmartClient client, Rx<RemoteState> state),
   }) {
     assert(aidboxService != null);
     assert(hapiService != null);
@@ -557,11 +557,11 @@ class _$_LocalStorage extends _LocalStorage {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result aidboxService(
-        FhirClient client, Bundle bundle, Rx<RemoteState> state),
+        SmartClient client, Bundle bundle, Rx<RemoteState> state),
     Result hapiService(Bundle bundle, Rx<RemoteState> state),
     Result localStorageService(Bundle bundle, Rx<RemoteState> state),
     Result localDisplayService(Bundle bundle, Rx<RemoteState> state),
-    Result mihinService(FhirClient client, Rx<RemoteState> state),
+    Result mihinService(SmartClient client, Rx<RemoteState> state),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -701,11 +701,11 @@ class _$_LocalDisplay extends _LocalDisplay {
   Result when<Result extends Object>({
     @required
         Result aidboxService(
-            FhirClient client, Bundle bundle, Rx<RemoteState> state),
+            SmartClient client, Bundle bundle, Rx<RemoteState> state),
     @required Result hapiService(Bundle bundle, Rx<RemoteState> state),
     @required Result localStorageService(Bundle bundle, Rx<RemoteState> state),
     @required Result localDisplayService(Bundle bundle, Rx<RemoteState> state),
-    @required Result mihinService(FhirClient client, Rx<RemoteState> state),
+    @required Result mihinService(SmartClient client, Rx<RemoteState> state),
   }) {
     assert(aidboxService != null);
     assert(hapiService != null);
@@ -719,11 +719,11 @@ class _$_LocalDisplay extends _LocalDisplay {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result aidboxService(
-        FhirClient client, Bundle bundle, Rx<RemoteState> state),
+        SmartClient client, Bundle bundle, Rx<RemoteState> state),
     Result hapiService(Bundle bundle, Rx<RemoteState> state),
     Result localStorageService(Bundle bundle, Rx<RemoteState> state),
     Result localDisplayService(Bundle bundle, Rx<RemoteState> state),
-    Result mihinService(FhirClient client, Rx<RemoteState> state),
+    Result mihinService(SmartClient client, Rx<RemoteState> state),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -785,7 +785,7 @@ abstract class _$MihinCopyWith<$Res> implements $ServiceCallCopyWith<$Res> {
   factory _$MihinCopyWith(_Mihin value, $Res Function(_Mihin) then) =
       __$MihinCopyWithImpl<$Res>;
   @override
-  $Res call({FhirClient client, Rx<RemoteState> state});
+  $Res call({SmartClient client, Rx<RemoteState> state});
 }
 
 /// @nodoc
@@ -803,7 +803,7 @@ class __$MihinCopyWithImpl<$Res> extends _$ServiceCallCopyWithImpl<$Res>
     Object state = freezed,
   }) {
     return _then(_Mihin(
-      client: client == freezed ? _value.client : client as FhirClient,
+      client: client == freezed ? _value.client : client as SmartClient,
       state: state == freezed ? _value.state : state as Rx<RemoteState>,
     ));
   }
@@ -814,7 +814,7 @@ class _$_Mihin extends _Mihin {
   _$_Mihin({this.client, this.state}) : super._();
 
   @override
-  final FhirClient client;
+  final SmartClient client;
   @override
   final Rx<RemoteState> state;
 
@@ -848,11 +848,11 @@ class _$_Mihin extends _Mihin {
   Result when<Result extends Object>({
     @required
         Result aidboxService(
-            FhirClient client, Bundle bundle, Rx<RemoteState> state),
+            SmartClient client, Bundle bundle, Rx<RemoteState> state),
     @required Result hapiService(Bundle bundle, Rx<RemoteState> state),
     @required Result localStorageService(Bundle bundle, Rx<RemoteState> state),
     @required Result localDisplayService(Bundle bundle, Rx<RemoteState> state),
-    @required Result mihinService(FhirClient client, Rx<RemoteState> state),
+    @required Result mihinService(SmartClient client, Rx<RemoteState> state),
   }) {
     assert(aidboxService != null);
     assert(hapiService != null);
@@ -866,11 +866,11 @@ class _$_Mihin extends _Mihin {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result aidboxService(
-        FhirClient client, Bundle bundle, Rx<RemoteState> state),
+        SmartClient client, Bundle bundle, Rx<RemoteState> state),
     Result hapiService(Bundle bundle, Rx<RemoteState> state),
     Result localStorageService(Bundle bundle, Rx<RemoteState> state),
     Result localDisplayService(Bundle bundle, Rx<RemoteState> state),
-    Result mihinService(FhirClient client, Rx<RemoteState> state),
+    Result mihinService(SmartClient client, Rx<RemoteState> state),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -917,9 +917,9 @@ class _$_Mihin extends _Mihin {
 
 abstract class _Mihin extends ServiceCall {
   _Mihin._() : super._();
-  factory _Mihin({FhirClient client, Rx<RemoteState> state}) = _$_Mihin;
+  factory _Mihin({SmartClient client, Rx<RemoteState> state}) = _$_Mihin;
 
-  FhirClient get client;
+  SmartClient get client;
   @override
   Rx<RemoteState> get state;
   @override

@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:prapare/controllers/commands/commands.dart';
 import 'package:prapare/ui/localization.dart';
 
+import 'styled_components.dart';
+
 class StyledSubmitFab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,12 @@ class StyledSubmitFab extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Text(labels.navigation.submit, style: textTheme.headline5),
         ),
-        onPressed: () async => await SubmitQuestionnaireCommand().execute(),
+        // todo: reimplement
+        // onPressed: () async => await SubmitQuestionnaireCommand().execute(),
+        onPressed: () async {
+          await SaveResponsesCommand().execute();
+          Get.bottomSheet(StyledSubmitBottomSheet());
+        },
       ),
     );
   }
