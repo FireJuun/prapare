@@ -1,5 +1,5 @@
 import 'package:fhir/r4.dart';
-import 'package:fhir_auth/fhir_auth.dart';
+import 'package:fhir_auth/r4/smart_client.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:get/get.dart';
 import 'package:prapare/_internal/utils/utils.dart';
@@ -15,7 +15,7 @@ abstract class ServiceCall implements _$ServiceCall {
   ServiceCall._();
 
   factory ServiceCall.aidboxService({
-    FhirClient client,
+    SmartClient client,
     Bundle bundle,
     Rx<RemoteState> state,
   }) = _Aidbox;
@@ -36,12 +36,12 @@ abstract class ServiceCall implements _$ServiceCall {
   }) = _LocalDisplay;
 
   factory ServiceCall.mihinService({
-    FhirClient client,
+    SmartClient client,
     Rx<RemoteState> state,
   }) = _Mihin;
 
   factory ServiceCall.aidbox() => ServiceCall.aidboxService(
-        client: ThisFhirClient().client(
+        client: ThisSmartClient().client(
           ApiPrivate.aidboxUrl,
           ApiPrivate.aidboxClientId,
           ApiPrivate.prapareRedirectUrl,
@@ -67,7 +67,7 @@ abstract class ServiceCall implements _$ServiceCall {
       );
 
   factory ServiceCall.mihin() => ServiceCall.mihinService(
-        client: ThisFhirClient().client(
+        client: ThisSmartClient().client(
           ApiPrivate.mihinUrl,
           ApiPrivate.mihinClientId,
           ApiPrivate.prapareRedirectUrl,
@@ -100,7 +100,7 @@ abstract class ServiceCall implements _$ServiceCall {
             c.bundle.entry.addAll(right);
             final result = await HapiService().call(c.bundle);
             state.value = result.fold(
-              (l) => RemoteState.error(l.errorMessage()),
+              (l) => RemoteState.error(l),
               (r) => RemoteState.success(
                   'Successful upload to Public Hapi Server'),
             );

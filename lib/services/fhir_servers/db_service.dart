@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:fhir/r4.dart';
-import 'package:fhir_db/fhir_db.dart';
+import 'package:fhir_db/r4.dart';
 
 class DbInterface {
   DbInterface();
@@ -61,8 +61,8 @@ class DbInterface {
       String resourceType) async {
     List<Resource> resultList;
     try {
-      resultList =
-          await resourceDao.getAllSortedById(null, resourceType: resourceType);
+      resultList = await resourceDao
+          .getResourceType(null, resourceTypeStrings: [resourceType]);
     } catch (error) {
       return left(error);
     }
@@ -73,8 +73,12 @@ class DbInterface {
       String resourceType, String searchString, String reference) async {
     List<Resource> resultList;
     try {
-      resultList = await resourceDao.searchFor(
-          null, resourceType, searchString, reference);
+      resultList = await resourceDao.find(
+        null,
+        resourceType: ResourceUtils.resourceTypeFromStringMap[resourceType],
+        value: searchString,
+        field: reference,
+      );
     } catch (error) {
       return left(error);
     }
@@ -84,7 +88,7 @@ class DbInterface {
   Future<Either<Error, List<Resource>>> allResources() async {
     List<Resource> resultList;
     try {
-      resultList = await resourceDao.getAllResources(null);
+      resultList = await resourceDao.getAll(null);
     } catch (error) {
       return left(error);
     }
