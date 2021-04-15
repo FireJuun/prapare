@@ -5,7 +5,7 @@ class HomeSettingsButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+      padding: const EdgeInsets.symmetric(horizontal: 48.0),
       child: Align(
         alignment: AlignmentDirectional.centerEnd,
         child: IconButton(
