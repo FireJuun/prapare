@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:prapare/controllers/commands/clear_local_db.dart';
+import 'package:prapare/controllers/commands/commands.dart';
 import 'package:prapare/ui/localization.dart';
 import 'package:prapare/routes/routes.dart';
 import 'package:prapare/ui/styled_components/styled_components.dart';
-import 'package:prapare/ui/views/settings/settings_dialog.dart';
+import 'package:prapare/ui/views/home/home_settings_button.dart';
 
 class HomeView extends StatelessWidget {
   @override
@@ -17,13 +17,9 @@ class HomeView extends StatelessWidget {
         children: [
           AppLogo(),
           StyledButtonLarge(
-              title: labels.general.newSurvey,
-              onPressed: () {
-                // todo: refactor into command
-                final clearDb = Get.put(ClearLocalDbController());
-                clearDb.deleteAll();
-                Get.toNamed(Routes.GROUP);
-              }),
+            title: labels.general.newSurvey,
+            onPressed: () => NewSurveyCommand().execute(),
+          ),
           StyledButtonLarge(
             title: labels.general.editSurvey,
             onPressed: () => Get.toNamed(Routes.INFO),
@@ -32,13 +28,7 @@ class HomeView extends StatelessWidget {
             title: labels.general.submitShare,
             onPressed: () => Get.bottomSheet(StyledSubmitBottomSheet()),
           ),
-          Align(
-            alignment: const FractionalOffset(0.8, 0),
-            child: IconButton(
-              icon: const Icon(Icons.settings, size: 36),
-              onPressed: () => settingsDialog(context),
-            ),
-          ),
+          HomeSettingsButton(),
         ],
       ),
     );

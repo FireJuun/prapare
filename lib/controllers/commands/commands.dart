@@ -1,5 +1,6 @@
 export 'clear_local_db.dart';
 export 'launch_url_command.dart';
+export 'save_submit/new_survey_command.dart';
 export 'save_submit/save_responses_command.dart';
 export 'save_submit/submit_questionnaire_command.dart';
 export 'update_response/debounce_and_save_response_command.dart';
